@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クーポン改定提案</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+    background: #F7F7F5;
+    color: #1A1A1A;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 48px;
+  }
+
+  /* ─── Header ─── */
+  .header {
+    background: #1A1A1A;
+    color: #fff;
+    padding: 28px 20px 24px;
+  }
+  .header .label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .header .meta {
+    font-size: 12px;
+    color: #888;
+  }
+
+  /* ─── Conclusion Banner ─── */
+  .conclusion {
+    background: #2A6B4A;
+    color: #fff;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .conclusion .icon {
+    font-size: 22px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .conclusion .text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .conclusion .text span {
+    font-size: 13px;
+    opacity: 0.88;
+    line-height: 1.5;
+  }
+
+  /* ─── Section ─── */
+  .section {
+    padding: 24px 20px 0;
+  }
+  .section + .section {
+    padding-top: 28px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .section h2 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1A1A1A;
+  }
+
+  /* ─── KPI Row ─── */
+  .kpi-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .kpi {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #E8E8E5;
+    border-radius: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .kpi .k-label {
+    font-size: 10px;
+    color: #888;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  .kpi .k-value {
+    font-size: 19px;
+    font-weight: 800;
+    color: #1A1A1A;
+    line-height: 1.1;
+  }
+  .kpi .k-unit {
+    font-size: 11px;
+    color: #555;
+    margin-top: 2px;
+  }
+
+  /* ─── List ─── */
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bullet-list li {
+    background: #fff;
+    border: 1px solid #E8E8E5;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .bullet-list li .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2A6B4A;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* ─── Price Change ─── */
+  .price-change {
+    background: #fff;
+    border: 1px solid #E8E8E5;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  .price-change .pc-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .price-change .pc-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  .price-change .old {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 13px;
+  }
+  .price-change .arrow {
+    color: #2A6B4A;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .price-change .new {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1A1A1A;
+  }
+  .price-change .reason {
+    font-size: 12px;
+    color: #777;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid #F0F0EE;
+  }
+
+  /* ─── Badge ─── */
+  .badge-row {
+    display: flex;
+    gap: 8px;
+  }
+  .badge {
+    flex: 1;
+    background: #1A1A1A;
+    color: #fff;
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .badge .b-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #aaa;
+    margin-bottom: 6px;
+  }
+  .badge .b-disc {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .badge .b-label {
+    font-size: 11px;
+    color: #888;
+  }
+
+  /* ─── Forecast Table ─── */
+  .forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #E8E8E5;
+    font-size: 13px;
+  }
+  .forecast-table thead tr {
+    background: #1A1A1A;
+    color: #fff;
+  }
+  .forecast-table thead th {
+    padding: 10px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  .forecast-table thead th:first-child {
+    text-align: left;
+    padding-left: 14px;
+  }
+  .forecast-table tbody tr {
+    border-bottom: 1px solid #F0F0EE;
+  }
+  .forecast-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .forecast-table tbody td {
+    padding: 10px 8px;
+    text-align: center;
+    color: #333;
+  }
+  .forecast-table tbody td:first-child {
+    text-align: left;
+    padding-left: 14px;
+    font-weight: 600;
+    color: #1A1A1A;
+    font-size: 12px;
+  }
+  .forecast-table .current-row {
+    background: #F7F7F5;
+  }
+  .forecast-table .current-row td {
+    color: #888;
+    font-size: 12px;
+  }
+  .forecast-table .highlight {
+    color: #2A6B4A;
+    font-weight: 700;
+  }
+  .forecast-table .std-col {
+    background: rgba(42,107,74,0.06);
+  }
+
+  /* ─── Effect Box ─── */
+  .effect-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .effect-item {
+    background: #fff;
+    border: 1px solid #E8E8E5;
+    border-left: 3px solid #2A6B4A;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+  }
+  .effect-item .e-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .effect-item .e-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    height: 1px;
+    background: #E8E8E5;
+    margin: 24px 20px 0;
+  }
+
+  /* ─── Footer ─── */
+  .footer {
+    padding: 20px 20px 0;
+    font-size: 11px;
+    color: #bbb;
+    text-align: center;
+  }
+
+  /* ─── Note ─── */
+  .note {
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+    padding: 0 2px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="label">Internal Proposal · 2026</div>
+  <h1>クーポン改定による<br>収益構造改善提案</h1>
+  <div class="meta">対象期間：2026年7月〜　／　提案者：スタイリスト</div>
+</div>
+
+<!-- Conclusion -->
+<div class="conclusion">
+  <div class="icon">📌</div>
+  <div class="text">
+    <strong>結論：クーポン改定の承認をお願いします</strong>
+    <span>追加料金の廃止・価格の適正化・新規割引の導入により、現状289万円 → 標準シナリオで月340万円（＋17.6%）の純売上を見込みます。</span>
+  </div>
+</div>
+
+<!-- 現状 -->
+<div class="section">
+  <div class="section-label">Current Status</div>
+  <h2>📊 現状実績（1〜5月平均）</h2>
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="k-label">純売上</div>
+      <div class="k-value">289</div>
+      <div class="k-unit">万円 / 月</div>
+    </div>
+    <div class="kpi">
+      <div class="k-label">客数</div>
+      <div class="k-value">503</div>
+      <div class="k-unit">人 / 月</div>
+    </div>
+    <div class="kpi">
+      <div class="k-label">客単価</div>
+      <div class="k-value">5,765</div>
+      <div class="k-unit">円</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 改定① -->
+<div class="section">
+  <div class="section-label">Reform ①</div>
+  <h2>🗂 クーポン設計の見直し</h2>
+  <ul class="bullet-list">
+    <li><span class="dot"></span><span>利用の少ないクーポンを削除し、メニューをシンプル化</span></li>
+    <li><span class="dot"></span><span>ニーズの高いクーポンを新規追加</span></li>
+    <li><span class="dot"></span><span><strong>白髪染め・クオルシアカラー・塗り分けの追加料金を廃止</strong>し、お客様の心理的負担を軽減</span></li>
+    <li><span class="dot"></span><span>追加料金ゼロにより、スタッフが自信をもって提案できる環境を整備</span></li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<!-- 改定② -->
+<div class="section">
+  <div class="section-label">Reform ②</div>
+  <h2>💴 価格の適正化</h2>
+
+  <div class="price-change">
+    <div class="pc-title">レディースカット</div>
+    <div class="pc-row">
+      <span class="old">¥3,500</span>
+      <span class="arrow">→</span>
+      <span class="new">¥4,000</span>
+    </div>
+    <div class="reason">シャンプー・ブロー・施術時間を考慮すると、メンズカットとの同価格設定は不合理なため</div>
+  </div>
+
+  <div class="price-change">
+    <div class="pc-title">カラー・リタッチ・ブリーチ（単品）</div>
+    <div class="pc-row">
+      <span style="font-size:13px;color:#555;">現行価格 → 適正価格へ改定</span>
+    </div>
+    <div class="reason">追加料金廃止分の補填・セットメニューへの誘導・市場適正価格への修正</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 改定③ -->
+<div class="section">
+  <div class="section-label">Reform ③</div>
+  <h2>🎯 U24新規割引の導入</h2>
+  <div class="badge-row">
+    <div class="badge">
+      <div class="b-tag">U24 LADIES</div>
+      <div class="b-disc">－¥1,000</div>
+      <div class="b-label">全クーポン対象</div>
+    </div>
+    <div class="badge">
+      <div class="b-tag">U24 MEN'S</div>
+      <div class="b-disc">－¥500</div>
+      <div class="b-label">全クーポン対象</div>
+    </div>
+  </div>
+  <p class="note">20代前半の新規顧客獲得を強化。来店ハードルを下げ、リピーター化を狙う。</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- 収益予測 -->
+<div class="section">
+  <div class="section-label">Forecast</div>
+  <h2>📈 収益予測（月次）</h2>
+  <table class="forecast-table">
+    <thead>
+      <tr>
+        <th>シナリオ</th>
+        <th>客単価</th>
+        <th>客数</th>
+        <th>純売上</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="current-row">
+        <td>現状</td>
+        <td>5,765円</td>
+        <td>503人</td>
+        <td>289万円</td>
+      </tr>
+      <tr>
+        <td>保守</td>
+        <td>6,465円</td>
+        <td>478人</td>
+        <td class="highlight">309万円</td>
+      </tr>
+      <tr>
+        <td>標準</td>
+        <td>6,765円</td>
+        <td>503人</td>
+        <td class="highlight std-col">340万円</td>
+      </tr>
+      <tr>
+        <td>楽観</td>
+        <td>6,965円</td>
+        <td>513人</td>
+        <td class="highlight">357万円</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">※ 保守シナリオでも客数が減少しても増収。標準で＋51万円（＋17.6%）を見込む。</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- 期待効果 -->
+<div class="section">
+  <div class="section-label">Expected Effects</div>
+  <h2>✅ 期待される効果</h2>
+  <div class="effect-grid">
+    <div class="effect-item">
+      <div class="e-title">① 客単価の底上げ</div>
+      <div class="e-desc">追加料金廃止 × 価格適正化で、1人あたり収益を改善。セットメニュー誘導で更なる単価向上が見込める。</div>
+    </div>
+    <div class="effect-item">
+      <div class="e-title">② 提案しやすい接客環境</div>
+      <div class="e-desc">追加料金ゼロにより、スタッフが躊躇なくカラーや施術を提案できる。売上機会のロス減少。</div>
+    </div>
+    <div class="effect-item">
+      <div class="e-title">③ 20代新規客の取り込み</div>
+      <div class="e-desc">U24割引でホットペッパー上の訴求力を強化。将来の優良リピーター層を育成。</div>
+    </div>
+    <div class="effect-item">
+      <div class="e-title">④ 保守的試算でも増収</div>
+      <div class="e-desc">客数が503人→478人（▲5%）に落ちても月20万円の増収。リスクを抑えた改定設計。</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  2026年6月 作成　／　ご不明点はお声がけください
+</div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夢に挑戦する人を応援するカフェ</title>
+<style>
+:root{
+  --dk:#0f0a05;
+  --cf:#1a1008;
+  --mb:#221508;
+  --am:#c8832a;
+  --aml:#e4a84f;
+  --iv:#f0e6d6;
+  --bg:#d8c8b0;
+  --tl:#a89070;
+  --td:#6a5040;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--dk);
+  color:var(--iv);
+  font-family:'Hiragino Mincho ProN','游明朝','Yu Mincho',Georgia,serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* SCENE */
+.scene{width:100%;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.scene-tall{aspect-ratio:3/4;min-height:70vw}
+.scene-wide{aspect-ratio:16/9;min-height:50vw}
+.s1{background:radial-gradient(ellipse 65% 80% at 55% 30%,rgba(200,131,42,.14) 0%,transparent 60%),linear-gradient(160deg,#100905 0%,#1e1109 40%,#2a1a0c 70%,#130c06 100%)}
+.s2{background:radial-gradient(ellipse 70% 50% at 35% 50%,rgba(180,100,30,.16) 0%,transparent 60%),linear-gradient(135deg,#0c0703 0%,#1c1008 35%,#251409 65%,#0e0804 100%)}
+.s3{background:radial-gradient(ellipse 80% 60% at 65% 40%,rgba(160,90,20,.14) 0%,transparent 60%),linear-gradient(155deg,#120905 0%,#1d1209 45%,#231508 75%,#100904 100%)}
+.s4{background:radial-gradient(ellipse 60% 70% at 45% 50%,rgba(200,131,42,.13) 0%,transparent 55%),linear-gradient(145deg,#0d0804 0%,#1b1108 40%,#221409 70%,#0f0905 100%)}
+.s5{background:radial-gradient(ellipse 55% 70% at 50% 55%,rgba(180,110,30,.15) 0%,transparent 60%),linear-gradient(170deg,#100806 0%,#1c1108 35%,#261509 65%,#0f0804 100%)}
+.scene-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:8vw}
+.sg{font-size:clamp(60px,22vw,180px);opacity:.14;line-height:1;color:var(--aml);font-style:italic;user-select:none}
+.sr{width:36px;height:1px;background:var(--am);opacity:.4;margin:4vw auto}
+.se{font-size:clamp(10px,3vw,16px);letter-spacing:.4em;color:var(--am);opacity:.6;text-transform:uppercase;font-style:italic;font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300}
+.sc{font-size:9px;letter-spacing:.35em;color:var(--td);padding:3.5vw 8vw 0;text-transform:uppercase;font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300;display:block}
+
+/* COVER */
+.cover{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:16vw;position:relative;overflow:hidden}
+.cover-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 15%,rgba(200,131,42,.08) 0%,transparent 55%),radial-gradient(ellipse 100% 45% at 50% 100%,rgba(6,3,1,1) 0%,rgba(6,3,1,.55) 55%,transparent 100%),linear-gradient(175deg,#0d0905 0%,#1a1008 50%,#0d0805 100%)}
+.cover-deco{position:absolute;top:-2vw;right:-5vw;font-style:italic;font-size:clamp(160px,58vw,440px);color:var(--am);opacity:.05;line-height:1;pointer-events:none;user-select:none}
+.cover-c{position:relative;z-index:2;padding:0 8vw}
+.ey{font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300;font-size:9px;letter-spacing:.5em;color:var(--am);text-transform:uppercase;margin-bottom:8vw;display:block}
+.ct{font-size:clamp(40px,14vw,100px);font-weight:300;line-height:1.05;letter-spacing:.01em;margin-bottom:8vw;color:var(--iv)}
+.ct em{font-style:italic;color:var(--aml)}
+.cs{font-weight:300;font-size:clamp(14px,4.2vw,20px);line-height:2.5;color:var(--bg)}
+.cscroll{position:absolute;bottom:5vw;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cscroll span{font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300;font-size:8px;letter-spacing:.5em;color:var(--td);text-transform:uppercase}
+.sline{width:1px;height:48px;background:linear-gradient(to bottom,var(--am),transparent);opacity:.45}
+
+/* SECTION */
+section{padding:18vw 8vw}
+.sl{font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300;font-size:8px;letter-spacing:.5em;color:var(--am);text-transform:uppercase;margin-bottom:10vw;display:flex;align-items:center;gap:14px}
+.sl::after{content:'';height:1px;width:30px;background:var(--am);opacity:.45}
+.ch{font-size:clamp(36px,11.5vw,82px);font-weight:300;line-height:1.08;letter-spacing:.01em;margin-bottom:9vw;color:var(--iv)}
+.ch em{font-style:italic;color:var(--aml);display:block}
+.bt{font-weight:300;font-size:clamp(13.5px,4vw,17px);line-height:2.6;color:var(--tl);letter-spacing:.06em}
+.bt p+p{margin-top:1.8em}
+.dh{height:1px;background:linear-gradient(to right,transparent,rgba(200,131,42,.2),transparent);margin:0 8vw}
+
+/* PULL QUOTE */
+.pq{padding:22vw 8vw;text-align:center;position:relative}
+.pq::before{content:'\201C';position:absolute;top:8vw;left:50%;transform:translateX(-50%);font-size:clamp(90px,30vw,220px);color:var(--am);opacity:.07;line-height:1;pointer-events:none;font-style:italic}
+.pqt{font-style:italic;font-weight:300;font-size:clamp(21px,7vw,50px);line-height:1.65;letter-spacing:.025em;color:var(--iv);position:relative;z-index:1}
+.pqt span{color:var(--aml)}
+
+/* PROBLEM */
+.pc{padding:9vw 0;border-bottom:1px solid rgba(200,131,42,.1)}
+.pc:last-child{border-bottom:none}
+.pn{font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-size:10px;font-weight:300;letter-spacing:.4em;color:var(--am);opacity:.65;margin-bottom:4vw}
+.ph{font-weight:300;font-size:clamp(15.5px,5vw,23px);line-height:1.85;color:var(--iv);margin-bottom:5vw;letter-spacing:.06em}
+
+/* PHILOSOPHY */
+.phil{background:var(--cf);padding:18vw 8vw}
+.pi{margin-bottom:14vw}
+.pi:last-child{margin-bottom:0}
+.pr{font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300;font-size:8px;letter-spacing:.55em;color:var(--am);text-transform:uppercase;margin-bottom:4.5vw}
+.ps{font-style:italic;font-weight:300;font-size:clamp(21px,7vw,50px);line-height:1.5;letter-spacing:.02em;color:var(--iv)}
+
+/* INSET */
+.ins{border-left:1px solid rgba(200,131,42,.5);padding-left:6vw;margin:8vw 0}
+.ins p{font-weight:300;font-size:clamp(13px,4vw,16px);line-height:2.8;color:var(--tl);letter-spacing:.06em}
+
+/* JOURNEY */
+.jrn{padding:18vw 8vw;background:var(--mb)}
+.jst{display:flex;gap:5vw;padding:5.5vw 0;border-bottom:1px solid rgba(200,131,42,.09);align-items:flex-start}
+.jst:last-child{border-bottom:none}
+.jn{font-style:italic;font-weight:300;font-size:clamp(34px,10vw,65px);color:var(--am);opacity:.28;line-height:1;min-width:13vw;text-align:right;flex-shrink:0}
+.jt{font-weight:300;font-size:clamp(13px,4vw,16px);line-height:2.1;color:var(--bg);letter-spacing:.05em;padding-top:.3em}
+
+/* TABLE */
+.cmp{padding:18vw 8vw}
+.tw{margin-top:10vw;border-top:1px solid rgba(200,131,42,.22)}
+.tr{display:flex;border-bottom:1px solid rgba(200,131,42,.1);padding:5vw 0;gap:4vw}
+.tr.hdr{border-bottom:1px solid rgba(200,131,42,.28);padding-bottom:4vw}
+.tc{font-family:'Hiragino Sans','Yu Gothic',sans-serif;font-weight:300;font-size:clamp(11px,3.3vw,14px);line-height:1.9;letter-spacing:.07em;color:var(--td);flex:1}
+.tc.hi{color:var(--aml)}
+.tr.hdr .tc{font-size:8px;letter-spacing:.42em;text-transform:uppercase;color:var(--am);opacity:.65}
+
+/* SERVICES */
+.svc{padding:18vw 8vw}
+.si{padding:9vw 0;border-bottom:1px solid rgba(200,131,42,.1)}
+.si:last-child{border-bottom:none}
+.sn{font-weight:400;font-size:clamp(14.5px,4.8vw,22px);color:var(--iv);margin-bottom:3.5vw;letter-spacing:.07em}
+.sd{font-weight:300;font-size:clamp(12.5px,3.6vw,15px);line-height:2.6;color:var(--td);letter-spacing:.06em}
+
+/* CLOSING */
+.cls{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:20vw 8vw;position:relative;overflow:hidden;text-align:center}
+.cls-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(200,131,42,.07) 0%,transparent 60%),linear-gradient(160deg,#0b0704 0%,#171009 50%,#0b0704 100%)}
+.cls-deco{position:absolute;bottom:-8vw;right:-6vw;font-style:italic;font-size:clamp(130px,48vw,360px);color:var(--am);opacity:.05;line-height:1;pointer-events:none;user-select:none}
+.cls-c{position:relative;z-index:1}
+.cls-t{font-style:italic;font-weight:300;font-size:clamp(26px,8.5vw,62px);line-height:1.5;color:var(--iv);margin-bottom:9vw}
+.cls-t .g{color:var(--aml);display:block;margin-top:.25em}
+.cls-b{font-weight:300;font-size:clamp(12.5px,3.6vw,16px);line-height:3.1;color:var(--tl);letter-spacing:.08em;margin-bottom:10vw}
+.cls-tg{font-weight:400;font-size:clamp(18px,5.5vw,36px);letter-spacing:.2em;color:var(--am)}
+
+@media(min-width:768px){
+  section,.cmp,.svc{padding:12vw 15vw}
+  .phil,.jrn{padding:12vw 15vw}
+  .cls{padding:12vw 20vw}
+  .cover-c{padding:0 15vw}
+  .sc{padding:2.5vw 15vw 0}
+  .dh{margin:0 15vw}
+  .pq{padding:14vw 18vw}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-deco">C</div>
+  <div class="cover-c">
+    <span class="ey">Concept Book</span>
+    <h1 class="ct">夢に挑戦する<br>人を応援する<br><em>カフェ</em></h1>
+    <p class="cs">応援することで、<br>知らなかった世界と<br>出会える場所。</p>
+  </div>
+  <div class="cscroll"><span>Scroll</span><div class="sline"></div></div>
+</div>
+
+<section>
+  <p class="sl">Social Issue</p>
+  <h2 class="ch">私たちが<br>見つめる、<br><em>社会の課題</em></h2>
+</section>
+<div class="dh"></div>
+
+<div class="scene scene-tall s1">
+  <div class="scene-inner"><div class="sg">繋</div><div class="sr"></div><p class="se">Connection</p></div>
+</div>
+<span class="sc">CONNECTION — 出会いの喪失</span>
+
+<section>
+  <div class="pc">
+    <p class="pn">01</p>
+    <h3 class="ph">人と人が直接つながる機会の喪失</h3>
+    <div class="bt">
+      <p>SNSや動画配信サービスの普及により、世界中の情報や他者の挑戦に簡単にアクセスできるようになりました。</p>
+      <p>しかしその一方で、実際に人と出会い、会話し、価値観に触れる機会は減少しています。</p>
+      <p>私たちは多くの情報に触れているようで、本当の意味で人とつながる機会を失いつつあります。</p>
+    </div>
+  </div>
+</section>
+<div class="dh"></div>
+
+<div class="scene scene-wide s2">
+  <div class="scene-inner"><div class="sg">芸</div><div class="sr"></div><p class="se">Art &amp; Culture</p></div>
+</div>
+<span class="sc">ART — 文化との接点</span>
+
+<section>
+  <div class="pc">
+    <p class="pn">02</p>
+    <h3 class="ph">芸術や文化に触れる機会の不足</h3>
+    <div class="bt">
+      <p>日本では、欧米諸国と比較して芸術や文化に触れる機会が少ないと言われています。</p>
+      <p>芸術は一部の人の趣味ではなく、本来は人生を豊かにする身近な存在であるはずです。</p>
+      <p>しかし現実には、多くの人が芸術と接点を持たないまま生活しています。</p>
+    </div>
+  </div>
+</section>
+<div class="dh"></div>
+
+<div class="scene scene-wide s3">
+  <div class="scene-inner"><div class="sg">挑</div><div class="sr"></div><p class="se">The Artist</p></div>
+</div>
+<span class="sc">ARTIST — 活躍の場</span>
+
+<section>
+  <div class="pc">
+    <p class="pn">03</p>
+    <h3 class="ph">芸術家が活躍しにくい環境</h3>
+    <div class="bt">
+      <p>多くの芸術家やクリエイターは、経済的な不安を抱えながら活動しています。</p>
+      <p>才能や情熱があっても、活動を継続するための環境が十分に整っているとは言えません。</p>
+    </div>
+  </div>
+  <div class="pc">
+    <p class="pn">04</p>
+    <h3 class="ph">応援する価値の過小評価</h3>
+    <div class="bt">
+      <p>誰かを応援することは、相手のためだけではありません。</p>
+      <p>夢に向かって挑戦する人の姿は、応援する側にも勇気や刺激を与えてくれます。</p>
+      <p>他者の挑戦に触れることで、自分自身の可能性や新しい価値観に出会うことができます。</p>
+    </div>
+  </div>
+</section>
+
+<div class="pq">
+  <p class="pqt">他者の挑戦に触れることで、<br><span>自分自身の可能性や</span><br>新しい価値観に<br>出会うことができます。</p>
+</div>
+
+<div class="scene scene-tall s4">
+  <div class="scene-inner"><div class="sg">出</div><div class="sr"></div><p class="se">A Place to Meet</p></div>
+</div>
+<span class="sc">SOLUTION — 出会いの設計</span>
+
+<section>
+  <p class="sl">Solution</p>
+  <h2 class="ch">出会い、<br>交流し、<br><em>応援できる場所</em></h2>
+  <div class="bt"><p>私たちは、夢に挑戦する人と一般の人が自然につながれる場所をつくります。</p></div>
+  <div class="ins"><p>作品を見るだけではない。<br>イベントに参加するだけでもない。<br>言葉を交わし、その人の想いや背景を知り、人そのものを応援する。</p></div>
+  <div class="bt"><p>そんな体験を日常の中に生み出します。そのために私たちは、誰もが気軽に立ち寄れる「カフェ」という形を選びました。</p></div>
+</section>
+
+<div class="phil">
+  <p class="sl">Philosophy</p>
+  <h2 class="ch" style="margin-bottom:14vw">理念</h2>
+  <div class="pi"><p class="pr">Mission</p><p class="ps">夢に挑戦する人を支援する</p></div>
+  <div class="pi"><p class="pr">Vision</p><p class="ps">芸術家が持続的に活躍できる環境をつくり、人と人が応援し合う文化を社会に広げる</p></div>
+  <div class="pi"><p class="pr">Value</p><p class="ps">応援を通じて、新しい世界と出会い、自分自身も成長する</p></div>
+</div>
+
+<div class="scene scene-wide s5">
+  <div class="scene-inner"><div class="sg">応</div><div class="sr"></div><p class="se">The Value of Support</p></div>
+</div>
+<span class="sc">VALUE — 応援が生む体験</span>
+
+<section>
+  <p class="sl">Customer Value</p>
+  <h2 class="ch">応援することで、<br><em>新しい世界と</em><br>出会う</h2>
+  <div class="bt"><p>私たちが提供したい価値は、単なる飲食体験ではありません。</p></div>
+  <div class="ins"><p>普段なら出会うことのなかった人。<br>普段なら知ることのなかった価値観。<br>普段なら触れることのなかった芸術や文化。</p></div>
+  <div class="bt"><p>誰かを応援することを通じて、自分自身の世界が広がっていく。それがこのカフェの顧客価値です。</p></div>
+</section>
+
+<div class="dh"></div>
+<section>
+  <p class="sl">Experience</p>
+  <h2 class="ch">コーヒーを<br>飲みに来た<br><em>だけなのに</em></h2>
+  <div class="bt"><p>ふらっとカフェに立ち寄る。スタッフや挑戦者と少し会話をする。その人の夢や挑戦を知る。気づけば応援したくなっている。そして帰る頃には、自分自身も少し前向きな気持ちになっている。</p></div>
+</section>
+
+<div class="jrn">
+  <p class="sl">この場所で起きてほしいこと</p>
+  <div style="margin-top:10vw">
+    <div class="jst"><span class="jn">1</span><p class="jt">コーヒーを飲みに来る</p></div>
+    <div class="jst"><span class="jn">2</span><p class="jt">夢に挑戦している人と出会う</p></div>
+    <div class="jst"><span class="jn">3</span><p class="jt">その人の想いや背景を知る</p></div>
+    <div class="jst"><span class="jn">4</span><p class="jt">応援したくなる</p></div>
+    <div class="jst"><span class="jn">5</span><p class="jt">新しい価値観や世界に触れる</p></div>
+    <div class="jst"><span class="jn">6</span><p class="jt">自分も前向きな気持ちになる</p></div>
+    <div class="jst"><span class="jn">7</span><p class="jt">自分も何かに挑戦したくなる</p></div>
+  </div>
+</div>
+
+<div class="cmp">
+  <p class="sl">Uniqueness</p>
+  <h2 class="ch">私たちが提供するのは<br><em>「応援する体験」</em></h2>
+  <div class="tw">
+    <div class="tr hdr"><div class="tc">施設</div><div class="tc">提供価値</div></div>
+    <div class="tr"><div class="tc">普通のカフェ</div><div class="tc">コーヒーや空間を楽しむ</div></div>
+    <div class="tr"><div class="tc">ライブハウス</div><div class="tc">パフォーマンスを鑑賞する</div></div>
+    <div class="tr"><div class="tc">ギャラリー</div><div class="tc">作品を鑑賞する</div></div>
+    <div class="tr"><div class="tc hi">このカフェ</div><div class="tc hi">挑戦する人と出会い、応援する</div></div>
+  </div>
+  <div class="bt" style="margin-top:10vw"><p>私たちが提供したいのは作品との出会いではありません。挑戦する人との出会いです。そして、その人を応援することで、自分自身も新しい世界と出会う体験です。</p></div>
+</div>
+
+<div class="dh"></div>
+<div class="scene scene-wide s2">
+  <div class="scene-inner"><div class="sg">場</div><div class="sr"></div><p class="se">Services</p></div>
+</div>
+<span class="sc">SERVICE — 体験の設計</span>
+
+<div class="svc">
+  <p class="sl">Services</p>
+  <h2 class="ch" style="margin-bottom:12vw">サービス案</h2>
+  <div class="si"><h3 class="sn">芸術家考案コラボメニュー</h3><p class="sd">芸術家やチャレンジャーの世界観を表現した限定メニューを提供します。</p></div>
+  <div class="si"><h3 class="sn">トークイベント・ワークショップ</h3><p class="sd">活動内容や想いに直接触れられるイベントを開催します。</p></div>
+  <div class="si"><h3 class="sn">サポーター制度</h3><p class="sd">継続的に応援したい人向けの会員制度を提供します。</p></div>
+  <div class="si"><h3 class="sn">推しチャレンジャー制度</h3><p class="sd">応援したい人の挑戦や成長を継続的に見守り、支援できる仕組みをつくります。</p></div>
+</div>
+
+<div class="cls">
+  <div class="cls-bg"></div>
+  <div class="cls-deco">循</div>
+  <div class="cls-c">
+    <h2 class="cls-t">応援する人も、<br>応援される人も、<span class="g">ともに前を向ける場所</span></h2>
+    <p class="cls-b">私たちがつくりたいのは、単なる芸術家支援施設ではありません。<br><br>一杯のコーヒーをきっかけに誰かの挑戦に触れる。<br>その挑戦が、自分自身の世界を広げる。<br><br>そんな新しい体験が日常の中にある社会を目指しています。</p>
+    <p class="cls-tg">応援は、循環する。</p>
+  </div>
+</div>
+
+</body>
+</html>
