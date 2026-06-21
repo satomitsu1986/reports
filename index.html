@@ -1,51 +1,446 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>資料一覧</title>
-<style>
-body{
-max-width:800px;
-margin:auto;
-padding:20px;
-font-family:sans-serif;
-background:#111;
-color:white;
-}
-.card{
-display:block;
-padding:20px;
-margin:15px 0;
-background:#222;
-border-radius:12px;
-text-decoration:none;
-color:white;
-}
-h1{
-text-align:center;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SATOMITSU REPORTS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0a0a0a;
+      --surface:    #161616;
+      --border:     rgba(255,255,255,0.07);
+      --border-hi:  rgba(201,169,110,0.35);
+      --gold:       #c9a96e;
+      --gold-soft:  rgba(201,169,110,0.06);
+      --text-hi:    #f2ede6;
+      --text-mid:   #7a756f;
+      --text-lo:    #3a3630;
+      --radius-lg:  12px;
+      --radius-sm:  6px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text-hi);
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 96px 32px 72px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,169,110,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0.65;
+    }
+
+    .header-eyebrow::before,
+    .header-eyebrow::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--text-hi);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .header-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--text-mid);
+    }
+
+    .header-rule {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(to bottom, rgba(201,169,110,0.5), transparent);
+      margin: 40px auto 0;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      padding: 0 32px 100px;
+    }
+
+    .grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    /* ── Business Card ── */
+    .biz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.4s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.4s cubic-bezier(0.22,1,0.36,1);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .biz-card.visible {
+      animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Top shimmer */
+    .biz-card-shimmer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    /* BG glow on hover */
+    .biz-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold-soft);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    .biz-card:hover {
+      border-color: var(--border-hi);
+      transform: translateY(-3px);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,169,110,0.07);
+    }
+
+    .biz-card:hover .biz-card-shimmer { opacity: 0.7; }
+    .biz-card:hover::after { opacity: 1; }
+
+    /* Card header */
+    .biz-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .biz-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .biz-label {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.65;
+      margin-bottom: 5px;
+    }
+
+    .biz-name {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--text-hi);
+    }
+
+    /* Links */
+    .biz-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .biz-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.2s;
+      gap: 8px;
+    }
+
+    .biz-link:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .biz-link-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .biz-link-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-lo);
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .biz-link:hover .biz-link-dot {
+      background: var(--gold);
+    }
+
+    .biz-link-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.81rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text-hi);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .biz-link:hover .biz-link-text {
+      opacity: 1;
+    }
+
+    .biz-link-arrow {
+      width: 13px;
+      height: 13px;
+      color: var(--gold);
+      opacity: 0;
+      transform: translate(-3px, 3px);
+      transition: opacity 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .biz-link:hover .biz-link-arrow {
+      opacity: 0.65;
+      transform: translate(0, 0);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 28px 32px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--text-lo);
+      text-transform: uppercase;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      header { padding: 64px 20px 56px; }
+      main { padding: 0 16px 80px; }
+      .grid { grid-template-columns: 1fr; gap: 14px; }
+      .biz-card { padding: 28px 22px 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .biz-card { opacity: 1; transform: none; animation: none; }
+      .biz-card, .biz-card::after, .biz-card-shimmer,
+      .biz-link, .biz-link-dot, .biz-link-text, .biz-link-arrow { transition: none; }
+    }
+  </style>
 </head>
 <body>
 
-<h1>📚 資料一覧</h1>
+  <header>
+    <div class="header-glow"></div>
+    <p class="header-eyebrow">Document Portal</p>
+    <h1>SATOMITSU REPORTS</h1>
+    <p class="header-sub">事業資料・提案資料・戦略資料ポータル</p>
+    <div class="header-rule"></div>
+  </header>
 
-<h2>美容室</h2>
+  <main>
+    <div class="grid">
 
-<a class="card" href="salon/coupon-proposal.html">
-クーポン改定提案
-</a>
+      <!-- 美容室 -->
+      <div class="biz-card">
+        <div class="biz-card-shimmer"></div>
+        <div class="biz-header">
+          <div class="biz-icon">📈</div>
+          <div>
+            <p class="biz-label">Beauty Salon</p>
+            <p class="biz-name">美容室</p>
+          </div>
+        </div>
+        <div class="biz-links">
+          <a class="biz-link" href="salon/coupon-proposal.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">クーポン改善提案</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="biz-link" href="salon/revenue-forecast.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">収益予測</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="biz-link" href="salon/operations.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">運営資料</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-<a class="card" href="salon/coupon-revision-detail.html">
-クーポン改定詳細
-</a>
+      <!-- BDX -->
+      <div class="biz-card">
+        <div class="biz-card-shimmer"></div>
+        <div class="biz-header">
+          <div class="biz-icon">🩰</div>
+          <div>
+            <p class="biz-label">Ballet × Dance × AI Fitness</p>
+            <p class="biz-name">BDX</p>
+          </div>
+        </div>
+        <div class="biz-links">
+          <a class="biz-link" href="bdx/business-plan.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">事業計画</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="biz-link" href="bdx/roadmap.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">ロードマップ</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-<h2>その他</h2>
+      <!-- 複業.Lab -->
+      <div class="biz-card">
+        <div class="biz-card-shimmer"></div>
+        <div class="biz-header">
+          <div class="biz-icon">🚀</div>
+          <div>
+            <p class="biz-label">AI Side-Business Platform</p>
+            <p class="biz-name">複業.Lab</p>
+          </div>
+        </div>
+        <div class="biz-links">
+          <a class="biz-link" href="fukugyo/service-overview.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">サービス概要</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="biz-link" href="fukugyo/strategy.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">戦略</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-<a class="card" href="cafe/visual-book.html">
-Visual Book
-</a>
+      <!-- カフェ構想 -->
+      <div class="biz-card">
+        <div class="biz-card-shimmer"></div>
+        <div class="biz-header">
+          <div class="biz-icon">☕</div>
+          <div>
+            <p class="biz-label">Café Concept</p>
+            <p class="biz-name">カフェ構想</p>
+          </div>
+        </div>
+        <div class="biz-links">
+          <a class="biz-link" href="cafe/concept.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">コンセプト</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="biz-link" href="cafe/business-model.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">収益構造</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="biz-link" href="cafe/visual-book.html">
+            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">ビジュアルブック</span></div>
+            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 合同会社 nature &nbsp;·&nbsp; SATOMITSU REPORTS</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.biz-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    cards.forEach((card, i) => {
+      card.style.animationDelay = `${i * 0.09}s`;
+      observer.observe(card);
+    });
+  </script>
 
 </body>
 </html>
