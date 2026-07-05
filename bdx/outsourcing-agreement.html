@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BDX 業務委託契約書（Ver.1.0）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Serif+JP:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --gold: #c9a96e;
+      --paper: #f4f1e9;
+      --ink: #24211d;
+      --muted: #716b61;
+      --rule: #c8c0b2;
+    }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: 'Noto Serif JP', serif;
+      background:
+        radial-gradient(ellipse 60% 30% at 50% 0%, rgba(201,169,110,0.1), transparent 72%),
+        #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+    .topbar {
+      width: min(880px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 24px;
+    }
+    .back {
+      color: #938a7d;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back:hover { color: var(--gold); }
+    .document {
+      width: min(880px, calc(100% - 32px));
+      margin: 0 auto 72px;
+      padding: 72px 82px 82px;
+      background: var(--paper);
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+    }
+    .doc-header {
+      padding-bottom: 32px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+    }
+    .version {
+      margin: 0 0 12px;
+      color: #8a6d3b;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+    }
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+      text-align: left;
+    }
+    .party {
+      padding: 14px 16px;
+      border: 1px solid var(--rule);
+      font-size: 0.84rem;
+      line-height: 1.8;
+    }
+    .party-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+    }
+    .article { margin-top: 28px; }
+    h2 {
+      margin: 0 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--gold);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    p, li {
+      font-size: 0.9rem;
+      line-height: 2;
+    }
+    p { margin: 0; }
+    ol, ul {
+      margin: 0;
+      padding-left: 1.6em;
+    }
+    .appendix {
+      margin-top: 54px;
+      padding-top: 34px;
+      border-top: 2px solid var(--ink);
+    }
+    .appendix h2 {
+      padding: 0;
+      border: 0;
+      font-size: 1.2rem;
+    }
+    table {
+      width: 100%;
+      margin: 18px 0 14px;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th, td {
+      padding: 13px 16px;
+      border: 1px solid var(--rule);
+      text-align: left;
+    }
+    th {
+      width: 45%;
+      background: #e8e3d8;
+      font-weight: 500;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+    .expense-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .expense-box {
+      padding: 20px;
+      border: 1px solid var(--rule);
+    }
+    .expense-box h3 {
+      margin: 0 0 10px;
+      color: #8a6d3b;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+    }
+    .expense-box ul { padding-left: 1.3em; }
+    .expense-box li { font-size: 0.82rem; line-height: 1.85; }
+    .signatures {
+      margin-top: 56px;
+      padding-top: 34px;
+      border-top: 2px solid var(--ink);
+    }
+    .signatures h2 {
+      padding: 0;
+      border: 0;
+      font-size: 1.2rem;
+    }
+    .date { margin: 22px 0 30px; }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .signature {
+      min-height: 190px;
+      padding: 20px;
+      border: 1px solid var(--rule);
+    }
+    .signature h3 {
+      margin: 0 0 18px;
+      font-size: 0.9rem;
+    }
+    .signature p { margin-bottom: 13px; }
+    @media (max-width: 700px) {
+      .document { padding: 42px 24px 54px; }
+      .parties, .expense-grid, .signature-grid { grid-template-columns: 1fr; }
+      .signature { min-height: 170px; }
+    }
+    @media print {
+      @page { size: A4; margin: 16mm; }
+      body { background: #fff; }
+      .topbar { display: none; }
+      .document {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        background: #fff;
+      }
+      .article, .appendix, .signatures, .expense-box, .signature {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="ページナビゲーション">
+    <a class="back" href="index.html">← BDX資料一覧</a>
+  </nav>
+
+  <main class="document">
+    <header class="doc-header">
+      <p class="version">Business Outsourcing Agreement · Ver.1.0</p>
+      <h1>BDX 業務委託契約書</h1>
+      <div class="parties">
+        <div class="party">
+          <span class="party-label">委託者（甲）</span>
+          進藤 聡允
+        </div>
+        <div class="party">
+          <span class="party-label">受託者（乙）</span>
+          __________________
+        </div>
+      </div>
+    </header>
+
+    <section class="article">
+      <h2>第1条（目的）</h2>
+      <p>本契約は、甲が運営する「BDX」において、乙がバレエ監修等の業務を行い、双方が協力してBDXの価値向上および事業の発展を目指すことを目的とする。</p>
+    </section>
+
+    <section class="article">
+      <h2>第2条（委託業務）</h2>
+      <ol>
+        <li>バレエプログラムの監修</li>
+        <li>コンテンツの監修</li>
+        <li>AI回答の監修</li>
+        <li>定例ミーティングへの参加</li>
+        <li>サービス改善に関する提案</li>
+        <li>その他双方が合意した業務</li>
+      </ol>
+    </section>
+
+    <section class="article">
+      <h2>第3条（契約期間）</h2>
+      <p>契約締結日から1年間。30日前までに申し出がない場合は1年間更新。</p>
+    </section>
+
+    <section class="article">
+      <h2>第4条（報酬）</h2>
+      <p>別紙「報酬規程」に定める。</p>
+    </section>
+
+    <section class="article">
+      <h2>第5条（支払方法）</h2>
+      <p>月末締め・翌月10日払い。振込手数料は甲が負担する。</p>
+    </section>
+
+    <section class="article">
+      <h2>第6条（経費）</h2>
+      <p>別紙「経費精算規程」に基づき甲が負担する。</p>
+    </section>
+
+    <section class="article">
+      <h2>第7条（知的財産権）</h2>
+      <p>成果物の知的財産権は原則として甲に帰属する。</p>
+    </section>
+
+    <section class="article">
+      <h2>第8条（肖像・氏名等の利用）</h2>
+      <p>契約期間中に制作した写真・動画・音声・氏名・プロフィール等の利用を許諾する。</p>
+    </section>
+
+    <section class="article">
+      <h2>第9条（秘密保持）</h2>
+      <p>知り得た秘密情報を第三者へ漏えいしてはならない。</p>
+    </section>
+
+    <section class="article">
+      <h2>第10条（禁止事項）</h2>
+      <p>機密情報漏えい等を禁止する。</p>
+    </section>
+
+    <section class="article">
+      <h2>第11条（契約解除）</h2>
+      <p>重大な契約違反等があった場合は解除できる。</p>
+    </section>
+
+    <section class="article">
+      <h2>第12条（協議事項）</h2>
+      <p>協議の上解決する。</p>
+    </section>
+
+    <section class="article">
+      <h2>第13条（合意管轄）</h2>
+      <p>甲の住所地を管轄する裁判所とする。</p>
+    </section>
+
+    <section class="appendix">
+      <h2>別紙1　報酬規程</h2>
+      <table>
+        <tr>
+          <th>項目</th>
+          <td>金額</td>
+        </tr>
+        <tr>
+          <th>監修費（月額）</th>
+          <td>60,000円</td>
+        </tr>
+      </table>
+      <p class="note">支払条件：月末締め・翌月10日払い・銀行振込・振込手数料は甲負担</p>
+    </section>
+
+    <section class="appendix">
+      <h2>別紙2　経費精算規程</h2>
+      <div class="expense-grid">
+        <div class="expense-box">
+          <h3>精算対象</h3>
+          <ul>
+            <li>交通費</li>
+            <li>撮影に必要な消耗品</li>
+            <li>撮影スタジオ利用料</li>
+            <li>書籍・教材</li>
+            <li>業務上必要な打ち合わせ費</li>
+            <li>BDXの撮影・出演・イベント等におけるブランドイメージ維持を目的として、甲が事前承認したネイル等の美容費</li>
+          </ul>
+        </div>
+        <div class="expense-box">
+          <h3>精算対象外</h3>
+          <ul>
+            <li>私的な飲食費</li>
+            <li>私的な旅行費</li>
+            <li>私的な買い物</li>
+            <li>業務と関連しない美容費</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="signatures">
+      <h2>署名欄</h2>
+      <p class="date">契約締結日：令和　　年　　月　　日</p>
+      <div class="signature-grid">
+        <div class="signature">
+          <h3>甲（委託者）</h3>
+          <p>氏名：進藤 聡允</p>
+          <p>住所：〒</p>
+          <p>署名：__________________</p>
+        </div>
+        <div class="signature">
+          <h3>乙（受託者）</h3>
+          <p>氏名：__________________</p>
+          <p>住所：〒</p>
+          <p>署名：__________________</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
