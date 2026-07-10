@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プロバレエダンサーの代謝抑制 | BDX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f0;
+      --paper: #ffffff;
+      --ink: #1f2328;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --accent: #7a4f24;
+      --accent-soft: #f3eadf;
+      --blue-soft: #eef4ff;
+      --blue: #315a9d;
+      --danger-soft: #fff1f0;
+      --danger: #a33b31;
+      --radius: 14px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(247,245,240,0.96)),
+        var(--bg);
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 72px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .back:hover { color: var(--accent); }
+
+    .hero {
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 18px 48px rgba(16,24,40,0.08);
+    }
+
+    .label {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 18px;
+      color: var(--ink);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .source {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .source strong { color: var(--ink); }
+
+    .summary {
+      margin-top: 22px;
+      padding: 22px;
+      border-left: 5px solid var(--accent);
+      border-radius: 10px;
+      background: var(--accent-soft);
+    }
+
+    .summary-title {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .summary p {
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .content {
+      display: grid;
+      gap: 22px;
+      margin-top: 26px;
+    }
+
+    section {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--line);
+      color: var(--ink);
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      line-height: 1.45;
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.95;
+    }
+
+    p + p { margin-top: 12px; }
+
+    ul {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 0.78em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .definition {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: 12px;
+      background: var(--blue-soft);
+    }
+
+    .formula {
+      padding: 18px;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--blue);
+      font-size: clamp(1.15rem, 4vw, 1.75rem);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .example {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .metric-label {
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .metric-value {
+      color: var(--ink);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .result-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .result-card.important {
+      border-color: rgba(163,59,49,0.24);
+      background: var(--danger-soft);
+    }
+
+    .result-number {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .result-title {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .stat-value {
+      display: block;
+      color: var(--danger);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .bdx-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .bdx-point {
+      padding: 18px 20px;
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      background: var(--blue-soft);
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .closing {
+      border-color: rgba(122,79,36,0.22);
+      background: linear-gradient(180deg, #fff, #fbf7f1);
+    }
+
+    footer {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .page { width: min(100% - 24px, 980px); padding: 26px 0 56px; }
+      .hero, section { padding: 24px; }
+      .example,
+      .results,
+      .stat-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="index.html">← BDX資料一覧へ戻る</a>
+
+    <header class="hero">
+      <span class="label">Research Summary / BDX</span>
+      <h1>プロバレエダンサーにおける代謝抑制</h1>
+      <p class="subtitle">この資料は、プロバレエダンサーにおける「代謝抑制（Metabolic Suppression）」の実態を調べた研究内容を、BDXの健康管理・コンディショニング視点で整理したものです。</p>
+      <p class="source"><strong>タイトル：</strong>Resting energy expenditure in professional dancers as an objective measure of low energy expenditure<br>BMJ Open Sport &amp; Exercise Medicine, 2026</p>
+      <div class="summary">
+        <p class="summary-title">一言でまとめると</p>
+        <p>見た目が痩せているか（BMI）ではなく、「安静時代謝」が落ちているかどうかがエネルギー不足（LEA）の重要なサインだった。</p>
+      </div>
+    </header>
+
+    <div class="content">
+      <section>
+        <h2>重要なポイント</h2>
+        <p>この研究の核心は、「細いから危険」ではなく、「身体が省エネモードになっているか」が重要という点です。</p>
+        <p>BMIだけで健康状態を判断すると、エネルギー不足に適応して代謝が下がっているダンサーを見落とす可能性があります。</p>
+      </section>
+
+      <section>
+        <h2>研究の目的</h2>
+        <p>プロバレエダンサーは、食事制限、ハードな練習、美しい体型へのプレッシャーにより、LEA（Low Energy Availability：利用可能エネルギー不足）になりやすいことが知られています。</p>
+        <p>LEAになると身体は、ホルモンを減らす、基礎代謝を落とす、骨を弱くするという「節約モード」に入ります。</p>
+        <p>この研究では、実際にどれくらい代謝抑制が起きているのかを測定しました。</p>
+      </section>
+
+      <section>
+        <h2>対象</h2>
+        <p>対象は47名のプロバレエダンサーです。</p>
+        <ul>
+          <li>女性27人</li>
+          <li>男性20人</li>
+          <li>シーズン中に安静時代謝、体組成、骨密度、月経状態、LEA質問票などを測定</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>代謝抑制とは？</h2>
+        <p>論文では、測定した安静時代謝を予測安静時代謝で割った数値が0.90未満の場合、Metabolic Suppression（代謝抑制）と定義しています。</p>
+        <div class="definition">
+          <div class="formula">測定した安静時代謝 ÷ 予測安静時代謝 &lt; 0.90</div>
+          <div class="example" aria-label="代謝抑制の計算例">
+            <div class="metric">
+              <p class="metric-label">予測</p>
+              <p class="metric-value">1800 kcal</p>
+            </div>
+            <div class="metric">
+              <p class="metric-label">実測</p>
+              <p class="metric-value">1550 kcal</p>
+            </div>
+            <div class="metric">
+              <p class="metric-label">判定</p>
+              <p class="metric-value">0.86</p>
+            </div>
+          </div>
+        </div>
+        <p>1550 ÷ 1800 = 0.86 のため、代謝抑制ありと判断されます。これは身体が「エネルギー不足だから節約しよう」と判断している状態です。</p>
+      </section>
+
+      <section>
+        <h2>主な結果</h2>
+        <div class="results">
+          <article class="result-card important">
+            <p class="result-number">結果 01</p>
+            <p class="result-title">代謝抑制は約4割に見られた</p>
+            <p>約4割ものダンサーが慢性的なエネルギー不足に適応していました。</p>
+            <div class="stat-row">
+              <div class="stat">
+                <span class="stat-value">37.5%</span>
+                <span class="stat-label">女性</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">46%</span>
+                <span class="stat-label">男性</span>
+              </div>
+            </div>
+          </article>
+          <article class="result-card important">
+            <p class="result-number">結果 02</p>
+            <p class="result-title">BMIでは分からない</p>
+            <p>BMIが正常でも、代謝抑制している人が多数いました。BMIだけではLEAを見抜けない、という点が最も重要な発見です。</p>
+          </article>
+          <article class="result-card">
+            <p class="result-number">結果 03</p>
+            <p class="result-title">女性では月経機能への影響が見られた</p>
+            <p>代謝抑制群では、月経異常や初経が遅いという特徴がありました。女性ホルモンへの影響が大きいことが確認されました。</p>
+          </article>
+          <article class="result-card">
+            <p class="result-number">結果 04</p>
+            <p class="result-title">男性でもLEAは珍しくない</p>
+            <p>男性の代謝抑制群では、体脂肪率が低いことが特徴でした。男性ダンサーにもLEAのリスクがあることが示されています。</p>
+          </article>
+          <article class="result-card">
+            <p class="result-number">結果 05</p>
+            <p class="result-title">骨への影響</p>
+            <p>代謝抑制群は骨密度も低い傾向がありました。疲労骨折や骨粗しょう症のリスク増加につながる可能性があります。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>著者の結論</h2>
+        <p>ダンサーの健康管理では、BMIだけでは不十分です。安静時代謝、月経、体脂肪率、骨密度を組み合わせて評価する必要があります。</p>
+        <ul>
+          <li>安静時代謝</li>
+          <li>月経</li>
+          <li>体脂肪率</li>
+          <li>骨密度</li>
+        </ul>
+      </section>
+
+      <section class="closing">
+        <h2>BDXとの関連</h2>
+        <p>この論文は、BDX（バレエ×AIフィットネス）と相性が良い内容です。特に重要なのは次の3点です。</p>
+        <div class="bdx-points">
+          <div class="bdx-point">「痩せている＝健康」ではないことをデータで示している。</div>
+          <div class="bdx-point">代謝抑制は外見からは分かりにくいため、BMIだけで健康状態を判断すべきではない。</div>
+          <div class="bdx-point">エネルギー不足は月経機能・骨の健康・パフォーマンスに影響するため、ダンサーのコンディショニングでは「食事・運動・回復」を総合的に管理する必要がある。</div>
+        </div>
+        <p>この研究は、「体重管理」ではなく「エネルギー利用可能性（Energy Availability）」を中心にダンサーの健康を考えるべきという、近年のREDs（Relative Energy Deficiency in Sport）の考え方を支持する内容と言えます。</p>
+      </section>
+    </div>
+
+    <footer>© 合同会社 nature · BDX</footer>
+  </main>
+</body>
+</html>
