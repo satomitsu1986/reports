@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>人生設計書（2026年版） | SAT's Database</title>
+  <title>人生設計 | SAT's Database</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -11,257 +11,171 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #0a0a0a;
-      --surface: #151515;
-      --surface-hi: #1d1b18;
-      --border: rgba(255,255,255,0.08);
-      --gold: #c9a96e;
-      --gold-soft: rgba(201,169,110,0.09);
-      --text-hi: #f2ede6;
-      --text-mid: #8c857a;
-      --text-lo: #464039;
-      --radius-lg: 12px;
-      --radius-sm: 8px;
+      --surface: #171717;
+      --surface-hi: #211f1d;
+      --line: rgba(255,255,255,0.09);
+      --gold: #d2ad6f;
+      --mint: #7ddfc3;
+      --coral: #ff8f70;
+      --violet: #a99bff;
+      --text: #f7f1e8;
+      --muted: #9a9186;
+      --low: #514a43;
+      --radius: 16px;
     }
     html {
       background: var(--bg);
-      color: var(--text-hi);
+      color: var(--text);
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
-      font-weight: 300;
       -webkit-font-smoothing: antialiased;
     }
     body {
       min-height: 100vh;
       background:
-        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(201,169,110,0.08), transparent 72%),
-        linear-gradient(180deg, #0a0a0a 0%, #0d0c0b 52%, #080808 100%);
+        radial-gradient(circle at 18% 12%, rgba(125,223,195,0.12), transparent 28%),
+        radial-gradient(circle at 80% 4%, rgba(255,143,112,0.12), transparent 26%),
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(210,173,111,0.08), transparent 72%),
+        linear-gradient(180deg, #0a0a0a 0%, #11100f 52%, #080808 100%);
     }
     .page {
-      width: min(960px, calc(100% - 32px));
+      width: min(980px, calc(100% - 32px));
       margin: 0 auto;
       padding: 84px 0 80px;
     }
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 22px;
-      color: var(--gold);
+      color: var(--mint);
       font-size: 10px;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      opacity: 0.72;
     }
-    .eyebrow::after {
+    .eyebrow::before {
       content: '';
-      width: 34px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.52;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--coral);
+      box-shadow: 18px 0 0 var(--gold);
     }
     h1 {
       margin-bottom: 18px;
       font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
-      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      font-size: clamp(2.6rem, 7vw, 4.9rem);
       font-weight: 300;
-      letter-spacing: 0.14em;
-      line-height: 1.08;
+      letter-spacing: 0.12em;
+      line-height: 1.05;
     }
     .lead {
       max-width: 680px;
-      margin-bottom: 46px;
-      color: var(--text-mid);
-      font-size: 0.9rem;
+      margin-bottom: 44px;
+      color: var(--muted);
+      font-size: 0.92rem;
       line-height: 2;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
     }
-    .document {
+    .list {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
-    .section {
-      padding: 28px 30px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, var(--surface-hi), var(--surface));
+    .doc-card {
+      min-height: 210px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.06), transparent 42%),
+        linear-gradient(180deg, var(--surface-hi), var(--surface));
+      color: inherit;
+      text-decoration: none;
       position: relative;
       overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
     }
-    .section::before {
+    .doc-card::before {
       content: '';
       position: absolute;
       inset: 0 0 auto;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.62;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mint), var(--gold), var(--coral));
+      opacity: 0.86;
     }
-    .section-label {
-      margin-bottom: 10px;
+    .doc-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(210,173,111,0.36);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.42);
+    }
+    .doc-label {
+      margin-bottom: 16px;
       color: var(--gold);
       font-size: 0.72rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      opacity: 0.72;
     }
-    h2 {
-      margin-bottom: 16px;
-      color: var(--text-hi);
-      font-size: clamp(1.1rem, 3vw, 1.45rem);
+    .doc-title {
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 1.18rem;
       font-weight: 400;
       letter-spacing: 0.08em;
-      line-height: 1.6;
+      line-height: 1.55;
     }
-    p {
-      color: var(--text-mid);
-      font-size: 0.95rem;
-      line-height: 2;
-      letter-spacing: 0.05em;
-    }
-    p + p { margin-top: 14px; }
-    .theme {
-      color: var(--text-hi);
-      font-size: clamp(1.25rem, 4vw, 2rem);
-      line-height: 1.65;
-      letter-spacing: 0.08em;
-    }
-    .notes {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .note {
-      padding: 16px 18px;
-      border: 1px solid rgba(201,169,110,0.18);
-      border-radius: var(--radius-sm);
-      background: var(--gold-soft);
-    }
-    .values {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .value {
-      padding: 20px;
-      border: 1px solid rgba(201,169,110,0.18);
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.03);
-    }
-    .value-title {
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-    }
-    .rules {
-      display: grid;
-      gap: 12px;
-      list-style: none;
-      counter-reset: rules;
-    }
-    .rules li {
-      counter-increment: rules;
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 18px;
-      border: 1px solid rgba(201,169,110,0.18);
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.03);
-      color: var(--text-mid);
-      font-size: 0.95rem;
+    .doc-desc {
+      color: var(--muted);
+      font-size: 0.88rem;
       line-height: 1.9;
       letter-spacing: 0.05em;
     }
-    .rules li::before {
-      content: counter(rules, decimal-leading-zero);
-      color: var(--gold);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      line-height: 1.2;
+    .doc-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--mint);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
     }
     footer {
       margin-top: 54px;
       padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--text-lo);
+      border-top: 1px solid var(--line);
+      color: var(--low);
       font-size: 10px;
       letter-spacing: 0.2em;
       text-align: center;
       text-transform: uppercase;
     }
     @media (max-width: 720px) {
-      .page { width: min(100% - 28px, 960px); padding: 56px 0 64px; }
-      .section { padding: 24px 22px; }
-      .values { grid-template-columns: 1fr; }
-      .rules li { grid-template-columns: 1fr; gap: 8px; }
+      .page { width: min(100% - 28px, 980px); padding: 56px 0 64px; }
+      .list { grid-template-columns: 1fr; }
+      .doc-card { min-height: auto; padding: 24px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <p class="eyebrow">Life Design</p>
-    <h1>人生設計書</h1>
-    <p class="lead">人生のテーマ、目的、価値観、在り方を整理した2026年版の設計書。</p>
+    <h1>人生設計</h1>
+    <p class="lead">人生の軸と日々の判断ルールを分けて管理するプロジェクト。</p>
 
-    <article class="document">
-      <section class="section">
-        <p class="section-label">Theme</p>
-        <h2>人生のテーマ</h2>
-        <p class="theme">自分にしかない価値を育て続ける挑戦の旅</p>
-      </section>
+    <section class="list" aria-label="人生設計資料一覧">
+      <a class="doc-card" href="plan.html">
+        <p class="doc-label">Life Plan · 2026</p>
+        <h2 class="doc-title">人生設計書（2026年版）</h2>
+        <p class="doc-desc">人生のテーマ、目的、価値観、在り方を整理した設計書。</p>
+        <span class="doc-action">Open Document →</span>
+      </a>
 
-      <section class="section">
-        <p class="section-label">Purpose</p>
-        <h2>人生の目的</h2>
-        <p>自分だけの価値を育て、他人や働く場所や時間に縛られず自由に生きる</p>
-        <div class="notes">
-          <div class="note">
-            <p>価値とは、他の人にはないスキル・才能・魅力であり、他者との関係性の中で役立つもの。</p>
-          </div>
-          <div class="note">
-            <p>自由とは、好きな時に好きなことを自由に選択できる状態であること。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <p class="section-label">Values</p>
-        <h2>価値観</h2>
-        <div class="values">
-          <div class="value">
-            <p class="value-title">自由</p>
-            <p>働く場所や時間や組織に縛られない</p>
-          </div>
-          <div class="value">
-            <p class="value-title">挑戦</p>
-            <p>昨日までの自分を超える</p>
-          </div>
-          <div class="value">
-            <p class="value-title">独自性</p>
-            <p>自分だけの道を歩む</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <p class="section-label">Being</p>
-        <h2>在り方</h2>
-        <p class="theme">必要な時に、支援したい人を支援する。</p>
-      </section>
-
-      <section class="section">
-        <p class="section-label">My Rules</p>
-        <h2>My ルール</h2>
-        <ol class="rules">
-          <li>悩んだら、20年後の自分はどう助言するかを考える。</li>
-          <li>人と関わる時は、勝手に解釈せず、相手の世界を教えてもらう。</li>
-          <li>何かを与えたくなったら、自分が与えたいものではなく、相手にとって価値あるものを与える。</li>
-          <li>関心の輪に意識が向いたら、影響の輪に意識を戻す。</li>
-          <li>感情に流されそうになったら、感情を観察し、価値観で行動を選ぶ。</li>
-        </ol>
-      </section>
-    </article>
+      <a class="doc-card" href="my-rules.html">
+        <p class="doc-label">My Rules</p>
+        <h2 class="doc-title">My ルール</h2>
+        <p class="doc-desc">迷った時、感情が動いた時、人と関わる時の判断基準。</p>
+        <span class="doc-action">Open Document →</span>
+      </a>
+    </section>
 
     <footer>© 合同会社 nature · SAT's Database</footer>
   </main>
