@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>人生設計書（2026年版） | SAT's Database</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #151515;
+      --surface-hi: #1d1b18;
+      --border: rgba(255,255,255,0.08);
+      --gold: #c9a96e;
+      --gold-soft: rgba(201,169,110,0.09);
+      --text-hi: #f2ede6;
+      --text-mid: #8c857a;
+      --text-lo: #464039;
+      --radius-lg: 12px;
+      --radius-sm: 8px;
+    }
+    html {
+      background: var(--bg);
+      color: var(--text-hi);
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(201,169,110,0.08), transparent 72%),
+        linear-gradient(180deg, #0a0a0a 0%, #0d0c0b 52%, #080808 100%);
+    }
+    .page {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 84px 0 80px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    .eyebrow::after {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.52;
+    }
+    h1 {
+      margin-bottom: 18px;
+      font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      line-height: 1.08;
+    }
+    .lead {
+      max-width: 680px;
+      margin-bottom: 46px;
+      color: var(--text-mid);
+      font-size: 0.9rem;
+      line-height: 2;
+      letter-spacing: 0.08em;
+    }
+    .document {
+      display: grid;
+      gap: 16px;
+    }
+    .section {
+      padding: 28px 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, var(--surface-hi), var(--surface));
+      position: relative;
+      overflow: hidden;
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.62;
+    }
+    .section-label {
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    h2 {
+      margin-bottom: 16px;
+      color: var(--text-hi);
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+    }
+    p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 2;
+      letter-spacing: 0.05em;
+    }
+    p + p { margin-top: 14px; }
+    .theme {
+      color: var(--text-hi);
+      font-size: clamp(1.25rem, 4vw, 2rem);
+      line-height: 1.65;
+      letter-spacing: 0.08em;
+    }
+    .notes {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .note {
+      padding: 16px 18px;
+      border: 1px solid rgba(201,169,110,0.18);
+      border-radius: var(--radius-sm);
+      background: var(--gold-soft);
+    }
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .value {
+      padding: 20px;
+      border: 1px solid rgba(201,169,110,0.18);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.03);
+    }
+    .value-title {
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+    }
+    footer {
+      margin-top: 54px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-lo);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    @media (max-width: 720px) {
+      .page { width: min(100% - 28px, 960px); padding: 56px 0 64px; }
+      .section { padding: 24px 22px; }
+      .values { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Life Design</p>
+    <h1>人生設計書</h1>
+    <p class="lead">人生のテーマ、目的、価値観、在り方を整理した2026年版の設計書。</p>
+
+    <article class="document">
+      <section class="section">
+        <p class="section-label">Theme</p>
+        <h2>人生のテーマ</h2>
+        <p class="theme">自分にしかない価値を育て続ける挑戦の旅</p>
+      </section>
+
+      <section class="section">
+        <p class="section-label">Purpose</p>
+        <h2>人生の目的</h2>
+        <p>自分だけの価値を育て、他人や働く場所や時間に縛られず自由に生きる</p>
+        <div class="notes">
+          <div class="note">
+            <p>価値とは、他の人にはないスキル・才能・魅力であり、他者との関係性の中で役立つもの。</p>
+          </div>
+          <div class="note">
+            <p>自由とは、好きな時に好きなことを自由に選択できる状態であること。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">Values</p>
+        <h2>価値観</h2>
+        <div class="values">
+          <div class="value">
+            <p class="value-title">自由</p>
+            <p>働く場所や時間や組織に縛られない</p>
+          </div>
+          <div class="value">
+            <p class="value-title">挑戦</p>
+            <p>昨日までの自分を超える</p>
+          </div>
+          <div class="value">
+            <p class="value-title">独自性</p>
+            <p>自分だけの道を歩む</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">Being</p>
+        <h2>在り方</h2>
+        <p class="theme">必要な時に、支援したい人を支援する。</p>
+      </section>
+    </article>
+
+    <footer>© 合同会社 nature · SAT's Database</footer>
+  </main>
+</body>
+</html>
