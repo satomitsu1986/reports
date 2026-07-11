@@ -152,6 +152,34 @@
       font-weight: 400;
       letter-spacing: 0.12em;
     }
+    .rules {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      counter-reset: rules;
+    }
+    .rules li {
+      counter-increment: rules;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid rgba(201,169,110,0.18);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.03);
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      letter-spacing: 0.05em;
+    }
+    .rules li::before {
+      content: counter(rules, decimal-leading-zero);
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
     footer {
       margin-top: 54px;
       padding-top: 24px;
@@ -166,6 +194,7 @@
       .page { width: min(100% - 28px, 960px); padding: 56px 0 64px; }
       .section { padding: 24px 22px; }
       .values { grid-template-columns: 1fr; }
+      .rules li { grid-template-columns: 1fr; gap: 8px; }
     }
   </style>
 </head>
@@ -219,6 +248,18 @@
         <p class="section-label">Being</p>
         <h2>在り方</h2>
         <p class="theme">必要な時に、支援したい人を支援する。</p>
+      </section>
+
+      <section class="section">
+        <p class="section-label">My Rules</p>
+        <h2>My ルール</h2>
+        <ol class="rules">
+          <li>悩んだら、20年後の自分はどう助言するかを考える。</li>
+          <li>人と関わる時は、勝手に解釈せず、相手の世界を教えてもらう。</li>
+          <li>何かを与えたくなったら、自分が与えたいものではなく、相手にとって価値あるものを与える。</li>
+          <li>関心の輪に意識が向いたら、影響の輪に意識を戻す。</li>
+          <li>感情に流されそうになったら、感情を観察し、価値観で行動を選ぶ。</li>
+        </ol>
       </section>
     </article>
 
