@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SATOMITSU REPORTS</title>
+  <title>SAT's Database</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -99,15 +99,63 @@
       padding: 0 32px 100px;
     }
 
-    .grid {
+    .catalog {
       max-width: 1040px;
       margin: 0 auto;
+      display: grid;
+      gap: 42px;
+    }
+
+    .category {
+      display: grid;
+      gap: 18px;
+    }
+
+    .category-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      opacity: 0.72;
+      margin-bottom: 8px;
+    }
+
+    .category-title {
+      color: var(--text-hi);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+
+    .category-desc {
+      max-width: 420px;
+      color: var(--text-mid);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.76rem;
+      line-height: 1.8;
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
     .biz-card {
+      display: block;
+      min-height: 100%;
       background: linear-gradient(180deg, var(--surface-hi), var(--surface));
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
@@ -116,6 +164,8 @@
       overflow: hidden;
       opacity: 0;
       transform: translateY(18px);
+      color: inherit;
+      text-decoration: none;
       transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
     }
 
@@ -193,7 +243,7 @@
       position: relative;
       z-index: 1;
       min-height: 3.5em;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       color: var(--text-mid);
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.78rem;
@@ -201,74 +251,29 @@
       letter-spacing: 0.05em;
     }
 
-    .biz-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .biz-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      min-height: 42px;
-      padding: 10px 12px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.2s;
-    }
-
-    .biz-link:hover { background: rgba(255,255,255,0.05); }
-
-    .biz-link-left {
-      display: flex;
+    .biz-action {
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      min-width: 0;
-    }
-
-    .biz-link-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-lo);
-      flex-shrink: 0;
-      transition: background 0.2s;
-    }
-
-    .biz-link:hover .biz-link-dot { background: var(--gold); }
-
-    .biz-link-text {
-      color: var(--text-hi);
-      opacity: 0.72;
+      position: relative;
+      z-index: 1;
+      color: var(--gold);
       font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.81rem;
-      letter-spacing: 0.06em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transition: opacity 0.2s;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      opacity: 0.72;
+      transition: opacity 0.2s, transform 0.2s;
     }
 
-    .biz-link:hover .biz-link-text { opacity: 1; }
+    .biz-card:hover .biz-action {
+      opacity: 1;
+      transform: translateX(2px);
+    }
 
-    .biz-link-arrow {
+    .biz-action svg {
       width: 13px;
       height: 13px;
-      color: var(--gold);
-      opacity: 0;
-      transform: translate(-3px, 3px);
-      transition: opacity 0.2s, transform 0.2s;
       flex-shrink: 0;
-    }
-
-    .biz-link:hover .biz-link-arrow {
-      opacity: 0.68;
-      transform: translate(0, 0);
     }
 
     footer {
@@ -287,6 +292,15 @@
     @media (max-width: 720px) {
       header { padding: 64px 20px 52px; }
       main { padding: 0 16px 80px; }
+      .category-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .category-desc {
+        max-width: none;
+        text-align: left;
+      }
       .grid { grid-template-columns: 1fr; gap: 14px; }
       .biz-card { padding: 28px 22px 24px; }
       .biz-summary { min-height: auto; }
@@ -295,120 +309,94 @@
     @media (prefers-reduced-motion: reduce) {
       .biz-card { opacity: 1; transform: none; animation: none; }
       .biz-card, .biz-card::before, .biz-card::after,
-      .biz-link, .biz-link-dot, .biz-link-text, .biz-link-arrow { transition: none; }
+      .biz-action { transition: none; }
     }
   </style>
 </head>
 <body>
   <header>
     <p class="header-eyebrow">Document Portal</p>
-    <h1>SATOMITSU REPORTS</h1>
-    <p class="header-sub">事業資料・提案資料・戦略資料ポータル</p>
+    <h1>SAT's Database</h1>
+    <p class="header-sub">事業資料・提案資料・研究資料データベース</p>
     <div class="header-rule"></div>
   </header>
 
   <main>
-    <div class="grid">
-      <article class="biz-card">
-        <div class="biz-header">
-          <div class="biz-icon">📈</div>
+    <div class="catalog">
+      <section class="category" aria-labelledby="client-work">
+        <div class="category-head">
           <div>
-            <p class="biz-label">Beauty Salon</p>
-            <p class="biz-name">美容室</p>
+            <p class="category-label">Client Work</p>
+            <h2 class="category-title" id="client-work">クライアント / 店舗プロジェクト</h2>
           </div>
+          <p class="category-desc">提案資料、改善資料、コンセプト資料など、外部向け・店舗向けの資料群。</p>
         </div>
-        <p class="biz-summary">クーポン設計、価格改定、集客改善に関する美容室向け資料。</p>
-        <div class="biz-links">
-          <a class="biz-link" href="salon/">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">美容室資料一覧</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="grid">
+          <a class="biz-card" href="salon/">
+            <div class="biz-header">
+              <div class="biz-icon">📈</div>
+              <div>
+                <p class="biz-label">Beauty Salon</p>
+                <p class="biz-name">美容室</p>
+              </div>
+            </div>
+            <p class="biz-summary">クーポン設計、価格改定、集客改善に関する美容室向け資料。</p>
+            <span class="biz-action">Open Project <svg viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
-          <a class="biz-link" href="salon/coupon-proposal.html">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">クーポン改善提案</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="biz-link" href="salon/coupon-revision-detail.html">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">クーポン改定詳細</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </article>
 
-      <article class="biz-card">
-        <div class="biz-header">
-          <div class="biz-icon">☕</div>
-          <div>
-            <p class="biz-label">Cafe Concept</p>
-            <p class="biz-name">カフェ</p>
-          </div>
-        </div>
-        <p class="biz-summary">夢に挑戦する人を応援するカフェ構想のコンセプト資料。</p>
-        <div class="biz-links">
-          <a class="biz-link" href="cafe/">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">カフェ資料一覧</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="biz-link" href="cafe/visual-book.html">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">ビジュアルブック</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="biz-link" href="#">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">事業計画</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a class="biz-card" href="cafe/">
+            <div class="biz-header">
+              <div class="biz-icon">☕</div>
+              <div>
+                <p class="biz-label">Cafe Concept</p>
+                <p class="biz-name">カフェ</p>
+              </div>
+            </div>
+            <p class="biz-summary">夢に挑戦する人を応援するカフェ構想のコンセプト資料。</p>
+            <span class="biz-action">Open Project <svg viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
-      </article>
+      </section>
 
-      <article class="biz-card">
-        <div class="biz-header">
-          <div class="biz-icon">🩰</div>
+      <section class="category" aria-labelledby="owned-platforms">
+        <div class="category-head">
           <div>
-            <p class="biz-label">Ballet Dance Fitness</p>
-            <p class="biz-name">BDX</p>
+            <p class="category-label">Owned Platforms</p>
+            <h2 class="category-title" id="owned-platforms">自社事業 / プロダクト</h2>
           </div>
+          <p class="category-desc">自社で育成・検証している事業、契約、研究、戦略資料をまとめたプロジェクト群。</p>
         </div>
-        <p class="biz-summary">バレエ・ダンス・AIフィットネス領域の構想資料。</p>
-        <div class="biz-links">
-          <a class="biz-link" href="bdx/outsourcing-agreement.html">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">BDX 業務委託契約書</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="grid">
+          <a class="biz-card" href="bdx/">
+            <div class="biz-header">
+              <div class="biz-icon">🩰</div>
+              <div>
+                <p class="biz-label">Ballet Dance Fitness</p>
+                <p class="biz-name">BDX</p>
+              </div>
+            </div>
+            <p class="biz-summary">バレエ・ダンス・AIフィットネス領域の契約書、研究要約、構想資料。</p>
+            <span class="biz-action">Open Project <svg viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
-          <a class="biz-link" href="bdx/metabolic-suppression.html">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">プロバレエダンサーの代謝抑制</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="biz-link" href="#">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">事業計画</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </article>
 
-      <article class="biz-card">
-        <div class="biz-header">
-          <div class="biz-icon">🚀</div>
-          <div>
-            <p class="biz-label">AI Side Business</p>
-            <p class="biz-name">複業.Lab</p>
-          </div>
-        </div>
-        <p class="biz-summary">AIを活用した複業支援サービスの検討資料。</p>
-        <div class="biz-links">
-          <a class="biz-link" href="fukugyo/">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">複業.Lab 事業計画書</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="biz-link" href="#">
-            <div class="biz-link-left"><span class="biz-link-dot"></span><span class="biz-link-text">サービス概要</span></div>
-            <svg class="biz-link-arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a class="biz-card" href="fukugyo/">
+            <div class="biz-header">
+              <div class="biz-icon">🚀</div>
+              <div>
+                <p class="biz-label">AI Side Business</p>
+                <p class="biz-name">複業.Lab</p>
+              </div>
+            </div>
+            <p class="biz-summary">AIを活用した複業支援サービスの事業計画・検討資料。</p>
+            <span class="biz-action">Open Project <svg viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
-      </article>
+      </section>
     </div>
   </main>
 
   <footer>
-    <p>© 合同会社 nature &nbsp;·&nbsp; SATOMITSU REPORTS</p>
+    <p>© 合同会社 nature &nbsp;·&nbsp; SAT's Database</p>
   </footer>
 
   <script>
