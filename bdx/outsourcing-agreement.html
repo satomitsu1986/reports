@@ -28,23 +28,9 @@
         #0a0a0a;
       -webkit-font-smoothing: antialiased;
     }
-    .topbar {
-      width: min(880px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 34px 0 24px;
-    }
-    .back {
-      color: #938a7d;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .back:hover { color: var(--gold); }
     .document {
       width: min(880px, calc(100% - 32px));
-      margin: 0 auto 72px;
+      margin: 48px auto 72px;
       padding: 72px 82px 82px;
       background: var(--paper);
       border-top: 3px solid var(--gold);
@@ -193,7 +179,6 @@
     @media print {
       @page { size: A4; margin: 16mm; }
       body { background: #fff; }
-      .topbar { display: none; }
       .document {
         width: auto;
         margin: 0;
@@ -209,10 +194,6 @@
   </style>
 </head>
 <body>
-  <nav class="topbar" aria-label="ページナビゲーション">
-    <a class="back" href="../index.html">← SATOMITSU REPORTS</a>
-  </nav>
-
   <main class="document">
     <header class="doc-header">
       <p class="version">Business Outsourcing Agreement · Ver.1.0</p>

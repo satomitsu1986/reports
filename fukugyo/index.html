@@ -46,18 +46,6 @@
       margin: 0 auto;
       padding: 84px 0 80px;
     }
-    .back {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 44px;
-      color: var(--text-mid);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .back:hover { color: var(--gold); }
     .hero {
       margin-bottom: 42px;
     }
@@ -317,7 +305,6 @@
     }
     @media (max-width: 720px) {
       .page { width: min(100% - 28px, 1040px); padding: 56px 0 64px; }
-      .back { margin-bottom: 34px; }
       .value-grid,
       .service-grid,
       .phase-grid,
@@ -330,15 +317,13 @@
     @media print {
       body { background: #fff; }
       .page { width: 100%; padding: 0; }
-      .back, .hero, footer { display: none; }
+      .hero, footer { display: none; }
       .document { box-shadow: none; border: 0; border-radius: 0; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <a class="back" href="../index.html">← SATOMITSU REPORTS</a>
-
     <header class="hero">
       <p class="eyebrow">AI Side Business</p>
       <h1>複業.Lab 事業計画書</h1>
