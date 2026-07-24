@@ -501,6 +501,368 @@
       font-weight: 600;
     }
 
+    .signal-grid,
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .signal-card,
+    .skill-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8faf9;
+    }
+
+    .signal-card:nth-child(2),
+    .skill-card:nth-child(2) {
+      background: var(--orange-soft);
+    }
+
+    .signal-card:nth-child(3),
+    .skill-card:nth-child(3) {
+      background: var(--yellow-soft);
+    }
+
+    .signal-card:nth-child(4),
+    .skill-card:nth-child(4) {
+      background: var(--green-soft);
+    }
+
+    .signal-card span,
+    .skill-card span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--orange);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .signal-card h3,
+    .skill-card h3 {
+      margin-bottom: 10px;
+      color: var(--green-dark);
+      font-size: 1.12rem;
+      line-height: 1.55;
+    }
+
+    .signal-card p,
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.85;
+    }
+
+    .body-copy {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    .body-copy + .body-copy {
+      margin-top: 12px;
+    }
+
+    .hunger-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .hunger-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .hunger-card h3 {
+      padding: 18px 22px;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .hunger-card.emotional h3 {
+      background: #a94f2d;
+    }
+
+    .hunger-card ul {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      list-style: none;
+    }
+
+    .hunger-card li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .hunger-card li::before {
+      content: '';
+      position: absolute;
+      top: 0.68em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .hunger-card.emotional li::before {
+      background: var(--orange);
+    }
+
+    .check-questions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+      list-style: none;
+      counter-reset: question;
+    }
+
+    .check-questions li {
+      counter-increment: question;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--green-dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .check-questions li::before {
+      content: '0' counter(question);
+      display: block;
+      margin-bottom: 10px;
+      color: var(--orange);
+      font-size: 0.72rem;
+    }
+
+    .choice-example {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--green);
+      background: rgba(255,255,255,0.72);
+      color: var(--green-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .urge-steps {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+      list-style: none;
+      counter-reset: urge;
+    }
+
+    .urge-steps li {
+      counter-increment: urge;
+      position: relative;
+      padding-left: 34px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .urge-steps li::before {
+      content: counter(urge);
+      position: absolute;
+      top: 0.08em;
+      left: 0;
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .five-second {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .five-second article {
+      min-height: 180px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+    }
+
+    .five-second article:nth-child(2) { background: #176b52; }
+    .five-second article:nth-child(3) { background: #b95730; }
+    .five-second article:nth-child(4) { background: #775f15; }
+
+    .five-second span {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--lime);
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .five-second h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .five-second p {
+      color: rgba(255,255,255,0.76);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    .trigger-note {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 20px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8faf9;
+    }
+
+    .trigger-note div {
+      min-height: 74px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trigger-note span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .trigger-note p {
+      color: #97a39d;
+      font-size: 0.9rem;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .day-card {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8faf9;
+    }
+
+    .day-card:last-child {
+      grid-column: 1 / -1;
+      background: var(--green-soft);
+    }
+
+    .day {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .day-card h3 {
+      margin-bottom: 7px;
+      color: var(--green-dark);
+      font-size: 1rem;
+    }
+
+    .day-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .takeaway-grid div {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius);
+      text-align: left;
+    }
+
+    .takeaway-grid strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--lime);
+      font-size: 0.9rem;
+    }
+
+    .takeaway-grid span {
+      color: rgba(255,255,255,0.74);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .references {
+      margin-top: 22px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .references h2 {
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .references ol {
+      display: grid;
+      gap: 8px;
+      padding-left: 20px;
+    }
+
+    .references li,
+    .health-note {
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.75;
+    }
+
+    .health-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
     .final-message {
       margin-top: 22px;
       padding: clamp(34px, 7vw, 64px);
@@ -517,7 +879,7 @@
       text-transform: uppercase;
     }
 
-    .final-message p:last-child {
+    .final-message .final-copy {
       max-width: 800px;
       margin: 18px auto 0;
       font-size: clamp(1.5rem, 4vw, 2.6rem);
@@ -573,8 +935,29 @@
 
       .scenario-grid,
       .direction,
-      .production-list {
+      .production-list,
+      .signal-grid,
+      .skill-grid,
+      .hunger-grid,
+      .week-grid,
+      .takeaway-grid {
         grid-template-columns: 1fr;
+      }
+
+      .check-questions {
+        grid-template-columns: 1fr;
+      }
+
+      .five-second {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trigger-note {
+        grid-template-columns: 1fr;
+      }
+
+      .day-card:last-child {
+        grid-column: auto;
       }
 
       .chapter {
@@ -621,6 +1004,12 @@
         font-weight: 700;
       }
     }
+
+    @media (max-width: 480px) {
+      .five-second {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -633,34 +1022,48 @@
       </div>
     </header>
 
-    <section class="intro" aria-label="資料の前提">
+    <section class="intro" aria-label="はじめに">
       <div class="intro-title">
-        <span class="kicker">Who BDX is for</span>
-        <h2>BDXは、最高の体調を手に入れたい一般の方のためのサービスです。</h2>
+        <span class="kicker">First Step</span>
+        <h2>「分かっているのにできない」は、意志が弱いからではない。</h2>
       </div>
       <div class="intro-copy">
-        <p>この資料が扱うのは、ダンサー特有の食事管理ではありません。日々の疲労、睡眠、ストレス、仕事や生活環境まで含めて、<strong>意志力に頼らず、体調と目的に合わせて食行動を整える方法</strong>を設計します。</p>
+        <p>栄養の知識があっても、疲れている夜やストレスの強い日は、いつもの選択が難しくなります。食行動は知識だけでなく、<strong>空腹・睡眠・感情・環境</strong>から影響を受けるからです。</p>
+        <p>必要なのは、自分を責めることではありません。今の状態に気づき、次の行動を選び直すためのスキルです。</p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <p class="section-number">01 / DAILY LIFE</p>
+        <p class="section-number">01 / WHY</p>
         <div>
-          <h2>食欲は、日常のさまざまな場面で揺れる</h2>
-          <p class="section-lead">体脂肪を落とすことだけを目的にせず、食欲・睡眠・疲労・集中力・回復を含めた体調管理として捉えます。</p>
+          <h2>食行動は、意志だけでは決まらない</h2>
+          <p class="section-lead">食べたくなった瞬間には、身体と環境から複数の信号が届いています。</p>
         </div>
       </div>
 
-      <ul class="scenario-grid">
-        <li>仕事帰りのコンビニ</li>
-        <li>睡眠不足の日の甘いもの</li>
-        <li>ストレスによるドカ食い</li>
-        <li>飲み会後の食欲</li>
-        <li>在宅勤務中の間食</li>
-        <li>運動後の「ご褒美食い」</li>
-        <li>休日の生活リズムの乱れ</li>
-      </ul>
+      <div class="signal-grid">
+        <article class="signal-card">
+          <span>01</span>
+          <h3>エネルギー不足</h3>
+          <p>食事の間隔が空いたり、活動量が多かったりすると、身体はエネルギーを求めます。これは我慢すべき失敗ではなく、必要な補給を知らせる信号です。</p>
+        </article>
+        <article class="signal-card">
+          <span>02</span>
+          <h3>睡眠不足・疲労</h3>
+          <p>睡眠が不足した日は、空腹感や高脂肪食品への欲求、間食が増える場合があります。食欲だけでなく、まず休息が必要かもしれません。</p>
+        </article>
+        <article class="signal-card">
+          <span>03</span>
+          <h3>ストレス・感情</h3>
+          <p>不安、退屈、達成感のなさを変えるために、食べる行動が選ばれることがあります。欲しいのは食べ物ではなく、安心や切り替えかもしれません。</p>
+        </article>
+        <article class="signal-card">
+          <span>04</span>
+          <h3>目の前の環境</h3>
+          <p>見える場所にある、すぐ手に取れる、いつも同じ場面で食べる。こうした環境は、空腹でなくても行動を自動的に始めやすくします。</p>
+        </article>
+      </div>
     </section>
 
     <section class="section">
@@ -680,7 +1083,7 @@
       <div class="explanation">
         <div class="explanation-card">
           <h3>「食べない技術」ではない</h3>
-          <p>疲れている日に空腹を無視するのではなく、身体からのサインを分けて考え、回復につながる選択をする技術です。</p>
+          <p>空腹を無視するのではなく、身体からのサインを分けて考え、回復につながる選択をする技術です。</p>
           <ul class="question-list">
             <li>本当にエネルギー不足なのか</li>
             <li>ストレス反応なのか</li>
@@ -702,67 +1105,109 @@
 
     <section class="section">
       <div class="section-head">
-        <p class="section-number">03 / STRUCTURE</p>
+        <p class="section-number">03 / NOTICE</p>
         <div>
-          <h2>全20枚の資料構成</h2>
-          <p class="section-lead">理解から実践へ進めるように、4章で設計します。</p>
+          <h2>本当の空腹と、感情的な食欲を見分ける</h2>
+          <p class="section-lead">どちらが良い・悪いではありません。今起きていることを見分けると、必要な行動を選びやすくなります。</p>
         </div>
       </div>
 
-      <div class="chapter-list">
-        <article class="chapter">
-          <div class="chapter-title">
-            <span>CHAPTER 1 · 01-05</span>
-            <h3>なぜ「分かっているのにできない」のか</h3>
-          </div>
-          <ol class="slides">
-            <li>タイトル</li>
-            <li>栄養知識だけでは体調は整わない</li>
-            <li>食行動は意志だけで決まらない</li>
-            <li>疲労・空腹・ストレス・環境の影響</li>
-            <li>自己制御は才能ではなくスキル</li>
-          </ol>
+      <div class="hunger-grid">
+        <article class="hunger-card">
+          <h3>身体的な空腹のサイン</h3>
+          <ul>
+            <li>時間とともに少しずつ強くなる</li>
+            <li>特定の食品以外でも満たせる</li>
+            <li>胃の感覚や力が出ない感覚がある</li>
+            <li>適量を食べると落ち着きやすい</li>
+          </ul>
         </article>
-
-        <article class="chapter">
-          <div class="chapter-title">
-            <span>CHAPTER 2 · 06-10</span>
-            <h3>自己制御の正体</h3>
-          </div>
-          <ol class="slides">
-            <li>自己制御とは我慢ではない</li>
-            <li>短期的な快楽と長期的な目的</li>
-            <li>本当の空腹と感情的な食欲</li>
-            <li>禁止思考が反動を生む理由</li>
-            <li>BDX式「選び直す力」</li>
-          </ol>
+        <article class="hunger-card emotional">
+          <h3>感情・環境による食欲のサイン</h3>
+          <ul>
+            <li>突然、強く食べたくなる</li>
+            <li>特定の味や食品だけが欲しくなる</li>
+            <li>ストレスや退屈の直後に起きる</li>
+            <li>満腹でも食べ続けたくなる</li>
+          </ul>
         </article>
+      </div>
 
-        <article class="chapter">
-          <div class="chapter-title">
-            <span>CHAPTER 3 · 11-16</span>
-            <h3>4つの実践スキル</h3>
-          </div>
-          <ol class="slides">
-            <li>目的に置き換える</li>
-            <li>禁止ではなく選択で考える</li>
-            <li>NG例・OK例</li>
-            <li>他人に助言するように考える</li>
-            <li>環境から誘惑を減らす</li>
-            <li>欲望を実況する</li>
-          </ol>
+      <ol class="check-questions">
+        <li>最後に食べたのはいつ？</li>
+        <li>今の空腹は0〜10でどれくらい？</li>
+        <li>食べ物以外で必要なものはある？</li>
+      </ol>
+      <p class="body-copy" style="margin-top: 18px;">身体的な空腹と感情的な食欲は、同時に起こることもあります。完全に分類することではなく、一度立ち止まって観察することが目的です。</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">04 / REFRAME</p>
+        <div>
+          <h2>禁止は、かえって食べ物への意識を強くする</h2>
+          <p class="section-lead">「絶対に食べない」と決めるほど、その食品ばかりが気になり、食べた瞬間に「もう失敗した」と考えやすくなります。</p>
+        </div>
+      </div>
+
+      <p class="body-copy">一度食べたことを失敗にせず、その場で選び直せる余白を残します。食べすぎた翌日に極端な制限をすると、空腹と反動の循環が続きやすくなります。次の食事から普段のリズムへ戻すことが、長期的な安定につながります。</p>
+
+      <div class="direction" style="margin-top: 22px;">
+        <div class="direction-item">
+          <strong>禁止しない</strong>
+          <p>「食べてはいけない」ではなく、量・タイミング・組み合わせを選ぶ。</p>
+        </div>
+        <div class="direction-item">
+          <strong>一回で評価しない</strong>
+          <p>一度の食事ではなく、数日から数週間の流れで体調を見る。</p>
+        </div>
+        <div class="direction-item">
+          <strong>罰を与えない</strong>
+          <p>食べすぎた翌日も絶食せず、普段の食事と生活リズムへ戻す。</p>
+        </div>
+        <div class="direction-item">
+          <strong>次を選び直す</strong>
+          <p>過去の選択は変えられなくても、次の一食・一行動は選べる。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">05 / SKILLS</p>
+        <div>
+          <h2>食欲に振り回されないための4つのスキル</h2>
+          <p class="section-lead">我慢を強くするのではなく、考え方と環境を整えます。</p>
+        </div>
+      </div>
+
+      <div class="skill-grid">
+        <article class="skill-card">
+          <span>SKILL 01</span>
+          <h3>目的に置き換える</h3>
+          <p>「太りたくない」ではなく、「明日の朝を軽くしたい」「午後も集中したい」のように、手に入れたい体調を言葉にします。</p>
+          <div class="choice-example">問い：このあと、どんな状態でいたい？</div>
         </article>
-
-        <article class="chapter">
-          <div class="chapter-title">
-            <span>CHAPTER 4 · 17-20</span>
-            <h3>日常で使う</h3>
-          </div>
-          <ol class="slides">
-            <li>食べる前の5秒チェック</li>
-            <li>自分の食欲トリガーを知る</li>
-            <li>7日間の実践ワーク</li>
-            <li>まとめ</li>
+        <article class="skill-card">
+          <span>SKILL 02</span>
+          <h3>禁止ではなく選択で考える</h3>
+          <p>食べる・食べないの二択にせず、量を変える、別の食品を足す、少し待つなど、複数の選択肢を持ちます。</p>
+          <div class="choice-example">問い：今選べる方法は、ほかに何がある？</div>
+        </article>
+        <article class="skill-card">
+          <span>SKILL 03</span>
+          <h3>大切な人に助言するように考える</h3>
+          <p>自分を責め始めたら、同じ状況の友人へ何と伝えるかを考えます。距離を取ると、極端ではない判断がしやすくなります。</p>
+          <div class="choice-example">問い：大切な人なら、どう支える？</div>
+        </article>
+        <article class="skill-card">
+          <span>SKILL 04</span>
+          <h3>環境を変え、欲望を実況する</h3>
+          <p>食べ物を見えない場所へ移し、先に選択肢を用意します。それでも欲しくなったら、欲求を消そうとせず言葉にします。</p>
+          <ol class="urge-steps">
+            <li>「今、甘いものが欲しい。強さは8/10」</li>
+            <li>「睡眠不足で、仕事の疲れもある」</li>
+            <li>水分を取り、数分後にもう一度選ぶ</li>
           </ol>
         </article>
       </div>
@@ -770,14 +1215,14 @@
 
     <section class="section">
       <div class="section-head">
-        <p class="section-number">04 / REFRAME</p>
+        <p class="section-number">06 / CHOICE</p>
         <div>
-          <h2>禁止思考から、選択思考へ</h2>
-          <p class="section-lead">「食べてはいけない」ではなく、「何のために、何を選ぶか」へ問いを変えます。</p>
+          <h2>目的に沿った言葉へ置き換える</h2>
+          <p class="section-lead">「我慢できたか」ではなく、「今の体調と目的に合う選択だったか」で考えます。</p>
         </div>
       </div>
 
-      <div class="comparison" role="table" aria-label="一般人向けNG・OK例">
+      <div class="comparison" role="table" aria-label="禁止思考とBDX式選択思考の比較">
         <div class="comparison-head" role="row">
           <div role="columnheader">NG思考</div>
           <div role="columnheader">BDX式の選択思考</div>
@@ -811,57 +1256,125 @@
 
     <section class="section">
       <div class="section-head">
-        <p class="section-number">05 / SCOPE</p>
+        <p class="section-number">07 / FIVE SECONDS</p>
         <div>
-          <h2>BDXらしさを保つための編集方針</h2>
-          <p class="section-lead">ダンサーや競技者を前提にした表現は主題から外し、必要な場合のみ科学的背景として補助的に扱います。</p>
+          <h2>食べる前の5秒チェック</h2>
+          <p class="section-lead">正解を出す必要はありません。自動的に食べる前に、4つだけ確認します。</p>
         </div>
       </div>
 
-      <div class="direction">
-        <div class="direction-item">
-          <strong>公演前・レッスン後の事例</strong>
-          <p>仕事帰り、在宅勤務、飲み会後など、一般の方が経験する場面へ置き換える。</p>
-        </div>
-        <div class="direction-item">
-          <strong>バレエ特有の身体管理</strong>
-          <p>睡眠、疲労、集中力、回復を含む日常のコンディショニングへ広げる。</p>
-        </div>
-        <div class="direction-item">
-          <strong>ダンサー前提のREDs説明</strong>
-          <p>過度なエネルギー不足の注意点として、必要な範囲で補助的に扱う。</p>
-        </div>
-        <div class="direction-item">
-          <strong>競技パフォーマンス中心の表現</strong>
-          <p>仕事、運動、休養を含めた「最高の体調」という生活者視点へ変更する。</p>
-        </div>
+      <div class="five-second">
+        <article>
+          <span>01 · STATE</span>
+          <h3>今の状態は？</h3>
+          <p>睡眠、疲労、ストレス、気分を短く確認する。</p>
+        </article>
+        <article>
+          <span>02 · HUNGER</span>
+          <h3>空腹は何点？</h3>
+          <p>身体的な空腹を0〜10で数字にする。</p>
+        </article>
+        <article>
+          <span>03 · PURPOSE</span>
+          <h3>どうなりたい？</h3>
+          <p>食べた後や明日の自分に欲しい状態を考える。</p>
+        </article>
+        <article>
+          <span>04 · CHOICE</span>
+          <h3>何を選ぶ？</h3>
+          <p>食べる、量を変える、別のものを選ぶ、少し待つ。</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <p class="section-number">06 / PRODUCTION</p>
+        <p class="section-number">08 / TRIGGER</p>
         <div>
-          <h2>最終スライド制作前に完成させるもの</h2>
-          <p class="section-lead">一般的なダイエット資料にせず、BDXの軸を保ったままPPTXへ展開するための制作要件です。</p>
+          <h2>自分の食欲トリガーを知る</h2>
+          <p class="section-lead">意志力を鍛えるより、繰り返し起きる場面を先に見つける方が、対策を立てやすくなります。</p>
         </div>
       </div>
 
-      <ul class="production-list">
-        <li>BDX向けの正式タイトル</li>
-        <li>20枚のスライド本文</li>
-        <li>各スライドの図解指示</li>
-        <li>ナレーション原稿</li>
-        <li>ワークシート</li>
-        <li>科学的表現の調整</li>
-        <li>最終PPTX用の制作指示書</li>
+      <ul class="scenario-grid">
+        <li>仕事帰りのコンビニ</li>
+        <li>睡眠不足の日の甘いもの</li>
+        <li>ストレスによるドカ食い</li>
+        <li>飲み会後の食欲</li>
+        <li>在宅勤務中の間食</li>
+        <li>運動後の「ご褒美食い」</li>
+        <li>休日の生活リズムの乱れ</li>
       </ul>
+
+      <div class="trigger-note" aria-label="食欲トリガー記録シート">
+        <div><span>WHEN / いつ</span><p>例：22時、帰宅直後</p></div>
+        <div><span>WHERE / どこで</span><p>例：コンビニ、ソファ</p></div>
+        <div><span>STATE / どんな状態</span><p>例：睡眠5時間、疲労8/10</p></div>
+        <div><span>URGE / 何が欲しかった</span><p>例：甘いもの、濃い味</p></div>
+        <div><span>CHOICE / 何を選んだ</span><p>食べた・変えた・待った</p></div>
+        <div><span>AFTER / その後の体調</span><p>満足度、眠り、翌朝の感覚</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">09 / 7 DAYS</p>
+        <div>
+          <h2>7日間の実践ワーク</h2>
+          <p class="section-lead">完璧に食べるための7日間ではありません。自分のパターンを知り、選び直す回数を増やすための7日間です。</p>
+        </div>
+      </div>
+
+      <div class="week-grid">
+        <article class="day-card">
+          <span class="day">DAY 1</span>
+          <div><h3>記録する</h3><p>食べたくなった時間、場所、気分を一度だけ記録する。</p></div>
+        </article>
+        <article class="day-card">
+          <span class="day">DAY 2</span>
+          <div><h3>体調を見る</h3><p>睡眠時間、疲労、空腹を0〜10で確認する。</p></div>
+        </article>
+        <article class="day-card">
+          <span class="day">DAY 3</span>
+          <div><h3>目的を言葉にする</h3><p>食べる前に「このあと、どうなりたい？」と問う。</p></div>
+        </article>
+        <article class="day-card">
+          <span class="day">DAY 4</span>
+          <div><h3>環境を一つ変える</h3><p>見える食べ物を移す、間食を用意するなど、一つだけ整える。</p></div>
+        </article>
+        <article class="day-card">
+          <span class="day">DAY 5</span>
+          <div><h3>助言する</h3><p>自分を責めたくなったら、大切な人にかける言葉へ変える。</p></div>
+        </article>
+        <article class="day-card">
+          <span class="day">DAY 6</span>
+          <div><h3>欲望を実況する</h3><p>食欲の強さ、感情、身体の感覚を言葉にしてから選ぶ。</p></div>
+        </article>
+        <article class="day-card">
+          <span class="day">DAY 7</span>
+          <div><h3>自分のパターンをまとめる</h3><p>起こりやすい場面、役立った選択、次週に残す工夫を一つずつ決める。</p></div>
+        </article>
+      </div>
     </section>
 
     <section class="final-message">
-      <p>BDX Content Principle</p>
-      <p>体重を管理するのではなく、食欲・睡眠・疲労・集中力・回復を整え、最高の体調をつくる。</p>
+      <p>BDX Takeaway</p>
+      <p class="final-copy">目指すのは、食欲をなくすことではない。今の自分に合う行動を、何度でも選び直せること。</p>
+      <div class="takeaway-grid">
+        <div><strong>気づく</strong><span>空腹・疲労・感情・環境を観察する。</span></div>
+        <div><strong>選ぶ</strong><span>禁止ではなく、目的に合う選択肢を持つ。</span></div>
+        <div><strong>戻る</strong><span>うまくいかない日も、次の行動から普段へ戻す。</span></div>
+      </div>
     </section>
+
+    <aside class="references">
+      <h2>科学的背景</h2>
+      <ol>
+        <li>Tajiri E, et al. Effects of sleep restriction on food intake and appetite under free-living conditions. Appetite. 2023;189:106998.</li>
+        <li>Soetens B, et al. Resisting temptation: effects of exposure to a forbidden food on eating behaviour. Appetite. 2008;51(1):202-205.</li>
+      </ol>
+      <p class="health-note">本資料は一般的な健康情報であり、診断や治療を目的とするものではありません。強い食欲の変化、過食、食事への恐怖、体調不良が続く場合や、治療中・妊娠中など個別の配慮が必要な場合は、医師や管理栄養士などの専門家へ相談してください。</p>
+    </aside>
 
     <footer>© 合同会社 nature · BDX</footer>
   </main>
