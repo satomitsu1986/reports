@@ -1,0 +1,407 @@
+/*
+ * Default document theme for SAT's Database.
+ * Based on the BDX metabolic-suppression research summary.
+ */
+
+body.default-document {
+  --bg: #f7f5f0;
+  --paper: #ffffff;
+  --ink: #1f2328;
+  --muted: #667085;
+  --line: #e4e7ec;
+  --green: #7a4f24;
+  --green-dark: #1f2328;
+  --green-soft: #f3eadf;
+  --lime: #7a4f24;
+  --orange: #a33b31;
+  --orange-soft: #fff1f0;
+  --yellow-soft: #f3eadf;
+  --accent: #7a4f24;
+  --accent-soft: #f3eadf;
+  --blue: #315a9d;
+  --blue-soft: #eef4ff;
+  --danger: #a33b31;
+  --danger-soft: #fff1f0;
+  --radius: 14px;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.78), rgba(247,245,240,0.96)),
+    var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+body.default-document .page {
+  width: min(980px, calc(100% - 32px));
+  padding: 40px 0 72px;
+}
+
+body.default-document .hero {
+  min-height: 0;
+  display: block;
+  padding: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 18px 48px rgba(16,24,40,0.08);
+}
+
+body.default-document .hero::before,
+body.default-document .hero::after {
+  display: none;
+}
+
+body.default-document .hero-content {
+  max-width: 820px;
+}
+
+body.default-document .brand {
+  display: inline-flex;
+  width: auto;
+  margin-bottom: 18px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+body.default-document .brand::before {
+  display: none;
+}
+
+body.default-document h1 {
+  max-width: 820px;
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.2;
+}
+
+body.default-document .subtitle {
+  max-width: 780px;
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+body.default-document .intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  margin-top: 26px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+body.default-document .intro-title,
+body.default-document .intro-copy {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+body.default-document .kicker,
+body.default-document .section-number,
+body.default-document .signal-card span,
+body.default-document .skill-card span {
+  color: var(--accent);
+}
+
+body.default-document .intro-title h2 {
+  color: var(--ink);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+body.default-document .intro-copy strong {
+  color: var(--accent);
+}
+
+body.default-document .section {
+  margin-top: 22px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+body.default-document .section-head {
+  display: block;
+  margin-bottom: 24px;
+}
+
+body.default-document .section-number {
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+body.default-document .section h2 {
+  margin-bottom: 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--line);
+  color: var(--ink);
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  line-height: 1.45;
+}
+
+body.default-document .section-lead {
+  max-width: 780px;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+body.default-document .signal-card,
+body.default-document .skill-card,
+body.default-document .direction-item,
+body.default-document .day-card {
+  border-color: var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+body.default-document .signal-card:nth-child(2),
+body.default-document .skill-card:nth-child(2) {
+  background: var(--danger-soft);
+}
+
+body.default-document .signal-card:nth-child(3),
+body.default-document .skill-card:nth-child(3) {
+  background: var(--accent-soft);
+}
+
+body.default-document .signal-card:nth-child(4),
+body.default-document .skill-card:nth-child(4),
+body.default-document .day-card:last-child {
+  background: var(--blue-soft);
+}
+
+body.default-document .signal-card h3,
+body.default-document .skill-card h3,
+body.default-document .direction-item strong,
+body.default-document .day-card h3 {
+  color: var(--ink);
+}
+
+body.default-document .definition {
+  border-left-color: var(--blue);
+  border-radius: 12px;
+  background: var(--blue-soft);
+  color: var(--ink);
+}
+
+body.default-document .definition p {
+  color: var(--ink);
+}
+
+body.default-document .definition p + p {
+  color: var(--blue);
+}
+
+body.default-document .explanation-card {
+  border-radius: 12px;
+  background: var(--blue-soft);
+}
+
+body.default-document .explanation-card.orange {
+  background: var(--accent-soft);
+}
+
+body.default-document .explanation-card h3,
+body.default-document .explanation-card.orange h3 {
+  color: var(--ink);
+}
+
+body.default-document .question-list li::before {
+  color: var(--blue);
+}
+
+body.default-document .analogy {
+  border-color: rgba(122,79,36,0.22);
+  border-radius: 12px;
+  background: var(--accent-soft);
+}
+
+body.default-document .analogy-label {
+  color: var(--accent);
+}
+
+body.default-document .analogy p {
+  color: var(--ink);
+}
+
+body.default-document .hunger-card,
+body.default-document .comparison,
+body.default-document .trigger-note {
+  border-color: var(--line);
+  border-radius: 12px;
+}
+
+body.default-document .hunger-card h3 {
+  background: var(--blue);
+}
+
+body.default-document .hunger-card.emotional h3 {
+  background: var(--accent);
+}
+
+body.default-document .hunger-card li::before {
+  background: var(--blue);
+}
+
+body.default-document .hunger-card.emotional li::before {
+  background: var(--accent);
+}
+
+body.default-document .check-questions li {
+  border-color: var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+}
+
+body.default-document .check-questions li::before {
+  color: var(--accent);
+}
+
+body.default-document .choice-example {
+  border-left-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--ink);
+}
+
+body.default-document .urge-steps li::before {
+  background: var(--accent);
+}
+
+body.default-document .comparison-head {
+  background: var(--accent);
+}
+
+body.default-document .comparison-row .ok {
+  color: var(--blue);
+}
+
+body.default-document .comparison-row .ng::before {
+  color: var(--danger);
+}
+
+body.default-document .comparison-row .ok::before {
+  color: var(--blue);
+}
+
+body.default-document .five-second article,
+body.default-document .five-second article:nth-child(2),
+body.default-document .five-second article:nth-child(3),
+body.default-document .five-second article:nth-child(4) {
+  min-height: 180px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+}
+
+body.default-document .five-second article:nth-child(2) {
+  background: var(--blue-soft);
+}
+
+body.default-document .five-second article:nth-child(3) {
+  background: var(--accent-soft);
+}
+
+body.default-document .five-second article:nth-child(4) {
+  background: var(--danger-soft);
+}
+
+body.default-document .five-second span {
+  color: var(--accent);
+}
+
+body.default-document .five-second p {
+  color: var(--muted);
+}
+
+body.default-document .trigger-note {
+  background: #fff;
+}
+
+body.default-document .trigger-note span {
+  color: var(--accent);
+}
+
+body.default-document .day {
+  background: var(--accent);
+}
+
+body.default-document .final-message {
+  padding: 34px;
+  border: 1px solid rgba(122,79,36,0.22);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #fff, #fbf7f1);
+  color: var(--ink);
+  text-align: left;
+}
+
+body.default-document .final-message > p:first-child,
+body.default-document .takeaway-grid strong {
+  color: var(--accent);
+}
+
+body.default-document .final-message .final-copy {
+  margin-left: 0;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+}
+
+body.default-document .takeaway-grid div {
+  border-color: var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+body.default-document .takeaway-grid span {
+  color: var(--muted);
+}
+
+body.default-document .references {
+  border-radius: var(--radius);
+}
+
+body.default-document footer {
+  margin-top: 34px;
+  padding-top: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 720px) {
+  body.default-document .page {
+    width: min(100% - 24px, 980px);
+    padding: 26px 0 56px;
+  }
+
+  body.default-document .hero,
+  body.default-document .section,
+  body.default-document .intro,
+  body.default-document .final-message {
+    padding: 24px;
+  }
+
+  body.default-document .hero {
+    min-height: 0;
+  }
+
+  body.default-document .brand {
+    margin-bottom: 18px;
+  }
+
+  body.default-document .intro {
+    grid-template-columns: 1fr;
+  }
+}
