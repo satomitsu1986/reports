@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="意志力ではなく、思考と環境で食行動を変えるBDX式の自己制御を整理した資料。" />
+  <title>食欲に振り回されない身体の整え方 | BDX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f4f7f5;
+      --paper: #ffffff;
+      --ink: #17201c;
+      --muted: #5d6a64;
+      --line: #dce5e0;
+      --green: #176b52;
+      --green-dark: #0e4938;
+      --green-soft: #e9f5ef;
+      --lime: #c8e45b;
+      --orange: #ee7a43;
+      --orange-soft: #fff1e9;
+      --yellow-soft: #fff8d8;
+      --radius: 8px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(23,107,82,0.035) 1px, transparent 1px),
+        linear-gradient(rgba(23,107,82,0.035) 1px, transparent 1px),
+        var(--bg);
+      background-size: 32px 32px;
+    }
+
+    .page {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 80px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: grid;
+      align-content: end;
+      padding: clamp(32px, 7vw, 72px);
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -40px;
+      width: 340px;
+      height: 340px;
+      border: 72px solid rgba(200,228,91,0.88);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 110px;
+      bottom: -145px;
+      width: 280px;
+      height: 280px;
+      border: 54px solid rgba(238,122,67,0.92);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 56px;
+      color: var(--lime);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .brand::before {
+      content: '';
+      width: 28px;
+      height: 3px;
+      background: var(--lime);
+    }
+
+    h1 {
+      max-width: 700px;
+      font-size: clamp(2.25rem, 7vw, 4.7rem);
+      font-weight: 700;
+      line-height: 1.16;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin-top: 22px;
+      color: rgba(255,255,255,0.76);
+      font-size: clamp(1rem, 2.3vw, 1.25rem);
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .intro-title,
+    .intro-copy {
+      padding: clamp(28px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .intro-title h2 {
+      font-size: clamp(1.65rem, 4vw, 2.6rem);
+      line-height: 1.35;
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    .intro-copy strong {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: clamp(30px, 6vw, 56px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .section-number {
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .section h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      line-height: 1.35;
+    }
+
+    .section-lead {
+      max-width: 760px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+    }
+
+    .scenario-grid li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 62px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .scenario-grid li::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .definition {
+      padding: clamp(28px, 5vw, 48px);
+      border-left: 6px solid var(--lime);
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+    }
+
+    .definition p {
+      max-width: 820px;
+      font-size: clamp(1.45rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .definition p + p {
+      margin-top: 8px;
+      color: var(--lime);
+    }
+
+    .explanation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .explanation-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--green-soft);
+    }
+
+    .explanation-card.orange {
+      background: var(--orange-soft);
+    }
+
+    .explanation-card h3 {
+      margin-bottom: 12px;
+      color: var(--green-dark);
+      font-size: 1.1rem;
+    }
+
+    .explanation-card.orange h3 {
+      color: #9b4421;
+    }
+
+    .explanation-card p,
+    .explanation-card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      list-style: none;
+    }
+
+    .question-list li {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .question-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .analogy {
+      margin-top: 22px;
+      padding: 30px;
+      border: 1px solid #eadf9e;
+      border-radius: var(--radius);
+      background: var(--yellow-soft);
+    }
+
+    .analogy-label {
+      margin-bottom: 10px;
+      color: #7b6511;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .analogy p {
+      color: #4f461d;
+      font-size: 1.06rem;
+      font-weight: 600;
+      line-height: 1.9;
+    }
+
+    .chapter-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .chapter {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .chapter-title {
+      padding: 24px;
+      background: var(--green-dark);
+      color: #fff;
+    }
+
+    .chapter-title span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--lime);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .chapter-title h3 {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .slides {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      padding: 10px 24px;
+      list-style: none;
+      counter-reset: slide;
+    }
+
+    .slides li {
+      counter-increment: slide;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      padding: 13px 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .slides li::before {
+      content: counter(slide, decimal-leading-zero);
+      color: var(--orange);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .chapter:nth-child(2) .slides { counter-reset: slide 5; }
+    .chapter:nth-child(3) .slides { counter-reset: slide 10; }
+    .chapter:nth-child(4) .slides { counter-reset: slide 16; }
+
+    .comparison {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .comparison-head,
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+    }
+
+    .comparison-head {
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .comparison-head div,
+    .comparison-row div {
+      padding: 18px 20px;
+    }
+
+    .comparison-head div + div,
+    .comparison-row div + div {
+      border-left: 1px solid var(--line);
+    }
+
+    .comparison-row {
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .comparison-row:nth-child(odd) {
+      background: #f8faf9;
+    }
+
+    .comparison-row div {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .comparison-row .ng {
+      color: #8a4941;
+    }
+
+    .comparison-row .ok {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .comparison-row .ng::before {
+      content: '×';
+      margin-right: 9px;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .comparison-row .ok::before {
+      content: '○';
+      margin-right: 9px;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .direction {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .direction-item {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8faf9;
+    }
+
+    .direction-item strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green-dark);
+      font-size: 0.92rem;
+    }
+
+    .direction-item p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .production-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+    }
+
+    .production-list li {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .final-message {
+      margin-top: 22px;
+      padding: clamp(34px, 7vw, 64px);
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+    }
+
+    .final-message p:first-child {
+      color: var(--lime);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .final-message p:last-child {
+      max-width: 800px;
+      margin: 18px auto 0;
+      font-size: clamp(1.5rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    footer {
+      padding: 30px 0 0;
+      color: #829088;
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 20px, 1040px);
+        padding-top: 10px;
+      }
+
+      .hero {
+        min-height: 560px;
+        padding: 28px 24px 38px;
+      }
+
+      .hero::before {
+        top: -85px;
+        right: -95px;
+        width: 270px;
+        height: 270px;
+        border-width: 54px;
+      }
+
+      .hero::after {
+        right: 40px;
+        bottom: -125px;
+        width: 230px;
+        height: 230px;
+        border-width: 42px;
+      }
+
+      .brand { margin-bottom: 72px; }
+
+      .intro,
+      .explanation {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .scenario-grid,
+      .direction,
+      .production-list {
+        grid-template-columns: 1fr;
+      }
+
+      .chapter {
+        grid-template-columns: 1fr;
+      }
+
+      .slides {
+        grid-template-columns: 1fr;
+        padding: 10px 14px;
+      }
+
+      .comparison-head {
+        display: none;
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+        padding: 8px 0;
+      }
+
+      .comparison-row div + div {
+        border-left: 0;
+      }
+
+      .comparison-row .ng::after {
+        content: 'NG思考';
+        display: block;
+        margin-top: 4px;
+        color: #ad817c;
+        font-size: 0.68rem;
+        font-weight: 700;
+      }
+
+      .comparison-row .ok {
+        border-top: 1px dashed var(--line);
+      }
+
+      .comparison-row .ok::after {
+        content: 'BDX式の選択思考';
+        display: block;
+        margin-top: 4px;
+        color: #76978a;
+        font-size: 0.68rem;
+        font-weight: 700;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="brand">BDX · Food Behavior Design</p>
+        <h1>食欲に振り回されない<br />身体の整え方</h1>
+        <p class="subtitle">意志力ではなく、思考と環境で食行動を変える</p>
+      </div>
+    </header>
+
+    <section class="intro" aria-label="資料の前提">
+      <div class="intro-title">
+        <span class="kicker">Who BDX is for</span>
+        <h2>BDXは、最高の体調を手に入れたい一般の方のためのサービスです。</h2>
+      </div>
+      <div class="intro-copy">
+        <p>この資料が扱うのは、ダンサー特有の食事管理ではありません。日々の疲労、睡眠、ストレス、仕事や生活環境まで含めて、<strong>意志力に頼らず、体調と目的に合わせて食行動を整える方法</strong>を設計します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">01 / DAILY LIFE</p>
+        <div>
+          <h2>食欲は、日常のさまざまな場面で揺れる</h2>
+          <p class="section-lead">体脂肪を落とすことだけを目的にせず、食欲・睡眠・疲労・集中力・回復を含めた体調管理として捉えます。</p>
+        </div>
+      </div>
+
+      <ul class="scenario-grid">
+        <li>仕事帰りのコンビニ</li>
+        <li>睡眠不足の日の甘いもの</li>
+        <li>ストレスによるドカ食い</li>
+        <li>飲み会後の食欲</li>
+        <li>在宅勤務中の間食</li>
+        <li>運動後の「ご褒美食い」</li>
+        <li>休日の生活リズムの乱れ</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">02 / DEFINITION</p>
+        <div>
+          <h2>BDXでの「自己制御」の定義</h2>
+          <p class="section-lead">自己制御は、食欲に耐え続ける精神力ではありません。</p>
+        </div>
+      </div>
+
+      <div class="definition">
+        <p>自己制御とは、食欲を我慢する力ではない。</p>
+        <p>今の体調と、なりたい状態に合わせて、行動を選び直す力である。</p>
+      </div>
+
+      <div class="explanation">
+        <div class="explanation-card">
+          <h3>「食べない技術」ではない</h3>
+          <p>疲れている日に空腹を無視するのではなく、身体からのサインを分けて考え、回復につながる選択をする技術です。</p>
+          <ul class="question-list">
+            <li>本当にエネルギー不足なのか</li>
+            <li>ストレス反応なのか</li>
+            <li>睡眠不足なのか</li>
+            <li>何を食べれば回復につながるのか</li>
+          </ul>
+        </div>
+        <div class="explanation-card orange">
+          <h3>我慢から、判断へ</h3>
+          <p>短期的な欲求を否定するのではなく、今の状態を把握し、長期的な目的との間でよりよい行動を選び直します。</p>
+        </div>
+      </div>
+
+      <div class="analogy">
+        <p class="analogy-label">Driving Analogy</p>
+        <p>車で例えるなら、アクセルを踏まないことが自己制御ではありません。道路状況に応じて、アクセル・ブレーキ・休憩を選び分けることが自己制御です。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">03 / STRUCTURE</p>
+        <div>
+          <h2>全20枚の資料構成</h2>
+          <p class="section-lead">理解から実践へ進めるように、4章で設計します。</p>
+        </div>
+      </div>
+
+      <div class="chapter-list">
+        <article class="chapter">
+          <div class="chapter-title">
+            <span>CHAPTER 1 · 01-05</span>
+            <h3>なぜ「分かっているのにできない」のか</h3>
+          </div>
+          <ol class="slides">
+            <li>タイトル</li>
+            <li>栄養知識だけでは体調は整わない</li>
+            <li>食行動は意志だけで決まらない</li>
+            <li>疲労・空腹・ストレス・環境の影響</li>
+            <li>自己制御は才能ではなくスキル</li>
+          </ol>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-title">
+            <span>CHAPTER 2 · 06-10</span>
+            <h3>自己制御の正体</h3>
+          </div>
+          <ol class="slides">
+            <li>自己制御とは我慢ではない</li>
+            <li>短期的な快楽と長期的な目的</li>
+            <li>本当の空腹と感情的な食欲</li>
+            <li>禁止思考が反動を生む理由</li>
+            <li>BDX式「選び直す力」</li>
+          </ol>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-title">
+            <span>CHAPTER 3 · 11-16</span>
+            <h3>4つの実践スキル</h3>
+          </div>
+          <ol class="slides">
+            <li>目的に置き換える</li>
+            <li>禁止ではなく選択で考える</li>
+            <li>NG例・OK例</li>
+            <li>他人に助言するように考える</li>
+            <li>環境から誘惑を減らす</li>
+            <li>欲望を実況する</li>
+          </ol>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-title">
+            <span>CHAPTER 4 · 17-20</span>
+            <h3>日常で使う</h3>
+          </div>
+          <ol class="slides">
+            <li>食べる前の5秒チェック</li>
+            <li>自分の食欲トリガーを知る</li>
+            <li>7日間の実践ワーク</li>
+            <li>まとめ</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">04 / REFRAME</p>
+        <div>
+          <h2>禁止思考から、選択思考へ</h2>
+          <p class="section-lead">「食べてはいけない」ではなく、「何のために、何を選ぶか」へ問いを変えます。</p>
+        </div>
+      </div>
+
+      <div class="comparison" role="table" aria-label="一般人向けNG・OK例">
+        <div class="comparison-head" role="row">
+          <div role="columnheader">NG思考</div>
+          <div role="columnheader">BDX式の選択思考</div>
+        </div>
+        <div class="comparison-row" role="row">
+          <div class="ng" role="cell">太りたくないからポテチを我慢する</div>
+          <div class="ok" role="cell">明日の朝を軽くするために、ヨーグルトと果物を選ぶ</div>
+        </div>
+        <div class="comparison-row" role="row">
+          <div class="ng" role="cell">甘いものは禁止</div>
+          <div class="ok" role="cell">午後の集中力を保つために、タンパク質を含む間食を選ぶ</div>
+        </div>
+        <div class="comparison-row" role="row">
+          <div class="ng" role="cell">夜は絶対に食べない</div>
+          <div class="ok" role="cell">本当に空腹なら、睡眠を妨げにくい軽食を選ぶ</div>
+        </div>
+        <div class="comparison-row" role="row">
+          <div class="ng" role="cell">炭水化物は太るから抜く</div>
+          <div class="ok" role="cell">今日の活動量に合わせて必要な量を選ぶ</div>
+        </div>
+        <div class="comparison-row" role="row">
+          <div class="ng" role="cell">食べすぎたから翌日は絶食する</div>
+          <div class="ok" role="cell">食欲と生活リズムを戻すために、普段の食事へ戻す</div>
+        </div>
+        <div class="comparison-row" role="row">
+          <div class="ng" role="cell">運動したから好きなだけ食べていい</div>
+          <div class="ok" role="cell">回復を優先して、必要な栄養を満たす食事を選ぶ</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">05 / SCOPE</p>
+        <div>
+          <h2>BDXらしさを保つための編集方針</h2>
+          <p class="section-lead">ダンサーや競技者を前提にした表現は主題から外し、必要な場合のみ科学的背景として補助的に扱います。</p>
+        </div>
+      </div>
+
+      <div class="direction">
+        <div class="direction-item">
+          <strong>公演前・レッスン後の事例</strong>
+          <p>仕事帰り、在宅勤務、飲み会後など、一般の方が経験する場面へ置き換える。</p>
+        </div>
+        <div class="direction-item">
+          <strong>バレエ特有の身体管理</strong>
+          <p>睡眠、疲労、集中力、回復を含む日常のコンディショニングへ広げる。</p>
+        </div>
+        <div class="direction-item">
+          <strong>ダンサー前提のREDs説明</strong>
+          <p>過度なエネルギー不足の注意点として、必要な範囲で補助的に扱う。</p>
+        </div>
+        <div class="direction-item">
+          <strong>競技パフォーマンス中心の表現</strong>
+          <p>仕事、運動、休養を含めた「最高の体調」という生活者視点へ変更する。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="section-number">06 / PRODUCTION</p>
+        <div>
+          <h2>最終スライド制作前に完成させるもの</h2>
+          <p class="section-lead">一般的なダイエット資料にせず、BDXの軸を保ったままPPTXへ展開するための制作要件です。</p>
+        </div>
+      </div>
+
+      <ul class="production-list">
+        <li>BDX向けの正式タイトル</li>
+        <li>20枚のスライド本文</li>
+        <li>各スライドの図解指示</li>
+        <li>ナレーション原稿</li>
+        <li>ワークシート</li>
+        <li>科学的表現の調整</li>
+        <li>最終PPTX用の制作指示書</li>
+      </ul>
+    </section>
+
+    <section class="final-message">
+      <p>BDX Content Principle</p>
+      <p>体重を管理するのではなく、食欲・睡眠・疲労・集中力・回復を整え、最高の体調をつくる。</p>
+    </section>
+
+    <footer>© 合同会社 nature · BDX</footer>
+  </main>
+</body>
+</html>
