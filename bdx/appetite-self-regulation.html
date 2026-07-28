@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="意志力ではなく、思考と環境で食行動を変えるBDX式の自己制御を整理した資料。" />
+  <meta name="description" content="睡眠不足や禁止思考が食欲へ与える影響を研究から学び、意志力に頼らず食行動を整えるBDX実践ガイドです。" />
   <title>食欲に振り回されない身体の整え方 | BDX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/default-document.css" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,595 +16,319 @@
       padding: 0;
     }
 
-    :root {
-      --bg: #f4f7f5;
-      --paper: #ffffff;
-      --ink: #17201c;
-      --muted: #5d6a64;
-      --line: #dce5e0;
-      --green: #176b52;
-      --green-dark: #0e4938;
-      --green-soft: #e9f5ef;
-      --lime: #c8e45b;
-      --orange: #ee7a43;
-      --orange-soft: #fff1e9;
-      --yellow-soft: #fff8d8;
-      --radius: 8px;
-    }
-
     html {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
-      scroll-behavior: smooth;
+      background: #f7f5f0;
+      color: #1f2328;
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
-    body {
-      min-height: 100vh;
-      background:
-        linear-gradient(90deg, rgba(23,107,82,0.035) 1px, transparent 1px),
-        linear-gradient(rgba(23,107,82,0.035) 1px, transparent 1px),
-        var(--bg);
-      background-size: 32px 32px;
+    body.default-document .hero-content,
+    body.default-document h1 {
+      max-width: 880px;
     }
 
-    .page {
-      width: min(1040px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 32px 0 80px;
+    body.default-document h1 {
+      font-size: clamp(2rem, 4.5vw, 3.15rem);
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 520px;
-      display: grid;
-      align-content: end;
-      padding: clamp(32px, 7vw, 72px);
-      border-radius: var(--radius);
-      background: var(--green-dark);
-      color: #fff;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -80px;
-      right: -40px;
-      width: 340px;
-      height: 340px;
-      border: 72px solid rgba(200,228,91,0.88);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      right: 110px;
-      bottom: -145px;
-      width: 280px;
-      height: 280px;
-      border: 54px solid rgba(238,122,67,0.92);
-      border-radius: 50%;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 56px;
-      color: var(--lime);
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .brand::before {
-      content: '';
-      width: 28px;
-      height: 3px;
-      background: var(--lime);
-    }
-
-    h1 {
-      max-width: 700px;
-      font-size: clamp(2.25rem, 7vw, 4.7rem);
-      font-weight: 700;
-      line-height: 1.16;
-    }
-
-    .subtitle {
-      max-width: 680px;
+    .source {
       margin-top: 22px;
-      color: rgba(255,255,255,0.76);
-      font-size: clamp(1rem, 2.3vw, 1.25rem);
-      font-weight: 500;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
       line-height: 1.8;
     }
 
-    .intro {
+    .source strong {
+      color: var(--ink);
+    }
+
+    .content {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
       gap: 22px;
-      margin-top: 22px;
+      margin-top: 26px;
     }
 
-    .intro-title,
-    .intro-copy {
-      padding: clamp(28px, 5vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
+    .content .section {
+      margin-top: 0;
     }
 
-    .kicker {
-      display: block;
-      margin-bottom: 14px;
-      color: var(--green);
-      font-size: 0.76rem;
+    .section-label {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
     }
 
-    .intro-title h2 {
-      font-size: clamp(1.65rem, 4vw, 2.6rem);
-      line-height: 1.35;
-    }
-
-    .intro-copy p {
+    .lead {
+      margin-top: 14px;
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 2;
+      font-size: 0.98rem;
+      line-height: 1.95;
     }
 
-    .intro-copy strong {
-      color: var(--green-dark);
+    .conclusion {
+      max-width: 800px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
       font-weight: 700;
+      line-height: 1.75;
     }
 
-    .section {
-      margin-top: 22px;
-      padding: clamp(30px, 6vw, 56px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
+    .conclusion strong {
+      color: var(--accent);
     }
 
-    .section-head {
+    .key-message {
+      margin-top: 20px;
+      padding: 20px;
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      background: var(--blue-soft);
+      color: var(--ink);
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.85;
+    }
+
+    .learning-list {
       display: grid;
-      grid-template-columns: 84px 1fr;
-      gap: 22px;
-      align-items: start;
-      margin-bottom: 34px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+      list-style: none;
     }
 
-    .section-number {
-      color: var(--orange);
-      font-size: 0.78rem;
+    .learning-list li {
+      position: relative;
+      min-height: 140px;
+      padding: 50px 20px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.94rem;
+      font-weight: 700;
+      line-height: 1.75;
+    }
+
+    .learning-list li::before {
+      content: '✓';
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      color: var(--accent);
+      font-size: 1.2rem;
       font-weight: 700;
     }
 
-    .section h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      line-height: 1.35;
+    .learning-list li:nth-child(2) {
+      background: var(--blue-soft);
     }
 
-    .section-lead {
-      max-width: 760px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.9;
+    .learning-list li:nth-child(3) {
+      background: var(--accent-soft);
     }
 
     .scenario-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
+      margin-top: 20px;
       list-style: none;
     }
 
     .scenario-grid li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 62px;
-      padding: 16px 18px;
+      position: relative;
+      padding: 16px 18px 16px 42px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      color: var(--ink);
-      font-weight: 600;
-      line-height: 1.5;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.7;
     }
 
     .scenario-grid li::before {
       content: '';
-      width: 9px;
-      height: 9px;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background: var(--orange);
-    }
-
-    .definition {
-      padding: clamp(28px, 5vw, 48px);
-      border-left: 6px solid var(--lime);
-      border-radius: var(--radius);
-      background: var(--green-dark);
-      color: #fff;
-    }
-
-    .definition p {
-      max-width: 820px;
-      font-size: clamp(1.45rem, 4vw, 2.4rem);
-      font-weight: 700;
-      line-height: 1.55;
-    }
-
-    .definition p + p {
-      margin-top: 8px;
-      color: var(--lime);
-    }
-
-    .explanation {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin-top: 22px;
-    }
-
-    .explanation-card {
-      padding: 28px;
-      border-radius: var(--radius);
-      background: var(--green-soft);
-    }
-
-    .explanation-card.orange {
-      background: var(--orange-soft);
-    }
-
-    .explanation-card h3 {
-      margin-bottom: 12px;
-      color: var(--green-dark);
-      font-size: 1.1rem;
-    }
-
-    .explanation-card.orange h3 {
-      color: #9b4421;
-    }
-
-    .explanation-card p,
-    .explanation-card li {
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.85;
-    }
-
-    .question-list {
-      display: grid;
-      gap: 8px;
-      margin-top: 14px;
-      list-style: none;
-    }
-
-    .question-list li {
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .question-list li::before {
-      content: '→';
       position: absolute;
-      left: 0;
-      color: var(--green);
-      font-weight: 700;
+      top: 23px;
+      left: 20px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
-    .analogy {
-      margin-top: 22px;
-      padding: 30px;
-      border: 1px solid #eadf9e;
-      border-radius: var(--radius);
-      background: var(--yellow-soft);
-    }
-
-    .analogy-label {
-      margin-bottom: 10px;
-      color: #7b6511;
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .analogy p {
-      color: #4f461d;
-      font-size: 1.06rem;
-      font-weight: 600;
-      line-height: 1.9;
-    }
-
-    .chapter-list {
+    .choice-flow {
       display: grid;
-      gap: 14px;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 24px;
     }
 
-    .chapter {
-      display: grid;
-      grid-template-columns: 180px 1fr;
+    .choice-card {
+      padding: 22px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
+      border-radius: 12px;
+      background: var(--danger-soft);
     }
 
-    .chapter-title {
-      padding: 24px;
-      background: var(--green-dark);
-      color: #fff;
+    .choice-card.reframe {
+      background: var(--blue-soft);
     }
 
-    .chapter-title span {
+    .choice-card span {
       display: block;
       margin-bottom: 8px;
-      color: var(--lime);
-      font-size: 0.72rem;
+      color: var(--danger);
+      font-size: 0.74rem;
       font-weight: 700;
     }
 
-    .chapter-title h3 {
-      font-size: 1rem;
-      line-height: 1.6;
+    .choice-card.reframe span {
+      color: var(--blue);
     }
 
-    .slides {
+    .choice-card p {
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .choice-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .study-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      padding: 10px 24px;
-      list-style: none;
-      counter-reset: slide;
+      gap: 16px;
+      margin-top: 20px;
     }
 
-    .slides li {
-      counter-increment: slide;
-      display: flex;
-      gap: 10px;
-      align-items: baseline;
-      padding: 13px 8px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .slides li::before {
-      content: counter(slide, decimal-leading-zero);
-      color: var(--orange);
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .chapter:nth-child(2) .slides { counter-reset: slide 5; }
-    .chapter:nth-child(3) .slides { counter-reset: slide 10; }
-    .chapter:nth-child(4) .slides { counter-reset: slide 16; }
-
-    .comparison {
+    .study-card {
       overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .comparison-head,
-    .comparison-row {
-      display: grid;
-      grid-template-columns: 1fr 1.25fr;
-    }
-
-    .comparison-head {
-      background: var(--green-dark);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .comparison-head div,
-    .comparison-row div {
-      padding: 18px 20px;
-    }
-
-    .comparison-head div + div,
-    .comparison-row div + div {
-      border-left: 1px solid var(--line);
-    }
-
-    .comparison-row {
-      border-top: 1px solid var(--line);
+      border-radius: 12px;
       background: #fff;
     }
 
-    .comparison-row:nth-child(odd) {
-      background: #f8faf9;
+    .study-head {
+      padding: 20px;
+      background: var(--blue-soft);
     }
 
-    .comparison-row div {
+    .study-card:nth-child(2) .study-head {
+      background: var(--accent-soft);
+    }
+
+    .study-head span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .study-card:nth-child(2) .study-head span {
+      color: var(--accent);
+    }
+
+    .study-head h3 {
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.6;
+    }
+
+    .study-facts {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .fact {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 12px;
+      padding: 14px 18px;
+      background: #fff;
+    }
+
+    .fact dt {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .fact dd {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.86rem;
       line-height: 1.7;
     }
 
-    .comparison-row .ng {
-      color: #8a4941;
-    }
-
-    .comparison-row .ok {
-      color: var(--green-dark);
-      font-weight: 600;
-    }
-
-    .comparison-row .ng::before {
-      content: '×';
-      margin-right: 9px;
-      color: var(--orange);
-      font-weight: 700;
-    }
-
-    .comparison-row .ok::before {
-      content: '○';
-      margin-right: 9px;
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    .direction {
+    .result-comparison {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
+      margin-top: 20px;
     }
 
-    .direction-item {
-      padding: 22px;
+    .condition {
+      padding: 24px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f8faf9;
+      border-radius: 12px;
+      background: #fff;
     }
 
-    .direction-item strong {
+    .condition.restricted {
+      border-color: rgba(163,59,49,0.2);
+      background: var(--danger-soft);
+    }
+
+    .condition span {
       display: block;
-      margin-bottom: 7px;
-      color: var(--green-dark);
-      font-size: 0.92rem;
-    }
-
-    .direction-item p {
+      margin-bottom: 10px;
       color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.75;
+      font-size: 0.76rem;
+      font-weight: 700;
     }
 
-    .production-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      list-style: none;
+    .condition.restricted span {
+      color: var(--danger);
     }
 
-    .production-list li {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+    .condition strong {
+      display: block;
+      margin-bottom: 14px;
       color: var(--ink);
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: clamp(1.25rem, 3vw, 1.7rem);
     }
 
-    .signal-grid,
-    .skill-grid {
+    .condition ul {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .signal-card,
-    .skill-card {
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f8faf9;
-    }
-
-    .signal-card:nth-child(2),
-    .skill-card:nth-child(2) {
-      background: var(--orange-soft);
-    }
-
-    .signal-card:nth-child(3),
-    .skill-card:nth-child(3) {
-      background: var(--yellow-soft);
-    }
-
-    .signal-card:nth-child(4),
-    .skill-card:nth-child(4) {
-      background: var(--green-soft);
-    }
-
-    .signal-card span,
-    .skill-card span {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--orange);
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .signal-card h3,
-    .skill-card h3 {
-      margin-bottom: 10px;
-      color: var(--green-dark);
-      font-size: 1.12rem;
-      line-height: 1.55;
-    }
-
-    .signal-card p,
-    .skill-card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.85;
-    }
-
-    .body-copy {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 2;
-    }
-
-    .body-copy + .body-copy {
-      margin-top: 12px;
-    }
-
-    .hunger-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .hunger-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .hunger-card h3 {
-      padding: 18px 22px;
-      background: var(--green-dark);
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    .hunger-card.emotional h3 {
-      background: #a94f2d;
-    }
-
-    .hunger-card ul {
-      display: grid;
-      gap: 12px;
-      padding: 22px;
+      gap: 8px;
       list-style: none;
     }
 
-    .hunger-card li {
+    .condition li {
       position: relative;
       padding-left: 18px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       line-height: 1.7;
     }
 
-    .hunger-card li::before {
+    .condition li::before {
       content: '';
       position: absolute;
       top: 0.68em;
@@ -611,771 +336,674 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--blue);
     }
 
-    .hunger-card.emotional li::before {
-      background: var(--orange);
+    .condition.restricted li::before {
+      background: var(--danger);
     }
 
-    .check-questions {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-      list-style: none;
-      counter-reset: question;
-    }
-
-    .check-questions li {
-      counter-increment: question;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      color: var(--green-dark);
-      font-size: 0.92rem;
-      font-weight: 700;
-      line-height: 1.7;
-    }
-
-    .check-questions li::before {
-      content: '0' counter(question);
-      display: block;
-      margin-bottom: 10px;
-      color: var(--orange);
-      font-size: 0.72rem;
-    }
-
-    .choice-example {
-      margin-top: 14px;
+    .result-note {
+      margin-top: 18px;
       padding: 16px 18px;
-      border-left: 4px solid var(--green);
-      background: rgba(255,255,255,0.72);
-      color: var(--green-dark);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--ink);
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.8;
     }
 
-    .urge-steps {
+    .forbidden-visual {
       display: grid;
-      gap: 8px;
-      margin-top: 16px;
-      list-style: none;
-      counter-reset: urge;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-top: 20px;
     }
 
-    .urge-steps li {
-      counter-increment: urge;
-      position: relative;
-      padding-left: 34px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.75;
+    .forbidden-step {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      text-align: center;
     }
 
-    .urge-steps li::before {
-      content: counter(urge);
-      position: absolute;
-      top: 0.08em;
-      left: 0;
-      display: grid;
-      width: 24px;
-      height: 24px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green-dark);
-      color: #fff;
-      font-size: 0.68rem;
+    .forbidden-step.exposure {
+      background: var(--danger-soft);
+    }
+
+    .forbidden-step span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.74rem;
       font-weight: 700;
     }
 
-    .five-second {
+    .forbidden-step strong {
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.6;
+    }
+
+    .forbidden-arrow {
+      color: var(--danger);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .meaning-card {
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .meaning-card.fact {
+      background: var(--blue-soft);
+    }
+
+    .meaning-card.interpretation {
+      background: var(--accent-soft);
+    }
+
+    .meaning-card.action {
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .meaning-card span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .meaning-card.fact span { color: var(--blue); }
+    .meaning-card.interpretation span { color: var(--accent); }
+    .meaning-card.action span { color: var(--danger); }
+
+    .meaning-card p {
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .definition {
+      padding: 24px;
+      border-left: 5px solid var(--blue);
+      border-radius: 12px;
+      background: var(--blue-soft);
+    }
+
+    .definition p {
+      color: var(--ink);
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      font-weight: 700;
+      line-height: 1.75;
+    }
+
+    .definition p + p {
+      margin-top: 6px;
+      color: var(--blue);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .skill:nth-child(2) { background: var(--blue-soft); }
+    .skill:nth-child(3) { background: var(--accent-soft); }
+    .skill:nth-child(4) { background: var(--danger-soft); }
+
+    .skill span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .skill h3 {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .practice-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .practice-card:nth-child(2) { background: var(--blue-soft); }
+    .practice-card:nth-child(3) { background: var(--accent-soft); }
+
+    .practice-card span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .practice-card h3 {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 1.03rem;
+    }
+
+    .practice-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    .check-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
+      margin-top: 18px;
     }
 
-    .five-second article {
-      min-height: 180px;
-      padding: 22px;
-      border-radius: var(--radius);
-      background: var(--green-dark);
-      color: #fff;
-    }
-
-    .five-second article:nth-child(2) { background: #176b52; }
-    .five-second article:nth-child(3) { background: #b95730; }
-    .five-second article:nth-child(4) { background: #775f15; }
-
-    .five-second span {
-      display: block;
-      margin-bottom: 18px;
-      color: var(--lime);
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-
-    .five-second h3 {
-      margin-bottom: 8px;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .five-second p {
-      color: rgba(255,255,255,0.76);
-      font-size: 0.85rem;
-      line-height: 1.7;
-    }
-
-    .trigger-note {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 20px;
-      padding: 24px;
+    .check-item {
+      min-height: 150px;
+      padding: 18px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f8faf9;
+      border-radius: 10px;
+      background: #fff;
     }
 
-    .trigger-note div {
-      min-height: 74px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .trigger-note span {
+    .check-item span {
       display: block;
       margin-bottom: 12px;
-      color: var(--green);
+      color: var(--blue);
       font-size: 0.72rem;
       font-weight: 700;
     }
 
-    .trigger-note p {
-      color: #97a39d;
-      font-size: 0.9rem;
-    }
-
-    .week-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .day-card {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f8faf9;
-    }
-
-    .day-card:last-child {
-      grid-column: 1 / -1;
-      background: var(--green-soft);
-    }
-
-    .day {
-      display: grid;
-      width: 56px;
-      height: 56px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green-dark);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .day-card h3 {
-      margin-bottom: 7px;
-      color: var(--green-dark);
-      font-size: 1rem;
-    }
-
-    .day-card p {
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.75;
-    }
-
-    .takeaway-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .takeaway-grid div {
-      padding: 22px;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: var(--radius);
-      text-align: left;
-    }
-
-    .takeaway-grid strong {
+    .check-item strong {
       display: block;
       margin-bottom: 8px;
-      color: var(--lime);
-      font-size: 0.9rem;
+      color: var(--ink);
+      font-size: 0.94rem;
     }
 
-    .takeaway-grid span {
-      color: rgba(255,255,255,0.74);
-      font-size: 0.82rem;
+    .check-item p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.65;
+    }
+
+    .myth-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .myth {
+      display: grid;
+      grid-template-columns: 0.9fr 1.2fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .myth-ng,
+    .myth-correct {
+      padding: 20px;
+    }
+
+    .myth-ng {
+      background: var(--danger-soft);
+      color: var(--danger);
+      font-weight: 700;
       line-height: 1.7;
     }
 
-    .references {
-      margin-top: 22px;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
+    .myth-correct {
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.9rem;
+      line-height: 1.8;
     }
 
-    .references h2 {
-      margin-bottom: 14px;
-      font-size: 1rem;
+    .myth-correct strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--blue);
     }
 
-    .references ol {
+    .takeaways {
       display: grid;
-      gap: 8px;
-      padding-left: 20px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
     }
 
-    .references li,
-    .health-note {
-      color: var(--muted);
-      font-size: 0.76rem;
+    .takeaway {
+      padding: 22px;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      background: var(--accent-soft);
+    }
+
+    .takeaway:nth-child(2) {
+      border-left-color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .takeaway:nth-child(3) {
+      border-left-color: var(--danger);
+      background: var(--danger-soft);
+    }
+
+    .takeaway span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .takeaway p {
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 700;
       line-height: 1.75;
+    }
+
+    .citations {
+      display: grid;
+      gap: 12px;
+    }
+
+    .citation {
+      padding: 20px;
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      background: var(--blue-soft);
+    }
+
+    .citation:nth-child(2) {
+      border-left-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .citation p {
+      color: var(--ink);
+      font-size: 0.84rem;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .citation p + p {
+      margin-top: 7px;
+    }
+
+    .citation a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
 
     .health-note {
       margin-top: 18px;
       padding-top: 18px;
       border-top: 1px solid var(--line);
-    }
-
-    .final-message {
-      margin-top: 22px;
-      padding: clamp(34px, 7vw, 64px);
-      border-radius: var(--radius);
-      background: var(--green-dark);
-      color: #fff;
-      text-align: center;
-    }
-
-    .final-message p:first-child {
-      color: var(--lime);
+      color: var(--muted);
       font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
+      line-height: 1.75;
     }
 
-    .final-message .final-copy {
-      max-width: 800px;
-      margin: 18px auto 0;
-      font-size: clamp(1.5rem, 4vw, 2.6rem);
-      font-weight: 700;
-      line-height: 1.55;
-    }
-
-    footer {
-      padding: 30px 0 0;
-      color: #829088;
-      font-size: 0.72rem;
-      text-align: center;
-    }
-
-    @media (max-width: 760px) {
-      .page {
-        width: min(100% - 20px, 1040px);
-        padding-top: 10px;
-      }
-
-      .hero {
-        min-height: 560px;
-        padding: 28px 24px 38px;
-      }
-
-      .hero::before {
-        top: -85px;
-        right: -95px;
-        width: 270px;
-        height: 270px;
-        border-width: 54px;
-      }
-
-      .hero::after {
-        right: 40px;
-        bottom: -125px;
-        width: 230px;
-        height: 230px;
-        border-width: 42px;
-      }
-
-      .brand { margin-bottom: 72px; }
-
-      .intro,
-      .explanation {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
+    @media (max-width: 720px) {
+      .learning-list,
       .scenario-grid,
-      .direction,
-      .production-list,
-      .signal-grid,
+      .study-grid,
+      .result-comparison,
+      .meaning-grid,
       .skill-grid,
-      .hunger-grid,
-      .week-grid,
-      .takeaway-grid {
+      .practice-grid,
+      .takeaways {
         grid-template-columns: 1fr;
       }
 
-      .check-questions {
+      .choice-flow,
+      .forbidden-visual {
         grid-template-columns: 1fr;
       }
 
-      .five-second {
-        grid-template-columns: 1fr 1fr;
+      .choice-arrow,
+      .forbidden-arrow {
+        transform: rotate(90deg);
+        text-align: center;
       }
 
-      .trigger-note {
+      .fact {
         grid-template-columns: 1fr;
+        gap: 4px;
       }
 
-      .day-card:last-child {
-        grid-column: auto;
+      .check-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .chapter {
+      .myth {
         grid-template-columns: 1fr;
-      }
-
-      .slides {
-        grid-template-columns: 1fr;
-        padding: 10px 14px;
-      }
-
-      .comparison-head {
-        display: none;
-      }
-
-      .comparison-row {
-        grid-template-columns: 1fr;
-        padding: 8px 0;
-      }
-
-      .comparison-row div + div {
-        border-left: 0;
-      }
-
-      .comparison-row .ng::after {
-        content: 'NG思考';
-        display: block;
-        margin-top: 4px;
-        color: #ad817c;
-        font-size: 0.68rem;
-        font-weight: 700;
-      }
-
-      .comparison-row .ok {
-        border-top: 1px dashed var(--line);
-      }
-
-      .comparison-row .ok::after {
-        content: 'BDX式の選択思考';
-        display: block;
-        margin-top: 4px;
-        color: #76978a;
-        font-size: 0.68rem;
-        font-weight: 700;
       }
     }
 
     @media (max-width: 480px) {
-      .five-second {
+      .check-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
-  <link rel="stylesheet" href="../assets/default-document.css" />
 </head>
 <body class="default-document">
   <main class="page">
     <header class="hero">
       <div class="hero-content">
-        <p class="brand">BDX · Food Behavior Design</p>
-        <h1>食欲に振り回されない<br />身体の整え方</h1>
-        <p class="subtitle">意志力ではなく、思考と環境で食行動を変える</p>
+        <p class="brand">Evidence Guide / BDX</p>
+        <h1>食欲に振り回されない身体の整え方</h1>
+        <p class="subtitle">意志力ではなく、体調・思考・環境から食行動を選び直す</p>
+        <p class="source">
+          <strong>科学的背景：</strong>睡眠制限と食欲に関する無作為化クロスオーバー試験（Tajiri et al., 2023）<br />
+          禁止食品への接触と摂取行動に関する無作為化実験（Soetens et al., 2008）
+        </p>
       </div>
     </header>
 
-    <section class="intro" aria-label="はじめに">
-      <div class="intro-title">
-        <span class="kicker">First Step</span>
-        <h2>「分かっているのにできない」は、意志が弱いからではない。</h2>
-      </div>
-      <div class="intro-copy">
-        <p>栄養の知識があっても、疲れている夜やストレスの強い日は、いつもの選択が難しくなります。食行動は知識だけでなく、<strong>空腹・睡眠・感情・環境</strong>から影響を受けるからです。</p>
-        <p>必要なのは、自分を責めることではありません。今の状態に気づき、次の行動を選び直すためのスキルです。</p>
-      </div>
-    </section>
+    <div class="content">
+      <section class="section">
+        <p class="section-label">01 / 今日の結論</p>
+        <h2>食欲は、意志の強さだけでは決まらない</h2>
+        <p class="conclusion">睡眠不足や強い禁止は、食欲や間食行動へ影響する場合があります。必要なのは我慢ではなく、<strong>今の状態に気づき、目的に合う行動を選び直すこと</strong>です。</p>
+        <div class="key-message">自己制御とは、食欲をなくす力ではありません。今の体調と、なりたい状態に合わせて、次の行動を選び直す力です。</div>
+      </section>
 
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">01 / WHY</p>
-        <div>
-          <h2>食行動は、意志だけでは決まらない</h2>
-          <p class="section-lead">食べたくなった瞬間には、身体と環境から複数の信号が届いています。</p>
+      <section class="section">
+        <p class="section-label">02 / この資料で分かること</p>
+        <h2>この資料で分かること</h2>
+        <ul class="learning-list">
+          <li>睡眠不足の日に、空腹や間食が増えやすくなる理由</li>
+          <li>「絶対に食べない」という禁止が反動につながる場合</li>
+          <li>我慢せずに食行動を選び直すBDX式の実践方法</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <p class="section-label">03 / なぜ重要なのか</p>
+        <h2>「分かっているのにできない」は、意志が弱いからではない</h2>
+        <p class="lead">食行動は、栄養知識だけでなく、睡眠、疲労、感情、周囲の環境から影響を受けます。自分を責める前に、行動が起きた条件を見直すことが重要です。</p>
+
+        <ul class="scenario-grid">
+          <li>仕事帰りのコンビニ</li>
+          <li>睡眠不足の日の甘いもの</li>
+          <li>ストレスによるドカ食い</li>
+          <li>飲み会後の食欲</li>
+          <li>在宅勤務中の間食</li>
+          <li>運動後の「ご褒美食い」</li>
+        </ul>
+
+        <div class="choice-flow" aria-label="我慢から選択への考え方の変化">
+          <div class="choice-card">
+            <span>我慢だけで考える</span>
+            <p>食べたい<br />でも禁止しなければ</p>
+          </div>
+          <div class="choice-arrow" aria-hidden="true">→</div>
+          <div class="choice-card reframe">
+            <span>BDX式に選び直す</span>
+            <p>今の体調は？<br />何を選べば整う？</p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="signal-grid">
-        <article class="signal-card">
-          <span>01</span>
-          <h3>エネルギー不足</h3>
-          <p>食事の間隔が空いたり、活動量が多かったりすると、身体はエネルギーを求めます。これは我慢すべき失敗ではなく、必要な補給を知らせる信号です。</p>
-        </article>
-        <article class="signal-card">
-          <span>02</span>
-          <h3>睡眠不足・疲労</h3>
-          <p>睡眠が不足した日は、空腹感や高脂肪食品への欲求、間食が増える場合があります。食欲だけでなく、まず休息が必要かもしれません。</p>
-        </article>
-        <article class="signal-card">
-          <span>03</span>
-          <h3>ストレス・感情</h3>
-          <p>不安、退屈、達成感のなさを変えるために、食べる行動が選ばれることがあります。欲しいのは食べ物ではなく、安心や切り替えかもしれません。</p>
-        </article>
-        <article class="signal-card">
-          <span>04</span>
-          <h3>目の前の環境</h3>
-          <p>見える場所にある、すぐ手に取れる、いつも同じ場面で食べる。こうした環境は、空腹でなくても行動を自動的に始めやすくします。</p>
-        </article>
-      </div>
-    </section>
+      <section class="section">
+        <p class="section-label">04 / 科学的根拠</p>
+        <h2>睡眠不足と禁止思考を2つの研究から見る</h2>
+        <div class="study-grid">
+          <article class="study-card">
+            <div class="study-head">
+              <span>STUDY 01 / SLEEP</span>
+              <h3>睡眠制限と食欲・食事摂取</h3>
+            </div>
+            <dl class="study-facts">
+              <div class="fact"><dt>対象</dt><dd>健康な若年成人24名（女性13名、男性11名）</dd></div>
+              <div class="fact"><dt>条件</dt><dd>5時間睡眠と8時間睡眠を各3日間</dd></div>
+              <div class="fact"><dt>方法</dt><dd>無作為化クロスオーバー試験</dd></div>
+              <div class="fact"><dt>評価</dt><dd>空腹、食欲、食品への欲求、購入・摂取した食品</dd></div>
+            </dl>
+          </article>
 
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">02 / DEFINITION</p>
-        <div>
-          <h2>BDXでの「自己制御」の定義</h2>
-          <p class="section-lead">自己制御は、食欲に耐え続ける精神力ではありません。</p>
+          <article class="study-card">
+            <div class="study-head">
+              <span>STUDY 02 / PROHIBITION</span>
+              <h3>禁止食品への接触と反動</h3>
+            </div>
+            <dl class="study-facts">
+              <div class="fact"><dt>対象</dt><dd>女性68名</dd></div>
+              <div class="fact"><dt>条件</dt><dd>好きな間食を24時間禁止しながら接触／制限なし</dd></div>
+              <div class="fact"><dt>方法</dt><dd>2条件への無作為割り付け</dd></div>
+              <div class="fact"><dt>評価</dt><dd>その後自由に食べられる場面での摂取行動</dd></div>
+            </dl>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="definition">
-        <p>自己制御とは、食欲を我慢する力ではない。</p>
-        <p>今の体調と、なりたい状態に合わせて、行動を選び直す力である。</p>
-      </div>
-
-      <div class="explanation">
-        <div class="explanation-card">
-          <h3>「食べない技術」ではない</h3>
-          <p>空腹を無視するのではなく、身体からのサインを分けて考え、回復につながる選択をする技術です。</p>
-          <ul class="question-list">
-            <li>本当にエネルギー不足なのか</li>
-            <li>ストレス反応なのか</li>
-            <li>睡眠不足なのか</li>
-            <li>何を食べれば回復につながるのか</li>
-          </ul>
+      <section class="section">
+        <p class="section-label">05 / 研究結果 01</p>
+        <h2>5時間睡眠では、空腹と間食が増えた</h2>
+        <div class="result-comparison">
+          <article class="condition">
+            <span>CONTROL SLEEP</span>
+            <strong>8時間睡眠</strong>
+            <ul>
+              <li>比較の基準となる睡眠条件</li>
+              <li>通常に近い睡眠時間を確保</li>
+            </ul>
+          </article>
+          <article class="condition restricted">
+            <span>SLEEP RESTRICTION</span>
+            <strong>5時間睡眠</strong>
+            <ul>
+              <li>空腹感と脂っこい食品への欲求が高かった</li>
+              <li>眠気と疲労が高かった</li>
+              <li>間食由来のエネルギー・炭水化物摂取が多かった</li>
+            </ul>
+          </article>
         </div>
-        <div class="explanation-card orange">
-          <h3>我慢から、判断へ</h3>
-          <p>短期的な欲求を否定するのではなく、今の状態を把握し、長期的な目的との間でよりよい行動を選び直します。</p>
+        <p class="result-note">一言で解説：睡眠不足の日の間食は、単純な意志の弱さではなく、体調の変化と関連している可能性があります。ただし、この研究では1日の総摂取量に有意差はありませんでした。</p>
+      </section>
+
+      <section class="section">
+        <p class="section-label">06 / 研究結果 02</p>
+        <h2>「絶対に食べない」が反動になる場合がある</h2>
+        <div class="forbidden-visual" aria-label="禁止と食品への接触後に摂取が増えた研究結果">
+          <div class="forbidden-step exposure">
+            <span>24 HOURS</span>
+            <strong>好きな間食を禁止しながら、その食品に接触</strong>
+          </div>
+          <div class="forbidden-arrow" aria-hidden="true">→</div>
+          <div class="forbidden-step">
+            <span>FREE ACCESS</span>
+            <strong>自由に食べられる場面で、摂取量が増加</strong>
+          </div>
         </div>
-      </div>
+        <p class="result-note">反動は、普段から食事制限が強く、食べ始めると制御を失いやすい傾向の参加者で特に大きく見られました。「禁止は必ず悪い」ではなく、禁止と接触が組み合わさると逆効果になる人がいる、という結果です。</p>
+      </section>
 
-      <div class="analogy">
-        <p class="analogy-label">Driving Analogy</p>
-        <p>車で例えるなら、アクセルを踏まないことが自己制御ではありません。道路状況に応じて、アクセル・ブレーキ・休憩を選び分けることが自己制御です。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">03 / NOTICE</p>
-        <div>
-          <h2>本当の空腹と、感情的な食欲を見分ける</h2>
-          <p class="section-lead">どちらが良い・悪いではありません。今起きていることを見分けると、必要な行動を選びやすくなります。</p>
+      <section class="section">
+        <p class="section-label">07 / 結果の読み方</p>
+        <h2>研究の事実と、BDXでの実践を分けて考える</h2>
+        <div class="meaning-grid">
+          <article class="meaning-card fact">
+            <span>研究で確認されたこと</span>
+            <p>短期間の睡眠制限は間食と一部の食欲指標に影響し、禁止と食品への接触は特定条件で反動につながりました。</p>
+          </article>
+          <article class="meaning-card interpretation">
+            <span>そこから考えられること</span>
+            <p>食行動を整えるには、意思決定の瞬間だけでなく、睡眠や環境など事前の条件も見る必要があります。</p>
+          </article>
+          <article class="meaning-card action">
+            <span>BDXでの実践提案</span>
+            <p>食べる・食べないの二択にせず、体調を確認して、量・タイミング・組み合わせを選び直します。</p>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="hunger-grid">
-        <article class="hunger-card">
-          <h3>身体的な空腹のサイン</h3>
-          <ul>
-            <li>時間とともに少しずつ強くなる</li>
-            <li>特定の食品以外でも満たせる</li>
-            <li>胃の感覚や力が出ない感覚がある</li>
-            <li>適量を食べると落ち着きやすい</li>
-          </ul>
-        </article>
-        <article class="hunger-card emotional">
-          <h3>感情・環境による食欲のサイン</h3>
-          <ul>
-            <li>突然、強く食べたくなる</li>
-            <li>特定の味や食品だけが欲しくなる</li>
-            <li>ストレスや退屈の直後に起きる</li>
-            <li>満腹でも食べ続けたくなる</li>
-          </ul>
-        </article>
-      </div>
-
-      <ol class="check-questions">
-        <li>最後に食べたのはいつ？</li>
-        <li>今の空腹は0〜10でどれくらい？</li>
-        <li>食べ物以外で必要なものはある？</li>
-      </ol>
-      <p class="body-copy" style="margin-top: 18px;">身体的な空腹と感情的な食欲は、同時に起こることもあります。完全に分類することではなく、一度立ち止まって観察することが目的です。</p>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">04 / REFRAME</p>
-        <div>
-          <h2>禁止は、かえって食べ物への意識を強くする</h2>
-          <p class="section-lead">「絶対に食べない」と決めるほど、その食品ばかりが気になり、食べた瞬間に「もう失敗した」と考えやすくなります。</p>
+      <section class="section">
+        <p class="section-label">08 / BDXでどう活かす？</p>
+        <h2>我慢ではなく「選び直す力」を育てる</h2>
+        <div class="definition">
+          <p>自己制御とは、食欲を我慢する力ではない。</p>
+          <p>今の体調と、なりたい状態に合わせて、行動を選び直す力である。</p>
         </div>
-      </div>
 
-      <p class="body-copy">一度食べたことを失敗にせず、その場で選び直せる余白を残します。食べすぎた翌日に極端な制限をすると、空腹と反動の循環が続きやすくなります。次の食事から普段のリズムへ戻すことが、長期的な安定につながります。</p>
+        <div class="skill-grid">
+          <article class="skill">
+            <span>SKILL 01</span>
+            <h3>目的へ置き換える</h3>
+            <p>「太りたくない」ではなく、「明日の朝を軽くしたい」と考えます。</p>
+          </article>
+          <article class="skill">
+            <span>SKILL 02</span>
+            <h3>選択肢を増やす</h3>
+            <p>禁止だけでなく、量を変える、足す、少し待つという方法を持ちます。</p>
+          </article>
+          <article class="skill">
+            <span>SKILL 03</span>
+            <h3>体調を先に確認する</h3>
+            <p>空腹、睡眠、疲労、ストレスのどれが強いかを見分けます。</p>
+          </article>
+          <article class="skill">
+            <span>SKILL 04</span>
+            <h3>環境を整える</h3>
+            <p>見える食品を移し、回復につながる間食を先に用意します。</p>
+          </article>
+        </div>
+      </section>
 
-      <div class="direction" style="margin-top: 22px;">
-        <div class="direction-item">
-          <strong>禁止しない</strong>
-          <p>「食べてはいけない」ではなく、量・タイミング・組み合わせを選ぶ。</p>
+      <section class="section">
+        <p class="section-label">09 / 実践ワーク</p>
+        <h2>食べる前の5秒チェックを試す</h2>
+        <div class="check-grid">
+          <article class="check-item"><span>01 / STATE</span><strong>今の状態は？</strong><p>睡眠、疲労、ストレス、気分を確認。</p></article>
+          <article class="check-item"><span>02 / HUNGER</span><strong>空腹は何点？</strong><p>身体的な空腹を0〜10で表す。</p></article>
+          <article class="check-item"><span>03 / PURPOSE</span><strong>どうなりたい？</strong><p>食べた後や翌朝の状態を考える。</p></article>
+          <article class="check-item"><span>04 / CHOICE</span><strong>何を選ぶ？</strong><p>食べる、量を変える、別のもの、待つ。</p></article>
         </div>
-        <div class="direction-item">
-          <strong>一回で評価しない</strong>
-          <p>一度の食事ではなく、数日から数週間の流れで体調を見る。</p>
-        </div>
-        <div class="direction-item">
-          <strong>罰を与えない</strong>
-          <p>食べすぎた翌日も絶食せず、普段の食事と生活リズムへ戻す。</p>
-        </div>
-        <div class="direction-item">
-          <strong>次を選び直す</strong>
-          <p>過去の選択は変えられなくても、次の一食・一行動は選べる。</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">05 / SKILLS</p>
-        <div>
-          <h2>食欲に振り回されないための4つのスキル</h2>
-          <p class="section-lead">我慢を強くするのではなく、考え方と環境を整えます。</p>
+        <div class="practice-grid">
+          <article class="practice-card">
+            <span>今日試す</span>
+            <h3>一度だけ立ち止まる</h3>
+            <p>間食の前に、4つの質問を一度だけ確認します。</p>
+          </article>
+          <article class="practice-card">
+            <span>7日間続ける</span>
+            <h3>トリガーを記録する</h3>
+            <p>時間、場所、睡眠、感情、選んだ行動を短く残します。</p>
+          </article>
+          <article class="practice-card">
+            <span>自分向けに調整</span>
+            <h3>環境を一つ変える</h3>
+            <p>よく起きる場面に合わせ、選びやすい食品や休息を準備します。</p>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="skill-grid">
-        <article class="skill-card">
-          <span>SKILL 01</span>
-          <h3>目的に置き換える</h3>
-          <p>「太りたくない」ではなく、「明日の朝を軽くしたい」「午後も集中したい」のように、手に入れたい体調を言葉にします。</p>
-          <div class="choice-example">問い：このあと、どんな状態でいたい？</div>
-        </article>
-        <article class="skill-card">
-          <span>SKILL 02</span>
-          <h3>禁止ではなく選択で考える</h3>
-          <p>食べる・食べないの二択にせず、量を変える、別の食品を足す、少し待つなど、複数の選択肢を持ちます。</p>
-          <div class="choice-example">問い：今選べる方法は、ほかに何がある？</div>
-        </article>
-        <article class="skill-card">
-          <span>SKILL 03</span>
-          <h3>大切な人に助言するように考える</h3>
-          <p>自分を責め始めたら、同じ状況の友人へ何と伝えるかを考えます。距離を取ると、極端ではない判断がしやすくなります。</p>
-          <div class="choice-example">問い：大切な人なら、どう支える？</div>
-        </article>
-        <article class="skill-card">
-          <span>SKILL 04</span>
-          <h3>環境を変え、欲望を実況する</h3>
-          <p>食べ物を見えない場所へ移し、先に選択肢を用意します。それでも欲しくなったら、欲求を消そうとせず言葉にします。</p>
-          <ol class="urge-steps">
-            <li>「今、甘いものが欲しい。強さは8/10」</li>
-            <li>「睡眠不足で、仕事の疲れもある」</li>
-            <li>水分を取り、数分後にもう一度選ぶ</li>
-          </ol>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">06 / CHOICE</p>
-        <div>
-          <h2>目的に沿った言葉へ置き換える</h2>
-          <p class="section-lead">「我慢できたか」ではなく、「今の体調と目的に合う選択だったか」で考えます。</p>
+      <section class="section">
+        <p class="section-label">10 / よくある勘違い</p>
+        <h2>食欲を敵にせず、身体からの情報として扱う</h2>
+        <div class="myth-list">
+          <article class="myth">
+            <div class="myth-ng">× 食べたくなるのは意志が弱いから</div>
+            <div class="myth-correct"><strong>正しい考え方</strong>食欲は睡眠、空腹、疲労、感情、環境から影響を受けます。</div>
+          </article>
+          <article class="myth">
+            <div class="myth-ng">× 甘いものは完全に禁止する</div>
+            <div class="myth-correct"><strong>正しい考え方</strong>禁止だけで考えず、目的、量、タイミング、組み合わせを選びます。</div>
+          </article>
+          <article class="myth">
+            <div class="myth-ng">× 睡眠不足なら必ず食べすぎる</div>
+            <div class="myth-correct"><strong>正しい考え方</strong>研究結果は条件や個人で異なります。睡眠不足を一つの確認項目として扱います。</div>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="comparison" role="table" aria-label="禁止思考とBDX式選択思考の比較">
-        <div class="comparison-head" role="row">
-          <div role="columnheader">NG思考</div>
-          <div role="columnheader">BDX式の選択思考</div>
+      <section class="section">
+        <p class="section-label">11 / まとめ</p>
+        <h2>今日覚えてほしいこと</h2>
+        <div class="takeaways">
+          <article class="takeaway">
+            <span>01</span>
+            <p>食欲は意志力だけでなく、睡眠や環境から影響を受ける。</p>
+          </article>
+          <article class="takeaway">
+            <span>02</span>
+            <p>強い禁止は、条件によって反動につながる場合がある。</p>
+          </article>
+          <article class="takeaway">
+            <span>03</span>
+            <p>我慢ではなく、体調と目的に合わせて次を選び直す。</p>
+          </article>
         </div>
-        <div class="comparison-row" role="row">
-          <div class="ng" role="cell">太りたくないからポテチを我慢する</div>
-          <div class="ok" role="cell">明日の朝を軽くするために、ヨーグルトと果物を選ぶ</div>
-        </div>
-        <div class="comparison-row" role="row">
-          <div class="ng" role="cell">甘いものは禁止</div>
-          <div class="ok" role="cell">午後の集中力を保つために、タンパク質を含む間食を選ぶ</div>
-        </div>
-        <div class="comparison-row" role="row">
-          <div class="ng" role="cell">夜は絶対に食べない</div>
-          <div class="ok" role="cell">本当に空腹なら、睡眠を妨げにくい軽食を選ぶ</div>
-        </div>
-        <div class="comparison-row" role="row">
-          <div class="ng" role="cell">炭水化物は太るから抜く</div>
-          <div class="ok" role="cell">今日の活動量に合わせて必要な量を選ぶ</div>
-        </div>
-        <div class="comparison-row" role="row">
-          <div class="ng" role="cell">食べすぎたから翌日は絶食する</div>
-          <div class="ok" role="cell">食欲と生活リズムを戻すために、普段の食事へ戻す</div>
-        </div>
-        <div class="comparison-row" role="row">
-          <div class="ng" role="cell">運動したから好きなだけ食べていい</div>
-          <div class="ok" role="cell">回復を優先して、必要な栄養を満たす食事を選ぶ</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">07 / FIVE SECONDS</p>
-        <div>
-          <h2>食べる前の5秒チェック</h2>
-          <p class="section-lead">正解を出す必要はありません。自動的に食べる前に、4つだけ確認します。</p>
+      <section class="section">
+        <p class="section-label">12 / 引用</p>
+        <h2>論文情報</h2>
+        <div class="citations">
+          <article class="citation">
+            <p>Tajiri E, Yoshimura E, Tobina T, et al.</p>
+            <p><strong>Effects of sleep restriction on food intake and appetite under free-living conditions: A randomized crossover trial.</strong></p>
+            <p>Appetite. 2023;189:106998.</p>
+            <p>DOI: <a href="https://doi.org/10.1016/j.appet.2023.106998" target="_blank" rel="noopener noreferrer">10.1016/j.appet.2023.106998</a></p>
+          </article>
+          <article class="citation">
+            <p>Soetens B, Braet C, Van Vlierberghe L, Roets A.</p>
+            <p><strong>Resisting temptation: effects of exposure to a forbidden food on eating behaviour.</strong></p>
+            <p>Appetite. 2008;51(1):202-205.</p>
+            <p>DOI: <a href="https://doi.org/10.1016/j.appet.2008.01.007" target="_blank" rel="noopener noreferrer">10.1016/j.appet.2008.01.007</a></p>
+          </article>
         </div>
-      </div>
-
-      <div class="five-second">
-        <article>
-          <span>01 · STATE</span>
-          <h3>今の状態は？</h3>
-          <p>睡眠、疲労、ストレス、気分を短く確認する。</p>
-        </article>
-        <article>
-          <span>02 · HUNGER</span>
-          <h3>空腹は何点？</h3>
-          <p>身体的な空腹を0〜10で数字にする。</p>
-        </article>
-        <article>
-          <span>03 · PURPOSE</span>
-          <h3>どうなりたい？</h3>
-          <p>食べた後や明日の自分に欲しい状態を考える。</p>
-        </article>
-        <article>
-          <span>04 · CHOICE</span>
-          <h3>何を選ぶ？</h3>
-          <p>食べる、量を変える、別のものを選ぶ、少し待つ。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">08 / TRIGGER</p>
-        <div>
-          <h2>自分の食欲トリガーを知る</h2>
-          <p class="section-lead">意志力を鍛えるより、繰り返し起きる場面を先に見つける方が、対策を立てやすくなります。</p>
-        </div>
-      </div>
-
-      <ul class="scenario-grid">
-        <li>仕事帰りのコンビニ</li>
-        <li>睡眠不足の日の甘いもの</li>
-        <li>ストレスによるドカ食い</li>
-        <li>飲み会後の食欲</li>
-        <li>在宅勤務中の間食</li>
-        <li>運動後の「ご褒美食い」</li>
-        <li>休日の生活リズムの乱れ</li>
-      </ul>
-
-      <div class="trigger-note" aria-label="食欲トリガー記録シート">
-        <div><span>WHEN / いつ</span><p>例：22時、帰宅直後</p></div>
-        <div><span>WHERE / どこで</span><p>例：コンビニ、ソファ</p></div>
-        <div><span>STATE / どんな状態</span><p>例：睡眠5時間、疲労8/10</p></div>
-        <div><span>URGE / 何が欲しかった</span><p>例：甘いもの、濃い味</p></div>
-        <div><span>CHOICE / 何を選んだ</span><p>食べた・変えた・待った</p></div>
-        <div><span>AFTER / その後の体調</span><p>満足度、眠り、翌朝の感覚</p></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <p class="section-number">09 / 7 DAYS</p>
-        <div>
-          <h2>7日間の実践ワーク</h2>
-          <p class="section-lead">完璧に食べるための7日間ではありません。自分のパターンを知り、選び直す回数を増やすための7日間です。</p>
-        </div>
-      </div>
-
-      <div class="week-grid">
-        <article class="day-card">
-          <span class="day">DAY 1</span>
-          <div><h3>記録する</h3><p>食べたくなった時間、場所、気分を一度だけ記録する。</p></div>
-        </article>
-        <article class="day-card">
-          <span class="day">DAY 2</span>
-          <div><h3>体調を見る</h3><p>睡眠時間、疲労、空腹を0〜10で確認する。</p></div>
-        </article>
-        <article class="day-card">
-          <span class="day">DAY 3</span>
-          <div><h3>目的を言葉にする</h3><p>食べる前に「このあと、どうなりたい？」と問う。</p></div>
-        </article>
-        <article class="day-card">
-          <span class="day">DAY 4</span>
-          <div><h3>環境を一つ変える</h3><p>見える食べ物を移す、間食を用意するなど、一つだけ整える。</p></div>
-        </article>
-        <article class="day-card">
-          <span class="day">DAY 5</span>
-          <div><h3>助言する</h3><p>自分を責めたくなったら、大切な人にかける言葉へ変える。</p></div>
-        </article>
-        <article class="day-card">
-          <span class="day">DAY 6</span>
-          <div><h3>欲望を実況する</h3><p>食欲の強さ、感情、身体の感覚を言葉にしてから選ぶ。</p></div>
-        </article>
-        <article class="day-card">
-          <span class="day">DAY 7</span>
-          <div><h3>自分のパターンをまとめる</h3><p>起こりやすい場面、役立った選択、次週に残す工夫を一つずつ決める。</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="final-message">
-      <p>BDX Takeaway</p>
-      <p class="final-copy">目指すのは、食欲をなくすことではない。今の自分に合う行動を、何度でも選び直せること。</p>
-      <div class="takeaway-grid">
-        <div><strong>気づく</strong><span>空腹・疲労・感情・環境を観察する。</span></div>
-        <div><strong>選ぶ</strong><span>禁止ではなく、目的に合う選択肢を持つ。</span></div>
-        <div><strong>戻る</strong><span>うまくいかない日も、次の行動から普段へ戻す。</span></div>
-      </div>
-    </section>
-
-    <aside class="references">
-      <h2>科学的背景</h2>
-      <ol>
-        <li>Tajiri E, et al. Effects of sleep restriction on food intake and appetite under free-living conditions. Appetite. 2023;189:106998.</li>
-        <li>Soetens B, et al. Resisting temptation: effects of exposure to a forbidden food on eating behaviour. Appetite. 2008;51(1):202-205.</li>
-      </ol>
-      <p class="health-note">本資料は一般的な健康情報であり、診断や治療を目的とするものではありません。強い食欲の変化、過食、食事への恐怖、体調不良が続く場合や、治療中・妊娠中など個別の配慮が必要な場合は、医師や管理栄養士などの専門家へ相談してください。</p>
-    </aside>
+        <p class="health-note">本資料は一般的な健康情報であり、診断や治療を目的とするものではありません。過食、食事への強い恐怖、食欲の大きな変化、体調不良が続く場合は、医師や管理栄養士などの専門家へ相談してください。</p>
+      </section>
+    </div>
 
     <footer>© 合同会社 nature · BDX</footer>
   </main>
