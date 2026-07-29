@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="プロバレエダンサーの安静時エネルギー消費量と代謝抑制に関する2026年の研究を、BDX視点でわかりやすく解説します。" />
-  <title>見た目だけでは分からない代謝抑制 | BDX</title>
+  <meta name="description" content="体重やBMIだけでは見分けにくい代謝抑制を、プロバレエダンサーの2026年研究からBDX視点で解説します。" />
+  <title>体重だけでは分からない代謝抑制 | BDX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
@@ -21,6 +21,26 @@
       color: #1f2328;
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
       -webkit-font-smoothing: antialiased;
+    }
+
+    body.default-document {
+      --bg: #f8f6f2;
+      --accent: #755847;
+      --accent-soft: #f2ebe6;
+      --blue: #55748a;
+      --blue-soft: #eaf1f5;
+      --danger: #c75c5c;
+      --danger-soft: #fbecec;
+    }
+
+    body.default-document .hero,
+    body.default-document .section {
+      border-radius: 18px;
+    }
+
+    body.default-document .hero-content,
+    body.default-document h1 {
+      max-width: 880px;
     }
 
     .source {
@@ -256,7 +276,7 @@
       gap: 18px;
       padding: 24px;
       border-radius: 12px;
-      background: var(--danger-soft);
+      background: var(--blue-soft);
     }
 
     .bar-row {
@@ -282,14 +302,14 @@
     .bar {
       height: 100%;
       border-radius: inherit;
-      background: var(--danger);
+      background: var(--blue);
     }
 
     .bar.female { width: 37.5%; }
     .bar.male { width: 46%; }
 
     .bar-value {
-      color: var(--danger);
+      color: var(--blue);
       font-size: 1.1rem;
       font-weight: 700;
       text-align: right;
@@ -305,6 +325,11 @@
       font-size: 0.9rem;
       font-weight: 500;
       line-height: 1.8;
+    }
+
+    .result-note.research-note {
+      border-left-color: var(--blue);
+      background: var(--blue-soft);
     }
 
     .evidence-grid {
@@ -371,8 +396,8 @@
     }
 
     .meaning-card.action {
-      border: 1px solid var(--line);
-      background: #fff;
+      border: 1px solid rgba(216,155,69,0.24);
+      background: #fff4de;
     }
 
     .meaning-card span {
@@ -384,7 +409,7 @@
 
     .meaning-card.fact span { color: var(--blue); }
     .meaning-card.interpretation span { color: var(--accent); }
-    .meaning-card.action span { color: var(--danger); }
+    .meaning-card.action span { color: var(--accent); }
 
     .meaning-card p {
       color: var(--ink);
@@ -606,6 +631,356 @@
       line-height: 1.75;
     }
 
+    .hero-conclusion {
+      max-width: 790px;
+      margin-top: 16px;
+      color: var(--ink);
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .hero-conclusion strong {
+      color: var(--accent);
+    }
+
+    .inside-visual {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .inside-card {
+      min-height: 175px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 12px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .inside-card.internal {
+      border-color: rgba(85,116,138,0.25);
+      background: var(--blue-soft);
+    }
+
+    .inside-card span {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .inside-card strong {
+      color: var(--ink);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .person-shape {
+      position: relative;
+      width: 48px;
+      height: 62px;
+    }
+
+    .person-shape::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateX(-50%);
+    }
+
+    .person-shape::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 42px;
+      height: 36px;
+      border-radius: 22px 22px 10px 10px;
+      background: var(--accent);
+      transform: translateX(-50%);
+    }
+
+    .inside-card.internal .person-shape::before,
+    .inside-card.internal .person-shape::after {
+      background: var(--blue);
+    }
+
+    .not-equal {
+      color: var(--accent);
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .term-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .term-card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .term-card span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .term-card h3 {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .term-card p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.75;
+    }
+
+    .evidence-level {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .evidence-level strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .evidence-level p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.65;
+    }
+
+    .stars {
+      flex-shrink: 0;
+      color: var(--accent);
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+    }
+
+    .chart-footnote {
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.7;
+    }
+
+    .sex-signals {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+
+    .sex-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .sex-card.female {
+      background: var(--accent-soft);
+    }
+
+    .sex-card.male {
+      background: var(--blue-soft);
+    }
+
+    .sex-card span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .sex-card.male span {
+      color: var(--blue);
+    }
+
+    .sex-card ul {
+      display: grid;
+      gap: 8px;
+      padding-left: 1.2em;
+      color: var(--ink);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .sex-divider {
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .meaning-grid.four {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .meaning-card.scope {
+      border: 1px solid rgba(199,92,92,0.22);
+      background: var(--danger-soft);
+    }
+
+    .meaning-card.scope span {
+      color: var(--danger);
+    }
+
+    .action-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      list-style: none;
+      counter-reset: action;
+    }
+
+    .action-list li {
+      counter-increment: action;
+      position: relative;
+      padding: 18px 20px 18px 62px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .action-list li::before {
+      content: counter(action, decimal-leading-zero);
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .action-list strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .experiment-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .experiment-step {
+      min-height: 205px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .experiment-step:nth-child(2) {
+      background: var(--accent-soft);
+    }
+
+    .experiment-step:nth-child(3) {
+      background: var(--blue-soft);
+    }
+
+    .experiment-step:nth-child(4) {
+      background: #f5f6f8;
+    }
+
+    .experiment-step span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .experiment-step h3 {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .experiment-step p,
+    .experiment-step li {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .experiment-step ul {
+      display: grid;
+      gap: 5px;
+      padding-left: 1.15em;
+    }
+
+    .input-line {
+      margin-top: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .message-card {
+      padding: clamp(26px, 5vw, 42px);
+      border-radius: 18px;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .message-card p {
+      max-width: 760px;
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .message-card strong {
+      color: #fff4de;
+    }
+
     @media (max-width: 720px) {
       .learning-list,
       .research-grid,
@@ -614,7 +989,10 @@
       .meaning-grid,
       .practice-grid,
       .work-sheet,
-      .takeaways {
+      .takeaways,
+      .term-grid,
+      .meaning-grid.four,
+      .experiment-flow {
         grid-template-columns: 1fr;
       }
 
@@ -623,7 +1001,8 @@
       }
 
       .belief-arrow {
-        transform: rotate(90deg);
+        padding: 4px 0;
+        transform: none;
       }
 
       .fact {
@@ -638,6 +1017,28 @@
       .bar-row {
         grid-template-columns: 50px 1fr 58px;
       }
+
+      .inside-visual,
+      .sex-signals {
+        grid-template-columns: 1fr;
+      }
+
+      .not-equal {
+        text-align: center;
+      }
+
+      .sex-divider {
+        padding: 4px 0;
+      }
+
+      .evidence-level {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .term-card:last-child {
+        grid-column: auto;
+      }
     }
   </style>
 </head>
@@ -645,12 +1046,12 @@
   <main class="page">
     <header class="hero">
       <div class="hero-content">
-        <p class="brand">Research Summary / BDX</p>
-        <h1>見た目だけでは分からない代謝抑制</h1>
-        <p class="subtitle">BMIではなく、安静時代謝からエネルギー不足のサインを捉える</p>
+        <p class="brand">Evidence Guide / BDX</p>
+        <h1>体重だけでは分からない代謝抑制</h1>
+        <p class="subtitle">身体の内側で起きるエネルギー節約を、安静時代謝から考える</p>
         <p class="source">
           <strong>出典：</strong>Resting energy expenditure in professional dancers as an objective measure of low energy expenditure<br />
-          Wyon M, Allen N, Brown-Appenzeller D, et al. · BMJ Open Sport &amp; Exercise Medicine · 2026
+          Wyon M, Allen N, Brown-Appenzeller D, et al. / BMJ Open Sport &amp; Exercise Medicine / 2026
         </p>
       </div>
     </header>
@@ -658,90 +1059,151 @@
     <div class="content">
       <section class="section">
         <p class="section-label">01 / 今日の結論</p>
-        <h2>BMIが正常でも、代謝抑制は起こりうる</h2>
-        <p class="problem-copy">身体のエネルギー不足は、見た目や体重だけでは判断できません。<strong>安静時代謝・月経・体組成・骨の状態</strong>など、複数の指標を合わせて見ることが重要です。</p>
-        <p class="result-note">BDXでは、体重を減らすことよりも、食事・運動・回復のバランスから最高の体調をつくることを重視します。</p>
+        <h2>体重だけでは分からない</h2>
+        <p class="hero-conclusion"><strong>体重やBMIが低くなくても、身体がエネルギー消費を抑えている可能性があります。</strong></p>
+        <p class="lead">プロのバレエダンサーを対象とした研究では、低い安静時エネルギー消費量は、体重やBMIだけでは十分に見分けられませんでした。</p>
+        <div class="inside-visual" aria-label="見た目や体重と身体内部の状態は同じではない">
+          <article class="inside-card">
+            <div class="person-shape" aria-hidden="true"></div>
+            <span>見た目・体重</span>
+            <strong>外側から確認できる情報</strong>
+          </article>
+          <div class="not-equal" aria-hidden="true">≠</div>
+          <article class="inside-card internal">
+            <div class="person-shape" aria-hidden="true"></div>
+            <span>身体の内側の状態</span>
+            <strong>エネルギー消費や回復の状態</strong>
+          </article>
+        </div>
       </section>
 
       <section class="section">
         <p class="section-label">02 / この資料で分かること</p>
         <h2>この資料で分かること</h2>
         <ul class="learning-list">
-          <li>BMIが正常でも、代謝が抑制されている場合がある</li>
-          <li>安静時代謝は、エネルギー不足を捉える客観的な手がかりになる</li>
-          <li>体重だけでなく、月経・体組成・骨の状態を合わせて見る必要がある</li>
+          <li>身体が省エネ状態になるとは何か</li>
+          <li>なぜ体重やBMIだけでは判断できないのか</li>
+          <li>自分の体調をどう観察すればよいか</li>
         </ul>
+
+        <div class="term-grid">
+          <article class="term-card">
+            <span>RESTING ENERGY EXPENDITURE / REE</span>
+            <h3>安静時エネルギー消費量</h3>
+            <p>何もしていない状態でも、呼吸、体温維持、心臓や脳の働きなどに使われるエネルギー。</p>
+          </article>
+          <article class="term-card">
+            <span>MEASURED REE / REEm</span>
+            <h3>実測REE</h3>
+            <p>呼吸で使う酸素と排出する二酸化炭素を測り、実際のエネルギー消費量を推定した値。</p>
+          </article>
+          <article class="term-card">
+            <span>PREDICTED REE / REEp</span>
+            <h3>予測REE</h3>
+            <p>年齢、性別、身長、体重、体組成などを計算式に入れて予測した安静時エネルギー消費量。</p>
+          </article>
+          <article class="term-card">
+            <span>LOW ENERGY AVAILABILITY / LEA</span>
+            <h3>低エネルギー利用可能性</h3>
+            <p>運動で使った分を差し引いたあと、身体の維持や回復に使えるエネルギーが不足している状態。</p>
+          </article>
+          <article class="term-card">
+            <span>REEm ÷ REEp</span>
+            <h3>REE比</h3>
+            <p>実際に測定した代謝量が、計算上予測される代謝量に対してどの程度あるかを示す比率。</p>
+          </article>
+          <article class="term-card">
+            <span>METABOLIC SUPPRESSION</span>
+            <h3>代謝抑制</h3>
+            <p>身体が消費エネルギーを節約している可能性を示す状態。病名ではなく、REE比だけで診断するものでもありません。</p>
+          </article>
+          <article class="term-card">
+            <span>FAT-FREE MASS / FFM</span>
+            <h3>除脂肪量</h3>
+            <p>体重から脂肪の重さを除いた、筋肉、骨、臓器、体水分などの重さ。</p>
+          </article>
+        </div>
       </section>
 
       <section class="section">
         <p class="section-label">03 / なぜ重要なのか</p>
-        <h2>「細く見えないから大丈夫」とは限らない</h2>
-        <p class="problem-copy">多くの人は、エネルギー不足なら<strong>体重やBMIに表れる</strong>と考えます。しかし身体は、消費エネルギーを下げて不足へ適応することがあります。</p>
+        <h2>見た目だけでは分からない</h2>
+        <p class="problem-copy">多くの人は「体重が減っていなければ、エネルギーは足りている」と考えがちです。しかし身体は、エネルギー不足が続いたとき、<strong>消費するエネルギーを抑えて適応する</strong>可能性があります。</p>
 
         <div class="belief-visual" aria-label="見た目と身体内部の状態の違い">
           <div class="belief-card">
-            <span>見た目から分かること</span>
-            <p>体重・BMI・体型</p>
+            <span>一般的な認識</span>
+            <p>体重が低くない<br />だからエネルギーも十分</p>
           </div>
-          <div class="belief-arrow" aria-hidden="true">→</div>
+          <div class="belief-arrow" aria-hidden="true">しかし</div>
           <div class="belief-card reality">
-            <span>合わせて確認したいこと</span>
-            <p>安静時代謝・月経・体組成・骨の状態</p>
+            <span>研究から分かったこと</span>
+            <p>体重が低くなくても<br />安静時代謝が低い場合がある</p>
           </div>
         </div>
 
-        <p class="result-note">重要なのは「細いかどうか」ではなく、身体がエネルギーを節約する状態に入っていないかを見ることです。</p>
+        <p class="result-note">体重やBMIだけでなく、月経、疲労、体組成、骨の状態なども含めて考える必要があります。代謝抑制は病名ではなく、この研究で用いた基準から身体のエネルギー節約を捉える指標です。</p>
       </section>
 
       <section class="section">
         <p class="section-label">04 / 科学的根拠</p>
-        <h2>プロバレエダンサーをシーズン中に追跡</h2>
-        <p class="lead">この研究は、英国のプロバレエ団に所属するダンサーを対象とした縦断的な観察研究です。介入の効果を検証するランダム化試験ではありません。</p>
+        <h2>どのような研究？</h2>
+        <p class="lead">英国の一つのプロバレエ団を対象に、同じ参加者をダンスシーズン中に複数回評価した縦断的観察研究です。</p>
 
         <div class="research-grid">
           <dl class="study-facts">
             <div class="fact">
               <dt>対象</dt>
-              <dd>プロのクラシックバレエダンサー</dd>
+              <dd>プロのクラシックバレエダンサー47名（女性27名、男性20名）</dd>
             </div>
             <div class="fact">
-              <dt>人数</dt>
-              <dd>55名が参加を表明し、37名が全検査を完了</dd>
+              <dt>年齢</dt>
+              <dd>女性平均24歳、男性平均25歳</dd>
             </div>
             <div class="fact">
-              <dt>期間</dt>
-              <dd>2025年8月からシーズン中に最低2回測定</dd>
+              <dt>測定</dt>
+              <dd>シーズン開始時と4週間の集中公演期間後を含め、最低2回評価</dd>
             </div>
             <div class="fact">
-              <dt>評価方法</dt>
-              <dd>呼気ガスによるREE、体組成、DXA、ホルモン・月経状態、LEA質問票</dd>
+              <dt>評価項目</dt>
+              <dd>呼気ガスによるREE、BIA体組成、DXA骨評価、月経・ホルモン、LEA質問票</dd>
             </div>
             <div class="fact">
-              <dt>研究形式</dt>
-              <dd>1つのプロバレエ団を対象とした縦断的観察研究</dd>
+              <dt>比較</dt>
+              <dd>実測REEを8種類の予測式によるREEと比較</dd>
             </div>
           </dl>
 
           <div class="design-flow" aria-label="研究デザイン">
-            <div class="flow-step">シーズン開始時<br />休暇後に測定</div>
+            <div class="flow-step">プロダンサー47名が参加</div>
             <div class="flow-arrow" aria-hidden="true">↓</div>
-            <div class="flow-step">4週間の集中的な<br />公演期間</div>
+            <div class="flow-step">シーズン中に複数回測定</div>
             <div class="flow-arrow" aria-hidden="true">↓</div>
-            <div class="flow-step">公演期間直後に<br />再測定</div>
+            <div class="flow-step">安静時代謝・体組成・骨・月経状態を評価</div>
+            <div class="flow-arrow" aria-hidden="true">↓</div>
+            <div class="flow-step">実測REEと8つの予測REEを比較</div>
           </div>
         </div>
 
-        <div class="formula">測定REE ÷ 予測REE ＜ 0.90 ＝ 代謝抑制リスク</div>
-        <p class="lead">測定した安静時エネルギー消費量（REE）を8種類の予測式と比較しました。特定の1つの式だけではなく、複数の式を使う方が検出感度は高いと報告されています。</p>
+        <div class="formula">REE比 ＝ 実測REE ÷ 予測REE<br />各予測式で0.90未満かを確認</div>
+        <p class="lead">割合の算出には、全検査データがそろった37名（女性24名、男性13名）が使われました。最終分類では、複数の予測式のうち2つ以上でREE比が0.90未満となるかを評価しています。</p>
+
+        <div class="evidence-level">
+          <div>
+            <strong>エビデンスの位置づけ：縦断的観察研究</strong>
+            <p>同じ参加者を複数回評価していますが、食事や運動を無作為に割り付けた研究ではなく、因果関係を証明するものではありません。</p>
+          </div>
+          <div class="stars" aria-label="エビデンスレベル5段階中3">★★★☆☆</div>
+        </div>
       </section>
 
       <section class="section">
         <p class="section-label">05 / 研究結果 01</p>
-        <h2>約4割に代謝抑制が見られた</h2>
+        <h2>代謝抑制は珍しくない</h2>
 
         <div class="result-hero">
-          <p class="result-message">代謝抑制は、女性の<strong>37.5%</strong>、男性の<strong>46%</strong>で確認されました。</p>
-          <div class="bar-chart" role="img" aria-label="代謝抑制が見られた割合。女性37.5パーセント、男性46パーセント">
+          <p class="result-message">男女両方のプロダンサーで、予測値より安静時エネルギー消費量が低い人が確認されました。</p>
+          <div class="bar-chart" role="img" aria-label="代謝抑制リスクに分類された割合。女性37.5パーセント、男性46パーセント">
             <div class="bar-row">
               <span class="bar-label">女性</span>
               <div class="bar-track"><div class="bar female"></div></div>
@@ -752,164 +1214,181 @@
               <div class="bar-track"><div class="bar male"></div></div>
               <span class="bar-value">46%</span>
             </div>
+            <p class="chart-footnote">女性9/24名、男性6/13名。2つ以上の予測式で実測REE÷予測REEが0.90未満となる判定に基づく。</p>
           </div>
         </div>
 
-        <p class="result-note">一言で解説：プロとして活動しているダンサーでも、男女ともに代謝抑制は珍しい状態ではありませんでした。</p>
+        <p class="result-note research-note"><strong>研究結果：</strong>エネルギー不足への身体の適応を示す可能性がある低いREEは、女性だけでなく男性にも確認されました。これは医学的な診断率ではなく、本研究の判定基準による分類です。</p>
       </section>
 
       <section class="section">
         <p class="section-label">06 / 研究結果 02</p>
         <h2>BMIだけでは代謝抑制を見抜けなかった</h2>
-        <p class="lead">低い体重やBMIは、低REEを安定して予測しませんでした。一方、除脂肪量1kgあたりのエネルギー消費量は、体重1kgあたりの指標より低REE群を識別しやすい結果でした。</p>
+        <p class="lead">低REE群は、体重やBMIだけでは安定して識別できませんでした。BMIに意味がないのではなく、BMI単独では十分な判別指標にならなかったという結果です。</p>
 
         <div class="evidence-grid">
           <article class="evidence-card important">
-            <span>見抜きにくかった指標</span>
-            <h3>体重・BMIだけの評価</h3>
-            <p>外見やBMIが正常範囲でも、身体内部では代謝が抑制されている可能性があります。</p>
+            <span>これだけでは判断できない</span>
+            <h3>体重・BMI・見た目</h3>
+            <p>体重が大きく減っていなくても、身体が使うエネルギーを抑えている場合があります。</p>
           </article>
           <article class="evidence-card support">
-            <span>より感度が高かった指標</span>
-            <h3>除脂肪量あたりのREE</h3>
-            <p>筋肉や骨、臓器などの除脂肪量に対して、どれだけエネルギーを消費しているかを見る指標です。</p>
-          </article>
-          <article class="evidence-card">
-            <span>女性で関連した特徴</span>
-            <h3>月経異常と遅い初経</h3>
-            <p>低REE群では月経の不規則性と、より遅い初経年齢が関連していました。</p>
-          </article>
-          <article class="evidence-card">
-            <span>男性で関連した特徴</span>
-            <h3>低い体脂肪率</h3>
-            <p>男性の低REE群では、より低い体脂肪率との関連が確認されました。</p>
+            <span>複数の情報を合わせて確認</span>
+            <h3>実測REE・除脂肪量・月経・体脂肪・骨</h3>
+            <p>除脂肪量1kg当たりのREEは、体重1kg当たりの値より低REE群を見分ける感度が高い結果でした。</p>
           </article>
         </div>
 
-        <p class="result-note">骨密度とZスコアも低REE群で低い傾向でしたが、この研究では統計的に有意な差ではありませんでした。</p>
+        <p class="result-note research-note"><strong>研究結果：</strong>外見やBMIが特定の範囲にあることだけで、身体内部のエネルギー状態まで判断することはできません。</p>
       </section>
 
       <section class="section">
-        <p class="section-label">07 / 結果の読み方</p>
-        <h2>論文の事実と、BDXでの活用を分けて考える</h2>
-        <div class="meaning-grid">
+        <p class="section-label">07 / 研究結果 03</p>
+        <h2>身体サインにも違いがあった</h2>
+        <div class="sex-signals">
+          <article class="sex-card female">
+            <span>女性で関連した特徴</span>
+            <ul>
+              <li>月経不順</li>
+              <li>初経年齢がより遅いこと</li>
+              <li>骨密度とZスコアが低い傾向</li>
+            </ul>
+          </article>
+          <div class="sex-divider">男女で異なる可能性</div>
+          <article class="sex-card male">
+            <span>男性で関連した特徴</span>
+            <ul>
+              <li>より低い体脂肪率</li>
+              <li>骨密度とZスコアが低い傾向</li>
+              <li>BMIが低くなくても低REE</li>
+            </ul>
+          </article>
+        </div>
+        <p class="result-note research-note"><strong>男女共通：</strong>除脂肪量1kg当たりの安静時エネルギー消費量の方が、低REE群と通常REE群を見分けるうえで感度の高い指標でした。骨の差は低い傾向にとどまり、統計的に有意ではありませんでした。</p>
+      </section>
+
+      <section class="section">
+        <p class="section-label">08 / 結果の正しい読み方</p>
+        <h2>何が分かり、何が未確定？</h2>
+        <div class="meaning-grid four">
           <article class="meaning-card fact">
-            <span>論文で確認されたこと</span>
-            <p>プロダンサーでは、BMIだけで代謝抑制を判断できず、直接測定と複数指標の組み合わせが重要でした。</p>
+            <span>研究結果</span>
+            <p>プロダンサーの男女両方で低REEが確認され、体重やBMIだけでは十分に識別できませんでした。女性では月経状態、男性では体脂肪率との関連が見られました。</p>
           </article>
           <article class="meaning-card interpretation">
-            <span>そこから考えられること</span>
-            <p>体重が変わっていなくても、身体がエネルギー不足へ適応している可能性を無視すべきではありません。</p>
+            <span>結果から考えられること</span>
+            <p>身体は、体重を大きく変えずにエネルギー消費を抑える場合があります。サインの現れ方は、性別や身体特性によって異なる可能性があります。</p>
           </article>
           <article class="meaning-card action">
-            <span>BDXでの実践提案</span>
-            <p>一般ユーザーには診断として使わず、体重だけでなく、疲労・睡眠・回復・月経などを振り返る視点として活用します。</p>
+            <span>BDXの提案</span>
+            <p>一般ユーザーは自己診断に使わず、体重だけでなく、疲労、回復、睡眠、集中力、月経、食事、痛みなどを組み合わせて観察します。</p>
+          </article>
+          <article class="meaning-card scope">
+            <span>適用範囲</span>
+            <p>対象は英国の一つのプロバレエ団です。一般人や他競技に同じ割合が当てはまるとは限らず、観察研究のため因果関係も断定できません。</p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <p class="section-label">08 / BDXでどう活かす？</p>
-        <h2>体重管理ではなく、体調の変化を多面的に見る</h2>
-        <div class="practice-grid">
-          <article class="practice-card">
-            <span>実践ポイント 01</span>
-            <h3>体重だけで評価しない</h3>
-            <p>体重が安定していても、疲労、冷え、集中力、回復の遅さなどの変化を合わせて振り返ります。</p>
-          </article>
-          <article class="practice-card">
-            <span>実践ポイント 02</span>
-            <h3>食事・運動・回復を一緒に見る</h3>
-            <p>食事量だけを減らさず、活動量、睡眠、休養とのバランスから体調を考えます。</p>
-          </article>
-          <article class="practice-card">
-            <span>実践ポイント 03</span>
-            <h3>続く変化は専門家へ相談する</h3>
-            <p>月経異常、強い疲労、骨の痛み、食事への不安などが続く場合は、医療・栄養の専門家につなげます。</p>
-          </article>
-        </div>
+        <p class="section-label">09 / BDXでどう活かす？</p>
+        <h2>体重以外も観察する</h2>
+        <p class="lead">体重計は、車のメーターでいえば一つの表示にすぎません。燃料、エンジン温度、警告灯を合わせて見るように、身体も複数のサインから捉えます。</p>
+        <ol class="action-list">
+          <li><strong>身体の状態を確認する</strong>疲労感、回復感、痛み、冷え、月経状態、運動時の感覚を見る。</li>
+          <li><strong>心理・生活環境を確認する</strong>睡眠、集中力、気分、忙しさ、食事時間、食事制限の有無を見る。</li>
+          <li><strong>目的に合う選択肢を考える</strong>運動量、食事や補食、休養、専門家への相談を検討する。</li>
+          <li><strong>行動を選び直す</strong>体調の変化を見ながら、続ける・減らす・増やす・休むを再判断する。</li>
+        </ol>
       </section>
 
       <section class="section">
-        <p class="section-label">09 / 実践ワーク</p>
-        <h2>7日間、体重ではなく体調を記録する</h2>
-        <div class="practice-grid">
-          <article class="practice-card">
-            <span>今日試す</span>
-            <h3>今の状態を確認</h3>
-            <p>睡眠、疲労、空腹、集中力を0〜10で記録します。</p>
+        <p class="section-label">10 / 実践ワーク</p>
+        <h2>体重以外のサインを探す</h2>
+        <p class="lead">このワークの目的は自己診断ではありません。普段との違いに気づき、今日変えられることを一つ選ぶために使います。</p>
+        <div class="experiment-flow">
+          <article class="experiment-step">
+            <span>01 / OBSERVE</span>
+            <h3>観察する</h3>
+            <ul>
+              <li>睡眠と起床時の疲れ</li>
+              <li>集中力と回復の速さ</li>
+              <li>食事を抜いていないか</li>
+              <li>冷え、月経、痛みの変化</li>
+            </ul>
           </article>
-          <article class="practice-card">
-            <span>7日間続ける</span>
-            <h3>パターンを探す</h3>
-            <p>食事、運動、睡眠と体調の変化を同じ表に残します。</p>
+          <article class="experiment-step">
+            <span>02 / DECIDE</span>
+            <h3>一つ選ぶ</h3>
+            <p>食事を抜かない、運動後に補食を取る、強度を下げる、早く寝る、休憩を増やすなどから一つ選びます。</p>
           </article>
-          <article class="practice-card">
-            <span>自分向けに調整</span>
-            <h3>一つだけ整える</h3>
-            <p>食事を足す、運動量を下げる、睡眠を確保するなど、一つ試します。</p>
+          <article class="experiment-step">
+            <span>03 / EXPERIMENT</span>
+            <h3>試す</h3>
+            <p>今日または次の運動日に一度試し、他の条件をできるだけ変えずに結果を観察します。</p>
+            <div class="input-line">今日試すこと：</div>
+          </article>
+          <article class="experiment-step">
+            <span>04 / REFLECT</span>
+            <h3>振り返る</h3>
+            <p>変わったこと、変わらなかったこと、一回では判断できないことを分け、次の行動を選びます。</p>
           </article>
         </div>
 
-        <div class="work-sheet" aria-label="体調記録ワークシート">
-          <div class="work-item"><span>SLEEP / 睡眠</span><p>時間・目覚めた時の感覚</p></div>
-          <div class="work-item"><span>ENERGY / 活力</span><p>朝・昼・夜の元気さ</p></div>
-          <div class="work-item"><span>APPETITE / 食欲</span><p>空腹・満足感・食事への不安</p></div>
-          <div class="work-item"><span>RECOVERY / 回復</span><p>筋肉痛・疲労・集中力</p></div>
-          <div class="work-item"><span>ACTIVITY / 活動</span><p>運動内容・強度・時間</p></div>
-          <div class="work-item"><span>CHANGE / 変化</span><p>明日試す小さな調整</p></div>
-        </div>
+        <p class="result-note"><strong>今日の学び：</strong>一つの数字で正解を決めるのではなく、複数の身体サインを観察し、自分に合う選択を見つけることが目的です。痛みや強い不調がある場合は実験を中止し、専門家への相談を優先してください。</p>
       </section>
 
       <section class="section">
-        <p class="section-label">10 / よくある勘違い</p>
-        <h2>代謝抑制を体型や自己判断だけで決めない</h2>
+        <p class="section-label">11 / よくある勘違い</p>
+        <h2>痩せていなければ大丈夫？</h2>
         <div class="myth-list">
           <article class="myth">
-            <div class="myth-ng">× 細い人だけがエネルギー不足になる</div>
-            <div class="myth-correct"><strong>正しい考え方</strong>BMIが正常でも、代謝抑制が見られる場合があります。</div>
-          </article>
-          <article class="myth">
-            <div class="myth-ng">× 体重が減っていなければ問題ない</div>
-            <div class="myth-correct"><strong>正しい考え方</strong>身体が消費量を下げて適応すると、体重だけでは変化を捉えにくくなります。</div>
-          </article>
-          <article class="myth">
-            <div class="myth-ng">× 疲れているから代謝抑制だ</div>
-            <div class="myth-correct"><strong>正しい考え方</strong>疲労だけでは診断できません。客観的な測定と専門的な評価が必要です。</div>
+            <div class="myth-ng">× 体重やBMIが大きく減っていなければ、エネルギー不足ではない</div>
+            <div class="myth-correct"><strong>正しい考え方</strong>体重だけで判断せず、疲労、回復、月経、体組成、骨の状態など複数のサインを見ます。</div>
           </article>
         </div>
+        <p class="lead">一般ユーザーが骨密度や安静時代謝を自宅で判断することは困難です。疲労だけで代謝抑制と決めず、不調が続く場合は自己判断だけで済ませないことが重要です。</p>
       </section>
 
       <section class="section">
-        <p class="section-label">11 / まとめ</p>
+        <p class="section-label">12 / まとめ</p>
         <h2>今日覚えてほしいこと</h2>
         <div class="takeaways">
           <article class="takeaway">
-            <span>01</span>
-            <p>BMIだけでは、身体のエネルギー不足を見抜けない。</p>
+            <span>01 / 研究から分かった事実</span>
+            <p>プロダンサーでは、体重やBMIだけで低い安静時エネルギー消費量を十分に見分けられなかった。</p>
           </article>
           <article class="takeaway">
-            <span>02</span>
-            <p>安静時代謝と複数の身体指標を組み合わせて見る。</p>
+            <span>02 / 体調管理の視点</span>
+            <p>疲労、月経、体組成、骨、回復状態など複数の情報から考える。</p>
           </article>
           <article class="takeaway">
-            <span>03</span>
-            <p>一般ユーザーは、体重より体調の変化に気づくことから始める。</p>
+            <span>03 / 今日からできること</span>
+            <p>体重以外に、睡眠、疲労、回復、集中力、食事、痛みの変化を一つ記録する。</p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <p class="section-label">12 / 引用</p>
+        <p class="section-label">13 / BDX MESSAGE</p>
+        <h2>身体は一つの数字ではない</h2>
+        <div class="message-card">
+          <p>この研究が教えてくれるのは、「体重が低ければ問題がある」「食べれば必ず改善する」という単純な答えではありません。重要なのは、<strong>一つの数字で判断せず、身体の変化を観察し、その日の状態に合う選択へ調整すること</strong>です。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">14 / 引用</p>
         <h2>論文情報</h2>
         <div class="citation">
-          <p>Wyon M, Allen N, Brown-Appenzeller D, Cloak R, Devonport T, Gregory K, Penner J, Hassan-Smith Z, Webster R, Wolman R.</p>
+          <p>Wyon M, Allen N, Brown-Appenzeller D, Cloak R, Devonport T, Gregory K, Penner J, Hassan-Smith Z, Webster R, Wolman R. (2026).</p>
           <p><strong>Resting energy expenditure in professional dancers as an objective measure of low energy expenditure.</strong></p>
           <p>BMJ Open Sport &amp; Exercise Medicine. 2026;12(2):e003216.</p>
           <p>DOI: <a href="https://doi.org/10.1136/bmjsem-2026-003216" target="_blank" rel="noopener noreferrer">10.1136/bmjsem-2026-003216</a></p>
-          <p>URL: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13052749/" target="_blank" rel="noopener noreferrer">PubMed Central全文</a></p>
+          <p>URL: <a href="https://bmjopensem.bmj.com/content/12/2/e003216" target="_blank" rel="noopener noreferrer">BMJ Open Sport &amp; Exercise Medicine</a></p>
+          <p>公開日：2026年4月2日 / ライセンス：CC BY-NC 4.0</p>
         </div>
-        <p class="health-note">本資料は一般的な健康情報であり、診断や治療を目的とするものではありません。月経異常、強い疲労、骨の痛み、食事への強い不安などが続く場合は、医師や管理栄養士などの専門家へ相談してください。</p>
+        <p class="health-note">本資料は一般的な健康情報を提供するものであり、診断や治療を目的とするものではありません。強い疲労、月経異常、繰り返すけが、急な体重変化、長く続く体調不良がある場合は、医師や管理栄養士など適切な専門家へ相談してください。</p>
       </section>
     </div>
 
