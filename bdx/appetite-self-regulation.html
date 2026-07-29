@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="睡眠不足や禁止思考が食欲へ与える影響を研究から学び、意志力に頼らず食行動を整えるBDX実践ガイドです。" />
-  <title>食欲に振り回されない身体の整え方 | BDX</title>
+  <meta name="description" content="成人360人の縦断的介入研究をもとに、環境と考え方を整えて健康的な食行動を選びやすくする方法を解説するBDX資料です。" />
+  <title>意志より先に設計する | BDX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
@@ -21,24 +21,57 @@
       color: #1f2328;
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
       -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    body.default-document .page {
+      margin: 0 auto;
+    }
+
+    body.default-document .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.default-document .hero::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 9px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--blue) 0 33.333%, var(--accent) 33.333% 66.666%, #c27b20 66.666%);
+      content: '';
     }
 
     body.default-document .hero-content,
     body.default-document h1 {
-      max-width: 880px;
+      max-width: 860px;
     }
 
     body.default-document h1 {
-      font-size: clamp(2rem, 4.5vw, 3.15rem);
+      font-size: 3.1rem;
+    }
+
+    .series {
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 700;
     }
 
     .source {
       margin-top: 22px;
-      padding-top: 22px;
+      padding-top: 20px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.8;
+      font-size: 0.84rem;
+      line-height: 1.85;
+      overflow-wrap: anywhere;
     }
 
     .source strong {
@@ -55,43 +88,151 @@
       margin-top: 0;
     }
 
-    .section-label {
-      margin-bottom: 8px;
-      color: var(--accent);
-      font-size: 0.78rem;
+    .section-label,
+    .evidence-tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 28px;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
       font-weight: 700;
-      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .section-label {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .evidence-tag.fact {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .evidence-tag.interpretation {
+      background: #f3eadf;
+      color: #7a4f24;
+    }
+
+    .evidence-tag.proposal {
+      background: #fff3df;
+      color: #8a5415;
+    }
+
+    .evidence-tag.warning {
+      background: var(--danger-soft);
+      color: var(--danger);
     }
 
     .lead {
       margin-top: 14px;
       color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.95;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .lead strong {
+      color: var(--ink);
     }
 
     .conclusion {
       max-width: 800px;
       color: var(--ink);
-      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      font-size: 1.55rem;
       font-weight: 700;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     .conclusion strong {
       color: var(--accent);
     }
 
-    .key-message {
+    .note {
       margin-top: 20px;
-      padding: 20px;
+      padding: 18px 20px;
       border-left: 4px solid var(--blue);
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--blue-soft);
       color: var(--ink);
-      font-size: 0.98rem;
-      font-weight: 500;
+      font-size: 0.92rem;
       line-height: 1.85;
+    }
+
+    .note.interpretation {
+      border-left-color: var(--accent);
+      background: #f7efe6;
+    }
+
+    .note.proposal {
+      border-left-color: #c27b20;
+      background: #fff6e8;
+    }
+
+    .note.warning {
+      border-left-color: var(--danger);
+      background: var(--danger-soft);
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+
+    .route-compare {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .route {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fafafa;
+    }
+
+    .route.recommended {
+      border-color: rgba(49, 90, 157, 0.35);
+      background: var(--blue-soft);
+    }
+
+    .route-title {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .route.recommended .route-title {
+      color: var(--blue);
+    }
+
+    .flow {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .flow-step {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .flow-arrow {
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .learning-list {
@@ -104,10 +245,11 @@
 
     .learning-list li {
       position: relative;
-      min-height: 140px;
-      padding: 50px 20px 20px;
+      min-width: 0;
+      min-height: 150px;
+      padding: 52px 20px 20px;
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 16px;
       background: #fff;
       color: var(--ink);
       font-size: 0.94rem;
@@ -116,13 +258,12 @@
     }
 
     .learning-list li::before {
-      content: '✓';
       position: absolute;
       top: 18px;
       left: 20px;
       color: var(--accent);
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      content: '✓';
     }
 
     .learning-list li:nth-child(2) {
@@ -130,548 +271,714 @@
     }
 
     .learning-list li:nth-child(3) {
-      background: var(--accent-soft);
+      background: #fff6e8;
     }
 
-    .scenario-grid {
+    .factor-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 20px;
-      list-style: none;
+      margin-top: 22px;
     }
 
-    .scenario-grid li {
-      position: relative;
-      padding: 16px 18px 16px 42px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-      line-height: 1.7;
-    }
-
-    .scenario-grid li::before {
-      content: '';
-      position: absolute;
-      top: 23px;
-      left: 20px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .choice-flow {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 16px;
-      align-items: stretch;
-      margin-top: 24px;
-    }
-
-    .choice-card {
-      padding: 22px;
-      border: 1px solid var(--line);
+    .factor {
+      min-width: 0;
+      padding: 16px 12px;
       border-radius: 12px;
-      background: var(--danger-soft);
-    }
-
-    .choice-card.reframe {
-      background: var(--blue-soft);
-    }
-
-    .choice-card span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--danger);
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-
-    .choice-card.reframe span {
-      color: var(--blue);
-    }
-
-    .choice-card p {
+      background: #f7f7f7;
       color: var(--ink);
-      font-size: 1rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      line-height: 1.7;
-    }
-
-    .choice-arrow {
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-      font-size: 1.7rem;
-      font-weight: 700;
-    }
-
-    .study-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .study-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-    }
-
-    .study-head {
-      padding: 20px;
-      background: var(--blue-soft);
-    }
-
-    .study-card:nth-child(2) .study-head {
-      background: var(--accent-soft);
-    }
-
-    .study-head span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--blue);
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-
-    .study-card:nth-child(2) .study-head span {
-      color: var(--accent);
-    }
-
-    .study-head h3 {
-      color: var(--ink);
-      font-size: 1.08rem;
       line-height: 1.6;
-    }
-
-    .study-facts {
-      display: grid;
-      gap: 1px;
-      background: var(--line);
-    }
-
-    .fact {
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 12px;
-      padding: 14px 18px;
-      background: #fff;
-    }
-
-    .fact dt {
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-
-    .fact dd {
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.7;
-    }
-
-    .result-comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .condition {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-    }
-
-    .condition.restricted {
-      border-color: rgba(163,59,49,0.2);
-      background: var(--danger-soft);
-    }
-
-    .condition span {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-
-    .condition.restricted span {
-      color: var(--danger);
-    }
-
-    .condition strong {
-      display: block;
-      margin-bottom: 14px;
-      color: var(--ink);
-      font-size: clamp(1.25rem, 3vw, 1.7rem);
-    }
-
-    .condition ul {
-      display: grid;
-      gap: 8px;
-      list-style: none;
-    }
-
-    .condition li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.7;
-    }
-
-    .condition li::before {
-      content: '';
-      position: absolute;
-      top: 0.68em;
-      left: 0;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
-
-    .condition.restricted li::before {
-      background: var(--danger);
-    }
-
-    .result-note {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--ink);
-      font-size: 0.9rem;
-      font-weight: 500;
-      line-height: 1.8;
-    }
-
-    .forbidden-visual {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 16px;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .forbidden-step {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
       text-align: center;
     }
 
-    .forbidden-step.exposure {
-      background: var(--danger-soft);
-    }
-
-    .forbidden-step span {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-
-    .forbidden-step strong {
-      color: var(--ink);
-      font-size: 1.08rem;
-      line-height: 1.6;
-    }
-
-    .forbidden-arrow {
-      color: var(--danger);
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .meaning-grid {
+    .research-layout {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
       margin-top: 20px;
     }
 
-    .meaning-card {
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .meaning-card.fact {
-      background: var(--blue-soft);
-    }
-
-    .meaning-card.interpretation {
-      background: var(--accent-soft);
-    }
-
-    .meaning-card.action {
+    .metadata {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      align-content: start;
+      overflow: hidden;
       border: 1px solid var(--line);
-      background: #fff;
+      border-radius: 16px;
     }
 
-    .meaning-card span {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.74rem;
-      font-weight: 700;
+    .metadata dt,
+    .metadata dd {
+      min-width: 0;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.84rem;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
     }
 
-    .meaning-card.fact span { color: var(--blue); }
-    .meaning-card.interpretation span { color: var(--accent); }
-    .meaning-card.action span { color: var(--danger); }
-
-    .meaning-card p {
-      color: var(--ink);
-      font-size: 0.9rem;
-      font-weight: 500;
-      line-height: 1.8;
-    }
-
-    .definition {
-      padding: 24px;
-      border-left: 5px solid var(--blue);
-      border-radius: 12px;
+    .metadata dt {
       background: var(--blue-soft);
-    }
-
-    .definition p {
-      color: var(--ink);
-      font-size: clamp(1.15rem, 3vw, 1.45rem);
-      font-weight: 700;
-      line-height: 1.75;
-    }
-
-    .definition p + p {
-      margin-top: 6px;
       color: var(--blue);
+      font-weight: 700;
     }
 
-    .skill-grid {
+    .metadata dd {
+      color: var(--ink);
+    }
+
+    .metadata dt:last-of-type,
+    .metadata dd:last-of-type {
+      border-bottom: 0;
+    }
+
+    .design {
+      padding: 20px;
+      border-radius: 16px;
+      background: #f7f8fa;
+    }
+
+    .design h3 {
+      margin-bottom: 16px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .design .flow-step {
+      border: 1px solid var(--line);
+      font-size: 0.82rem;
+    }
+
+    .evidence-level {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .term-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
       margin-top: 20px;
     }
 
-    .skill {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-    }
-
-    .skill:nth-child(2) { background: var(--blue-soft); }
-    .skill:nth-child(3) { background: var(--accent-soft); }
-    .skill:nth-child(4) { background: var(--danger-soft); }
-
-    .skill span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--accent);
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-
-    .skill h3 {
-      margin-bottom: 8px;
-      color: var(--ink);
-      font-size: 1rem;
-    }
-
-    .skill p {
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-
-    .practice-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .practice-card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-    }
-
-    .practice-card:nth-child(2) { background: var(--blue-soft); }
-    .practice-card:nth-child(3) { background: var(--accent-soft); }
-
-    .practice-card span {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-
-    .practice-card h3 {
-      margin-bottom: 10px;
-      color: var(--ink);
-      font-size: 1.03rem;
-    }
-
-    .practice-card p {
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-
-    .check-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .check-item {
-      min-height: 150px;
+    .term {
+      min-width: 0;
       padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
+      border-radius: 14px;
+      background: #f7f8fa;
     }
 
-    .check-item span {
+    .term:nth-child(2n) {
+      background: var(--blue-soft);
+    }
+
+    .term strong {
       display: block;
-      margin-bottom: 12px;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 0.94rem;
+    }
+
+    .term span {
+      display: block;
+      margin-bottom: 8px;
       color: var(--blue);
       font-size: 0.72rem;
       font-weight: 700;
     }
 
-    .check-item strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--ink);
-      font-size: 0.94rem;
-    }
-
-    .check-item p {
+    .term p {
       color: var(--muted);
-      font-size: 0.8rem;
-      line-height: 1.65;
+      font-size: 0.84rem;
+      line-height: 1.75;
     }
 
-    .myth-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
+    .number-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 18px;
     }
 
-    .myth {
-      display: grid;
-      grid-template-columns: 0.9fr 1.2fr;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 12px;
+    .number-highlight strong {
+      color: var(--accent);
+      font-size: 2.5rem;
+      line-height: 1;
     }
 
-    .myth-ng,
-    .myth-correct {
-      padding: 20px;
-    }
-
-    .myth-ng {
-      background: var(--danger-soft);
-      color: var(--danger);
+    .number-highlight span {
+      color: var(--muted);
+      font-size: 0.88rem;
       font-weight: 700;
-      line-height: 1.7;
     }
 
-    .myth-correct {
-      background: #fff;
-      color: var(--ink);
-      font-size: 0.9rem;
-      line-height: 1.8;
-    }
-
-    .myth-correct strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--blue);
-    }
-
-    .takeaways {
+    .strategy-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
     }
 
-    .takeaway {
+    .strategy {
+      min-width: 0;
       padding: 22px;
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      background: var(--accent-soft);
-    }
-
-    .takeaway:nth-child(2) {
-      border-left-color: var(--blue);
+      border-radius: 16px;
       background: var(--blue-soft);
     }
 
-    .takeaway:nth-child(3) {
-      border-left-color: var(--danger);
+    .strategy:last-child {
+      background: #f3eadf;
+    }
+
+    .strategy .strategy-type {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .strategy:last-child .strategy-type {
+      color: var(--accent);
+    }
+
+    .strategy h3 {
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+
+    .strategy p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    .strategy ul,
+    .plain-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      padding-left: 1.2em;
+      color: var(--muted);
+      font-size: 0.87rem;
+      line-height: 1.7;
+    }
+
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .outcome {
+      min-width: 0;
+      padding: 22px 18px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+      text-align: center;
+    }
+
+    .outcome:nth-child(2) {
+      background: #f3eadf;
+    }
+
+    .outcome:nth-child(3) {
+      background: #fff6e8;
+    }
+
+    .direction {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .outcome:nth-child(2) .direction,
+    .outcome:nth-child(3) .direction {
+      color: var(--accent);
+    }
+
+    .outcome strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .caption {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.7;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
+      align-items: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .time-point {
+      min-width: 0;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+      text-align: center;
+    }
+
+    .time-point:last-child {
+      background: #f3eadf;
+    }
+
+    .time-point strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 1.12rem;
+    }
+
+    .time-point span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .timeline-line {
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .transfer {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .transfer-item {
+      min-width: 0;
+      padding: 18px;
+      border-left: 4px solid var(--blue);
+      border-radius: 12px;
+      background: #f7f8fa;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.8;
+    }
+
+    .transfer-item strong {
+      color: var(--ink);
+    }
+
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .meaning {
+      min-width: 0;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+    }
+
+    .meaning.interpretation {
+      background: #f3eadf;
+    }
+
+    .meaning.proposal {
+      background: #fff3df;
+    }
+
+    .meaning.scope {
       background: var(--danger-soft);
     }
 
-    .takeaway span {
+    .meaning h3 {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .meaning p,
+    .meaning li {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .meaning ul {
+      display: grid;
+      gap: 6px;
+      padding-left: 1.2em;
+    }
+
+    .analogy {
+      margin-top: 22px;
+      padding: 22px;
+      border: 1px solid rgba(194, 123, 32, 0.24);
+      border-radius: 16px;
+      background: #fff6e8;
+    }
+
+    .analogy strong {
       display: block;
       margin-bottom: 8px;
+      color: #8a5415;
+      font-size: 0.78rem;
+    }
+
+    .analogy p {
+      color: var(--ink);
+      font-size: 0.94rem;
+      line-height: 1.85;
+    }
+
+    .practice-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .practice-step {
+      min-width: 0;
+      padding: 18px 16px;
+      border-radius: 14px;
+      background: #f7f8fa;
+    }
+
+    .practice-step span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .practice-step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 0.92rem;
+    }
+
+    .practice-step p {
+      color: var(--muted);
+      font-size: 0.79rem;
+      line-height: 1.65;
+    }
+
+    .work-loop {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .loop-item {
+      position: relative;
+      min-width: 0;
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+    }
+
+    .loop-item:nth-child(2) {
+      background: #f3eadf;
+    }
+
+    .loop-item:nth-child(3) {
+      background: #fff3df;
+    }
+
+    .loop-item:nth-child(4) {
+      background: #f1f5f1;
+    }
+
+    .loop-item span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .loop-item strong {
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+
+    .work-block {
+      margin-top: 16px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .work-block:first-of-type {
+      border-top: 0;
+    }
+
+    .work-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .work-head span {
       color: var(--accent);
       font-size: 0.74rem;
       font-weight: 700;
     }
 
-    .takeaway p {
+    .work-head h3 {
+      color: var(--ink);
+      font-size: 1.08rem;
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 20px;
+      margin-top: 14px;
+      list-style: none;
+    }
+
+    .question-grid li {
+      position: relative;
+      min-width: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.7;
+    }
+
+    .question-grid li::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+      content: '□';
+    }
+
+    .option-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .option-group {
+      min-width: 0;
+      padding: 18px;
+      border-radius: 14px;
+      background: #f7f8fa;
+    }
+
+    .option-group strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 0.88rem;
+    }
+
+    .option-group ul {
+      display: grid;
+      gap: 7px;
+      padding-left: 1.15em;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+
+    .myth {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
+      align-items: center;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .myth-side {
+      min-width: 0;
+      padding: 22px;
+      border-radius: 16px;
+      background: var(--danger-soft);
+    }
+
+    .myth-side.correct {
+      background: var(--blue-soft);
+    }
+
+    .myth-side span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--danger);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .myth-side.correct span {
+      color: var(--blue);
+    }
+
+    .myth-side p {
       color: var(--ink);
       font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .myth-arrow {
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .examples {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .example {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .example p {
+      min-width: 0;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .example .ng {
+      background: var(--danger-soft);
+    }
+
+    .example .ok {
+      background: var(--blue-soft);
+    }
+
+    .example strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 0.7rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .summary-item {
+      min-width: 0;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+    }
+
+    .summary-item:nth-child(2) {
+      background: #f3eadf;
+    }
+
+    .summary-item:nth-child(3) {
+      background: #fff3df;
+    }
+
+    .summary-item span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--blue);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .summary-item:nth-child(2) span,
+    .summary-item:nth-child(3) span {
+      color: var(--accent);
+    }
+
+    .summary-item p {
+      color: var(--ink);
+      font-size: 0.86rem;
       font-weight: 700;
       line-height: 1.75;
     }
 
-    .citations {
-      display: grid;
-      gap: 12px;
+    .message {
+      max-width: 800px;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 2;
+    }
+
+    .message p + p {
+      margin-top: 16px;
+    }
+
+    .message strong {
+      color: var(--accent);
     }
 
     .citation {
       padding: 20px;
-      border-left: 4px solid var(--blue);
-      border-radius: 10px;
-      background: var(--blue-soft);
-    }
-
-    .citation:nth-child(2) {
-      border-left-color: var(--accent);
-      background: var(--accent-soft);
-    }
-
-    .citation p {
-      color: var(--ink);
+      border-radius: 14px;
+      background: #f7f8fa;
+      color: var(--muted);
       font-size: 0.84rem;
-      line-height: 1.8;
+      line-height: 1.85;
       overflow-wrap: anywhere;
     }
 
-    .citation p + p {
-      margin-top: 7px;
+    .citation + .citation {
+      margin-top: 12px;
+    }
+
+    .reference-label {
+      margin-top: 18px;
+    }
+
+    .citation strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
     }
 
     .citation a {
@@ -680,55 +987,150 @@
       text-underline-offset: 3px;
     }
 
-    .health-note {
-      margin-top: 18px;
-      padding-top: 18px;
+    .footer-note {
+      margin-top: 22px;
+      padding-top: 20px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.76rem;
-      line-height: 1.75;
+      font-size: 0.78rem;
+      line-height: 1.85;
     }
 
-    @media (max-width: 720px) {
+    footer {
+      padding: 30px 0 0;
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      body.default-document .page {
+        width: min(100% - 24px, 980px);
+        padding: 20px 0 48px;
+      }
+
+      body.default-document .hero,
+      body.default-document .section {
+        padding: 24px;
+      }
+
+      body.default-document h1 {
+        font-size: 2.25rem;
+      }
+
+      .conclusion {
+        font-size: 1.3rem;
+      }
+
       .learning-list,
-      .scenario-grid,
-      .study-grid,
-      .result-comparison,
-      .meaning-grid,
-      .skill-grid,
-      .practice-grid,
-      .takeaways {
+      .outcomes,
+      .summary-grid {
         grid-template-columns: 1fr;
       }
 
-      .choice-flow,
-      .forbidden-visual {
-        grid-template-columns: 1fr;
+      .learning-list li {
+        min-height: 0;
       }
 
-      .choice-arrow,
-      .forbidden-arrow {
-        transform: rotate(90deg);
-        text-align: center;
-      }
-
-      .fact {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
-
-      .check-grid {
+      .factor-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .research-layout,
+      .strategy-grid,
+      .meaning-grid,
+      .practice-steps,
+      .work-loop {
+        grid-template-columns: 1fr;
+      }
+
+      .practice-step,
+      .loop-item {
+        padding: 16px 18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body.default-document .hero,
+      body.default-document .section {
+        padding: 22px 18px;
+        border-radius: 16px;
+      }
+
+      body.default-document h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle,
+      .lead {
+        font-size: 0.94rem;
+      }
+
+      .route-compare,
+      .term-grid,
+      .transfer,
+      .question-grid,
+      .option-groups {
+        grid-template-columns: 1fr;
+      }
+
+      .metadata {
+        grid-template-columns: 104px minmax(0, 1fr);
+      }
+
+      .metadata dt,
+      .metadata dd {
+        padding: 11px 10px;
+        font-size: 0.77rem;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-line {
+        width: 2px;
+        height: 28px;
+        justify-self: center;
       }
 
       .myth {
         grid-template-columns: 1fr;
       }
+
+      .myth-arrow {
+        transform: rotate(90deg);
+      }
+
+      .example {
+        grid-template-columns: 1fr;
+      }
+
+      .number-highlight strong {
+        font-size: 2.15rem;
+      }
     }
 
-    @media (max-width: 480px) {
-      .check-grid {
+    @media (max-width: 390px) {
+      body.default-document .page {
+        width: min(100% - 16px, 980px);
+      }
+
+      body.default-document .hero,
+      body.default-document .section {
+        padding: 20px 16px;
+      }
+
+      body.default-document h1 {
+        font-size: 1.85rem;
+      }
+
+      .factor-grid {
         grid-template-columns: 1fr;
+      }
+
+      .metadata {
+        grid-template-columns: 92px minmax(0, 1fr);
       }
     }
   </style>
@@ -737,275 +1139,538 @@
   <main class="page">
     <header class="hero">
       <div class="hero-content">
-        <p class="brand">Evidence Guide / BDX</p>
-        <h1>食欲に振り回されない身体の整え方</h1>
-        <p class="subtitle">意志力ではなく、体調・思考・環境から食行動を選び直す</p>
+        <p class="series">BDX｜オートレギュレーションの科学・自己制御編</p>
+        <p class="brand">BDX Research Guide</p>
+        <h1>意志より先に設計する</h1>
+        <p class="subtitle">環境と考え方を整え、健康的な食行動を選びやすくする</p>
         <p class="source">
-          <strong>科学的背景：</strong>睡眠制限と食欲に関する無作為化クロスオーバー試験（Tajiri et al., 2023）<br />
-          禁止食品への接触と摂取行動に関する無作為化実験（Soetens et al., 2008）
+          <strong>中心論文</strong><br />
+          Lopez, R. B., et al. (2026). Training self-regulation to promote healthy eating: Evidence from a longitudinal intervention study. <em>Appetite, 216</em>, 108310.
         </p>
       </div>
     </header>
 
     <div class="content">
-      <section class="section">
-        <p class="section-label">01 / 今日の結論</p>
-        <h2>食欲は、意志の強さだけでは決まらない</h2>
-        <p class="conclusion">睡眠不足や強い禁止は、食欲や間食行動へ影響する場合があります。必要なのは我慢ではなく、<strong>今の状態に気づき、目的に合う行動を選び直すこと</strong>です。</p>
-        <div class="key-message">自己制御とは、食欲をなくす力ではありません。今の体調と、なりたい状態に合わせて、次の行動を選び直す力です。</div>
+      <section class="section" id="conclusion">
+        <div class="section-head">
+          <p class="section-number">01</p>
+          <h2>今日の結論</h2>
+        </div>
+        <span class="evidence-tag fact">研究結果</span>
+        <p class="conclusion">食欲を強い意志だけで抑えるのではなく、<strong>環境と考え方を先に整える</strong>ことで、健康的な選択をしやすくできます。</p>
+        <p class="lead">成人360人を対象とした研究では、状況を変える方法と、食べ物の捉え方を変える方法の両方が、健康的な食行動を促す方向に働きました。</p>
+        <div class="route-compare" aria-label="意志力モデルと設計モデルの比較">
+          <div class="route">
+            <span class="route-title">意志だけに頼るルート</span>
+            <div class="flow">
+              <span class="flow-step">誘惑</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">強い意志で我慢</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">成功または失敗</span>
+            </div>
+          </div>
+          <div class="route recommended">
+            <span class="route-title">推奨｜選びやすくするルート</span>
+            <div class="flow">
+              <span class="flow-step">環境を整える</span>
+              <span class="flow-arrow">＋</span>
+              <span class="flow-step">捉え方を変える</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">目的に合う選択へ</span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="section">
-        <p class="section-label">02 / この資料で分かること</p>
-        <h2>この資料で分かること</h2>
+      <section class="section" id="overview">
+        <div class="section-head">
+          <p class="section-number">02</p>
+          <h2>この資料で分かること</h2>
+        </div>
         <ul class="learning-list">
-          <li>睡眠不足の日に、空腹や間食が増えやすくなる理由</li>
-          <li>「絶対に食べない」という禁止が反動につながる場合</li>
-          <li>我慢せずに食行動を選び直すBDX式の実践方法</li>
+          <li>自己制御は「我慢する力」だけではない</li>
+          <li>環境と考え方を食行動にどう使うか</li>
+          <li>自分に合う方法を小さく試す手順</li>
         </ul>
-      </section>
-
-      <section class="section">
-        <p class="section-label">03 / なぜ重要なのか</p>
-        <h2>「分かっているのにできない」は、意志が弱いからではない</h2>
-        <p class="lead">食行動は、栄養知識だけでなく、睡眠、疲労、感情、周囲の環境から影響を受けます。自分を責める前に、行動が起きた条件を見直すことが重要です。</p>
-
-        <ul class="scenario-grid">
-          <li>仕事帰りのコンビニ</li>
-          <li>睡眠不足の日の甘いもの</li>
-          <li>ストレスによるドカ食い</li>
-          <li>飲み会後の食欲</li>
-          <li>在宅勤務中の間食</li>
-          <li>運動後の「ご褒美食い」</li>
-        </ul>
-
-        <div class="choice-flow" aria-label="我慢から選択への考え方の変化">
-          <div class="choice-card">
-            <span>我慢だけで考える</span>
-            <p>食べたい<br />でも禁止しなければ</p>
-          </div>
-          <div class="choice-arrow" aria-hidden="true">→</div>
-          <div class="choice-card reframe">
-            <span>BDX式に選び直す</span>
-            <p>今の体調は？<br />何を選べば整う？</p>
-          </div>
+        <div class="note interpretation">
+          <strong>自己制御と自己調整</strong><br />
+          自己制御は、目の前の衝動だけで行動せず長期的な目的へ選択を調整する力です。自己調整は、状態確認・目標確認・環境調整・認知調整・行動・振り返りまでを含む、より広いプロセスです。
         </div>
       </section>
 
-      <section class="section">
-        <p class="section-label">04 / 科学的根拠</p>
-        <h2>睡眠不足と禁止思考を2つの研究から見る</h2>
-        <div class="study-grid">
-          <article class="study-card">
-            <div class="study-head">
-              <span>STUDY 01 / SLEEP</span>
-              <h3>睡眠制限と食欲・食事摂取</h3>
+      <section class="section" id="importance">
+        <div class="section-head">
+          <p class="section-number">03</p>
+          <h2>我慢だけでは続きにくい</h2>
+        </div>
+        <p class="lead">多くの人は「誘惑に負けるのは、自分の意志が弱いからだ」と考えます。しかし食行動は、意志だけでなく次の条件からも影響を受けます。</p>
+        <div class="factor-grid">
+          <div class="factor">食品が<br />見えるか</div>
+          <div class="factor">すぐ手に<br />取れるか</div>
+          <div class="factor">空腹や<br />疲労</div>
+          <div class="factor">食品の<br />捉え方</div>
+          <div class="factor">長期目標を<br />思い出せるか</div>
+        </div>
+        <div class="route-compare" aria-label="一般的な認識と研究から得られる考え方">
+          <div class="route">
+            <span class="route-title">一般的な認識</span>
+            <div class="flow">
+              <span class="flow-step">誘惑</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">意志で耐える</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">自分を評価する</span>
             </div>
-            <dl class="study-facts">
-              <div class="fact"><dt>対象</dt><dd>健康な若年成人24名（女性13名、男性11名）</dd></div>
-              <div class="fact"><dt>条件</dt><dd>5時間睡眠と8時間睡眠を各3日間</dd></div>
-              <div class="fact"><dt>方法</dt><dd>無作為化クロスオーバー試験</dd></div>
-              <div class="fact"><dt>評価</dt><dd>空腹、食欲、食品への欲求、購入・摂取した食品</dd></div>
-            </dl>
-          </article>
-
-          <article class="study-card">
-            <div class="study-head">
-              <span>STUDY 02 / PROHIBITION</span>
-              <h3>禁止食品への接触と反動</h3>
+          </div>
+          <div class="route recommended">
+            <span class="route-title">研究から得られる考え方</span>
+            <div class="flow">
+              <span class="flow-step">状況を観察</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">環境・認知を調整</span>
+              <span class="flow-arrow">↓</span>
+              <span class="flow-step">振り返って再調整</span>
             </div>
-            <dl class="study-facts">
-              <div class="fact"><dt>対象</dt><dd>女性68名</dd></div>
-              <div class="fact"><dt>条件</dt><dd>好きな間食を24時間禁止しながら接触／制限なし</dd></div>
-              <div class="fact"><dt>方法</dt><dd>2条件への無作為割り付け</dd></div>
-              <div class="fact"><dt>評価</dt><dd>その後自由に食べられる場面での摂取行動</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <p class="section-label">05 / 研究結果 01</p>
-        <h2>5時間睡眠では、空腹と間食が増えた</h2>
-        <div class="result-comparison">
-          <article class="condition">
-            <span>CONTROL SLEEP</span>
-            <strong>8時間睡眠</strong>
-            <ul>
-              <li>比較の基準となる睡眠条件</li>
-              <li>通常に近い睡眠時間を確保</li>
-            </ul>
-          </article>
-          <article class="condition restricted">
-            <span>SLEEP RESTRICTION</span>
-            <strong>5時間睡眠</strong>
-            <ul>
-              <li>空腹感と脂っこい食品への欲求が高かった</li>
-              <li>眠気と疲労が高かった</li>
-              <li>間食由来のエネルギー・炭水化物摂取が多かった</li>
-            </ul>
-          </article>
-        </div>
-        <p class="result-note">一言で解説：睡眠不足の日の間食は、単純な意志の弱さではなく、体調の変化と関連している可能性があります。ただし、この研究では1日の総摂取量に有意差はありませんでした。</p>
-      </section>
-
-      <section class="section">
-        <p class="section-label">06 / 研究結果 02</p>
-        <h2>「絶対に食べない」が反動になる場合がある</h2>
-        <div class="forbidden-visual" aria-label="禁止と食品への接触後に摂取が増えた研究結果">
-          <div class="forbidden-step exposure">
-            <span>24 HOURS</span>
-            <strong>好きな間食を禁止しながら、その食品に接触</strong>
-          </div>
-          <div class="forbidden-arrow" aria-hidden="true">→</div>
-          <div class="forbidden-step">
-            <span>FREE ACCESS</span>
-            <strong>自由に食べられる場面で、摂取量が増加</strong>
           </div>
         </div>
-        <p class="result-note">反動は、普段から食事制限が強く、食べ始めると制御を失いやすい傾向の参加者で特に大きく見られました。「禁止は必ず悪い」ではなく、禁止と接触が組み合わさると逆効果になる人がいる、という結果です。</p>
+        <div class="note warning"><strong>「意志は不要」という意味ではありません。</strong> 重要なのは、意志だけに依存しないことです。</div>
       </section>
 
-      <section class="section">
-        <p class="section-label">07 / 結果の読み方</p>
-        <h2>研究の事実と、BDXでの実践を分けて考える</h2>
+      <section class="section" id="evidence">
+        <div class="section-head">
+          <p class="section-number">04</p>
+          <h2>どのような研究？</h2>
+        </div>
+        <span class="evidence-tag fact">科学的根拠</span>
+        <div class="research-layout">
+          <dl class="metadata">
+            <dt>論文</dt>
+            <dd>Training self-regulation to promote healthy eating</dd>
+            <dt>著者</dt>
+            <dd>Richard B. Lopez ほか</dd>
+            <dt>掲載時所属</dt>
+            <dd>Worcester Polytechnic Institute（Lopez氏）</dd>
+            <dt>掲載誌</dt>
+            <dd>Appetite, 216, 108310</dd>
+            <dt>公開</dt>
+            <dd>オンライン 2025年9月16日／正式掲載 2026年1月</dd>
+            <dt>対象</dt>
+            <dd>成人360人</dd>
+            <dt>方法</dt>
+            <dd>縦断的介入研究</dd>
+            <dt>介入</dt>
+            <dd>状況ベース戦略／認知的再評価</dd>
+            <dt>評価</dt>
+            <dd>欲求・抵抗・摂取行動</dd>
+            <dt>事前登録</dt>
+            <dd>あり。仮説は一部支持</dd>
+          </dl>
+          <div>
+            <div class="design">
+              <h3>研究デザイン</h3>
+              <div class="flow">
+                <span class="flow-step">成人360人</span>
+                <span class="flow-arrow">↓</span>
+                <span class="flow-step">2種類の戦略をトレーニング</span>
+                <span class="flow-arrow">↓</span>
+                <span class="flow-step">健康的／不健康と分類された食品へ適用</span>
+                <span class="flow-arrow">↓</span>
+                <span class="flow-step">2週間・最大2カ月後まで評価</span>
+              </div>
+            </div>
+            <div class="evidence-level">
+              <span>エビデンスレベル</span>
+              <span class="stars" aria-label="5段階中4">★★★★☆</span>
+              <span>介入を含む縦断研究</span>
+            </div>
+          </div>
+        </div>
+        <div class="term-grid">
+          <div class="term">
+            <strong>状況ベース戦略</strong>
+            <span>Situation-based strategies</span>
+            <p>誘惑が起こる前に、場所・物・時間・行動の流れを変える方法。</p>
+          </div>
+          <div class="term">
+            <strong>認知的再評価</strong>
+            <span>Cognitive reappraisal</span>
+            <p>食べ物や状況の意味を別の視点から捉え直し、欲求や選択を調整する方法。</p>
+          </div>
+          <div class="term">
+            <strong>食欲への抵抗</strong>
+            <span>Resistance to unhealthy foods</span>
+            <p>食べたいと感じても、すぐに選ばず別の行動を選べた程度。欲求が消えたという意味ではありません。</p>
+          </div>
+          <div class="term">
+            <strong>食品の分類</strong>
+            <span>Study classification</span>
+            <p>「健康的／不健康」は研究上の分類です。実際の選択は量・頻度・目的・体調・食事全体で変わります。</p>
+          </div>
+        </div>
+        <div class="note warning">
+          公開要旨だけでは、群ごとの正確な人数・脱落率・効果量・無作為割付の詳細を十分に確認できません。そのため、本資料では「大規模RCT」と断定しません。
+        </div>
+      </section>
+
+      <section class="section" id="result-one">
+        <div class="section-head">
+          <p class="section-number">05</p>
+          <h2>2つの戦略が役立った</h2>
+        </div>
+        <span class="evidence-tag fact">研究結果</span>
+        <p class="lead"><strong>状況を整える戦略</strong>と、<strong>食べ物の捉え方を変える戦略</strong>は、どちらも健康的な食行動を促す方向に働きました。</p>
+        <div class="number-highlight"><strong>360人</strong><span>研究に参加した成人</span></div>
+        <div class="strategy-grid">
+          <div class="strategy">
+            <span class="strategy-type">ROUTE A</span>
+            <h3>状況ベース戦略</h3>
+            <p>食べたい気持ちが強くなる前に、誘惑が起こりにくい条件をつくります。</p>
+            <ul>
+              <li>環境や行動の流れを調整する</li>
+              <li>誘惑との距離や接触を変える</li>
+            </ul>
+          </div>
+          <div class="strategy">
+            <span class="strategy-type">ROUTE B</span>
+            <h3>認知的再評価</h3>
+            <p>目の前の食品や状況を別の視点から見直し、欲求や選択を調整します。</p>
+            <ul>
+              <li>食品の意味づけを捉え直す</li>
+              <li>長期的な目的との関係を見る</li>
+            </ul>
+          </div>
+        </div>
+        <p class="caption">ここでは研究で扱われた戦略の種類を示しています。後半の日常例は、研究結果そのものではなくBDXによる応用です。</p>
+      </section>
+
+      <section class="section" id="result-two">
+        <div class="section-head">
+          <p class="section-number">06</p>
+          <h2>食行動にも変化</h2>
+        </div>
+        <span class="evidence-tag fact">研究結果</span>
+        <p class="lead">トレーニングを受けた条件では、トレーニングなしと比べて、全体として次の方向の変化が確認されました。</p>
+        <div class="outcomes" aria-label="研究結果の方向を示す概念図">
+          <div class="outcome">
+            <span class="direction">↑</span>
+            <strong>健康的と分類された食品への欲求</strong>
+          </div>
+          <div class="outcome">
+            <span class="direction">↑</span>
+            <strong>不健康と分類された食品への抵抗</strong>
+          </div>
+          <div class="outcome">
+            <span class="direction">↓</span>
+            <strong>不健康と分類された食品の摂取</strong>
+          </div>
+        </div>
+        <p class="caption">概念図であり、変化量や効果の大きさを示すものではありません。公開要旨から正確な効果量を確認できないため、数値グラフは使用していません。</p>
+        <div class="note interpretation">
+          <strong>一言でいうと</strong><br />
+          自己制御の練習は、食べる量だけでなく、何を欲しいと感じるかや、誘惑へどう対応するかにも影響した可能性があります。
+        </div>
+        <div class="note warning">本研究は食行動への自己制御戦略を調べた研究です。体重や体脂肪の減少を直接確認した研究ではありません。</div>
+      </section>
+
+      <section class="section" id="result-three">
+        <div class="section-head">
+          <p class="section-number">07</p>
+          <h2>最大2カ月後も追跡</h2>
+        </div>
+        <span class="evidence-tag fact">研究結果</span>
+        <p class="lead">研究では、トレーニング直後だけでなく、時間がたった後の食行動も評価しました。</p>
+        <div class="timeline" aria-label="追跡期間">
+          <div class="time-point">
+            <strong>2週間</strong>
+            <span>トレーニング後の短期評価</span>
+          </div>
+          <div class="timeline-line" aria-hidden="true"></div>
+          <div class="time-point">
+            <strong>最大2カ月後</strong>
+            <span>長期評価として追跡</span>
+          </div>
+        </div>
+        <div class="transfer">
+          <div class="transfer-item"><strong>健康的な食品を対象に練習</strong><br />時間の経過とともに、不健康と分類された食品への抵抗にも関連しました。</div>
+          <div class="transfer-item"><strong>不健康な食品を対象に練習</strong><br />健康的と分類された食品への欲求や摂取にも関連しました。</div>
+        </div>
+        <div class="note interpretation">
+          一つの食品群に対して練習した戦略が、別の食品群の選択にも影響した可能性があります。これを<strong>転移効果</strong>と呼びます。
+        </div>
+        <div class="note warning">正確な表現は「最大2カ月後まで追跡され、一部の変化が確認された」です。効果の永続や長期的な体重減少を示した研究ではありません。</div>
+      </section>
+
+      <section class="section" id="interpretation">
+        <div class="section-head">
+          <p class="section-number">08</p>
+          <h2>何が分かり、何が未確定？</h2>
+        </div>
         <div class="meaning-grid">
-          <article class="meaning-card fact">
-            <span>研究で確認されたこと</span>
-            <p>短期間の睡眠制限は間食と一部の食欲指標に影響し、禁止と食品への接触は特定条件で反動につながりました。</p>
-          </article>
-          <article class="meaning-card interpretation">
-            <span>そこから考えられること</span>
-            <p>食行動を整えるには、意思決定の瞬間だけでなく、睡眠や環境など事前の条件も見る必要があります。</p>
-          </article>
-          <article class="meaning-card action">
-            <span>BDXでの実践提案</span>
-            <p>食べる・食べないの二択にせず、体調を確認して、量・タイミング・組み合わせを選び直します。</p>
-          </article>
+          <div class="meaning">
+            <span class="evidence-tag fact">研究で確認されたこと</span>
+            <ul>
+              <li>成人360人に自己制御戦略をトレーニングした</li>
+              <li>2週間と最大2カ月後まで食行動を追跡した</li>
+              <li>両戦略は全体として健康的な方向に働いた</li>
+              <li>一部で別の食品群への転移効果がみられた</li>
+              <li>事前登録された仮説は一部のみ支持された</li>
+            </ul>
+          </div>
+          <div class="meaning interpretation">
+            <span class="evidence-tag interpretation">結果から考えられること</span>
+            <p>自己制御は、誘惑が起きた後の我慢だけでなく、状況や認知を意図的に調整することでも支援できる可能性があります。</p>
+          </div>
+          <div class="meaning proposal">
+            <span class="evidence-tag proposal">BDXの提案</span>
+            <p>予定外の間食が起きたら、人格の問題にせず「どんな状況だったか」「どう捉えていたか」「次回は何を一つ変えるか」を分けて振り返ります。</p>
+          </div>
+          <div class="meaning scope">
+            <span class="evidence-tag warning">本研究からは未確定</span>
+            <ul>
+              <li>体重や体脂肪率が減るか</li>
+              <li>2カ月を超えて効果が続くか</li>
+              <li>子どもや高齢者にも同じ効果があるか</li>
+              <li>肥満・摂食障害の治療に有効か</li>
+              <li>全員に同じ戦略が最適か</li>
+              <li>5秒ルールなど個別技法の効果</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note warning">
+          「健康的／不健康」は研究上の食品分類であり、食品の善悪を決める言葉ではありません。実際の選択は、量・頻度・目的・体調・食事全体によって変わります。
         </div>
       </section>
 
-      <section class="section">
-        <p class="section-label">08 / BDXでどう活かす？</p>
-        <h2>我慢ではなく「選び直す力」を育てる</h2>
-        <div class="definition">
-          <p>自己制御とは、食欲を我慢する力ではない。</p>
-          <p>今の体調と、なりたい状態に合わせて、行動を選び直す力である。</p>
+      <section class="section" id="application">
+        <div class="section-head">
+          <p class="section-number">09</p>
+          <h2>誘惑の前から整える</h2>
         </div>
-
-        <div class="skill-grid">
-          <article class="skill">
-            <span>SKILL 01</span>
-            <h3>目的へ置き換える</h3>
-            <p>「太りたくない」ではなく、「明日の朝を軽くしたい」と考えます。</p>
-          </article>
-          <article class="skill">
-            <span>SKILL 02</span>
-            <h3>選択肢を増やす</h3>
-            <p>禁止だけでなく、量を変える、足す、少し待つという方法を持ちます。</p>
-          </article>
-          <article class="skill">
-            <span>SKILL 03</span>
-            <h3>体調を先に確認する</h3>
-            <p>空腹、睡眠、疲労、ストレスのどれが強いかを見分けます。</p>
-          </article>
-          <article class="skill">
-            <span>SKILL 04</span>
-            <h3>環境を整える</h3>
-            <p>見える食品を移し、回復につながる間食を先に用意します。</p>
-          </article>
+        <span class="evidence-tag proposal">BDXの提案</span>
+        <p class="lead">最高の体調をつくるには、毎回強い意志を発揮するより、自然に目的へ合う選択がしやすい状態をつくることが大切です。</p>
+        <div class="analogy">
+          <strong>たとえるなら</strong>
+          <p>自己制御は、急な雨の中を根性で走ることではありません。天気予報を確認し、傘を準備し、濡れにくい道を選ぶことに近いものです。</p>
         </div>
-      </section>
-
-      <section class="section">
-        <p class="section-label">09 / 実践ワーク</p>
-        <h2>食べる前の5秒チェックを試す</h2>
-        <div class="check-grid">
-          <article class="check-item"><span>01 / STATE</span><strong>今の状態は？</strong><p>睡眠、疲労、ストレス、気分を確認。</p></article>
-          <article class="check-item"><span>02 / HUNGER</span><strong>空腹は何点？</strong><p>身体的な空腹を0〜10で表す。</p></article>
-          <article class="check-item"><span>03 / PURPOSE</span><strong>どうなりたい？</strong><p>食べた後や翌朝の状態を考える。</p></article>
-          <article class="check-item"><span>04 / CHOICE</span><strong>何を選ぶ？</strong><p>食べる、量を変える、別のもの、待つ。</p></article>
+        <div class="practice-steps">
+          <div class="practice-step">
+            <span>STEP 1</span>
+            <strong>身体を確認</strong>
+            <p>空腹・疲労・睡眠不足・ストレス・食事間隔を見る。</p>
+          </div>
+          <div class="practice-step">
+            <span>STEP 2</span>
+            <strong>状況を確認</strong>
+            <p>食品の配置・SNS・習慣・周囲の人・意味づけを見る。</p>
+          </div>
+          <div class="practice-step">
+            <span>STEP 3</span>
+            <strong>選択肢を考える</strong>
+            <p>環境・量・内容・時間・捉え方のどれかを変える。</p>
+          </div>
+          <div class="practice-step">
+            <span>STEP 4</span>
+            <strong>選び直す</strong>
+            <p>食べる選択も含め、目的と今の状態に合う行動を選ぶ。</p>
+          </div>
         </div>
-
-        <div class="practice-grid">
-          <article class="practice-card">
-            <span>今日試す</span>
-            <h3>一度だけ立ち止まる</h3>
-            <p>間食の前に、4つの質問を一度だけ確認します。</p>
-          </article>
-          <article class="practice-card">
-            <span>7日間続ける</span>
-            <h3>トリガーを記録する</h3>
-            <p>時間、場所、睡眠、感情、選んだ行動を短く残します。</p>
-          </article>
-          <article class="practice-card">
-            <span>自分向けに調整</span>
-            <h3>環境を一つ変える</h3>
-            <p>よく起きる場面に合わせ、選びやすい食品や休息を準備します。</p>
-          </article>
+        <div class="note proposal">
+          <strong>研究の考え方を日常に応用した例</strong><br />
+          お菓子を見えない場所へ移す、空腹時の買い物を避ける、食事の選択肢を先に決める、食べた後の自分を想像する。これらは日常への応用例であり、中心論文で用いた具体的介入と完全に同一とは限りません。
         </div>
       </section>
 
-      <section class="section">
-        <p class="section-label">10 / よくある勘違い</p>
-        <h2>食欲を敵にせず、身体からの情報として扱う</h2>
-        <div class="myth-list">
-          <article class="myth">
-            <div class="myth-ng">× 食べたくなるのは意志が弱いから</div>
-            <div class="myth-correct"><strong>正しい考え方</strong>食欲は睡眠、空腹、疲労、感情、環境から影響を受けます。</div>
-          </article>
-          <article class="myth">
-            <div class="myth-ng">× 甘いものは完全に禁止する</div>
-            <div class="myth-correct"><strong>正しい考え方</strong>禁止だけで考えず、目的、量、タイミング、組み合わせを選びます。</div>
-          </article>
-          <article class="myth">
-            <div class="myth-ng">× 睡眠不足なら必ず食べすぎる</div>
-            <div class="myth-correct"><strong>正しい考え方</strong>研究結果は条件や個人で異なります。睡眠不足を一つの確認項目として扱います。</div>
-          </article>
+      <section class="section" id="work">
+        <div class="section-head">
+          <p class="section-number">10</p>
+          <h2>誘惑を設計し直す</h2>
+        </div>
+        <span class="evidence-tag proposal">BDXの実践ワーク</span>
+        <p class="lead">直近で予定外に食べた場面を一つ選び、意志の問題ではなく、状況・考え方・行動の流れとして分析します。</p>
+        <div class="work-loop" aria-label="自己調整の4ステップ">
+          <div class="loop-item"><span>01 OBSERVE</span><strong>観察する</strong></div>
+          <div class="loop-item"><span>02 DECIDE</span><strong>一つ選ぶ</strong></div>
+          <div class="loop-item"><span>03 EXPERIMENT</span><strong>小さく試す</strong></div>
+          <div class="loop-item"><span>04 REFLECT</span><strong>振り返る</strong></div>
+        </div>
+
+        <div class="work-block">
+          <div class="work-head"><span>01｜OBSERVE</span><h3>観察する</h3></div>
+          <p class="lead">「意志が弱かった」で終わらせず、行動が起きた条件を見つけます。</p>
+          <ul class="question-grid">
+            <li>いつ、どこで、誰といたか</li>
+            <li>何を見た直後だったか</li>
+            <li>空腹はどの程度だったか</li>
+            <li>疲労・睡眠不足・ストレスはあったか</li>
+            <li>その食品をどう捉えていたか</li>
+            <li>食べる直前に何を考えたか</li>
+          </ul>
+        </div>
+
+        <div class="work-block">
+          <div class="work-head"><span>02｜DECIDE</span><h3>一つ選ぶ</h3></div>
+          <p class="lead">次回、同じ状況で変えるものを一つだけ選びます。</p>
+          <div class="option-groups">
+            <div class="option-group">
+              <strong>A｜状況を変える</strong>
+              <ul>
+                <li>食品を見えない場所へ移す</li>
+                <li>代わりの食品を準備する</li>
+                <li>空腹になる前に食事や補食を取る</li>
+                <li>買い物リストを先につくる</li>
+              </ul>
+            </div>
+            <div class="option-group">
+              <strong>B｜捉え方を変える</strong>
+              <ul>
+                <li>長期目標との関係を考える</li>
+                <li>食べた後の自分を想像する</li>
+                <li>「禁止」を「目的に合う選択」へ言い換える</li>
+                <li>食べたい感覚を一度言葉にする</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-block">
+          <div class="work-head"><span>03｜EXPERIMENT</span><h3>小さく試す</h3></div>
+          <ul class="question-grid">
+            <li>同じような場面で一度試す</li>
+            <li>完璧な成功を目標にしない</li>
+            <li>食べたかどうかだけで評価しない</li>
+            <li>衝動の強さや判断のしやすさも見る</li>
+            <li>強い空腹を放置して我慢しない</li>
+            <li>食事制限を強化する実験にしない</li>
+          </ul>
+        </div>
+
+        <div class="work-block">
+          <div class="work-head"><span>04｜REFLECT</span><h3>振り返る</h3></div>
+          <ul class="question-grid">
+            <li>衝動の強さは変わったか</li>
+            <li>判断しやすくなったか</li>
+            <li>心理的な負担は増えたか、減ったか</li>
+            <li>次回も使えそうか</li>
+          </ul>
+          <div class="note interpretation"><strong>次の判断</strong><br />同じ方法を続ける／少し調整する／別の戦略を試す／食事や生活リズムを見直す／専門家へ相談する。</div>
+        </div>
+
+        <div class="note proposal">
+          <strong>今日の学び</strong><br />
+          正解の食品を探すのではなく、自分が目的に合う選択をしやすい条件を見つけることが目的です。観察した結果、<strong>「今回は食べる」と意識的に決めることも自己調整</strong>に含まれます。
+        </div>
+        <div class="note warning">
+          <strong>安全上の注意</strong><br />
+          このワークを、食事を我慢する練習として使用しないでください。過食と強い制限の反復、食後の強い罪悪感、嘔吐や下剤使用、急激な体重変化、月経異常、食事への不安による生活への支障がある場合は、自己制御の強化より専門家への相談を優先してください。
         </div>
       </section>
 
-      <section class="section">
-        <p class="section-label">11 / まとめ</p>
-        <h2>今日覚えてほしいこと</h2>
-        <div class="takeaways">
-          <article class="takeaway">
-            <span>01</span>
-            <p>食欲は意志力だけでなく、睡眠や環境から影響を受ける。</p>
-          </article>
-          <article class="takeaway">
-            <span>02</span>
-            <p>強い禁止は、条件によって反動につながる場合がある。</p>
-          </article>
-          <article class="takeaway">
-            <span>03</span>
-            <p>我慢ではなく、体調と目的に合わせて次を選び直す。</p>
-          </article>
+      <section class="section" id="misconception">
+        <div class="section-head">
+          <p class="section-number">11</p>
+          <h2>意志が弱いから失敗する？</h2>
+        </div>
+        <div class="myth">
+          <div class="myth-side">
+            <span>NG</span>
+            <p>誘惑に負けるのは、意志が弱いからだ。</p>
+          </div>
+          <div class="myth-arrow">→</div>
+          <div class="myth-side correct">
+            <span>BDXの考え方</span>
+            <p>人格を責めず、誘惑が起きた条件と次回変えられる要素を確認する。</p>
+          </div>
+        </div>
+        <p class="lead">食行動は、空腹・疲労・食品の配置・習慣・感情・意味づけなど、複数の要因から影響を受けます。「環境を変えれば必ず成功する」という意味でもありません。</p>
+        <span class="evidence-tag proposal">日常への応用例</span>
+        <div class="examples">
+          <div class="example">
+            <p class="ng"><strong>NG｜禁止</strong>今日はカロリーを増やしたくないから、夜食は我慢する。</p>
+            <p class="ok"><strong>OK｜目的に沿う選択</strong>明日の朝を軽く迎えたいから、今は温かい飲み物を選ぶ。</p>
+          </div>
+          <div class="example">
+            <p class="ng"><strong>NG｜禁止</strong>お菓子を食べたら台無しになるから、絶対に食べない。</p>
+            <p class="ok"><strong>OK｜目的に沿う選択</strong>午後も集中したいから、今日はヨーグルトと果物を選ぶ。</p>
+          </div>
+          <div class="example">
+            <p class="ng"><strong>NG｜禁止</strong>ラーメンは太るから、誘われても断らなければならない。</p>
+            <p class="ok"><strong>OK｜目的に沿う選択</strong>今日は胃腸を休ませたいから、消化しやすい食事を選ぶ。</p>
+          </div>
+          <div class="example">
+            <p class="ng"><strong>NG｜禁止</strong>夜に食べるのは悪いから、空腹でも耐える。</p>
+            <p class="ok"><strong>OK｜目的に沿う選択</strong>空腹で眠れないため、睡眠を妨げにくい軽い補食を選ぶ。</p>
+          </div>
+          <div class="example">
+            <p class="ng"><strong>NG｜自己批判</strong>甘いものを食べる自分は意志が弱いから、今日は我慢する。</p>
+            <p class="ok"><strong>OK｜状態の確認</strong>今は疲労が強いので、食事・休憩・睡眠のどれが必要か確認して選ぶ。</p>
+          </div>
         </div>
       </section>
 
-      <section class="section">
-        <p class="section-label">12 / 引用</p>
-        <h2>論文情報</h2>
-        <div class="citations">
-          <article class="citation">
-            <p>Tajiri E, Yoshimura E, Tobina T, et al.</p>
-            <p><strong>Effects of sleep restriction on food intake and appetite under free-living conditions: A randomized crossover trial.</strong></p>
-            <p>Appetite. 2023;189:106998.</p>
-            <p>DOI: <a href="https://doi.org/10.1016/j.appet.2023.106998" target="_blank" rel="noopener noreferrer">10.1016/j.appet.2023.106998</a></p>
-          </article>
-          <article class="citation">
-            <p>Soetens B, Braet C, Van Vlierberghe L, Roets A.</p>
-            <p><strong>Resisting temptation: effects of exposure to a forbidden food on eating behaviour.</strong></p>
-            <p>Appetite. 2008;51(1):202-205.</p>
-            <p>DOI: <a href="https://doi.org/10.1016/j.appet.2008.01.007" target="_blank" rel="noopener noreferrer">10.1016/j.appet.2008.01.007</a></p>
-          </article>
+      <section class="section" id="summary">
+        <div class="section-head">
+          <p class="section-number">12</p>
+          <h2>今日覚えてほしいこと</h2>
         </div>
-        <p class="health-note">本資料は一般的な健康情報であり、診断や治療を目的とするものではありません。過食、食事への強い恐怖、食欲の大きな変化、体調不良が続く場合は、医師や管理栄養士などの専門家へ相談してください。</p>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span>01｜研究から分かった事実</span>
+            <p>成人360人の研究では、2種類の戦略が健康的な食行動を促す方向に働きました。</p>
+          </div>
+          <div class="summary-item">
+            <span>02｜体調管理の考え方</span>
+            <p>食欲への対応を意志だけに任せず、身体・環境・考え方を分けて確認します。</p>
+          </div>
+          <div class="summary-item">
+            <span>03｜今日からできること</span>
+            <p>予定外に食べた場面を振り返り、次回変える条件を一つ決めます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="message">
+        <div class="section-head">
+          <p class="section-number">13</p>
+          <h2>選択しやすい自分をつくる</h2>
+        </div>
+        <span class="evidence-tag proposal">BDX Message</span>
+        <div class="message">
+          <p>この研究が教えてくれるのは、「誘惑には必ず勝つべきだ」ということではありません。</p>
+          <p>私たちの選択は、意志だけでなく、空腹、疲労、環境、習慣、食べ物の捉え方から影響を受けます。重要なのは、失敗した自分を責めることではなく、何が行動を起こしたのかを観察し、次回の条件を一つ変えることです。</p>
+          <p><strong>BDXは、知識によって我慢を増やすのではなく、自分に合う選択を自然にしやすい状態をつくることを目指します。</strong></p>
+        </div>
+      </section>
+
+      <section class="section" id="references">
+        <div class="section-head">
+          <p class="section-number">14</p>
+          <h2>引用</h2>
+        </div>
+        <span class="evidence-tag fact">中心論文</span>
+        <div class="citation">
+          <strong>Lopez, R. B., Werner, K. M., Traub, G., Saunders, B., Cosme, D., &amp; Hofmann, W. (2026).</strong>
+          Training self-regulation to promote healthy eating: Evidence from a longitudinal intervention study. <em>Appetite, 216</em>, 108310.<br />
+          オンライン公開：2025年9月16日／正式掲載：2026年1月<br />
+          DOI：<a href="https://doi.org/10.1016/j.appet.2025.108310">10.1016/j.appet.2025.108310</a><br />
+          PMID：<a href="https://pubmed.ncbi.nlm.nih.gov/40967273/">40967273</a>
+        </div>
+        <span class="evidence-tag interpretation reference-label">補助文献</span>
+        <div class="citation">
+          <strong>Reader, S. W., Lopez, R. B., &amp; Denny, B. T. (2018).</strong>
+          Cognitive reappraisal of low-calorie food predicts real-world craving and consumption of high- and low-calorie foods in daily life. <em>Appetite, 131</em>, 44–52.
+        </div>
+        <div class="citation">
+          <strong>de Ridder, D. T. D., Lensvelt-Mulders, G., Finkenauer, C., Stok, F. M., &amp; Baumeister, R. F. (2012).</strong>
+          Taking stock of self-control: A meta-analysis of how trait self-control relates to a wide range of behaviors. <em>Personality and Social Psychology Review, 16</em>(1), 76–99.
+        </div>
+        <div class="footer-note">
+          本資料は一般的な健康・行動科学の情報を提供するものであり、診断、治療、個別の食事指導を目的とするものではありません。食事への強い不安、過食、極端な食事制限、嘔吐、急激な体重変化などがある場合は、医師、管理栄養士、心理職など適切な専門家へ相談してください。
+        </div>
       </section>
     </div>
 
-    <footer>© 合同会社 nature · BDX</footer>
+    <footer>© 合同会社 NATURE · BDX</footer>
   </main>
 </body>
 </html>
