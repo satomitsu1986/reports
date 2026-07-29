@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BDX資料一覧 | SATOMITSU REPORTS</title>
+  <meta name="description" content="BDXの論文解説資料をまとめた一覧ページです。" />
+  <title>論文解説資料 | BDX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Noto+Sans+JP:wght@300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet" />
@@ -59,36 +60,39 @@
       opacity: 0.5;
     }
     h1 {
+      margin-bottom: 20px;
       font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
       font-size: clamp(2.6rem, 7vw, 4.8rem);
       font-weight: 300;
       letter-spacing: 0.16em;
       line-height: 1;
-      margin-bottom: 20px;
     }
     .lead {
       max-width: 650px;
+      margin-bottom: 48px;
       color: var(--text-mid);
       font-size: 0.88rem;
       line-height: 2;
       letter-spacing: 0.08em;
-      margin-bottom: 48px;
     }
-    .list { display: grid; gap: 14px; }
+    .list {
+      display: grid;
+      gap: 14px;
+    }
     .doc-link {
+      position: relative;
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
       gap: 18px;
       min-height: 86px;
+      overflow: hidden;
       padding: 22px 24px;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       background: linear-gradient(180deg, var(--surface-hi), var(--surface));
       color: inherit;
       text-decoration: none;
-      position: relative;
-      overflow: hidden;
       transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
     }
     .doc-link::before {
@@ -119,6 +123,7 @@
     .number {
       position: relative;
       z-index: 1;
+      min-width: 28px;
       color: var(--gold);
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.55rem;
@@ -131,19 +136,19 @@
     }
     .doc-label {
       display: block;
+      margin-bottom: 7px;
       color: var(--gold);
       font-size: 9px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       opacity: 0.64;
-      margin-bottom: 7px;
     }
     .doc-title {
       display: block;
+      margin-bottom: 5px;
       color: var(--text-hi);
       font-size: 0.98rem;
       letter-spacing: 0.08em;
-      margin-bottom: 5px;
     }
     .doc-desc {
       display: block;
@@ -168,11 +173,14 @@
       color: var(--text-lo);
       font-size: 10px;
       letter-spacing: 0.2em;
-      text-transform: uppercase;
       text-align: center;
+      text-transform: uppercase;
     }
     @media (max-width: 640px) {
-      .page { width: min(100% - 28px, 960px); padding: 56px 0 64px; }
+      .page {
+        width: min(100% - 28px, 960px);
+        padding: 56px 0 64px;
+      }
       .doc-link {
         grid-template-columns: 1fr auto;
         gap: 12px;
@@ -184,26 +192,35 @@
 </head>
 <body>
   <main class="page">
-    <p class="eyebrow">Body Design Experience</p>
-    <h1>BDX資料一覧</h1>
-    <p class="lead">最高の体調を手に入れたい一般の方に向けた、食事・運動・回復とサービス設計に関する資料をまとめています。</p>
+    <p class="eyebrow">BDX Research Library</p>
+    <h1>論文解説資料</h1>
+    <p class="lead">健康・食行動・運動に関する研究を、科学的根拠とBDXでの実践方法に分けて整理しています。</p>
 
-    <section class="list" aria-label="BDX資料一覧">
-      <a class="doc-link" href="outsourcing-agreement.html">
-        <span class="number">01</span>
+    <section class="list" aria-label="BDX論文解説資料一覧">
+      <a class="doc-link" href="../metabolic-suppression.html">
+        <span class="number">02</span>
         <span class="doc-main">
-          <span class="doc-label">Outsourcing Agreement · Ver.1.0</span>
-          <span class="doc-title">BDX 業務委託契約書（Ver.1.0）</span>
-          <span class="doc-desc">バレエ監修等の委託業務、契約条件、報酬規程および経費精算規程を定めた契約書。</span>
+          <span class="doc-label">Research Summary · BMJ Open Sport &amp; Exercise Medicine</span>
+          <span class="doc-title">見た目だけでは分からない代謝抑制</span>
+          <span class="doc-desc">BMIでは見抜けないエネルギー不足のサインを、研究結果とBDXでの実践に分けて解説。</span>
         </span>
         <svg class="arrow" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a class="doc-link" href="research/">
-        <span class="number">02</span>
+      <a class="doc-link" href="../appetite-self-regulation.html">
+        <span class="number">03</span>
         <span class="doc-main">
-          <span class="doc-label">Research Library · 3 Documents</span>
-          <span class="doc-title">論文解説資料</span>
-          <span class="doc-desc">科学的根拠とBDXでの実践方法をまとめた、論文解説資料のフォルダ。</span>
+          <span class="doc-label">Food Behavior · Self-Regulation</span>
+          <span class="doc-title">食欲に振り回されない身体の整え方</span>
+          <span class="doc-desc">睡眠不足と禁止思考が食欲へ与える影響を、研究結果とBDXの実践方法に分けて解説。</span>
+        </span>
+        <svg class="arrow" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="doc-link" href="../injury-risk-factors.html">
+        <span class="number">04</span>
+        <span class="doc-main">
+          <span class="doc-label">Injury Prevention · Multifactorial Risk</span>
+          <span class="doc-title">けがは動作だけで起きない</span>
+          <span class="doc-desc">急性スポーツ外傷の背景を、身体・心理・判断・環境など7つの視点とBDXの実践方法から解説。</span>
         </span>
         <svg class="arrow" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
