@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="夢に挑戦する人を応援するカフェ構想を、世界観と事業設計の二つの資料に整理しています。" />
+  <meta property="og:title" content="カフェ資料 | SATOMITSU REPORTS" />
+  <meta property="og:description" content="夢に挑戦する人を応援するカフェ構想を、世界観と事業設計の二つの資料に整理しています。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://satomitsu1986.github.io/reports/cafe/" />
+  <meta name="twitter:card" content="summary" />
   <title>カフェ資料 | SATOMITSU REPORTS</title>
+  <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -155,11 +162,15 @@
     .arrow {
       position: relative;
       z-index: 1;
-      width: 15px;
-      height: 15px;
       color: var(--gold);
+      font-size: 1.05rem;
+      line-height: 1;
       opacity: 0.62;
       flex-shrink: 0;
+    }
+    .doc-link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
     }
     footer {
       margin-top: 54px;
@@ -180,13 +191,17 @@
       }
       .number { display: none; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      .doc-link:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <p class="eyebrow">Cafe Concept</p>
     <h1>カフェ資料</h1>
-    <p class="lead">夢に挑戦する人を応援するカフェ構想の資料を、コンセプトと運営検討に分けて整理しています。</p>
+    <p class="lead">夢に挑戦する人を応援するカフェ構想を、世界観と事業設計の二つの資料に整理しています。</p>
 
     <section class="list" aria-label="カフェ資料一覧">
       <a class="doc-link" href="visual-book.html">
@@ -196,27 +211,17 @@
           <span class="doc-title">ビジュアルブック</span>
           <span class="doc-desc">カフェ構想の世界観、社会課題、提供価値をまとめた資料。</span>
         </span>
-        <svg class="arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="arrow" aria-hidden="true">↗</span>
       </a>
 
-      <a class="doc-link" href="#">
+      <a class="doc-link" href="business-plan.html">
         <span class="number">02</span>
         <span class="doc-main">
-          <span class="doc-label">Coming Soon</span>
-          <span class="doc-title">コンセプト資料</span>
-          <span class="doc-desc">未作成のため、リンク先は仮置きです。</span>
+          <span class="doc-label">Business Plan</span>
+          <span class="doc-title">事業計画書</span>
+          <span class="doc-desc">コンセプト、顧客価値、サービス、収益モデル、運営計画、検証方針をまとめた事業全体の設計書。</span>
         </span>
-        <svg class="arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-
-      <a class="doc-link" href="#">
-        <span class="number">03</span>
-        <span class="doc-main">
-          <span class="doc-label">Coming Soon</span>
-          <span class="doc-title">収益構造</span>
-          <span class="doc-desc">未作成のため、リンク先は仮置きです。</span>
-        </span>
-        <svg class="arrow" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </section>
 
