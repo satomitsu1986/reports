@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="夢に挑戦する人を応援するカフェの初回ポップアップ出店に向けて、営業・衛生確認、会場、仕入れ、メニュー、収支、応援体験、当日運営、振り返りを管理できる実行用ガイド。" />
+  <meta property="og:title" content="ポップアップ出店準備ガイド | 夢に挑戦する人を応援するカフェ" />
+  <meta property="og:description" content="初回ポップアップ出店までの準備内容と進捗を管理できる実行用ガイド。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://satomitsu1986.github.io/reports/cafe/popup-launch-guide.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://satomitsu1986.github.io/reports/cafe/popup-launch-guide.html" />
+  <link rel="icon" href="data:," />
+  <title>ポップアップ出店準備ガイド | 夢に挑戦する人を応援するカフェ</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    :root {
+      --coffee: #100b07;
+      --coffee-2: #1d130d;
+      --coffee-3: #2c1d13;
+      --paper: #faf7f0;
+      --ivory: #f3ebdf;
+      --sand: #dfcfbb;
+      --ink: #241c17;
+      --ink-mid: #685a50;
+      --ink-soft: #8c7b6d;
+      --amber: #bd7624;
+      --amber-light: #e0a24d;
+      --amber-soft: #f1e2ca;
+      --green: #486553;
+      --green-soft: #e2eae3;
+      --blue: #486677;
+      --blue-soft: #e1eaee;
+      --red: #844a42;
+      --red-soft: #f2e1de;
+      --line: rgba(102, 77, 58, 0.2);
+      --line-dark: rgba(244, 235, 223, 0.13);
+      --radius: 8px;
+      --sans: 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+      --serif: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
+    }
+    html { scroll-behavior: smooth; background: var(--coffee); color: var(--ivory); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    body { min-width: 320px; overflow-x: hidden; background: var(--paper); }
+    .site-header { background: var(--coffee); }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--amber-light); outline-offset: 3px; }
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .brand { color: var(--ivory); font-size: 10px; font-weight: 600; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; }
+    .hero { min-height: calc(80svh - 68px); display: flex; align-items: center; background: var(--coffee); }
+    .hero-inner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0 88px; }
+    .eyebrow, .section-kicker, .card-kicker, .phase-progress, .toc-label { color: var(--amber); font-size: 10px; font-weight: 700; line-height: 1.5; letter-spacing: 0.16em; text-transform: uppercase; }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: 0; }
+    h1 { max-width: 900px; margin-top: 24px; font-size: 64px; line-height: 1.28; }
+    .hero-ja { margin-top: 22px; color: var(--sand); font-family: var(--serif); font-size: 26px; line-height: 1.7; }
+    .hero-sub { margin-top: 24px; color: #c1b3a5; font-family: var(--serif); font-size: 19px; line-height: 1.9; }
+    .hero-note { max-width: 700px; margin-top: 22px; color: #8f8072; font-size: 13px; line-height: 2; }
+    .controlbar { position: sticky; top: 0; z-index: 20; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); background: rgba(29, 19, 13, 0.97); color: var(--ivory); }
+    .control-inner { width: min(1180px, calc(100% - 40px)); min-height: 72px; display: grid; grid-template-columns: minmax(220px, 1fr) auto auto; align-items: center; gap: 18px; margin: 0 auto; }
+    .progress-summary { min-width: 0; }
+    .progress-copy { display: flex; justify-content: space-between; gap: 16px; color: #cbbdaf; font-size: 11px; line-height: 1.5; }
+    .progress-track { height: 5px; margin-top: 8px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,0.1); }
+    .progress-fill { width: 0; height: 100%; border-radius: inherit; background: var(--amber-light); transition: width 0.25s ease; }
+    .control-button { min-height: 42px; padding: 0 14px; border: 1px solid var(--line-dark); border-radius: 6px; background: transparent; color: var(--ivory); font-size: 11px; font-weight: 600; cursor: pointer; }
+    .toc-toggle { display: none; }
+    .workspace { width: min(1180px, calc(100% - 40px)); display: grid; grid-template-columns: 248px minmax(0, 1fr); gap: 54px; margin: 0 auto; padding: 72px 0 100px; }
+    .toc { position: sticky; top: 94px; align-self: start; max-height: calc(100vh - 118px); overflow-y: auto; padding-right: 14px; }
+    .toc-list { display: grid; gap: 2px; margin-top: 14px; padding: 0; list-style: none; }
+    .toc-list a { min-height: 36px; display: flex; align-items: center; padding: 7px 9px; border-left: 2px solid transparent; color: var(--ink-soft); font-size: 11px; line-height: 1.5; text-decoration: none; }
+    .toc-list a:hover, .toc-list a.active { border-color: var(--amber); color: var(--ink); background: var(--amber-soft); }
+    .guide { min-width: 0; }
+    .guide-section { padding: 68px 0; border-top: 1px solid var(--line); scroll-margin-top: 92px; }
+    .guide-section:first-child { padding-top: 0; border-top: 0; }
+    .section-heading { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 18px; align-items: start; }
+    .section-number { color: var(--amber); font-family: var(--serif); font-size: 34px; line-height: 1; }
+    .heading-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    h2 { margin-top: 8px; color: var(--ink); font-size: 32px; line-height: 1.5; }
+    h3 { color: var(--ink); font-size: 21px; line-height: 1.6; }
+    h4 { color: var(--ink); font-size: 17px; line-height: 1.6; }
+    p, li, td, th { color: var(--ink-mid); font-size: 14px; line-height: 1.9; }
+    .prose { max-width: 760px; margin-top: 28px; }
+    .prose p + p { margin-top: 16px; }
+    .lead-copy { font-family: var(--serif); font-size: 18px; line-height: 2; }
+    .strong-message { margin-top: 30px; padding: 26px; border-left: 4px solid var(--amber); background: var(--amber-soft); }
+    .strong-message p { color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.9; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+    .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { min-width: 0; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #fffdf9; }
+    .card h3, .card h4 { margin-top: 8px; }
+    .card p { margin-top: 8px; }
+    .plain-list { display: grid; gap: 7px; margin-top: 14px; padding: 0; list-style: none; }
+    .plain-list li { position: relative; padding-left: 15px; }
+    .plain-list li::before { content: ''; position: absolute; top: 11px; left: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--amber); }
+    .principles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 30px; }
+    .principle { min-height: 105px; display: flex; align-items: center; padding: 18px; border-top: 2px solid var(--amber); background: #fffdf9; color: var(--ink-mid); font-size: 13px; line-height: 1.7; }
+    .roadmap { display: grid; gap: 10px; margin-top: 32px; }
+    .roadmap-item { display: grid; grid-template-columns: 72px 180px minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; padding: 22px 0; border-top: 1px solid var(--line); }
+    .roadmap-item:first-child { border-top: 0; }
+    .roadmap-num { color: var(--amber); font-family: var(--serif); font-size: 25px; }
+    .roadmap-item strong { color: var(--ink); font-family: var(--serif); font-size: 17px; font-weight: 400; line-height: 1.6; }
+    .roadmap-item p { font-size: 12px; line-height: 1.7; }
+    .roadmap-item span { display: block; margin-bottom: 4px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .phase-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+    .meta-box { padding: 20px; border-radius: var(--radius); background: var(--blue-soft); }
+    .meta-box.done { background: var(--green-soft); }
+    .meta-box p { margin-top: 6px; color: var(--ink); }
+    .subsection { margin-top: 34px; }
+    .subsection h3 { margin-bottom: 12px; }
+    .checklist { display: grid; gap: 8px; margin-top: 14px; padding: 0; list-style: none; }
+    .checklist.columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
+    .checklist label { min-height: 48px; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 11px; align-items: start; padding: 11px 13px; border: 1px solid var(--line); border-radius: 6px; background: #fffdf9; cursor: pointer; }
+    .checklist input { width: 17px; height: 17px; margin-top: 3px; accent-color: var(--green); cursor: pointer; }
+    .checklist input:checked + span { color: var(--ink-soft); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .checklist span { color: var(--ink-mid); font-size: 13px; line-height: 1.75; }
+    .caution { margin-top: 28px; padding: 22px; border: 1px solid rgba(132,74,66,0.3); border-radius: var(--radius); background: var(--red-soft); }
+    .caution .card-kicker { color: var(--red); }
+    .caution p { margin-top: 7px; color: #6e3e38; font-weight: 600; }
+    .centerpiece { margin-top: 34px; padding: 32px; border: 1px solid rgba(189,118,36,0.35); border-radius: var(--radius); background: var(--coffee-2); color: var(--ivory); }
+    .centerpiece h3 { color: var(--ivory); }
+    .centerpiece p, .centerpiece li { color: #c8baad; }
+    .experience-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 24px; }
+    .flow-step { position: relative; min-height: 110px; padding: 18px; border: 1px solid var(--line-dark); border-radius: 6px; background: rgba(255,255,255,0.04); }
+    .flow-step::after { content: '→'; position: absolute; top: 50%; right: -10px; z-index: 1; color: var(--amber-light); transform: translateY(-50%); }
+    .flow-step:nth-child(3n)::after, .flow-step:last-child::after { display: none; }
+    .flow-step strong { display: block; margin-top: 6px; color: var(--ivory); font-family: var(--serif); font-size: 16px; font-weight: 400; line-height: 1.6; }
+    .table-wrap { width: 100%; margin-top: 26px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); -webkit-overflow-scrolling: touch; }
+    table { width: 100%; min-width: 690px; border-collapse: collapse; background: #fffdf9; }
+    th, td { padding: 14px 17px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--ink); background: var(--amber-soft); font-weight: 700; }
+    th + th, td + td { border-left: 1px solid var(--line); }
+    tr:last-child td { border-bottom: 0; }
+    .priority-group { margin-top: 28px; }
+    .priority-title { padding: 10px 14px; border-left: 3px solid var(--amber); background: var(--amber-soft); color: var(--ink); font-weight: 700; }
+    .number-actions { display: grid; gap: 7px; margin-top: 12px; padding: 0; list-style: none; counter-reset: action; }
+    .number-actions.start-09 { counter-reset: action 8; }
+    .number-actions.start-16 { counter-reset: action 15; }
+    .number-actions li { counter-increment: action; display: grid; grid-template-columns: 38px minmax(0,1fr); align-items: center; min-height: 48px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 6px; background: #fffdf9; }
+    .number-actions li::before { content: counter(action, decimal-leading-zero); color: var(--amber); font-family: var(--serif); font-size: 18px; }
+    .minimum-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 30px; }
+    .minimum-card { padding: 24px; border-top: 3px solid var(--amber); background: #fffdf9; }
+    .closing { margin-top: 36px; padding: 54px 40px; background: var(--coffee); text-align: center; }
+    .closing p { color: #c8baad; font-family: var(--serif); font-size: 18px; line-height: 2.05; }
+    .closing p + p { margin-top: 24px; }
+    .closing strong { display: block; margin-top: 34px; color: var(--amber-light); font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.8; }
+    .site-footer { padding: 34px 20px; border-top: 1px solid var(--line-dark); background: var(--coffee); color: #71665c; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-align: center; text-transform: uppercase; }
+    @media (max-width: 1000px) {
+      h1 { font-size: 54px; }
+      .workspace { grid-template-columns: 210px minmax(0,1fr); gap: 34px; }
+      .principles { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .roadmap-item { grid-template-columns: 58px 160px minmax(0,1fr); }
+      .roadmap-item > div:last-child { grid-column: 3; }
+      .cards.three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 760px) {
+      .topbar, .hero-inner, .control-inner, .workspace { width: min(100% - 28px, 1180px); }
+      .brand, .back-link { font-size: 9px; letter-spacing: 0.1em; }
+      .hero { min-height: calc(80svh - 68px); }
+      .hero-inner { padding: 56px 0 70px; }
+      h1 { font-size: 43px; line-height: 1.38; }
+      .hero-ja { font-size: 22px; }
+      .control-inner { grid-template-columns: minmax(0,1fr) auto auto; gap: 8px; }
+      .control-button { min-width: 54px; padding: 0 9px; }
+      .toc-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .workspace { display: block; padding: 28px 0 72px; }
+      .toc { position: static; max-height: none; margin-bottom: 26px; padding: 0; }
+      .toc-label { display: none; }
+      .toc-list { display: none; grid-template-columns: repeat(2,minmax(0,1fr)); padding: 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory); }
+      .toc-list.open { display: grid; }
+      .toc-list a { min-height: 42px; }
+      .guide-section { padding: 58px 0; scroll-margin-top: 82px; }
+      .section-heading { grid-template-columns: 54px minmax(0,1fr); gap: 12px; }
+      .section-number { font-size: 29px; }
+      h2 { font-size: 27px; }
+      .heading-row { display: block; }
+      .phase-progress { display: block; margin-top: 8px; }
+      .cards.three, .cards { grid-template-columns: 1fr; }
+      .roadmap-item { grid-template-columns: 44px minmax(0,1fr); gap: 12px; }
+      .roadmap-item > div:nth-child(n+3) { grid-column: 2; }
+      .phase-meta { grid-template-columns: 1fr; }
+      .checklist.columns { grid-template-columns: 1fr; }
+      .experience-flow { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .flow-step:nth-child(3n)::after { display: block; }
+      .flow-step:nth-child(2n)::after, .flow-step:last-child::after { display: none; }
+      .minimum-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 460px) {
+      .topbar { align-items: flex-start; flex-direction: column; justify-content: center; gap: 2px; padding: 10px 0; }
+      h1 { font-size: 36px; }
+      .hero-ja { font-size: 19px; }
+      .hero-sub { font-size: 16px; }
+      .progress-copy span:first-child { display: none; }
+      .control-inner { min-height: 68px; }
+      .section-heading { grid-template-columns: 1fr; }
+      .section-number { font-size: 27px; }
+      h2 { font-size: 24px; }
+      .principles { grid-template-columns: 1fr; }
+      .experience-flow { grid-template-columns: 1fr; }
+      .flow-step::after, .flow-step:nth-child(2n)::after, .flow-step:nth-child(3n)::after { content: '↓'; display: block; top: auto; right: 50%; bottom: -18px; transform: translateX(50%); }
+      .flow-step:last-child::after { display: none; }
+      .closing { padding: 42px 22px; }
+      .closing p { font-size: 16px; }
+    }
+    @media print {
+      @page { size: A4; margin: 13mm; }
+      html, body { background: #fff; color: #000; }
+      .topbar, .controlbar, .toc, .site-footer { display: none !important; }
+      .hero { min-height: auto; background: #fff; color: #000; }
+      .hero-inner { width: 100%; padding: 8mm 0 14mm; }
+      .eyebrow, .hero-ja, .hero-sub, .hero-note { color: #333; }
+      h1 { color: #000; font-size: 36pt; }
+      .workspace { width: 100%; display: block; padding: 0; }
+      .guide-section { padding: 10mm 0; break-inside: auto; page-break-inside: auto; }
+      .card, .meta-box, .minimum-card, .roadmap-item, .checklist li, .table-wrap, .caution, .centerpiece, .closing { break-inside: avoid; page-break-inside: avoid; }
+      .card, .checklist label, table, .minimum-card { background: #fff; }
+      .centerpiece, .closing { color: #000; background: #f3eee7; }
+      .centerpiece h3, .centerpiece strong, .closing strong { color: #000; }
+      .centerpiece p, .centerpiece li, .closing p { color: #333; }
+      .progress-fill { transition: none; }
+      a { text-decoration: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <p class="brand">Cafe Concept · Execution Guide</p>
+    </div>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Pop-up Cafe Launch Guide</p>
+        <h1 id="page-title">POP-UP CAFE<br />LAUNCH GUIDE</h1>
+        <p class="hero-ja">ポップアップ出店準備ガイド</p>
+        <p class="hero-sub">小さく始めて、応援の輪を育てる。</p>
+        <p class="hero-note">常設店をいきなりつくるのではなく、1日限定の小さな実験から始める。お客様と一緒に、カフェの未来を育てていくための実行計画。</p>
+      </div>
+    </section>
+  </header>
+
+  <div class="controlbar" aria-label="準備進捗">
+    <div class="control-inner">
+      <div class="progress-summary">
+        <p class="progress-copy"><span>全体の準備進捗</span><span id="progressText">0 / 0 完了 · 0%</span></p>
+        <div class="progress-track" role="progressbar" aria-label="全体の準備進捗" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <button class="control-button toc-toggle" id="tocToggle" type="button" aria-controls="tocList" aria-expanded="false">目次</button>
+      <button class="control-button" id="topButton" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る">↑</button>
+      <button class="control-button" id="printButton" type="button" aria-label="ガイドを印刷する">印刷</button>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <nav class="toc" aria-label="ガイドの目次">
+      <p class="toc-label">Contents</p>
+      <ol class="toc-list" id="tocList">
+        <li><a href="#reason">01 ポップアップから始める理由</a></li><li><a href="#policy">02 初回の基本方針</a></li><li><a href="#roadmap">03 準備ロードマップ</a></li><li><a href="#phase1">04 コンセプト設計</a></li><li><a href="#phase2">05 営業・法令・衛生</a></li><li><a href="#phase3">06 出店場所探し</a></li><li><a href="#phase4">07 パートナー・仕入れ</a></li><li><a href="#phase5">08 メニュー設計</a></li><li><a href="#phase6">09 収支設計</a></li><li><a href="#phase7">10 応援体験</a></li><li><a href="#phase8">11 世界観・販促物</a></li><li><a href="#phase9">12 備品・設備</a></li><li><a href="#phase10">13 オペレーション</a></li><li><a href="#phase11">14 集客・当日運営</a></li><li><a href="#phase12">15 振り返り・改善</a></li><li><a href="#minimum">16 推奨最小構成</a></li><li><a href="#kpi">17 初回KPI</a></li><li><a href="#actions">18 アクションリスト</a></li><li><a href="#risks">19 リスクと対策</a></li><li><a href="#message">20 最終メッセージ</a></li>
+      </ol>
+    </nav>
+
+    <main class="guide">
+      <section class="guide-section" id="reason">
+        <div class="section-heading"><span class="section-number">01</span><div><p class="section-kicker">Why Pop-up</p><div class="heading-row"><h2>なぜ、最初から店舗を持たないのか</h2><span class="phase-progress"></span></div></div></div>
+        <div class="prose"><p>常設店舗の開業には、物件取得費、内装費、設備費、人件費、家賃など、大きな固定費が発生します。一方、ポップアップであれば、少ない初期投資で実際のお客様にサービスを提供できます。</p><p>目的は売上だけではありません。コンセプト、共感する顧客、応援体験、メニューと価格、運営負荷、再参加意向を検証する小さな事業実験です。</p></div>
+        <div class="strong-message"><p>常設店をつくるためにポップアップを行うのではない。<br />ポップアップを重ねた結果として、常設店が生まれる。</p></div>
+        <div class="cards"><div class="card"><p class="card-kicker">01</p><h3>初期投資を抑える</h3></div><div class="card"><p class="card-kicker">02</p><h3>最短で実際の営業を試す</h3></div><div class="card"><p class="card-kicker">03</p><h3>コンセプトを検証する</h3></div><div class="card"><p class="card-kicker">04</p><h3>お客様の声を集める</h3></div><div class="card"><p class="card-kicker">05</p><h3>開業前からファンを育てる</h3></div><div class="card"><p class="card-kicker">06</p><h3>共同運営の相性を確認する</h3></div><div class="card"><p class="card-kicker">07</p><h3>実績を事業計画へ反映する</h3></div><div class="card"><p class="card-kicker">08</p><h3>固定費を持たず改善を重ねる</h3></div></div>
+      </section>
+
+      <section class="guide-section" id="policy">
+        <div class="section-heading"><span class="section-number">02</span><div><p class="section-kicker">First Pop-up Policy</p><div class="heading-row"><h2>夢を応援する、1日限定カフェ</h2><span class="phase-progress"></span></div></div></div>
+        <div class="phase-meta"><div class="meta-box"><p class="card-kicker">初回の目的</p><p>完成度や利益の最大化ではなく、コンセプト、応援体験、飲食、物語、再来店意向、2名運営の現実性を確かめる。</p></div><div class="meta-box done"><p class="card-kicker">判断基準</p><p>売上だけで評価せず、お客様の反応と運営者の負荷を記録し、次回に一つずつ反映する。</p></div></div>
+        <div class="subsection"><h3>初回に検証すること</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>来店者がコンセプトを理解できるか</span></label></li><li><label><input type="checkbox" /><span>応援する体験に参加したいと思うか</span></label></li><li><label><input type="checkbox" /><span>コーヒーとスイーツの組み合わせに魅力を感じるか</span></label></li><li><label><input type="checkbox" /><span>作り手の物語が購買理由になるか</span></label></li><li><label><input type="checkbox" /><span>また来たいと思うか</span></label></li><li><label><input type="checkbox" /><span>運営者2名で無理なく営業できるか</span></label></li></ul></div>
+        <div class="principles"><div class="principle">小さく始める</div><div class="principle">メニューを増やしすぎない</div><div class="principle">自分たちですべて作らない</div><div class="principle">得意な人と連携する</div><div class="principle">売上だけで評価しない</div><div class="principle">反応を記録する</div><div class="principle">毎回一つずつ改善する</div><div class="principle">共同運営者の本業や活動を最優先する</div></div>
+      </section>
+
+      <section class="guide-section" id="roadmap">
+        <div class="section-heading"><span class="section-number">03</span><div><p class="section-kicker">Preparation Roadmap</p><div class="heading-row"><h2>出店準備ロードマップ</h2><span class="phase-progress"></span></div></div></div>
+        <div class="roadmap">
+          <div class="roadmap-item"><span class="roadmap-num">01</span><strong>コンセプト設計</strong><div><span>Purpose / Action</span><p>企画の目的、来店者、仮説、持ち帰る感情を定める。</p></div><div><span>Done</span><p>30秒で説明でき、仮説が3つ以内。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">02</span><strong>営業・法令確認</strong><div><span>Purpose / Action</span><p>出店形態に必要な許可、衛生、設備条件を確認。</p></div><div><span>Done</span><p>保健所・主催者へ確認し、管理表が完成。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">03</span><strong>出店場所探し</strong><div><span>Purpose / Action</span><p>設備と営業条件が整う候補を比較。</p></div><div><span>Done</span><p>候補20件、問合せ5件、比較3件から決定。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">04</span><strong>パートナー・仕入れ</strong><div><span>Purpose / Action</span><p>専門の作り手と品質・条件を確認。</p></div><div><span>Done</span><p>候補10件、相談3件、試食と条件合意。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">05</span><strong>メニュー設計</strong><div><span>Purpose / Action</span><p>初回に扱える商品へ絞り、価格と手順を決定。</p></div><div><span>Done</span><p>3〜6商品、表示・原価・代替対応が明確。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">06</span><strong>収支設計</strong><div><span>Purpose / Action</span><p>費用、利益、損益分岐点と赤字許容額を把握。</p></div><div><span>Done</span><p>3パターン試算と予算上限が完成。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">07</span><strong>応援体験の設計</strong><div><span>Purpose / Action</span><p>来店から応援、自己内省までの導線を設計。</p></div><div><span>Done</span><p>任意の応援行動と還元方法が明確。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">08</span><strong>世界観・販促物</strong><div><span>Purpose / Action</span><p>店頭・SNS・案内物のトーンを統一。</p></div><div><span>Done</span><p>3秒で店の目的と応援方法が伝わる。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">09</span><strong>備品・設備</strong><div><span>Purpose / Action</span><p>提供、衛生、会計、会場、緊急用品を準備。</p></div><div><span>Done</span><p>調達区分、搬送、前日確認、予備品が明確。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">10</span><strong>オペレーション</strong><div><span>Purpose / Action</span><p>役割、接客、提供、衛生、緊急対応を設計。</p></div><div><span>Done</span><p>担当・手順・責任者が決まり、リハーサル済み。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">11</span><strong>集客・当日運営</strong><div><span>Purpose / Action</span><p>告知計画、予約管理、当日時間割を共有。</p></div><div><span>Done</span><p>素材、予定、連絡手段が揃っている。</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">12</span><strong>振り返り・改善</strong><div><span>Purpose / Action</span><p>数値、声、負荷、収益性を記録。</p></div><div><span>Done</span><p>改善点を3つ以内に絞り次回判断ができる。</p></div></div>
+        </div>
+      </section>
+
+      <section class="guide-section" id="phase1">
+        <div class="section-heading"><span class="section-number">04</span><div><p class="section-kicker">Phase 1</p><div class="heading-row"><h2>コンセプト設計</h2><span class="phase-progress"></span></div></div></div>
+        <div class="phase-meta"><div class="meta-box"><p class="card-kicker">目的</p><p>何を提供するポップアップなのかを明確にする。</p></div><div class="meta-box done"><p class="card-kicker">完了条件</p><p>30秒で説明でき、共同運営者の目的が一致し、検証仮説が3つ以内。</p></div></div>
+        <div class="subsection"><h3>チェックリスト</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>ポップアップの目的を決める</span></label></li><li><label><input type="checkbox" /><span>開催テーマを決める</span></label></li><li><label><input type="checkbox" /><span>想定来店者を決める</span></label></li><li><label><input type="checkbox" /><span>コンセプトを一文で説明できるようにする</span></label></li><li><label><input type="checkbox" /><span>今回検証したい仮説を決める</span></label></li><li><label><input type="checkbox" /><span>持ち帰ってほしい感情を決める</span></label></li><li><label><input type="checkbox" /><span>応援する対象を決める</span></label></li><li><label><input type="checkbox" /><span>開催後の理想的な状態を決める</span></label></li></ul></div>
+        <div class="cards"><div class="card"><p class="card-kicker">Hypothesis</p><p>誰かを応援することで、前向きな気持ちになれるか。</p></div><div class="card"><p class="card-kicker">Hypothesis</p><p>作り手の物語を知ることで、商品への関心は高まるか。</p></div><div class="card"><p class="card-kicker">Hypothesis</p><p>飲食と応援体験の組み合わせが来店理由になるか。</p></div><div class="card"><p class="card-kicker">Hypothesis</p><p>来店者はカフェの成長自体を応援したいと思うか。</p></div></div>
+      </section>
+
+      <section class="guide-section" id="phase2">
+        <div class="section-heading"><span class="section-number">05</span><div><p class="section-kicker">Phase 2</p><div class="heading-row"><h2>営業・法令・衛生管理</h2><span class="phase-progress"></span></div></div></div>
+        <div class="caution"><p class="card-kicker">必ず事前確認</p><p>営業許可や届出の要否は、自治体、出店場所、設備、提供メニュー、調理方法によって異なります。必ず出店地域を管轄する保健所と、出店先の主催者へ事前確認してください。</p></div>
+        <div class="phase-meta"><div class="meta-box"><p class="card-kicker">目的</p><p>提供できるメニューと必要な許可・衛生管理を、会場条件に合わせて明確にする。</p></div><div class="meta-box done"><p class="card-kicker">完了条件</p><p>保健所または主催者へ確認し、必要条件・衛生管理表・提供範囲が明確。</p></div></div>
+        <div class="subsection"><h3>営業・設備・安全確認</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>食品衛生責任者の取得要否を確認する</span></label></li><li><label><input type="checkbox" /><span>利用施設の営業許可範囲を確認する</span></label></li><li><label><input type="checkbox" /><span>自分たち名義の許可・届出要否を確認する</span></label></li><li><label><input type="checkbox" /><span>提供可能な食品と調理行為を確認する</span></label></li><li><label><input type="checkbox" /><span>HACCPに沿った衛生管理方法を決める</span></label></li><li><label><input type="checkbox" /><span>手洗い・給排水設備を確認する</span></label></li><li><label><input type="checkbox" /><span>冷蔵設備と食品保管方法を確認する</span></label></li><li><label><input type="checkbox" /><span>清掃・消毒・ゴミ処理手順を決める</span></label></li><li><label><input type="checkbox" /><span>食品事故時の対応を決める</span></label></li><li><label><input type="checkbox" /><span>PL保険への加入を検討する</span></label></li><li><label><input type="checkbox" /><span>食品表示の必要事項を確認する</span></label></li><li><label><input type="checkbox" /><span>アレルギー情報の表示方法を決める</span></label></li></ul></div>
+        <div class="subsection"><h3>HACCP管理項目</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>原材料の受入確認</span></label></li><li><label><input type="checkbox" /><span>冷蔵庫の温度記録</span></label></li><li><label><input type="checkbox" /><span>加熱・保温の確認</span></label></li><li><label><input type="checkbox" /><span>交差汚染防止</span></label></li><li><label><input type="checkbox" /><span>手洗い確認</span></label></li><li><label><input type="checkbox" /><span>清掃・消毒</span></label></li><li><label><input type="checkbox" /><span>体調確認</span></label></li><li><label><input type="checkbox" /><span>廃棄判断</span></label></li><li><label><input type="checkbox" /><span>当日の異常記録</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="phase3">
+        <div class="section-heading"><span class="section-number">06</span><div><p class="section-kicker">Phase 3</p><div class="heading-row"><h2>出店場所探し</h2><span class="phase-progress"></span></div></div></div>
+        <div class="prose"><p>初回は、営業許可や設備条件が整っている場所を優先します。候補は、営業許可のあるシェアカフェ、飲食対応レンタルスペース、カフェの間借り、文化イベント、マルシェ、コワーキング、商業施設の順で検討します。</p></div>
+        <div class="cards three"><div class="card"><h3>検索方法</h3><ul class="plain-list"><li>Google・Instagram検索</li><li>地域イベント・商業施設の募集</li><li>シェアキッチン検索</li><li>知人・顧客の紹介</li><li>芸術団体・文化施設への連絡</li></ul></div><div class="card"><h3>検索キーワード</h3><ul class="plain-list"><li>地域名 ポップアップ 出店募集</li><li>地域名 シェアカフェ／間借り</li><li>地域名 レンタルキッチン</li><li>地域名 マルシェ 出店</li><li>地域名 アート／音楽イベント</li></ul></div><div class="card"><h3>完了条件</h3><ul class="plain-list"><li>候補20件以上</li><li>問合せ5件以上</li><li>3件以上を比較</li><li>条件を一覧化</li><li>初回出店先を決定</li></ul></div></div>
+        <div class="subsection"><h3>出店先確認項目</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>出店料・売上歩合・キャンセル規定</span></label></li><li><label><input type="checkbox" /><span>利用時間・搬入搬出時間</span></label></li><li><label><input type="checkbox" /><span>席数・想定来場者数</span></label></li><li><label><input type="checkbox" /><span>電源・水道・シンク・冷蔵庫・製氷機</span></label></li><li><label><input type="checkbox" /><span>コーヒーマシン・調理可能範囲・食器</span></label></li><li><label><input type="checkbox" /><span>ゴミ処理・火気使用</span></label></li><li><label><input type="checkbox" /><span>音響・写真動画撮影</span></label></li><li><label><input type="checkbox" /><span>アルコール・決済方法</span></label></li><li><label><input type="checkbox" /><span>営業許可範囲・保険条件</span></label></li><li><label><input type="checkbox" /><span>告知協力の有無</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="phase4">
+        <div class="section-heading"><span class="section-number">07</span><div><p class="section-kicker">Phase 4</p><div class="heading-row"><h2>パートナー・仕入れ先探し</h2><span class="phase-progress"></span></div></div></div>
+        <div class="prose"><p>スイーツを自分たちですべて製造せず、専門の作り手から仕入れます。カフェ側は世界観、接客、応援体験、アーティストとの接続に集中します。</p></div>
+        <div class="cards"><div class="card"><h3>候補</h3><p>パティスリー、焼き菓子店、個人パティシエ、製菓学校卒業生、独立を目指す菓子職人、ロースター、陶芸家、写真家、地域クリエイター。</p></div><div class="card"><h3>取引方法</h3><p>卸販売、委託販売、買取販売、共同開発するコラボ商品から、双方の負担と利益が明確な方法を選ぶ。</p></div></div>
+        <div class="subsection"><h3>仕入れ先確認項目</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>許可を受けた施設で製造している</span></label></li><li><label><input type="checkbox" /><span>食品表示・原材料・アレルギー情報</span></label></li><li><label><input type="checkbox" /><span>期限・保存方法・納品方法</span></label></li><li><label><input type="checkbox" /><span>最小ロット・卸価格・希望小売価格</span></label></li><li><label><input type="checkbox" /><span>売れ残り・破損・返品条件</span></label></li><li><label><input type="checkbox" /><span>写真・プロフィール・SNS掲載許可</span></label></li><li><label><input type="checkbox" /><span>試食で味・品質・保存性を確認</span></label></li><li><label><input type="checkbox" /><span>安定供給とブランドとの相性を確認</span></label></li></ul></div>
+        <div class="phase-meta"><div class="meta-box"><p class="card-kicker">物語との接続</p><p>味や素材だけでなく、作り手が何に挑んでいるかを本人の同意のもとで伝える。</p></div><div class="meta-box done"><p class="card-kicker">完了条件</p><p>候補10件、相談3件以上、試食、条件合意、表示と納品方法の確認。</p></div></div>
+      </section>
+
+      <section class="guide-section" id="phase5">
+        <div class="section-heading"><span class="section-number">08</span><div><p class="section-kicker">Phase 5</p><div class="heading-row"><h2>メニュー設計</h2><span class="phase-progress"></span></div></div></div>
+        <div class="prose"><p>初回は3〜6商品程度へ絞ります。常温管理しやすい焼き菓子を優先し、冷蔵設備と温度管理を確保できない場合は冷蔵スイーツを採用しません。</p></div>
+        <div class="cards three"><div class="card"><h3>ドリンク候補</h3><ul class="plain-list"><li>ハンドドリップ</li><li>アイスコーヒー</li><li>ノンカフェイン</li><li>季節限定1種類</li></ul></div><div class="card"><h3>焼き菓子候補</h3><ul class="plain-list"><li>クッキー、フィナンシェ</li><li>マドレーヌ、パウンド</li><li>ブラウニー、スコーン</li><li>カヌレ</li></ul></div><div class="card"><h3>冷蔵候補</h3><p>チーズケーキ、プリン、ティラミス、タルト、生クリームケーキ、パンナコッタ。設備条件を満たす場合のみ。</p></div></div>
+        <div class="subsection"><h3>メニュー決定</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>おいしさとコンセプトの相性</span></label></li><li><label><input type="checkbox" /><span>提供速度と保存性</span></label></li><li><label><input type="checkbox" /><span>原価・粗利益・廃棄リスク</span></label></li><li><label><input type="checkbox" /><span>写真映えと作り手の物語</span></label></li><li><label><input type="checkbox" /><span>食品表示とアレルギー情報</span></label></li><li><label><input type="checkbox" /><span>単品・セット・応援カード付きセット</span></label></li><li><label><input type="checkbox" /><span>提供手順と販売価格</span></label></li><li><label><input type="checkbox" /><span>売り切れ時の代替対応</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="phase6">
+        <div class="section-heading"><span class="section-number">09</span><div><p class="section-kicker">Phase 6</p><div class="heading-row"><h2>収支設計</h2><span class="phase-progress"></span></div></div></div>
+        <div class="cards"><div class="card"><h3>収入</h3><p>ドリンク、スイーツ、セット、応援チケット、グッズ、協賛、会員登録、次回予約。</p></div><div class="card"><h3>支出</h3><p>出店料、歩合、材料・仕入れ、消耗品、交通・搬送、印刷、決済、保険、人件費、謝礼、備品、廃棄。</p></div></div>
+        <div class="subsection"><h3>必須指標と完了条件</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>売上・原価・粗利益・経費・営業利益</span></label></li><li><label><input type="checkbox" /><span>客単価・購入率・原価率・廃棄率</span></label></li><li><label><input type="checkbox" /><span>損益分岐点・1時間当たり売上</span></label></li><li><label><input type="checkbox" /><span>予算上限と赤字許容額を決める</span></label></li><li><label><input type="checkbox" /><span>想定売上を3パターンで試算する</span></label></li><li><label><input type="checkbox" /><span>売れ残り時の損失を把握する</span></label></li></ul></div>
+        <div class="caution"><p class="card-kicker">Evaluation</p><p>初回は黒字化だけを成功条件にしません。ただし、継続可能性を判断するため、赤字額と原因は必ず記録します。</p></div>
+      </section>
+
+      <section class="guide-section" id="phase7">
+        <div class="section-heading"><span class="section-number">10</span><div><p class="section-kicker">Phase 7 · Core Experience</p><div class="heading-row"><h2>応援体験の設計</h2><span class="phase-progress"></span></div></div></div>
+        <div class="centerpiece"><h3>「飲食する場所」から、「誰かの挑戦に参加できる場所」へ。</h3><div class="experience-flow"><div class="flow-step"><p class="card-kicker">01</p><strong>夢や挑戦を知る</strong></div><div class="flow-step"><p class="card-kicker">02</p><strong>商品や作品に触れる</strong></div><div class="flow-step"><p class="card-kicker">03</p><strong>応援方法を選ぶ</strong></div><div class="flow-step"><p class="card-kicker">04</p><strong>応援の意思を残す</strong></div><div class="flow-step"><p class="card-kicker">05</p><strong>自分の挑戦も見つめる</strong></div><div class="flow-step"><p class="card-kicker">06</p><strong>次回の物語につながる</strong></div></div><div class="strong-message"><p>応援される人だけが成長するのではない。<br />誰かを応援した人も、自分の可能性や挑戦を思い出す。</p></div></div>
+        <div class="subsection"><h3>初回の最小構成</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>応援する人のプロフィール</span></label></li><li><label><input type="checkbox" /><span>応援メッセージカード</span></label></li><li><label><input type="checkbox" /><span>応援ボード</span></label></li><li><label><input type="checkbox" /><span>活動紹介QRコード</span></label></li><li><label><input type="checkbox" /><span>来店者自身の夢を書くカード</span></label></li></ul></div>
+        <div class="cards"><div class="card"><h3>発展アイデア</h3><p>作品・写真・動画展示、ミニトーク、パフォーマンス、応援チケット、次回へのメッセージ、活動報告。</p></div><div class="card"><h3>完了条件</h3><p>来店から退店までの導線、任意の応援行動、自己内省、応援の届け方が明確で、寄付圧力を感じさせない。</p></div></div>
+      </section>
+
+      <section class="guide-section" id="phase8">
+        <div class="section-heading"><span class="section-number">11</span><div><p class="section-kicker">Phase 8</p><div class="heading-row"><h2>世界観・販促物制作</h2><span class="phase-progress"></span></div></div></div>
+        <div class="subsection"><h3>必要制作物</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>ロゴ・メイン看板・コンセプトPOP</span></label></li><li><label><input type="checkbox" /><span>ブランドストーリー</span></label></li><li><label><input type="checkbox" /><span>メニュー表・商品カード</span></label></li><li><label><input type="checkbox" /><span>アーティスト・パティシエ紹介</span></label></li><li><label><input type="checkbox" /><span>応援方法の説明</span></label></li><li><label><input type="checkbox" /><span>ショップカード・名刺・QRコード</span></label></li><li><label><input type="checkbox" /><span>SNS告知画像・会場案内</span></label></li><li><label><input type="checkbox" /><span>アンケート・次回予告</span></label></li></ul></div>
+        <div class="cards"><div class="card"><h3>目指す印象</h3><p>上質、温かい、芸術性、静かな高揚感。人の物語を大切にし、カフェとしての洗練を保つ。</p></div><div class="card"><h3>避ける表現</h3><p>夢の強制、感動の押し売り、支援しない罪悪感、過度な自己啓発、実態のない美辞麗句、弱者扱い。</p></div></div>
+        <div class="phase-meta"><div class="meta-box done"><p class="card-kicker">完了条件</p><p>トーンが統一され、3秒で店の目的と応援方法が分かり、SNS・印刷素材が揃う。</p></div><div class="meta-box"><p class="card-kicker">Design</p><p>安っぽいチャリティー感や過剰な感動演出を避け、作り手の尊厳と実態を優先する。</p></div></div>
+      </section>
+
+      <section class="guide-section" id="phase9">
+        <div class="section-heading"><span class="section-number">12</span><div><p class="section-kicker">Phase 9</p><div class="heading-row"><h2>備品・設備準備</h2><span class="phase-progress"></span></div></div></div>
+        <div class="cards three"><div class="card"><h3>コーヒー</h3><p>ミル、ドリッパー、サーバー、ケトル、スケール、温度計、タイマー、豆、フィルター、保存容器、水、氷、洗浄用品。</p></div><div class="card"><h3>提供</h3><p>カップ、蓋、ストロー、マドラー、ナプキン、トレー、皿、フォーク、トング、紙袋、テイクアウト袋。</p></div><div class="card"><h3>衛生</h3><p>手袋、マスク、アルコール、洗剤、ペーパータオル、ゴミ袋、布巾、清掃用品、記録表、食品表示ラベル。</p></div><div class="card"><h3>会場</h3><p>テーブル、椅子、看板、POPスタンド、延長コード、電源タップ、養生、文具、照明、配線カバー、運搬箱。</p></div><div class="card"><h3>会計</h3><p>POS、決済端末、モバイルバッテリー、現金、釣銭、売上記録、領収書、現金ケース。</p></div><div class="card"><h3>緊急</h3><p>救急セット、火傷対応用品、予備備品、連絡先一覧、トラブル対応表。</p></div></div>
+        <div class="subsection"><h3>準備完了チェック</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>備品一覧が完成している</span></label></li><li><label><input type="checkbox" /><span>所有・購入・レンタルを分類した</span></label></li><li><label><input type="checkbox" /><span>搬送方法を決めた</span></label></li><li><label><input type="checkbox" /><span>前日チェックを実施できる</span></label></li><li><label><input type="checkbox" /><span>予備品を用意した</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="phase10">
+        <div class="section-heading"><span class="section-number">13</span><div><p class="section-kicker">Phase 10</p><div class="heading-row"><h2>オペレーション設計</h2><span class="phase-progress"></span></div></div></div>
+        <div class="cards"><div class="card"><h3>運営責任者</h3><p>全体進行、会場対応、売上管理、トラブル判断。</p></div><div class="card"><h3>ドリンク担当</h3><p>注文確認、抽出、提供、洗浄、在庫管理。</p></div><div class="card"><h3>接客・応援体験</h3><p>コンセプト、商品、挑戦者、応援カード、アンケートの案内。</p></div><div class="card"><h3>会計・記録</h3><p>注文入力、決済、釣銭、売上記録、写真動画、来場者数、SNS。</p></div></div>
+        <div class="subsection"><h3>必要マニュアル</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>開店準備・閉店・撤収</span></label></li><li><label><input type="checkbox" /><span>注文受付・商品提供・会計</span></label></li><li><label><input type="checkbox" /><span>応援体験の説明</span></label></li><li><label><input type="checkbox" /><span>食品衛生</span></label></li><li><label><input type="checkbox" /><span>クレーム・アレルギー対応</span></label></li><li><label><input type="checkbox" /><span>売り切れ・体調不良者対応</span></label></li><li><label><input type="checkbox" /><span>売上集計</span></label></li><li><label><input type="checkbox" /><span>役割・接客トーク・責任者を統一</span></label></li><li><label><input type="checkbox" /><span>事前リハーサルを実施</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="phase11">
+        <div class="section-heading"><span class="section-number">14</span><div><p class="section-kicker">Phase 11</p><div class="heading-row"><h2>集客と当日運営</h2><span class="phase-progress"></span></div></div></div>
+        <div class="cards"><div class="card"><h3>集客チャネル</h3><p>Instagram、LINE公式、共同運営者・挑戦者・仕入れ先のSNS、友人知人、既存顧客、会場、地域メディア、チラシ、イベントサイト。</p></div><div class="card"><h3>告知内容</h3><p>日時、場所、コンセプト、応援する人、メニュー、参加方法、予約、支払方法、注意事項。</p></div></div>
+        <div class="subsection"><h3>告知スケジュール</h3><div class="table-wrap"><table><thead><tr><th scope="col">時期</th><th scope="col">内容</th></tr></thead><tbody><tr><td>4週間前</td><td>開催発表</td></tr><tr><td>3週間前</td><td>アーティスト紹介</td></tr><tr><td>2週間前</td><td>メニュー紹介</td></tr><tr><td>1週間前</td><td>応援体験紹介</td></tr><tr><td>3日前</td><td>会場・アクセス</td></tr><tr><td>前日〜翌日</td><td>最終案内、当日発信、感謝と結果報告</td></tr></tbody></table></div></div>
+        <div class="subsection"><h3>当日タイムライン</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>搬入・設営・設備確認</span></label></li><li><label><input type="checkbox" /><span>衛生・役割確認</span></label></li><li><label><input type="checkbox" /><span>写真撮影・営業開始</span></label></li><li><label><input type="checkbox" /><span>在庫・中間売上確認</span></label></li><li><label><input type="checkbox" /><span>SNS・アンケート案内</span></label></li><li><label><input type="checkbox" /><span>ラストオーダー・終了</span></label></li><li><label><input type="checkbox" /><span>売上集計・清掃・撤収</span></label></li><li><label><input type="checkbox" /><span>忘れ物と緊急連絡手段の確認</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="phase12">
+        <div class="section-heading"><span class="section-number">15</span><div><p class="section-kicker">Phase 12</p><div class="heading-row"><h2>振り返りと改善</h2><span class="phase-progress"></span></div></div></div>
+        <div class="cards three"><div class="card"><h3>数値</h3><p>来場・購入者、売上、客単価、商品別販売、原価、利益、経費、廃棄、SNS・LINE増加、回答・応援カード、次回希望。</p></div><div class="card"><h3>お客様の声</h3><p>認知経路、事前期待、コンセプト理解、印象、メニュー、価格、応援参加、自己内省、再参加、紹介意向、改善点。</p></div><div class="card"><h3>運営者</h3><p>良かった点、想定外、負担、継続・削除・追加、反応、連携、収益性、コンセプトとの整合性。</p></div></div>
+        <div class="strong-message"><p>次回までに変更する項目は、原則3つ以内。<br />一度に多くを変えず、何が結果に影響したかを見極める。</p></div>
+        <div class="subsection"><h3>完了条件</h3><ul class="checklist columns"><li><label><input type="checkbox" /><span>数値集計が完了している</span></label></li><li><label><input type="checkbox" /><span>お客様の声を整理した</span></label></li><li><label><input type="checkbox" /><span>運営者同士で振り返った</span></label></li><li><label><input type="checkbox" /><span>改善点が3つ以内に決まった</span></label></li><li><label><input type="checkbox" /><span>次回開催の判断基準が明確</span></label></li></ul></div>
+      </section>
+
+      <section class="guide-section" id="minimum">
+        <div class="section-heading"><span class="section-number">16</span><div><p class="section-kicker">Minimum Viable Pop-up</p><div class="heading-row"><h2>初回ポップアップの推奨最小構成</h2><span class="phase-progress"></span></div></div></div>
+        <div class="minimum-grid"><div class="minimum-card"><h3>店舗規模</h3><ul class="plain-list"><li>1日限定、4〜6時間</li><li>2名運営</li><li>20〜30名来場目標</li><li>小規模会場</li></ul></div><div class="minimum-card"><h3>メニュー</h3><ul class="plain-list"><li>コーヒー、アイスコーヒー</li><li>焼き菓子2種類</li><li>セットメニュー</li></ul></div><div class="minimum-card"><h3>応援体験</h3><ul class="plain-list"><li>応援する人の紹介</li><li>応援メッセージカード</li><li>応援ボード</li><li>来店者自身の夢カード</li></ul></div><div class="minimum-card"><h3>運営</h3><ul class="plain-list"><li>予約と当日来店の併用</li><li>キャッシュレス中心</li><li>冷蔵スイーツは原則扱わない</li><li>ミニパフォーマンスは任意</li><li>アンケートを必ず実施</li></ul></div></div>
+      </section>
+
+      <section class="guide-section" id="kpi">
+        <div class="section-heading"><span class="section-number">17</span><div><p class="section-kicker">First KPI</p><div class="heading-row"><h2>初回KPI</h2><span class="phase-progress"></span></div></div></div>
+        <div class="table-wrap"><table><thead><tr><th scope="col">指標</th><th scope="col">初回目標</th></tr></thead><tbody><tr><td>来場者数</td><td>20〜30名</td></tr><tr><td>購入率</td><td>70%以上</td></tr><tr><td>アンケート回収率</td><td>70%以上</td></tr><tr><td>また来たい</td><td>80%以上</td></tr><tr><td>コンセプトを理解できた</td><td>80%以上</td></tr><tr><td>応援体験への参加率</td><td>50%以上</td></tr><tr><td>Instagramフォロー増加</td><td>20名以上</td></tr><tr><td>LINE登録</td><td>15名以上</td></tr><tr><td>廃棄率</td><td>10%以下</td></tr><tr><td>大きな衛生・運営トラブル</td><td>0件</td></tr></tbody></table></div>
+        <div class="caution"><p class="card-kicker">KPIの扱い</p><p>初期仮説としての目安です。成功・失敗を断定するものではなく、実績に合わせて次回改善の基準を更新します。</p></div>
+      </section>
+
+      <section class="guide-section" id="actions">
+        <div class="section-heading"><span class="section-number">18</span><div><p class="section-kicker">Priority Actions</p><div class="heading-row"><h2>優先順位付きアクションリスト</h2><span class="phase-progress"></span></div></div></div>
+        <div class="priority-group"><p class="priority-title">最優先</p><ol class="number-actions"><li>初回ポップアップの目的を決める</li><li>出店地域を決める</li><li>保健所へ相談する</li><li>出店候補を20件洗い出す</li><li>シェアカフェへ問い合わせる</li><li>食品衛生責任者の取得要否を確認する</li><li>仕入れ先候補を探す</li><li>予算上限を決める</li></ol></div>
+        <div class="priority-group"><p class="priority-title">次に行う</p><ol class="number-actions start-09"><li>メニューを決める</li><li>仕入れ条件を決める</li><li>応援体験を設計する</li><li>収支を試算する</li><li>ロゴ・看板・POPを作る</li><li>運営マニュアルを作る</li><li>集客計画を立てる</li></ol></div>
+        <div class="priority-group"><p class="priority-title">出店直前</p><ol class="number-actions start-16"><li>備品を揃える</li><li>営業・衛生条件を再確認する</li><li>リハーサルをする</li><li>最終告知をする</li><li>当日チェックリストを確認する</li></ol></div>
+      </section>
+
+      <section class="guide-section" id="risks">
+        <div class="section-heading"><span class="section-number">19</span><div><p class="section-kicker">Risk Management</p><div class="heading-row"><h2>リスクと対策</h2><span class="phase-progress"></span></div></div></div>
+        <div class="table-wrap"><table><thead><tr><th scope="col">リスク</th><th scope="col">主な原因</th><th scope="col">対策</th></tr></thead><tbody><tr><td>営業許可の認識違い</td><td>会場任せにする</td><td>保健所と主催者の双方へ確認</td></tr><tr><td>食中毒・体調不良</td><td>温度・手洗い管理不足</td><td>HACCP記録、冷蔵管理、体調確認</td></tr><tr><td>売れ残り</td><td>需要予測不足</td><td>少量仕入れ、予約、常温商品中心</td></tr><tr><td>提供が遅い</td><td>メニュー過多</td><td>商品数を絞り、事前リハーサル</td></tr><tr><td>コンセプトが伝わらない</td><td>説明が抽象的</td><td>一文説明、POP、体験導線</td></tr><tr><td>感動の押し付け</td><td>支援を強制する表現</td><td>応援方法を任意にする</td></tr><tr><td>運営者の負担</td><td>役割不明確</td><td>役割分担、営業時間短縮</td></tr><tr><td>赤字拡大</td><td>出店料・仕入れ過多</td><td>予算上限と損益分岐点を設定</td></tr><tr><td>共同運営の意見対立</td><td>判断基準がない</td><td>目的・役割・最終決定者を明確化</td></tr><tr><td>写真掲載トラブル</td><td>許可確認不足</td><td>撮影・掲載同意を取得</td></tr></tbody></table></div>
+      </section>
+
+      <section class="guide-section" id="message">
+        <div class="section-heading"><span class="section-number">20</span><div><p class="section-kicker">Final Message</p><div class="heading-row"><h2>お客様と一緒に、カフェを育てる</h2><span class="phase-progress"></span></div></div></div>
+        <div class="closing"><p>最初のポップアップは、完成した店を披露する日ではない。<br />私たちの考える「応援する場所」が、本当に人の心を動かすのかを確かめる日である。</p><p>そこで出会った人の声や応援が、次の開催をつくる。<br />その積み重ねが、いつか常設店になる。</p><p>お客様は、完成した店を訪れるだけの存在ではない。<br />カフェが生まれる過程を、一緒に育てる仲間になる。</p><strong>小さく始めて、応援の輪を育てる。</strong></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">© 合同会社 nature · SATOMITSU REPORTS</footer>
+
+  <script>
+    (() => {
+      const storageKey = 'cafe-popup-launch-guide-v1';
+      const checks = [...document.querySelectorAll('.checklist input[type="checkbox"]')];
+      const progressText = document.getElementById('progressText');
+      const progressFill = document.getElementById('progressFill');
+      const progressTrack = document.querySelector('.progress-track');
+      const tocToggle = document.getElementById('tocToggle');
+      const tocList = document.getElementById('tocList');
+
+      checks.forEach((check, index) => {
+        const section = check.closest('.guide-section');
+        check.dataset.key = `${section.id}-${index}`;
+      });
+
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+        const completed = new Set(Array.isArray(saved) ? saved : []);
+        checks.forEach(check => { check.checked = completed.has(check.dataset.key); });
+      } catch (error) {
+        console.warn('保存済み進捗を読み込めませんでした。', error);
+      }
+
+      const updateProgress = () => {
+        const completed = checks.filter(check => check.checked);
+        const percent = checks.length ? Math.round((completed.length / checks.length) * 100) : 0;
+        progressText.textContent = `${completed.length} / ${checks.length} 完了 · ${percent}%`;
+        progressFill.style.width = `${percent}%`;
+        progressTrack.setAttribute('aria-valuenow', String(percent));
+
+        document.querySelectorAll('.guide-section').forEach(section => {
+          const sectionChecks = [...section.querySelectorAll('.checklist input[type="checkbox"]')];
+          const output = section.querySelector('.phase-progress');
+          if (!output) return;
+          if (!sectionChecks.length) {
+            output.textContent = '';
+            return;
+          }
+          const sectionDone = sectionChecks.filter(check => check.checked).length;
+          output.textContent = `${sectionDone} / ${sectionChecks.length} 完了`;
+        });
+
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(completed.map(check => check.dataset.key)));
+        } catch (error) {
+          console.warn('進捗を保存できませんでした。', error);
+        }
+      };
+
+      checks.forEach(check => check.addEventListener('change', updateProgress));
+      updateProgress();
+
+      tocToggle.addEventListener('click', () => {
+        const open = tocList.classList.toggle('open');
+        tocToggle.setAttribute('aria-expanded', String(open));
+      });
+      tocList.addEventListener('click', event => {
+        if (event.target.closest('a') && window.matchMedia('(max-width: 760px)').matches) {
+          tocList.classList.remove('open');
+          tocToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.getElementById('printButton').addEventListener('click', () => window.print());
+      document.getElementById('topButton').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      if ('IntersectionObserver' in window) {
+        const links = new Map([...tocList.querySelectorAll('a')].map(link => [link.getAttribute('href').slice(1), link]));
+        const observer = new IntersectionObserver(entries => {
+          entries.filter(entry => entry.isIntersecting).forEach(entry => {
+            links.forEach(link => link.classList.remove('active'));
+            const active = links.get(entry.target.id);
+            if (active) active.classList.add('active');
+          });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        document.querySelectorAll('.guide-section').forEach(section => observer.observe(section));
+      }
+    })();
+  </script>
+</body>
+</html>
