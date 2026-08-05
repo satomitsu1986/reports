@@ -50,28 +50,9 @@
     body { min-width: 320px; overflow-x: hidden; background: var(--coffee); }
     a { color: inherit; }
     a:focus-visible { outline: 2px solid var(--amber-light); outline-offset: 4px; }
-    .topbar {
-      width: min(1180px, calc(100% - 40px));
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      margin: 0 auto;
-      border-bottom: 1px solid var(--line-dark);
-    }
-    .brand {
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 600;
-      line-height: 1.5;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .brand { color: var(--ivory); }
     .hero {
       width: min(1180px, calc(100% - 40px));
-      min-height: calc(84svh - 72px);
+      min-height: 84svh;
       display: flex;
       align-items: center;
       margin: 0 auto;
@@ -361,8 +342,8 @@
       .risk-item { grid-template-columns: 52px 200px minmax(0, 1fr); }
     }
     @media (max-width: 768px) {
-      .topbar, .hero, .page-nav-inner, .inner { width: min(100% - 32px, 1040px); }
-      .hero { min-height: calc(80svh - 72px); padding: 56px 0 70px; }
+      .hero, .page-nav-inner, .inner { width: min(100% - 32px, 1040px); }
+      .hero { min-height: 80svh; padding: 56px 0 70px; }
       h1 { font-size: 47px; }
       h2 { font-size: 31px; }
       .section { padding: 78px 0; }
@@ -379,9 +360,7 @@
       .closing h2 { font-size: 43px; }
     }
     @media (max-width: 560px) {
-      .topbar { min-height: 64px; gap: 12px; }
-      .brand { font-size: 9px; letter-spacing: 0.1em; }
-      .hero { min-height: calc(84svh - 64px); padding: 48px 0 64px; }
+      .hero { min-height: 84svh; padding: 48px 0 64px; }
       h1 { font-size: 39px; line-height: 1.43; }
       .hero-sub { font-size: 19px; }
       .page-nav-inner { gap: 4px 16px; }
@@ -425,9 +404,6 @@
 </head>
 <body>
   <header>
-    <div class="topbar">
-      <p class="brand">SATOMITSU REPORTS · Cafe Concept</p>
-    </div>
     <div class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Business Plan</p>
