@@ -65,12 +65,11 @@
     .masthead {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 24px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--dark-line);
     }
-    .masthead-name,
     .masthead-type {
       font-size: 10px;
       font-weight: 600;
@@ -78,7 +77,6 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
-    .masthead-name { color: var(--paper-2); }
     .masthead-type { color: var(--gold); text-align: right; }
     .hero {
       min-height: 590px;
@@ -466,28 +464,6 @@
       font-weight: 600;
       line-height: 1.7;
     }
-    .question-map {
-      display: grid;
-      grid-template-columns: 1fr 46px 1fr 46px 1fr;
-      align-items: center;
-      margin-top: 28px;
-    }
-    .question-node {
-      min-height: 108px;
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.5);
-      color: var(--ink);
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.6;
-      text-align: center;
-    }
-    .question-node:last-child { background: var(--gold-soft); }
-    .question-symbol { color: var(--gold-deep); font-size: 23px; font-weight: 700; text-align: center; }
     .function-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -723,7 +699,7 @@
     @media (max-width: 640px) {
       .page { width: min(100% - 20px, 1080px); padding: 32px 0 42px; }
       .masthead { gap: 12px; padding-bottom: 18px; }
-      .masthead-name, .masthead-type { font-size: 9px; letter-spacing: 0.12em; }
+      .masthead-type { font-size: 9px; letter-spacing: 0.12em; }
       .hero { min-height: 560px; padding: 56px 10px 60px; }
       .hero-brand { margin-bottom: 20px; font-size: 11px; }
       h1 { font-size: 40px; line-height: 1.42; }
@@ -754,8 +730,6 @@
       .phase-grid, .function-grid, .moat-grid, .kpi-grid { grid-template-columns: 1fr; }
       .phase-card:last-child { grid-column: auto; }
       .phase-purpose { min-height: 0; }
-      .question-map { grid-template-columns: 1fr; gap: 8px; }
-      .question-symbol { transform: rotate(90deg); }
       .promise { padding: 22px 20px; }
       .promise p { font-size: 16px; }
       .flywheel { grid-template-columns: 1fr; }
@@ -785,7 +759,6 @@
 <body>
   <main class="page">
     <header class="masthead" aria-label="サイトヘッダー">
-      <p class="masthead-name">SATOMITSU REPORTS</p>
       <p class="masthead-type">Business Design Document</p>
     </header>
 
@@ -995,30 +968,8 @@
         </div>
       </section>
 
-      <section class="section" id="curiosity">
-        <p class="section-number">08 · Curiosity</p>
-        <h2 class="section-heading">「気になること」は、問いの種。</h2>
-        <div class="definition">
-          <span class="label">Definition</span>
-          <p>気になることとは、問いの種である。</p>
-        </div>
-        <p class="intro">気になることはメソッドの入口ではなく、日常から問いを深める観察ログです。補助軸の材料になり、商品改善や次のコンパウンドスキルへつながります。</p>
-        <ul class="clean-list">
-          <li>日常の観察ログとして残す</li>
-          <li>補助軸の候補を見つける材料にする</li>
-          <li>独自の問いを深める</li>
-          <li>商品やサービスの改善に使う</li>
-          <li>次のコンパウンドスキルへつなげる</li>
-        </ul>
-        <div class="question-map" aria-label="気になることから問いが生まれる構造">
-          <div class="question-node">主軸・補助軸</div><div class="question-symbol">×</div>
-          <div class="question-node">気になること</div><div class="question-symbol">→</div>
-          <div class="question-node">独自の問い</div>
-        </div>
-      </section>
-
       <section class="section" id="career-os">
-        <p class="section-number">09 · Career OS</p>
+        <p class="section-number">08 · Career OS</p>
         <h2 class="section-heading">キャリア形成を、継続できる仕組みにする。</h2>
         <div class="definition">
           <span class="label">Definition</span>
@@ -1054,7 +1005,7 @@
       </section>
 
       <section class="section" id="target">
-        <p class="section-number">10 · Target User</p>
+        <p class="section-number">09 · Target User</p>
         <h2 class="section-heading">本業経験を、新しい価値と収入へ変えたい人。</h2>
         <p class="intro">主な対象は、働いた経験があり、そこから得た専門スキルを別の価値提供へ発展させたい人です。</p>
         <div class="skill-columns">
@@ -1087,7 +1038,7 @@
       </section>
 
       <section class="section" id="promise">
-        <p class="section-number">11 · Promise</p>
+        <p class="section-number">10 · Promise</p>
         <h2 class="section-heading">収益を保証せず、試せる状態まで伴走する。</h2>
         <p class="intro">複業.Labは、短期間での収入や成功を保証しません。ユーザーが自分の専門性を価値へ変え、市場から学べる状態をつくることを約束します。</p>
         <div class="promise">
@@ -1110,7 +1061,7 @@
       </section>
 
       <section class="section" id="business-model">
-        <p class="section-number">12 · Business Model</p>
+        <p class="section-number">11 · Business Model</p>
         <h2 class="section-heading">MVPは、2つのプランで検証する。</h2>
         <p class="intro">提供価値を明確に検証するため、MVPでは無料体験とCareer OSの2プランに絞ります。</p>
         <div class="plan-grid">
@@ -1157,7 +1108,7 @@
       </section>
 
       <section class="section" id="flywheel">
-        <p class="section-number">13 · Flywheel</p>
+        <p class="section-number">12 · Flywheel</p>
         <h2 class="section-heading">一人の実験が、次の誰かの可能性になる。</h2>
         <p class="intro">個人の挑戦を匿名化された構造データとして蓄積し、次のユーザーの組み合わせや実験設計を支援します。</p>
         <div class="flywheel" aria-label="複業.Labのフライホイール">
@@ -1177,7 +1128,7 @@
       </section>
 
       <section class="section" id="moat">
-        <p class="section-number">14 · Competitive Advantage</p>
+        <p class="section-number">13 · Competitive Advantage</p>
         <h2 class="section-heading">答えではなく、キャリアが育つ構造を持つ。</h2>
         <div class="moat-grid">
           <article class="moat-card"><span class="moat-index">01</span><h3>Compound Career Theory</h3><p>複数の本業を複利的に育てる、独自のキャリア理論。</p></article>
@@ -1189,7 +1140,7 @@
       </section>
 
       <section class="section" id="mvp">
-        <p class="section-number">15 · MVP Validation</p>
+        <p class="section-number">14 · MVP Validation</p>
         <h2 class="section-heading">主軸の発見から、小さな実験まで進めるか。</h2>
         <div class="definition">
           <span class="label">Core Hypothesis</span>
@@ -1229,7 +1180,7 @@
       </section>
 
       <section class="section" id="development">
-        <p class="section-number">16 · Development Priority</p>
+        <p class="section-number">15 · Development Priority</p>
         <h2 class="section-heading">実験完了に直結する機能からつくる。</h2>
         <ol class="priority-list">
           <li>主軸の抽出</li>
@@ -1262,7 +1213,7 @@
       </section>
 
       <section class="section" id="roadmap">
-        <p class="section-number">17 · Roadmap</p>
+        <p class="section-number">16 · Roadmap</p>
         <h2 class="section-heading">検証から、価値の循環へ。</h2>
         <div class="roadmap" aria-label="複業.Labロードマップ">
           <article class="roadmap-phase">
@@ -1289,7 +1240,7 @@
       </section>
 
       <section class="section" id="definition">
-        <p class="section-number">18 · Final Definition</p>
+        <p class="section-number">17 · Final Definition</p>
         <h2 class="section-heading">複数の専門性を、複利で育て続ける。</h2>
         <div class="final-definitions">
           <div class="final-definition"><strong>複業.Lab</strong><p>本業で培った専門スキルと、異なる専門スキルを掛け合わせ、コンパウンドスキルを育てながら、自分だけのコンパウンドキャリアを築くCareer OS。</p></div>
