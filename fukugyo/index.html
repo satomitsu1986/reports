@@ -3,654 +3,1309 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>複業.Lab 事業計画書（Ver.1.0） | SATOMITSU REPORTS</title>
+  <meta name="description" content="本業で培った専門スキルと異なる専門スキルを掛け合わせ、自分だけのコンパウンドキャリアを築くCareer OS「複業.Lab」の事業計画書。" />
+  <meta property="og:title" content="複業.Lab 事業計画書 Ver.2.0 | SATOMITSU REPORTS" />
+  <meta property="og:description" content="本業で培った専門スキルと異なる専門スキルを掛け合わせ、自分だけのコンパウンドキャリアを築くCareer OS「複業.Lab」の事業計画書。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://satomitsu1986.github.io/reports/fukugyo/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="複業.Lab 事業計画書 Ver.2.0 | SATOMITSU REPORTS" />
+  <meta name="twitter:description" content="本業で培った専門スキルと異なる専門スキルを掛け合わせ、自分だけのコンパウンドキャリアを築くCareer OS「複業.Lab」の事業計画書。" />
+  <title>複業.Lab 事業計画書 Ver.2.0 | SATOMITSU REPORTS</title>
+  <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
     :root {
-      --bg: #0a0a0a;
-      --surface: #151515;
-      --surface-hi: #1d1b18;
-      --paper: #f2ede6;
-      --paper-soft: #e9dfd0;
-      --ink: #181512;
-      --ink-mid: #5d5449;
-      --border: rgba(255,255,255,0.07);
-      --border-hi: rgba(201,169,110,0.36);
-      --gold: #c9a96e;
-      --gold-deep: #9f7d43;
-      --gold-soft: rgba(201,169,110,0.08);
-      --text-hi: #f2ede6;
-      --text-mid: #8c857a;
-      --text-lo: #464039;
-      --radius-lg: 12px;
-      --radius-sm: 6px;
+      --bg: #0b0b0a;
+      --surface: #171713;
+      --surface-2: #22211d;
+      --paper: #f7f4ee;
+      --paper-2: #eee8dc;
+      --paper-3: #e2d8c7;
+      --ink: #1d1b18;
+      --ink-mid: #5e584f;
+      --ink-soft: #7f7669;
+      --gold: #c5a66d;
+      --gold-deep: #846531;
+      --gold-soft: #eadfc9;
+      --blue: #47657a;
+      --blue-soft: #dce6eb;
+      --green: #496653;
+      --green-soft: #dfe8df;
+      --red: #8d4b42;
+      --red-soft: #f2dfdb;
+      --line: rgba(132, 101, 49, 0.24);
+      --dark-line: rgba(255, 255, 255, 0.09);
+      --radius: 8px;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
     }
     html {
+      scroll-behavior: smooth;
       background: var(--bg);
-      color: var(--text-hi);
+      color: var(--paper);
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
-      font-weight: 300;
       -webkit-font-smoothing: antialiased;
     }
     body {
+      min-width: 320px;
       min-height: 100vh;
-      background:
-        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(201,169,110,0.07), transparent 70%),
-        linear-gradient(180deg, #0a0a0a 0%, #0d0c0b 52%, #080808 100%);
+      overflow-x: hidden;
+      background: linear-gradient(180deg, #11100e 0, var(--bg) 760px);
     }
+    a { color: inherit; }
     .page {
-      width: min(1040px, calc(100% - 32px));
+      width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 84px 0 80px;
+      padding: 64px 0 72px;
     }
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .masthead-name,
+    .masthead-type {
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .masthead-name { color: var(--paper-2); }
+    .masthead-type { color: var(--gold); text-align: right; }
     .hero {
-      margin-bottom: 42px;
+      min-height: 590px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 0 66px;
     }
-    .eyebrow {
+    .hero-brand {
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+    h1 {
+      max-width: 840px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+    .hero-description {
+      max-width: 720px;
+      margin-top: 32px;
+      color: #bcb5aa;
+      font-size: 16px;
+      line-height: 2;
+    }
+    .hero-version {
+      margin-top: 30px;
+      color: var(--paper-3);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .scroll-link {
+      width: fit-content;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 22px;
+      margin-top: 42px;
+      padding: 0 2px;
+      border-bottom: 1px solid rgba(197, 166, 109, 0.55);
       color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      opacity: 0.68;
-    }
-    .eyebrow::after {
-      content: '';
-      width: 34px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.5;
-    }
-    h1 {
-      font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
-      font-size: clamp(2.4rem, 6.5vw, 4.8rem);
-      font-weight: 300;
-      letter-spacing: 0.14em;
-      line-height: 1.08;
-      margin-bottom: 18px;
-    }
-    .lead {
-      max-width: 720px;
-      color: var(--text-mid);
-      font-size: 0.88rem;
-      line-height: 2;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
       letter-spacing: 0.08em;
+      text-decoration: none;
     }
+    .scroll-link span:last-child { font-size: 17px; }
     .document {
       position: relative;
-      padding: clamp(28px, 5vw, 58px);
-      border: 1px solid rgba(201,169,110,0.28);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.68)),
-        linear-gradient(135deg, var(--paper), var(--paper-soft));
-      color: var(--ink);
-      box-shadow: 0 28px 80px rgba(0,0,0,0.52);
       overflow: hidden;
+      padding: 64px 64px 28px;
+      border: 1px solid rgba(197, 166, 109, 0.34);
+      border-radius: 8px;
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: var(--shadow);
     }
     .document::before {
       content: '';
       position: absolute;
       inset: 0 0 auto;
       height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.8;
+      background: var(--gold);
     }
-    .doc-header {
-      margin-bottom: 34px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid rgba(159,125,67,0.24);
+    .document-header {
+      padding-bottom: 42px;
+      border-bottom: 1px solid var(--line);
     }
-    .doc-version {
+    .document-kicker,
+    .section-number,
+    .label,
+    .mini-label {
       color: var(--gold-deep);
-      font-size: 0.72rem;
-      letter-spacing: 0.24em;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 12px;
     }
-    .doc-title {
-      font-size: clamp(1.5rem, 4vw, 2.35rem);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      line-height: 1.45;
+    .document-title {
+      margin-top: 12px;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .document-summary {
+      max-width: 720px;
+      margin-top: 16px;
+      color: var(--ink-mid);
+      font-size: 15px;
+      line-height: 1.9;
     }
     .section {
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(159,125,67,0.16);
+      padding: 58px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 22px;
     }
-    .section:last-child { border-bottom: 0; padding-bottom: 0; }
-    .section-title {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      margin-bottom: 18px;
-      color: var(--ink);
-      font-size: 1.08rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      line-height: 1.6;
+    .section:last-of-type { border-bottom: 0; }
+    .section-heading { margin-top: 10px; }
+    h2 {
+      max-width: 780px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.52;
+      letter-spacing: 0;
     }
-    .section-number {
-      color: var(--gold-deep);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: 0;
     }
-    .body-copy {
-      color: var(--ink-mid);
-      font-size: 0.95rem;
-      line-height: 2;
-      letter-spacing: 0.04em;
-    }
-    .body-copy p + p { margin-top: 14px; }
-    .value-grid,
-    .service-grid,
-    .phase-grid,
-    .kpi-grid,
-    .risk-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-    .item {
-      border: 1px solid rgba(159,125,67,0.18);
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.34);
-      padding: 18px 18px 16px;
-    }
-    .item-title {
-      color: var(--ink);
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-    .item-purpose {
-      color: var(--gold-deep);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-    ul {
-      list-style: none;
-      color: var(--ink-mid);
-      font-size: 0.9rem;
+    p, li, td, th {
+      font-size: 15px;
       line-height: 1.9;
-      letter-spacing: 0.04em;
     }
-    li {
+    p { color: var(--ink-mid); }
+    .intro { max-width: 780px; margin-top: 24px; }
+    .intro + .intro { margin-top: 14px; }
+    strong { color: var(--ink); font-weight: 700; }
+    ul.clean-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+      padding: 0;
+      list-style: none;
+    }
+    .clean-list li {
       position: relative;
-      padding-left: 16px;
+      padding-left: 22px;
+      color: var(--ink-mid);
     }
-    li::before {
+    .clean-list li::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0.86em;
-      width: 4px;
-      height: 4px;
+      top: 13px;
+      left: 2px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--gold-deep);
-      opacity: 0.72;
     }
-    .flow {
+    .definition {
+      margin-top: 28px;
+      padding: 24px;
+      border-left: 4px solid var(--gold-deep);
+      border-radius: 0 8px 8px 0;
+      background: var(--gold-soft);
+    }
+    .definition p {
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.75;
+    }
+    .note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid rgba(71, 101, 122, 0.2);
+      border-radius: var(--radius);
+      background: var(--blue-soft);
+    }
+    .note p { margin-top: 5px; color: #354d5e; font-size: 14px; }
+    .quote {
+      margin-top: 28px;
+      padding: 26px 28px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .quote p {
+      color: var(--ink);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.75;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 52px 1fr;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+    .comparison-panel {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.45);
+    }
+    .comparison-panel.recommended {
+      border-color: rgba(132, 101, 49, 0.48);
+      background: var(--gold-soft);
+    }
+    .comparison-panel p { margin-top: 9px; }
+    .comparison-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--gold-deep);
+      font-size: 24px;
+    }
+    .table-scroll {
+      width: 100%;
+      margin-top: 30px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.45);
+    }
+    th, td {
+      width: 50%;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: var(--ink); background: var(--paper-2); font-weight: 700; }
+    td { color: var(--ink-mid); }
+    tr:last-child td { border-bottom: 0; }
+    th + th, td + td { border-left: 1px solid var(--line); }
+    .formula {
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr 42px 1.15fr;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .formula-block {
+      min-height: 132px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+    .formula-block.result {
+      border-color: rgba(132, 101, 49, 0.48);
+      background: var(--gold-soft);
+    }
+    .formula-block strong { margin-top: 7px; font-size: 17px; line-height: 1.55; }
+    .formula-symbol { color: var(--gold-deep); font-size: 24px; font-weight: 700; text-align: center; }
+    .experience-flow,
+    .method-flow,
+    .growth-flow,
+    .promise-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      margin-top: 26px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
     }
     .flow-step {
+      min-width: 150px;
+      flex: 1 0 150px;
+      display: grid;
+      place-items: center;
+      min-height: 86px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.5);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .flow-step.highlight { background: var(--gold-soft); border-color: rgba(132, 101, 49, 0.46); }
+    .flow-arrow {
+      flex: 0 0 22px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-deep);
+      font-size: 20px;
+    }
+    .skill-columns,
+    .example-grid,
+    .plan-grid,
+    .moat-grid,
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .info-panel,
+    .example-card,
+    .plan-card,
+    .moat-card,
+    .role-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.48);
+    }
+    .info-panel p,
+    .example-card p,
+    .plan-card p,
+    .moat-card p,
+    .role-card p { margin-top: 8px; }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .tag {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--paper-2);
+      color: var(--ink-mid);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .example-card { position: relative; padding-top: 46px; }
+    .example-index {
+      position: absolute;
+      top: 18px;
+      left: 24px;
+      color: var(--gold-deep);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 600;
+    }
+    .example-row {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .example-row:last-child { border-bottom: 0; }
+    .example-row span:first-child { color: var(--gold-deep); font-size: 12px; font-weight: 700; }
+    .example-row span:last-child { color: var(--ink); font-size: 14px; font-weight: 600; line-height: 1.7; }
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .phase-card {
+      min-width: 0;
+      padding: 24px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .phase-card:nth-child(2) { background: var(--blue-soft); border-color: rgba(71, 101, 122, 0.22); }
+    .phase-card:nth-child(3) { background: var(--gold-soft); border-color: rgba(132, 101, 49, 0.32); }
+    .phase-card h3 { margin-top: 8px; }
+    .phase-purpose { min-height: 66px; margin-top: 8px; font-size: 14px; }
+    .phase-card ol {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+    .phase-card li { color: var(--ink-mid); font-size: 13px; line-height: 1.6; }
+    .phase-output {
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(132, 101, 49, 0.18);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+    .question-map {
+      display: grid;
+      grid-template-columns: 1fr 46px 1fr 46px 1fr;
+      align-items: center;
+      margin-top: 28px;
+    }
+    .question-node {
+      min-height: 108px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.5);
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .question-node:last-child { background: var(--gold-soft); }
+    .question-symbol { color: var(--gold-deep); font-size: 23px; font-weight: 700; text-align: center; }
+    .function-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .function-item {
+      min-height: 92px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.46);
+      color: var(--ink-mid);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .function-item span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-deep);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .promise {
+      margin-top: 28px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--paper);
+    }
+    .promise .label { color: var(--gold); }
+    .promise p { margin-top: 10px; color: var(--paper-2); font-size: 18px; font-weight: 600; }
+    .plan-card { display: flex; flex-direction: column; }
+    .plan-name { font-size: 23px; font-weight: 700; }
+    .price { margin-top: 14px; color: var(--ink); font-size: 29px; font-weight: 700; }
+    .price small { color: var(--ink-mid); font-size: 13px; font-weight: 500; }
+    .annual { margin-top: 5px; color: var(--gold-deep); font-size: 13px; font-weight: 600; }
+    .plan-card .clean-list { margin-top: 18px; }
+    .plan-card .clean-list li { font-size: 13px; line-height: 1.7; }
+    .plan-card.featured { border-color: rgba(132, 101, 49, 0.48); background: var(--gold-soft); }
+    .future-area {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px dashed rgba(132, 101, 49, 0.48);
+      border-radius: var(--radius);
+      background: rgba(234, 223, 201, 0.42);
+    }
+    .status-badge,
+    .hypothesis-badge {
       display: inline-flex;
       align-items: center;
-      min-height: 40px;
-      padding: 9px 14px;
-      border: 1px solid rgba(159,125,67,0.22);
+      min-height: 28px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.34);
-      color: var(--ink);
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.08em;
     }
-    .strategy-flow {
-      margin-top: 18px;
+    .status-badge { color: var(--gold-deep); background: var(--gold-soft); border: 1px solid rgba(132, 101, 49, 0.3); }
+    .hypothesis-badge { color: var(--red); background: var(--red-soft); border: 1px solid rgba(141, 75, 66, 0.25); }
+    .flywheel {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .flywheel-step {
+      position: relative;
+      min-height: 126px;
+      padding: 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .flywheel-step::after {
+      content: '→';
+      position: absolute;
+      top: 50%;
+      right: -11px;
+      z-index: 2;
+      transform: translateY(-50%);
+      color: var(--gold-deep);
+      font-size: 17px;
+    }
+    .flywheel-step:nth-child(4)::after { content: '↓'; top: auto; right: 50%; bottom: -17px; transform: translateX(50%); }
+    .flywheel-step:nth-child(5) { grid-column: 4; grid-row: 2; }
+    .flywheel-step:nth-child(6) { grid-column: 3; grid-row: 2; }
+    .flywheel-step:nth-child(7) { grid-column: 2; grid-row: 2; }
+    .flywheel-step:nth-child(8) { grid-column: 1; grid-row: 2; }
+    .flywheel-step:nth-child(n+5)::after { content: '←'; left: -11px; right: auto; }
+    .flywheel-step:nth-child(8)::after { content: '↖'; top: -9px; left: 50%; transform: translateX(-50%); }
+    .flywheel-step strong { display: block; margin-top: 7px; font-size: 14px; line-height: 1.6; }
+    .flywheel-step p { margin-top: 6px; font-size: 12px; line-height: 1.65; }
+    .moat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .moat-card:last-child { grid-column: span 2; }
+    .moat-index {
+      color: var(--gold-deep);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .kpi-card {
+      min-height: 105px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .kpi-card strong { display: block; margin-top: 7px; font-size: 14px; line-height: 1.55; }
+    .thresholds {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .threshold {
+      padding: 17px 12px;
+      border-radius: var(--radius);
+      background: var(--red-soft);
+      text-align: center;
+    }
+    .threshold strong { display: block; color: var(--red); font-size: 24px; }
+    .threshold span { display: block; margin-top: 6px; color: #6f4640; font-size: 11px; line-height: 1.5; }
+    .priority-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 26px;
+      padding: 0;
+      counter-reset: priorities;
+      list-style: none;
+    }
+    .priority-list li {
+      counter-increment: priorities;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      align-items: center;
+      min-height: 56px;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.46);
       color: var(--ink-mid);
-      font-size: 0.95rem;
-      line-height: 2;
-      letter-spacing: 0.06em;
+    }
+    .priority-list li::before {
+      content: counter(priorities, decimal-leading-zero);
+      color: var(--gold-deep);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
     }
     .roadmap {
       display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .roadmap-row {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 18px;
-      padding: 16px 18px;
-      border: 1px solid rgba(159,125,67,0.18);
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.34);
-    }
-    .year {
-      color: var(--gold-deep);
-      font-weight: 500;
-      letter-spacing: 0.1em;
-    }
-    .criteria {
-      counter-reset: criteria;
-      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 30px;
     }
-    .criteria li {
-      counter-increment: criteria;
-      min-height: 44px;
-      padding: 12px 16px 12px 48px;
-      border: 1px solid rgba(159,125,67,0.18);
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.34);
-      color: var(--ink);
+    .roadmap-phase {
+      position: relative;
+      min-height: 260px;
+      padding: 22px 18px;
+      border-top: 3px solid var(--gold-deep);
+      background: var(--paper-2);
     }
-    .criteria li::before {
-      content: counter(criteria, decimal-leading-zero);
-      top: 12px;
-      left: 16px;
-      width: auto;
-      height: auto;
-      border-radius: 0;
-      background: transparent;
+    .roadmap-phase::after {
+      content: '→';
+      position: absolute;
+      top: 33px;
+      right: -10px;
+      z-index: 2;
       color: var(--gold-deep);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      opacity: 1;
     }
-    .closing {
-      margin-top: 26px;
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: rgba(159,125,67,0.11);
-      text-align: center;
+    .roadmap-phase:last-child::after { display: none; }
+    .roadmap-phase h3 { margin-top: 7px; font-size: 16px; }
+    .roadmap-phase .clean-list { margin-top: 14px; gap: 6px; }
+    .roadmap-phase .clean-list li { padding-left: 16px; font-size: 12px; line-height: 1.6; }
+    .roadmap-phase .clean-list li::before { top: 8px; width: 5px; height: 5px; }
+    .final-definitions {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
     }
-    .closing-brand {
-      margin-bottom: 10px;
-      color: var(--gold-deep);
-      font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
-      font-size: 1.7rem;
-      letter-spacing: 0.14em;
+    .final-definition {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.48);
     }
-    .closing-copy {
-      color: var(--ink);
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      line-height: 1.8;
-    }
-    footer {
-      margin-top: 54px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--text-lo);
+    .final-definition strong { font-size: 18px; }
+    .final-definition p { margin: 0; }
+    .document-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px 0 4px;
+      border-top: 1px solid var(--line);
+      color: var(--ink-soft);
       font-size: 10px;
-      letter-spacing: 0.2em;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+    .site-footer {
+      padding-top: 46px;
+      color: #666058;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-align: center;
     }
-    @media (max-width: 720px) {
-      .page { width: min(100% - 28px, 1040px); padding: 56px 0 64px; }
-      .value-grid,
-      .service-grid,
-      .phase-grid,
-      .kpi-grid,
-      .risk-grid { grid-template-columns: 1fr; }
-      .section-title { align-items: flex-start; flex-direction: column; gap: 4px; }
-      .roadmap-row { grid-template-columns: 1fr; gap: 10px; }
-      .flow-step { width: 100%; border-radius: var(--radius-sm); }
+    @media (max-width: 900px) {
+      h1 { font-size: 52px; }
+      .document { padding: 52px 42px 26px; }
+      .phase-grid, .function-grid, .moat-grid, .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .phase-card:last-child { grid-column: span 2; }
+      .moat-card:last-child { grid-column: auto; }
+      .thresholds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .roadmap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .roadmap-phase::after { display: none; }
     }
-    @media print {
-      body { background: #fff; }
-      .page { width: 100%; padding: 0; }
-      .hero, footer { display: none; }
-      .document { box-shadow: none; border: 0; border-radius: 0; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 20px, 1080px); padding: 32px 0 42px; }
+      .masthead { gap: 12px; padding-bottom: 18px; }
+      .masthead-name, .masthead-type { font-size: 9px; letter-spacing: 0.12em; }
+      .hero { min-height: 560px; padding: 56px 10px 60px; }
+      .hero-brand { margin-bottom: 20px; font-size: 11px; }
+      h1 { font-size: 40px; line-height: 1.42; }
+      .hero-description { margin-top: 26px; font-size: 14px; line-height: 1.9; }
+      .hero-version { margin-top: 25px; }
+      .scroll-link { margin-top: 34px; }
+      .document { padding: 38px 20px 20px; border-radius: 6px; }
+      .document-title { font-size: 25px; }
+      .document-summary { font-size: 14px; }
+      .section { padding: 46px 0; }
+      h2 { font-size: 24px; line-height: 1.55; }
+      h3 { font-size: 17px; }
+      p, li, td, th { font-size: 14px; line-height: 1.85; }
+      .definition { padding: 20px; }
+      .definition p { font-size: 16px; }
+      .quote { padding: 22px 6px; }
+      .quote p { font-size: 18px; }
+      .comparison { grid-template-columns: 1fr; gap: 10px; }
+      .comparison-panel { padding: 20px; }
+      .comparison-arrow { transform: rotate(90deg); }
+      .formula { grid-template-columns: 1fr; gap: 8px; }
+      .formula-block { min-height: 108px; }
+      .formula-symbol { transform: rotate(90deg); }
+      .skill-columns, .example-grid, .plan-grid, .role-grid { grid-template-columns: 1fr; }
+      .info-panel, .example-card, .plan-card, .moat-card, .role-card { padding: 20px; }
+      .example-card { padding-top: 44px; }
+      .example-row { grid-template-columns: 68px 1fr; }
+      .phase-grid, .function-grid, .moat-grid, .kpi-grid { grid-template-columns: 1fr; }
+      .phase-card:last-child { grid-column: auto; }
+      .phase-purpose { min-height: 0; }
+      .question-map { grid-template-columns: 1fr; gap: 8px; }
+      .question-symbol { transform: rotate(90deg); }
+      .promise { padding: 22px 20px; }
+      .promise p { font-size: 16px; }
+      .flywheel { grid-template-columns: 1fr; }
+      .flywheel-step, .flywheel-step:nth-child(5), .flywheel-step:nth-child(6), .flywheel-step:nth-child(7), .flywheel-step:nth-child(8) { grid-column: auto; grid-row: auto; min-height: 0; }
+      .flywheel-step::after, .flywheel-step:nth-child(4)::after, .flywheel-step:nth-child(n+5)::after, .flywheel-step:nth-child(8)::after {
+        content: '↓';
+        top: auto;
+        right: 50%;
+        bottom: -18px;
+        left: auto;
+        transform: translateX(50%);
+      }
+      .flywheel-step:last-child::after { display: none; }
+      .thresholds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .roadmap { grid-template-columns: 1fr; }
+      .roadmap-phase { min-height: 0; }
+      .final-definition { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
+      .document-footer { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 380px) {
+      h1 { font-size: 35px; }
+      .document { padding-inline: 16px; }
+      .thresholds { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <header class="hero">
-      <p class="eyebrow">AI Side Business</p>
-      <h1>複業.Lab 事業計画書</h1>
-      <p class="lead">AI・実践・学習を通して、自分だけの価値を発見し、小さく試し、育て続けるための事業計画書。</p>
+    <header class="masthead" aria-label="サイトヘッダー">
+      <p class="masthead-name">SATOMITSU REPORTS</p>
+      <p class="masthead-type">Business Design Document</p>
     </header>
 
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-brand">複業.Lab</p>
+      <h1 id="hero-title">自分だけの価値を創る。</h1>
+      <p class="hero-description">本業で培った専門スキルと、異なる専門スキルを掛け合わせ、<br />自分だけのコンパウンドキャリアを築くCareer OS。</p>
+      <p class="hero-version">Business Plan · Ver.2.0</p>
+      <a class="scroll-link" href="#overview"><span>計画書を読む</span><span aria-hidden="true">↓</span></a>
+    </section>
+
     <article class="document">
-      <div class="doc-header">
-        <p class="doc-version">Business Plan · Ver.1.0</p>
-        <h2 class="doc-title">複業.Lab 事業計画書（Ver.1.0）</h2>
-      </div>
+      <header class="document-header">
+        <p class="document-kicker">Fukugyo.Lab · Business Plan · Ver.2.0</p>
+        <p class="document-title">複業.Lab 事業計画書</p>
+        <p class="document-summary">複業.Labの思想、Compound Career Theory、プロダクト構造、ビジネスモデル、MVP検証方針をまとめた事業計画書。</p>
+      </header>
 
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">01</span>Purpose（存在意義）</h3>
-        <div class="body-copy">
-          <p>一人ひとりが、自分だけの価値を見つけ、育て、社会へ循環させる仕組みをつくる。</p>
-          <p>AI時代に必要なのは、知識ではなく「自分だけの価値」。</p>
-          <p>複業.Labは、AI・実践・学習を通して、価値を発見し、小さく試し、育て続けられる環境を提供する。</p>
+      <section class="section" id="overview">
+        <p class="section-number">01 · Business Overview</p>
+        <h2 class="section-heading">複数の専門性を、複数の本業へ。</h2>
+        <p class="intro">複業.Labは、副業情報を探すためのサービスではありません。本業で培った専門スキルを主軸に置き、異なる専門スキルを補助軸として掛け合わせ、新しい価値提供能力をつくるためのCareer OSです。</p>
+        <p class="intro">生まれた価値を小さく市場で試し、結果から学び、改善する。その積み重ねによって新しい主軸を生み出し、複数の本業を育てていきます。</p>
+        <div class="definition">
+          <span class="label">What We Provide</span>
+          <p>用意された副業の答えではなく、自分だけのキャリアを築き続けるための方法と仕組み。</p>
         </div>
       </section>
 
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">02</span>Vision</h3>
-        <p class="body-copy">一人ひとりが、自分だけの価値を育て、その価値が自然に社会へ循環する世界をつくる。</p>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">03</span>Mission</h3>
-        <p class="body-copy">AIを活用し、価値の発見・成長・実践を支援するキャリアOSを提供する。</p>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">04</span>Value</h3>
-        <div class="value-grid">
-          <div class="item">
-            <p class="item-title">Value First</p>
-            <p class="body-copy">価値が先、収益は後。</p>
-          </div>
-          <div class="item">
-            <p class="item-title">Small Experiment</p>
-            <p class="body-copy">正解を探さず、小さく試す。</p>
-          </div>
-          <div class="item">
-            <p class="item-title">Compound Growth</p>
-            <p class="body-copy">スキルは掛け算で育てる。</p>
-          </div>
-          <div class="item">
-            <p class="item-title">Human-Centered AI</p>
-            <p class="body-copy">AIは人を代替しない。思考と行動を支援する。</p>
-          </div>
-          <div class="item">
-            <p class="item-title">No One Alone</p>
-            <p class="body-copy">挑戦は仲間と育つ。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">05</span>解決する課題</h3>
-        <ul>
-          <li>自分の価値が分からない</li>
-          <li>副業が続かない</li>
-          <li>AIを活用できない</li>
-          <li>行動が止まる</li>
-          <li>キャリアに迷う</li>
+      <section class="section" id="problem">
+        <p class="section-number">02 · Problem</p>
+        <h2 class="section-heading">経験はある。価値への変え方が分からない。</h2>
+        <p class="intro">本業経験のある人は、すでに価値ある専門性を持っています。しかし、その専門性を新しい価値や仕事へ変える方法が分からないまま、既存の副業から選ぼうとしがちです。</p>
+        <ul class="clean-list">
+          <li>本業以外の収入をつくれない</li>
+          <li>自分の専門性を言語化できない</li>
+          <li>本業で培った力を別の領域に応用できない</li>
+          <li>新しく学んだスキルが本業とつながらない</li>
+          <li>副業の選択肢が一般的で、自分らしさがない</li>
+          <li>アイデアを商品やサービスに変えられない</li>
+          <li>完成させようとするほど行動が止まる</li>
+          <li>市場で試す前に諦めてしまう</li>
+          <li>過去の挑戦や学習が、次のキャリアへ蓄積されない</li>
         </ul>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">06</span>サービス</h3>
-        <div class="service-grid">
-          <div class="item">
-            <p class="item-title">Free</p>
-            <p class="item-purpose">目的：複業.Labを体験する</p>
-            <ul>
-              <li>価値観ワーク（各1回）</li>
-              <li>強みワーク（各1回）</li>
-              <li>副業アイデアワーク（各1回）</li>
-              <li>AI相談（月300文字）</li>
-              <li>チェックイン（月5回）</li>
-              <li>AI目標設定（ライト版）</li>
-            </ul>
+        <div class="comparison" aria-label="従来型と複業.Labの比較">
+          <div class="comparison-panel">
+            <span class="label">Traditional</span>
+            <h3>仕事から選ぶ</h3>
+            <p>市場にある副業を探す<br />→ 自分を仕事に合わせる</p>
           </div>
-          <div class="item">
-            <p class="item-title">Start（月額880円）</p>
-            <p class="item-purpose">目的：AIを日常のパートナーにする</p>
-            <ul>
-              <li>全ワーク無制限</li>
-              <li>AI相談（月3,000文字）</li>
-              <li>AI目標設定</li>
-              <li>AIタスク設計</li>
-              <li>RAGパーソナライズ</li>
-              <li>成長分析ダッシュボード</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Lab（月額2,980円）</p>
-            <p class="item-purpose">目的：価値を育て続ける</p>
-            <ul>
-              <li>Start全機能</li>
-              <li>動画ライブラリ見放題</li>
-              <li>今後追加予定：月次ワークショップ</li>
-              <li>今後追加予定：コミュニティ</li>
-              <li>今後追加予定：実践コンテンツ</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Master（月額9,800円）</p>
-            <p class="item-purpose">目的：最短で成果を出す</p>
-            <ul>
-              <li>Lab全機能</li>
-              <li>AI相談無制限</li>
-              <li>月2回個別コンサル</li>
-              <li>優先サポート</li>
-            </ul>
+          <div class="comparison-arrow" aria-hidden="true">→</div>
+          <div class="comparison-panel recommended">
+            <span class="label">Fukugyo.Lab</span>
+            <h3>専門性から創る</h3>
+            <p>自分の専門スキルを抽出する<br />→ 異なる専門スキルを掛け合わせる<br />→ 自分だけの仕事をつくる</p>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">07</span>AI戦略</h3>
+      <section class="section" id="theory">
+        <p class="section-number">03 · Compound Career Theory</p>
+        <h2 class="section-heading">AI時代のキャリアは、足し算ではなく複利である。</h2>
+        <div class="definition">
+          <span class="label">Definition</span>
+          <p>Compound Careerとは、異なる専門スキルの掛け合わせから新しい主軸を生み出し、その主軸をさらに別の専門スキルと掛け合わせながら、複数の本業を複利的に育て続けるキャリアの在り方である。</p>
+        </div>
+        <p class="intro">専門性、挑戦、学習を単発で終わらせない。掛け合わせによって新しい能力をつくり、その能力を次の主軸へ育てることで、キャリアの選択肢と提供価値を連続的に広げます。</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>並列型キャリア</th><th>Compound Career</th></tr></thead>
+            <tbody>
+              <tr><td>仕事を並べる</td><td>専門スキルを掛け合わせる</td></tr>
+              <tr><td>仕事同士が独立する</td><td>スキル同士が相互作用する</td></tr>
+              <tr><td>仕事の数が増える</td><td>新しい価値と主軸が生まれる</td></tr>
+              <tr><td>並行して進める</td><td>複利的に育てる</td></tr>
+              <tr><td>本業と副業に分かれる</td><td>複数の本業を持つ</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="meaning">
+        <p class="section-number">04 · Meaning of Fukugyo</p>
+        <h2 class="section-heading">「副」ではなく、「複」。</h2>
+        <div class="quote"><p>複業.Labの「複」は、サブワークを意味する「副」ではない。</p></div>
+        <p class="intro">小さな副業を増やすことではなく、複数の主軸を育てることを目指します。美容師、マーケティング、DJ、コンサルティング、プロダクト開発など、それぞれが価値を生む本業になり得ます。</p>
+        <div class="definition">
+          <span class="label">Fukugyo</span>
+          <p>「複業」とは、複数の専門性、複数の主軸、複数の本業を育てるキャリアの在り方である。</p>
+        </div>
+      </section>
+
+      <section class="section" id="compound-skill">
+        <p class="section-number">05 · Compound Skill</p>
+        <h2 class="section-heading">専門スキルを掛け合わせ、新しい価値提供能力をつくる。</h2>
+        <div class="definition">
+          <span class="label">Definition</span>
+          <p>コンパウンドスキルとは、主軸となる専門スキルと、補助軸となる異なる専門スキルを掛け合わせて生まれる、新しい価値提供能力である。</p>
+        </div>
+        <div class="experience-flow" aria-label="経験からコンパウンドスキルまでの流れ">
+          <div class="flow-step">本業での経験</div><div class="flow-arrow">→</div>
+          <div class="flow-step">専門スキルを抽出</div><div class="flow-arrow">→</div>
+          <div class="flow-step">主軸 × 補助軸</div><div class="flow-arrow">→</div>
+          <div class="flow-step highlight">コンパウンドスキル</div>
+        </div>
+        <div class="skill-columns">
+          <div class="info-panel">
+            <span class="label">Principal Axis</span>
+            <h3>主軸は、職種名ではなく培った力</h3>
+            <p>「美容師」「営業」「教師」のような職業名だけでは抽象度が高すぎます。仕事の中で反復し、価値を生んできた能力まで分解します。</p>
+            <div class="tag-list">
+              <span class="tag">悪い例：美容師</span><span class="tag">悪い例：営業</span><span class="tag">悪い例：教師</span>
+            </div>
+            <div class="tag-list">
+              <span class="tag">美容師として培った人間観察力</span>
+              <span class="tag">営業として培った顧客課題の発見力</span>
+              <span class="tag">教師として培った学習設計力</span>
+              <span class="tag">バレエで培った身体表現力</span>
+            </div>
+          </div>
+          <div class="info-panel">
+            <span class="label">Supporting Axis</span>
+            <h3>補助軸は、主軸の可能性を広げる力</h3>
+            <p>異なる領域の専門スキルを加え、特定の相手へ新しい価値を届けられる状態をつくります。</p>
+            <div class="tag-list">
+              <span class="tag">AI活用</span><span class="tag">心理学</span><span class="tag">マーケティング</span><span class="tag">デザイン</span><span class="tag">栄養学</span><span class="tag">動画制作</span><span class="tag">写真</span><span class="tag">コーチング</span><span class="tag">金融分析</span>
+            </div>
+          </div>
+        </div>
+        <div class="formula" aria-label="コンパウンドスキルの構造">
+          <div class="formula-block"><span class="mini-label">Principal</span><strong>主軸となる<br />専門スキル</strong></div>
+          <div class="formula-symbol">×</div>
+          <div class="formula-block"><span class="mini-label">Supporting</span><strong>補助軸となる<br />専門スキル</strong></div>
+          <div class="formula-symbol">→</div>
+          <div class="formula-block result"><span class="mini-label">New Value</span><strong>特定の相手に対する<br />新しい価値提供能力</strong></div>
+        </div>
+        <div class="note">
+          <span class="label">Important</span>
+          <p>2つのスキルを並べただけでは、コンパウンドスキルではありません。「誰の、どのような課題を、どう変えるか」まで明確になって初めて価値になります。</p>
+        </div>
+      </section>
+
+      <section class="section" id="examples">
+        <p class="section-number">06 · Examples</p>
+        <h2 class="section-heading">掛け合わせから、独自の問いが生まれる。</h2>
+        <div class="example-grid">
+          <article class="example-card">
+            <span class="example-index">Example 01</span>
+            <div class="example-row"><span>主軸</span><span>美容師として培った人間観察力</span></div>
+            <div class="example-row"><span>補助軸</span><span>AI活用スキル</span></div>
+            <div class="example-row"><span>価値</span><span>AIを活用した個人の価値形成支援</span></div>
+            <div class="example-row"><span>問い</span><span>どうすれば、個人の価値を最大化できるのか？</span></div>
+          </article>
+          <article class="example-card">
+            <span class="example-index">Example 02</span>
+            <div class="example-row"><span>主軸</span><span>バレエで培った身体表現力</span></div>
+            <div class="example-row"><span>補助軸</span><span>心理学</span></div>
+            <div class="example-row"><span>価値</span><span>心身の健康を支援するバレエレッスン</span></div>
+            <div class="example-row"><span>問い</span><span>身体の使い方は、メンタルにどのような影響を与えるのか？</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="method">
+        <p class="section-number">07 · Compound Career Method</p>
+        <h2 class="section-heading">つくる、育てる、キャリアにする。</h2>
+        <p class="intro">Compound Career Methodは、専門スキルの発見から市場実験、次の主軸づくりまでを3つのPhaseで進めます。</p>
         <div class="phase-grid">
-          <div class="item">
-            <p class="item-title">Phase1：AIコーチ</p>
-            <ul>
-              <li>価値観分析</li>
-              <li>強み分析</li>
-              <li>副業アイデア生成</li>
-              <li>目標設定</li>
-              <li>行動設計</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Phase2：パーソナルAI</p>
-            <ul>
-              <li>価値観の変化</li>
-              <li>行動履歴</li>
-              <li>問いの進化</li>
-              <li>失敗パターン分析</li>
-              <li>成長分析</li>
-              <li>最適な次の一歩を提案</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Phase3：Career OS</p>
-            <ul>
-              <li>匿名化された集合知</li>
-              <li>AI継続学習</li>
-              <li>企業向け分析</li>
-              <li>教育機関への展開</li>
-            </ul>
-          </div>
+          <article class="phase-card">
+            <span class="label">Phase 01</span>
+            <h3>コンパウンドスキルをつくる</h3>
+            <p class="phase-purpose">自分の専門性を分解し、誰に何を届けるかを言語化する。</p>
+            <ol>
+              <li>主軸スキルを抽出する</li><li>補助軸スキルを抽出する</li><li>届ける相手を決める</li><li>スキルを掛け合わせる</li><li>提供価値を言語化する</li><li>独自の問いをつくる</li>
+            </ol>
+            <p class="phase-output">成果物：主軸・補助軸・対象・コンパウンドスキル・問い</p>
+          </article>
+          <article class="phase-card">
+            <span class="label">Phase 02</span>
+            <h3>コンパウンドスキルを育てる</h3>
+            <p class="phase-purpose">問いを商品仮説へ変え、小さく市場で試して改善する。</p>
+            <ol>
+              <li>問いを商品仮説へ変える</li><li>試作品をつくる</li><li>小さく実験する</li><li>結果と学びを記録する</li><li>改善し、再実験する</li>
+            </ol>
+            <p class="phase-output">実験例：1人に届ける／3案を提案／手作業で提供／無料・低価格モニター／LPより先に募集／顧客インタビュー</p>
+          </article>
+          <article class="phase-card">
+            <span class="label">Phase 03</span>
+            <h3>コンパウンドキャリアを築く</h3>
+            <p class="phase-purpose">価値提供の履歴を資産化し、生まれた能力を次の主軸へ育てる。</p>
+            <ol>
+              <li>商品・顧客・売上を管理する</li><li>継続率と改善履歴を蓄積する</li><li>学びを新しい専門性に変える</li><li>新しい主軸へ昇格させる</li>
+            </ol>
+            <p class="phase-output">成長：A × B → C → Cを新しい主軸へ → C × D → E → Compound Career</p>
+          </article>
+        </div>
+        <div class="method-flow" aria-label="Compound Career Methodの全体フロー">
+          <div class="flow-step">主軸となる<br />専門スキル</div><div class="flow-arrow">×</div>
+          <div class="flow-step">補助軸となる<br />専門スキル</div><div class="flow-arrow">→</div>
+          <div class="flow-step highlight">コンパウンドスキル</div><div class="flow-arrow">→</div>
+          <div class="flow-step">問い</div><div class="flow-arrow">→</div>
+          <div class="flow-step">プロダクト仮説</div><div class="flow-arrow">→</div>
+          <div class="flow-step">小さな実験</div><div class="flow-arrow">→</div>
+          <div class="flow-step">改善</div><div class="flow-arrow">→</div>
+          <div class="flow-step highlight">新しい主軸</div><div class="flow-arrow">→</div>
+          <div class="flow-step">コンパウンドキャリア</div>
         </div>
       </section>
 
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">08</span>ビジネスモデル</h3>
-        <div class="flow" aria-label="ビジネスモデル">
-          <span class="flow-step">Free</span>
-          <span class="flow-step">Start</span>
-          <span class="flow-step">Lab</span>
-          <span class="flow-step">Master</span>
-          <span class="flow-step">法人向けCareer OS</span>
-          <span class="flow-step">教育・自治体</span>
+      <section class="section" id="curiosity">
+        <p class="section-number">08 · Curiosity</p>
+        <h2 class="section-heading">「気になること」は、問いの種。</h2>
+        <div class="definition">
+          <span class="label">Definition</span>
+          <p>気になることとは、問いの種である。</p>
         </div>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">09</span>マーケティング</h3>
-        <div class="item">
-          <p class="item-title">集客</p>
-          <ul>
-            <li>Instagram</li>
-            <li>X</li>
-            <li>YouTube</li>
-            <li>SEO</li>
-            <li>AIワーク体験</li>
-          </ul>
-        </div>
-        <div class="strategy-flow">
-          <p>基本戦略：AIワークを入口に、価値を実感 → 継続利用 → アップグレード → 成果事例 → 紹介</p>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">10</span>ロードマップ</h3>
-        <div class="roadmap">
-          <div class="roadmap-row">
-            <p class="year">1年目</p>
-            <ul>
-              <li>iOSリリース</li>
-              <li>AIコーチ完成</li>
-              <li>有料会員獲得</li>
-              <li>PMF検証</li>
-            </ul>
-          </div>
-          <div class="roadmap-row">
-            <p class="year">2年目</p>
-            <ul>
-              <li>AI改善</li>
-              <li>Lab拡充</li>
-              <li>Master拡大</li>
-            </ul>
-          </div>
-          <div class="roadmap-row">
-            <p class="year">3年目</p>
-            <ul>
-              <li>Career OS完成</li>
-              <li>法人向け開始</li>
-            </ul>
-          </div>
-          <div class="roadmap-row">
-            <p class="year">4年目</p>
-            <ul>
-              <li>教育機関</li>
-              <li>自治体</li>
-              <li>AI高度化</li>
-            </ul>
-          </div>
-          <div class="roadmap-row">
-            <p class="year">5年目</p>
-            <ul>
-              <li>国内最大級のキャリアOSへ</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">11</span>KPI</h3>
-        <div class="kpi-grid">
-          <div class="item">
-            <p class="item-title">Free</p>
-            <ul>
-              <li>登録数</li>
-              <li>有料転換率</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Start</p>
-            <ul>
-              <li>継続率</li>
-              <li>AI利用率</li>
-              <li>ワーク完了率</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Lab</p>
-            <ul>
-              <li>動画視聴率</li>
-              <li>アップグレード率</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">Master</p>
-            <ul>
-              <li>継続率</li>
-              <li>成果達成率</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">AI</p>
-            <ul>
-              <li>提案採用率</li>
-              <li>利用率</li>
-              <li>継続率</li>
-              <li>行動率</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">12</span>リスク</h3>
-        <div class="risk-grid">
-          <div class="item">
-            <p class="item-title">集客</p>
-            <ul>
-              <li>AIワーク改善</li>
-              <li>SNS強化</li>
-              <li>広告</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">継続率</p>
-            <ul>
-              <li>AI改善</li>
-              <li>コンテンツ追加</li>
-            </ul>
-          </div>
-          <div class="item">
-            <p class="item-title">運営負荷</p>
-            <ul>
-              <li>自動化</li>
-              <li>外注</li>
-              <li>AI活用</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">13</span>判断基準</h3>
-        <p class="body-copy">新しい施策は必ず次の3つで判断する。</p>
-        <ol class="criteria">
-          <li>ユーザー価値は高まるか</li>
-          <li>継続率は高まるか</li>
-          <li>長期的な競争優位につながるか</li>
-        </ol>
-      </section>
-
-      <section class="section">
-        <h3 class="section-title"><span class="section-number">14</span>5年後の姿</h3>
-        <ul>
-          <li>AIが一人ひとりの価値を理解するキャリアOS</li>
-          <li>個人・企業・教育・自治体がつながるプラットフォーム</li>
-          <li>AIとデータが資産となる事業構造</li>
-          <li>国内最大級のキャリアインフラを実現する</li>
+        <p class="intro">気になることはメソッドの入口ではなく、日常から問いを深める観察ログです。補助軸の材料になり、商品改善や次のコンパウンドスキルへつながります。</p>
+        <ul class="clean-list">
+          <li>日常の観察ログとして残す</li>
+          <li>補助軸の候補を見つける材料にする</li>
+          <li>独自の問いを深める</li>
+          <li>商品やサービスの改善に使う</li>
+          <li>次のコンパウンドスキルへつなげる</li>
         </ul>
-        <div class="closing">
-          <p class="closing-brand">複業.Lab</p>
-          <p class="closing-copy">価値を見つけるのではなく、価値を育てる。</p>
+        <div class="question-map" aria-label="気になることから問いが生まれる構造">
+          <div class="question-node">主軸・補助軸</div><div class="question-symbol">×</div>
+          <div class="question-node">気になること</div><div class="question-symbol">→</div>
+          <div class="question-node">独自の問い</div>
         </div>
       </section>
+
+      <section class="section" id="career-os">
+        <p class="section-number">09 · Career OS</p>
+        <h2 class="section-heading">キャリア形成を、継続できる仕組みにする。</h2>
+        <div class="definition">
+          <span class="label">Definition</span>
+          <p>Career OSとは、Compound Career Methodを継続的に実践するためのOSである。</p>
+        </div>
+        <div class="function-grid" aria-label="Career OSの機能">
+          <div class="function-item"><span>01</span>本業経験を専門スキルへ分解</div>
+          <div class="function-item"><span>02</span>主軸スキルを発見</div>
+          <div class="function-item"><span>03</span>補助軸の発見・提案</div>
+          <div class="function-item"><span>04</span>コンパウンド候補を生成</div>
+          <div class="function-item"><span>05</span>対象と提供価値を整理</div>
+          <div class="function-item"><span>06</span>独自の問いを設計</div>
+          <div class="function-item"><span>07</span>プロダクト仮説を設計</div>
+          <div class="function-item"><span>08</span>試作品を設計</div>
+          <div class="function-item"><span>09</span>小さな実験を設計</div>
+          <div class="function-item"><span>10</span>結果を学びへ変換</div>
+          <div class="function-item"><span>11</span>改善案を提案</div>
+          <div class="function-item"><span>12</span>成長履歴を蓄積</div>
+          <div class="function-item"><span>13</span>新しい主軸への昇格を可視化</div>
+        </div>
+        <div class="role-grid">
+          <div class="role-card">
+            <span class="label">AI Research Partner</span>
+            <h3>AI研究パートナー</h3>
+            <p>答えを与える存在ではなく、専門性の整理、掛け合わせの提案、実験と学習の支援を担います。</p>
+          </div>
+          <div class="role-card">
+            <span class="label">Human Decision</span>
+            <h3>判断の主体はユーザー</h3>
+            <p>AIの提案を参考に、自分の価値観、顧客の反応、実験結果から次の行動を選びます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="target">
+        <p class="section-number">10 · Target User</p>
+        <h2 class="section-heading">本業経験を、新しい価値と収入へ変えたい人。</h2>
+        <p class="intro">主な対象は、働いた経験があり、そこから得た専門スキルを別の価値提供へ発展させたい人です。</p>
+        <div class="skill-columns">
+          <div class="info-panel">
+            <span class="label">Primary Target</span>
+            <h3>想定するユーザー</h3>
+            <ul class="clean-list">
+              <li>本業経験を活かした新しい仕事をつくりたい</li>
+              <li>ありきたりな副業には興味がない</li>
+              <li>自分だけの事業をつくりたい</li>
+              <li>AIを自分の専門性と組み合わせたい</li>
+              <li>一つの会社や職業だけに依存したくない</li>
+              <li>複数のキャリアを育てたい</li>
+              <li>将来的に独立や起業も考えている</li>
+              <li>一人で考えると行動が止まりやすい</li>
+            </ul>
+          </div>
+          <div class="info-panel">
+            <span class="label">Not the Main Target</span>
+            <h3>現段階で優先しないユーザー</h3>
+            <ul class="clean-list">
+              <li>即金性だけを求める</li>
+              <li>完成済みの副業テンプレートだけを求める</li>
+              <li>実験や改善をしたくない</li>
+              <li>流行している手法だけを真似したい</li>
+              <li>AIに正解を決めてほしい</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="promise">
+        <p class="section-number">11 · Promise</p>
+        <h2 class="section-heading">収益を保証せず、試せる状態まで伴走する。</h2>
+        <p class="intro">複業.Labは、短期間での収入や成功を保証しません。ユーザーが自分の専門性を価値へ変え、市場から学べる状態をつくることを約束します。</p>
+        <div class="promise">
+          <span class="label">Our Promise</span>
+          <p>自分の専門スキルを掛け合わせ、自分だけのコンパウンドスキルをつくり、実際の市場で試せる状態をつくる。</p>
+        </div>
+        <div class="promise-flow" aria-label="ユーザーの成長段階">
+          <div class="flow-step">主軸</div><div class="flow-arrow">→</div>
+          <div class="flow-step">補助軸</div><div class="flow-arrow">→</div>
+          <div class="flow-step">コンパウンドスキル</div><div class="flow-arrow">→</div>
+          <div class="flow-step">問い</div><div class="flow-arrow">→</div>
+          <div class="flow-step">プロダクト仮説</div><div class="flow-arrow">→</div>
+          <div class="flow-step">試作品</div><div class="flow-arrow">→</div>
+          <div class="flow-step">実験</div><div class="flow-arrow">→</div>
+          <div class="flow-step">顧客反応</div><div class="flow-arrow">→</div>
+          <div class="flow-step">初売上</div><div class="flow-arrow">→</div>
+          <div class="flow-step">継続収益</div><div class="flow-arrow">→</div>
+          <div class="flow-step highlight">新しい主軸</div>
+        </div>
+      </section>
+
+      <section class="section" id="business-model">
+        <p class="section-number">12 · Business Model</p>
+        <h2 class="section-heading">MVPは、2つのプランで検証する。</h2>
+        <p class="intro">提供価値を明確に検証するため、MVPでは無料体験とCareer OSの2プランに絞ります。</p>
+        <div class="plan-grid">
+          <article class="plan-card">
+            <span class="status-badge">MVP</span>
+            <p class="plan-name">Free</p>
+            <p class="price">¥0</p>
+            <p>コンパウンドキャリアの考え方を体験する入口。</p>
+            <ul class="clean-list">
+              <li>主軸スキルの簡易抽出</li>
+              <li>補助軸候補の提案</li>
+              <li>コンパウンド候補の提案</li>
+              <li>気になることの一部記録</li>
+              <li>ライブラリの一部閲覧</li>
+            </ul>
+          </article>
+          <article class="plan-card featured">
+            <span class="status-badge">MVP · CORE</span>
+            <p class="plan-name">Career OS</p>
+            <p class="price">¥1,280<small>／月</small></p>
+            <p class="annual">年額 ¥10,560（月額換算 ¥880）</p>
+            <ul class="clean-list">
+              <li>Compound Career Methodの全機能</li>
+              <li>複数の主軸・補助軸管理</li>
+              <li>コンパウンド候補生成</li>
+              <li>問いの設計</li>
+              <li>プロダクト仮説の設計</li>
+              <li>試作品の設計</li>
+              <li>小さな実験の設計</li>
+              <li>結果・学び・改善の記録</li>
+              <li>AI研究パートナー</li>
+              <li>Career Profile</li>
+              <li>ライブラリ</li>
+              <li>成長履歴</li>
+            </ul>
+          </article>
+        </div>
+        <div class="future-area">
+          <span class="status-badge">Future Concept · MVP対象外</span>
+          <div class="tag-list">
+          <span class="tag">グループプログラム</span><span class="tag">コミュニティ</span><span class="tag">個別伴走</span><span class="tag">法人向けリスキリング</span><span class="tag">Marketplace</span><span class="tag">プロダクト販売・決済手数料</span><span class="tag">認定ファシリテーター制度</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="flywheel">
+        <p class="section-number">13 · Flywheel</p>
+        <h2 class="section-heading">一人の実験が、次の誰かの可能性になる。</h2>
+        <p class="intro">個人の挑戦を匿名化された構造データとして蓄積し、次のユーザーの組み合わせや実験設計を支援します。</p>
+        <div class="flywheel" aria-label="複業.Labのフライホイール">
+          <div class="flywheel-step"><span class="mini-label">01</span><strong>コンパウンドスキルをつくる</strong><p>主軸と補助軸から価値を設計</p></div>
+          <div class="flywheel-step"><span class="mini-label">02</span><strong>小さな実験を行う</strong><p>市場から反応を得る</p></div>
+          <div class="flywheel-step"><span class="mini-label">03</span><strong>結果と学びを蓄積</strong><p>行動の履歴を残す</p></div>
+          <div class="flywheel-step"><span class="mini-label">04</span><strong>パターンを構造化</strong><p>成功と失敗を整理する</p></div>
+          <div class="flywheel-step"><span class="mini-label">05</span><strong>支援精度を高める</strong><p>AIと教材へ反映する</p></div>
+          <div class="flywheel-step"><span class="mini-label">06</span><strong>次の実験を支える</strong><p>他のユーザーが試しやすくなる</p></div>
+          <div class="flywheel-step"><span class="mini-label">07</span><strong>成果事例が増える</strong><p>実践知の厚みが増す</p></div>
+          <div class="flywheel-step"><span class="mini-label">08</span><strong>新しいユーザーが増える</strong><p>次の掛け合わせが生まれる</p></div>
+        </div>
+        <div class="note">
+          <span class="label">MVP Data Policy</span>
+          <p>MVPではAIモデルを継続学習させるのではなく、匿名化した構造知をRAGや検索で参照し、提案と実験支援の質を高めます。</p>
+        </div>
+      </section>
+
+      <section class="section" id="moat">
+        <p class="section-number">14 · Competitive Advantage</p>
+        <h2 class="section-heading">答えではなく、キャリアが育つ構造を持つ。</h2>
+        <div class="moat-grid">
+          <article class="moat-card"><span class="moat-index">01</span><h3>Compound Career Theory</h3><p>複数の本業を複利的に育てる、独自のキャリア理論。</p></article>
+          <article class="moat-card"><span class="moat-index">02</span><h3>専門スキル起点</h3><p>職種名ではなく、仕事で培った具体的能力から価値を設計。</p></article>
+          <article class="moat-card"><span class="moat-index">03</span><h3>掛け合わせデータ</h3><p>主軸・補助軸・対象・価値・問いの関係を構造化。</p></article>
+          <article class="moat-card"><span class="moat-index">04</span><h3>成長履歴</h3><p>掛け合わせ、問い、試作品、実験、失敗、学び、改善、新しい主軸まで蓄積。</p></article>
+          <article class="moat-card"><span class="moat-index">05</span><h3>継続価値</h3><p>一度きりの自己分析ではなく、挑戦のたびに使い続けるCareer OS。</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="mvp">
+        <p class="section-number">15 · MVP Validation</p>
+        <h2 class="section-heading">主軸の発見から、小さな実験まで進めるか。</h2>
+        <div class="definition">
+          <span class="label">Core Hypothesis</span>
+          <p>本業で培った専門スキルと、異なる専門スキルを掛け合わせることで、ユーザーは自分だけの価値と、実験可能なプロダクト仮説をつくれるか。</p>
+        </div>
+        <div class="quote">
+          <span class="label">North Star Metric</span>
+          <p>主軸の発見から、小さな実験まで完了したユーザーの割合</p>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi-card"><span class="mini-label">KPI 01</span><strong>主軸設定率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 02</span><strong>補助軸設定率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 03</span><strong>コンパウンドスキル作成率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 04</span><strong>問い確定率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 05</span><strong>プロダクト仮説作成率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 06</span><strong>試作品作成率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 07</span><strong>小さな実験作成率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 08</span><strong>実験実施率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 09</span><strong>結果記録率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 10</span><strong>改善実施率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 11</span><strong>初売上率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 12</span><strong>7日継続率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 13</span><strong>30日継続率</strong></div>
+          <div class="kpi-card"><span class="mini-label">KPI 14</span><strong>年額プラン選択率</strong></div>
+        </div>
+        <div class="future-area">
+          <span class="hypothesis-badge">初期仮説 · 最初の50〜100人</span>
+          <div class="thresholds">
+            <div class="threshold"><strong>60%</strong><span>コンパウンド生成</span></div>
+            <div class="threshold"><strong>40%</strong><span>プロダクト仮説</span></div>
+            <div class="threshold"><strong>25%</strong><span>実験完了</span></div>
+            <div class="threshold"><strong>15%</strong><span>2回目の改善</span></div>
+            <div class="threshold"><strong>10%</strong><span>初売上または明確な顧客反応</span></div>
+          </div>
+          <p class="intro">すべて検証前の仮説値です。実利用データとユーザーインタビューをもとに更新します。</p>
+        </div>
+      </section>
+
+      <section class="section" id="development">
+        <p class="section-number">16 · Development Priority</p>
+        <h2 class="section-heading">実験完了に直結する機能からつくる。</h2>
+        <ol class="priority-list">
+          <li>主軸の抽出</li>
+          <li>補助軸の抽出・提案</li>
+          <li>コンパウンドスキル生成</li>
+          <li>対象者・提供価値の明確化</li>
+          <li>問い</li>
+          <li>プロダクト仮説</li>
+          <li>試作品</li>
+          <li>小さな実験</li>
+          <li>結果・学び・改善</li>
+          <li>新しい主軸への昇格</li>
+          <li>OSホームへの現在地表示</li>
+        </ol>
+        <div class="skill-columns">
+          <div class="info-panel">
+            <span class="label">Keep</span>
+            <h3>維持する基盤機能</h3>
+            <div class="tag-list">
+              <span class="tag">気になること</span><span class="tag">問い</span><span class="tag">キャリア資産</span><span class="tag">プロダクト仮説</span><span class="tag">小さな実験</span><span class="tag">結果・学び</span><span class="tag">改善</span><span class="tag">AI研究パートナー</span><span class="tag">ライブラリ</span><span class="tag">マイページ</span>
+            </div>
+          </div>
+          <div class="info-panel">
+            <span class="label">Role Update</span>
+            <h3>既存機能の役割を再定義</h3>
+            <p><strong>気になること：</strong>観察ログ・問いの種として活用。</p>
+            <p><strong>キャリア資産：</strong>主軸・補助軸・コンパウンドスキル・新しい主軸の履歴を確認する場所へ拡張。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <p class="section-number">17 · Roadmap</p>
+        <h2 class="section-heading">検証から、価値の循環へ。</h2>
+        <div class="roadmap" aria-label="複業.Labロードマップ">
+          <article class="roadmap-phase">
+            <span class="status-badge">Current</span>
+            <h3>Phase 01<br />MVP</h3>
+            <ul class="clean-list"><li>Compound Career Methodの基本実装</li><li>主軸・補助軸・コンパウンドスキル</li><li>問い・プロダクト仮説・試作品</li><li>小さな実験・結果・学び・改善</li><li>料金体系の一本化</li><li>50〜100人で検証</li></ul>
+          </article>
+          <article class="roadmap-phase">
+            <span class="status-badge">Next</span>
+            <h3>Phase 02<br />成果支援</h3>
+            <ul class="clean-list"><li>成功・失敗事例の蓄積</li><li>業種別の掛け合わせ提案</li><li>グループプログラム</li><li>実験レビュー</li><li>Career Profile強化</li></ul>
+          </article>
+          <article class="roadmap-phase">
+            <span class="status-badge">Future</span>
+            <h3>Phase 03<br />価値流通</h3>
+            <ul class="clean-list"><li>Marketplace</li><li>プロダクト販売</li><li>決済</li><li>売上管理</li><li>ユーザー同士の協業</li></ul>
+          </article>
+          <article class="roadmap-phase">
+            <span class="status-badge">Future</span>
+            <h3>Phase 04<br />事業拡張</h3>
+            <ul class="clean-list"><li>法人向け</li><li>教育機関向け</li><li>認定制度</li><li>海外展開</li><li>職種別Knowledge Graph</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="definition">
+        <p class="section-number">18 · Final Definition</p>
+        <h2 class="section-heading">複数の専門性を、複利で育て続ける。</h2>
+        <div class="final-definitions">
+          <div class="final-definition"><strong>複業.Lab</strong><p>本業で培った専門スキルと、異なる専門スキルを掛け合わせ、コンパウンドスキルを育てながら、自分だけのコンパウンドキャリアを築くCareer OS。</p></div>
+          <div class="final-definition"><strong>Compound Career</strong><p>異なる専門スキルの掛け合わせから新しい主軸を生み出し、その主軸をさらに別の専門スキルと掛け合わせながら、複数の本業を複利的に育て続けるキャリア。</p></div>
+          <div class="final-definition"><strong>複業.Labの「複」</strong><p>サブワークを意味する「副」ではなく、専門性、主軸、本業が複数あることを示す「複」。</p></div>
+        </div>
+        <div class="quote"><p>自分だけの価値を創り、試し、育て、次の主軸へ。</p></div>
+      </section>
+
+      <footer class="document-footer">
+        <span>複業.Lab · Business Plan Ver.2.0</span>
+        <span>Compound Career OS</span>
+      </footer>
     </article>
 
-    <footer>© 合同会社 nature · SATOMITSU REPORTS</footer>
+    <footer class="site-footer">© 合同会社 nature · SATOMITSU REPORTS</footer>
   </main>
 </body>
 </html>
