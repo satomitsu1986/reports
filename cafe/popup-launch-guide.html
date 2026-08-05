@@ -66,7 +66,7 @@
     .hero-sub { margin-top: 24px; color: #c1b3a5; font-family: var(--serif); font-size: 19px; line-height: 1.9; }
     .hero-note { max-width: 700px; margin-top: 22px; color: #8f8072; font-size: 13px; line-height: 2; }
     .controlbar { position: sticky; top: 0; z-index: 20; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); background: rgba(29, 19, 13, 0.97); color: var(--ivory); }
-    .control-inner { width: min(1180px, calc(100% - 40px)); min-height: 72px; display: grid; grid-template-columns: minmax(220px, 1fr) auto auto; align-items: center; gap: 18px; margin: 0 auto; }
+    .control-inner { width: min(1180px, calc(100% - 40px)); min-height: 72px; display: grid; grid-template-columns: minmax(220px, 1fr) auto; align-items: center; gap: 18px; margin: 0 auto; }
     .progress-summary { min-width: 0; }
     .progress-copy { display: flex; justify-content: space-between; gap: 16px; color: #cbbdaf; font-size: 11px; line-height: 1.5; }
     .progress-track { height: 5px; margin-top: 8px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,0.1); }
@@ -163,7 +163,7 @@
     }
     @media (max-width: 760px) {
       .topbar, .hero-inner, .control-inner, .workspace { width: min(100% - 28px, 1180px); }
-      .brand, .back-link { font-size: 9px; letter-spacing: 0.1em; }
+      .brand { font-size: 9px; letter-spacing: 0.1em; }
       .hero { min-height: calc(80svh - 68px); }
       .hero-inner { padding: 56px 0 70px; }
       h1 { font-size: 43px; line-height: 1.38; }
@@ -257,7 +257,6 @@
         <div class="progress-track" role="progressbar" aria-label="全体の準備進捗" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
       </div>
       <button class="control-button toc-toggle" id="tocToggle" type="button" aria-controls="tocList" aria-expanded="false">目次</button>
-      <button class="control-button" id="topButton" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る">↑</button>
       <button class="control-button" id="printButton" type="button" aria-label="ガイドを印刷する">印刷</button>
     </div>
   </div>
@@ -482,7 +481,6 @@
         }
       });
       document.getElementById('printButton').addEventListener('click', () => window.print());
-      document.getElementById('topButton').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
       if ('IntersectionObserver' in window) {
         const links = new Map([...tocList.querySelectorAll('a')].map(link => [link.getAttribute('href').slice(1), link]));
