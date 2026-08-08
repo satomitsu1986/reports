@@ -3814,6 +3814,919 @@
       }
     }
 
+    /* Mobile overview composition: preserve the desktop relationships at phone width. */
+    @media (max-width: 600px) {
+      .story-section {
+        padding: 68px 0;
+      }
+
+      .display-heading {
+        font-size: 26px;
+      }
+
+      .lead {
+        font-size: 10px;
+        line-height: 1.75;
+      }
+
+      /* 02 — Why Ballet */
+      .origin-layout {
+        grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+        gap: 18px;
+      }
+
+      .origin-story {
+        padding-top: 4px;
+      }
+
+      .origin .display-en {
+        font-size: 29px;
+      }
+
+      .origin-quote {
+        margin: 18px 0 16px;
+        padding-left: 11px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .origin-question {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .principle-cloud {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .principle {
+        min-height: 78px;
+        padding: 14px 8px;
+      }
+
+      .principle strong {
+        font-size: 12px;
+      }
+
+      .principle span {
+        font-size: 8px;
+      }
+
+      .meta-note {
+        padding: 24px 18px;
+      }
+
+      .meta-note strong {
+        font-size: 9px;
+      }
+
+      .meta-note h3 {
+        font-size: 18px;
+      }
+
+      .meta-note > p {
+        font-size: 10px;
+        line-height: 1.8;
+      }
+
+      .meta-traits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .meta-trait,
+      .meta-trait:nth-child(3n + 2),
+      .meta-trait:nth-child(3n),
+      .meta-trait:nth-child(4) {
+        min-height: 126px;
+        padding: 14px 12px;
+      }
+
+      .meta-trait h4 {
+        font-size: 13px;
+      }
+
+      .meta-trait p {
+        font-size: 8px;
+        line-height: 1.65;
+      }
+
+      .meta-source {
+        font-size: 8px;
+      }
+
+      /* 03 — Behind the Stage */
+      .behind-layout {
+        grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+        gap: 14px;
+        align-items: start;
+      }
+
+      .behind-photo,
+      .behind-photo img {
+        min-height: 520px;
+      }
+
+      .behind-photo figcaption {
+        right: 6px;
+        bottom: 7px;
+        font-size: 6px;
+      }
+
+      .behind-copy .display-heading {
+        margin: 10px 0 16px;
+        font-size: 24px;
+      }
+
+      .stage-method-diagram {
+        margin-top: 18px;
+      }
+
+      .stage-visible {
+        min-height: 62px;
+        padding: 10px;
+      }
+
+      .stage-visible span,
+      .backstage-heading span {
+        font-size: 7px;
+      }
+
+      .stage-visible strong {
+        font-size: 10px;
+      }
+
+      .stage-connector {
+        padding: 6px 8px;
+        font-size: 7px;
+      }
+
+      .backstage-heading {
+        padding: 10px;
+      }
+
+      .backstage-heading strong {
+        font-size: 9px;
+      }
+
+      .backstage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .backstage-item,
+      .backstage-item:nth-child(3n + 2),
+      .backstage-item:nth-child(3n),
+      .backstage-item:nth-child(even),
+      .backstage-item:nth-last-child(-n + 2) {
+        min-height: 48px;
+        padding: 10px 7px;
+        border: 0;
+        border-right: 1px solid rgba(198, 170, 115, 0.2);
+        border-bottom: 1px solid rgba(198, 170, 115, 0.2);
+        font-size: 8px;
+      }
+
+      .backstage-item:nth-child(even) {
+        border-right: 0;
+      }
+
+      .backstage-item:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .behind-copy .fine-print {
+        font-size: 8px;
+        line-height: 1.65;
+      }
+
+      /* 05 — BDX */
+      .brand-definition {
+        margin-bottom: 46px;
+        font-size: 11px;
+      }
+
+      .method-map {
+        grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.45fr) minmax(0, 0.72fr);
+        gap: 7px;
+      }
+
+      .method-node,
+      .method-node.core {
+        min-height: 170px;
+        grid-row: auto;
+        padding: 12px 7px;
+        text-align: center;
+      }
+
+      .method-node.core {
+        min-height: 218px;
+      }
+
+      .method-node .node-role {
+        font-size: 7px;
+      }
+
+      .method-node h3,
+      .method-node.core h3 {
+        font-size: 14px;
+      }
+
+      .method-node.core h3 {
+        font-size: 18px;
+      }
+
+      .method-node p {
+        font-size: 8px;
+        line-height: 1.6;
+      }
+
+      /* 06 — Product System */
+      .system-heading,
+      .positioning-head,
+      .more-head,
+      .product-head,
+      .science-heading-row {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+        gap: 12px;
+        align-items: end;
+      }
+
+      .product-system .display-heading {
+        font-size: 23px;
+      }
+
+      .product-architecture {
+        margin-top: 38px;
+        padding: 14px 10px;
+      }
+
+      .architecture-core {
+        grid-template-columns: 60px minmax(90px, 0.82fr) minmax(0, 1fr);
+        gap: 7px;
+        padding: 14px 10px;
+      }
+
+      .architecture-core span,
+      .architecture-layer > span {
+        font-size: 7px;
+      }
+
+      .architecture-core strong {
+        font-size: 15px;
+      }
+
+      .architecture-core p {
+        font-size: 8px;
+        line-height: 1.55;
+      }
+
+      .product-pillars {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 7px;
+      }
+
+      .product-pillar {
+        min-height: 184px;
+        padding: 14px 9px;
+      }
+
+      .product-pillar > span {
+        font-size: 7px;
+      }
+
+      .product-pillar h3 {
+        margin: 24px 0 12px;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .product-pillar ul {
+        gap: 5px;
+        font-size: 8px;
+      }
+
+      .architecture-layer {
+        grid-template-columns: 60px minmax(104px, 0.9fr) minmax(0, 1.1fr);
+        gap: 7px;
+        margin-top: 7px;
+        padding: 13px 10px;
+      }
+
+      .architecture-layer strong {
+        font-size: 10px;
+        line-height: 1.55;
+      }
+
+      .architecture-layer p {
+        font-size: 7px;
+        line-height: 1.6;
+      }
+
+      .architecture-future {
+        grid-template-columns: 42px 86px minmax(0, 1fr);
+        gap: 6px;
+        margin-top: 7px;
+        padding: 10px;
+      }
+
+      .architecture-future span,
+      .architecture-future strong,
+      .architecture-future p {
+        font-size: 7px;
+      }
+
+      .core-loop-panel {
+        padding: 20px 12px;
+      }
+
+      .loop-heading {
+        grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+        gap: 10px;
+        align-items: end;
+        padding-bottom: 18px;
+      }
+
+      .loop-heading span {
+        font-size: 7px;
+      }
+
+      .loop-heading h3 {
+        font-size: 18px;
+      }
+
+      .core-loop-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 18px;
+      }
+
+      .core-loop-step {
+        min-height: 118px;
+        padding: 12px 8px;
+      }
+
+      .core-loop-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .core-loop-step > span {
+        font-size: 7px;
+      }
+
+      .core-loop-step strong {
+        margin: 20px 0 6px;
+        font-size: 11px;
+      }
+
+      .core-loop-step p {
+        font-size: 7px;
+      }
+
+      .loop-return {
+        margin-top: 9px;
+        padding: 8px;
+        font-size: 8px;
+      }
+
+      .system-values {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 14px;
+      }
+
+      .system-values > div {
+        padding: 12px 7px;
+      }
+
+      .system-values strong {
+        font-size: 14px;
+      }
+
+      .system-values span {
+        font-size: 7px;
+      }
+
+      /* 07 — Positioning */
+      .service-comparison {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 38px;
+      }
+
+      .service-card {
+        min-height: 292px;
+        padding: 16px 12px;
+      }
+
+      .service-number {
+        font-size: 7px;
+      }
+
+      .service-card h3 {
+        min-height: 40px;
+        margin: 24px 0 7px;
+        font-size: 13px;
+      }
+
+      .service-purpose {
+        min-height: 34px;
+        font-size: 9px;
+        line-height: 1.6;
+      }
+
+      .service-card dl {
+        margin-top: 16px;
+      }
+
+      .service-card dl > div {
+        padding: 8px 0;
+      }
+
+      .service-card dt {
+        font-size: 7px;
+      }
+
+      .service-card dd {
+        font-size: 8px;
+        line-height: 1.55;
+      }
+
+      .differentiation-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 5px;
+        padding: 18px 0;
+      }
+
+      .differentiation-flow span {
+        display: grid;
+        min-height: 58px;
+        place-items: center;
+        padding: 7px 4px;
+        font-size: 7px;
+        line-height: 1.45;
+        text-align: center;
+      }
+
+      .differentiation-flow i {
+        display: none;
+      }
+
+      .position-result {
+        font-size: 20px;
+      }
+
+      /* 08 — More Than Exercise */
+      .domain-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 38px;
+        border: 0;
+      }
+
+      .domain,
+      .domain:nth-child(3),
+      .domain:nth-child(-n + 3) {
+        min-height: 202px;
+        grid-column: span 2;
+        padding: 14px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-top: 5px solid var(--card-accent);
+      }
+
+      .domain:nth-child(4),
+      .domain:nth-child(5) {
+        grid-column: span 3;
+      }
+
+      .domain-label {
+        font-size: 7px;
+      }
+
+      .domain h3 {
+        margin: 24px 0 10px;
+        font-size: 12px;
+      }
+
+      .domain ul {
+        gap: 5px;
+        font-size: 8px;
+      }
+
+      .method-flow {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+        margin-top: 34px;
+        border: 0;
+      }
+
+      .method-flow div {
+        min-height: 74px;
+        padding: 13px 6px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        font-size: 8px;
+        line-height: 1.55;
+      }
+
+      .method-flow div:not(:last-child)::after {
+        top: 50%;
+        right: -3px;
+        bottom: auto;
+        display: block;
+        transform: translate(50%, -50%);
+      }
+
+      .more-message {
+        font-size: 24px;
+      }
+
+      /* 09 — Product Experience */
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 38px;
+        border: 0;
+      }
+
+      .feature-item {
+        min-height: 224px;
+        padding: 15px 12px;
+        border: 1px solid rgba(9, 9, 12, 0.2);
+        border-top: 5px solid var(--card-accent);
+      }
+
+      .feature-number,
+      .feature-value {
+        font-size: 7px;
+      }
+
+      .feature-item h3 {
+        margin: 24px 0 9px;
+        font-size: 14px;
+      }
+
+      .feature-item p {
+        font-size: 9px;
+        line-height: 1.65;
+      }
+
+      .feature-value {
+        padding-top: 12px;
+      }
+
+      .product-outcomes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 32px;
+        border: 0;
+      }
+
+      .product-outcome,
+      .product-outcome:last-child {
+        padding: 12px 7px;
+        border: 1px solid rgba(9, 9, 12, 0.18);
+      }
+
+      .product-outcome strong {
+        font-size: 14px;
+      }
+
+      .product-outcome span {
+        font-size: 7px;
+      }
+
+      /* 10 — A Day with BDX */
+      .day-grid {
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 12px;
+        align-items: start;
+      }
+
+      .day .display-en {
+        font-size: 23px;
+        line-height: 1.15;
+      }
+
+      .day-intro {
+        margin: 14px 0 26px;
+        font-size: 9px;
+        line-height: 1.7;
+      }
+
+      .day-step {
+        grid-template-columns: 38px minmax(0, 1fr);
+        min-height: 86px;
+        padding: 11px 0;
+      }
+
+      .day-time {
+        font-size: 7px;
+      }
+
+      .day-step strong {
+        font-size: 10px;
+      }
+
+      .day-step p {
+        font-size: 8px;
+        line-height: 1.55;
+      }
+
+      .day-copyline {
+        margin-top: 26px;
+        font-size: 17px;
+      }
+
+      .phone {
+        width: 100%;
+        padding: 5px;
+        border-radius: 18px;
+      }
+
+      .phone-screen {
+        min-height: 500px;
+        padding: 14px 10px;
+        border-radius: 14px;
+      }
+
+      .phone-top {
+        padding-bottom: 10px;
+        font-size: 7px;
+      }
+
+      .phone-greeting {
+        margin: 18px 0 14px;
+        font-size: 9px;
+      }
+
+      .condition-list {
+        margin-bottom: 16px;
+      }
+
+      .condition {
+        padding: 9px 5px;
+      }
+
+      .condition span {
+        font-size: 6px;
+      }
+
+      .condition strong {
+        font-size: 9px;
+      }
+
+      .coach-line {
+        padding: 12px 0;
+        font-size: 8px;
+      }
+
+      .quest-ui {
+        margin-top: 18px;
+      }
+
+      .quest-ui h3 {
+        font-size: 16px;
+      }
+
+      .quest-meta {
+        gap: 7px;
+        font-size: 7px;
+      }
+
+      .quest-button {
+        min-height: 38px;
+        margin-top: 18px;
+        padding: 0 9px;
+        font-size: 7px;
+      }
+
+      /* 11 — Research */
+      .evidence-flow {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 38px;
+        border: 0;
+      }
+
+      .evidence-step,
+      .evidence-step:nth-child(3),
+      .evidence-step:nth-child(even),
+      .evidence-step:nth-last-child(-n + 2) {
+        display: block;
+        min-height: 112px;
+        padding: 13px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-top: 5px solid var(--card-accent);
+      }
+
+      .evidence-step span {
+        margin-bottom: 24px;
+        font-size: 7px;
+      }
+
+      .evidence-step strong {
+        font-size: 9px;
+      }
+
+      .science-example {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 34px;
+        border: 0;
+      }
+
+      .science-example > div,
+      .science-example > div:first-child {
+        min-height: 278px;
+        padding: 14px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+      }
+
+      .science-example h3 {
+        margin: 24px 0 8px;
+        font-size: 13px;
+      }
+
+      .science-example p {
+        font-size: 8px;
+        line-height: 1.6;
+      }
+
+      .research-labels {
+        gap: 4px;
+        margin-top: 14px;
+      }
+
+      .research-label {
+        padding: 5px;
+        font-size: 6px;
+      }
+
+      .paper-meta {
+        margin-top: 14px;
+        padding-top: 12px;
+        font-size: 7px;
+      }
+
+      .action-flow {
+        grid-template-columns: 1fr 12px 1fr 12px 1fr;
+        margin-top: 18px;
+      }
+
+      .action-flow span,
+      .action-flow i {
+        min-height: 52px;
+        font-size: 7px;
+      }
+
+      .science-equation {
+        font-size: 19px;
+      }
+
+      .safety-note {
+        font-size: 8px;
+      }
+
+      /* 12 — Gamification */
+      .progress-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 38px;
+        border: 0;
+      }
+
+      .progress-item,
+      .progress-item:nth-child(2),
+      .progress-item:nth-child(-n + 2) {
+        min-height: 112px;
+        padding: 14px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-top: 5px solid var(--card-accent);
+      }
+
+      .progress-item strong {
+        margin-top: 28px;
+        font-size: 14px;
+      }
+
+      .progress-item p {
+        font-size: 8px;
+      }
+
+      .progress-item:not(:last-child)::after {
+        display: none;
+      }
+
+      .game-demo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 30px;
+        border: 0;
+      }
+
+      .game-quest,
+      .game-progress {
+        min-height: 300px;
+        padding: 16px 11px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .game-kicker {
+        font-size: 7px;
+      }
+
+      .game-quest h3 {
+        margin: 30px 0 10px;
+        font-size: 15px;
+      }
+
+      .game-quest p {
+        font-size: 8px;
+        line-height: 1.6;
+      }
+
+      .game-reward {
+        min-height: 40px;
+        margin-top: 22px;
+        padding: 0 8px;
+        font-size: 7px;
+      }
+
+      .level-row {
+        gap: 8px;
+      }
+
+      .level-row strong {
+        font-size: 17px;
+      }
+
+      .level-row span {
+        font-size: 7px;
+      }
+
+      .achievement-title {
+        margin-top: 34px;
+        font-size: 7px;
+      }
+
+      .achievement {
+        min-height: 84px;
+        padding: 10px 5px;
+      }
+
+      .achievement b {
+        font-size: 12px;
+      }
+
+      .achievement span {
+        font-size: 6px;
+      }
+
+      .game-rules {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .game-rule,
+      .game-rule:last-child {
+        padding: 10px 5px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-top: 5px solid var(--card-accent);
+        font-size: 7px;
+      }
+
+      /* 13 — Future */
+      .future-phases {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 42px;
+        border: 0;
+      }
+
+      .future-phase,
+      .future-phase:last-child {
+        min-height: 278px;
+        padding: 16px 9px;
+        border: 1px solid var(--pop-border);
+        border-top: 6px solid var(--card-accent);
+      }
+
+      .phase-state {
+        font-size: 7px;
+      }
+
+      .future-phase h3 {
+        margin: 42px 0 16px;
+        font-size: 13px;
+      }
+
+      .future-phase ul {
+        gap: 6px;
+        font-size: 8px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
