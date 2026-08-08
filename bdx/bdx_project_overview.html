@@ -423,24 +423,84 @@
       font-size: 46px;
     }
 
-    .practice-words {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 42px;
-      border-top: 1px solid var(--line);
+    .stage-method-diagram {
+      margin-top: 38px;
+      border: 1px solid var(--line);
     }
 
-    .practice-word {
-      padding: 20px 12px;
-      border-right: 1px solid var(--line);
+    .stage-visible {
+      display: flex;
+      min-height: 94px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 24px;
       border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .stage-visible span,
+    .backstage-heading span {
+      color: var(--gold);
       font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .stage-visible strong {
       font-size: 18px;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .stage-connector {
+      padding: 9px 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 9px;
+      text-align: center;
+    }
+
+    .backstage-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .backstage-heading strong {
+      color: var(--rose);
+      font-size: 15px;
       font-weight: 500;
     }
 
-    .practice-word:nth-child(even) {
+    .backstage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .backstage-item {
+      min-height: 64px;
+      padding: 17px 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--ivory);
+      font-family: var(--display);
+      font-size: 12px;
+    }
+
+    .backstage-item:nth-child(even) {
       border-right: 0;
+    }
+
+    .backstage-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .behind-copy .fine-print {
+      margin-top: 18px;
     }
 
     /* 04 — What If */
@@ -656,7 +716,135 @@
       text-align: center;
     }
 
-    /* 07 — More than Exercise */
+    /* 07 — BDX Positioning */
+    .positioning {
+      background: #151116;
+    }
+
+    .positioning-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .category-compare {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 94px minmax(0, 1fr);
+      margin-top: 66px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-side {
+      min-height: 330px;
+      padding: 34px 30px;
+    }
+
+    .compare-side.bdx-side {
+      background: rgba(219, 107, 131, 0.075);
+    }
+
+    .compare-label {
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .compare-side h3 {
+      margin: 54px 0 12px;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .compare-side p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .compare-goal {
+      display: block;
+      margin-top: 28px;
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .compare-vs {
+      display: grid;
+      border-right: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      place-items: center;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 25px;
+    }
+
+    .bdx-equation {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr) 44px minmax(0, 1fr);
+      margin-top: 54px;
+      border: 1px solid var(--line);
+    }
+
+    .equation-part {
+      min-height: 180px;
+      padding: 26px 22px;
+    }
+
+    .equation-part span {
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 9px;
+    }
+
+    .equation-part strong {
+      display: block;
+      margin: 38px 0 7px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .equation-part p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .equation-operator {
+      display: grid;
+      border-right: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      place-items: center;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 26px;
+    }
+
+    .position-result {
+      margin-top: 38px;
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .position-note {
+      max-width: 760px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    /* 08 — More than Exercise */
     .more {
       background: #0d0d11;
     }
@@ -743,7 +931,7 @@
       text-align: center;
     }
 
-    /* 08 — Product Experience */
+    /* 09 — Product Experience */
     .product {
       background: var(--ivory);
       color: var(--ink);
@@ -840,7 +1028,7 @@
       font-size: 11px;
     }
 
-    /* 09 — A Day with BDX */
+    /* 10 — A Day with BDX */
     .day {
       background: var(--paper);
       color: var(--ink);
@@ -1023,7 +1211,7 @@
       line-height: 1.5;
     }
 
-    /* 09 — Professional Practice × Science */
+    /* 11 — Research Explainer */
     .science {
       background: #0b0b0f;
     }
@@ -1102,6 +1290,68 @@
       line-height: 1.9;
     }
 
+    .research-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .research-label {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: var(--display);
+      font-size: 9px;
+    }
+
+    .research-label.fact {
+      border-color: rgba(120, 152, 200, 0.55);
+      color: #a9c0e0;
+    }
+
+    .research-label.practice {
+      border-color: rgba(197, 167, 108, 0.55);
+      color: #d6bf90;
+    }
+
+    .research-label.caution {
+      border-color: rgba(211, 139, 139, 0.55);
+      color: #deb0b0;
+    }
+
+    .paper-meta {
+      display: grid;
+      gap: 7px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .action-flow {
+      display: grid;
+      grid-template-columns: 1fr 28px 1fr 28px 1fr;
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .action-flow span,
+    .action-flow i {
+      display: grid;
+      min-height: 72px;
+      place-items: center;
+      font-family: var(--display);
+      font-size: 10px;
+      font-style: normal;
+    }
+
+    .action-flow i {
+      color: var(--gold);
+    }
+
     .science-equation {
       margin-top: 48px;
       color: var(--ivory);
@@ -1120,10 +1370,14 @@
       text-align: center;
     }
 
-    /* 10 — Grow & Enjoy */
+    /* 12 — Gamification & Dance */
     .grow {
       padding-bottom: 0;
       background: var(--charcoal);
+    }
+
+    .grow-lead {
+      margin-top: 22px;
     }
 
     .progress-strip {
@@ -1135,6 +1389,7 @@
     }
 
     .progress-item {
+      position: relative;
       min-height: 190px;
       padding: 30px 24px;
       border-right: 1px solid var(--line);
@@ -1156,6 +1411,159 @@
     .progress-item p {
       color: var(--muted);
       font-size: 12px;
+    }
+
+    .progress-item:not(:last-child)::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 1;
+      color: var(--gold);
+      content: '→';
+      transform: translate(50%, -50%);
+    }
+
+    .game-demo {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 52px;
+      border: 1px solid var(--line);
+    }
+
+    .game-quest,
+    .game-progress {
+      min-height: 390px;
+      padding: 36px;
+    }
+
+    .game-quest {
+      border-right: 1px solid var(--line);
+      background: rgba(219, 107, 131, 0.055);
+    }
+
+    .game-kicker {
+      color: var(--rose);
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .game-quest h3 {
+      margin: 58px 0 14px;
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .game-quest p {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .game-reward {
+      display: flex;
+      min-height: 52px;
+      margin-top: 36px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      background: var(--rose);
+      color: #fff;
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .level-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .level-row strong {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 600;
+    }
+
+    .level-row span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .xp-track {
+      height: 7px;
+      margin-top: 18px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .xp-track span {
+      display: block;
+      width: 62%;
+      height: 100%;
+      background: var(--gold);
+    }
+
+    .achievement-title {
+      display: block;
+      margin-top: 54px;
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 9px;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 15px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .achievement {
+      min-height: 110px;
+      padding: 16px 12px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .achievement b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ivory);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .achievement span {
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .game-rules {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .game-rule {
+      padding: 20px 18px;
+      border-right: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .game-rule:last-child {
+      border-right: 0;
     }
 
     .joy-photo {
@@ -1215,7 +1623,7 @@
       text-transform: uppercase;
     }
 
-    /* 11 — Future */
+    /* 13 — Future */
     .future {
       background: var(--ivory);
       color: var(--ink);
@@ -1334,7 +1742,8 @@
       .behind-layout,
       .day-grid,
       .science-heading-row,
-      .more-head {
+      .more-head,
+      .positioning-head {
         gap: 54px;
       }
 
@@ -1453,6 +1862,7 @@
       .day-grid,
       .science-heading-row,
       .more-head,
+      .positioning-head,
       .product-head,
       .science-example {
         grid-template-columns: 1fr;
@@ -1463,8 +1873,36 @@
       .day-grid,
       .science-heading-row,
       .more-head,
+      .positioning-head,
       .product-head {
         gap: 48px;
+      }
+
+      .category-compare,
+      .bdx-equation,
+      .game-demo {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-vs {
+        min-height: 64px;
+        border-top: 1px solid var(--line);
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .equation-operator {
+        min-height: 56px;
+        border-top: 1px solid var(--line);
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .game-quest {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
       }
 
       .behind-photo,
@@ -1577,6 +2015,10 @@
         border-bottom: 1px solid var(--line);
       }
 
+      .progress-item:not(:last-child)::after {
+        display: none;
+      }
+
       .joy-photo {
         min-height: 600px;
       }
@@ -1681,7 +2123,18 @@
         font-size: 29px;
       }
 
-      .practice-word {
+      .stage-visible,
+      .backstage-heading {
+        display: grid;
+        align-items: start;
+      }
+
+      .stage-visible strong {
+        font-size: 16px;
+        text-align: left;
+      }
+
+      .backstage-heading strong {
         font-size: 14px;
       }
 
@@ -1707,9 +2160,39 @@
         font-size: 25px;
       }
 
-      .more-message,
-      .science-equation {
+      .more-message {
         font-size: 29px;
+      }
+
+      .position-result {
+        font-size: 24px;
+      }
+
+      .science-equation {
+        font-size: 24px;
+      }
+
+      .compare-side {
+        min-height: auto;
+        padding: 28px 22px;
+      }
+
+      .compare-side h3 {
+        margin-top: 36px;
+        font-size: 22px;
+      }
+
+      .bdx-equation {
+        margin-top: 38px;
+      }
+
+      .equation-part {
+        min-height: auto;
+        padding: 25px 22px;
+      }
+
+      .equation-part strong {
+        margin-top: 28px;
       }
 
       .feature-grid,
@@ -1747,31 +2230,93 @@
       }
 
       .evidence-flow {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
       }
 
       .evidence-step,
-      .evidence-step:nth-child(3) {
-        min-height: 150px;
-        border-right: 1px solid var(--line);
+      .evidence-step:nth-child(3),
+      .evidence-step:nth-child(even),
+      .evidence-step:nth-last-child(-n + 2) {
+        display: grid;
+        min-height: 92px;
+        grid-template-columns: 42px 1fr;
+        align-items: center;
+        border-right: 0;
         border-bottom: 1px solid var(--line);
       }
 
-      .evidence-step:nth-child(even) {
-        border-right: 0;
-      }
-
-      .evidence-step:nth-last-child(-n + 2) {
+      .evidence-step:last-child {
         border-bottom: 0;
       }
 
       .evidence-step span {
-        margin-bottom: 34px;
+        margin-bottom: 0;
       }
 
       .science-example > div {
         min-height: 230px;
         padding: 28px 22px;
+      }
+
+      .action-flow {
+        grid-template-columns: 1fr 22px 1fr 22px 1fr;
+      }
+
+      .progress-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .progress-item,
+      .progress-item:nth-child(2),
+      .progress-item:nth-child(-n + 2) {
+        min-height: 145px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .progress-item:last-child {
+        border-bottom: 0;
+      }
+
+      .progress-item strong {
+        margin-top: 38px;
+      }
+
+      .progress-item:not(:last-child)::after {
+        display: block;
+        top: auto;
+        right: 50%;
+        bottom: -14px;
+        transform: translate(50%, 0) rotate(90deg);
+      }
+
+      .game-quest,
+      .game-progress {
+        min-height: auto;
+        padding: 28px 22px;
+      }
+
+      .game-quest h3 {
+        margin-top: 38px;
+        font-size: 24px;
+      }
+
+      .achievement-grid,
+      .game-rules {
+        grid-template-columns: 1fr;
+      }
+
+      .achievement {
+        min-height: 82px;
+      }
+
+      .game-rule {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .game-rule:last-child {
+        border-bottom: 0;
       }
 
       .joy-photo {
@@ -1882,15 +2427,20 @@
         </figure>
         <div class="behind-copy reveal">
           <div class="section-index">03 — 舞台を支える日常</div>
-          <h2 class="display-heading" id="behind-title">舞台の上だけでは、<br />あの身体はつくられない。</h2>
-          <p class="lead">高いパフォーマンスの背景には、身体をつくり、整え、管理する日常がある。</p>
-          <div class="practice-words" aria-label="舞台を支える日常の要素">
-            <div class="practice-word">トレーニング</div><div class="practice-word">回復</div>
-            <div class="practice-word">栄養</div><div class="practice-word">睡眠</div>
-            <div class="practice-word">集中</div><div class="practice-word">ルーティン</div>
-            <div class="practice-word">身体のケア</div><div class="practice-word">自己管理</div>
+          <h2 class="display-heading" id="behind-title">踊る身体は、<br />舞台裏でつくられる。</h2>
+          <p class="lead">バレリーナの価値は舞踊技術だけではありません。健康的な体型を維持し、体調を整え、動ける身体を支える日々の管理にもあります。</p>
+          <div class="stage-method-diagram" aria-label="舞台上の表現を舞台裏の身体管理が支える構造">
+            <div class="stage-visible"><span>舞台上 / 見える価値</span><strong>舞踊・技術・表現</strong></div>
+            <div class="stage-connector">↑ この身体を、日々の管理が支える</div>
+            <div class="backstage-heading"><span>舞台裏 / 日常へ活かせる価値</span><strong>身体をつくる・整える・維持する</strong></div>
+            <div class="backstage-grid">
+              <div class="backstage-item">身体づくり</div><div class="backstage-item">健康的な体型維持</div>
+              <div class="backstage-item">栄養・水分補給</div><div class="backstage-item">睡眠・回復</div>
+              <div class="backstage-item">疲労・体調管理</div><div class="backstage-item">コンディショニング</div>
+              <div class="backstage-item">集中・メンタル</div><div class="backstage-item">ルーティン・自己管理</div>
+            </div>
           </div>
-          <p class="fine-print">取り組み方には個人差があり、すべてのダンサーに共通する習慣を示すものではありません。</p>
+          <p class="fine-print">BDXは「細さ」や過度な制限を理想化しません。体型維持は、健康・身体機能・回復を支える身体管理として扱います。</p>
         </div>
       </div>
     </section>
@@ -1915,7 +2465,7 @@
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
         <p class="brand-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
-        <p class="brand-definition">BDXは、バレエの世界で培われてきた身体操作・身体づくり・身体管理のメソッドを一般ユーザーの日常へ落とし込み、AIで一人ひとりの状態に合わせ、ダンスによって身体を使う楽しさまで提供するプロジェクトです。</p>
+        <p class="brand-definition">BDXは、バレエの世界で培われてきた身体操作・身体づくり・健康的な体型維持・体調管理のメソッドを一般ユーザーの日常へ落とし込み、AIで一人ひとりの状態に合わせ、ダンスによって身体を使う楽しさまで提供するプロジェクトです。</p>
       </div>
       <div class="frame method-map reveal" aria-label="BDXの中心構造">
         <article class="method-node">
@@ -1965,11 +2515,46 @@
       <p class="frame role-summary reveal">メソッドを、一人ひとりの日常へ。<br />楽しさを、続けたくなる体験へ。</p>
     </section>
 
-    <!-- SECTION 07: MORE THAN EXERCISE -->
+    <!-- SECTION 07: BDX POSITIONING -->
+    <section class="story-section positioning" aria-labelledby="positioning-title">
+      <div class="frame positioning-head reveal">
+        <div>
+          <div class="section-index">07 — BDXの独自性</div>
+          <h2 class="display-heading" id="positioning-title">踊り方ではなく、<br />日常の体調を変える。</h2>
+        </div>
+        <p class="lead">多くのバレエサービスがレッスンや技術習得を中心にするのに対し、BDXは舞台裏のメソッドを「最高の体調」のために使います。</p>
+      </div>
+      <div class="frame category-compare reveal" aria-label="一般的なバレエサービスとBDXの目的の違い">
+        <article class="compare-side">
+          <span class="compare-label">一般的なバレエサービス</span>
+          <h3>バレエを習い、<br />踊りを上達させる。</h3>
+          <p>レッスン、基礎技術、振付、作品、舞台表現を中心に学ぶ。</p>
+          <strong class="compare-goal">目的：バレエを踊る</strong>
+        </article>
+        <div class="compare-vs" aria-hidden="true">VS</div>
+        <article class="compare-side bdx-side">
+          <span class="compare-label">BDX</span>
+          <h3>バレエメソッドで、<br />毎日の身体を整える。</h3>
+          <p>身体操作・身体づくり・体型維持・体調管理を、一般ユーザーの日常へ活かす。</p>
+          <strong class="compare-goal">目的：最高の体調を、日常に</strong>
+        </article>
+      </div>
+      <div class="frame bdx-equation reveal" aria-label="BDXを構成する3つの要素">
+        <article class="equation-part"><span>METHOD</span><strong>バレエメソッド</strong><p>身体をつくる・整える・維持する。</p></article>
+        <div class="equation-operator" aria-hidden="true">×</div>
+        <article class="equation-part"><span>PERSONALIZATION</span><strong>AI</strong><p>今日の状態に合う一歩へ変える。</p></article>
+        <div class="equation-operator" aria-hidden="true">×</div>
+        <article class="equation-part"><span>JOY</span><strong>ダンス</strong><p>音楽・表現・楽しさで続けたくする。</p></article>
+      </div>
+      <p class="frame position-result reveal">3つを「最高の体調」で結ぶ。<br />それが、BDXの独自性。</p>
+      <p class="frame position-note reveal">一般的なサービスカテゴリーとの比較であり、個別サービスの全機能を示すものではありません。</p>
+    </section>
+
+    <!-- SECTION 08: MORE THAN EXERCISE -->
     <section class="story-section more" aria-labelledby="more-title">
       <div class="frame more-head reveal">
         <div>
-          <div class="section-index">07 — 運動だけではない</div>
+          <div class="section-index">08 — 運動だけではない</div>
           <h2 class="display-heading" id="more-title">BDXが扱うのは、<br />運動だけじゃない。</h2>
         </div>
         <p class="lead">バレエメソッドから、動く・学ぶ・整えるという日常の実践が生まれます。</p>
@@ -1987,11 +2572,11 @@
       <p class="frame more-message reveal">身体をつくるのは、<br />トレーニングの時間だけじゃない。</p>
     </section>
 
-    <!-- SECTION 08: PRODUCT EXPERIENCE -->
+    <!-- SECTION 09: PRODUCT EXPERIENCE -->
     <section class="story-section product" aria-labelledby="product-title">
       <div class="frame product-head reveal">
         <div>
-          <div class="section-index">08 — プロダクトの中心機能</div>
+          <div class="section-index">09 — プロダクトの中心機能</div>
           <h2 class="display-heading" id="product-title">今日の一歩に、<br />迷わない。</h2>
         </div>
         <p class="lead">BDXは、その日の状態を起点に、動く・学ぶ・整えるをひとつの流れにつなぎます。</p>
@@ -2019,7 +2604,7 @@
           <span class="feature-number">04 / 学ぶ</span>
           <h3>身体の理由が分かる</h3>
           <p>身体・栄養・睡眠・回復・心を、科学的根拠と専門家の実践知から学べるライブラリです。</p>
-          <span class="feature-value">知識を次の行動へ</span>
+          <span class="feature-value">論文解説を初心者にも分かりやすく</span>
         </article>
         <article class="feature-item">
           <span class="feature-number">05 / 整える</span>
@@ -2031,7 +2616,7 @@
           <span class="feature-number">06 / 振り返る</span>
           <h3>小さな成長が見える</h3>
           <p>クエストの完了履歴、経験値、レベル、達成記録から、自分が積み重ねてきた行動を振り返れます。</p>
-          <span class="feature-value">競う相手は昨日までの自分</span>
+          <span class="feature-value">クエスト・経験値・レベル・達成</span>
         </article>
       </div>
       <div class="frame product-outcomes reveal" aria-label="BDXが提供する3つの価値">
@@ -2041,11 +2626,11 @@
       </div>
     </section>
 
-    <!-- SECTION 09: A DAY WITH BDX -->
+    <!-- SECTION 10: A DAY WITH BDX -->
     <section class="story-section day" aria-labelledby="day-title">
       <div class="frame day-grid">
         <div class="reveal">
-          <div class="section-index">09 — BDXのある一日</div>
+          <div class="section-index">10 — BDXのある一日</div>
           <h2 class="display-en" id="day-title">いつもではなく、<br />今日に合わせる。</h2>
           <p class="day-intro">最高の体調は、常に最高出力でいることではない。その日の状態を理解し、その日に合う行動を選べること。</p>
           <div class="day-timeline">
@@ -2077,49 +2662,80 @@
       </div>
     </section>
 
-    <!-- SECTION 10: PROFESSIONAL PRACTICE × SCIENCE -->
+    <!-- SECTION 11: RESEARCH EXPLAINER -->
     <section class="story-section science" aria-labelledby="science-title">
       <div class="frame science-heading-row reveal">
         <div>
-          <div class="section-index">10 — 実践知 × 科学</div>
-          <h2 class="display-heading" id="science-title">プロの知恵を、<br />そのまま真似しない。</h2>
+          <div class="section-index">11 — 注目機能 / 論文解説</div>
+          <h2 class="display-heading" id="science-title">難しい研究を、<br />今日の行動へ。</h2>
         </div>
-        <p class="lead">実践知を科学で確かめ、言えることと言えないことを分けて、一般ユーザーの行動へ落とし込みます。</p>
+        <p class="lead">専門的な論文を初心者にも分かる言葉と図に変え、研究結果・限界・BDXの提案を分けて届けます。</p>
       </div>
-      <div class="frame evidence-flow reveal" aria-label="プロの実践知をBDXの実践へ落とし込む流れ">
-        <div class="evidence-step"><span>01</span><strong>プロの<br />実践</strong></div>
-        <div class="evidence-step"><span>02</span><strong>なぜ<br />行う？</strong></div>
+      <div class="frame evidence-flow reveal" aria-label="BDX論文解説の流れ">
+        <div class="evidence-step"><span>01</span><strong>今日の<br />結論</strong></div>
+        <div class="evidence-step"><span>02</span><strong>この資料で<br />分かること</strong></div>
         <div class="evidence-step"><span>03</span><strong>科学的<br />根拠</strong></div>
-        <div class="evidence-step"><span>04</span><strong>何が<br />言える？</strong></div>
-        <div class="evidence-step"><span>05</span><strong>日常への<br />応用</strong></div>
-        <div class="evidence-step"><span>06</span><strong>BDXで<br />実践</strong></div>
+        <div class="evidence-step"><span>04</span><strong>研究<br />結果</strong></div>
+        <div class="evidence-step"><span>05</span><strong>BDXで<br />どう活かす？</strong></div>
+        <div class="evidence-step"><span>06</span><strong>今日から<br />できること</strong></div>
       </div>
       <div class="frame science-example reveal">
         <div>
-          <span class="eyebrow">プロの実践</span>
-          <h3>「本番前、ダンサーは何を食べている？」</h3>
-          <p>個人の習慣を、そのまま全員の正解にはしない。</p>
+          <span class="eyebrow">研究結果</span>
+          <h3>何が分かり、<br />何がまだ分からないか。</h3>
+          <p>対象・人数・方法・結果・限界を整理し、論文から直接言えることだけを示します。</p>
+          <div class="research-labels" aria-label="論文解説の情報区分">
+            <span class="research-label fact">研究で確認</span>
+            <span class="research-label practice">BDXの提案</span>
+            <span class="research-label caution">注意・限界</span>
+          </div>
+          <div class="paper-meta"><span>論文名・著者・掲載年</span><span>DOI・URL・引用文献を表示</span></div>
         </div>
         <div>
-          <span class="eyebrow">科学から日常へ</span>
-          <h3>仕事前・運動前なら、どう応用できるか。</h3>
-          <p>スポーツ栄養学の条件と限界を確認し、日常で試せる行動へ。</p>
+          <span class="eyebrow">BDXでどう活かす？</span>
+          <h3>読むだけで終わらせず、<br />自分で試せる形へ。</h3>
+          <p>研究の考え方を、一般ユーザーが日常で実践できる小さな行動とワークへつなぎます。</p>
+          <div class="action-flow" aria-label="論文解説から実践までの流れ"><span>理解</span><i>→</i><span>実践</span><i>→</i><span>振り返り</span></div>
         </div>
       </div>
-      <p class="frame science-equation reveal">経験 × 根拠 × 実践</p>
-      <p class="frame safety-note reveal">プロの実践と科学的根拠を分け、因果と相関、研究対象と条件、限界を明記します。栄養・心理・けがは専門領域を尊重し、医療診断、過剰な運動、摂食障害につながる表現を避けます。</p>
+      <p class="frame science-equation reveal">難しい研究 → 分かる → 試せる</p>
+      <p class="frame safety-note reveal">論文の結果とBDXの提案を分け、因果と相関、対象者、研究条件、限界を明記します。医療診断や効果の断定は行いません。</p>
     </section>
 
-    <!-- SECTION 11: GROW & ENJOY -->
+    <!-- SECTION 12: GAMIFICATION & DANCE -->
     <section class="story-section grow" aria-labelledby="grow-title">
       <div class="frame reveal">
-        <div class="section-index">11 — 育てる × 楽しむ</div>
-        <h2 class="display-heading" id="grow-title">身体を育てることを、<br />もっと楽しく。</h2>
+        <div class="section-index">12 — 注目機能 / ゲーミフィケーション</div>
+        <h2 class="display-heading" id="grow-title">続けたくなる仕組みを、<br />身体に。</h2>
+        <p class="lead grow-lead">毎日の小さな行動をクエストに変え、経験値・レベル・達成記録として積み重ねます。</p>
         <div class="progress-strip" aria-label="BDXの成長記録">
           <div class="progress-item"><strong>クエスト</strong><p>今日の一歩。</p></div>
           <div class="progress-item"><strong>経験値</strong><p>積み重ね。</p></div>
           <div class="progress-item"><strong>レベル</strong><p>経験。</p></div>
           <div class="progress-item"><strong>達成</strong><p>できるようになったこと。</p></div>
+        </div>
+        <div class="game-demo" aria-label="BDXゲーミフィケーションの画面イメージ">
+          <div class="game-quest">
+            <span class="game-kicker">今日のクエスト / 回復</span>
+            <h3>5分で姿勢を整えよう。</h3>
+            <p>今日は疲労が少し高め。強度を上げるより、身体を整える短いメニューがおすすめです。</p>
+            <div class="game-reward"><span>クエストを完了</span><strong>+20 経験値</strong></div>
+          </div>
+          <div class="game-progress">
+            <div class="level-row"><strong>レベル 4</strong><span>120 / 200 経験値</span></div>
+            <div class="xp-track" aria-label="次のレベルまで62パーセント"><span></span></div>
+            <span class="achievement-title">最近の達成</span>
+            <div class="achievement-grid">
+              <div class="achievement"><b>01</b><span>はじめての回復</span></div>
+              <div class="achievement"><b>07</b><span>7日間の行動</span></div>
+              <div class="achievement"><b>10</b><span>10クエスト達成</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="game-rules" aria-label="健康を守るゲーミフィケーションの原則">
+          <div class="game-rule">回復クエストでも<br />経験値を獲得</div>
+          <div class="game-rule">長時間運動ほど高得点<br />という設計にしない</div>
+          <div class="game-rule">他人との競争より<br />自分の積み重ね</div>
         </div>
       </div>
       <figure class="joy-photo reveal">
@@ -2132,10 +2748,10 @@
       </figure>
     </section>
 
-    <!-- SECTION 12: THE FUTURE OF BDX -->
+    <!-- SECTION 13: THE FUTURE OF BDX -->
     <section class="story-section future" aria-labelledby="future-title">
       <div class="frame reveal">
-        <div class="section-index">12 — BDXの未来</div>
+        <div class="section-index">13 — BDXの未来</div>
         <h2 class="display-en" id="future-title">つくる。<br />合わせる。<br />ともに育つ。</h2>
       </div>
       <div class="frame future-phases reveal">
