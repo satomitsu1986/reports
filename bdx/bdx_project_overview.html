@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BDXは、バレエの身体メソッド、ダンスの楽しさ、AIによる行動支援を組み合わせた習慣形成型フィットネスサービスです。" />
-  <title>BDX 事業計画書</title>
+  <meta name="description" content="BDXは、バレエの身体メソッドと科学的知識をベースに、AIがその日の状態に合った運動・学習・回復を提案するウェルビーイングサービスです。" />
+  <title>BDX Project Overview v2.0</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -262,6 +262,10 @@
       color: var(--text-muted);
       font-size: 11px;
       line-height: 1.75;
+    }
+
+    .source-note.center {
+      text-align: center;
     }
 
     .disclaimer {
@@ -548,6 +552,584 @@
       color: var(--text-muted);
       font-size: 12px;
       line-height: 1.65;
+    }
+
+    .hypothesis-badge,
+    .future-badge,
+    .evidence-badge,
+    .phase-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .hypothesis-badge {
+      border-color: rgba(240, 192, 96, 0.4);
+      background: rgba(240, 192, 96, 0.12);
+      color: #f5d27f;
+    }
+
+    .future-badge {
+      border-color: rgba(91, 141, 239, 0.4);
+      background: rgba(91, 141, 239, 0.12);
+      color: #a9c5ff;
+    }
+
+    .evidence-badge {
+      border-color: rgba(80, 212, 160, 0.4);
+      background: rgba(80, 212, 160, 0.12);
+      color: #91e8c6;
+    }
+
+    .phase-badge.current {
+      border-color: rgba(80, 212, 160, 0.45);
+      background: rgba(80, 212, 160, 0.13);
+      color: #91e8c6;
+    }
+
+    .phase-badge.next {
+      border-color: rgba(240, 192, 96, 0.45);
+      background: rgba(240, 192, 96, 0.13);
+      color: #f5d27f;
+    }
+
+    .phase-badge.future {
+      border-color: rgba(91, 141, 239, 0.4);
+      background: rgba(91, 141, 239, 0.12);
+      color: #a9c5ff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+    }
+
+    .product-card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .product-card.move { border-top: 3px solid var(--ballet); }
+    .product-card.learn { border-top: 3px solid var(--gold); }
+    .product-card.care { border-top: 3px solid var(--dance); }
+    .product-card.coach { border-top: 3px solid var(--ai); }
+    .product-card.progress { border-top: 3px solid var(--gold); }
+    .product-card.community { border: 1px dashed rgba(91, 141, 239, 0.5); }
+
+    .product-card-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      margin-bottom: 8px;
+      color: var(--text);
+      font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .product-card p,
+    .product-card li {
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .product-card ul {
+      display: grid;
+      gap: 5px;
+      padding-left: 1.1em;
+    }
+
+    .product-tree {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface-2);
+    }
+
+    .tree-root {
+      width: min(300px, 100%);
+      margin: 0 auto 26px;
+      padding: 18px 22px;
+      border: 1px solid rgba(240, 192, 96, 0.45);
+      border-radius: 14px;
+      background: rgba(240, 192, 96, 0.08);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .tree-root span {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .core-loop {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .loop-step {
+      position: relative;
+      min-width: 0;
+      min-height: 116px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .loop-step::after {
+      position: absolute;
+      top: 50%;
+      right: -15px;
+      z-index: 2;
+      color: var(--ai);
+      content: '→';
+      font-size: 18px;
+      font-weight: 700;
+      transform: translateY(-50%);
+    }
+
+    .loop-step:nth-child(4)::after,
+    .loop-step:last-child::after {
+      display: none;
+    }
+
+    .loop-step-number {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ai);
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .loop-step strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .loop-step span {
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    .loop-arrow {
+      color: var(--ai);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+    }
+
+    .loop-return {
+      margin-top: 14px;
+      padding: 14px 18px;
+      border: 1px dashed rgba(80, 212, 160, 0.45);
+      border-radius: 12px;
+      background: rgba(80, 212, 160, 0.07);
+      color: var(--ai);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .condition-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .condition-chip,
+    .context-chip {
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--text-muted);
+      font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+      font-size: 11px;
+    }
+
+    .quest-card {
+      max-width: 620px;
+      margin: 26px auto 0;
+      overflow: hidden;
+      border: 1px solid rgba(240, 192, 96, 0.42);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(240, 192, 96, 0.1), var(--surface));
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .quest-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--border);
+      color: var(--gold);
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .quest-card-body {
+      padding: 28px;
+    }
+
+    .quest-title {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .quest-reason {
+      margin-bottom: 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .quest-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    .quest-meta span {
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .quest-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .quest-action {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 8px;
+      background: var(--gradient-ballet);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .quest-xp {
+      color: var(--gold);
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .content-graph {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .graph-path {
+      display: grid;
+      gap: 8px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .graph-path.standalone,
+    .tag-list + .large-quote {
+      margin-top: 24px;
+    }
+
+    .graph-step {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--surface-2);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .graph-arrow {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .move-loop {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .move-node {
+      position: relative;
+      min-width: 0;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface-2);
+      text-align: center;
+    }
+
+    .move-node:not(:last-child)::after {
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      z-index: 2;
+      color: var(--ballet);
+      content: '→';
+      font-size: 18px;
+      transform: translateY(-50%);
+    }
+
+    .move-node strong {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .move-node span {
+      color: var(--text-muted);
+      font-size: 10px;
+    }
+
+    .ai-context {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.6fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface-2);
+    }
+
+    .context-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .ai-core {
+      padding: 26px 18px;
+      border: 1px solid rgba(80, 212, 160, 0.45);
+      border-radius: 16px;
+      background: rgba(80, 212, 160, 0.09);
+      color: var(--ai);
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .ai-output {
+      padding: 24px;
+      border: 1px solid rgba(240, 192, 96, 0.42);
+      border-radius: 16px;
+      background: rgba(240, 192, 96, 0.08);
+      color: var(--gold);
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .progress-item {
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .progress-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-family: 'Outfit', sans-serif;
+      font-size: 17px;
+    }
+
+    .progress-item p {
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .safety-box {
+      margin-top: 24px;
+      padding: 26px;
+      border: 1px solid rgba(255, 143, 143, 0.35);
+      border-radius: var(--radius);
+      background: rgba(255, 143, 143, 0.07);
+    }
+
+    .safety-box h3 {
+      margin-bottom: 14px;
+      color: #ffc0c0;
+      font-size: 17px;
+    }
+
+    .mvp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mvp-in,
+    .mvp-out {
+      min-width: 0;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .mvp-in { border: 1px solid rgba(80, 212, 160, 0.42); }
+    .mvp-out { border: 1px solid rgba(91, 141, 239, 0.35); }
+    .mvp-in h3 { color: var(--ai); }
+    .mvp-out h3 { color: #9bbcff; }
+
+    .mvp-in h3,
+    .mvp-out h3 {
+      margin-bottom: 16px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+    }
+
+    .metric-hero {
+      margin-top: 24px;
+      padding: 30px;
+      border: 1px solid rgba(240, 192, 96, 0.4);
+      border-radius: var(--radius);
+      background: rgba(240, 192, 96, 0.08);
+      text-align: center;
+    }
+
+    .metric-hero strong {
+      display: block;
+      margin: 8px 0;
+      color: var(--gold);
+      font-family: 'Outfit', sans-serif;
+      font-size: 23px;
+      line-height: 1.45;
+    }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .screen-card {
+      min-width: 0;
+      padding: 22px 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .screen-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+    }
+
+    .screen-card p {
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .legacy-section {
+      margin-top: 100px;
+      padding-top: 42px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .legacy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .legacy-card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px dashed rgba(162, 162, 183, 0.35);
+      border-radius: 14px;
+      background: rgba(162, 162, 183, 0.04);
+    }
+
+    .legacy-card h3 {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .legacy-card p,
+    .legacy-card li {
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .legacy-card ul {
+      display: grid;
+      gap: 5px;
+      padding-left: 1.1em;
     }
 
     .pricing-grid {
@@ -862,8 +1444,24 @@
       .info-grid.four,
       .info-grid.five,
       .architecture,
-      .metric-list {
+      .metric-list,
+      .progress-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .core-loop,
+      .move-loop {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .core-loop .loop-step:nth-child(2)::after,
+      .core-loop .loop-step:nth-child(6)::after,
+      .move-loop .move-node:nth-child(2)::after {
+        display: none;
+      }
+
+      .screen-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .flow-cycle {
@@ -913,8 +1511,50 @@
       .team-grid,
       .architecture,
       .revenue-flow,
-      .metric-list {
+      .metric-list,
+      .content-graph,
+      .core-loop,
+      .move-loop,
+      .ai-context,
+      .progress-grid,
+      .mvp-grid,
+      .screen-grid,
+      .legacy-grid {
         grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-tree {
+        padding: 22px;
+      }
+
+      .loop-step::after,
+      .core-loop .loop-step:nth-child(2)::after,
+      .core-loop .loop-step:nth-child(4)::after,
+      .core-loop .loop-step:nth-child(6)::after,
+      .move-node:not(:last-child)::after,
+      .move-loop .move-node:nth-child(2)::after {
+        top: auto;
+        right: 50%;
+        bottom: -20px;
+        display: block;
+        transform: translate(50%, 50%) rotate(90deg);
+      }
+
+      .loop-step:last-child::after,
+      .move-node:last-child::after {
+        display: none;
+      }
+
+      .ai-context {
+        text-align: center;
+      }
+
+      .context-cloud {
+        justify-content: center;
       }
 
       .concept-diagram {
@@ -974,8 +1614,33 @@
       .info-card,
       .team-content,
       .pricing-card,
-      .architecture-stage {
+      .architecture-stage,
+      .product-card,
+      .progress-item,
+      .mvp-in,
+      .mvp-out,
+      .legacy-card {
         padding: 22px 20px;
+      }
+
+      .quest-card-body,
+      .ai-context,
+      .metric-hero,
+      .safety-box {
+        padding: 22px 20px;
+      }
+
+      .quest-title {
+        font-size: 20px;
+      }
+
+      .quest-footer {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .quest-action {
+        width: 100%;
       }
 
       .highlight-box,
@@ -1043,306 +1708,434 @@
   <main class="page">
     <!-- SECTION: Hero -->
     <header class="hero">
-      <div class="hero-badge">Business Plan — Ver. 1.0</div>
+      <div class="hero-badge">01 — Project Overview v2.0</div>
       <h1><span class="b">B</span><span class="d">D</span><span class="x">X</span></h1>
-      <div class="hero-sub">Ballet × Dance × Cross</div>
-      <div class="hero-tagline">しなやかで強い身体を、<br />続けられる習慣から。</div>
-      <div class="hero-concept">最高の体調を、自分でつくり続けられる毎日へ。</div>
-      <p class="hero-definition">バレエ由来の身体メソッド、ダンスの楽しさ、AIによる個別支援を統合し、一般ユーザーの運動習慣とコンディション改善を支えるフィットネスサービス。</p>
+      <div class="hero-sub">Ballet-based Well-being Service</div>
+      <div class="hero-tagline">バレエから、身体を知り、<br />自分を育てる。</div>
+      <div class="hero-concept">今日の自分に合う、一歩がわかる。</div>
+      <p class="hero-definition">BDXは、バレエの身体メソッドと科学的知識をベースに、AIがその日の状態に合った運動・学習・回復を提案し、自分の身体を理解しながら成長していくウェルビーイングサービスです。</p>
     </header>
 
-    <!-- SECTION: Project Overview -->
-    <section class="section" id="overview">
-      <div class="section-label">01 — Project Overview</div>
-      <h2 class="section-title">プロジェクト概要</h2>
-      <p class="section-intro">BDXは、運動を始めても続かない一般ユーザーに向けて、身体の使い方、動く楽しさ、日々の選択支援を一つの体験として提供します。</p>
-
-      <h3 class="subsection-title">課題と解決策</h3>
-      <div class="two-column">
-        <article class="info-card accent-ballet">
-          <span class="info-card-kicker">PROBLEM</span>
-          <h3 class="info-card-title">正しい情報があっても、運動は続かない</h3>
-          <ul class="list"><li>自分の体調や時間に合う運動を選べない</li><li>忙しさや疲労で生活に組み込めない</li><li>成果を感じる前に中断してしまう</li></ul>
-        </article>
-        <article class="info-card accent-ai">
-          <span class="info-card-kicker">SOLUTION</span>
-          <h3 class="info-card-title">今日の自分に合う行動を、選びやすくする</h3>
-          <ul class="list"><li>短時間で実行できる運動を提案する</li><li>体調と行動を記録し、変化を振り返る</li><li>専門コンテンツとAIで継続を支える</li></ul>
-        </article>
-      </div>
-
-      <h3 class="subsection-title">サービス構成</h3>
-      <div class="concept-diagram" aria-label="Ballet、Dance、AIの3要素">
-        <div class="concept-circle ballet">
-          <div class="concept-name ballet">Ballet</div>
-          <div class="concept-title">身体の基礎</div>
-          <div class="concept-desc">姿勢、バランス、身体認識、動作の精度を育てる。</div>
-        </div>
-        <div class="concept-circle dance">
-          <div class="concept-name dance">Dance</div>
-          <div class="concept-title">動く楽しさ</div>
-          <div class="concept-desc">音楽、リズム、表現を通じて、運動を楽しめる体験にする。</div>
-        </div>
-        <div class="concept-circle ai">
-          <div class="concept-name ai">AI</div>
-          <div class="concept-title">継続の支援</div>
-          <div class="concept-desc">体調、履歴、生活リズムから、実行しやすい行動を提案する。</div>
-        </div>
-      </div>
-      <div class="concept-equation">身体の基礎 × 動く楽しさ × 個別支援 ＝ 続けられるフィットネス体験</div>
-
-      <h3 class="subsection-title">プロダクト構成</h3>
+    <!-- SECTION: Why BDX -->
+    <section class="section" id="why-bdx">
+      <div class="section-label">02 — Why BDX</div>
+      <h2 class="section-title">「何をすればいいか分からない」を減らす。</h2>
+      <p class="section-intro">健康情報や運動コンテンツは増えている一方、自分の体調、目的、時間に合う行動を選ぶことは簡単ではありません。</p>
       <div class="info-grid four">
-        <article class="info-card accent-ballet"><h3 class="info-card-title">Workout</h3><p class="info-card-text">バレエメソッドとダンスをもとにした動画プログラム。</p></article>
-        <article class="info-card accent-ai"><h3 class="info-card-title">AI Coach</h3><p class="info-card-text">今日の状態や履歴に応じて、行動選択と振り返りを支援する。</p></article>
-        <article class="info-card accent-dance"><h3 class="info-card-title">Condition</h3><p class="info-card-text">睡眠、疲労、気分、痛み、実施可能時間などを記録する。</p></article>
-        <article class="info-card accent-gold"><h3 class="info-card-title">Library</h3><p class="info-card-text">身体、運動、栄養、回復、習慣形成の知識を学べる。</p></article>
+        <article class="info-card accent-ballet"><span class="info-card-kicker">01</span><h3 class="info-card-title">選択肢が多すぎる</h3><p class="info-card-text">情報が多いほど、今日何をすればいいか分からなくなる。</p></article>
+        <article class="info-card accent-gold"><span class="info-card-kicker">02</span><h3 class="info-card-title">身体を理解しないまま動いている</h3><p class="info-card-text">「何をするか」だけで、「なぜするか」が分からない。</p></article>
+        <article class="info-card accent-dance"><span class="info-card-kicker">03</span><h3 class="info-card-title">運動と回復が分断されている</h3><p class="info-card-text">運動しない日は失敗という感覚になりやすい。</p></article>
+        <article class="info-card accent-ai"><span class="info-card-kicker">04</span><h3 class="info-card-title">小さな成長が見えにくい</h3><p class="info-card-text">結果が現れる前に、続ける意味を見失いやすい。</p></article>
       </div>
-      <ul class="tag-list" aria-label="主要な利用画面">
-        <li>ホーム</li><li>AIコーチ</li><li>バレエ</li><li>ダンス</li><li>ライブラリ</li><li>コンディション・履歴</li>
-      </ul>
-      <div class="highlight-box"><strong>BDXの提供価値</strong><br />運動メニューを増やすのではなく、自分に合う行動を選び、続け、調整できる仕組みを提供します。</div>
+      <div class="highlight-box"><strong>BDXが解決したいこと</strong><br />運動メニューの不足ではなく、自分の状態を理解し、今日の行動を選び、続けるための仕組みの不足です。</div>
     </section>
 
     <!-- SECTION: Mission & Vision -->
     <section class="section" id="mission">
-      <div class="section-label">02 — Mission &amp; Vision</div>
-      <h2 class="section-title">ミッション・ビジョン</h2>
+      <div class="section-label">03 — Vision / Mission</div>
+      <h2 class="section-title">BDXが目指すもの</h2>
       <div class="info-grid">
         <article class="info-card accent-ballet">
-          <span class="info-card-kicker">MISSION</span>
-          <h3 class="info-card-title">運動を、頑張り続けるものから、生活の中で続けられるものへ変える。</h3>
-        </article>
-        <article class="info-card accent-dance">
           <span class="info-card-kicker">VISION</span>
-          <h3 class="info-card-title">一人ひとりが、自分の身体を理解し、しなやかに強く動き続けられる社会をつくる。</h3>
+          <h3 class="info-card-title">自分の身体を理解し、自分で育てていける人を増やす。</h3>
+        </article>
+        <article class="info-card accent-gold">
+          <span class="info-card-kicker">MISSION</span>
+          <h3 class="info-card-title">バレエの知恵と科学を、誰もが毎日の生活で使える形へ変える。</h3>
         </article>
         <article class="info-card accent-ai">
           <span class="info-card-kicker">BRAND PROMISE</span>
-          <h3 class="info-card-title">今日の自分に合う、小さな一歩を提案する。</h3>
+          <h3 class="info-card-title">今日の自分に合う、一歩がわかる。</h3>
         </article>
       </div>
     </section>
 
     <!-- SECTION: Target & User Experience -->
     <section class="section" id="target">
-      <div class="section-label">03 — Target &amp; User Experience</div>
-      <h2 class="section-title">対象ユーザーと体験</h2>
-      <p class="section-intro">主な対象は、運動したい気持ちはあるものの、忙しさ、疲労、迷いによって継続できていない社会人です。</p>
-      <div class="info-grid">
-        <article class="info-card"><h3 class="info-card-title">身体の変化を感じている</h3><p class="info-card-text">運動不足や身体の衰えを感じている。</p></article>
-        <article class="info-card"><h3 class="info-card-title">長く続けられない</h3><p class="info-card-text">運動を始めても、生活の変化によって中断しやすい。</p></article>
-        <article class="info-card"><h3 class="info-card-title">まとまった時間がない</h3><p class="info-card-text">忙しく、決まった時間に長く運動することが難しい。</p></article>
+      <!-- TODO: Primary Target validation -->
+      <div class="section-label">04 — Who It Is For</div>
+      <h2 class="section-title">誰のためのサービスか</h2>
+      <p class="section-intro">バレエから身体を整え、学び、育てたい人へ。ターゲットは現時点の仮説であり、MVP検証を通じて更新します。</p>
+      <div class="two-column">
+        <article class="info-card accent-ballet">
+          <span class="hypothesis-badge">PRIMARY TARGET / HYPOTHESIS</span>
+          <h3 class="info-card-title">自宅で無理なく身体を整えたい20〜40代女性</h3>
+          <ul class="list"><li>バレエ未経験または初心者</li><li>運動習慣が安定していない</li><li>決まった時間に教室へ通いにくい</li><li>姿勢や身体の使い方に関心がある</li><li>身体について学ぶことにも興味がある</li><li>自分のペースで続けたい</li></ul>
+        </article>
+        <article class="info-card accent-dance">
+          <span class="info-card-kicker">SECONDARY TARGET</span>
+          <h3 class="info-card-title">身体理解を深めたいユーザー</h3>
+          <ul class="list"><li>バレエ経験者</li><li>Danceユーザー</li><li>Body Literacy志向</li><li>科学的に身体を学びたいユーザー</li></ul>
+        </article>
       </div>
-      <h3 class="subsection-title">利用開始から習慣化まで</h3>
-      <div class="info-grid">
-        <article class="info-card accent-ballet"><span class="info-card-kicker">STAGE 1</span><h3 class="info-card-title">始める</h3><p class="info-card-text">体調確認と短時間ワークアウトから開始し、自分が実行しやすい条件を知る。</p></article>
-        <article class="info-card accent-ai"><span class="info-card-kicker">STAGE 2</span><h3 class="info-card-title">続ける</h3><p class="info-card-text">行動ログを蓄積し、運動する時間、負荷、種類を自分の生活に合わせて調整する。</p></article>
-        <article class="info-card accent-dance"><span class="info-card-kicker">STAGE 3</span><h3 class="info-card-title">深める</h3><p class="info-card-text">身体の変化や好みに応じて、バレエ、ダンス、体力向上などへ目的を広げる。</p></article>
+    </section>
+
+    <!-- SECTION: Value Proposition -->
+    <section class="section" id="value">
+      <div class="section-label">05 — Value Proposition</div>
+      <h2 class="section-title">BDXで何が変わるのか</h2>
+      <div class="highlight-box"><strong>CORE VALUE</strong><br />自分の身体を理解しながら、今日の自分に合った行動を積み重ねられる。</div>
+      <div class="info-grid four">
+        <article class="info-card accent-ai"><span class="info-card-kicker">01</span><h3 class="info-card-title">今日何をすればいいか分かる</h3><p class="info-card-text">Conditionと過去の履歴から、AI CoachがToday’s Questを提案する。</p></article>
+        <article class="info-card accent-gold"><span class="info-card-kicker">02</span><h3 class="info-card-title">自分の身体が分かる</h3><p class="info-card-text">ExerciseとLibraryをつなぎ、身体の仕組みを理解する。</p></article>
+        <article class="info-card accent-dance"><span class="info-card-kicker">03</span><h3 class="info-card-title">休むことも成功になる</h3><p class="info-card-text">Recoveryを正式なProgressとして扱う。</p></article>
+        <article class="info-card accent-ballet"><span class="info-card-kicker">04</span><h3 class="info-card-title">小さな成長が見える</h3><p class="info-card-text">Quest / XP / Level / Achievementで、自分の歩みを確認する。</p></article>
       </div>
-      <ul class="tag-list" aria-label="補助ターゲット">
-        <li>姿勢や身体の使い方に関心がある人</li>
-        <li>バレエ教室へ通うハードルを感じる人</li>
-        <li>柔軟性や動作の美しさも重視したい人</li>
-        <li>自宅で短時間から始めたい人</li>
-      </ul>
-      <div class="highlight-box">ユーザーは、決められた計画に自分を合わせるのではなく、その日の状態に合わせて行動を選び直せます。</div>
-      <div class="disclaimer">BDXは、プロのバレエ技術習得や、疾病・傷害の診断・治療を目的としたサービスではありません。変化の速度や内容には個人差があります。</div>
+    </section>
+
+    <!-- SECTION: BDX Concept -->
+    <section class="section" id="concept">
+      <div class="section-label">06 — BDX Concept</div>
+      <h2 class="section-title">動く・学ぶ・整えるを、一つにつなぐ。</h2>
+      <p class="section-intro">BDXは、MOVE・LEARN・CAREを中心に、AI Coachが今日の行動を選びやすくし、Progressが成長を可視化するプロダクトです。</p>
+      <div class="product-tree" aria-label="BDX v2.0のプロダクト構造">
+        <div class="tree-root">BDX<span>Ballet-based Well-being Service</span></div>
+        <div class="product-grid">
+          <article class="product-card move"><span class="product-card-label">MOVE</span><h3>身体を動かす</h3><ul><li>Ballet Exercise</li><li>Ballet</li><li>Dance</li></ul></article>
+          <article class="product-card learn"><span class="product-card-label">LEARN</span><h3>身体を理解する</h3><ul><li>Library</li><li>Scientific Content</li></ul></article>
+          <article class="product-card care"><span class="product-card-label">CARE</span><h3>身体と心を整える</h3><ul><li>Recovery</li><li>Mental</li><li>Lifestyle</li></ul></article>
+          <article class="product-card coach"><span class="product-card-label">AI COACH</span><h3>今日の行動を選ぶ</h3><p>状態・目的・履歴から、実行しやすい一歩を提案する。</p></article>
+          <article class="product-card progress"><span class="product-card-label">PROGRESS</span><h3>成長を可視化する</h3><ul><li>Quest</li><li>XP / Level</li><li>Achievement</li></ul></article>
+          <article class="product-card community"><span class="future-badge">FUTURE / LATER PHASE</span><h3>COMMUNITY</h3><ul><li>Challenge</li><li>Team / Sharing</li><li>Optional Ranking</li></ul></article>
+        </div>
+      </div>
+      <div class="highlight-box"><strong>POSITIONING</strong><br />BDXは、単なるFitness AppやAI Chat Appではなく、バレエ発想のウェルビーイングサービスです。</div>
+    </section>
+
+    <!-- SECTION: Core Loop -->
+    <section class="section" id="core-loop">
+      <div class="section-label">07 — BDX Core Loop</div>
+      <h2 class="section-title">今日の一歩が、次の一歩につながる。</h2>
+      <p class="section-intro">BDXは大量のコンテンツから自分で選び続けるサービスではありません。その日の状態、目標、これまでの行動から一歩を提示し、結果を次の提案へつなげます。</p>
+      <div class="core-loop" aria-label="BDX Core Loop">
+        <div class="loop-step"><span class="loop-step-number">01</span><strong>Today’s Condition</strong><span>必要な状態だけ短時間で確認</span></div>
+        <div class="loop-step"><span class="loop-step-number">02</span><strong>AI Coach</strong><span>状態・目的・履歴を理解</span></div>
+        <div class="loop-step"><span class="loop-step-number">03</span><strong>Today’s Quest</strong><span>今日実行しやすい一歩を提示</span></div>
+        <div class="loop-step"><span class="loop-step-number">04</span><strong>MOVE / LEARN / CARE</strong><span>動く・学ぶ・整える</span></div>
+        <div class="loop-step"><span class="loop-step-number">05</span><strong>Practice</strong><span>Questを自分のペースで実践</span></div>
+        <div class="loop-step"><span class="loop-step-number">06</span><strong>Record</strong><span>完了と気づきを記録</span></div>
+        <div class="loop-step"><span class="loop-step-number">07</span><strong>XP / Level / Achievement</strong><span>経験の積み重ねを可視化</span></div>
+        <div class="loop-step"><span class="loop-step-number">08</span><strong>AI understands context</strong><span>結果を次の文脈へ反映</span></div>
+      </div>
+      <div class="loop-return"><span class="loop-arrow">↺</span> Next Questから、次のToday’s Conditionへ</div>
+
+      <h3 class="subsection-title">Today’s Condition</h3>
+      <p class="section-intro">必要なことだけ、短時間で確認。</p>
+      <div class="condition-strip" aria-label="Condition入力候補"><span class="condition-chip">Sleep</span><span class="condition-chip">Fatigue</span><span class="condition-chip">Mood</span><span class="condition-chip">Pain / Discomfort</span><span class="condition-chip">Motivation</span><span class="condition-chip">Available Time</span></div>
+
+      <h3 class="subsection-title">Today’s Quest</h3>
+      <div class="quest-card" aria-label="Today’s Quest UIイメージ">
+        <div class="quest-card-header"><span>TODAY’S QUEST</span><span>RECOVERY FOCUS</span></div>
+        <div class="quest-card-body">
+          <h3 class="quest-title">5分で姿勢を整えよう</h3>
+          <p class="quest-reason">今日は疲労感が少し高いため、強度を上げるより身体を整える短時間メニューがおすすめです。</p>
+          <div class="quest-meta"><span>Ballet Exercise</span><span>5 min</span><span>Gentle</span></div>
+          <div class="quest-footer"><span class="quest-action">はじめる</span><span class="quest-xp">+20 XP</span></div>
+        </div>
+      </div>
+      <ul class="tag-list" aria-label="Quest Type"><li>Exercise Quest</li><li>Learning Quest</li><li>Recovery Quest</li></ul>
+    </section>
+
+    <!-- SECTION: MOVE -->
+    <section class="section" id="move">
+      <div class="section-label">08 — MOVE</div>
+      <h2 class="section-title">身体を動かす。</h2>
+      <p class="section-intro">MOVEは、身体を整えるBallet Exercise、身体の使い方を磨くBallet、音楽と表現を楽しむDanceの3カテゴリーです。</p>
+      <div class="info-grid">
+        <article class="info-card accent-ballet"><span class="info-card-kicker">BALLET EXERCISE</span><h3 class="info-card-title">身体をつくる・整える</h3><p class="info-card-text">バレエに含まれる身体操作の考え方を取り入れた、初心者でも取り組めるExercise。</p><ul class="tag-list"><li>Posture</li><li>Core</li><li>Mobility</li><li>Flexibility</li><li>Balance</li><li>Coordination</li><li>Alignment</li><li>Conditioning</li></ul></article>
+        <article class="info-card accent-gold"><span class="info-card-kicker">BALLET</span><h3 class="info-card-title">身体を磨く</h3><p class="info-card-text">バレエそのものの基礎技術を通じて、身体の使い方を深める。</p><ul class="tag-list"><li>Plié</li><li>Tendu</li><li>Port de bras</li><li>Barre</li><li>Centre</li><li>Turnout</li><li>Alignment</li></ul></article>
+        <article class="info-card accent-dance"><span class="info-card-kicker">DANCE</span><h3 class="info-card-title">身体を楽しみ、表現する</h3><p class="info-card-text">音楽と表現を通じて、身につけた身体を使う楽しさを体験する。</p><ul class="tag-list"><li>Rhythm</li><li>Groove</li><li>Coordination</li><li>Expression</li><li>Choreography</li><li>Performance</li></ul></article>
+      </div>
+      <h3 class="subsection-title">自由に行き来するMOVE Loop</h3>
+      <div class="move-loop" aria-label="MOVE Loop">
+        <div class="move-node"><strong>Ballet Exercise</strong><span>整える</span></div>
+        <div class="move-node"><strong>Ballet</strong><span>磨く</span></div>
+        <div class="move-node"><strong>Dance</strong><span>使って楽しむ</span></div>
+        <div class="move-node"><strong>身体の気づき</strong><span>次のExerciseへ</span></div>
+      </div>
+      <div class="loop-return">順番は固定せず、その日の目的や状態に合わせて自由に行き来する。</div>
+    </section>
+
+    <!-- SECTION: LEARN -->
+    <section class="section" id="learn">
+      <div class="section-label">09 — LEARN</div>
+      <h2 class="section-title">身体を理解する。</h2>
+      <p class="section-intro">Libraryのテーマは「バレエから学ぶ、身体・心・生活の科学」。Exerciseで生まれた疑問を理解へつなぎ、次のPracticeへ戻します。</p>
+      <div class="info-grid five">
+        <article class="info-card accent-gold"><h3 class="info-card-title">BODY SCIENCE</h3><p class="info-card-text">Anatomy / Kinesiology / Biomechanics / Posture / Alignment / Mobility / Strength</p></article>
+        <article class="info-card accent-gold"><h3 class="info-card-title">NUTRITION</h3><p class="info-card-text">Energy / Protein / Carbohydrate / Hydration / Recovery Nutrition</p></article>
+        <article class="info-card accent-dance"><h3 class="info-card-title">RECOVERY</h3><p class="info-card-text">Sleep / Fatigue / Rest / Body Care</p></article>
+        <article class="info-card accent-ai"><h3 class="info-card-title">MIND</h3><p class="info-card-text">Motivation / Concentration / Anxiety / Self-efficacy / Habit Formation</p></article>
+        <article class="info-card accent-ballet"><h3 class="info-card-title">LIFESTYLE</h3><p class="info-card-text">Dancer Routine / Body Management / Self Management / Preparation / Daily Habits</p></article>
+      </div>
+
+      <h3 class="subsection-title">Content Graph</h3>
+      <div class="content-graph" aria-label="Content Graphの例">
+        <div class="graph-path"><div class="graph-step">Exercise</div><div class="graph-arrow">↓</div><div class="graph-step">身体の疑問</div><div class="graph-arrow">↓</div><div class="graph-step">Library</div><div class="graph-arrow">↓</div><div class="graph-step">理解</div><div class="graph-arrow">↓</div><div class="graph-step">Practice → 身体の気づき</div></div>
+        <div class="graph-path"><div class="graph-step">Fatigue</div><div class="graph-arrow">↓</div><div class="graph-step">Recovery Quest</div><div class="graph-arrow">↓</div><div class="graph-step">Sleep Article</div><div class="graph-arrow">↓</div><div class="graph-step">行動変更</div><div class="graph-arrow">↓</div><div class="graph-step">Next Condition</div></div>
+      </div>
+      <div class="highlight-box"><strong>CONTENT GRAPH</strong><br />動画・記事・Recoveryを単独で置かず、次の行動につながる文脈として設計します。</div>
+    </section>
+
+    <!-- SECTION: CARE -->
+    <section class="section" id="care">
+      <div class="section-label">10 — CARE</div>
+      <h2 class="section-title">休むことも、成長。</h2>
+      <p class="section-intro">CAREは、運動しない日の代替ではありません。回復・心の状態・生活習慣を整える行動を、正式なProgressとして扱います。</p>
+      <div class="info-grid">
+        <article class="info-card accent-dance"><span class="info-card-kicker">RECOVERY / MVP CORE</span><h3 class="info-card-title">身体を回復させる</h3><ul class="tag-list"><li>Sleep</li><li>Fatigue</li><li>Rest</li><li>Gentle Mobility</li><li>Body Care</li></ul></article>
+        <article class="info-card accent-ai"><span class="info-card-kicker">MENTAL</span><h3 class="info-card-title">行動を支える心を整える</h3><ul class="tag-list"><li>Motivation</li><li>Concentration</li><li>Pressure</li><li>Self-efficacy</li><li>Habit Formation</li></ul><p class="source-note">心理療法や精神疾患の治療を目的としません。</p></article>
+        <article class="info-card accent-ballet"><span class="info-card-kicker">LIFESTYLE</span><h3 class="info-card-title">身体を扱う生活から学ぶ</h3><p class="info-card-text">プロフェッショナルな身体表現者の実践を、理由・科学的視点・一般ユーザーへの応用に分けて紹介する。</p></article>
+      </div>
+      <div class="graph-path standalone"><div class="graph-step">Dancer Practice</div><div class="graph-arrow">↓</div><div class="graph-step">Why</div><div class="graph-arrow">↓</div><div class="graph-step">Scientific Perspective</div><div class="graph-arrow">↓</div><div class="graph-step">How General Users Can Apply It</div></div>
+      <div class="highlight-box"><strong>RECOVERY QUESTでもXPを獲得</strong><br />回復を選ぶことも、自分の状態を理解して行動したProgressです。</div>
+    </section>
+
+    <!-- SECTION: AI Coach -->
+    <section class="section" id="ai-coach">
+      <div class="section-label">11 — AI Coach</div>
+      <h2 class="section-title">BDX全体をつなぐコーチ。</h2>
+      <p class="section-intro">AI Coachはチャットボットではありません。MOVE・LEARN・CAREとユーザーの文脈をつなぎ、今日の行動を選びやすくします。</p>
+      <div class="product-grid">
+        <article class="product-card coach"><span class="product-card-label">UNDERSTAND</span><h3>理解する</h3><p>状態・目的・履歴を理解する。</p></article>
+        <article class="product-card coach"><span class="product-card-label">SELECT</span><h3>絞る</h3><p>今日の行動候補を絞る。</p></article>
+        <article class="product-card coach"><span class="product-card-label">EXPLAIN</span><h3>説明する</h3><p>なぜそのQuestなのか説明する。</p></article>
+        <article class="product-card coach"><span class="product-card-label">CONNECT</span><h3>つなぐ</h3><p>MOVE / LEARN / CAREをつなぐ。</p></article>
+        <article class="product-card coach"><span class="product-card-label">REFLECT</span><h3>振り返る</h3><p>過去の行動を振り返る。</p></article>
+        <article class="product-card coach"><span class="product-card-label">ADAPT</span><h3>反映する</h3><p>結果を次の提案へ反映する。</p></article>
+      </div>
+
+      <h3 class="subsection-title">AI Context</h3>
+      <div class="ai-context" aria-label="AI ContextからToday’s Questまでの流れ">
+        <div class="context-cloud"><span class="context-chip">Profile</span><span class="context-chip">Goals</span><span class="context-chip">Onboarding</span><span class="context-chip">Today’s Condition</span><span class="context-chip">Exercise History</span><span class="context-chip">Learning History</span><span class="context-chip">Recovery History</span><span class="context-chip">Quest History</span><span class="context-chip">Progress</span><span class="context-chip">Chat Context</span></div>
+        <div class="ai-core">AI Coach</div>
+        <div class="ai-output">Today’s Quest</div>
+      </div>
+
+      <h3 class="subsection-title">AIの役割と限界</h3>
+      <div class="two-column">
+        <article class="info-card accent-ai"><h3 class="info-card-title">AIがすること</h3><ul class="list"><li>行動候補を整理</li><li>Today’s Questを提案</li><li>理由を説明</li><li>Libraryを紹介</li><li>振り返りを支援</li><li>過去の履歴を次に生かす</li></ul></article>
+        <article class="info-card"><h3 class="info-card-title">AIがしないこと</h3><ul class="list"><li>医療診断</li><li>疾患治療</li><li>痛みの原因断定</li><li>摂食・体重管理の強制</li><li>ユーザー意思の代替</li><li>安全性の保証</li></ul></article>
+      </div>
+      <div class="disclaimer">必要に応じて医療機関や適切な専門家への相談を案内します。AIの提案には個人差があり、安全性を保証するものではありません。</div>
+    </section>
+
+    <!-- SECTION: Progress -->
+    <section class="section" id="progress">
+      <div class="section-label">12 — Progress System</div>
+      <h2 class="section-title">自分の成長を見えるようにする。</h2>
+      <p class="section-intro">Progressは他人と競うためではなく、動く・学ぶ・休むという自分の経験を振り返るための仕組みです。</p>
+      <div class="progress-grid">
+        <article class="progress-item"><strong>Quest</strong><p>今日の行動。Exercise・Learning・Recoveryのどれも含む。</p></article>
+        <article class="progress-item"><strong>XP</strong><p>行動と経験の積み重ね。長時間運動ほど高得点にはしない。</p></article>
+        <article class="progress-item"><strong>Level</strong><p>他人より優れていることではなく、BDXで積み重ねた経験。</p></article>
+        <article class="progress-item"><strong>Achievement</strong><p>初めての行動や継続の節目を記録する。</p></article>
+      </div>
+      <h3 class="subsection-title">Achievement Examples</h3>
+      <ul class="tag-list"><li>First Quest</li><li>First Exercise</li><li>First Recovery</li><li>10 Quests</li><li>7 Active Days</li><li>First Dance</li><li>10 Library Contents</li></ul>
+      <div class="safety-box">
+        <h3>成長を競争にしない。</h3>
+        <div class="two-column"><ul class="list"><li>長時間Exerciseほど高XPにしない</li><li>消費カロリーや体重減少を競わない</li><li>休むとStreakが消える設計にしない</li></ul><ul class="list"><li>運動量ランキングを中心にしない</li><li>過剰なExerciseを誘導しない</li><li>Recovery QuestでもXPを獲得できる</li></ul></div>
+      </div>
+      <h3 class="subsection-title">Future Skill Dimensions</h3>
+      <span class="future-badge">FUTURE / NOT MVP</span>
+      <ul class="tag-list"><li>BODY</li><li>BALLET</li><li>RHYTHM</li><li>EXPRESSION</li><li>KNOWLEDGE</li><li>MIND</li><li>RECOVERY</li></ul>
+      <!-- TODO: Community timing -->
+      <h3 class="subsection-title">COMMUNITY</h3>
+      <span class="future-badge">FUTURE / LATER PHASE</span>
+      <p class="section-intro">一緒に競うより、一緒に挑戦する。Weekly Challenge、Monthly Dance Challenge、Team、Learning、Recovery、Sharing、Optional Rankingを候補とします。</p>
+    </section>
+
+    <!-- SECTION: Scientific Foundation -->
+    <section class="section" id="science">
+      <!-- TODO: Scientific expert review policy -->
+      <div class="section-label">13 — Scientific Foundation</div>
+      <h2 class="section-title">科学を、断定ではなく判断材料として使う。</h2>
+      <p class="section-intro">BDXは科学的知識を権威づけに使わず、ユーザーが自分の状態と行動を考えるための材料として編集します。</p>
+      <ul class="tag-list"><li>Anatomy</li><li>Kinesiology</li><li>Biomechanics</li><li>Exercise Science</li><li>Nutrition</li><li>Sleep Science</li><li>Psychology</li><li>Recovery</li><li>Dance Science</li><li>Habit Formation</li></ul>
+      <h3 class="subsection-title">Scientific Content Policy</h3>
+      <div class="info-grid four">
+        <article class="info-card"><h3 class="info-card-title">断定しない</h3><p class="info-card-text">論文にないことを断定せず、因果と相関を分ける。</p></article>
+        <article class="info-card"><h3 class="info-card-title">条件を示す</h3><p class="info-card-text">対象者、研究条件、適用範囲を明記する。</p></article>
+        <article class="info-card"><h3 class="info-card-title">限界を示す</h3><p class="info-card-text">研究の限界と、個人差があることを伝える。</p></article>
+        <article class="info-card"><h3 class="info-card-title">提案を分ける</h3><p class="info-card-text">研究結果とBDXの解釈・実践提案を視覚的に分離する。</p></article>
+      </div>
+      <div class="status-row" aria-label="Evidence Classification">
+        <span class="status-badge status-evidence">FACT</span>
+        <span class="evidence-badge">EVIDENCE</span>
+        <span class="status-badge status-practice">EXPERT PRACTICE</span>
+        <span class="status-badge status-hypothesis">BDX INTERPRETATION</span>
+        <span class="hypothesis-badge">BDX HYPOTHESIS</span>
+      </div>
+      <div class="highlight-box"><strong>編集原則</strong><br />専門用語を説明し、出典を明示し、研究結果とBDXの提案を混同しません。</div>
+    </section>
+
+    <!-- SECTION: Product Experience -->
+    <section class="section" id="product-experience">
+      <div class="section-label">14 — Product Experience</div>
+      <h2 class="section-title">一つの体験として使えるプロダクト。</h2>
+      <p class="section-intro">画面を移動するたびに文脈が切れるのではなく、Condition・Quest・Practice・Progressが同じ流れの中でつながります。</p>
+      <div class="screen-grid">
+        <article class="screen-card"><strong>HOME</strong><p>Today’s Condition<br />Today’s Quest<br />Progress</p></article>
+        <article class="screen-card"><strong>MOVE</strong><p>Ballet Exercise<br />Ballet<br />Dance</p></article>
+        <article class="screen-card"><strong>LEARN</strong><p>Library<br />Scientific Content</p></article>
+        <article class="screen-card"><strong>CARE</strong><p>Recovery<br />Mental<br />Lifestyle</p></article>
+        <article class="screen-card"><strong>COACH</strong><p>AI Coach<br />Reason<br />Reflection</p></article>
+        <article class="screen-card"><strong>PROGRESS</strong><p>XP<br />Level<br />Achievement<br />History</p></article>
+        <article class="screen-card"><span class="future-badge">COMING LATER</span><strong>COMMUNITY</strong><p>Challenge<br />Team<br />Sharing</p></article>
+      </div>
+      <div class="concept-equation">Condition → Quest → MOVE / LEARN / CARE → Record → Progress → Next Quest</div>
     </section>
 
     <!-- SECTION: Why Ballet -->
     <section class="section" id="why-ballet">
-      <div class="section-label">04 — Why Ballet</div>
-      <h2 class="section-title">なぜバレエなのか？</h2>
-      <p class="section-intro">バレエを習得するためではなく、姿勢、重心、バランス、動作の精度を扱う身体メソッドを、一般ユーザーの体調管理へ応用するためです。</p>
+      <div class="section-label">15 — Why Ballet</div>
+      <h2 class="section-title">なぜ、バレエなのか。</h2>
+      <p class="section-intro">バレエは他の運動より優れているからではなく、身体との向き合い方を日常へ応用できるから、BDXの軸になります。</p>
       <div class="info-grid">
-        <article class="info-card accent-ballet">
-          <span class="info-card-kicker">01</span>
-          <h3 class="info-card-title">身体を細かくコントロールする</h3>
-          <p class="info-card-text">バレエでは、姿勢、重心、関節の位置、動作の方向などを意識しながら身体を動かす。BDXでは、この身体認識の考え方を初心者向けに再設計する。</p>
-        </article>
-        <article class="info-card accent-ballet">
-          <span class="info-card-kicker">02</span>
-          <h3 class="info-card-title">しなやかさと強さを同時に扱う</h3>
-          <p class="info-card-text">柔軟性だけ、筋力だけではなく、可動性、安定性、バランス、動作の精度を組み合わせて身体を使う。</p>
-        </article>
-        <article class="info-card accent-ballet">
-          <span class="info-card-kicker">03</span>
-          <h3 class="info-card-title">日常動作にもつながる基礎を育てる</h3>
-          <p class="info-card-text">立つ、支える、伸びる、重心を移すといった基本動作を丁寧に扱い、身体をコントロールする感覚を育てる。</p>
-        </article>
+        <article class="info-card accent-ballet"><span class="info-card-kicker">01</span><h3 class="info-card-title">身体への意識</h3><p class="info-card-text">姿勢、重心、アライメント、身体の位置などを意識する文化。</p></article>
+        <article class="info-card accent-ballet"><span class="info-card-kicker">02</span><h3 class="info-card-title">しなやかさと強さ</h3><p class="info-card-text">可動性・安定性・バランス・身体操作を組み合わせる。</p></article>
+        <article class="info-card accent-ballet"><span class="info-card-kicker">03</span><h3 class="info-card-title">美しさと表現</h3><p class="info-card-text">身体能力だけではなく、動きそのものの質を大切にする。</p></article>
       </div>
-      <div class="highlight-box">BDXはバレエの技術習得を目的とするのではなく、バレエに含まれる身体の使い方を、一般ユーザー向けフィットネスへ翻訳します。</div>
+      <div class="highlight-box">BDXは、バレエそのものを全員に習わせるのではなく、バレエに含まれる身体との向き合い方を一般ユーザー向けに翻訳します。</div>
     </section>
 
-    <!-- SECTION: AI Features -->
-    <section class="section" id="ai-features">
-      <div class="section-label">05 — AI Features</div>
-      <h2 class="section-title">AIの機能</h2>
-      <p class="section-intro">AIはトレーナーの代わりではありません。ユーザーの状態、行動履歴、BDXの専門コンテンツをつなぎ、今日実行できる選択肢を整理する機能です。</p>
-      <div class="info-grid four">
-        <article class="info-card accent-ai"><span class="info-card-kicker">01</span><h3 class="info-card-title">今日の状態を確認する</h3><p class="info-card-text">睡眠、疲労、痛み、気分、使える時間などを短時間で記録する。</p></article>
-        <article class="info-card accent-ai"><span class="info-card-kicker">02</span><h3 class="info-card-title">実行可能なメニューを選ぶ</h3><p class="info-card-text">理想的なメニューではなく、今日の状態で実行しやすい内容を提案する。</p></article>
-        <article class="info-card accent-ai"><span class="info-card-kicker">03</span><h3 class="info-card-title">行動を記録する</h3><p class="info-card-text">実施内容、感想、負荷、体調変化を蓄積する。</p></article>
-        <article class="info-card accent-ai"><span class="info-card-kicker">04</span><h3 class="info-card-title">次の提案へ反映する</h3><p class="info-card-text">過去の履歴を使い、次回の提案や声かけを調整する。</p></article>
-      </div>
-      <h3 class="subsection-title">提案の仕組み</h3>
-      <div class="architecture">
-        <article class="architecture-stage"><strong>1. User Input</strong><ul><li>目的・運動経験</li><li>使える時間</li><li>睡眠・疲労・気分</li><li>痛み・違和感</li><li>行動履歴</li></ul></article>
-        <article class="architecture-stage"><strong>2. BDX Knowledge</strong><ul><li>監修コンテンツ</li><li>ワークアウト情報</li><li>難易度・所要時間</li><li>禁忌・注意事項</li></ul></article>
-        <article class="architecture-stage"><strong>3. Recommendation</strong><ul><li>目的と当日の状態</li><li>過去の実施状況</li><li>安全上の制約</li><li>継続可能性</li></ul></article>
-        <article class="architecture-stage"><strong>4. Output</strong><ul><li>今日の提案と理由</li><li>代替メニュー</li><li>注意事項</li><li>振り返り質問</li></ul></article>
-      </div>
-      <h3 class="subsection-title">安全設計</h3>
-      <div class="info-grid four">
-        <article class="info-card"><h3 class="info-card-title">中止を案内する</h3><p class="info-card-text">痛みや傷害が疑われる場合は、運動の中止と専門家への相談を案内する。</p></article>
-        <article class="info-card"><h3 class="info-card-title">医療判断を行わない</h3><p class="info-card-text">診断や治療方針を決定せず、必要に応じて医療機関の受診を案内する。</p></article>
-        <article class="info-card"><h3 class="info-card-title">選択を強制しない</h3><p class="info-card-text">提案は変更・拒否でき、高負荷の運動を自動的に推奨しない。</p></article>
-        <article class="info-card"><h3 class="info-card-title">理由を説明する</h3><p class="info-card-text">提案理由と注意事項を、可能な範囲で分かりやすく示す。</p></article>
-      </div>
-      <div class="disclaimer">AIは医療診断、治療、痛みや傷害の安全性保証、専門家による個別評価やオンラインLive指導を代替しません。</div>
+    <!-- SECTION: Why Dance -->
+    <section class="section" id="why-dance">
+      <div class="section-label">16 — Why Dance</div>
+      <h2 class="section-title">Danceは、「使う・楽しむ」を担当する。</h2>
+      <span class="hypothesis-badge">BDX HYPOTHESIS</span>
+      <p class="section-intro">Ballet ExerciseやBalletで身体を整え、Danceでその身体を使って楽しむ。DanceはBDXにおける継続動機の重要な仮説です。</p>
+      <ul class="tag-list"><li>Music</li><li>Rhythm</li><li>Expression</li><li>Joy</li><li>Achievement</li><li>Community</li><li>Challenge</li></ul>
+      <div class="large-quote"><div class="large-quote-label">ROLE OF DANCE</div><p>整えた身体を、音楽と表現の中で使う。<br />正しく動くことだけでなく、動くことそのものを楽しめる体験へ。</p></div>
     </section>
 
     <!-- SECTION: Competitive Position -->
-    <section class="section" id="position">
-      <div class="section-label">06 — Competitive Position</div>
-      <h2 class="section-title">ポジショニング</h2>
-      <div class="comparison-wrap" role="region" aria-label="サービス構造の比較表" tabindex="0">
+    <section class="section" id="competitive-position">
+      <div class="section-label">17 — Competitive Position</div>
+      <h2 class="section-title">BDXらしさは、文脈をつなぐこと。</h2>
+      <div class="comparison-wrap" role="region" aria-label="一般的なサービスカテゴリー比較" tabindex="0">
         <table class="comparison-table">
-          <thead><tr><th scope="col">項目</th><th scope="col">BDX</th><th scope="col">動画配信</th><th scope="col">一般的なジム</th><th scope="col">バレエ教室</th></tr></thead>
+          <thead><tr><th scope="col">項目</th><th scope="col">BDX</th><th scope="col">Workout App</th><th scope="col">Online Ballet</th><th scope="col">Wellness App</th></tr></thead>
           <tbody>
-            <tr><td>自宅で利用</td><td>○</td><td>○</td><td>△</td><td>△</td></tr>
-            <tr><td>短時間対応</td><td>○</td><td>○</td><td>△</td><td>△</td></tr>
-            <tr><td>バレエ由来の身体メソッド</td><td>○</td><td>△</td><td>△</td><td>○</td></tr>
-            <tr><td>ダンスの楽しさ</td><td>○</td><td>○</td><td>△</td><td>○</td></tr>
-            <tr><td>日々の状態に応じた提案</td><td>○</td><td>×〜△</td><td>△</td><td>△</td></tr>
-            <tr><td>行動ログと振り返り</td><td>○</td><td>△</td><td>△</td><td>×〜△</td></tr>
-            <tr><td>AIによる継続支援</td><td>○</td><td>×〜△</td><td>×〜△</td><td>×</td></tr>
-            <tr><td>専門家によるLive指導</td><td>検討中</td><td>×〜△</td><td>△</td><td>△</td></tr>
+            <tr><td>Ballet Identity</td><td>◎</td><td>△</td><td>◎</td><td>×</td></tr>
+            <tr><td>Exercise</td><td>◎</td><td>◎</td><td>◎</td><td>△</td></tr>
+            <tr><td>Learning</td><td>◎</td><td>△</td><td>◎</td><td>△</td></tr>
+            <tr><td>Recovery</td><td>◎</td><td>△</td><td>△</td><td>◎</td></tr>
+            <tr><td>Daily Quest</td><td>◎</td><td>△</td><td>×〜△</td><td>△</td></tr>
+            <tr><td>AI Context</td><td>◎</td><td>△</td><td>△</td><td>○</td></tr>
+            <tr><td>Progress</td><td>◎</td><td>○</td><td>△</td><td>○</td></tr>
+            <tr><td>Dance</td><td>○</td><td>○</td><td>△</td><td>×〜△</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="source-note">比較は一般的なサービス構造を整理したものであり、個別事業者のすべての機能を示すものではありません。</p>
-      <div class="highlight-box">専門家によるオンラインLive指導は、フォーム確認や個別相談を補う機能として検討しています。</div>
-      <div class="highlight-box">BDXは、動画コンテンツ、身体メソッド、行動記録、AI支援を一つの体験として統合することを目指します。</div>
+      <p class="source-note">絶対的な優劣ではなく、一般的なサービスカテゴリーの構造を整理した比較です。個別サービスの機能は異なります。</p>
+      <h3 class="subsection-title">BDXの差別化</h3>
+      <div class="graph-path" aria-label="BDXの差別化要素">
+        <div class="graph-step">Ballet Brand</div><div class="graph-arrow">＋</div>
+        <div class="graph-step">Expert Content</div><div class="graph-arrow">＋</div>
+        <div class="graph-step">Scientific Editorial System</div><div class="graph-arrow">＋</div>
+        <div class="graph-step">Content Graph</div><div class="graph-arrow">＋</div>
+        <div class="graph-step">User Context</div><div class="graph-arrow">＋</div>
+        <div class="graph-step">AI Coach</div><div class="graph-arrow">＋</div>
+        <div class="graph-step">Progress</div><div class="graph-arrow">＋ FUTURE</div>
+        <div class="graph-step">Community</div>
+      </div>
+      <div class="highlight-box">BDXの競争優位は単一機能ではなく、バレエを軸に身体・学習・回復の文脈を継続的につなげることから生まれます。</div>
     </section>
 
-    <!-- SECTION: Market Opportunity -->
-    <section class="section" id="market">
-      <div class="section-label">07 — Market Opportunity</div>
-      <h2 class="section-title">市場機会</h2>
-      <p class="section-intro">BDXは、オンラインフィットネス、ダンス・バレエ、ウェルネス、AIパーソナライゼーションが重なる領域で、日常的なコンディション改善を支援します。</p>
-      <h3 class="subsection-title">参入領域</h3>
+    <!-- SECTION: MVP -->
+    <section class="section" id="mvp">
+      <!-- TODO: MVP KPI targets -->
+      <!-- TODO: Pricing validation -->
+      <div class="section-label">18 — MVP</div>
+      <h2 class="section-title">最初から全部は作らない。</h2>
+      <p class="section-intro">BDX v2.0の最初の目的は、全機能を完成させることではなく、Core Loopにユーザー価値があるかを検証することです。</p>
+      <div class="mvp-grid">
+        <article class="mvp-in"><h3>MVP IN</h3><ul class="list"><li>Authentication</li><li>Onboarding</li><li>Condition</li><li>Today’s Quest</li><li>AI Recommendation</li><li>Ballet Exercise</li><li>Basic Library</li><li>Basic Recovery</li><li>Practice / Completion</li><li>XP / Level / Basic Achievement</li><li>Progress</li><li>Subscription</li></ul></article>
+        <article class="mvp-out"><h3>MVP OUT</h3><ul class="list"><li>Community / Ranking / Team</li><li>Social Feed</li><li>Full Skill Tree</li><li>Wearable</li><li>Advanced Dance Progression</li><li>Advanced CMS</li><li>Advanced Analytics</li><li>PvP</li></ul></article>
+      </div>
+      <div class="metric-hero"><span class="info-card-kicker">NORTH STAR METRIC</span><strong>Weekly Meaningful Quest Completions<br />per Active User</strong><p class="info-card-text">アクティブユーザー1人あたりの週間Meaningful Quest完了数。アプリを開いた回数ではなく、価値ある行動を積み重ねた回数を測ります。</p></div>
+      <h3 class="subsection-title">Core Metrics</h3>
+      <ul class="tag-list"><li>First Quest Completion</li><li>Quest Acceptance</li><li>Quest Completion</li><li>D7 / D30</li><li>Weekly Active Days</li><li>Free → Paid</li><li>Churn</li></ul>
+      <h3 class="subsection-title">Business Model</h3>
+      <span class="hypothesis-badge">UNDER VALIDATION</span>
       <div class="info-grid four">
-        <article class="info-card accent-ballet"><h3 class="info-card-title">オンラインフィットネス</h3><p class="info-card-text">場所や時間に縛られにくい運動体験。</p></article>
-        <article class="info-card accent-dance"><h3 class="info-card-title">ダンス・バレエ</h3><p class="info-card-text">身体の使い方と、音楽・表現を扱う領域。</p></article>
-        <article class="info-card accent-gold"><h3 class="info-card-title">ウェルネス</h3><p class="info-card-text">運動、回復、生活習慣を総合的に整える領域。</p></article>
-        <article class="info-card accent-ai"><h3 class="info-card-title">AIパーソナライゼーション</h3><p class="info-card-text">状態や履歴に応じて体験を調整する領域。</p></article>
+        <article class="info-card"><h3 class="info-card-title">Freemium</h3><p class="info-card-text">BDXのCore Loopを体験できる入口。</p></article>
+        <article class="info-card"><h3 class="info-card-title">Premium Subscription</h3><p class="info-card-text">Free + One Premium Planを有力候補として検証中。価格は未確定。</p></article>
+        <article class="info-card"><h3 class="info-card-title">Future B2B</h3><p class="info-card-text">法人ウェルビーイングへの展開候補。</p></article>
+        <article class="info-card"><h3 class="info-card-title">Studio Partnership</h3><p class="info-card-text">バレエ・ダンススタジオとの連携候補。</p></article>
       </div>
-      <h3 class="subsection-title">成長戦略</h3>
-      <div class="info-grid">
-        <article class="info-card"><span class="info-card-kicker">01 — DIRECT</span><h3 class="info-card-title">個人ユーザーから始める</h3><p class="info-card-text">自宅で短時間から使えるサブスクリプションとして提供し、継続利用される中核体験を磨く。</p></article>
-        <article class="info-card"><span class="info-card-kicker">02 — PARTNER</span><h3 class="info-card-title">専門家・スタジオと広げる</h3><p class="info-card-text">監修コンテンツ、オンラインLive指導、スタジオ連携によって専門性と接点を拡張する。</p></article>
-        <article class="info-card"><span class="info-card-kicker">03 — BUSINESS</span><h3 class="info-card-title">法人向けへ展開する</h3><p class="info-card-text">企業ウェルネス、教育プログラム、ライセンス提供へ展開し、収益源を多層化する。</p></article>
-      </div>
-      <div class="highlight-box"><strong>BDXの競争力</strong><br />専門家の知見を動画で届けるだけでなく、AIによる提案・記録・振り返りと組み合わせ、ユーザーの日常に継続的に関わります。</div>
-    </section>
-
-    <!-- SECTION: Business Model -->
-    <!-- TODO: 料金最終確認 -->
-    <!-- TODO: 収益分配条件を契約書と照合 -->
-    <section class="section" id="business-model">
-      <div class="section-label">08 — Business Model</div>
-      <h2 class="section-title">収益モデル</h2>
-
-      <h3 class="subsection-title">1. 料金プラン</h3>
-      <!-- 公開前に料金・年額割引・無料期間・自動更新条件を最終確認 -->
-      <div class="pricing-grid">
-        <article class="pricing-card">
-          <div class="pricing-plan">MAIN</div>
-          <div class="pricing-price">¥1,280<span>/月</span></div>
-          <div class="pricing-annual">年額 ¥12,800</div>
-          <ul class="list"><li>バレエプログラム全コンテンツ</li><li>AIによる提案・相談</li><li>コンディション記録</li><li>行動ログ・ライブラリ</li></ul>
-        </article>
-        <article class="pricing-card featured">
-          <div class="pricing-plan">SET</div>
-          <div class="pricing-price">¥1,980<span>/月</span></div>
-          <div class="pricing-annual">年額 ¥19,800</div>
-          <ul class="list"><li>バレエ・ダンス全コンテンツ</li><li>AIによる提案・相談</li><li>コンディション記録</li><li>行動ログ・ライブラリ</li></ul>
-        </article>
-        <article class="pricing-card">
-          <div class="pricing-plan">DANCE OPTION</div>
-          <div class="pricing-price">+¥880<span>/月</span></div>
-          <div class="pricing-annual">年額 +¥8,800</div>
-          <ul class="list"><li>ダンスプログラム全コンテンツ</li><li>メインプランへの追加オプション</li></ul>
-        </article>
-      </div>
-      <p class="source-note">全プラン1週間無料トライアル付き。料金・年額条件は、提供開始前の検証により調整する場合があります。</p>
-
-      <h3 class="subsection-title">2. 収益構造</h3>
-      <div class="revenue-flow">
-        <div class="revenue-box"><strong>売上</strong><span>個人・法人からの利用料金</span></div>
-        <div class="revenue-box"><strong>直接費用</strong><span>決済手数料・返金・税金</span></div>
-        <div class="revenue-box"><strong>事業運営費</strong><span>インフラ・制作・運営・広告</span></div>
-        <div class="revenue-box"><strong>分配対象利益</strong><span>費用控除後、契約条件に基づき分配</span></div>
-      </div>
-      <h3 class="subsection-title">3. 将来の収益源</h3>
-      <div class="info-grid four">
-        <article class="info-card"><h3 class="info-card-title">個人向け</h3><p class="info-card-text">サブスクリプション、イベント、ワークショップ。</p></article>
-        <article class="info-card"><h3 class="info-card-title">法人向け</h3><p class="info-card-text">ウェルネスプラン、教育プログラム。</p></article>
-        <article class="info-card"><h3 class="info-card-title">パートナー</h3><p class="info-card-text">バレエ・ダンススクールとの提携、専門家監修コンテンツ。</p></article>
-        <article class="info-card"><h3 class="info-card-title">ライセンス</h3><p class="info-card-text">メソッドやシステムのライセンス提供。</p></article>
-      </div>
-      <p class="source-note"><span class="status-badge status-hypothesis">将来構想</span> 現時点で確定した事業ではありません。</p>
-      <div class="highlight-box"><strong>初期の収益方針</strong><br />個人向けサブスクリプションで中核体験を検証し、専門家・スタジオ連携と法人向けサービスへ段階的に広げます。</div>
     </section>
 
     <!-- SECTION: Team -->
-    <section class="section" id="team">
-      <div class="section-label">09 — Team</div>
-      <h2 class="section-title">チームの役割</h2>
+    <section class="section" id="team-governance">
+      <!-- TODO: External supervision structure -->
+      <div class="section-label">19 — Team &amp; Governance</div>
+      <h2 class="section-title">専門性をつなぎ、境界を守る。</h2>
       <div class="team-grid">
-        <article class="team-card"><div class="team-content"><h3 class="team-name">SAT</h3><p class="team-role">プロダクト・AI・事業設計</p><ul class="list"><li>プロダクト設計</li><li>AI行動支援設計</li><li>事業戦略・マーケティング</li><li>開発・運営</li></ul><p class="team-value">専門知識、ユーザー体験、行動支援、事業モデルを一つのプロダクトへ統合する。</p></div></article>
-        <article class="team-card"><div class="team-content"><h3 class="team-name">鈴ちゃん</h3><p class="team-role">バレエメソッド監修</p><ul class="list"><li>バレエメソッド監修</li><li>動作・表現の監修</li><li>動画出演・コンテンツ監修</li></ul><p class="team-value">プロのバレエ現場で培った身体感覚と専門知識を、一般ユーザー向けに翻訳する。</p><h4 class="subsection-title">活動メリット</h4><ul class="list"><li>専門性とバレエの魅力を発信</li><li>活動・公演の認知向上</li><li>監修者としての実績形成</li><li>継続的な事業収益の可能性</li></ul></div></article>
-        <article class="team-card"><div class="team-content"><h3 class="team-name">駿瑛</h3><p class="team-role">ダンスコンテンツ監修</p><ul class="list"><li>ダンスコンテンツ監修</li><li>動画出演</li><li>表現・リズム設計</li><li>ユーザーテスト</li></ul><p class="team-value">身体の基礎を、音楽と表現を通じて楽しめる体験へ変換する。</p><h4 class="subsection-title">活動メリット</h4><ul class="list"><li>ダンス表現と専門性の発信</li><li>新しいコンテンツ開発経験</li><li>ユーザー接点の拡大</li><li>継続的な事業収益の可能性</li></ul></div></article>
+        <article class="team-card"><div class="team-content"><h3 class="team-name">SAT</h3><p class="team-role">Product / Strategy / Development</p><ul class="list"><li>Product Strategy</li><li>AI Design</li><li>Development</li><li>Business Strategy</li><li>Marketing</li><li>Overall Management</li></ul></div></article>
+        <article class="team-card"><div class="team-content"><h3 class="team-name">鈴ちゃん</h3><p class="team-role">Ballet Expert / Supervisor</p><ul class="list"><li>Ballet Method</li><li>Movement Supervision</li><li>Video</li><li>Ballet Content</li><li>Library Review within expertise</li></ul></div></article>
+        <article class="team-card"><div class="team-content"><h3 class="team-name">駿瑛</h3><p class="team-role">Dance Expert</p><ul class="list"><li>Dance Content</li><li>Choreography</li><li>Performance</li><li>User Perspective</li></ul></div></article>
       </div>
-      <div class="concept-equation team-equation">Ballet Expertise × Dance Expression × Product Design × AI Support × Behavioral Science</div>
-      <h3 class="subsection-title">チームルール</h3>
-      <div class="info-grid">
-        <article class="info-card"><span class="info-card-kicker">01</span><h3 class="info-card-title">本業優先</h3><p class="info-card-text">本業と健康を優先し、無理のない範囲で関わる。</p></article>
-        <article class="info-card"><span class="info-card-kicker">02</span><h3 class="info-card-title">撤退の自由</h3><p class="info-card-text">離脱の意思を尊重し、権利・成果物・引き継ぎは合意内容に沿って整理する。</p></article>
+      <h3 class="subsection-title">Scientific Governance</h3>
+      <span class="future-badge">FUTURE / EXTERNAL NETWORK</span>
+      <ul class="tag-list"><li>理学療法士</li><li>医師</li><li>管理栄養士</li><li>スポーツ科学研究者</li><li>心理専門職</li><li>バレエ指導者</li></ul>
+      <div class="highlight-box">BDXは「論文を読んだから専門家」という立場を取りません。専門領域に応じて外部レビューを導入します。</div>
+      <h3 class="subsection-title">Team Principles</h3>
+      <div class="product-grid">
+        <article class="product-card"><h3>本業優先</h3><p>本業と健康を優先し、無理のない範囲で関わる。</p></article>
+        <article class="product-card"><h3>撤退の自由</h3><p>離脱の意思を尊重し、権利・成果物・引き継ぎを整理する。</p></article>
+        <article class="product-card"><h3>Role Clarity</h3><p>役割・成果物・責任を明文化する。</p></article>
+        <article class="product-card"><h3>Separate Relationship and Business</h3><p>人間関係と事業判断を分ける。</p></article>
+        <article class="product-card"><h3>Experiment First</h3><p>完成前に小さく試す。</p></article>
       </div>
     </section>
 
     <!-- SECTION: Roadmap -->
     <section class="section" id="roadmap">
-      <div class="section-label">10 — Roadmap</div>
-      <h2 class="section-title">ロードマップ</h2>
+      <div class="section-label">20 — Roadmap</div>
+      <h2 class="section-title">Core Loopから、段階的に広げる。</h2>
+      <p class="section-intro">日付ではなく検証順序を基準に進めます。Phase 0 / 0.5は進行済みまたは進行中、Phase 1が次の中心です。</p>
       <div class="roadmap">
-        <article class="roadmap-item"><div class="roadmap-phase">Phase 0 — Alignment</div><h3 class="roadmap-title">チーム方針を揃える</h3><p class="roadmap-desc">目的共有、ターゲット確認、役割・権利・報酬の整理、初期プログラムの方針決定。</p></article>
-        <article class="roadmap-item"><div class="roadmap-phase">Phase 1 — Prototype</div><h3 class="roadmap-title">小さく形にする</h3><p class="roadmap-desc">初期ワークアウト・記事制作、ユーザーフローとAI提案ロジック設計、少人数テスト。</p></article>
-        <article class="roadmap-item"><div class="roadmap-phase">Phase 2 — MVP</div><h3 class="roadmap-title">中核体験を実装する</h3><p class="roadmap-desc">認証、オンボーディング、動画視聴、行動ログ、コンディション記録、AI提案、決済、管理機能。</p></article>
-        <article class="roadmap-item"><div class="roadmap-phase">Phase 3 — Beta Validation</div><h3 class="roadmap-title">利用実態を検証する</h3><p class="roadmap-desc">初期ユーザー獲得、継続率・利用頻度の確認、インタビュー、コンテンツと料金の改善。</p></article>
-        <article class="roadmap-item"><div class="roadmap-phase">Phase 4 — Launch</div><h3 class="roadmap-title">一般公開する</h3><p class="roadmap-desc">SNS・紹介による獲得、コンテンツ定期更新、利用状況の確認、カスタマーサポート。</p></article>
-        <article class="roadmap-item"><div class="roadmap-phase">Phase 5 — Scale</div><h3 class="roadmap-title">提供範囲を広げる</h3><p class="roadmap-desc">法人プラン、スタジオ提携、専門家ネットワーク、AI精度改善、新ジャンル展開。</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 0 — Foundation <span class="phase-badge current">CURRENT</span></div><h3 class="roadmap-title">安全に作れる基盤</h3><p class="roadmap-desc">Security / DB Foundation / RLS / Auth / Stripe Test Foundation / Production Reproducibility</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 0.5 — Product Definition <span class="phase-badge current">CURRENT</span></div><h3 class="roadmap-title">v2.0の定義</h3><p class="roadmap-desc">BDX v2 Concept / Core Loop / Quest / Progress / Content Model / Safety</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 1 — Core Loop MVP <span class="phase-badge next">NEXT</span></div><h3 class="roadmap-title">価値の中心を検証</h3><p class="roadmap-desc">Condition / Today’s Quest / Ballet Exercise / Basic Learn / Basic Recovery / Progress / Subscription</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 2 — Content &amp; AI <span class="phase-badge future">FUTURE</span></div><h3 class="roadmap-title">文脈と提案を深める</h3><p class="roadmap-desc">Content Graph / Scientific Library / AI Context / Recommendation Improvement / Learning Journey / Recovery Journey</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 3 — Dance &amp; Progress <span class="phase-badge future">FUTURE</span></div><h3 class="roadmap-title">楽しさと成長を広げる</h3><p class="roadmap-desc">Dance / Choreography / Achievement / Skill Dimensions / Challenges</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 4 — Community <span class="phase-badge future">FUTURE</span></div><h3 class="roadmap-title">一緒に挑戦する</h3><p class="roadmap-desc">Weekly Challenge / Monthly Dance Challenge / Sharing / Team</p></article>
+        <article class="roadmap-item"><div class="roadmap-phase">Phase 5 — Scale <span class="phase-badge future">FUTURE</span></div><h3 class="roadmap-title">提供範囲を広げる</h3><p class="roadmap-desc">Corporate / Studio Partnership / Expert Network / Advanced AI / International</p></article>
       </div>
     </section>
 
-    <!-- SECTION: Closing -->
+    <!-- SECTION: Closing Message -->
     <section class="section" id="closing">
-      <div class="section-label">11 — Vision</div>
-      <h2 class="section-title">目指す未来</h2>
+      <div class="section-label">21 — Closing Message</div>
+      <h2 class="section-title">小さくつくり、学びながら育てる。</h2>
       <div class="large-quote">
-        <div class="large-quote-label">BDX Vision</div>
-        <p>運動を続けられないことを、意志の弱さで終わらせない。<br /><br />バレエの身体メソッド、ダンスの楽しさ、AIによる個別支援を組み合わせ、一人ひとりが自分の状態を理解し、今日できる行動を選べる体験をつくります。<br /><br />個人の生活に寄り添うサービスから始め、専門家、スタジオ、企業へと価値を広げ、最高の体調をつくり続けられる社会を目指します。</p>
+        <div class="large-quote-label">MESSAGE FROM SAT</div>
+        <p>BDXは、機能を増やすためのプロジェクトではありません。<br /><br />バレエ、ダンス、科学、AI。それぞれの専門性をつなぎ、「今日の自分に合う一歩」を選びやすくする。<br /><br />そして、動くことも、学ぶことも、休むことも、自分自身の成長として積み重ねていく。<br /><br />最初から正解があるとは考えていません。小さくつくり、試し、学び、改善する。その積み重ねによって、ユーザーが自分の身体を理解し、自分で育てていけるサービスへBDXを成長させます。</p>
       </div>
-      <p class="brand-message">フィットネス動画ではなく、<br />自分に合う行動を選び、続けられる仕組みをつくる。</p>
+      <p class="brand-message">バレエから、身体を知り、自分を育てる。</p>
+      <p class="closing-copy">今日の自分に合う、一歩がわかる。</p>
+      <p class="source-note center">バレエを習わなくていい。バレエで変わればいい。</p>
+    </section>
+
+    <section class="legacy-section" id="appendix">
+      <div class="section-label">Appendix — Legacy / Needs Update</div>
+      <h2 class="section-title">旧仮説の記録</h2>
+      <p class="section-intro">以下はBDX v1.0時点の仮説です。現行計画や確定情報ではなく、検証・更新が必要な参考記録として保持します。</p>
+      <div class="legacy-grid">
+        <article class="legacy-card"><span class="hypothesis-badge">PREVIOUS HYPOTHESIS / UNDER REVIEW</span><h3>Previous Pricing Hypothesis</h3><ul><li>MAIN：月額 ¥1,280 / 年額 ¥12,800</li><li>SET：月額 ¥1,980 / 年額 ¥19,800</li><li>DANCE OPTION：月額 +¥880 / 年額 +¥8,800</li></ul><p>v2.0ではFree + One Premium Planを有力候補として検証中。Premium価格は未確定。</p></article>
+        <article class="legacy-card"><span class="future-badge">LEGACY / NEEDS UPDATE</span><h3>Previous Financial Forecast</h3><ul><li>平均有料会員：1年目200〜500名</li><li>2年目800〜2,000名</li><li>3年目2,000〜5,000名</li><li>旧ARPU仮説：月額 ¥1,500〜¥1,700</li><li>旧年間売上試算：約360万円〜約1.02億円</li></ul><p>前提・費用・転換率が未確定のため、現行計画には使用しません。</p></article>
+        <article class="legacy-card"><span class="future-badge">LEGACY / NEEDS VERIFICATION</span><h3>Previous Market Data</h3><ul><li>ダンス教室市場：2,245億円</li><li>バレエパフォーマンス市場：CAGR 16.8%</li><li>国内バレエ学習人口：約40万人</li><li>AI×フィットネス市場：高成長という旧仮説</li></ul><p>出典・市場定義・調査年を再確認するまで、BDXの市場根拠として使用しません。</p></article>
+      </div>
     </section>
 
     <footer class="doc-footer">
       <div class="doc-footer-logo"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
       <p>Nature Consulting / 複業.Lab — 2026</p>
-      <p>BDX Business Plan — Ver. 1.0</p>
+      <p>BDX Project Overview — Ver. 2.0</p>
     </footer>
   </main>
 </body>
