@@ -100,7 +100,7 @@
       max-width: 920px;
       color: var(--ivory);
       font-family: var(--display);
-      font-size: 58px;
+      font-size: 54px;
       font-weight: 500;
       line-height: 1.25;
       letter-spacing: 0;
@@ -110,7 +110,7 @@
     .display-en {
       color: var(--ivory);
       font-family: var(--serif);
-      font-size: 74px;
+      font-size: 66px;
       font-weight: 600;
       line-height: 0.95;
       letter-spacing: 0;
@@ -211,7 +211,7 @@
     .hero h1 {
       margin-bottom: 26px;
       font-family: var(--display);
-      font-size: 72px;
+      font-size: 64px;
       font-weight: 500;
       line-height: 1.2;
       letter-spacing: 0;
@@ -461,7 +461,7 @@
       max-width: 990px;
       margin: 0 auto;
       font-family: var(--serif);
-      font-size: 82px;
+      font-size: 68px;
       font-weight: 600;
       line-height: 1.2;
       letter-spacing: 0;
@@ -743,7 +743,104 @@
       text-align: center;
     }
 
-    /* 08 — A Day with BDX */
+    /* 08 — Product Experience */
+    .product {
+      background: var(--ivory);
+      color: var(--ink);
+    }
+
+    .product .display-heading {
+      color: var(--ink);
+    }
+
+    .product .lead {
+      color: #5c5960;
+    }
+
+    .product-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 64px;
+      border-top: 1px solid rgba(9, 9, 12, 0.2);
+      border-left: 1px solid rgba(9, 9, 12, 0.2);
+    }
+
+    .feature-item {
+      display: flex;
+      min-height: 270px;
+      padding: 28px 26px;
+      border-right: 1px solid rgba(9, 9, 12, 0.2);
+      border-bottom: 1px solid rgba(9, 9, 12, 0.2);
+      flex-direction: column;
+    }
+
+    .feature-number {
+      color: #8a744a;
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .feature-item h3 {
+      margin: 46px 0 13px;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .feature-item p {
+      color: #5d585f;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .feature-value {
+      margin-top: auto;
+      padding-top: 22px;
+      color: #a44f63;
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .product-outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 54px;
+      border-top: 1px solid rgba(9, 9, 12, 0.2);
+      border-bottom: 1px solid rgba(9, 9, 12, 0.2);
+    }
+
+    .product-outcome {
+      padding: 24px 26px;
+      border-right: 1px solid rgba(9, 9, 12, 0.18);
+    }
+
+    .product-outcome:last-child {
+      border-right: 0;
+    }
+
+    .product-outcome strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .product-outcome span {
+      color: #686268;
+      font-size: 11px;
+    }
+
+    /* 09 — A Day with BDX */
     .day {
       background: var(--paper);
       color: var(--ink);
@@ -1222,15 +1319,15 @@
       }
 
       .display-heading {
-        font-size: 48px;
+        font-size: 44px;
       }
 
       .display-en {
-        font-size: 60px;
+        font-size: 52px;
       }
 
       .hero h1 {
-        font-size: 60px;
+        font-size: 52px;
       }
 
       .origin-layout,
@@ -1269,6 +1366,10 @@
         border-bottom: 1px solid var(--line);
       }
 
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .evidence-flow {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -1292,11 +1393,11 @@
       }
 
       .display-heading {
-        font-size: 36px;
+        font-size: 34px;
       }
 
       .display-en {
-        font-size: 48px;
+        font-size: 42px;
         line-height: 1;
       }
 
@@ -1330,7 +1431,7 @@
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 42px;
       }
 
       .motion-words {
@@ -1352,6 +1453,7 @@
       .day-grid,
       .science-heading-row,
       .more-head,
+      .product-head,
       .science-example {
         grid-template-columns: 1fr;
       }
@@ -1360,7 +1462,8 @@
       .behind-layout,
       .day-grid,
       .science-heading-row,
-      .more-head {
+      .more-head,
+      .product-head {
         gap: 48px;
       }
 
@@ -1374,7 +1477,7 @@
       }
 
       .what-if-question {
-        font-size: 54px;
+        font-size: 44px;
       }
 
       .brand-reveal {
@@ -1509,7 +1612,7 @@
       }
     }
 
-    @media (max-width: 390px) {
+    @media (max-width: 430px) {
       body {
         font-size: 14px;
       }
@@ -1523,11 +1626,12 @@
       }
 
       .display-heading {
-        font-size: 31px;
+        font-size: 29px;
       }
 
       .display-en {
-        font-size: 39px;
+        font-size: 34px;
+        line-height: 1.12;
       }
 
       .section-index {
@@ -1539,7 +1643,8 @@
       }
 
       .hero h1 {
-        font-size: 39px;
+        font-size: 34px;
+        line-height: 1.28;
       }
 
       .hero-note {
@@ -1573,7 +1678,7 @@
       }
 
       .behind-copy .display-heading {
-        font-size: 31px;
+        font-size: 29px;
       }
 
       .practice-word {
@@ -1581,7 +1686,8 @@
       }
 
       .what-if-question {
-        font-size: 43px;
+        font-size: 35px;
+        line-height: 1.32;
       }
 
       .brand-reveal {
@@ -1589,7 +1695,7 @@
       }
 
       .brand-promise {
-        font-size: 31px;
+        font-size: 29px;
       }
 
       .method-node.core h3 {
@@ -1604,6 +1710,35 @@
       .more-message,
       .science-equation {
         font-size: 29px;
+      }
+
+      .feature-grid,
+      .product-outcomes {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-item {
+        min-height: auto;
+        padding: 25px 20px;
+      }
+
+      .feature-item h3 {
+        margin-top: 30px;
+        font-size: 20px;
+      }
+
+      .feature-value {
+        margin-top: 18px;
+        padding-top: 0;
+      }
+
+      .product-outcome {
+        border-right: 0;
+        border-bottom: 1px solid rgba(9, 9, 12, 0.18);
+      }
+
+      .product-outcome:last-child {
+        border-bottom: 0;
       }
 
       .phone-screen {
@@ -1852,11 +1987,65 @@
       <p class="frame more-message reveal">身体をつくるのは、<br />トレーニングの時間だけじゃない。</p>
     </section>
 
-    <!-- SECTION 08: A DAY WITH BDX -->
+    <!-- SECTION 08: PRODUCT EXPERIENCE -->
+    <section class="story-section product" aria-labelledby="product-title">
+      <div class="frame product-head reveal">
+        <div>
+          <div class="section-index">08 — プロダクトの中心機能</div>
+          <h2 class="display-heading" id="product-title">今日の一歩に、<br />迷わない。</h2>
+        </div>
+        <p class="lead">BDXは、その日の状態を起点に、動く・学ぶ・整えるをひとつの流れにつなぎます。</p>
+      </div>
+      <div class="frame feature-grid reveal" aria-label="BDXの中心機能">
+        <article class="feature-item">
+          <span class="feature-number">01 / 状態確認</span>
+          <h3>今の自分を知る</h3>
+          <p>睡眠・疲労・気分・身体の違和感・使える時間から、必要な項目だけを短く確認します。</p>
+          <span class="feature-value">入力の負担を小さく</span>
+        </article>
+        <article class="feature-item">
+          <span class="feature-number">02 / 今日のクエスト</span>
+          <h3>今日の一歩が分かる</h3>
+          <p>AIが状態・目的・過去の履歴から、運動・学習・回復の中で取り組みやすい行動を提案します。</p>
+          <span class="feature-value">理由と所要時間も表示</span>
+        </article>
+        <article class="feature-item">
+          <span class="feature-number">03 / 動く</span>
+          <h3>身体を実践で育てる</h3>
+          <p>初心者向けのバレエエクササイズから、バレエ・ダンスまで。姿勢やバランス、身体操作を実践します。</p>
+          <span class="feature-value">自宅で、自分のペースで</span>
+        </article>
+        <article class="feature-item">
+          <span class="feature-number">04 / 学ぶ</span>
+          <h3>身体の理由が分かる</h3>
+          <p>身体・栄養・睡眠・回復・心を、科学的根拠と専門家の実践知から学べるライブラリです。</p>
+          <span class="feature-value">知識を次の行動へ</span>
+        </article>
+        <article class="feature-item">
+          <span class="feature-number">05 / 整える</span>
+          <h3>休むことも前進にする</h3>
+          <p>疲労が強い日は回復を提案。運動しない日も失敗にせず、その日に必要な選択として扱います。</p>
+          <span class="feature-value">回復も成長として記録</span>
+        </article>
+        <article class="feature-item">
+          <span class="feature-number">06 / 振り返る</span>
+          <h3>小さな成長が見える</h3>
+          <p>クエストの完了履歴、経験値、レベル、達成記録から、自分が積み重ねてきた行動を振り返れます。</p>
+          <span class="feature-value">競う相手は昨日までの自分</span>
+        </article>
+      </div>
+      <div class="frame product-outcomes reveal" aria-label="BDXが提供する3つの価値">
+        <div class="product-outcome"><strong>迷わない。</strong><span>今日の一歩を絞る。</span></div>
+        <div class="product-outcome"><strong>つながる。</strong><span>運動・学習・回復がひとつになる。</span></div>
+        <div class="product-outcome"><strong>続けられる。</strong><span>休む日も成長として残る。</span></div>
+      </div>
+    </section>
+
+    <!-- SECTION 09: A DAY WITH BDX -->
     <section class="story-section day" aria-labelledby="day-title">
       <div class="frame day-grid">
         <div class="reveal">
-          <div class="section-index">08 — BDXのある一日</div>
+          <div class="section-index">09 — BDXのある一日</div>
           <h2 class="display-en" id="day-title">いつもではなく、<br />今日に合わせる。</h2>
           <p class="day-intro">最高の体調は、常に最高出力でいることではない。その日の状態を理解し、その日に合う行動を選べること。</p>
           <div class="day-timeline">
@@ -1888,11 +2077,11 @@
       </div>
     </section>
 
-    <!-- SECTION 09: PROFESSIONAL PRACTICE × SCIENCE -->
+    <!-- SECTION 10: PROFESSIONAL PRACTICE × SCIENCE -->
     <section class="story-section science" aria-labelledby="science-title">
       <div class="frame science-heading-row reveal">
         <div>
-          <div class="section-index">09 — 実践知 × 科学</div>
+          <div class="section-index">10 — 実践知 × 科学</div>
           <h2 class="display-heading" id="science-title">プロの知恵を、<br />そのまま真似しない。</h2>
         </div>
         <p class="lead">実践知を科学で確かめ、言えることと言えないことを分けて、一般ユーザーの行動へ落とし込みます。</p>
@@ -1921,10 +2110,10 @@
       <p class="frame safety-note reveal">プロの実践と科学的根拠を分け、因果と相関、研究対象と条件、限界を明記します。栄養・心理・けがは専門領域を尊重し、医療診断、過剰な運動、摂食障害につながる表現を避けます。</p>
     </section>
 
-    <!-- SECTION 10: GROW & ENJOY -->
+    <!-- SECTION 11: GROW & ENJOY -->
     <section class="story-section grow" aria-labelledby="grow-title">
       <div class="frame reveal">
-        <div class="section-index">10 — 育てる × 楽しむ</div>
+        <div class="section-index">11 — 育てる × 楽しむ</div>
         <h2 class="display-heading" id="grow-title">身体を育てることを、<br />もっと楽しく。</h2>
         <div class="progress-strip" aria-label="BDXの成長記録">
           <div class="progress-item"><strong>クエスト</strong><p>今日の一歩。</p></div>
@@ -1943,10 +2132,10 @@
       </figure>
     </section>
 
-    <!-- SECTION 11: THE FUTURE OF BDX -->
+    <!-- SECTION 12: THE FUTURE OF BDX -->
     <section class="story-section future" aria-labelledby="future-title">
       <div class="frame reveal">
-        <div class="section-index">11 — BDXの未来</div>
+        <div class="section-index">12 — BDXの未来</div>
         <h2 class="display-en" id="future-title">つくる。<br />合わせる。<br />ともに育つ。</h2>
       </div>
       <div class="frame future-phases reveal">
