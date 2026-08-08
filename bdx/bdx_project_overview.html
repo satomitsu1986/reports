@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BDXは、バレエの身体メソッドを一般ユーザーの日常へ落とし込み、AIとダンスで最高の体調を支えるプロジェクトです。" />
-  <title>BDX Project Overview v3.0</title>
+  <title>BDX | 最高の体調を、日常に。</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,18 +12,22 @@
   <script>document.documentElement.classList.add('js');</script>
   <style>
     :root {
-      --ink: #09090c;
-      --charcoal: #111116;
-      --panel: #17171d;
+      --ink: #0b0910;
+      --charcoal: #17131d;
+      --panel: #211a2b;
       --line: rgba(244, 240, 232, 0.18);
-      --ivory: #f1eee6;
-      --paper: #e7e1d6;
-      --muted: #a8a5ad;
-      --rose: #db6b83;
-      --blue: #7898c8;
-      --mint: #70b69a;
-      --gold: #c5a76c;
-      --danger: #d38b8b;
+      --ivory: #fffaf2;
+      --paper: #fff2c9;
+      --muted: #b7b0bd;
+      --rose: #ff6f91;
+      --blue: #79a9ff;
+      --mint: #65d9b3;
+      --gold: #f4bd4f;
+      --violet: #ad8cff;
+      --coral: #ff9470;
+      --danger: #ff7c7c;
+      --pop-border: #19141f;
+      --pop-shadow: 6px 6px 0 rgba(25, 20, 31, 0.16);
       --sans: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --display: 'Outfit', var(--sans);
       --serif: 'Cormorant Garamond', 'Times New Roman', serif;
@@ -1695,18 +1699,6 @@
       font-size: 15px;
     }
 
-    .team-line {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 86px;
-      color: #767077;
-      font-family: var(--display);
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-
     .doc-footer {
       margin-top: 72px;
       padding-top: 24px;
@@ -1715,6 +1707,472 @@
       font-family: var(--display);
       font-size: 9px;
       text-transform: uppercase;
+    }
+
+    /* Pop visual system */
+    .origin { background: #fff7e8; }
+    .behind { background: #17131d; }
+    .what-if { background: #ffe59a; }
+    .meet { background: #0b0910; }
+    .roles { background: #eef4ff; }
+    .positioning { background: #17111c; }
+    .more { background: #11151a; }
+    .product { background: #f9f1ff; }
+    .day { background: #e9fff5; }
+    .science { background: #10131a; }
+    .grow { background: #17111c; }
+    .future { background: #fff1f4; }
+
+    .section-index::after {
+      height: 3px;
+      border-radius: 3px;
+    }
+
+    .deck-logo {
+      display: inline-flex;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 6px;
+      background: rgba(11, 9, 16, 0.9);
+      box-shadow: 4px 4px 0 rgba(255, 111, 145, 0.75);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .motion-words {
+      gap: 8px;
+      border-top: 0;
+    }
+
+    .motion-words span {
+      padding: 13px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 6px;
+      background: rgba(11, 9, 16, 0.7);
+      backdrop-filter: blur(8px);
+    }
+
+    .motion-words span:nth-child(3n + 1) { border-top: 4px solid var(--rose); }
+    .motion-words span:nth-child(3n + 2) { border-top: 4px solid var(--blue); }
+    .motion-words span:nth-child(3n) { border-top: 4px solid var(--mint); }
+
+    .origin-quote {
+      padding: 22px 24px;
+      border: 2px solid var(--pop-border);
+      border-left: 8px solid var(--rose);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--pop-shadow);
+    }
+
+    .principle-cloud,
+    .meta-traits {
+      gap: 12px;
+      border: 0;
+    }
+
+    .principle,
+    .meta-trait {
+      --card-accent: var(--rose);
+      border: 2px solid var(--pop-border);
+      border-top: 7px solid var(--card-accent);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--pop-shadow);
+    }
+
+    .principle:nth-child(3n + 2),
+    .meta-trait:nth-child(3n + 2) { --card-accent: var(--blue); }
+
+    .principle:nth-child(3n),
+    .meta-trait:nth-child(3n) { --card-accent: var(--mint); }
+
+    .meta-trait:nth-child(4) { --card-accent: var(--gold); }
+
+    .meta-note {
+      margin-top: 58px;
+      padding: 34px;
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: #fff0f4;
+      box-shadow: 8px 8px 0 rgba(255, 111, 145, 0.22);
+    }
+
+    .behind-photo {
+      border: 2px solid var(--ivory);
+      border-radius: 8px;
+      box-shadow: 10px 10px 0 rgba(101, 217, 179, 0.6);
+    }
+
+    .stage-method-diagram {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.62);
+      border-radius: 8px;
+      background: #201a28;
+      box-shadow: 8px 8px 0 rgba(121, 169, 255, 0.24);
+    }
+
+    .stage-visible,
+    .backstage-heading {
+      border: 0;
+      border-radius: 6px;
+    }
+
+    .stage-visible {
+      background: #ff6f91;
+      color: var(--ink);
+    }
+
+    .stage-visible span,
+    .stage-visible strong {
+      color: var(--ink);
+    }
+
+    .stage-connector {
+      padding: 7px 12px;
+      border: 0;
+      color: var(--ivory);
+      font-weight: 500;
+    }
+
+    .backstage-heading {
+      background: #ffe59a;
+      color: var(--ink);
+    }
+
+    .backstage-heading span,
+    .backstage-heading strong {
+      color: var(--ink);
+    }
+
+    .backstage-grid {
+      gap: 8px;
+    }
+
+    .backstage-item {
+      --card-accent: var(--mint);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-left: 5px solid var(--card-accent);
+      border-radius: 6px;
+      background: #2a2232;
+    }
+
+    .backstage-item:nth-child(3n + 2) { --card-accent: var(--blue); }
+    .backstage-item:nth-child(3n) { --card-accent: var(--rose); }
+
+    .what-if .section-index { color: #815200; }
+
+    .what-if-lines strong {
+      padding: 22px 24px;
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: #fffaf2;
+      box-shadow: var(--pop-shadow);
+    }
+
+    .brand-reveal span {
+      display: inline-grid;
+      width: 0.82em;
+      height: 0.88em;
+      margin: 0 0.02em;
+      border-radius: 8px;
+      place-items: center;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .brand-reveal .b { background: var(--rose); color: var(--ink); }
+    .brand-reveal .d { background: var(--blue); color: var(--ink); }
+    .brand-reveal .x { background: var(--mint); color: var(--ink); }
+
+    .method-node {
+      border: 2px solid rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      background: #211a29;
+      box-shadow: 7px 7px 0 rgba(121, 169, 255, 0.22);
+    }
+
+    .method-node:first-child { border-top: 8px solid var(--mint); }
+    .method-node:last-child { border-top: 8px solid var(--blue); }
+
+    .method-node.core {
+      border: 2px solid var(--pop-border);
+      border-top: 10px solid var(--rose);
+      background: #fff0f4;
+      box-shadow: 9px 9px 0 rgba(255, 111, 145, 0.34);
+    }
+
+    .method-node.core h3 { color: var(--ink); }
+    .method-node.core p { color: #5e5260; }
+
+    .role-layout {
+      gap: 14px;
+      border: 0;
+    }
+
+    .role {
+      --card-accent: var(--blue);
+      border: 2px solid var(--pop-border);
+      border-top: 9px solid var(--card-accent);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--pop-shadow);
+    }
+
+    .role.method { --card-accent: var(--rose); background: #fff0f4; }
+    .role:last-child { --card-accent: var(--blue); background: #edf4ff; border-right: 2px solid var(--pop-border); }
+    .role:nth-child(2) { --card-accent: var(--mint); background: #eafff7; }
+
+    .category-compare {
+      gap: 16px;
+      border: 0;
+      align-items: stretch;
+    }
+
+    .compare-side {
+      border: 2px solid rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      background: #24202b;
+      box-shadow: 7px 7px 0 rgba(121, 169, 255, 0.2);
+    }
+
+    .compare-side.bdx-side {
+      border-color: var(--rose);
+      background: #321c2a;
+      box-shadow: 7px 7px 0 rgba(255, 111, 145, 0.32);
+    }
+
+    .compare-vs {
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    .bdx-equation {
+      gap: 10px;
+      border: 0;
+      align-items: stretch;
+    }
+
+    .equation-part {
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: #fffaf2;
+      color: var(--ink);
+      box-shadow: var(--pop-shadow);
+    }
+
+    .equation-part:nth-child(3) { background: #eafff7; }
+    .equation-part:nth-child(5) { background: #edf4ff; }
+    .equation-part span { color: #8a5a00; }
+    .equation-part p { color: #5d5662; }
+
+    .equation-operator {
+      border: 0;
+      color: var(--gold);
+      font-size: 34px;
+    }
+
+    .domain-grid,
+    .feature-grid,
+    .product-outcomes,
+    .evidence-flow,
+    .progress-strip,
+    .game-rules,
+    .future-phases {
+      gap: 12px;
+      border: 0;
+    }
+
+    .domain {
+      --card-accent: var(--rose);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-top: 7px solid var(--card-accent);
+      border-radius: 8px;
+      background: #211d27;
+      box-shadow: 6px 6px 0 rgba(255, 111, 145, 0.11);
+    }
+
+    .domain:nth-child(2) { --card-accent: var(--mint); }
+    .domain:nth-child(3) { --card-accent: var(--gold); }
+    .domain:nth-child(4) { --card-accent: var(--violet); }
+    .domain:nth-child(5) { --card-accent: var(--blue); }
+
+    .method-flow {
+      gap: 26px;
+      border: 0;
+    }
+
+    .method-flow div {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 8px;
+      background: #24202a;
+    }
+
+    .feature-item {
+      --card-accent: var(--rose);
+      border: 2px solid var(--pop-border);
+      border-top: 8px solid var(--card-accent);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--pop-shadow);
+    }
+
+    .feature-item:nth-child(2) { --card-accent: var(--mint); background: #eafff7; }
+    .feature-item:nth-child(3) { --card-accent: var(--blue); background: #edf4ff; }
+    .feature-item:nth-child(4) { --card-accent: var(--gold); background: #fff5d8; }
+    .feature-item:nth-child(5) { --card-accent: var(--violet); background: #f3efff; }
+    .feature-item:nth-child(6) { --card-accent: var(--coral); background: #fff0e9; }
+
+    .feature-number {
+      width: fit-content;
+      padding: 6px 9px;
+      border-radius: 5px;
+      background: var(--card-accent);
+      color: var(--ink);
+    }
+
+    .product-outcome {
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 4px 4px 0 rgba(25, 20, 31, 0.13);
+    }
+
+    .product-outcome:nth-child(1) { background: #fff0f4; }
+    .product-outcome:nth-child(2) { background: #eafff7; }
+    .product-outcome:nth-child(3) { background: #edf4ff; }
+
+    .day-step {
+      margin-bottom: 12px;
+      padding: 18px;
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 4px 4px 0 rgba(25, 20, 31, 0.12);
+    }
+
+    .day-step:last-child { border-bottom: 2px solid var(--pop-border); }
+
+    .phone {
+      border: 3px solid var(--pop-border);
+      box-shadow: 12px 12px 0 rgba(101, 217, 179, 0.65);
+    }
+
+    .science .section-index,
+    .grow .section-index {
+      padding: 9px 12px;
+      border: 2px solid var(--pop-border);
+      border-radius: 6px;
+      background: var(--gold);
+      color: var(--ink);
+      box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .science .section-index::after,
+    .grow .section-index::after { display: none; }
+
+    .evidence-step {
+      --card-accent: var(--blue);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-top: 7px solid var(--card-accent);
+      border-radius: 8px;
+      background: #1c2230;
+    }
+
+    .evidence-step:nth-child(2) { --card-accent: var(--mint); }
+    .evidence-step:nth-child(3) { --card-accent: var(--gold); }
+    .evidence-step:nth-child(4) { --card-accent: var(--violet); }
+    .evidence-step:nth-child(5) { --card-accent: var(--rose); }
+    .evidence-step:nth-child(6) { --card-accent: var(--coral); }
+
+    .science-example {
+      gap: 14px;
+      border: 0;
+    }
+
+    .science-example > div {
+      border: 2px solid rgba(255, 255, 255, 0.62);
+      border-radius: 8px;
+      background: #201b29;
+      box-shadow: 7px 7px 0 rgba(121, 169, 255, 0.18);
+    }
+
+    .science-example > div:first-child { border-right: 2px solid rgba(255, 255, 255, 0.62); }
+    .science-example > div:last-child { box-shadow: 7px 7px 0 rgba(255, 111, 145, 0.2); }
+
+    .research-label {
+      border-radius: 5px;
+      background: #15111c;
+    }
+
+    .science-equation {
+      width: min(620px, calc(100% - 64px));
+      padding: 20px 24px;
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      box-shadow: 7px 7px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .progress-item {
+      --card-accent: var(--rose);
+      border: 2px solid rgba(255, 255, 255, 0.68);
+      border-top: 7px solid var(--card-accent);
+      border-radius: 8px;
+      background: #241d2b;
+    }
+
+    .progress-item:nth-child(2) { --card-accent: var(--gold); }
+    .progress-item:nth-child(3) { --card-accent: var(--mint); }
+    .progress-item:nth-child(4) { --card-accent: var(--blue); }
+
+    .game-demo {
+      gap: 12px;
+      border: 2px solid var(--rose);
+      border-radius: 8px;
+      background: transparent;
+      box-shadow: 10px 10px 0 rgba(255, 111, 145, 0.24);
+    }
+
+    .game-quest,
+    .game-progress {
+      border-radius: 6px;
+      background: #211a29;
+    }
+
+    .game-quest { border-right: 0; }
+
+    .game-rule {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 8px;
+      background: #211a29;
+    }
+
+    .future-phase {
+      --card-accent: var(--rose);
+      border: 2px solid var(--pop-border);
+      border-top: 9px solid var(--card-accent);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--pop-shadow);
+    }
+
+    .future-phase:nth-child(2) { --card-accent: var(--mint); background: #eafff7; }
+    .future-phase:nth-child(3) { --card-accent: var(--blue); background: #edf4ff; }
+
+    .doc-footer {
+      border-top: 2px solid var(--pop-border);
+      color: #5f5960;
+      text-transform: none;
     }
 
     @media (max-width: 1024px) {
@@ -2337,6 +2795,192 @@
       }
     }
 
+    @media (max-width: 1024px) {
+      .role:nth-child(2),
+      .role:last-child,
+      .domain:nth-child(3),
+      .domain:nth-child(-n + 3),
+      .evidence-step:nth-child(3),
+      .evidence-step:nth-child(-n + 3) {
+        border-right: 2px solid var(--pop-border);
+        border-bottom: 2px solid var(--pop-border);
+      }
+
+      .domain:nth-child(3),
+      .domain:nth-child(-n + 3),
+      .evidence-step:nth-child(3),
+      .evidence-step:nth-child(-n + 3) {
+        border-color: rgba(255, 255, 255, 0.28);
+        border-top-color: var(--card-accent);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .category-compare,
+      .bdx-equation,
+      .method-map,
+      .role-layout,
+      .domain-grid,
+      .feature-grid,
+      .product-outcomes,
+      .science-example,
+      .game-demo,
+      .game-rules,
+      .future-phases {
+        gap: 16px;
+      }
+
+      .compare-vs,
+      .equation-operator {
+        width: 58px;
+        height: 58px;
+        min-height: 58px;
+        margin: 0 auto;
+        border: 2px solid var(--pop-border);
+        border-radius: 8px;
+        background: var(--gold);
+        color: var(--ink);
+        transform: none;
+      }
+
+      .role,
+      .role.method,
+      .role:nth-child(2),
+      .role:last-child,
+      .domain,
+      .domain:nth-child(3),
+      .domain:nth-child(-n + 3),
+      .future-phase,
+      .future-phase:last-child {
+        border: 2px solid var(--pop-border);
+        border-top: 8px solid var(--card-accent);
+      }
+
+      .domain,
+      .domain:nth-child(3),
+      .domain:nth-child(-n + 3) {
+        border-color: rgba(255, 255, 255, 0.3);
+        border-top-color: var(--card-accent);
+      }
+
+      .method-flow {
+        gap: 24px;
+      }
+
+      .method-flow div {
+        border: 1px solid rgba(255, 255, 255, 0.28);
+      }
+
+      .science-example > div:first-child {
+        border: 2px solid rgba(255, 255, 255, 0.62);
+      }
+
+      .game-quest {
+        border-bottom: 0;
+      }
+
+      .future-phase:last-child {
+        border-bottom: 2px solid var(--pop-border);
+      }
+    }
+
+    @media (max-width: 430px) {
+      .motion-words {
+        gap: 7px;
+      }
+
+      .motion-words span,
+      .motion-words span:nth-child(-n + 3) {
+        padding: 11px 5px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-top: 4px solid var(--card-accent, var(--rose));
+      }
+
+      .motion-words span:nth-child(3n + 1) { --card-accent: var(--rose); }
+      .motion-words span:nth-child(3n + 2) { --card-accent: var(--blue); }
+      .motion-words span:nth-child(3n) { --card-accent: var(--mint); }
+
+      .meta-note {
+        padding: 24px 18px;
+      }
+
+      .meta-traits {
+        grid-template-columns: 1fr;
+      }
+
+      .backstage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .backstage-item,
+      .backstage-item:nth-child(even),
+      .backstage-item:nth-last-child(-n + 2) {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-left: 5px solid var(--card-accent);
+      }
+
+      .brand-reveal {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        font-size: 76px;
+      }
+
+      .feature-grid,
+      .product-outcomes,
+      .evidence-flow,
+      .progress-strip,
+      .game-rules {
+        gap: 12px;
+      }
+
+      .feature-item,
+      .product-outcome,
+      .evidence-step,
+      .evidence-step:nth-child(3),
+      .evidence-step:nth-child(even),
+      .evidence-step:nth-last-child(-n + 2),
+      .progress-item,
+      .progress-item:nth-child(2),
+      .progress-item:nth-child(-n + 2),
+      .game-rule,
+      .game-rule:last-child {
+        border: 2px solid var(--pop-border);
+        border-top: 7px solid var(--card-accent);
+        border-radius: 8px;
+      }
+
+      .evidence-step,
+      .evidence-step:nth-child(3),
+      .evidence-step:nth-child(even),
+      .evidence-step:nth-last-child(-n + 2),
+      .progress-item,
+      .progress-item:nth-child(2),
+      .progress-item:nth-child(-n + 2),
+      .game-rule,
+      .game-rule:last-child {
+        border-color: rgba(255, 255, 255, 0.34);
+        border-top-color: var(--card-accent);
+      }
+
+      .evidence-step:last-child,
+      .progress-item:last-child {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.34);
+      }
+
+      .progress-item:not(:last-child)::after {
+        bottom: -18px;
+      }
+
+      .science-equation {
+        width: min(100% - 24px, 620px);
+      }
+
+      .closing-main {
+        font-size: 38px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -2368,7 +3012,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <img class="hero-image" src="assets/bdx-ballet-stage.png" alt="暗い舞台上で、軸とバランスを保ちながら動くバレエダンサー" />
       <div class="frame hero-inner">
-        <div class="deck-mark"><span class="deck-logo"><span class="accent-rose">B</span><span class="accent-blue">D</span><span class="accent-mint">X</span></span><span>コンセプトデッキ / v3.0</span></div>
+        <div class="deck-mark" aria-label="BDX"><span class="deck-logo"><span class="accent-rose">B</span><span class="accent-blue">D</span><span class="accent-mint">X</span></span></div>
         <div class="hero-copy reveal">
           <div class="section-index">01 — 身体に宿る技術</div>
           <h1 id="hero-title">どうして、<br />あんな動きが<br />できるんだろう。</h1>
@@ -2774,8 +3418,7 @@
       <div class="frame closing reveal">
         <p class="closing-main">最高の体調を、日常に。</p>
         <p class="closing-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
-        <div class="team-line" aria-label="BDXチーム"><span>プロダクト・戦略 — SAT</span><span>バレエ — 鈴ちゃん</span><span>ダンス — 駿瑛</span></div>
-        <footer class="doc-footer">BDX プロジェクト概要 / コンセプトデッキ v3.0 / 2026</footer>
+        <footer class="doc-footer">BDX / 最高の体調を、日常に。</footer>
       </div>
     </section>
   </main>
