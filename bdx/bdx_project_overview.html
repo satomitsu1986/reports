@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BDXは、バレエの身体メソッドを一般ユーザーの日常へ落とし込み、AIとDanceで最高の体調を支えるプロジェクトです。" />
+  <meta name="description" content="BDXは、バレエの身体メソッドを一般ユーザーの日常へ落とし込み、AIとダンスで最高の体調を支えるプロジェクトです。" />
   <title>BDX Project Overview v3.0</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -318,9 +318,9 @@
     }
 
     .meta-note {
-      margin-top: 34px;
-      padding: 24px 0 0 24px;
-      border-left: 1px solid var(--gold);
+      margin-top: 46px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(9, 9, 12, 0.24);
     }
 
     .meta-note strong {
@@ -329,14 +329,58 @@
       color: var(--gold);
       font-family: var(--display);
       font-size: 12px;
-      text-transform: uppercase;
     }
 
-    .meta-note p {
-      max-width: 620px;
+    .meta-note h3 {
+      max-width: 760px;
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .meta-note > p {
+      max-width: 900px;
       color: #4f4b50;
       font-size: 13px;
       line-height: 1.9;
+    }
+
+    .meta-traits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin-top: 28px;
+      border-top: 1px solid rgba(9, 9, 12, 0.18);
+      border-left: 1px solid rgba(9, 9, 12, 0.18);
+    }
+
+    .meta-trait {
+      min-height: 150px;
+      padding: 24px 20px;
+      border-right: 1px solid rgba(9, 9, 12, 0.18);
+      border-bottom: 1px solid rgba(9, 9, 12, 0.18);
+    }
+
+    .meta-trait h4 {
+      margin-bottom: 9px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .meta-trait p {
+      color: #625d63;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .meta-source {
+      display: block;
+      margin-top: 16px;
+      color: #777178;
+      font-size: 10px;
+      line-height: 1.7;
     }
 
     /* 03 — Behind the Stage */
@@ -1644,9 +1688,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <img class="hero-image" src="assets/bdx-ballet-stage.png" alt="暗い舞台上で、軸とバランスを保ちながら動くバレエダンサー" />
       <div class="frame hero-inner">
-        <div class="deck-mark"><span class="deck-logo"><span class="accent-rose">B</span><span class="accent-blue">D</span><span class="accent-mint">X</span></span><span>Concept Deck / v3.0</span></div>
+        <div class="deck-mark"><span class="deck-logo"><span class="accent-rose">B</span><span class="accent-blue">D</span><span class="accent-mint">X</span></span><span>コンセプトデッキ / v3.0</span></div>
         <div class="hero-copy reveal">
-          <div class="section-index">01 — The Body of a Ballerina</div>
+          <div class="section-index">01 — 身体に宿る技術</div>
           <h1 id="hero-title">どうして、<br />あんな動きが<br />できるんだろう。</h1>
           <p class="hero-note">バレリーナの身体には、普通では考えられないほど高度な身体操作が詰まっている。</p>
         </div>
@@ -1660,8 +1704,8 @@
     <section class="story-section origin" aria-labelledby="why-title">
       <div class="frame origin-layout">
         <div class="reveal">
-          <div class="section-index">02 — Why Ballet?</div>
-          <p class="display-en" aria-hidden="true">Why<br />Ballet?</p>
+          <div class="section-index">02 — なぜ、バレエなのか</div>
+          <p class="display-en" aria-hidden="true">なぜ、<br />バレエ？</p>
         </div>
         <div class="origin-story reveal">
           <p class="lead">あるジャズダンス経験者から聞いた。</p>
@@ -1672,16 +1716,24 @@
       </div>
       <div class="frame reveal">
         <div class="principle-cloud" aria-label="バレエに含まれる身体操作の要素">
-          <div class="principle"><strong>Axis</strong><span>身体の軸</span></div>
-          <div class="principle"><strong>Posture</strong><span>姿勢</span></div>
-          <div class="principle"><strong>Balance</strong><span>バランス</span></div>
-          <div class="principle"><strong>Alignment</strong><span>アライメント</span></div>
-          <div class="principle"><strong>Coordination</strong><span>協調性</span></div>
-          <div class="principle"><strong>Control</strong><span>身体コントロール</span></div>
+          <div class="principle"><strong>身体の軸</strong><span>Axis</span></div>
+          <div class="principle"><strong>姿勢</strong><span>Posture</span></div>
+          <div class="principle"><strong>バランス</strong><span>Balance</span></div>
+          <div class="principle"><strong>アライメント</strong><span>Alignment</span></div>
+          <div class="principle"><strong>協調性</strong><span>Coordination</span></div>
+          <div class="principle"><strong>身体コントロール</strong><span>Control</span></div>
         </div>
         <div class="meta-note">
-          <strong>Meta Dance / BDX Concept</strong>
-          <p>バレエは、踊り方だけでなく、身体の使い方そのものを学ぶメソッドでもある。BDXでは、この独自の見方を「META DANCE」と呼びます。</p>
+          <strong>メタ・ダンスという性質</strong>
+          <h3>バレエは、身体動作の「共通言語」になりうる。</h3>
+          <p>バレエは、足の位置や身体の方向、全方位への移動・跳躍・回転を体系的に訓練します。そのため、具体的な振付を離れても、他のダンスやスポーツで身体を動かすための汎用的な型や、客観的な基準として応用できます。この「ダンスを支えるためのダンス」という性質を、本資料ではメタ・ダンスとして捉えます。</p>
+          <div class="meta-traits" aria-label="メタ・ダンスの4つの性質">
+            <article class="meta-trait"><h4>体系性</h4><p>足の位置、身体の方向、移動や回転を整理された技法として学べる。</p></article>
+            <article class="meta-trait"><h4>汎用性</h4><p>他ジャンルのダンスやスポーツの基礎訓練にも応用できる。</p></article>
+            <article class="meta-trait"><h4>抽象性</h4><p>振付の意味から離れ、身体を動かすための型として利用できる。</p></article>
+            <article class="meta-trait"><h4>標準性</h4><p>身体動作を考えるための客観的な基準や共通フォーマットになる。</p></article>
+          </div>
+          <small class="meta-source">参考：海野敏『バレエの世界史―美を追求する舞踊の600年』（中公新書）</small>
         </div>
       </div>
     </section>
@@ -1691,17 +1743,17 @@
       <div class="frame behind-layout">
         <figure class="behind-photo reveal">
           <img src="assets/bdx-ballet-preparation.png" alt="バレエスタジオでシューズを結び、練習前の準備をするダンサー" loading="lazy" />
-          <figcaption>Preparation / Original BDX Visual</figcaption>
+          <figcaption>練習前の準備 / BDXオリジナル画像</figcaption>
         </figure>
         <div class="behind-copy reveal">
-          <div class="section-index">03 — Behind the Stage</div>
+          <div class="section-index">03 — 舞台を支える日常</div>
           <h2 class="display-heading" id="behind-title">舞台の上だけでは、<br />あの身体はつくられない。</h2>
           <p class="lead">高いパフォーマンスの背景には、身体をつくり、整え、管理する日常がある。</p>
           <div class="practice-words" aria-label="舞台を支える日常の要素">
-            <div class="practice-word">Training</div><div class="practice-word">Recovery</div>
-            <div class="practice-word">Nutrition</div><div class="practice-word">Sleep</div>
-            <div class="practice-word">Focus</div><div class="practice-word">Routine</div>
-            <div class="practice-word">Body Care</div><div class="practice-word">Self Management</div>
+            <div class="practice-word">トレーニング</div><div class="practice-word">回復</div>
+            <div class="practice-word">栄養</div><div class="practice-word">睡眠</div>
+            <div class="practice-word">集中</div><div class="practice-word">ルーティン</div>
+            <div class="practice-word">身体のケア</div><div class="practice-word">自己管理</div>
           </div>
           <p class="fine-print">取り組み方には個人差があり、すべてのダンサーに共通する習慣を示すものではありません。</p>
         </div>
@@ -1711,7 +1763,7 @@
     <!-- SECTION 04: WHAT IF -->
     <section class="story-section what-if" aria-labelledby="what-if-title">
       <div class="frame reveal">
-        <div class="section-index">04 — What If?</div>
+        <div class="section-index">04 — もしも</div>
         <h2 class="what-if-question" id="what-if-title">もし、そのメソッドを<br />僕たちの日常にも使えたら？</h2>
         <div class="what-if-lines">
           <span>バレエを習うためではない。</span>
@@ -1724,7 +1776,7 @@
     <!-- SECTION 05: MEET BDX -->
     <section class="story-section meet" aria-labelledby="meet-title">
       <div class="frame reveal">
-        <div class="section-index">05 — Meet BDX</div>
+        <div class="section-index">05 — BDXとの出会い</div>
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
         <p class="brand-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
@@ -1732,18 +1784,18 @@
       </div>
       <div class="frame method-map reveal" aria-label="BDXの中心構造">
         <article class="method-node">
-          <span class="node-role accent-mint">Personalization</span>
+          <span class="node-role accent-mint">一人ひとりに合わせる</span>
           <h3>AI</h3>
           <p>今日のこの人に、どう使うか。</p>
         </article>
         <article class="method-node core">
-          <span class="node-role accent-rose">Core / Method</span>
-          <h3>Ballet Method</h3>
+          <span class="node-role accent-rose">中核となるメソッド</span>
+          <h3>バレエメソッド</h3>
           <p>身体をつくる。整える。理解する。管理する。</p>
         </article>
         <article class="method-node">
-          <span class="node-role accent-blue">Joy / Expression</span>
-          <h3>Dance</h3>
+          <span class="node-role accent-blue">楽しさと表現</span>
+          <h3>ダンス</h3>
           <p>身体を使い、音楽と表現を楽しむ。</p>
         </article>
       </div>
@@ -1752,50 +1804,50 @@
     <!-- SECTION 06: BALLET METHOD × AI × DANCE -->
     <section class="story-section roles" aria-labelledby="roles-title">
       <div class="frame reveal">
-        <div class="section-index">06 — Ballet Method × AI × Dance</div>
-        <h2 class="display-en" id="roles-title">Method.<br />Personal.<br />Joy.</h2>
+        <div class="section-index">06 — バレエメソッド × AI × ダンス</div>
+        <h2 class="display-en" id="roles-title">メソッド。<br />個別化。<br />楽しさ。</h2>
       </div>
       <div class="frame role-layout reveal">
         <article class="role method">
-          <span class="role-number">01 / Core</span>
-          <h3>Ballet</h3>
-          <p class="role-key accent-rose">Method</p>
+          <span class="role-number">01 / 中核</span>
+          <h3>バレエ</h3>
+          <p class="role-key accent-rose">身体のメソッド</p>
           <p>身体をつくる。<br />整える。<br />管理する。</p>
         </article>
         <article class="role">
-          <span class="role-number">02 / Layer</span>
+          <span class="role-number">02 / 個別化</span>
           <h3>AI</h3>
-          <p class="role-key accent-mint">Personalization</p>
+          <p class="role-key accent-mint">一人ひとりに合わせる</p>
           <p>今日の自分に合わせる。</p>
         </article>
         <article class="role">
-          <span class="role-number">03 / Experience</span>
-          <h3>Dance</h3>
-          <p class="role-key accent-blue">Joy</p>
+          <span class="role-number">03 / 体験</span>
+          <h3>ダンス</h3>
+          <p class="role-key accent-blue">楽しさと表現</p>
           <p>身体を使って楽しむ。</p>
         </article>
       </div>
-      <p class="frame role-summary reveal">Methodを、Personalizationで日常へ。<br />Joyで、続けたくなる体験へ。</p>
+      <p class="frame role-summary reveal">メソッドを、一人ひとりの日常へ。<br />楽しさを、続けたくなる体験へ。</p>
     </section>
 
     <!-- SECTION 07: MORE THAN EXERCISE -->
     <section class="story-section more" aria-labelledby="more-title">
       <div class="frame more-head reveal">
         <div>
-          <div class="section-index">07 — More Than Exercise</div>
-          <h2 class="display-heading" id="more-title">BDXが扱うのは、<br />Exerciseだけじゃない。</h2>
+          <div class="section-index">07 — 運動だけではない</div>
+          <h2 class="display-heading" id="more-title">BDXが扱うのは、<br />運動だけじゃない。</h2>
         </div>
-        <p class="lead">Ballet Methodから、動く・学ぶ・整えるという日常の実践が生まれます。</p>
+        <p class="lead">バレエメソッドから、動く・学ぶ・整えるという日常の実践が生まれます。</p>
       </div>
       <div class="frame domain-grid reveal">
-        <article class="domain"><span class="domain-label">BODY</span><h3>身体をつくる。</h3><ul><li>Posture</li><li>Balance</li><li>Mobility</li><li>Strength</li><li>Body Control</li></ul></article>
-        <article class="domain"><span class="domain-label">CONDITIONING</span><h3>身体を整える。</h3><ul><li>Warm-up</li><li>Cool-down</li><li>Recovery</li><li>Fatigue Management</li><li>Body Care</li></ul></article>
-        <article class="domain"><span class="domain-label">NUTRITION</span><h3>身体を支える。</h3><ul><li>Energy</li><li>Hydration</li><li>Nutrition</li><li>Pre / Post Exercise</li></ul></article>
-        <article class="domain"><span class="domain-label">MIND</span><h3>心を整える。</h3><ul><li>Concentration</li><li>Motivation</li><li>Pressure</li><li>Self-efficacy</li></ul></article>
-        <article class="domain"><span class="domain-label">LIFESTYLE</span><h3>日常を整える。</h3><ul><li>Sleep</li><li>Routine</li><li>Preparation</li><li>Time Management</li><li>Self Management</li></ul></article>
+        <article class="domain"><span class="domain-label">身体</span><h3>身体をつくる。</h3><ul><li>姿勢</li><li>バランス</li><li>可動性</li><li>筋力</li><li>身体コントロール</li></ul></article>
+        <article class="domain"><span class="domain-label">コンディショニング</span><h3>身体を整える。</h3><ul><li>ウォームアップ</li><li>クールダウン</li><li>回復</li><li>疲労管理</li><li>身体のケア</li></ul></article>
+        <article class="domain"><span class="domain-label">栄養</span><h3>身体を支える。</h3><ul><li>エネルギー</li><li>水分補給</li><li>栄養</li><li>運動前後の食事</li></ul></article>
+        <article class="domain"><span class="domain-label">心</span><h3>心を整える。</h3><ul><li>集中</li><li>意欲</li><li>プレッシャー</li><li>自己効力感</li></ul></article>
+        <article class="domain"><span class="domain-label">生活</span><h3>日常を整える。</h3><ul><li>睡眠</li><li>ルーティン</li><li>準備</li><li>時間管理</li><li>自己管理</li></ul></article>
       </div>
-      <div class="frame method-flow reveal" aria-label="Ballet Methodを日常へ落とし込む流れ">
-        <div>Ballet Method</div><div>MOVE / LEARN / CARE</div><div>AI Personalization</div><div>Everyday Practice</div>
+      <div class="frame method-flow reveal" aria-label="バレエメソッドを日常へ落とし込む流れ">
+        <div>バレエメソッド</div><div>動く・学ぶ・整える</div><div>AIで一人ひとりに合わせる</div><div>日常で実践する</div>
       </div>
       <p class="frame more-message reveal">身体をつくるのは、<br />トレーニングの時間だけじゃない。</p>
     </section>
@@ -1804,32 +1856,32 @@
     <section class="story-section day" aria-labelledby="day-title">
       <div class="frame day-grid">
         <div class="reveal">
-          <div class="section-index">08 — A Day with BDX</div>
-          <h2 class="display-en" id="day-title">Today,<br />Not Always.</h2>
+          <div class="section-index">08 — BDXのある一日</div>
+          <h2 class="display-en" id="day-title">いつもではなく、<br />今日に合わせる。</h2>
           <p class="day-intro">最高の体調は、常に最高出力でいることではない。その日の状態を理解し、その日に合う行動を選べること。</p>
           <div class="day-timeline">
-            <div class="day-step"><span class="day-time">Morning</span><div><strong>昨日は少し疲れた。</strong><p>睡眠は普通。疲労は高め。気分は良い。使える時間は10分。</p></div></div>
-            <div class="day-step"><span class="day-time">Coach</span><div><strong>今日は、整える日に。</strong><p>強度を上げるより、身体をリセットする短いQuestを提案。</p></div></div>
-            <div class="day-step"><span class="day-time">Later</span><div><strong>Quest Complete.</strong><p>肩まわりの変化を振り返り、次のConditionへつなぐ。</p></div></div>
+            <div class="day-step"><span class="day-time">朝</span><div><strong>昨日は少し疲れた。</strong><p>睡眠は普通。疲労は高め。気分は良い。使える時間は10分。</p></div></div>
+            <div class="day-step"><span class="day-time">AIコーチ</span><div><strong>今日は、整える日に。</strong><p>強度を上げるより、身体をリセットする短いクエストを提案。</p></div></div>
+            <div class="day-step"><span class="day-time">その後</span><div><strong>クエスト完了。</strong><p>肩まわりの変化を振り返り、次の状態確認へつなぐ。</p></div></div>
           </div>
           <p class="day-copyline">AIは、バレエメソッドを<br />「今日の自分」に落とし込む。</p>
         </div>
-        <div class="phone reveal" aria-label="BDXアプリのToday's Questイメージ">
+        <div class="phone reveal" aria-label="BDXアプリの今日のクエストイメージ">
           <div class="phone-screen">
-            <div class="phone-top"><span>BDX / Today</span><span>08:10</span></div>
+            <div class="phone-top"><span>BDX / 今日</span><span>08:10</span></div>
             <p class="phone-greeting">おはようございます。<br />必要なことだけ、短く確認します。</p>
             <div class="condition-list">
-              <div class="condition"><span>Sleep</span><strong>Fair</strong></div>
-              <div class="condition"><span>Fatigue</span><strong class="accent-rose">High</strong></div>
-              <div class="condition"><span>Mood</span><strong>Good</strong></div>
-              <div class="condition"><span>Available</span><strong>10 min</strong></div>
+              <div class="condition"><span>睡眠</span><strong>普通</strong></div>
+              <div class="condition"><span>疲労</span><strong class="accent-rose">高め</strong></div>
+              <div class="condition"><span>気分</span><strong>良い</strong></div>
+              <div class="condition"><span>使える時間</span><strong>10分</strong></div>
             </div>
             <p class="coach-line">今日は強度を上げるより、身体を整える日にしましょう。</p>
             <div class="quest-ui">
-              <span class="eyebrow">Today's Quest</span>
+              <span class="eyebrow">今日のクエスト</span>
               <h3>5分で身体を<br />リセット。</h3>
-              <div class="quest-meta"><span>Recovery + Ballet Exercise</span><span>5 min</span></div>
-              <div class="quest-button"><span>START</span><span>+20 XP</span></div>
+              <div class="quest-meta"><span>回復 + バレエエクササイズ</span><span>5分</span></div>
+              <div class="quest-button"><span>はじめる</span><span>+20 経験値</span></div>
             </div>
           </div>
         </div>
@@ -1840,53 +1892,53 @@
     <section class="story-section science" aria-labelledby="science-title">
       <div class="frame science-heading-row reveal">
         <div>
-          <div class="section-index">09 — Professional Practice × Science</div>
+          <div class="section-index">09 — 実践知 × 科学</div>
           <h2 class="display-heading" id="science-title">プロの知恵を、<br />そのまま真似しない。</h2>
         </div>
         <p class="lead">実践知を科学で確かめ、言えることと言えないことを分けて、一般ユーザーの行動へ落とし込みます。</p>
       </div>
       <div class="frame evidence-flow reveal" aria-label="プロの実践知をBDXの実践へ落とし込む流れ">
-        <div class="evidence-step"><span>01</span><strong>Professional<br />Practice</strong></div>
-        <div class="evidence-step"><span>02</span><strong>Why?</strong></div>
-        <div class="evidence-step"><span>03</span><strong>Scientific<br />Evidence</strong></div>
-        <div class="evidence-step"><span>04</span><strong>What can<br />we say?</strong></div>
-        <div class="evidence-step"><span>05</span><strong>Everyday<br />Application</strong></div>
-        <div class="evidence-step"><span>06</span><strong>BDX<br />Practice</strong></div>
+        <div class="evidence-step"><span>01</span><strong>プロの<br />実践</strong></div>
+        <div class="evidence-step"><span>02</span><strong>なぜ<br />行う？</strong></div>
+        <div class="evidence-step"><span>03</span><strong>科学的<br />根拠</strong></div>
+        <div class="evidence-step"><span>04</span><strong>何が<br />言える？</strong></div>
+        <div class="evidence-step"><span>05</span><strong>日常への<br />応用</strong></div>
+        <div class="evidence-step"><span>06</span><strong>BDXで<br />実践</strong></div>
       </div>
       <div class="frame science-example reveal">
         <div>
-          <span class="eyebrow">Professional Practice</span>
+          <span class="eyebrow">プロの実践</span>
           <h3>「本番前、ダンサーは何を食べている？」</h3>
           <p>個人の習慣を、そのまま全員の正解にはしない。</p>
         </div>
         <div>
-          <span class="eyebrow">Science → Everyday</span>
+          <span class="eyebrow">科学から日常へ</span>
           <h3>仕事前・運動前なら、どう応用できるか。</h3>
           <p>スポーツ栄養学の条件と限界を確認し、日常で試せる行動へ。</p>
         </div>
       </div>
-      <p class="frame science-equation reveal">Experience × Evidence × Practice</p>
-      <p class="frame safety-note reveal">Professional PracticeとEvidenceを分け、因果と相関、研究対象と条件、限界を明記します。Nutrition・Mental・Injuryは専門領域を尊重し、医療診断、過剰なExercise、摂食障害につながる表現を避けます。</p>
+      <p class="frame science-equation reveal">経験 × 根拠 × 実践</p>
+      <p class="frame safety-note reveal">プロの実践と科学的根拠を分け、因果と相関、研究対象と条件、限界を明記します。栄養・心理・けがは専門領域を尊重し、医療診断、過剰な運動、摂食障害につながる表現を避けます。</p>
     </section>
 
     <!-- SECTION 10: GROW & ENJOY -->
     <section class="story-section grow" aria-labelledby="grow-title">
       <div class="frame reveal">
-        <div class="section-index">10 — Grow &amp; Enjoy</div>
+        <div class="section-index">10 — 育てる × 楽しむ</div>
         <h2 class="display-heading" id="grow-title">身体を育てることを、<br />もっと楽しく。</h2>
-        <div class="progress-strip" aria-label="BDXのProgress System">
-          <div class="progress-item"><strong>Quest</strong><p>今日の一歩。</p></div>
-          <div class="progress-item"><strong>XP</strong><p>積み重ね。</p></div>
-          <div class="progress-item"><strong>Level</strong><p>経験。</p></div>
-          <div class="progress-item"><strong>Achievement</strong><p>できるようになったこと。</p></div>
+        <div class="progress-strip" aria-label="BDXの成長記録">
+          <div class="progress-item"><strong>クエスト</strong><p>今日の一歩。</p></div>
+          <div class="progress-item"><strong>経験値</strong><p>積み重ね。</p></div>
+          <div class="progress-item"><strong>レベル</strong><p>経験。</p></div>
+          <div class="progress-item"><strong>達成</strong><p>できるようになったこと。</p></div>
         </div>
       </div>
       <figure class="joy-photo reveal">
         <img src="assets/bdx-dance-joy.png" alt="光の入るスタジオで、音楽と表現を楽しみながら踊る二人のダンサー" loading="lazy" />
         <div class="frame joy-copy">
           <h3>整えた身体を、<br />音楽の中で使う。</h3>
-          <p>Danceは、Balletの上位レベルではない。<br />身体を使う喜びと、続けたくなる理由をつくる。</p>
-          <div class="joy-tags"><span>Rhythm</span><span>Expression</span><span>Choreography</span><span>Challenge</span></div>
+          <p>ダンスは、バレエの上位レベルではない。<br />身体を使う喜びと、続けたくなる理由をつくる。</p>
+          <div class="joy-tags"><span>リズム</span><span>表現</span><span>振付</span><span>挑戦</span></div>
         </div>
       </figure>
     </section>
@@ -1894,31 +1946,31 @@
     <!-- SECTION 11: THE FUTURE OF BDX -->
     <section class="story-section future" aria-labelledby="future-title">
       <div class="frame reveal">
-        <div class="section-index">11 — The Future of BDX</div>
-        <h2 class="display-en" id="future-title">Build.<br />Personalize.<br />Grow Together.</h2>
+        <div class="section-index">11 — BDXの未来</div>
+        <h2 class="display-en" id="future-title">つくる。<br />合わせる。<br />ともに育つ。</h2>
       </div>
       <div class="frame future-phases reveal">
         <article class="future-phase">
-          <span class="phase-state accent-rose">NOW</span>
-          <h3>Build the Method</h3>
-          <ul><li>Ballet Method</li><li>Exercise</li><li>Condition</li><li>AI Quest</li><li>Recovery / Learn</li></ul>
+          <span class="phase-state accent-rose">現在</span>
+          <h3>メソッドをつくる</h3>
+          <ul><li>バレエメソッド</li><li>運動</li><li>状態確認</li><li>AIクエスト</li><li>回復・学習</li></ul>
         </article>
         <article class="future-phase">
-          <span class="phase-state accent-mint">NEXT</span>
-          <h3>Make It Personal</h3>
-          <ul><li>User Context</li><li>Better AI</li><li>Dance</li><li>Progress</li><li>Content Graph</li></ul>
+          <span class="phase-state accent-mint">次に</span>
+          <h3>一人ひとりに合わせる</h3>
+          <ul><li>ユーザーの文脈</li><li>AIの改善</li><li>ダンス</li><li>成長記録</li><li>コンテンツのつながり</li></ul>
         </article>
         <article class="future-phase">
-          <span class="phase-state accent-blue">FUTURE</span>
-          <h3>Grow Together</h3>
-          <ul><li>Community / Challenge</li><li>Experts / Team</li><li>Studio Partnership</li><li>Corporate</li><li>International</li></ul>
+          <span class="phase-state accent-blue">将来</span>
+          <h3>ともに育つ</h3>
+          <ul><li>コミュニティ・挑戦</li><li>専門家・チーム</li><li>スタジオ連携</li><li>法人展開</li><li>海外展開</li></ul>
         </article>
       </div>
       <div class="frame closing reveal">
         <p class="closing-main">最高の体調を、日常に。</p>
         <p class="closing-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
-        <div class="team-line" aria-label="BDXチーム"><span>Product / Strategy — SAT</span><span>Ballet — 鈴ちゃん</span><span>Dance — 駿瑛</span></div>
-        <footer class="doc-footer">BDX Project Overview / Concept Deck v3.0 / 2026</footer>
+        <div class="team-line" aria-label="BDXチーム"><span>プロダクト・戦略 — SAT</span><span>バレエ — 鈴ちゃん</span><span>ダンス — 駿瑛</span></div>
+        <footer class="doc-footer">BDX プロジェクト概要 / コンセプトデッキ v3.0 / 2026</footer>
       </div>
     </section>
   </main>
