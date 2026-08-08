@@ -2981,6 +2981,839 @@
       }
     }
 
+    /* Refined story and product system */
+    .origin {
+      background: #f2efe8;
+    }
+
+    .origin .section-index {
+      color: #8d7448;
+    }
+
+    .origin .display-en {
+      color: #171923;
+      font-size: 58px;
+    }
+
+    .origin-quote {
+      padding: 8px 0 8px 26px;
+      border: 0;
+      border-left: 1px solid #a68b59;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .principle-cloud {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid rgba(23, 25, 35, 0.22);
+      border-left: 1px solid rgba(23, 25, 35, 0.22);
+    }
+
+    .principle,
+    .principle:nth-child(3n + 2),
+    .principle:nth-child(3n) {
+      border: 0;
+      border-right: 1px solid rgba(23, 25, 35, 0.22);
+      border-bottom: 1px solid rgba(23, 25, 35, 0.22);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .meta-note {
+      margin-top: 64px;
+      padding: 46px;
+      border: 1px solid rgba(196, 168, 113, 0.55);
+      border-radius: 4px;
+      background: #151e30;
+      box-shadow: none;
+    }
+
+    .meta-note strong {
+      color: #c7aa70;
+    }
+
+    .meta-note h3 {
+      color: #f5f1e8;
+    }
+
+    .meta-note > p {
+      color: #c3c5cc;
+    }
+
+    .meta-traits {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid rgba(239, 231, 214, 0.18);
+      border-left: 1px solid rgba(239, 231, 214, 0.18);
+    }
+
+    .meta-trait,
+    .meta-trait:nth-child(3n + 2),
+    .meta-trait:nth-child(3n),
+    .meta-trait:nth-child(4) {
+      min-height: 170px;
+      border: 0;
+      border-right: 1px solid rgba(239, 231, 214, 0.18);
+      border-bottom: 1px solid rgba(239, 231, 214, 0.18);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .meta-trait h4 {
+      color: #f5f1e8;
+    }
+
+    .meta-trait p,
+    .meta-source {
+      color: #aeb2bc;
+    }
+
+    .behind {
+      background: #101b2e;
+    }
+
+    .behind .section-index {
+      color: #c6aa73;
+    }
+
+    .behind-photo {
+      border: 1px solid rgba(198, 170, 115, 0.62);
+      border-radius: 2px;
+      box-shadow: none;
+    }
+
+    .stage-method-diagram {
+      gap: 0;
+      padding: 0;
+      border: 1px solid rgba(198, 170, 115, 0.45);
+      border-radius: 3px;
+      background: #0c1627;
+      box-shadow: none;
+    }
+
+    .stage-visible {
+      border-radius: 0;
+      border-bottom: 1px solid rgba(198, 170, 115, 0.32);
+      background: #17253c;
+    }
+
+    .stage-visible span {
+      color: #c6aa73;
+    }
+
+    .stage-visible strong {
+      color: #f6f2e9;
+    }
+
+    .stage-connector {
+      border-bottom: 1px solid rgba(198, 170, 115, 0.22);
+      color: #9ca6b7;
+    }
+
+    .backstage-heading {
+      border-radius: 0;
+      border-bottom: 1px solid rgba(198, 170, 115, 0.32);
+      background: #d4bd8d;
+    }
+
+    .backstage-heading span,
+    .backstage-heading strong {
+      color: #111b2c;
+    }
+
+    .backstage-grid {
+      gap: 0;
+    }
+
+    .backstage-item,
+    .backstage-item:nth-child(3n + 2),
+    .backstage-item:nth-child(3n),
+    .backstage-item:nth-child(even),
+    .backstage-item:nth-last-child(-n + 2) {
+      border: 0;
+      border-right: 1px solid rgba(198, 170, 115, 0.2);
+      border-bottom: 1px solid rgba(198, 170, 115, 0.2);
+      border-radius: 0;
+      background: #111d31;
+      color: #e6e3dd;
+    }
+
+    .backstage-item:nth-child(even) {
+      border-right: 0;
+    }
+
+    .backstage-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .what-if {
+      min-height: auto;
+      background: #fbfaf7;
+      color: #171923;
+      text-align: left;
+    }
+
+    .what-if .section-index {
+      color: #8d7448;
+    }
+
+    .hypothesis {
+      max-width: 980px;
+    }
+
+    .hypothesis-premise {
+      margin: 20px 0 62px;
+      color: #6d6a69;
+      font-size: 15px;
+      line-height: 2.15;
+    }
+
+    .what-if-question {
+      max-width: 920px;
+      margin: 0;
+      color: #161822;
+      font-family: var(--serif);
+      font-size: 54px;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .hypothesis-body {
+      display: grid;
+      gap: 24px;
+      max-width: 790px;
+      margin: 72px 0 0 auto;
+      padding: 36px 0 36px 38px;
+      border-left: 1px solid #a68b59;
+      color: #3e4048;
+      font-size: 16px;
+      line-height: 2.1;
+    }
+
+    .hypothesis-body span {
+      color: #947a49;
+      font-family: var(--serif);
+      font-size: 24px;
+    }
+
+    .hypothesis-conclusion {
+      margin-top: 56px;
+      color: #171923;
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .product-system {
+      background: #eef1f4;
+      color: #111827;
+    }
+
+    .product-system .display-heading {
+      color: #111827;
+      font-size: 48px;
+    }
+
+    .product-system .lead {
+      color: #5e6673;
+    }
+
+    .system-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 64px;
+      align-items: end;
+    }
+
+    .product-architecture {
+      margin-top: 64px;
+      padding: 30px;
+      border: 1px solid #c7ccd3;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .architecture-core {
+      display: grid;
+      grid-template-columns: 160px minmax(240px, 0.8fr) minmax(260px, 1.2fr);
+      gap: 28px;
+      align-items: center;
+      padding: 24px 28px;
+      border-radius: 6px;
+      background: #111c30;
+      color: #fff;
+    }
+
+    .architecture-core span,
+    .architecture-layer > span {
+      color: #c7aa70;
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .architecture-core strong {
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+    .architecture-core p {
+      color: #b9c0cb;
+      font-size: 12px;
+    }
+
+    .product-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .product-pillar {
+      --pillar-accent: var(--rose);
+      min-height: 230px;
+      padding: 26px 24px;
+      border: 1px solid #cfd3d9;
+      border-top: 5px solid var(--pillar-accent);
+      border-radius: 6px;
+      background: #fafafa;
+    }
+
+    .learn-pillar { --pillar-accent: #b3965d; }
+    .care-pillar { --pillar-accent: #668aa9; }
+
+    .product-pillar > span {
+      color: #6b7280;
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .product-pillar h3 {
+      margin: 42px 0 17px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .product-pillar ul {
+      display: grid;
+      gap: 7px;
+      color: #626a75;
+      font-size: 11px;
+      list-style: none;
+    }
+
+    .architecture-layer {
+      display: grid;
+      grid-template-columns: 150px minmax(280px, 0.9fr) minmax(280px, 1.1fr);
+      gap: 28px;
+      align-items: center;
+      margin-top: 12px;
+      padding: 22px 26px;
+      border: 1px solid #cfd3d9;
+      border-radius: 6px;
+    }
+
+    .architecture-layer strong {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .architecture-layer p {
+      color: #59616d;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .ai-layer {
+      background: #e8f5f1;
+    }
+
+    .ai-layer > span {
+      color: #307c66;
+    }
+
+    .progress-layer {
+      background: #f8f1e3;
+    }
+
+    .progress-layer > span {
+      color: #866d3c;
+    }
+
+    .architecture-future {
+      display: grid;
+      grid-template-columns: 80px 160px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 12px;
+      padding: 16px 24px;
+      border: 1px dashed #9aa1ab;
+      border-radius: 6px;
+      color: #5e6671;
+    }
+
+    .architecture-future span {
+      width: fit-content;
+      padding: 4px 7px;
+      border: 1px solid #9aa1ab;
+      border-radius: 4px;
+      font-size: 9px;
+    }
+
+    .architecture-future strong {
+      color: #303845;
+      font-family: var(--display);
+      font-size: 12px;
+    }
+
+    .architecture-future p {
+      font-size: 11px;
+    }
+
+    .core-loop-panel {
+      margin-top: 28px;
+      padding: 38px 34px 32px;
+      border-radius: 8px;
+      background: #111c30;
+      color: #f7f4ed;
+    }
+
+    .loop-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .loop-heading span {
+      color: #c7aa70;
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .loop-heading h3 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .core-loop-steps {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .core-loop-step {
+      --loop-accent: #c7aa70;
+      position: relative;
+      min-height: 150px;
+      padding: 20px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-top: 4px solid var(--loop-accent);
+      border-radius: 5px;
+      background: #18253b;
+    }
+
+    .coach-step { --loop-accent: #69b8a0; }
+    .quest-step { --loop-accent: #d87a92; }
+    .action-step { --loop-accent: #7d9fc5; }
+    .record-step { --loop-accent: #9b8db9; }
+    .growth-step { --loop-accent: #d3b66f; }
+
+    .core-loop-step:not(:last-child)::after {
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      z-index: 2;
+      color: #c7aa70;
+      content: '›';
+      font-size: 22px;
+      transform: translateY(-50%);
+    }
+
+    .core-loop-step > span {
+      color: var(--loop-accent);
+      font-family: var(--display);
+      font-size: 9px;
+    }
+
+    .core-loop-step strong {
+      display: block;
+      margin: 30px 0 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .core-loop-step p {
+      color: #aeb7c4;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .loop-return {
+      margin-top: 18px;
+      padding: 10px 14px;
+      border: 1px solid rgba(199, 170, 112, 0.45);
+      border-radius: 4px;
+      color: #c7aa70;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .system-values {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .system-values > div {
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .system-values strong,
+    .system-values span {
+      display: block;
+    }
+
+    .system-values strong {
+      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 21px;
+    }
+
+    .system-values span {
+      color: #aeb7c4;
+      font-size: 10px;
+    }
+
+    .positioning {
+      background: #111827;
+    }
+
+    .service-comparison {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 64px;
+    }
+
+    .service-card {
+      min-height: 430px;
+      padding: 28px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      background: #182237;
+    }
+
+    .service-card.bdx-service {
+      border-color: #c7aa70;
+      background: #f2ede2;
+      color: #111827;
+    }
+
+    .service-number {
+      color: #c7aa70;
+      font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .service-card h3 {
+      min-height: 64px;
+      margin: 38px 0 10px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .service-purpose {
+      min-height: 54px;
+      color: #aeb7c4;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .bdx-service .service-purpose {
+      color: #5f625f;
+    }
+
+    .service-card dl {
+      margin-top: 26px;
+    }
+
+    .service-card dl > div {
+      padding: 13px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .bdx-service dl > div {
+      border-top-color: rgba(17, 24, 39, 0.15);
+    }
+
+    .service-card dt {
+      color: #7f8a9b;
+      font-size: 9px;
+    }
+
+    .bdx-service dt {
+      color: #887248;
+    }
+
+    .service-card dd {
+      margin-top: 4px;
+      color: #e4e7ec;
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    .bdx-service dd {
+      color: #323741;
+      font-weight: 500;
+    }
+
+    .differentiation-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 42px;
+      padding: 28px 0;
+      border-top: 1px solid rgba(199, 170, 112, 0.35);
+      border-bottom: 1px solid rgba(199, 170, 112, 0.35);
+    }
+
+    .differentiation-flow span {
+      padding: 10px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 4px;
+      background: #182237;
+      font-size: 11px;
+    }
+
+    .differentiation-flow i {
+      color: #c7aa70;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: normal;
+    }
+
+    @media (max-width: 1024px) {
+      .meta-traits,
+      .service-comparison {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .core-loop-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .core-loop-step::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .origin .display-en {
+        font-size: 42px;
+      }
+
+      .principle-cloud {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .meta-note {
+        padding: 34px 28px;
+      }
+
+      .meta-traits {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-trait,
+      .meta-trait:nth-child(3n + 2),
+      .meta-trait:nth-child(3n),
+      .meta-trait:nth-child(4) {
+        min-height: auto;
+      }
+
+      .what-if-question {
+        font-size: 40px;
+      }
+
+      .product-system .display-heading {
+        font-size: 34px;
+      }
+
+      .hypothesis-body {
+        margin-top: 54px;
+      }
+
+      .system-heading {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .architecture-core,
+      .architecture-layer,
+      .architecture-future {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .product-pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .product-pillar {
+        min-height: auto;
+      }
+
+      .product-pillar h3 {
+        margin-top: 28px;
+      }
+
+      .loop-heading {
+        display: grid;
+      }
+
+      .core-loop-steps,
+      .system-values,
+      .service-comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .core-loop-steps {
+        gap: 22px;
+      }
+
+      .core-loop-step {
+        min-height: 120px;
+      }
+
+      .core-loop-step:not(:last-child)::after {
+        display: block;
+        top: auto;
+        right: 50%;
+        bottom: -22px;
+        transform: translate(50%, 0) rotate(90deg);
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .service-card h3,
+      .service-purpose {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .origin .display-en {
+        font-size: 34px;
+      }
+
+      .meta-note {
+        padding: 28px 20px;
+      }
+
+      .behind-photo,
+      .behind-photo img {
+        min-height: 420px;
+      }
+
+      .backstage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .backstage-item,
+      .backstage-item:nth-child(3n + 2),
+      .backstage-item:nth-child(3n),
+      .backstage-item:nth-child(even),
+      .backstage-item:nth-last-child(-n + 2) {
+        border: 0;
+        border-bottom: 1px solid rgba(198, 170, 115, 0.2);
+      }
+
+      .backstage-item:last-child {
+        border-bottom: 0;
+      }
+
+      .hypothesis-premise {
+        margin-bottom: 46px;
+        font-size: 13px;
+      }
+
+      .what-if-question {
+        font-size: 32px;
+      }
+
+      .product-system .display-heading {
+        font-size: 29px;
+      }
+
+      .hypothesis-body {
+        padding: 26px 0 26px 20px;
+        font-size: 14px;
+      }
+
+      .hypothesis-conclusion {
+        font-size: 25px;
+      }
+
+      .product-architecture,
+      .core-loop-panel {
+        padding: 20px 16px;
+      }
+
+      .architecture-core {
+        padding: 22px 20px;
+      }
+
+      .architecture-core strong {
+        font-size: 23px;
+      }
+
+      .architecture-layer {
+        padding: 20px;
+      }
+
+      .architecture-future {
+        padding: 17px 20px;
+      }
+
+      .loop-heading h3 {
+        font-size: 25px;
+      }
+
+      .core-loop-step strong {
+        margin-top: 22px;
+      }
+
+      .differentiation-flow {
+        flex-direction: column;
+      }
+
+      .differentiation-flow i {
+        line-height: 1;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -3070,8 +3903,8 @@
           <figcaption>練習前の準備 / BDXオリジナル画像</figcaption>
         </figure>
         <div class="behind-copy reveal">
-          <div class="section-index">03 — 舞台を支える日常</div>
-          <h2 class="display-heading" id="behind-title">踊る身体は、<br />舞台裏でつくられる。</h2>
+          <div class="section-index">03 — 注目すべきは舞台裏</div>
+          <h2 class="display-heading" id="behind-title">注目すべきは<br />舞台裏。</h2>
           <p class="lead">バレリーナの価値は舞踊技術だけではありません。健康的な体型を維持し、体調を整え、動ける身体を支える日々の管理にもあります。</p>
           <div class="stage-method-diagram" aria-label="舞台上の表現を舞台裏の身体管理が支える構造">
             <div class="stage-visible"><span>舞台上 / 見える価値</span><strong>舞踊・技術・表現</strong></div>
@@ -3091,25 +3924,27 @@
 
     <!-- SECTION 04: WHAT IF -->
     <section class="story-section what-if" aria-labelledby="what-if-title">
-      <div class="frame reveal">
-        <div class="section-index">04 — もしも</div>
-        <h2 class="what-if-question" id="what-if-title">もし、そのメソッドを<br />僕たちの日常にも使えたら？</h2>
-        <div class="what-if-lines">
-          <span>バレエを習うためではない。</span>
-          <span>プロと同じ生活を真似するためでもない。</span>
-          <strong>身体を高いレベルで扱ってきた世界から、<br />普通の毎日に役立つものを取り入れる。</strong>
+      <div class="frame hypothesis reveal">
+        <div class="section-index">04 — BDXの仮説</div>
+        <p class="hypothesis-premise">バレエを踊るためではない。<br />バレリーナのような生活を真似するためでもない。</p>
+        <h2 class="what-if-question" id="what-if-title">もしも、バレエメソッドを<br />僕らの日常に取り入れたら？</h2>
+        <div class="hypothesis-body">
+          <p>バレリーナが高い身体表現を実現するために積み重ねている「メソッド」に価値があるのではないか。</p>
+          <span>そして、</span>
+          <p>その一部を普通の人の日常に落とし込めたら、身体との付き合い方そのものを変えられるのではないか。</p>
         </div>
+        <p class="hypothesis-conclusion">そんな仮説を立てた。</p>
       </div>
     </section>
 
     <!-- SECTION 05: MEET BDX -->
     <section class="story-section meet" aria-labelledby="meet-title">
       <div class="frame reveal">
-        <div class="section-index">05 — BDXとの出会い</div>
+        <div class="section-index">05 — BDXの誕生</div>
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
         <p class="brand-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
-        <p class="brand-definition">BDXは、バレエの世界で培われてきた身体操作・身体づくり・健康的な体型維持・体調管理のメソッドを一般ユーザーの日常へ落とし込み、AIで一人ひとりの状態に合わせ、ダンスによって身体を使う楽しさまで提供するプロジェクトです。</p>
+        <p class="brand-definition">BDXは、バレエの身体操作と舞台裏のコンディショニングを、運動・学習・回復という日常の行動へ落とし込むウェルビーイングサービスです。AIがその日の状態に合う一歩を提案し、ダンスの楽しさと成長の可視化によって、続けたくなる体験まで設計します。</p>
       </div>
       <div class="frame method-map reveal" aria-label="BDXの中心構造">
         <article class="method-node">
@@ -3130,33 +3965,72 @@
       </div>
     </section>
 
-    <!-- SECTION 06: BALLET METHOD × AI × DANCE -->
-    <section class="story-section roles" aria-labelledby="roles-title">
-      <div class="frame reveal">
-        <div class="section-index">06 — バレエメソッド × AI × ダンス</div>
-        <h2 class="display-en" id="roles-title">メソッド。<br />個別化。<br />楽しさ。</h2>
+    <!-- SECTION 06: PRODUCT SYSTEM -->
+    <section class="story-section product-system" aria-labelledby="product-system-title">
+      <div class="frame system-heading reveal">
+        <div>
+          <div class="section-index">06 — プロダクトの全体像</div>
+          <h2 class="display-heading" id="product-system-title">動く。学ぶ。整える。<br />すべてが次の一歩につながる。</h2>
+        </div>
+        <p class="lead">BDXはコンテンツを並べるだけではありません。バレエメソッドを軸に、AIが今日の行動を選び、結果を次の提案へつなげます。</p>
       </div>
-      <div class="frame role-layout reveal">
-        <article class="role method">
-          <span class="role-number">01 / 中核</span>
-          <h3>バレエ</h3>
-          <p class="role-key accent-rose">身体のメソッド</p>
-          <p>身体をつくる。<br />整える。<br />管理する。</p>
-        </article>
-        <article class="role">
-          <span class="role-number">02 / 個別化</span>
-          <h3>AI</h3>
-          <p class="role-key accent-mint">一人ひとりに合わせる</p>
-          <p>今日の自分に合わせる。</p>
-        </article>
-        <article class="role">
-          <span class="role-number">03 / 体験</span>
-          <h3>ダンス</h3>
-          <p class="role-key accent-blue">楽しさと表現</p>
-          <p>身体を使って楽しむ。</p>
-        </article>
+
+      <div class="frame product-architecture reveal" aria-label="BDXのプロダクト構造">
+        <div class="architecture-core">
+          <span>すべての体験の中核</span>
+          <strong>バレエメソッド</strong>
+          <p>身体操作・身体づくり・体調管理</p>
+        </div>
+        <div class="product-pillars">
+          <article class="product-pillar move-pillar">
+            <span>MOVE / 動く</span>
+            <h3>身体をつくる。</h3>
+            <ul><li>バレエエクササイズ</li><li>バレエ</li><li>ダンス</li></ul>
+          </article>
+          <article class="product-pillar learn-pillar">
+            <span>LEARN / 学ぶ</span>
+            <h3>身体を理解する。</h3>
+            <ul><li>身体・栄養</li><li>睡眠・回復</li><li>論文解説</li></ul>
+          </article>
+          <article class="product-pillar care-pillar">
+            <span>CARE / 整える</span>
+            <h3>身体と心を整える。</h3>
+            <ul><li>回復</li><li>メンタル</li><li>生活習慣</li></ul>
+          </article>
+        </div>
+        <div class="architecture-layer ai-layer">
+          <span>AI COACH</span>
+          <strong>今日の自分に合う一歩を選びやすくする。</strong>
+          <p>状態・目標・履歴から、運動・学習・回復の候補を絞り、理由とともに提案。</p>
+        </div>
+        <div class="architecture-layer progress-layer">
+          <span>PROGRESS</span>
+          <strong>運動だけでなく、学びと回復も成長にする。</strong>
+          <p>クエスト・経験値・レベル・達成記録で、自分の積み重ねを可視化。</p>
+        </div>
+        <div class="architecture-future"><span>将来</span><strong>COMMUNITY</strong><p>競争ではなく、共通の挑戦を楽しむ。</p></div>
       </div>
-      <p class="frame role-summary reveal">メソッドを、一人ひとりの日常へ。<br />楽しさを、続けたくなる体験へ。</p>
+
+      <div class="frame core-loop-panel reveal" aria-label="BDXの中心ユーザー体験">
+        <div class="loop-heading">
+          <span>BDXの中心体験</span>
+          <h3>今日の状態が、次の成長につながる。</h3>
+        </div>
+        <div class="core-loop-steps">
+          <article class="core-loop-step condition-step"><span>01</span><strong>状態を知る</strong><p>睡眠・疲労・気分</p></article>
+          <article class="core-loop-step coach-step"><span>02</span><strong>AIが整理</strong><p>目標・状態・履歴</p></article>
+          <article class="core-loop-step quest-step"><span>03</span><strong>今日のクエスト</strong><p>理由と時間を表示</p></article>
+          <article class="core-loop-step action-step"><span>04</span><strong>実践する</strong><p>動く・学ぶ・整える</p></article>
+          <article class="core-loop-step record-step"><span>05</span><strong>記録する</strong><p>変化・気づき・完了</p></article>
+          <article class="core-loop-step growth-step"><span>06</span><strong>成長が見える</strong><p>経験値・レベル・達成</p></article>
+        </div>
+        <div class="loop-return">履歴をAIが理解し、次のクエストへ</div>
+        <div class="system-values" aria-label="BDXが生み出す顧客価値">
+          <div><strong>迷わない。</strong><span>今日の一歩が分かる。</span></div>
+          <div><strong>理解できる。</strong><span>身体と行動がつながる。</span></div>
+          <div><strong>続けられる。</strong><span>休む日も成長になる。</span></div>
+        </div>
+      </div>
     </section>
 
     <!-- SECTION 07: BDX POSITIONING -->
@@ -3168,29 +4042,36 @@
         </div>
         <p class="lead">多くのバレエサービスがレッスンや技術習得を中心にするのに対し、BDXは舞台裏のメソッドを「最高の体調」のために使います。</p>
       </div>
-      <div class="frame category-compare reveal" aria-label="一般的なバレエサービスとBDXの目的の違い">
-        <article class="compare-side">
-          <span class="compare-label">一般的なバレエサービス</span>
-          <h3>バレエを習い、<br />踊りを上達させる。</h3>
-          <p>レッスン、基礎技術、振付、作品、舞台表現を中心に学ぶ。</p>
-          <strong class="compare-goal">目的：バレエを踊る</strong>
+      <div class="frame service-comparison reveal" aria-label="サービスカテゴリーとBDXの比較">
+        <article class="service-card">
+          <span class="service-number">01</span>
+          <h3>オンラインバレエ</h3>
+          <p class="service-purpose">踊りを学び、上達する。</p>
+          <dl><div><dt>中心体験</dt><dd>レッスン・技術・振付</dd></div><div><dt>選び方</dt><dd>講師または自分で選ぶ</dd></div><div><dt>成長</dt><dd>技術・表現の上達</dd></div></dl>
         </article>
-        <div class="compare-vs" aria-hidden="true">VS</div>
-        <article class="compare-side bdx-side">
-          <span class="compare-label">BDX</span>
-          <h3>バレエメソッドで、<br />毎日の身体を整える。</h3>
-          <p>身体操作・身体づくり・体型維持・体調管理を、一般ユーザーの日常へ活かす。</p>
-          <strong class="compare-goal">目的：最高の体調を、日常に</strong>
+        <article class="service-card">
+          <span class="service-number">02</span>
+          <h3>フィットネスアプリ</h3>
+          <p class="service-purpose">運動し、身体を鍛える。</p>
+          <dl><div><dt>中心体験</dt><dd>ワークアウト</dd></div><div><dt>選び方</dt><dd>目的や部位から選ぶ</dd></div><div><dt>成長</dt><dd>運動量・記録</dd></div></dl>
+        </article>
+        <article class="service-card">
+          <span class="service-number">03</span>
+          <h3>ウェルネスアプリ</h3>
+          <p class="service-purpose">休養や習慣を整える。</p>
+          <dl><div><dt>中心体験</dt><dd>睡眠・瞑想・記録</dd></div><div><dt>選び方</dt><dd>自分で機能を選ぶ</dd></div><div><dt>成長</dt><dd>習慣・状態の記録</dd></div></dl>
+        </article>
+        <article class="service-card bdx-service">
+          <span class="service-number">04 / BDX</span>
+          <h3>身体を育てるサービス</h3>
+          <p class="service-purpose">最高の体調を、日常につくる。</p>
+          <dl><div><dt>中心体験</dt><dd>動く・学ぶ・整える</dd></div><div><dt>選び方</dt><dd>AIが今日のクエストを提案</dd></div><div><dt>成長</dt><dd>運動・学び・回復を可視化</dd></div></dl>
         </article>
       </div>
-      <div class="frame bdx-equation reveal" aria-label="BDXを構成する3つの要素">
-        <article class="equation-part"><span>METHOD</span><strong>バレエメソッド</strong><p>身体をつくる・整える・維持する。</p></article>
-        <div class="equation-operator" aria-hidden="true">×</div>
-        <article class="equation-part"><span>PERSONALIZATION</span><strong>AI</strong><p>今日の状態に合う一歩へ変える。</p></article>
-        <div class="equation-operator" aria-hidden="true">×</div>
-        <article class="equation-part"><span>JOY</span><strong>ダンス</strong><p>音楽・表現・楽しさで続けたくする。</p></article>
+      <div class="frame differentiation-flow reveal" aria-label="BDXの独自性を構成する要素">
+        <span>バレエメソッド</span><i>×</i><span>科学的な学び</span><i>×</i><span>AIによる個別化</span><i>×</i><span>成長の可視化</span><i>×</i><span>ダンスの楽しさ</span>
       </div>
-      <p class="frame position-result reveal">3つを「最高の体調」で結ぶ。<br />それが、BDXの独自性。</p>
+      <p class="frame position-result reveal">舞台裏の知恵を「今日できる行動」に変え、<br />続けられる体験までつなぐ。</p>
       <p class="frame position-note reveal">一般的なサービスカテゴリーとの比較であり、個別サービスの全機能を示すものではありません。</p>
     </section>
 
