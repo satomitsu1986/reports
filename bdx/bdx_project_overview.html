@@ -3814,6 +3814,754 @@
       }
     }
 
+    /* Expanded BDX concept */
+    .science-joy {
+      margin-top: 64px;
+      padding: 38px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      background: #10121a;
+      text-align: left;
+    }
+
+    .science-joy-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .science-joy-heading > span,
+    .concept-label,
+    .growth-model-heading > span,
+    .activity-points-heading > span {
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .science-joy-heading h3 {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 600;
+    }
+
+    .science-joy-heading i {
+      color: var(--rose);
+      font-style: normal;
+    }
+
+    .science-joy-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 66px minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+      align-items: stretch;
+    }
+
+    .concept-side {
+      min-height: 270px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-top: 5px solid var(--gold);
+      border-radius: 6px;
+      background: #171b26;
+    }
+
+    .dance-enjoyment {
+      border-top-color: var(--blue);
+      background: #151c2a;
+    }
+
+    .dance-enjoyment .concept-label {
+      color: #9bb8e4;
+    }
+
+    .concept-side h4 {
+      margin: 48px 0 20px;
+      color: var(--ivory);
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .concept-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .concept-tags span {
+      padding: 8px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 4px;
+      color: #c4c7cf;
+      font-size: 10px;
+    }
+
+    .concept-times {
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 46px;
+    }
+
+    .science-joy-result {
+      margin-top: 30px;
+      color: #c8c9cf;
+      font-family: var(--serif);
+      font-size: 27px;
+      text-align: center;
+    }
+
+    .science-joy-result strong {
+      color: var(--ivory);
+    }
+
+    /* Library and research explainer */
+    .library-intro {
+      display: grid;
+      grid-template-columns: 150px minmax(300px, 0.9fr) minmax(300px, 1.1fr);
+      gap: 34px;
+      margin-top: 68px;
+      align-items: end;
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .library-intro > span,
+    .research-library-copy > span,
+    .sample-title > span,
+    .editorial-policy-heading > span {
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .library-intro h3 {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .library-intro p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .library-domains {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .library-domain {
+      --library-accent: var(--blue);
+      min-height: 350px;
+      padding: 25px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-top: 5px solid var(--library-accent);
+      border-radius: 5px;
+      background: #161922;
+    }
+
+    .nutrition-domain { --library-accent: var(--gold); }
+    .recovery-domain { --library-accent: var(--mint); }
+    .mind-domain { --library-accent: #9b8db9; }
+    .lifestyle-domain { --library-accent: var(--rose); }
+
+    .library-domain > span {
+      color: var(--library-accent);
+      font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .library-domain h3 {
+      margin: 52px 0 20px;
+      color: var(--ivory);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .library-domain ul {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.55;
+      list-style: none;
+    }
+
+    .research-library {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 46px;
+      margin-top: 64px;
+      padding: 34px;
+      border: 1px solid rgba(197, 167, 108, 0.46);
+      border-radius: 6px;
+      background: #15131a;
+    }
+
+    .research-library-copy h3 {
+      margin: 36px 0 13px;
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+    .research-library-copy p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .research-topic-cloud {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .research-topic-cloud span {
+      display: grid;
+      min-height: 52px;
+      place-items: center start;
+      padding: 10px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-left: 3px solid var(--blue);
+      border-radius: 3px;
+      color: #c5c8d0;
+      font-size: 10px;
+    }
+
+    .flow-caption {
+      margin-top: 72px;
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .flow-caption + .evidence-flow {
+      margin-top: 18px;
+    }
+
+    .research-sample {
+      margin-top: 58px;
+      padding: 36px;
+      border: 1px solid rgba(197, 167, 108, 0.62);
+      border-radius: 7px;
+      background: #17131c;
+    }
+
+    .sample-title {
+      display: grid;
+      grid-template-columns: 160px minmax(280px, 0.85fr) minmax(280px, 1.15fr);
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .sample-title h3 {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 600;
+    }
+
+    .sample-title p {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .sample-card {
+      --sample-accent: var(--rose);
+      min-height: 255px;
+      padding: 24px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-top: 5px solid var(--sample-accent);
+      border-radius: 5px;
+      background: #201a28;
+    }
+
+    .sample-evidence { --sample-accent: var(--blue); }
+    .sample-practice { --sample-accent: var(--mint); }
+
+    .sample-card > span {
+      color: var(--sample-accent);
+      font-family: var(--display);
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .sample-card > strong {
+      display: block;
+      margin: 44px 0 12px;
+      color: var(--ivory);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.65;
+    }
+
+    .sample-card > p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .sample-numbers {
+      display: grid;
+      gap: 9px;
+      margin: 38px 0 16px;
+    }
+
+    .sample-numbers strong {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 32px;
+    }
+
+    .sample-numbers b {
+      color: #b7bbc5;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .sample-boundaries {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .sample-boundaries span {
+      padding: 11px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #b8bbc4;
+      font-size: 9px;
+      text-align: center;
+    }
+
+    .sample-source {
+      margin-top: 16px;
+      color: #858995;
+      font-size: 9px;
+    }
+
+    .editorial-policy {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.3fr);
+      gap: 46px;
+      margin-top: 40px;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      background: #10151f;
+    }
+
+    .editorial-policy-heading h3 {
+      margin-top: 38px;
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      list-style: none;
+    }
+
+    .policy-grid li {
+      display: flex;
+      min-height: 58px;
+      align-items: center;
+      padding: 11px 14px 11px 34px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #c5c8cf;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .policy-grid li::before {
+      margin-left: -20px;
+      margin-right: 10px;
+      color: var(--mint);
+      content: '✓';
+    }
+
+    /* Multidimensional growth */
+    .growth-model {
+      margin-top: 72px;
+      padding: 40px;
+      border: 1px solid rgba(197, 167, 108, 0.5);
+      border-radius: 8px;
+      background: #111723;
+    }
+
+    .growth-model-heading {
+      display: grid;
+      grid-template-columns: 150px minmax(320px, 0.95fr) minmax(280px, 1.05fr);
+      gap: 34px;
+      align-items: end;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .growth-model-heading h3 {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .growth-model-heading p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .skill-dimensions {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 7px;
+      margin-top: 24px;
+    }
+
+    .skill-dimensions > div {
+      --skill-accent: var(--rose);
+      min-height: 126px;
+      padding: 20px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-top: 4px solid var(--skill-accent);
+      border-radius: 4px;
+      background: #192130;
+    }
+
+    .skill-dimensions > div:nth-child(2) { --skill-accent: var(--gold); }
+    .skill-dimensions > div:nth-child(3) { --skill-accent: var(--blue); }
+    .skill-dimensions > div:nth-child(4) { --skill-accent: #9b8db9; }
+    .skill-dimensions > div:nth-child(5) { --skill-accent: #d9b96f; }
+    .skill-dimensions > div:nth-child(6) { --skill-accent: #c58aa4; }
+    .skill-dimensions > div:nth-child(7) { --skill-accent: var(--mint); }
+
+    .skill-dimensions strong,
+    .skill-dimensions span {
+      display: block;
+    }
+
+    .skill-dimensions strong {
+      color: var(--skill-accent);
+      font-family: var(--display);
+      font-size: 9px;
+      overflow-wrap: anywhere;
+    }
+
+    .skill-dimensions span {
+      margin-top: 44px;
+      color: var(--ivory);
+      font-size: 12px;
+    }
+
+    .activity-points {
+      margin-top: 46px;
+    }
+
+    .activity-points-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .activity-points-heading h4 {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .activity-point-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .activity-point-grid article {
+      min-height: 145px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 4px;
+      background: #18202e;
+    }
+
+    .activity-point-grid h5 {
+      color: var(--ivory);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .activity-point-grid article > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 34px;
+    }
+
+    .activity-point-grid article span {
+      padding: 6px 8px;
+      border: 1px solid rgba(112, 182, 154, 0.35);
+      border-radius: 3px;
+      color: #9bd1be;
+      font-family: var(--display);
+      font-size: 8px;
+    }
+
+    .growth-profiles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 42px;
+    }
+
+    .growth-profile {
+      --profile-accent: var(--rose);
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-top: 5px solid var(--profile-accent);
+      border-radius: 5px;
+      background: #171d29;
+    }
+
+    .profile-b {
+      --profile-accent: var(--blue);
+    }
+
+    .profile-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .profile-heading span {
+      color: var(--profile-accent);
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .profile-heading strong {
+      color: var(--ivory);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .profile-stats {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .profile-stats > div {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr) 48px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .profile-stats span,
+    .profile-stats strong {
+      font-family: var(--display);
+      font-size: 9px;
+    }
+
+    .profile-stats span {
+      color: #aeb5c1;
+    }
+
+    .profile-stats strong {
+      color: var(--ivory);
+      text-align: right;
+    }
+
+    .profile-stats progress {
+      width: 100%;
+      height: 6px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 6px;
+      appearance: none;
+    }
+
+    .profile-stats progress::-webkit-progress-bar {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .profile-stats progress::-webkit-progress-value {
+      background: var(--profile-accent);
+    }
+
+    .profile-stats progress::-moz-progress-bar {
+      background: var(--profile-accent);
+    }
+
+    .growth-principle {
+      margin-top: 42px;
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: 33px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Future possibilities */
+    .future-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      gap: 64px;
+      align-items: end;
+    }
+
+    .future-heading .display-en {
+      font-size: 60px;
+      line-height: 1.18;
+    }
+
+    .future-heading > p {
+      color: #5f5960;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .future-orbit {
+      margin-top: 68px;
+      padding: 36px;
+      border: 1px solid rgba(9, 9, 12, 0.22);
+      border-radius: 8px;
+      background: #fffafd;
+    }
+
+    .future-core {
+      display: grid;
+      grid-template-columns: 110px minmax(280px, 0.9fr) minmax(280px, 1.1fr);
+      gap: 24px;
+      align-items: center;
+      padding: 24px 28px;
+      border-radius: 5px;
+      background: #111827;
+      color: var(--ivory);
+    }
+
+    .future-core > span {
+      color: var(--rose);
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .future-core strong {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .future-core p {
+      color: #b2b9c5;
+      font-size: 11px;
+    }
+
+    .future-path {
+      margin: 14px 0;
+      color: #8c7245;
+      font-family: var(--display);
+      font-size: 9px;
+      text-align: center;
+    }
+
+    .future-possibilities {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .future-possibility {
+      --future-accent: var(--rose);
+      min-height: 260px;
+      grid-column: span 2;
+      padding: 24px 20px;
+      border: 1px solid rgba(9, 9, 12, 0.18);
+      border-top: 5px solid var(--future-accent);
+      border-radius: 5px;
+      background: #fff;
+    }
+
+    .expert-future { --future-accent: var(--mint); }
+    .studio-future { --future-accent: var(--blue); }
+    .society-future,
+    .global-future {
+      grid-column: span 3;
+    }
+    .society-future { --future-accent: var(--gold); }
+    .global-future { --future-accent: #9b8db9; }
+
+    .future-possibility > span {
+      color: #7e7363;
+      font-family: var(--display);
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .future-possibility h3 {
+      margin: 48px 0 20px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .future-possibility ul {
+      display: grid;
+      gap: 7px;
+      color: #686269;
+      font-size: 10px;
+      list-style: none;
+    }
+
+    .future-message {
+      margin-top: 42px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 35px;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: center;
+    }
+
     /* Mobile overview composition: preserve the desktop relationships at phone width. */
     @media (max-width: 600px) {
       .story-section {
@@ -4696,34 +5444,461 @@
         font-size: 7px;
       }
 
-      /* 13 — Future */
-      .future-phases {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 7px;
+      /* Expanded BDX concept */
+      .science-joy {
         margin-top: 42px;
-        border: 0;
+        padding: 18px 12px;
       }
 
-      .future-phase,
-      .future-phase:last-child {
-        min-height: 278px;
-        padding: 16px 9px;
-        border: 1px solid var(--pop-border);
-        border-top: 6px solid var(--card-accent);
+      .science-joy-heading {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 8px;
+        padding-bottom: 16px;
       }
 
-      .phase-state {
+      .science-joy-heading > span {
         font-size: 7px;
       }
 
-      .future-phase h3 {
-        margin: 42px 0 16px;
+      .science-joy-heading h3 {
+        font-size: 17px;
+      }
+
+      .science-joy-grid {
+        grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+        gap: 6px;
+        margin-top: 14px;
+      }
+
+      .concept-side {
+        min-height: 224px;
+        padding: 14px 9px;
+      }
+
+      .concept-label {
+        font-size: 6px;
+      }
+
+      .concept-side h4 {
+        margin: 30px 0 13px;
         font-size: 13px;
       }
 
-      .future-phase ul {
-        gap: 6px;
+      .concept-tags {
+        gap: 4px;
+      }
+
+      .concept-tags span {
+        padding: 5px 6px;
+        font-size: 7px;
+      }
+
+      .concept-times {
+        font-size: 24px;
+      }
+
+      .science-joy-result {
+        margin-top: 18px;
+        font-size: 16px;
+      }
+
+      /* Library and research explainer */
+      .library-intro {
+        grid-template-columns: 52px minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 8px;
+        margin-top: 40px;
+        padding: 18px 0;
+      }
+
+      .library-intro > span,
+      .research-library-copy > span,
+      .sample-title > span,
+      .editorial-policy-heading > span {
+        font-size: 6px;
+      }
+
+      .library-intro h3 {
+        font-size: 15px;
+      }
+
+      .library-intro p {
         font-size: 8px;
+        line-height: 1.6;
+      }
+
+      .library-domains {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .library-domain {
+        min-height: 240px;
+        grid-column: span 2;
+        padding: 13px 8px;
+      }
+
+      .library-domain:nth-child(4),
+      .library-domain:nth-child(5) {
+        grid-column: span 3;
+      }
+
+      .library-domain > span {
+        font-size: 7px;
+      }
+
+      .library-domain h3 {
+        margin: 28px 0 13px;
+        font-size: 11px;
+      }
+
+      .library-domain ul {
+        gap: 4px;
+        font-size: 7px;
+        line-height: 1.45;
+      }
+
+      .research-library {
+        grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+        gap: 10px;
+        margin-top: 38px;
+        padding: 17px 12px;
+      }
+
+      .research-library-copy h3 {
+        margin: 24px 0 9px;
+        font-size: 15px;
+      }
+
+      .research-library-copy p {
+        font-size: 7px;
+        line-height: 1.6;
+      }
+
+      .research-topic-cloud {
+        gap: 4px;
+      }
+
+      .research-topic-cloud span {
+        min-height: 34px;
+        padding: 6px;
+        border-left-width: 2px;
+        font-size: 6px;
+      }
+
+      .flow-caption {
+        margin-top: 42px;
+        font-size: 7px;
+      }
+
+      .research-sample {
+        margin-top: 36px;
+        padding: 18px 12px;
+      }
+
+      .sample-title {
+        grid-template-columns: 52px minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 8px;
+        padding-bottom: 16px;
+      }
+
+      .sample-title h3 {
+        font-size: 16px;
+      }
+
+      .sample-title p {
+        font-size: 7px;
+        line-height: 1.55;
+      }
+
+      .sample-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 14px;
+      }
+
+      .sample-card {
+        min-height: 236px;
+        padding: 13px 8px;
+      }
+
+      .sample-card > span {
+        font-size: 6px;
+      }
+
+      .sample-card > strong {
+        margin: 28px 0 9px;
+        font-size: 10px;
+        line-height: 1.55;
+      }
+
+      .sample-card > p {
+        font-size: 7px;
+        line-height: 1.5;
+      }
+
+      .sample-numbers {
+        gap: 6px;
+        margin: 27px 0 11px;
+      }
+
+      .sample-numbers strong {
+        font-size: 19px;
+      }
+
+      .sample-numbers b {
+        font-size: 7px;
+      }
+
+      .sample-boundaries {
+        gap: 4px;
+        margin-top: 10px;
+      }
+
+      .sample-boundaries span {
+        padding: 8px 3px;
+        font-size: 6px;
+      }
+
+      .sample-source {
+        margin-top: 10px;
+        font-size: 6px;
+      }
+
+      .editorial-policy {
+        grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+        gap: 10px;
+        margin-top: 24px;
+        padding: 16px 12px;
+      }
+
+      .editorial-policy-heading h3 {
+        margin-top: 25px;
+        font-size: 15px;
+      }
+
+      .policy-grid {
+        gap: 4px;
+      }
+
+      .policy-grid li {
+        min-height: 42px;
+        padding: 7px 5px 7px 20px;
+        font-size: 6px;
+      }
+
+      .policy-grid li::before {
+        margin-left: -13px;
+        margin-right: 5px;
+      }
+
+      /* Multidimensional growth */
+      .growth-model {
+        margin-top: 46px;
+        padding: 18px 12px;
+      }
+
+      .growth-model-heading {
+        grid-template-columns: 52px minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 8px;
+        padding-bottom: 17px;
+      }
+
+      .growth-model-heading > span,
+      .activity-points-heading > span {
+        font-size: 6px;
+      }
+
+      .growth-model-heading h3 {
+        font-size: 16px;
+      }
+
+      .growth-model-heading p {
+        font-size: 7px;
+        line-height: 1.55;
+      }
+
+      .skill-dimensions {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+        margin-top: 14px;
+      }
+
+      .skill-dimensions > div {
+        min-height: 84px;
+        padding: 11px 7px;
+      }
+
+      .skill-dimensions strong {
+        font-size: 6px;
+      }
+
+      .skill-dimensions span {
+        margin-top: 25px;
+        font-size: 8px;
+      }
+
+      .activity-points {
+        margin-top: 30px;
+      }
+
+      .activity-points-heading {
+        gap: 10px;
+      }
+
+      .activity-points-heading h4 {
+        font-size: 15px;
+      }
+
+      .activity-point-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .activity-point-grid article {
+        min-height: 112px;
+        padding: 12px 9px;
+      }
+
+      .activity-point-grid h5 {
+        font-size: 10px;
+      }
+
+      .activity-point-grid article > div {
+        gap: 4px;
+        margin-top: 24px;
+      }
+
+      .activity-point-grid article span {
+        padding: 5px;
+        font-size: 6px;
+      }
+
+      .growth-profiles {
+        gap: 7px;
+        margin-top: 28px;
+      }
+
+      .growth-profile {
+        padding: 13px 9px;
+      }
+
+      .profile-heading {
+        display: grid;
+        gap: 7px;
+        padding-bottom: 12px;
+      }
+
+      .profile-heading span {
+        font-size: 7px;
+      }
+
+      .profile-heading strong {
+        font-size: 9px;
+      }
+
+      .profile-stats {
+        gap: 8px;
+        margin-top: 13px;
+      }
+
+      .profile-stats > div {
+        grid-template-columns: 48px minmax(0, 1fr) 32px;
+        gap: 5px;
+      }
+
+      .profile-stats span,
+      .profile-stats strong {
+        font-size: 6px;
+      }
+
+      .profile-stats progress {
+        height: 4px;
+      }
+
+      .growth-principle {
+        margin-top: 26px;
+        font-size: 20px;
+      }
+
+      /* 13 — Future possibilities */
+      .future-heading {
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+        gap: 12px;
+      }
+
+      .future-heading .display-en {
+        font-size: 25px;
+      }
+
+      .future-heading > p {
+        font-size: 8px;
+        line-height: 1.65;
+      }
+
+      .future-orbit {
+        margin-top: 40px;
+        padding: 14px 10px;
+      }
+
+      .future-core {
+        grid-template-columns: 42px minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 7px;
+        padding: 13px 10px;
+      }
+
+      .future-core > span {
+        font-size: 14px;
+      }
+
+      .future-core strong {
+        font-size: 12px;
+      }
+
+      .future-core p {
+        font-size: 7px;
+      }
+
+      .future-path {
+        margin: 9px 0;
+        font-size: 6px;
+      }
+
+      .future-possibilities {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+      .future-possibility {
+        min-height: 188px;
+        grid-column: span 2;
+        padding: 12px 8px;
+      }
+
+      .society-future,
+      .global-future {
+        grid-column: span 3;
+      }
+
+      .future-possibility > span {
+        font-size: 6px;
+      }
+
+      .future-possibility h3 {
+        margin: 30px 0 12px;
+        font-size: 10px;
+      }
+
+      .future-possibility ul {
+        gap: 5px;
+        font-size: 7px;
+      }
+
+      .future-message {
+        margin-top: 26px;
+        font-size: 20px;
       }
     }
 
@@ -4857,7 +6032,7 @@
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
         <p class="brand-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
-        <p class="brand-definition">BDXは、バレエの身体操作と舞台裏のコンディショニングを、運動・学習・回復という日常の行動へ落とし込むウェルビーイングサービスです。AIがその日の状態に合う一歩を提案し、ダンスの楽しさと成長の可視化によって、続けたくなる体験まで設計します。</p>
+        <p class="brand-definition">BDXは、バレエの身体操作と舞台裏のコンディショニングを、運動・学習・回復という日常の行動へ落とし込むウェルビーイングサービスです。AIがその日の状態に合う行動を提案し、ダンスの楽しさと成長の可視化によって、続けたくなる体験まで設計します。</p>
       </div>
       <div class="frame method-map reveal" aria-label="BDXの中心構造">
         <article class="method-node">
@@ -4873,8 +6048,28 @@
         <article class="method-node">
           <span class="node-role accent-blue">楽しさと表現</span>
           <h3>ダンス</h3>
-          <p>身体を使い、音楽と表現を楽しむ。</p>
+          <p>音楽・リズム・表現を通じて、身体を使うことを楽しむ。</p>
         </article>
+      </div>
+      <div class="frame science-joy reveal" aria-label="バレエの科学とダンスの楽しさを組み合わせるBDXのコアコンセプト">
+        <div class="science-joy-heading">
+          <span>BDXのコアコンセプト</span>
+          <h3>バレエの科学 <i>×</i> ダンスの楽しさ</h3>
+        </div>
+        <div class="science-joy-grid">
+          <article class="concept-side ballet-science">
+            <span class="concept-label">バレエ / 身体を理解する</span>
+            <h4>科学と技法</h4>
+            <div class="concept-tags"><span>解剖学</span><span>運動学</span><span>姿勢</span><span>アライメント</span><span>身体操作</span><span>基礎技術</span><span>身体への意識</span></div>
+          </article>
+          <div class="concept-times" aria-hidden="true">×</div>
+          <article class="concept-side dance-enjoyment">
+            <span class="concept-label">ダンス / 身体を楽しむ</span>
+            <h4>音楽と表現</h4>
+            <div class="concept-tags"><span>音楽</span><span>リズム</span><span>表現</span><span>振付</span><span>遊び</span><span>達成感</span><span>感情</span></div>
+          </article>
+        </div>
+        <p class="science-joy-result">科学的に身体を理解し、楽しく身体を使う。<strong>これがBDX。</strong></p>
       </div>
     </section>
 
@@ -4883,7 +6078,7 @@
       <div class="frame system-heading reveal">
         <div>
           <div class="section-index">06 — プロダクトの全体像</div>
-          <h2 class="display-heading" id="product-system-title">動く。学ぶ。整える。<br />すべてが次の一歩につながる。</h2>
+          <h2 class="display-heading" id="product-system-title">動く。学ぶ。整える。<br />すべてが次の行動につながる。</h2>
         </div>
         <p class="lead">BDXはコンテンツを並べるだけではありません。バレエメソッドを軸に、AIが今日の行動を選び、結果を次の提案へつなげます。</p>
       </div>
@@ -4913,7 +6108,7 @@
         </div>
         <div class="architecture-layer ai-layer">
           <span>AI COACH</span>
-          <strong>今日の自分に合う一歩を選びやすくする。</strong>
+          <strong>今日の自分に合う行動を選びやすくする。</strong>
           <p>状態・目標・履歴から、運動・学習・回復の候補を絞り、理由とともに提案。</p>
         </div>
         <div class="architecture-layer progress-layer">
@@ -4938,11 +6133,6 @@
           <article class="core-loop-step growth-step"><span>06</span><strong>成長が見える</strong><p>経験値・レベル・達成</p></article>
         </div>
         <div class="loop-return">履歴をAIが理解し、次のクエストへ</div>
-        <div class="system-values" aria-label="BDXが生み出す顧客価値">
-          <div><strong>迷わない。</strong><span>今日の一歩が分かる。</span></div>
-          <div><strong>理解できる。</strong><span>身体と行動がつながる。</span></div>
-          <div><strong>続けられる。</strong><span>休む日も成長になる。</span></div>
-        </div>
       </div>
     </section>
 
@@ -5015,7 +6205,7 @@
       <div class="frame product-head reveal">
         <div>
           <div class="section-index">09 — プロダクトの中心機能</div>
-          <h2 class="display-heading" id="product-title">今日の一歩に、<br />迷わない。</h2>
+          <h2 class="display-heading" id="product-title">今日の行動に、<br />迷わない。</h2>
         </div>
         <p class="lead">BDXは、その日の状態を起点に、動く・学ぶ・整えるをひとつの流れにつなぎます。</p>
       </div>
@@ -5028,7 +6218,7 @@
         </article>
         <article class="feature-item">
           <span class="feature-number">02 / 今日のクエスト</span>
-          <h3>今日の一歩が分かる</h3>
+          <h3>今日の行動が分かる</h3>
           <p>AIが状態・目的・過去の履歴から、運動・学習・回復の中で取り組みやすい行動を提案します。</p>
           <span class="feature-value">理由と所要時間も表示</span>
         </article>
@@ -5056,11 +6246,6 @@
           <p>クエストの完了履歴、経験値、レベル、達成記録から、自分が積み重ねてきた行動を振り返れます。</p>
           <span class="feature-value">クエスト・経験値・レベル・達成</span>
         </article>
-      </div>
-      <div class="frame product-outcomes reveal" aria-label="BDXが提供する3つの価値">
-        <div class="product-outcome"><strong>迷わない。</strong><span>今日の一歩を絞る。</span></div>
-        <div class="product-outcome"><strong>つながる。</strong><span>運動・学習・回復がひとつになる。</span></div>
-        <div class="product-outcome"><strong>続けられる。</strong><span>休む日も成長として残る。</span></div>
       </div>
     </section>
 
@@ -5105,10 +6290,57 @@
       <div class="frame science-heading-row reveal">
         <div>
           <div class="section-index">11 — 注目機能 / 論文解説</div>
-          <h2 class="display-heading" id="science-title">難しい研究を、<br />今日の行動へ。</h2>
+          <h2 class="display-heading" id="science-title">難しい論文も、<br />実践できる形に。</h2>
         </div>
-        <p class="lead">専門的な論文を初心者にも分かる言葉と図に変え、研究結果・限界・BDXの提案を分けて届けます。</p>
+        <p class="lead">Libraryはバレエ技術の解説だけではありません。身体・心・生活の科学を、分かる言葉と日常の行動へつなぎます。</p>
       </div>
+
+      <div class="frame library-intro reveal">
+        <span>LEARN / LIBRARY</span>
+        <h3>バレエから学ぶ、<br />身体・心・生活の科学。</h3>
+        <p>バレエの実践から生まれる疑問を、身体科学・栄養・回復・心・生活という5つの領域から学びます。</p>
+      </div>
+
+      <div class="frame library-domains reveal" aria-label="BDX Libraryの5つの学習領域">
+        <article class="library-domain body-domain">
+          <span>身体科学</span>
+          <h3>身体を知る。</h3>
+          <ul><li>解剖学</li><li>運動学</li><li>バイオメカニクス</li><li>姿勢</li><li>アライメント</li><li>柔軟性</li><li>筋力</li><li>身体操作</li></ul>
+        </article>
+        <article class="library-domain nutrition-domain">
+          <span>栄養</span>
+          <h3>身体を支える。</h3>
+          <ul><li>栄養学</li><li>エネルギー</li><li>タンパク質</li><li>炭水化物</li><li>水分</li><li>運動前後の栄養</li><li>回復</li></ul>
+        </article>
+        <article class="library-domain recovery-domain">
+          <span>回復</span>
+          <h3>身体を戻す。</h3>
+          <ul><li>睡眠</li><li>疲労</li><li>ストレッチ</li><li>ボディケア</li><li>休養</li><li>リカバリー</li></ul>
+        </article>
+        <article class="library-domain mind-domain">
+          <span>心</span>
+          <h3>心を整える。</h3>
+          <ul><li>メンタルケア</li><li>モチベーション</li><li>集中</li><li>不安</li><li>自己効力感</li><li>プレッシャー</li><li>習慣形成</li></ul>
+        </article>
+        <article class="library-domain lifestyle-domain">
+          <span>生活</span>
+          <h3>日常に活かす。</h3>
+          <ul><li>バレリーナ／ダンサーの生活</li><li>ルーティン</li><li>身体管理</li><li>セルフマネジメント</li><li>時間管理</li><li>本番前準備</li><li>日常習慣</li></ul>
+        </article>
+      </div>
+
+      <div class="frame research-library reveal">
+        <div class="research-library-copy">
+          <span>科学論文コンテンツ</span>
+          <h3>科学を、判断材料にする。</h3>
+          <p>運動学・バイオメカニクス・スポーツ科学・栄養学・睡眠科学・心理学・メンタルケア・習慣形成・回復・ダンス科学の論文を扱います。</p>
+        </div>
+        <div class="research-topic-cloud" aria-label="BDXが扱う科学論文の分野">
+          <span>運動学</span><span>バイオメカニクス</span><span>スポーツ科学</span><span>栄養学</span><span>睡眠科学</span><span>心理学</span><span>メンタルケア</span><span>習慣形成</span><span>回復</span><span>ダンス科学</span>
+        </div>
+      </div>
+
+      <p class="frame flow-caption reveal">論文解説の標準フォーマット</p>
       <div class="frame evidence-flow reveal" aria-label="BDX論文解説の流れ">
         <div class="evidence-step"><span>01</span><strong>今日の<br />結論</strong></div>
         <div class="evidence-step"><span>02</span><strong>この資料で<br />分かること</strong></div>
@@ -5117,37 +6349,63 @@
         <div class="evidence-step"><span>05</span><strong>BDXで<br />どう活かす？</strong></div>
         <div class="evidence-step"><span>06</span><strong>今日から<br />できること</strong></div>
       </div>
-      <div class="frame science-example reveal">
-        <div>
-          <span class="eyebrow">研究結果</span>
-          <h3>何が分かり、<br />何がまだ分からないか。</h3>
-          <p>対象・人数・方法・結果・限界を整理し、論文から直接言えることだけを示します。</p>
-          <div class="research-labels" aria-label="論文解説の情報区分">
-            <span class="research-label fact">研究で確認</span>
-            <span class="research-label practice">BDXの提案</span>
-            <span class="research-label caution">注意・限界</span>
-          </div>
-          <div class="paper-meta"><span>論文名・著者・掲載年</span><span>DOI・URL・引用文献を表示</span></div>
+
+      <div class="frame research-sample reveal" aria-label="論文解説サンプル 意志より先に設計する">
+        <div class="sample-title">
+          <span>論文解説サンプル / 自己制御編</span>
+          <h3>意志より先に設計する</h3>
+          <p>環境と考え方を整え、健康的な食行動を選びやすくする。</p>
         </div>
-        <div>
-          <span class="eyebrow">BDXでどう活かす？</span>
-          <h3>読むだけで終わらせず、<br />自分で試せる形へ。</h3>
-          <p>研究の考え方を、一般ユーザーが日常で実践できる小さな行動とワークへつなぎます。</p>
-          <div class="action-flow" aria-label="論文解説から実践までの流れ"><span>理解</span><i>→</i><span>実践</span><i>→</i><span>振り返り</span></div>
+        <div class="sample-grid">
+          <article class="sample-card sample-conclusion">
+            <span>01 / 今日の結論</span>
+            <strong>食欲を強い意志だけで抑えるのではなく、環境と考え方を先に整える。</strong>
+            <p>健康的な選択をしやすい条件をつくります。</p>
+          </article>
+          <article class="sample-card sample-evidence">
+            <span>02 / 科学的根拠</span>
+            <div class="sample-numbers"><strong>360人</strong><b>2種類の戦略</b><b>最大2カ月</b></div>
+            <p>成人を対象とした縦断的介入研究。状況を変える方法と、捉え方を変える方法を検討しました。</p>
+          </article>
+          <article class="sample-card sample-practice">
+            <span>03 / BDXでどう活かす？</span>
+            <strong>予定外に食べた場面を、意志の弱さではなく条件から振り返る。</strong>
+            <p>状況・捉え方・次回変えることを一つずつ整理します。</p>
+          </article>
         </div>
+        <div class="sample-boundaries" aria-label="論文解説で区別する情報">
+          <span>研究で確認</span><span>結果から考えられること</span><span>BDXの提案</span><span>注意・限界</span>
+        </div>
+        <p class="sample-source">出典：Lopez, R. B., et al. (2026), <em>Appetite, 216</em>, 108310.</p>
       </div>
-      <p class="frame science-equation reveal">難しい研究 → 分かる → 試せる</p>
-      <p class="frame safety-note reveal">論文の結果とBDXの提案を分け、因果と相関、対象者、研究条件、限界を明記します。医療診断や効果の断定は行いません。</p>
+
+      <div class="frame editorial-policy reveal">
+        <div class="editorial-policy-heading">
+          <span>科学的信頼性</span>
+          <h3>論文を、都合よく使わない。</h3>
+        </div>
+        <ul class="policy-grid">
+          <li>論文にないことを断定しない</li>
+          <li>因果と相関を混同しない</li>
+          <li>研究対象と一般ユーザーを区別する</li>
+          <li>専門用語を初心者向けに説明する</li>
+          <li>数値には対象・条件を付ける</li>
+          <li>研究結果とBDXの提案を分ける</li>
+          <li>引用・出典を明確にする</li>
+        </ul>
+      </div>
+      <p class="frame science-equation reveal">難しい論文 → 分かる → 実践できる</p>
+      <p class="frame safety-note reveal">科学は「絶対の答え」ではなく、より良い行動を考えるための判断材料として扱います。医療診断や効果の断定は行いません。</p>
     </section>
 
     <!-- SECTION 12: GAMIFICATION & DANCE -->
     <section class="story-section grow" aria-labelledby="grow-title">
       <div class="frame reveal">
         <div class="section-index">12 — 注目機能 / ゲーミフィケーション</div>
-        <h2 class="display-heading" id="grow-title">続けたくなる仕組みを、<br />身体に。</h2>
+        <h2 class="display-heading" id="grow-title">続けたくなる仕組み</h2>
         <p class="lead grow-lead">毎日の小さな行動をクエストに変え、経験値・レベル・達成記録として積み重ねます。</p>
         <div class="progress-strip" aria-label="BDXの成長記録">
-          <div class="progress-item"><strong>クエスト</strong><p>今日の一歩。</p></div>
+          <div class="progress-item"><strong>クエスト</strong><p>今日の行動。</p></div>
           <div class="progress-item"><strong>経験値</strong><p>積み重ね。</p></div>
           <div class="progress-item"><strong>レベル</strong><p>経験。</p></div>
           <div class="progress-item"><strong>達成</strong><p>できるようになったこと。</p></div>
@@ -5176,6 +6434,68 @@
           <div class="game-rule">他人との競争より<br />自分の積み重ね</div>
         </div>
       </div>
+
+      <div class="frame growth-model reveal" aria-label="BDXの多軸成長モデル">
+        <div class="growth-model-heading">
+          <span>成長モデル / 設計例</span>
+          <h3>成長は、ひとつの数字では測らない。</h3>
+          <p>BDXでは、行動によって異なる経験が育つ7つの軸を構想しています。</p>
+        </div>
+
+        <div class="skill-dimensions" aria-label="7つの成長軸">
+          <div><strong>BODY</strong><span>身体能力</span></div>
+          <div><strong>BALLET</strong><span>身体技法</span></div>
+          <div><strong>RHYTHM</strong><span>リズム</span></div>
+          <div><strong>EXPRESSION</strong><span>表現力</span></div>
+          <div><strong>KNOWLEDGE</strong><span>知識</span></div>
+          <div><strong>MIND</strong><span>心</span></div>
+          <div><strong>RECOVERY</strong><span>回復</span></div>
+        </div>
+
+        <div class="activity-points">
+          <div class="activity-points-heading">
+            <span>行動と経験値</span>
+            <h4>何をするかで、育つ力が変わる。</h4>
+          </div>
+          <div class="activity-point-grid">
+            <article><h5>バレエエクササイズ</h5><div><span>BODY +10</span><span>RECOVERY +3</span></div></article>
+            <article><h5>バレエ</h5><div><span>BALLET +10</span><span>BODY +5</span><span>KNOWLEDGE +3</span></div></article>
+            <article><h5>ダンス</h5><div><span>RHYTHM +10</span><span>EXPRESSION +10</span><span>BODY +3</span></div></article>
+            <article><h5>論文解説</h5><div><span>KNOWLEDGE +10</span></div></article>
+            <article><h5>メンタルケア</h5><div><span>MIND +10</span></div></article>
+            <article><h5>Recovery Day</h5><div><span>RECOVERY +10</span></div></article>
+          </div>
+        </div>
+
+        <div class="growth-profiles" aria-label="異なる成長の例">
+          <article class="growth-profile profile-a">
+            <div class="profile-heading"><span>ユーザー A</span><strong>身体・知識・回復を育てた人</strong></div>
+            <div class="profile-stats">
+              <div><span>BODY</span><progress max="20" value="15">15</progress><strong>Lv.15</strong></div>
+              <div><span>BALLET</span><progress max="20" value="8">8</progress><strong>Lv.8</strong></div>
+              <div><span>RHYTHM</span><progress max="20" value="4">4</progress><strong>Lv.4</strong></div>
+              <div><span>EXPRESSION</span><progress max="20" value="3">3</progress><strong>Lv.3</strong></div>
+              <div><span>KNOWLEDGE</span><progress max="20" value="12">12</progress><strong>Lv.12</strong></div>
+              <div><span>MIND</span><progress max="20" value="9">9</progress><strong>Lv.9</strong></div>
+              <div><span>RECOVERY</span><progress max="20" value="11">11</progress><strong>Lv.11</strong></div>
+            </div>
+          </article>
+          <article class="growth-profile profile-b">
+            <div class="profile-heading"><span>ユーザー B</span><strong>リズム・表現を育てた人</strong></div>
+            <div class="profile-stats">
+              <div><span>BODY</span><progress max="20" value="8">8</progress><strong>Lv.8</strong></div>
+              <div><span>BALLET</span><progress max="20" value="5">5</progress><strong>Lv.5</strong></div>
+              <div><span>RHYTHM</span><progress max="20" value="16">16</progress><strong>Lv.16</strong></div>
+              <div><span>EXPRESSION</span><progress max="20" value="14">14</progress><strong>Lv.14</strong></div>
+              <div><span>KNOWLEDGE</span><progress max="20" value="6">6</progress><strong>Lv.6</strong></div>
+              <div><span>MIND</span><progress max="20" value="10">10</progress><strong>Lv.10</strong></div>
+              <div><span>RECOVERY</span><progress max="20" value="7">7</progress><strong>Lv.7</strong></div>
+            </div>
+          </article>
+        </div>
+        <p class="growth-principle">正しい育ち方は、一つではない。</p>
+      </div>
+
       <figure class="joy-photo reveal">
         <img src="assets/bdx-dance-joy.png" alt="光の入るスタジオで、音楽と表現を楽しみながら踊る二人のダンサー" loading="lazy" />
         <div class="frame joy-copy">
@@ -5188,26 +6508,49 @@
 
     <!-- SECTION 13: THE FUTURE OF BDX -->
     <section class="story-section future" aria-labelledby="future-title">
-      <div class="frame reveal">
-        <div class="section-index">13 — BDXの未来</div>
-        <h2 class="display-en" id="future-title">つくる。<br />合わせる。<br />ともに育つ。</h2>
+      <div class="frame future-heading reveal">
+        <div>
+          <div class="section-index">13 — 将来の展開</div>
+          <h2 class="display-en" id="future-title">一人の成長から、<br />身体を育てる文化へ。</h2>
+        </div>
+        <p>今日の行動が、ひとりの中で終わらない。仲間、専門家、スタジオ、企業や地域へつながり、身体を育てる新しい文化へ広がっていく可能性があります。</p>
       </div>
-      <div class="frame future-phases reveal">
-        <article class="future-phase">
-          <span class="phase-state accent-rose">現在</span>
-          <h3>メソッドをつくる</h3>
-          <ul><li>バレエメソッド</li><li>運動</li><li>状態確認</li><li>AIクエスト</li><li>回復・学習</li></ul>
-        </article>
-        <article class="future-phase">
-          <span class="phase-state accent-mint">次に</span>
-          <h3>一人ひとりに合わせる</h3>
-          <ul><li>ユーザーの文脈</li><li>AIの改善</li><li>ダンス</li><li>成長記録</li><li>コンテンツのつながり</li></ul>
-        </article>
-        <article class="future-phase">
-          <span class="phase-state accent-blue">将来</span>
-          <h3>ともに育つ</h3>
-          <ul><li>コミュニティ・挑戦</li><li>専門家・チーム</li><li>スタジオ連携</li><li>法人展開</li><li>海外展開</li></ul>
-        </article>
+
+      <div class="frame future-orbit reveal" aria-label="BDXから広がる将来の可能性">
+        <div class="future-core">
+          <span>BDX</span>
+          <strong>最高の体調を、日常に。</strong>
+          <p>一人ひとりの身体を育てる体験</p>
+        </div>
+        <div class="future-path" aria-hidden="true">個人の行動から、社会へ</div>
+        <div class="future-possibilities">
+          <article class="future-possibility community-future">
+            <span>01 / 仲間とつながる</span>
+            <h3>共通の挑戦を楽しむ。</h3>
+            <ul><li>週間チャレンジ</li><li>ダンスチャレンジ</li><li>チーム・共有</li></ul>
+          </article>
+          <article class="future-possibility expert-future">
+            <span>02 / 専門家とつながる</span>
+            <h3>知識と安全性を深める。</h3>
+            <ul><li>バレエ指導者</li><li>医療・栄養・心理</li><li>スポーツ科学</li></ul>
+          </article>
+          <article class="future-possibility studio-future">
+            <span>03 / 場所とつながる</span>
+            <h3>デジタルから、リアルへ。</h3>
+            <ul><li>スタジオ連携</li><li>ライブレッスン</li><li>イベント・体験</li></ul>
+          </article>
+          <article class="future-possibility society-future">
+            <span>04 / 社会とつながる</span>
+            <h3>身体を育てる文化を広げる。</h3>
+            <ul><li>企業ウェルビーイング</li><li>教育・自治体</li><li>地域プログラム</li></ul>
+          </article>
+          <article class="future-possibility global-future">
+            <span>05 / 世界とつながる</span>
+            <h3>バレエの知恵を、国境の先へ。</h3>
+            <ul><li>多言語化</li><li>海外スタジオ</li><li>国際コミュニティ</li></ul>
+          </article>
+        </div>
+        <p class="future-message">一人の「今日の行動」が、<br />誰かと育つ未来の入口になる。</p>
       </div>
       <div class="frame closing reveal">
         <p class="closing-main">最高の体調を、日常に。</p>
