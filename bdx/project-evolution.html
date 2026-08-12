@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BDXプロジェクトの旧構想と新構想を比較し、変更点・追加機能・チームへの影響を共有する資料。" />
+  <title>BDX プロジェクト新旧比較</title>
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    :root {
+      --navy: #0b1423;
+      --navy-2: #121f33;
+      --ink: #172034;
+      --muted: #667085;
+      --paper: #f4f5f3;
+      --white: #fff;
+      --line: #dce1e7;
+      --gold: #d2aa59;
+      --coral: #ef718e;
+      --blue: #7197ed;
+      --mint: #62cdae;
+      --violet: #a58ed8;
+      --amber: #efb64a;
+      --red: #d7656e;
+      --max: 1180px;
+      --radius: 8px;
+      --sans: 'Inter', 'Noto Sans JP', sans-serif;
+      --serif: 'Noto Serif JP', serif;
+    }
+    html { background: var(--navy); color: var(--ink); font-family: var(--sans); letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+    body { overflow-x: hidden; background: var(--paper); }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    p, li { font-size: 15px; line-height: 1.85; }
+    ul { padding-left: 1.15em; }
+    .frame { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: 102px 0; }
+    .section.white { background: var(--white); }
+    .section.soft { background: #edf0f1; }
+    .section.dark { background: var(--navy); color: #f7f8fb; }
+    .section-index { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; color: var(--gold); font-size: 10px; font-weight: 600; }
+    .section-index::after { content: ''; width: 48px; height: 1px; background: currentColor; }
+    .section-title { font-family: var(--serif); font-size: 52px; line-height: 1.35; font-weight: 600; }
+    .section-lead { max-width: 800px; margin-top: 22px; color: var(--muted); font-size: 16px; line-height: 2; }
+    .dark .section-lead { color: #aeb8c8; }
+    .label { color: var(--gold); font-size: 10px; font-weight: 600; }
+    .status { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 8px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+    .status.keep { color: #305790; background: #e7efff; }
+    .status.new { color: #8c2845; background: #ffe7ee; }
+    .status.future { color: #6b4c08; background: #fff0c9; }
+
+    /* HERO */
+    .hero { min-height: 92vh; display: grid; align-items: center; position: relative; overflow: hidden; color: #fff; background: var(--navy); }
+    .hero-media { position: absolute; inset: 0; display: grid; grid-template-columns: 1.15fr .85fr; opacity: .34; }
+    .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,15,27,.98) 0%, rgba(8,15,27,.82) 54%, rgba(8,15,27,.58) 100%); }
+    .hero-media img:first-child { filter: saturate(.72); }
+    .hero-media img:last-child { filter: saturate(.82); }
+    .hero-inner { position: relative; z-index: 1; padding: 80px 0; }
+    .brand { font-size: 42px; font-weight: 700; }
+    .brand .b { color: var(--coral); } .brand .d { color: var(--blue); } .brand .x { color: var(--mint); }
+    .hero-kicker { margin-top: 54px; color: var(--gold); font-size: 11px; font-weight: 600; }
+    .hero h1 { max-width: 900px; margin-top: 18px; font-family: var(--serif); font-size: 72px; line-height: 1.25; }
+    .hero-copy { max-width: 720px; margin-top: 28px; color: #c2c9d3; font-size: 17px; }
+    .hero-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 790px; margin-top: 56px; border: 1px solid rgba(255,255,255,.16); }
+    .hero-summary article { min-height: 112px; padding: 20px; background: rgba(11,20,35,.74); border-right: 1px solid rgba(255,255,255,.13); }
+    .hero-summary article:last-child { border-right: 0; }
+    .hero-summary span { color: var(--gold); font-size: 9px; font-weight: 600; }
+    .hero-summary strong { display: block; margin-top: 12px; font-family: var(--serif); font-size: 18px; line-height: 1.55; }
+
+    /* PURPOSE */
+    .purpose-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 48px; }
+    .purpose-grid article { min-height: 190px; padding: 26px; border: 1px solid var(--line); border-top: 6px solid var(--coral); background: #fff; }
+    .purpose-grid article:nth-child(2) { border-top-color: var(--blue); }
+    .purpose-grid article:nth-child(3) { border-top-color: var(--mint); }
+    .purpose-grid b { color: var(--gold); font-size: 10px; }
+    .purpose-grid h3 { margin-top: 16px; font-family: var(--serif); font-size: 23px; }
+    .purpose-grid p { margin-top: 10px; color: var(--muted); font-size: 13px; }
+
+    /* BEFORE AFTER */
+    .shift-board { display: grid; grid-template-columns: minmax(0,1fr) 70px minmax(0,1fr); gap: 0; margin-top: 54px; align-items: stretch; }
+    .shift-side { padding: 32px; border: 1px solid rgba(255,255,255,.14); background: var(--navy-2); }
+    .shift-side.after { border-color: rgba(239,113,142,.55); box-shadow: inset 0 6px 0 var(--coral); }
+    .shift-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .shift-head span { color: var(--gold); font-size: 10px; font-weight: 600; }
+    .shift-side h3 { margin-top: 18px; font-family: var(--serif); font-size: 30px; }
+    .shift-side > p { margin-top: 14px; color: #aeb8c8; font-size: 13px; }
+    .shift-list { display: grid; gap: 0; margin-top: 28px; list-style: none; padding: 0; border-top: 1px solid rgba(255,255,255,.12); }
+    .shift-list li { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.12); color: #dbe0e8; font-size: 12px; }
+    .shift-list b { color: var(--gold); font-size: 9px; }
+    .shift-arrow { display: grid; place-items: center; color: var(--gold); font-size: 28px; background: rgba(255,255,255,.04); }
+    .shift-statement { max-width: 880px; margin: 48px auto 0; padding: 24px; border: 1px solid rgba(210,170,89,.35); text-align: center; font-family: var(--serif); font-size: 24px; line-height: 1.7; }
+
+    /* ORIGIN */
+    .origin-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 44px; margin-top: 52px; align-items: stretch; }
+    .origin-image { min-height: 530px; position: relative; overflow: hidden; }
+    .origin-image::after { content: '舞台裏の身体管理'; position: absolute; left: 20px; bottom: 20px; padding: 8px 12px; color: #fff; background: rgba(11,20,35,.82); font-size: 11px; }
+    .origin-content { display: grid; align-content: center; }
+    .origin-axis { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border: 1px solid var(--line); }
+    .origin-axis article { min-height: 190px; padding: 25px; border-right: 1px solid var(--line); }
+    .origin-axis article:last-child { border-right: 0; background: #fff4f7; }
+    .origin-axis span { color: var(--gold); font-size: 9px; font-weight: 600; }
+    .origin-axis h3 { margin-top: 14px; font-family: var(--serif); font-size: 24px; }
+    .origin-axis p { margin-top: 12px; color: var(--muted); font-size: 13px; }
+    .backstage-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 14px; border: 1px solid var(--line); }
+    .backstage-grid span { min-height: 70px; display: grid; place-items: center; padding: 8px; border-right: 1px solid var(--line); background: #fff; font-size: 11px; text-align: center; }
+    .backstage-grid span:last-child { border-right: 0; }
+    .origin-note { margin-top: 18px; padding: 18px; color: #fff; background: var(--navy); font-family: var(--serif); font-size: 18px; line-height: 1.7; }
+
+    /* PRODUCT STRUCTURE */
+    .product-compare { display: grid; grid-template-columns: .78fr 50px 1.22fr; margin-top: 54px; align-items: center; }
+    .old-product, .new-product { padding: 26px; border: 1px solid var(--line); background: #fff; }
+    .old-product h3, .new-product h3 { margin-top: 12px; font-family: var(--serif); font-size: 25px; }
+    .old-stack { display: grid; gap: 8px; margin-top: 22px; }
+    .old-stack div { padding: 15px; border: 1px solid var(--line); font-size: 12px; }
+    .product-arrow { display: grid; place-items: center; color: var(--gold); font-size: 26px; }
+    .method-core { padding: 18px; border: 1px solid rgba(239,113,142,.52); background: #fff2f6; text-align: center; }
+    .method-core span { color: #a33555; font-size: 9px; font-weight: 700; }
+    .method-core strong { display: block; margin-top: 6px; font-family: var(--serif); font-size: 23px; }
+    .channels { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 10px; }
+    .channels article { min-height: 130px; padding: 15px; border: 1px solid var(--line); background: #fff; }
+    .channels article:nth-child(1) { border-top: 5px solid var(--coral); }
+    .channels article:nth-child(2) { border-top: 5px solid var(--blue); }
+    .channels article:nth-child(3) { border-top: 5px solid var(--mint); }
+    .channels b { font-size: 10px; }
+    .channels strong { display: block; margin-top: 8px; font-family: var(--serif); font-size: 17px; }
+    .channels p { margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+    .layers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .layers div { padding: 14px; color: #fff; background: var(--navy); font-size: 11px; }
+    .layers b { color: var(--gold); }
+
+    /* CORE LOOP */
+    .loop { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); margin-top: 50px; border: 1px solid rgba(255,255,255,.14); }
+    .loop article { min-height: 150px; padding: 18px 13px; position: relative; background: var(--navy-2); border-right: 1px solid rgba(255,255,255,.14); }
+    .loop article:last-child { border-right: 0; }
+    .loop article:not(:last-child)::after { content: '›'; position: absolute; right: -7px; top: 58px; z-index: 2; color: var(--gold); font-size: 23px; }
+    .loop span { color: var(--gold); font-size: 9px; }
+    .loop strong { display: block; margin-top: 16px; font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+    .loop p { margin-top: 7px; color: #9ea9b9; font-size: 10px; line-height: 1.6; }
+    .loop-return { max-width: 820px; margin: 12px auto 0; padding: 10px; border: 1px solid rgba(98,205,174,.38); color: var(--mint); text-align: center; font-size: 10px; }
+    .loop-values { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 40px; }
+    .loop-values article { padding: 20px; border: 1px solid rgba(255,255,255,.14); }
+    .loop-values strong { font-family: var(--serif); font-size: 20px; }
+    .loop-values p { margin-top: 7px; color: #aeb8c8; font-size: 12px; }
+
+    /* FEATURES */
+    .feature-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 50px; }
+    .feature-card { min-height: 270px; padding: 25px; border: 1px solid var(--line); background: #fff; }
+    .feature-card:nth-child(1) { border-top: 6px solid var(--mint); }
+    .feature-card:nth-child(2) { border-top: 6px solid var(--coral); }
+    .feature-card:nth-child(3) { border-top: 6px solid var(--blue); }
+    .feature-card:nth-child(4) { border-top: 6px solid var(--gold); }
+    .feature-card:nth-child(5) { border-top: 6px solid var(--violet); }
+    .feature-card:nth-child(6) { border-top: 6px solid var(--amber); }
+    .feature-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .feature-number { color: var(--gold); font-size: 10px; font-weight: 600; }
+    .feature-card h3 { margin-top: 19px; font-family: var(--serif); font-size: 23px; line-height: 1.45; }
+    .feature-card > p { margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .mini-flow { display: flex; align-items: center; gap: 5px; margin-top: 18px; color: var(--ink); font-size: 9px; font-weight: 600; }
+    .mini-flow i { color: var(--gold); font-style: normal; }
+
+    /* GAMIFICATION */
+    .game-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 24px; margin-top: 52px; }
+    .quest-ui { padding: 28px; border: 1px solid rgba(239,113,142,.62); background: #20192b; box-shadow: 8px 8px 0 rgba(239,113,142,.16); }
+    .quest-ui > span { color: var(--coral); font-size: 9px; font-weight: 700; }
+    .quest-ui h3 { margin-top: 18px; font-family: var(--serif); font-size: 29px; }
+    .quest-ui p { margin-top: 12px; color: #aeb8c8; font-size: 12px; }
+    .quest-button { display: flex; justify-content: space-between; margin-top: 24px; padding: 14px; background: var(--coral); font-size: 10px; font-weight: 700; }
+    .skill-panel { padding: 26px; border: 1px solid rgba(255,255,255,.14); background: var(--navy-2); }
+    .skill-panel h3 { font-family: var(--serif); font-size: 25px; }
+    .skill-list { display: grid; gap: 9px; margin-top: 20px; }
+    .skill-row { display: grid; grid-template-columns: 88px 1fr 42px; align-items: center; gap: 10px; font-size: 10px; }
+    .skill-bar { height: 7px; background: rgba(255,255,255,.12); }
+    .skill-bar i { display: block; height: 100%; background: var(--mint); }
+    .skill-row:nth-child(2) i { background: var(--coral); }
+    .skill-row:nth-child(3) i { background: var(--blue); }
+    .skill-row:nth-child(4) i { background: var(--violet); }
+    .skill-row:nth-child(5) i { background: var(--gold); }
+    .skill-row:nth-child(6) i { background: var(--amber); }
+    .skill-row:nth-child(7) i { background: #6ed0dc; }
+    .game-message { margin-top: 20px; padding: 15px; border: 1px solid rgba(210,170,89,.35); color: var(--gold); font-family: var(--serif); font-size: 17px; text-align: center; }
+
+    /* DAY */
+    .day-compare { display: grid; grid-template-columns: 1fr 1fr; margin-top: 50px; border: 1px solid var(--line); }
+    .day-side { padding: 30px; background: #fff; }
+    .day-side + .day-side { border-left: 1px solid var(--line); background: #fff5f7; }
+    .day-side h3 { margin-top: 12px; font-family: var(--serif); font-size: 25px; }
+    .day-flow { display: grid; gap: 8px; margin-top: 24px; }
+    .day-step { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; padding: 12px; border: 1px solid var(--line); background: #fff; }
+    .day-step b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; background: var(--navy); font-size: 9px; }
+    .day-step span { font-size: 11px; }
+    .day-result { margin-top: 18px; padding: 16px; color: #fff; background: var(--navy); font-family: var(--serif); font-size: 17px; text-align: center; }
+
+    /* TEAM */
+    .team-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 50px; }
+    .team-card { min-height: 315px; padding: 26px; border: 1px solid rgba(255,255,255,.14); background: var(--navy-2); }
+    .team-card:nth-child(1) { border-top: 6px solid var(--blue); }
+    .team-card:nth-child(2) { border-top: 6px solid var(--coral); }
+    .team-card:nth-child(3) { border-top: 6px solid var(--mint); }
+    .team-card h3 { margin-top: 14px; font-family: var(--serif); font-size: 25px; }
+    .team-card > p { margin-top: 9px; color: #aeb8c8; font-size: 12px; }
+    .team-card ul { margin-top: 18px; color: #dce1e8; }
+    .team-card li { padding: 5px 0; font-size: 11px; }
+    .unchanged { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 34px; border: 1px solid rgba(255,255,255,.14); }
+    .unchanged div { min-height: 90px; display: grid; place-items: center; padding: 12px; border-right: 1px solid rgba(255,255,255,.14); text-align: center; font-size: 11px; }
+    .unchanged div:last-child { border-right: 0; }
+
+    /* NEXT */
+    .decision-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 48px; }
+    .decision-grid article { min-height: 210px; padding: 25px; border: 1px solid var(--line); background: #fff; }
+    .decision-grid b { color: var(--gold); font-size: 10px; }
+    .decision-grid h3 { margin-top: 14px; font-family: var(--serif); font-size: 22px; }
+    .decision-grid p { margin-top: 10px; color: var(--muted); font-size: 12px; }
+    .closing { padding: 100px 0; color: #fff; background: var(--navy); text-align: center; }
+    .closing h2 { max-width: 850px; margin: 18px auto 0; font-family: var(--serif); font-size: 45px; line-height: 1.45; }
+    .closing p { max-width: 720px; margin: 24px auto 0; color: #aeb8c8; }
+
+    @media (max-width: 640px) {
+      p, li { font-size: 11px; line-height: 1.75; }
+      .frame { width: calc(100% - 24px); }
+      .section { padding: 70px 0; }
+      .section-index { margin-bottom: 13px; font-size: 8px; }
+      .section-index::after { width: 30px; }
+      .section-title { font-size: 29px; }
+      .section-lead { margin-top: 15px; font-size: 11px; line-height: 1.85; }
+      .hero { min-height: 820px; }
+      .hero-media { grid-template-columns: 1fr; }
+      .hero-media img:last-child { display: none; }
+      .hero-inner { padding: 60px 0; }
+      .brand { font-size: 34px; }
+      .hero-kicker { margin-top: 46px; font-size: 9px; }
+      .hero h1 { font-size: 43px; line-height: 1.32; }
+      .hero-copy { margin-top: 22px; font-size: 12px; line-height: 1.85; }
+      .hero-summary { margin-top: 38px; }
+      .hero-summary article { min-height: 105px; padding: 12px 8px; }
+      .hero-summary span { font-size: 7px; }
+      .hero-summary strong { margin-top: 9px; font-size: 13px; }
+      .purpose-grid { gap: 7px; margin-top: 32px; }
+      .purpose-grid article { min-height: 170px; padding: 14px 9px; }
+      .purpose-grid b { font-size: 7px; }
+      .purpose-grid h3 { margin-top: 12px; font-size: 15px; }
+      .purpose-grid p { font-size: 9px; line-height: 1.65; }
+      .shift-board { grid-template-columns: minmax(0,1fr) 28px minmax(0,1fr); margin-top: 34px; }
+      .shift-side { padding: 14px 10px; }
+      .shift-side h3 { margin-top: 12px; font-size: 18px; }
+      .shift-side > p { font-size: 9px; }
+      .shift-list { margin-top: 18px; }
+      .shift-list li { grid-template-columns: 54px 1fr; gap: 5px; padding: 9px 0; font-size: 8px; line-height: 1.5; }
+      .shift-list b { font-size: 7px; }
+      .shift-arrow { font-size: 18px; }
+      .shift-statement { margin-top: 28px; padding: 15px; font-size: 16px; }
+      .origin-layout { grid-template-columns: .8fr 1.2fr; gap: 10px; margin-top: 32px; }
+      .origin-image { min-height: 390px; }
+      .origin-image::after { left: 8px; bottom: 8px; padding: 6px; font-size: 7px; }
+      .origin-axis article { min-height: 180px; padding: 12px 8px; }
+      .origin-axis h3 { font-size: 15px; }
+      .origin-axis p { font-size: 8px; line-height: 1.6; }
+      .backstage-grid span { min-height: 54px; font-size: 7px; }
+      .origin-note { margin-top: 9px; padding: 10px; font-size: 12px; }
+      .product-compare { grid-template-columns: .78fr 25px 1.22fr; margin-top: 32px; }
+      .old-product, .new-product { padding: 11px 8px; }
+      .old-product h3, .new-product h3 { font-size: 15px; }
+      .old-stack { margin-top: 13px; gap: 5px; }
+      .old-stack div { padding: 8px 5px; font-size: 8px; }
+      .product-arrow { font-size: 17px; }
+      .method-core { padding: 9px 5px; }
+      .method-core strong { font-size: 14px; }
+      .channels { gap: 4px; margin-top: 5px; }
+      .channels article { min-height: 105px; padding: 8px 5px; }
+      .channels b { font-size: 7px; }
+      .channels strong { font-size: 11px; }
+      .channels p { font-size: 7px; }
+      .layers { gap: 4px; margin-top: 5px; }
+      .layers div { padding: 8px 5px; font-size: 7px; }
+      .loop { margin-top: 32px; }
+      .loop article { min-height: 118px; padding: 10px 5px; }
+      .loop article:not(:last-child)::after { right: -4px; top: 45px; font-size: 15px; }
+      .loop span { font-size: 7px; }
+      .loop strong { margin-top: 10px; font-size: 11px; }
+      .loop p { font-size: 7px; }
+      .loop-return { font-size: 8px; }
+      .loop-values { gap: 6px; margin-top: 25px; }
+      .loop-values article { padding: 11px 8px; }
+      .loop-values strong { font-size: 14px; }
+      .loop-values p { font-size: 8px; }
+      .feature-grid { gap: 7px; margin-top: 32px; }
+      .feature-card { min-height: 225px; padding: 13px 9px; }
+      .status { min-height: 18px; padding: 2px 4px; font-size: 6px; }
+      .feature-number { font-size: 7px; }
+      .feature-card h3 { margin-top: 13px; font-size: 15px; }
+      .feature-card > p { font-size: 8px; line-height: 1.65; }
+      .mini-flow { gap: 2px; font-size: 6px; }
+      .game-layout { grid-template-columns: .92fr 1.08fr; gap: 8px; margin-top: 32px; }
+      .quest-ui, .skill-panel { padding: 14px 10px; }
+      .quest-ui h3 { font-size: 18px; }
+      .quest-ui p { font-size: 8px; }
+      .quest-button { padding: 9px 6px; font-size: 7px; }
+      .skill-panel h3 { font-size: 16px; }
+      .skill-list { gap: 6px; margin-top: 14px; }
+      .skill-row { grid-template-columns: 54px 1fr 28px; gap: 5px; font-size: 7px; }
+      .game-message { padding: 9px; font-size: 12px; }
+      .day-compare { margin-top: 32px; }
+      .day-side { padding: 14px 9px; }
+      .day-side h3 { font-size: 16px; }
+      .day-flow { margin-top: 15px; gap: 5px; }
+      .day-step { grid-template-columns: 23px 1fr; gap: 5px; padding: 7px 5px; }
+      .day-step b { width: 20px; height: 20px; font-size: 6px; }
+      .day-step span { font-size: 7px; }
+      .day-result { padding: 9px 5px; font-size: 11px; }
+      .team-grid { gap: 7px; margin-top: 32px; }
+      .team-card { min-height: 270px; padding: 14px 9px; }
+      .team-card h3 { font-size: 16px; }
+      .team-card > p { font-size: 8px; }
+      .team-card ul { margin-top: 12px; padding-left: 12px; }
+      .team-card li { font-size: 8px; }
+      .unchanged { margin-top: 20px; }
+      .unchanged div { min-height: 65px; padding: 6px; font-size: 7px; }
+      .decision-grid { gap: 7px; margin-top: 30px; }
+      .decision-grid article { min-height: 180px; padding: 13px 9px; }
+      .decision-grid h3 { font-size: 15px; }
+      .decision-grid p { font-size: 8px; }
+      .closing { padding: 72px 0; }
+      .closing h2 { font-size: 28px; }
+      .closing p { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- SECTION: Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/bdx-ballet-stage.png" alt="" />
+        <img src="assets/bdx-dance-joy.png" alt="" />
+      </div>
+      <div class="frame hero-inner">
+        <div class="brand" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
+        <p class="hero-kicker">PROJECT UPDATE / TEAM BRIEFING</p>
+        <h1 id="hero-title">BDXは、<br />どう変わったのか。</h1>
+        <p class="hero-copy">初期構想から現在までの変化、新しく加わったプロダクト体験、チームの役割への影響を共有します。</p>
+        <div class="hero-summary" aria-label="この資料の3つの要点">
+          <article><span>01 / CONCEPT</span><strong>目的の変化</strong></article>
+          <article><span>02 / PRODUCT</span><strong>機能の拡張</strong></article>
+          <article><span>03 / TEAM</span><strong>役割への影響</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Purpose -->
+    <section class="section white" aria-labelledby="purpose-title">
+      <div class="frame">
+        <div class="section-index">01 — PURPOSE</div>
+        <h2 class="section-title" id="purpose-title">資料の目的</h2>
+        <p class="section-lead">旧版と新版の違いを同じ言葉で理解し、これから何を作るのか、各メンバーがどこに関わるのかを揃えるための資料です。</p>
+        <div class="purpose-grid">
+          <article><b>UNDERSTAND</b><h3>変化を理解する</h3><p>サービスの目的と価値が、なぜ広がったのかを確認する。</p></article>
+          <article><b>CONNECT</b><h3>機能をつなげる</h3><p>追加機能を単体ではなく、ひとつの体験として理解する。</p></article>
+          <article><b>ALIGN</b><h3>役割を揃える</h3><p>新しいプロダクト構造が、企画・監修・制作へ与える影響を共有する。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Main Shift -->
+    <section class="section dark" aria-labelledby="shift-title">
+      <div class="frame">
+        <div class="section-index">02 — MAIN SHIFT</div>
+        <h2 class="section-title" id="shift-title">変化の要点</h2>
+        <p class="section-lead">運動を続けるためのフィットネスサービスから、身体・心・生活を総合的に育てるサービスへ。</p>
+        <div class="shift-board" aria-label="旧BDXと新BDXの比較">
+          <article class="shift-side before">
+            <div class="shift-head"><span>BEFORE / 旧版</span><span class="status keep">土台</span></div>
+            <h3>習慣形成型<br />フィットネス</h3>
+            <p>バレエエクササイズを、AIの提案で続けやすくする。</p>
+            <ul class="shift-list">
+              <li><b>目的</b><span>運動を続ける</span></li>
+              <li><b>中心</b><span>ワークアウト動画</span></li>
+              <li><b>AI</b><span>運動メニューと習慣支援</span></li>
+              <li><b>成長</b><span>運動の実施と記録</span></li>
+              <li><b>バレエ</b><span>身体を動かすメソッド</span></li>
+            </ul>
+          </article>
+          <div class="shift-arrow" aria-hidden="true">→</div>
+          <article class="shift-side after">
+            <div class="shift-head"><span>AFTER / 新版</span><span class="status new">拡張</span></div>
+            <h3>バレエ発想の<br />ウェルビーイング</h3>
+            <p>舞台上と舞台裏のメソッドを、AIで日常の行動へつなげる。</p>
+            <ul class="shift-list">
+              <li><b>目的</b><span>最高の体調を日常につくる</span></li>
+              <li><b>中心</b><span>動く・学ぶ・整える</span></li>
+              <li><b>AI</b><span>状態と履歴から今日の行動を提案</span></li>
+              <li><b>成長</b><span>運動・学び・回復を可視化</span></li>
+              <li><b>バレエ</b><span>身体づくり・管理・生活の知恵</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="shift-statement">バレエを使った運動から、<br />バレエの世界で培われた身体との付き合い方へ。</p>
+      </div>
+    </section>
+
+    <!-- SECTION: Origin -->
+    <section class="section soft" aria-labelledby="origin-title">
+      <div class="frame">
+        <div class="section-index">03 — VALUE EXPANSION</div>
+        <h2 class="section-title" id="origin-title">価値の拡張</h2>
+        <p class="section-lead">新版では、舞台上の舞踊技術だけでなく、その身体を支えている舞台裏のメソッドをBDXの中核へ加えました。</p>
+        <div class="origin-layout">
+          <figure class="origin-image"><img src="assets/bdx-ballet-preparation.png" alt="練習前に身体とシューズを整えるバレエダンサー" /></figure>
+          <div class="origin-content">
+            <div class="origin-axis">
+              <article><span>STAGE / 見える価値</span><h3>身体を使う</h3><p>姿勢、軸、バランス、身体操作、基礎技術、表現。</p></article>
+              <article><span>BACKSTAGE / 新たな中核</span><h3>身体を整える</h3><p>体調管理、健康的な体型維持、栄養、睡眠、回復、心、日常習慣。</p></article>
+            </div>
+            <div class="backstage-grid" aria-label="舞台裏の主な領域"><span>TRAINING<br />身体づくり</span><span>RECOVERY<br />回復</span><span>NUTRITION<br />栄養</span><span>ROUTINE<br />生活管理</span></div>
+            <p class="origin-note">踊りを教えるだけでなく、身体を良い状態に保つ知恵を日常へ。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Product Structure -->
+    <section class="section white" aria-labelledby="structure-title">
+      <div class="frame">
+        <div class="section-index">04 — PRODUCT STRUCTURE</div>
+        <h2 class="section-title" id="structure-title">プロダクト構造</h2>
+        <p class="section-lead">旧版の機能を捨てたのではなく、運動を中心にした構造を、学習・回復・成長までつながる構造へ広げました。</p>
+        <div class="product-compare" aria-label="旧版と新版のプロダクト構造">
+          <article class="old-product">
+            <span class="label">BEFORE</span><h3>4つの主要機能</h3>
+            <div class="old-stack"><div>WORKOUT<br />動画を選んで運動</div><div>AI COACH<br />行動を支援</div><div>CONDITION<br />体調を記録</div><div>LIBRARY<br />知識を学ぶ</div></div>
+          </article>
+          <div class="product-arrow" aria-hidden="true">→</div>
+          <article class="new-product">
+            <span class="label">AFTER</span><h3>つながる体験</h3>
+            <div class="method-core"><span>すべての中核</span><strong>バレエメソッド</strong></div>
+            <div class="channels">
+              <article><b>MOVE</b><strong>動く</strong><p>バレエエクササイズ・バレエ・ダンス</p></article>
+              <article><b>LEARN</b><strong>学ぶ</strong><p>身体・栄養・睡眠・論文解説</p></article>
+              <article><b>CARE</b><strong>整える</strong><p>回復・心・生活習慣</p></article>
+            </div>
+            <div class="layers"><div><b>AI COACH</b><br />今日の行動を提案</div><div><b>PROGRESS</b><br />成長を可視化</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Core Experience -->
+    <section class="section dark" aria-labelledby="loop-title">
+      <div class="frame">
+        <div class="section-index">05 — CORE EXPERIENCE</div>
+        <h2 class="section-title" id="loop-title">中心体験</h2>
+        <p class="section-lead">ユーザーが大量のコンテンツから毎回選ぶのではなく、今日の状態から始まり、実践結果が次の提案へつながります。</p>
+        <div class="loop" aria-label="新しいBDXの中心体験">
+          <article><span>01</span><strong>状態を知る</strong><p>睡眠・疲労・気分・時間</p></article>
+          <article><span>02</span><strong>AIが整理</strong><p>目標・状態・履歴を確認</p></article>
+          <article><span>03</span><strong>行動を提案</strong><p>理由と所要時間を表示</p></article>
+          <article><span>04</span><strong>実践する</strong><p>動く・学ぶ・整える</p></article>
+          <article><span>05</span><strong>記録する</strong><p>完了・変化・気づき</p></article>
+          <article><span>06</span><strong>成長が見える</strong><p>経験値・レベル・達成</p></article>
+        </div>
+        <div class="loop-return">履歴をAIが理解し、次の行動提案へ</div>
+        <div class="loop-values">
+          <article><strong>迷いを減らす</strong><p>今日することと、その理由が分かる。</p></article>
+          <article><strong>知識と実践をつなぐ</strong><p>学んだことが次の行動に変わる。</p></article>
+          <article><strong>休養も前進にする</strong><p>回復も正式な成長として残る。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: New Features -->
+    <section class="section soft" aria-labelledby="features-title">
+      <div class="frame">
+        <div class="section-index">06 — NEW EXPERIENCE</div>
+        <h2 class="section-title" id="features-title">追加・再定義した機能</h2>
+        <p class="section-lead">以下は新しいプロジェクト概要で追加または役割を拡張した機能です。実装状況ではなく、現在のプロダクト設計上の位置づけを示しています。</p>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">01</span><span class="status new">追加・再定義</span></div><h3>今日の状態</h3><p>睡眠・疲労・気分・使える時間など、必要な情報だけを短く確認する。</p><div class="mini-flow">状態 <i>→</i> AI <i>→</i> 行動</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">02</span><span class="status new">中核UX</span></div><h3>今日のクエスト</h3><p>AIが運動・学習・回復から、その日に実行しやすい行動を理由と時間つきで提案する。</p><div class="mini-flow">理由 <i>＋</i> 時間 <i>＋</i> 行動</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">03</span><span class="status new">構造拡張</span></div><h3>動く・学ぶ・整える</h3><p>ワークアウト中心から、MOVE・LEARN・CAREを行き来する体験へ。</p><div class="mini-flow">MOVE <i>↔</i> LEARN <i>↔</i> CARE</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">04</span><span class="status new">注目機能</span></div><h3>論文解説</h3><p>専門的な研究を、結果・限界・BDXの提案に分け、日常で試せる形にする。</p><div class="mini-flow">研究 <i>→</i> 理解 <i>→</i> 実践</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">05</span><span class="status new">価値拡張</span></div><h3>回復も成長</h3><p>疲労が高い日はRecoveryを提案し、運動しない日も失敗として扱わない。</p><div class="mini-flow">疲労 <i>→</i> 回復 <i>→</i> 次の状態</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">06</span><span class="status future">将来拡張を含む</span></div><h3>成長の可視化</h3><p>クエスト・経験値・レベル・達成記録で、運動以外の積み重ねも見えるようにする。</p><div class="mini-flow">QUEST <i>→</i> XP <i>→</i> LEVEL</div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Progress -->
+    <section class="section dark" aria-labelledby="progress-title">
+      <div class="frame">
+        <div class="section-index">07 — PROGRESS</div>
+        <h2 class="section-title" id="progress-title">成長の見せ方</h2>
+        <p class="section-lead">旧版の運動記録から、ユーザーごとに異なる成長を見せる仕組みへ。長時間運動や他人との競争は中心にしません。</p>
+        <div class="game-layout">
+          <article class="quest-ui">
+            <span>今日のクエスト / 回復</span>
+            <h3>5分で姿勢を整えよう。</h3>
+            <p>今日は疲労が少し高め。強度を上げるより、身体を整える短いメニューがおすすめです。</p>
+            <div class="quest-button"><span>クエスト完了</span><strong>+20 XP</strong></div>
+          </article>
+          <article class="skill-panel">
+            <h3>自分だけの成長</h3>
+            <div class="skill-list">
+              <div class="skill-row"><span>身体能力</span><div class="skill-bar"><i style="width:78%"></i></div><b>Lv.15</b></div>
+              <div class="skill-row"><span>バレエ</span><div class="skill-bar"><i style="width:48%"></i></div><b>Lv.8</b></div>
+              <div class="skill-row"><span>リズム</span><div class="skill-bar"><i style="width:32%"></i></div><b>Lv.4</b></div>
+              <div class="skill-row"><span>表現力</span><div class="skill-bar"><i style="width:26%"></i></div><b>Lv.3</b></div>
+              <div class="skill-row"><span>知識</span><div class="skill-bar"><i style="width:68%"></i></div><b>Lv.12</b></div>
+              <div class="skill-row"><span>心</span><div class="skill-bar"><i style="width:54%"></i></div><b>Lv.9</b></div>
+              <div class="skill-row"><span>回復</span><div class="skill-bar"><i style="width:64%"></i></div><b>Lv.11</b></div>
+            </div>
+            <p class="game-message">正しい育ち方は、一つではない。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: User Experience -->
+    <section class="section white" aria-labelledby="experience-title">
+      <div class="frame">
+        <div class="section-index">08 — USER EXPERIENCE</div>
+        <h2 class="section-title" id="experience-title">ユーザー体験</h2>
+        <p class="section-lead">ユーザーが自分で動画を探す体験から、その日の状態に合う行動がひとつの流れで分かる体験へ変わります。</p>
+        <div class="day-compare" aria-label="旧版と新版のユーザー体験">
+          <article class="day-side">
+            <span class="label">BEFORE</span><h3>コンテンツを選ぶ</h3>
+            <div class="day-flow"><div class="day-step"><b>1</b><span>アプリを開く</span></div><div class="day-step"><b>2</b><span>動画一覧から探す</span></div><div class="day-step"><b>3</b><span>ワークアウトする</span></div><div class="day-step"><b>4</b><span>実施を記録する</span></div></div>
+            <p class="day-result">選択はユーザー中心</p>
+          </article>
+          <article class="day-side">
+            <span class="label">AFTER</span><h3>今日の行動が分かる</h3>
+            <div class="day-flow"><div class="day-step"><b>1</b><span>今日の状態を確認</span></div><div class="day-step"><b>2</b><span>AIが理由つきで提案</span></div><div class="day-step"><b>3</b><span>動く・学ぶ・整える</span></div><div class="day-step"><b>4</b><span>成長を次の提案へ</span></div></div>
+            <p class="day-result">選択をAIが支援</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Team -->
+    <section class="section dark" aria-labelledby="team-title">
+      <div class="frame">
+        <div class="section-index">09 — TEAM IMPACT</div>
+        <h2 class="section-title" id="team-title">チームへの影響</h2>
+        <p class="section-lead">機能が増えたことで、動画を作るだけではなく、目的・専門性・体験をつなぐ共同制作が重要になります。</p>
+        <div class="team-grid">
+          <article class="team-card"><span class="label">SAT</span><h3>企画とプロダクト</h3><p>全体のユーザー価値と、機能同士の接続に責任を持つ。</p><ul><li>対象・状態・目的を定義</li><li>AIとクエストの設計</li><li>科学的根拠と外部監修</li><li>実装・検証・改善</li></ul></article>
+          <article class="team-card"><span class="label">BALLET</span><h3>バレエ監修</h3><p>舞台上と舞台裏の知恵を、初心者が実践できる形にする。</p><ul><li>目的に合う動作を提案</li><li>動作順序と伝え方を監修</li><li>バレエとしての自然さ</li><li>技術上の安全性を確認</li></ul></article>
+          <article class="team-card"><span class="label">DANCE</span><h3>ダンス監修</h3><p>身体を使う楽しさと、続けたくなる表現体験を設計する。</p><ul><li>音楽・リズム・振付</li><li>表現と達成感</li><li>初心者が楽しめる体験</li><li>将来の挑戦・共有企画</li></ul></article>
+        </div>
+        <div class="unchanged" aria-label="旧版から変わらない原則"><div>バレエを軸にする</div><div>AIは意思決定を支援</div><div>安全性を優先する</div><div>小さく試して改善する</div></div>
+      </div>
+    </section>
+
+    <!-- SECTION: Decisions -->
+    <section class="section soft" aria-labelledby="decisions-title">
+      <div class="frame">
+        <div class="section-index">10 — NEXT ALIGNMENT</div>
+        <h2 class="section-title" id="decisions-title">今後の確認</h2>
+        <p class="section-lead">この資料はプロダクト設計の比較です。チーム共有時には、以下の進捗情報を加えると実行計画まで明確になります。</p>
+        <div class="decision-grid">
+          <article><b>01 / STATUS</b><h3>機能の実装状況</h3><p>状態確認、AIクエスト、Library、Progressなどを、実装済み・開発中・未着手に分ける。</p></article>
+          <article><b>02 / PRIORITY</b><h3>次に作る機能</h3><p>新機能を一度に作らず、ユーザー価値を検証する順番を決める。</p></article>
+          <article><b>03 / OWNERSHIP</b><h3>担当と期限</h3><p>企画、監修、撮影、編集、実装、検証ごとに担当者と次の成果物を決める。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Closing -->
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="frame">
+        <span class="label">SUMMARY</span>
+        <h2 id="closing-title">機能が増えたのではなく、<br />体験がつながった。</h2>
+        <p>運動・学習・回復・AI・成長記録を、バレエメソッドから始まる一つの循環として設計する。それが新しいBDXです。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
