@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BDXのコンテンツを、ユーザー・状態・目的から逆算して選定するための実務フレームワーク。" />
+  <title>BDX Content Selection Framework v2.0</title>
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+
+    :root {
+      --navy: #0c1422;
+      --navy-2: #121e30;
+      --ink: #172034;
+      --muted: #667085;
+      --paper: #f7f7f4;
+      --white: #ffffff;
+      --line: #dfe3e8;
+      --gold: #d5ad5c;
+      --coral: #ef718e;
+      --blue: #7096ec;
+      --mint: #62cdae;
+      --violet: #a48dd4;
+      --amber: #f0b84b;
+      --red: #d95f69;
+      --radius: 8px;
+      --max: 1180px;
+      --sans: 'Inter', 'Noto Sans JP', sans-serif;
+      --serif: 'Noto Serif JP', serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--navy);
+      color: var(--ink);
+      font-family: var(--sans);
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { overflow-x: hidden; background: var(--paper); }
+    img, svg { display: block; max-width: 100%; }
+    p, li { font-size: 15px; line-height: 1.9; }
+    ul { padding-left: 1.15em; }
+
+    .frame {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 104px 0;
+      position: relative;
+    }
+
+    .section.dark { background: var(--navy); color: #f7f8fb; }
+    .section.white { background: var(--white); }
+    .section.soft { background: #f0f2f3; }
+
+    .section-index {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .section-index::after {
+      content: '';
+      width: 54px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-title {
+      max-width: 820px;
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .section-lead {
+      max-width: 760px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .dark .section-lead { color: #aeb8c7; }
+
+    .label {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .tag-list li {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(255,255,255,.78);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      padding: 72px 0;
+      color: #f7f8fb;
+      background:
+        linear-gradient(90deg, rgba(12,20,34,.96), rgba(12,20,34,.83)),
+        repeating-linear-gradient(90deg, transparent 0, transparent 119px, rgba(255,255,255,.035) 120px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      right: -120px;
+      top: -120px;
+      border: 1px solid rgba(213,173,92,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(213,173,92,.025), 0 0 0 160px rgba(213,173,92,.018);
+    }
+
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-mark { color: var(--gold); font-size: 11px; font-weight: 600; margin-bottom: 38px; }
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(48px, 8vw, 104px);
+      line-height: 1;
+      font-weight: 600;
+    }
+    .hero h1 span { display: block; margin-top: 18px; font-size: .25em; color: #aeb8c7; }
+    .hero-copy {
+      max-width: 730px;
+      margin-top: 48px;
+      padding-left: 22px;
+      border-left: 3px solid var(--coral);
+      font-family: var(--serif);
+      font-size: clamp(19px, 2.2vw, 28px);
+      line-height: 1.8;
+    }
+    .hero-rule {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 780px;
+      margin-top: 64px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .hero-rule div { min-height: 116px; padding: 20px; background: rgba(12,20,34,.78); }
+    .hero-rule span { display: block; color: var(--gold); font-size: 10px; }
+    .hero-rule strong { display: block; margin-top: 12px; font-family: var(--serif); font-size: 18px; line-height: 1.55; }
+
+    /* PRINCIPLE */
+    .not-start {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 44px;
+      margin-top: 54px;
+    }
+    .not-card, .start-card { padding: 32px; border-radius: var(--radius); }
+    .not-card { background: #f3e8ea; border: 1px solid #e9c7cd; }
+    .start-card { background: var(--navy-2); color: white; }
+    .not-card h3, .start-card h3 { margin-top: 10px; font-family: var(--serif); font-size: 25px; line-height: 1.5; }
+    .not-card p, .start-card p { margin-top: 18px; color: var(--muted); }
+    .start-card p { color: #b6c0ce; }
+    .choice-examples {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .choice-examples span {
+      padding: 16px 10px;
+      border: 1px solid rgba(255,255,255,.13);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .formula {
+      margin-top: 64px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .formula-track {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0,1fr));
+      margin-top: 22px;
+    }
+    .formula-item {
+      min-height: 104px;
+      padding: 16px 12px;
+      border-top: 4px solid var(--blue);
+      border-right: 1px solid var(--line);
+      background: #f8f9fb;
+    }
+    .formula-item:nth-child(2), .formula-item:nth-child(6) { border-top-color: var(--mint); }
+    .formula-item:nth-child(3), .formula-item:nth-child(7) { border-top-color: var(--coral); }
+    .formula-item:nth-child(4), .formula-item:nth-child(8) { border-top-color: var(--gold); }
+    .formula-item:last-child { border-right: 0; }
+    .formula-item strong { display: block; font-size: 11px; }
+    .formula-item span { display: block; margin-top: 9px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+
+    /* MAP */
+    .phase-map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 52px;
+    }
+    .phase {
+      min-height: 230px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.035);
+      position: relative;
+    }
+    .phase::after {
+      content: '›';
+      position: absolute;
+      right: -11px;
+      top: 46%;
+      color: var(--gold);
+      font-size: 24px;
+      z-index: 1;
+    }
+    .phase:last-child::after { display: none; }
+    .phase-no { color: var(--gold); font-size: 10px; }
+    .phase h3 { margin-top: 18px; font-family: var(--serif); font-size: 23px; line-height: 1.45; }
+    .phase p { margin-top: 14px; color: #9eabba; font-size: 13px; }
+    .phase-steps { display: flex; gap: 6px; margin-top: 24px; }
+    .phase-steps span { padding: 5px 8px; border: 1px solid rgba(255,255,255,.14); color: #d6dce6; font-size: 9px; }
+
+    /* STEP SYSTEM */
+    .step-stack { margin-top: 64px; display: grid; gap: 20px; }
+    .step-card {
+      display: grid;
+      grid-template-columns: 148px 1fr;
+      border: 1px solid var(--line);
+      background: var(--white);
+      overflow: hidden;
+    }
+    .step-side { padding: 28px 22px; color: white; background: var(--navy-2); }
+    .step-side span { color: var(--gold); font-size: 10px; }
+    .step-side strong { display: block; margin-top: 12px; font-size: 38px; }
+    .step-body { padding: 30px 34px; }
+    .step-body h3 { font-family: var(--serif); font-size: 25px; line-height: 1.5; }
+    .step-question { margin-top: 10px; color: var(--coral); font-weight: 600; }
+    .step-body > p:not(.step-question) { margin-top: 14px; color: var(--muted); }
+    .step-body .tag-list { margin-top: 22px; }
+
+    /* METHODS */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 56px;
+    }
+    .method-card { min-height: 300px; padding: 22px 18px; border-top: 5px solid var(--coral); background: white; }
+    .method-card:nth-child(2) { border-color: var(--blue); }
+    .method-card:nth-child(3) { border-color: var(--mint); }
+    .method-card:nth-child(4) { border-color: var(--gold); }
+    .method-card:nth-child(5) { border-color: var(--violet); }
+    .method-card h3 { font-size: 16px; }
+    .method-card ul { margin-top: 18px; color: var(--muted); padding-left: 1em; }
+    .method-card li { font-size: 12px; line-height: 1.75; }
+    .selection-rule {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      margin-top: 24px;
+      border: 1px solid #d9c38d;
+      background: #fffaf0;
+    }
+    .selection-rule strong, .selection-rule p { padding: 24px; }
+    .selection-rule strong { color: #7f601d; font-family: var(--serif); font-size: 19px; }
+    .selection-rule p { border-left: 1px solid #e5d6b5; color: var(--muted); }
+
+    /* TRANSLATION */
+    .translation-flow {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 28px;
+      margin-top: 52px;
+    }
+    .translation-flow article { position: relative; padding: 24px; border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.04); }
+    .translation-flow article::after { content: '→'; position: absolute; right: -23px; top: 43%; color: var(--gold); }
+    .translation-flow article:last-child::after { display: none; }
+    .translation-flow span { color: var(--gold); font-size: 10px; }
+    .translation-flow strong { display: block; margin-top: 12px; font-family: var(--serif); font-size: 19px; line-height: 1.55; }
+    .translation-flow p { margin-top: 10px; color: #9eabba; font-size: 12px; }
+    .meaning-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; margin-top: 42px; background: rgba(255,255,255,.12); }
+    .meaning-grid div { padding: 20px; background: var(--navy); }
+    .meaning-grid strong { color: var(--gold); font-size: 13px; }
+    .meaning-grid p { margin-top: 8px; color: #9eabba; font-size: 12px; }
+
+    /* CHANNELS */
+    .channel-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 50px; }
+    .channel { min-height: 278px; padding: 28px; border: 1px solid var(--line); background: white; }
+    .channel:nth-child(1) { border-top: 6px solid var(--coral); }
+    .channel:nth-child(2) { border-top: 6px solid var(--blue); }
+    .channel:nth-child(3) { border-top: 6px solid var(--mint); }
+    .channel h3 { margin-top: 12px; font-family: var(--serif); font-size: 27px; }
+    .channel > p { margin-top: 10px; color: var(--muted); }
+    .channel .tag-list { margin-top: 20px; }
+    .graph-note { margin-top: 18px; padding: 20px 24px; background: var(--navy-2); color: white; }
+    .graph-note strong { color: var(--gold); }
+
+    /* SPEC */
+    .spec-board { margin-top: 52px; padding: 30px; border: 1px solid var(--line); background: white; }
+    .spec-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1px; background: var(--line); }
+    .spec-grid div { min-height: 104px; padding: 18px; background: #fafbfc; }
+    .spec-grid span { color: var(--gold); font-size: 10px; }
+    .spec-grid strong { display: block; margin-top: 9px; font-size: 13px; line-height: 1.55; }
+    .anti-volume { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; margin-top: 20px; padding: 20px; background: #fff2f3; border: 1px solid #eccfd3; }
+    .anti-volume b { color: var(--red); font-size: 28px; }
+    .anti-volume p { color: #7a5056; }
+
+    /* GATE */
+    .gate-wrap { margin-top: 58px; }
+    .gate-track { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 9px; }
+    .gate {
+      min-height: 330px;
+      padding: 24px 19px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.04);
+      position: relative;
+    }
+    .gate::before { content: ''; position: absolute; inset: 0 0 auto; height: 5px; background: var(--coral); }
+    .gate:nth-child(2)::before { background: var(--blue); }
+    .gate:nth-child(3)::before { background: var(--gold); }
+    .gate:nth-child(4)::before { background: var(--mint); }
+    .gate:nth-child(5)::before { background: var(--violet); }
+    .gate-no { color: var(--gold); font-size: 10px; }
+    .gate h3 { margin-top: 16px; font-family: var(--serif); font-size: 20px; line-height: 1.5; }
+    .gate-question { margin-top: 18px; color: white; font-weight: 600; font-size: 13px; line-height: 1.7; }
+    .gate p:last-child { margin-top: 14px; color: #9eabba; font-size: 12px; }
+    .review-fields { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 1px; margin-top: 20px; background: rgba(255,255,255,.12); }
+    .review-fields div { padding: 14px; background: var(--navy); }
+    .review-fields strong { color: var(--gold); font-size: 10px; }
+    .review-fields span { display: block; margin-top: 6px; color: #b5bfcd; font-size: 10px; }
+
+    /* EXPERT */
+    .expert-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; margin-top: 52px; }
+    .expert-card, .brief-card { padding: 32px; border: 1px solid var(--line); background: white; }
+    .expert-card h3, .brief-card h3 { margin-top: 10px; font-family: var(--serif); font-size: 24px; }
+    .expert-card .tag-list { margin-top: 22px; }
+    .brief-card blockquote { margin-top: 22px; padding: 22px; border-left: 4px solid var(--coral); background: #f8f3f4; font-family: var(--serif); font-size: 17px; line-height: 1.9; }
+    .brief-card p { margin-top: 18px; color: var(--muted); }
+
+    /* PRODUCTION */
+    .production-line { display: grid; grid-template-columns: repeat(9,minmax(0,1fr)); margin-top: 52px; border: 1px solid var(--line); }
+    .production-line div { min-height: 112px; padding: 16px 10px; border-right: 1px solid var(--line); background: white; position: relative; }
+    .production-line div:last-child { border-right: 0; }
+    .production-line div::after { content: '›'; position: absolute; right: -5px; top: 42%; color: var(--gold); z-index: 1; }
+    .production-line div:last-child::after { display: none; }
+    .production-line span { color: var(--gold); font-size: 9px; }
+    .production-line strong { display: block; margin-top: 10px; font-size: 11px; line-height: 1.6; }
+
+    .validation-board { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 48px; }
+    .metric-panel, .pilot-panel { padding: 30px; border: 1px solid var(--line); background: white; }
+    .metric-panel h3, .pilot-panel h3 { font-family: var(--serif); font-size: 22px; }
+    .metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 22px; }
+    .metrics span { padding: 12px 8px; border: 1px solid var(--line); text-align: center; font-size: 10px; }
+    .pilot-panel strong { display: block; margin-top: 24px; color: var(--coral); font-family: var(--serif); font-size: 22px; line-height: 1.6; }
+    .pilot-panel p { margin-top: 10px; color: var(--muted); }
+
+    .learning-loop { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 28px; margin-top: 48px; }
+    .learning-loop div { padding: 22px; border: 1px solid rgba(255,255,255,.13); position: relative; }
+    .learning-loop div::after { content: '→'; position: absolute; right: -22px; top: 42%; color: var(--gold); }
+    .learning-loop div:last-child::after { content: '↺'; right: -8px; }
+    .learning-loop span { color: var(--gold); font-size: 9px; }
+    .learning-loop strong { display: block; margin-top: 10px; font-size: 13px; }
+
+    /* MASTER FLOW */
+    .master-flow { margin-top: 56px; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border: 1px solid var(--line); }
+    .flow-node { min-height: 140px; padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; position: relative; }
+    .flow-node:nth-child(4n) { border-right: 0; }
+    .flow-node:nth-last-child(-n+4) { border-bottom: 0; }
+    .flow-node::after { content: '→'; position: absolute; right: -6px; top: 44%; color: var(--gold); z-index: 1; }
+    .flow-node:nth-child(4n)::after { content: '↓'; right: 48%; top: auto; bottom: -15px; }
+    .flow-node:last-child::after { content: '↺'; right: 18px; bottom: 14px; top: auto; }
+    .flow-node span { color: var(--gold); font-size: 9px; }
+    .flow-node strong { display: block; margin-top: 12px; font-size: 15px; }
+    .flow-node p { margin-top: 8px; color: var(--muted); font-size: 11px; }
+
+    /* FINAL */
+    .final-rule {
+      padding: 120px 0;
+      background: #f5ecee;
+      text-align: center;
+    }
+    .final-rule h2 { max-width: 900px; margin: 0 auto; font-family: var(--serif); font-size: clamp(34px,5vw,64px); line-height: 1.55; }
+    .final-rule h2 span { color: var(--coral); }
+    .final-scenarios { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 50px; text-align: left; }
+    .final-scenarios article { padding: 26px; border: 1px solid #e0cfd2; background: rgba(255,255,255,.72); }
+    .final-scenarios strong { display: block; font-size: 17px; }
+    .final-scenarios p { margin-top: 10px; color: var(--muted); font-size: 13px; }
+    .closing {
+      padding: 120px 0;
+      color: white;
+      background: var(--navy);
+      text-align: center;
+    }
+    .closing .label { display: block; margin-bottom: 28px; }
+    .closing h2 { max-width: 930px; margin: 0 auto; font-family: var(--serif); font-size: clamp(32px,5vw,58px); line-height: 1.65; }
+    .closing p { max-width: 760px; margin: 34px auto 0; color: #aeb8c7; }
+    .closing strong { display: block; margin-top: 52px; color: var(--gold); font-family: var(--serif); font-size: 24px; }
+    footer { padding: 26px; background: #080e18; color: #647085; text-align: center; font-size: 10px; }
+
+    @media (max-width: 900px) {
+      .section { padding: 84px 0; }
+      .formula-track { grid-template-columns: repeat(4,minmax(0,1fr)); }
+      .formula-item:nth-child(4) { border-right: 0; }
+      .method-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .method-card:nth-child(n+4) { min-height: 250px; }
+      .gate-track { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .gate { min-height: 280px; }
+      .production-line { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .production-line div:nth-child(3n) { border-right: 0; }
+      .production-line div:nth-child(3n)::after { display: none; }
+      .production-line div:nth-child(-n+6) { border-bottom: 1px solid var(--line); }
+    }
+
+    @media (max-width: 600px) {
+      p, li { font-size: 12px; line-height: 1.75; }
+      .frame { width: calc(100% - 24px); }
+      .section { padding: 64px 0; }
+      .section-index { margin-bottom: 16px; font-size: 8px; }
+      .section-index::after { width: 34px; }
+      .section-title { font-size: 29px; }
+      .section-lead { margin-top: 16px; font-size: 12px; }
+
+      .hero { min-height: auto; padding: 68px 0 60px; }
+      .hero::after { width: 220px; height: 220px; right: -80px; top: -70px; }
+      .hero-mark { margin-bottom: 30px; font-size: 8px; }
+      .hero h1 { font-size: 43px; line-height: 1.04; }
+      .hero h1 span { margin-top: 14px; font-size: 12px; line-height: 1.5; }
+      .hero-copy { margin-top: 34px; padding-left: 15px; font-size: 16px; }
+      .hero-rule { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 38px; }
+      .hero-rule div { min-height: 96px; padding: 12px 9px; }
+      .hero-rule span { font-size: 7px; }
+      .hero-rule strong { font-size: 11px; }
+
+      .not-start { grid-template-columns: .82fr 1.18fr; gap: 8px; margin-top: 32px; }
+      .not-card, .start-card { padding: 16px 12px; }
+      .not-card h3, .start-card h3 { font-size: 16px; }
+      .not-card p, .start-card p { margin-top: 10px; font-size: 10px; }
+      .choice-examples { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; }
+      .choice-examples span { padding: 9px 4px; font-size: 8px; }
+      .formula { margin-top: 34px; padding: 16px 10px; }
+      .formula-track { margin-top: 14px; }
+      .formula-item { min-height: 82px; padding: 10px 7px; }
+      .formula-item strong { font-size: 8px; }
+      .formula-item span { font-size: 7px; }
+
+      .phase-map { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; margin-top: 32px; }
+      .phase { min-height: 168px; padding: 14px 12px; }
+      .phase:nth-child(2)::after { display: none; }
+      .phase h3 { margin-top: 10px; font-size: 15px; }
+      .phase p { margin-top: 8px; font-size: 9px; }
+      .phase-steps { margin-top: 12px; gap: 3px; }
+      .phase-steps span { padding: 4px; font-size: 7px; }
+
+      .step-stack { margin-top: 32px; gap: 10px; }
+      .step-card { grid-template-columns: 68px 1fr; }
+      .step-side { padding: 16px 10px; }
+      .step-side span { font-size: 7px; }
+      .step-side strong { margin-top: 8px; font-size: 24px; }
+      .step-body { padding: 16px 14px; }
+      .step-body h3 { font-size: 16px; }
+      .step-question { margin-top: 7px; font-size: 10px; }
+      .step-body > p:not(.step-question) { margin-top: 8px; font-size: 9px; }
+      .tag-list { gap: 4px; }
+      .tag-list li { padding: 5px 6px; font-size: 8px; }
+
+      .method-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; margin-top: 32px; }
+      .method-card { min-height: 230px; padding: 14px 11px; }
+      .method-card:last-child { grid-column: 1 / -1; min-height: auto; }
+      .method-card h3 { font-size: 12px; }
+      .method-card ul { margin-top: 10px; }
+      .method-card li { font-size: 9px; line-height: 1.6; }
+      .selection-rule { grid-template-columns: .8fr 1.2fr; }
+      .selection-rule strong, .selection-rule p { padding: 13px 10px; }
+      .selection-rule strong { font-size: 12px; }
+      .selection-rule p { font-size: 9px; }
+
+      .translation-flow { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; margin-top: 32px; }
+      .translation-flow article { padding: 13px 8px; }
+      .translation-flow article::after { right: -10px; font-size: 10px; }
+      .translation-flow span { font-size: 7px; }
+      .translation-flow strong { font-size: 10px; }
+      .translation-flow p { font-size: 7px; }
+      .meaning-grid { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 22px; }
+      .meaning-grid div { padding: 10px 8px; }
+      .meaning-grid strong { font-size: 8px; }
+      .meaning-grid p { font-size: 7px; }
+
+      .channel-grid { gap: 6px; margin-top: 30px; }
+      .channel { min-height: 235px; padding: 14px 9px; }
+      .channel h3 { font-size: 17px; }
+      .channel > p { font-size: 9px; }
+      .channel .tag-list li { width: 100%; }
+      .graph-note { padding: 13px; font-size: 9px; }
+
+      .spec-board { margin-top: 30px; padding: 12px; }
+      .spec-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .spec-grid div { min-height: 76px; padding: 10px 8px; }
+      .spec-grid span { font-size: 7px; }
+      .spec-grid strong { font-size: 9px; }
+      .anti-volume { grid-template-columns: 26px 1fr; padding: 12px; gap: 8px; }
+      .anti-volume b { font-size: 20px; }
+      .anti-volume p { font-size: 9px; }
+
+      .gate-track { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+      .gate { min-height: 220px; padding: 15px 11px; }
+      .gate:last-child { grid-column: 1 / -1; min-height: 176px; }
+      .gate-no { font-size: 7px; }
+      .gate h3 { margin-top: 10px; font-size: 14px; }
+      .gate-question { margin-top: 10px; font-size: 9px; }
+      .gate p:last-child { margin-top: 8px; font-size: 8px; }
+      .review-fields { grid-template-columns: repeat(5,minmax(0,1fr)); }
+      .review-fields div { padding: 8px 5px; }
+      .review-fields strong, .review-fields span { font-size: 6px; }
+
+      .expert-layout { grid-template-columns: .9fr 1.1fr; gap: 7px; margin-top: 30px; }
+      .expert-card, .brief-card { padding: 15px 11px; }
+      .expert-card h3, .brief-card h3 { font-size: 15px; }
+      .brief-card blockquote { margin-top: 12px; padding: 12px 10px; font-size: 10px; }
+      .brief-card p { margin-top: 10px; font-size: 8px; }
+
+      .production-line { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 30px; }
+      .production-line div { min-height: 82px; padding: 10px 7px; }
+      .production-line span { font-size: 6px; }
+      .production-line strong { font-size: 8px; }
+      .validation-board { gap: 7px; margin-top: 28px; }
+      .metric-panel, .pilot-panel { padding: 14px 10px; }
+      .metric-panel h3, .pilot-panel h3 { font-size: 14px; }
+      .metrics { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px; margin-top: 12px; }
+      .metrics span { padding: 7px 4px; font-size: 7px; }
+      .pilot-panel strong { margin-top: 12px; font-size: 13px; }
+      .pilot-panel p { font-size: 8px; }
+      .learning-loop { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 11px; margin-top: 28px; }
+      .learning-loop div { padding: 11px 7px; }
+      .learning-loop div::after { right: -9px; font-size: 9px; }
+      .learning-loop div:last-child::after { right: 2px; }
+      .learning-loop span { font-size: 6px; }
+      .learning-loop strong { font-size: 8px; }
+
+      .master-flow { margin-top: 30px; }
+      .flow-node { min-height: 92px; padding: 10px 8px; }
+      .flow-node span { font-size: 6px; }
+      .flow-node strong { font-size: 9px; }
+      .flow-node p { font-size: 7px; }
+      .flow-node:nth-child(4n)::after { bottom: -10px; }
+
+      .final-rule, .closing { padding: 72px 0; }
+      .final-rule h2, .closing h2 { font-size: 27px; }
+      .final-scenarios { gap: 6px; margin-top: 30px; }
+      .final-scenarios article { padding: 14px 10px; }
+      .final-scenarios strong { font-size: 11px; }
+      .final-scenarios p { font-size: 8px; }
+      .closing p { margin-top: 24px; font-size: 10px; }
+      .closing strong { margin-top: 32px; font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- SECTION: Hero -->
+  <header class="hero">
+    <div class="frame hero-inner">
+      <p class="hero-mark">BDX / CONTENT STRATEGY / VER.2.0</p>
+      <h1>Content<br />Selection<br />Framework<span>BDX コンテンツ選定フレームワーク</span></h1>
+      <p class="hero-copy">何を教えるかではなく、<br />誰の、どんな状態に、どんな価値を届けるか。</p>
+      <div class="hero-rule" aria-label="BDXコンテンツ設計の起点">
+        <div><span>START</span><strong>ユーザーを<br />理解する</strong></div>
+        <div><span>DECIDE</span><strong>目的から<br />手段を選ぶ</strong></div>
+        <div><span>GOAL</span><strong>最高の体調を<br />日常に</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION: Principle -->
+    <section class="section white" aria-labelledby="principle-title">
+      <div class="frame">
+        <div class="section-index">00 — 基本原則</div>
+        <h2 class="section-title" id="principle-title">バレエ動作から、<br />企画を始めない。</h2>
+        <p class="section-lead">BDXの目的は、一般ユーザーにバレエ技術を習得させることではありません。バレリーナ・ダンサーの身体づくり、身体管理、生活習慣、表現に至る知恵を日常へ翻訳し、「最高の体調を日常に」へつなげます。</p>
+
+        <div class="not-start">
+          <article class="not-card">
+            <span class="label">NOT THE START</span>
+            <h3>「何のバレエ動作を教えるか？」</h3>
+            <p>プリエがあるから、プリエ動画を作る。プロが行っているから、そのまま採用する。</p>
+          </article>
+          <article class="start-card">
+            <span class="label">THE START</span>
+            <h3>「誰の、どんな状態に、どんな価値を提供するか？」</h3>
+            <p>目的を決め、その実現に最も適した手段を選びます。</p>
+            <div class="choice-examples"><span>バレエ動作</span><span>筋力トレーニング</span><span>回復</span><span>学習</span></div>
+          </article>
+        </div>
+
+        <div class="formula" aria-label="BDXコンテンツ制作の基本式">
+          <span class="label">BDX CONTENT FORMULA</span>
+          <div class="formula-track">
+            <div class="formula-item"><strong>USER</strong><span>誰に</span></div>
+            <div class="formula-item"><strong>CONDITION</strong><span>どんな状態に</span></div>
+            <div class="formula-item"><strong>PURPOSE</strong><span>何を提供するか</span></div>
+            <div class="formula-item"><strong>METHOD</strong><span>何を使うか</span></div>
+            <div class="formula-item"><strong>TRANSLATION</strong><span>日常へどう変えるか</span></div>
+            <div class="formula-item"><strong>DELIVERY</strong><span>どう届けるか</span></div>
+            <div class="formula-item"><strong>SPEC</strong><span>仕様をどう定めるか</span></div>
+            <div class="formula-item"><strong>SAFETY</strong><span>専門性と安全性</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Framework Map -->
+    <section class="section dark" aria-labelledby="map-title">
+      <div class="frame">
+        <div class="section-index">FRAMEWORK MAP</div>
+        <h2 class="section-title" id="map-title">12のステップを、<br />4つの判断に整理する。</h2>
+        <div class="phase-map">
+          <article class="phase"><span class="phase-no">PHASE 01</span><h3>誰に何を<br />届けるか</h3><p>ユーザーと状態を理解し、提供価値を定義する。</p><div class="phase-steps"><span>01 USER</span><span>02 NEED</span><span>03 VALUE</span></div></article>
+          <article class="phase"><span class="phase-no">PHASE 02</span><h3>知恵を日常へ<br />変換する</h3><p>目的に適した手段を選び、BDXらしい体験へ落とす。</p><div class="phase-steps"><span>04 METHOD</span><span>05 TRANSLATE</span><span>06 DELIVER</span></div></article>
+          <article class="phase"><span class="phase-no">PHASE 03</span><h3>仕様と品質を<br />定義する</h3><p>商品仕様、Gate、専門家レビューで品質を守る。</p><div class="phase-steps"><span>07 SPEC</span><span>08 GATE</span><span>09 REVIEW</span></div></article>
+          <article class="phase"><span class="phase-no">PHASE 04</span><h3>制作し、<br />学び直す</h3><p>実装・検証・分析を、次の企画へ循環させる。</p><div class="phase-steps"><span>10 BUILD</span><span>11 TEST</span><span>12 LEARN</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Phase 1 -->
+    <section class="section soft" aria-labelledby="phase1-title">
+      <div class="frame">
+        <div class="section-index">PHASE 01 — DEFINE VALUE</div>
+        <h2 class="section-title" id="phase1-title">誰に、今、<br />何を届けるのか。</h2>
+        <div class="step-stack">
+          <article class="step-card">
+            <div class="step-side"><span>STEP</span><strong>01</strong></div>
+            <div class="step-body"><h3>ユーザーを定義する</h3><p class="step-question">誰に届けるのか？</p><p>原則として、バレエ経験を前提にしません。</p><ul class="tag-list"><li>運動初心者</li><li>普段あまり身体を動かしていない人</li><li>適度な運動習慣がある人</li><li>身体を整えたい人</li><li>日常の体調管理をしたい人</li><li>楽しく身体を動かしたい人</li></ul></div>
+          </article>
+          <article class="step-card">
+            <div class="step-side"><span>STEP</span><strong>02</strong></div>
+            <div class="step-body"><h3>現在の状態・ニーズを定義する</h3><p class="step-question">今、そのユーザーには何が必要なのか？</p><p>Today's ConditionとAI Coachへ接続できる粒度で整理します。</p><ul class="tag-list"><li>疲れている</li><li>身体が重い</li><li>軽く動きたい</li><li>しっかり動きたい</li><li>動きやすさを高めたい</li><li>姿勢を意識したい</li><li>楽しく動きたい</li><li>身体を理解したい</li><li>回復したい</li><li>睡眠・食生活を整えたい</li><li>気分を切り替えたい</li></ul></div>
+          </article>
+          <article class="step-card">
+            <div class="step-side"><span>STEP</span><strong>03</strong></div>
+            <div class="step-body"><h3>提供する価値・目的を決める</h3><p class="step-question">このコンテンツを通して何を提供するのか？</p><p>「最高の体調を日常に」へどうつながるかを説明できる目的だけを採用します。</p><ul class="tag-list"><li>身体を動かして調子をつくる</li><li>身体機能を育てる</li><li>動きやすい身体をつくる</li><li>姿勢・身体操作を経験する</li><li>音楽に合わせて楽しむ</li><li>疲労から回復する</li><li>身体や状態を理解する</li><li>睡眠・栄養・回復を学ぶ</li><li>体調管理方法を身につける</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Method -->
+    <section class="section white" aria-labelledby="method-title">
+      <div class="frame">
+        <div class="section-index">STEP 04 — METHOD</div>
+        <h2 class="section-title" id="method-title">目的を決めてから、<br />手段を探す。</h2>
+        <p class="section-lead">バレエ動作は特別扱いしません。目的を実現する候補の一つとして、トレーニング、回復、生活管理、心・表現と並べて比較します。</p>
+        <div class="method-grid">
+          <article class="method-card"><h3>バレエ由来の身体活動</h3><ul><li>プリエ</li><li>タンジュ</li><li>ポールドブラ</li><li>ルルベ</li><li>ロン・ドゥ・ジャンブ</li><li>その他の身体操作</li></ul></article>
+          <article class="method-card"><h3>身体づくり</h3><ul><li>筋力トレーニング</li><li>Conditioning</li><li>Mobility Exercise</li><li>有酸素運動・HIIT</li><li>Balance Training</li><li>Coordination Exercise</li></ul></article>
+          <article class="method-card"><h3>身体管理・回復</h3><ul><li>Warm-up</li><li>Cool-down</li><li>Recovery</li><li>Stretching</li><li>Relaxation</li><li>呼吸</li></ul></article>
+          <article class="method-card"><h3>生活管理</h3><ul><li>Sleep</li><li>Nutrition</li><li>Hydration</li><li>Meal timing</li><li>Daily Routine</li><li>Self-care</li></ul></article>
+          <article class="method-card"><h3>心・Performance</h3><ul><li>Motivation</li><li>Focus</li><li>Preparation</li><li>Confidence</li><li>Performance anxiety</li><li>音楽・表現・Routine</li></ul></article>
+        </div>
+        <div class="selection-rule"><strong>採用理由は、権威ではなく適合性。</strong><p>「バレリーナがやっているから」ではなく、なぜ今回のユーザーと目的に適しているのかを説明します。</p></div>
+      </div>
+    </section>
+
+    <!-- SECTION: Translation -->
+    <section class="section dark" aria-labelledby="translation-title">
+      <div class="frame">
+        <div class="section-index">STEP 05 — BDX TRANSLATION</div>
+        <h2 class="section-title" id="translation-title">プロの実践を、<br />そのまま移植しない。</h2>
+        <p class="section-lead">一般的な健康コンテンツを無差別に扱わず、バレリーナ・ダンサーの身体づくり、身体管理、Performanceを支える世界との接点を確認します。</p>
+        <div class="translation-flow">
+          <article><span>01</span><strong>プロの実践</strong><p>何をしているかを見る</p></article>
+          <article><span>02</span><strong>目的・背景</strong><p>なぜ行うかを理解する</p></article>
+          <article><span>03</span><strong>科学・専門性</strong><p>妥当性と条件を確認する</p></article>
+          <article><span>04</span><strong>日常へ翻訳</strong><p>一般ユーザーが使える形へ</p></article>
+        </div>
+        <div class="meaning-grid">
+          <div><strong>プリエ</strong><p>バレエ由来の身体操作</p></div><div><strong>筋力トレーニング</strong><p>Performanceを支える身体づくり</p></div><div><strong>HIIT / Conditioning</strong><p>必要な体力を支えるTraining</p></div><div><strong>Recovery</strong><p>継続するための身体管理</p></div><div><strong>Sleep / Nutrition</strong><p>身体・回復を支える生活管理</p></div><div><strong>Preparation</strong><p>本番へ向けた準備・Routine</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Delivery -->
+    <section class="section soft" aria-labelledby="delivery-title">
+      <div class="frame">
+        <div class="section-index">STEP 06 — DELIVERY</div>
+        <h2 class="section-title" id="delivery-title">価値に合わせて、<br />届け方を選ぶ。</h2>
+        <div class="channel-grid">
+          <article class="channel"><span class="label">MOVE</span><h3>身体を動かす</h3><p>知識ではなく、身体で経験する。</p><ul class="tag-list"><li>バレエエクササイズ</li><li>筋力トレーニング</li><li>Conditioning</li><li>Mobility</li><li>HIIT</li><li>Dance / Rhythm</li></ul></article>
+          <article class="channel"><span class="label">LEARN</span><h3>理解する</h3><p>身体・心・生活を、根拠とともに学ぶ。</p><ul class="tag-list"><li>BODY SCIENCE</li><li>NUTRITION</li><li>RECOVERY</li><li>MIND</li><li>LIFESTYLE</li></ul></article>
+          <article class="channel"><span class="label">CARE</span><h3>回復・調整する</h3><p>休むことも、その日の前進にする。</p><ul class="tag-list"><li>Recovery</li><li>Mental</li><li>Lifestyle</li></ul></article>
+        </div>
+        <p class="graph-note"><strong>CONTENT GRAPH</strong>　MOVE / LEARN / CAREを無理にセットにせず、自然な接続がある時だけ、次の行動へつながる体験として設計します。</p>
+      </div>
+    </section>
+
+    <!-- SECTION: Specification -->
+    <section class="section white" aria-labelledby="spec-title">
+      <div class="frame">
+        <div class="section-index">STEP 07 — CONTENT SPEC</div>
+        <h2 class="section-title" id="spec-title">アイデアを、<br />実装可能な仕様へ。</h2>
+        <div class="spec-board">
+          <div class="spec-grid">
+            <div><span>01</span><strong>対象ユーザー</strong></div><div><span>02</span><strong>利用シーン</strong></div><div><span>03</span><strong>時間</strong></div><div><span>04</span><strong>難易度・強度</strong></div><div><span>05</span><strong>スペース・道具</strong></div><div><span>06</span><strong>Video / Audio / Text / Timer</strong></div><div><span>07</span><strong>Movement構成</strong></div><div><span>08</span><strong>Safety</strong></div><div><span>09</span><strong>AI Coach推薦条件</strong></div><div><span>10</span><strong>Skill Mapping</strong></div><div><span>11</span><strong>Related LEARN</strong></div><div><span>12</span><strong>Related CARE</strong></div>
+          </div>
+          <div class="anti-volume"><b>×</b><p><strong>時間だけを変えて、水増ししない。</strong><br />別コンテンツにするなら、目的・体験・難易度・Progression・利用シーンに意味のある違いが必要です。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Gate -->
+    <section class="section dark" aria-labelledby="gate-title">
+      <div class="frame">
+        <div class="section-index">STEP 08 — BDX CONTENT GATE</div>
+        <h2 class="section-title" id="gate-title">作れるかではなく、<br />作るべきかを問う。</h2>
+        <p class="section-lead">制作候補は5つのGateを通過したものだけを企画承認へ進めます。</p>
+        <div class="gate-wrap">
+          <div class="gate-track">
+            <article class="gate"><span class="gate-no">GATE 01</span><h3>最高の体調</h3><p class="gate-question">「最高の体調を日常に」に、どう貢献するか？</p><p>目的との接続を一文で説明できること。</p></article>
+            <article class="gate"><span class="gate-no">GATE 02</span><h3>日常への翻訳</h3><p class="gate-question">一般ユーザーの日常に、応用する価値があるか？</p><p>プロ専用の実践を、そのまま持ち込まない。</p></article>
+            <article class="gate"><span class="gate-no">GATE 03</span><h3>BDXとしての意味</h3><p class="gate-question">なぜBDXが、これを提供するのか？</p><p>バレエ・ダンサーの身体、生活、Performanceとの意味ある接点。</p></article>
+            <article class="gate"><span class="gate-no">GATE 04</span><h3>専門性・科学・安全性</h3><p class="gate-question">根拠、監修、安全性は適切か？</p><p>専門領域を分け、それぞれの専門性で確認する。</p></article>
+            <article class="gate"><span class="gate-no">GATE 05</span><h3>AI Coach推薦可能性</h3><p class="gate-question">誰に、どんな状態で、なぜ薦めるのか？</p><p>条件を定義できない時は、目的の曖昧さを疑う。</p></article>
+          </div>
+          <div class="review-fields" aria-label="専門領域別レビュー">
+            <div><strong>BALLET</strong><span>バレエ専門監修</span></div><div><strong>EXERCISE</strong><span>運動科学等</span></div><div><strong>NUTRITION</strong><span>栄養学</span></div><div><strong>RECOVERY</strong><span>関連科学</span></div><div><strong>MENTAL</strong><span>心理学等</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Expert Review -->
+    <section class="section soft" aria-labelledby="expert-title">
+      <div class="frame">
+        <div class="section-index">STEP 09 — EXPERT REVIEW</div>
+        <h2 class="section-title" id="expert-title">専門家には、<br />目的を渡す。</h2>
+        <p class="section-lead">「何を作るか」をゼロから丸投げせず、ユーザー・状態・目的・候補を整理した上で、専門的な判断を依頼します。</p>
+        <div class="expert-layout">
+          <article class="expert-card"><span class="label">BALLET REVIEW</span><h3>鈴ちゃんが確認すること</h3><ul class="tag-list"><li>バレエ由来の動作</li><li>バレエ特有の身体操作</li><li>バレエとしての自然さ</li><li>初心者への実演・指導</li><li>Movement Sequence</li><li>バレエ技術上のSafety</li></ul></article>
+          <article class="brief-card"><span class="label">GOOD BRIEF</span><h3>相談のしかた</h3><blockquote>「運動初心者が5分で身体を動かし、丁寧にコントロールする感覚を体験できる内容を作りたい。プリエを候補に考えているけど、この目的ならどんな動きが適切？」</blockquote><p>「プリエより別の動きが適切」という変更提案は、積極的に取り入れます。バレエ専門家に、栄養・心理・運動科学など全領域を背負わせません。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Production -->
+    <section class="section white" aria-labelledby="production-title">
+      <div class="frame">
+        <div class="section-index">STEP 10 — PRODUCTION</div>
+        <h2 class="section-title" id="production-title">承認された企画を、<br />体験へ変える。</h2>
+        <div class="production-line" aria-label="制作実装フロー">
+          <div><span>01</span><strong>Movement<br />Sequence</strong></div><div><span>02</span><strong>Cue</strong></div><div><span>03</span><strong>Safety</strong></div><div><span>04</span><strong>Script</strong></div><div><span>05</span><strong>Technical<br />Review</strong></div><div><span>06</span><strong>撮影・制作</strong></div><div><span>07</span><strong>Mux</strong></div><div><span>08</span><strong>BDX</strong></div><div><span>09</span><strong>AI Coach<br />Quest</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Validation -->
+    <section class="section soft" aria-labelledby="validation-title">
+      <div class="frame">
+        <div class="section-index">STEP 11 — USER VALIDATION</div>
+        <h2 class="section-title" id="validation-title">公開して終わらず、<br />価値の兆候を見る。</h2>
+        <div class="validation-board">
+          <article class="metric-panel"><h3>観察するもの</h3><div class="metrics"><span>Quest Start</span><span>Completion</span><span>Video Progress</span><span>難易度</span><span>楽しさ</span><span>役立ち度</span><span>身体への気づき</span><span>またやりたい</span><span>Related Content</span><span>Interview</span></div></article>
+          <article class="pilot-panel"><span class="label">SMALL PILOT</span><h3>少人数検証の目的</h3><strong>統計的な結論ではなく、<br />重大な問題・価値の兆候・改善点を見つける。</strong><p>数字だけでなく、体験中の迷い、言葉、身体感覚の変化を確認します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Learning Loop -->
+    <section class="section dark" aria-labelledby="learning-title">
+      <div class="frame">
+        <div class="section-index">STEP 12 — NEXT CONTENT</div>
+        <h2 class="section-title" id="learning-title">検証結果を、<br />次の企画へ返す。</h2>
+        <p class="section-lead">AIが自動的に学習するという意味ではありません。当面は、人が責任を持って分析し、専門家レビューを経て改善します。</p>
+        <div class="learning-loop">
+          <div><span>01</span><strong>BDXデータ</strong></div><div><span>02</span><strong>あなた＋AIで分析</strong></div><div><span>03</span><strong>次の企画</strong></div><div><span>04</span><strong>専門家レビュー</strong></div><div><span>05</span><strong>制作</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Master Flow -->
+    <section class="section white" aria-labelledby="flow-title">
+      <div class="frame">
+        <div class="section-index">CONTENT PRODUCTION FLOW</div>
+        <h2 class="section-title" id="flow-title">一つの企画を、<br />次の学びまでつなぐ。</h2>
+        <div class="master-flow" aria-label="BDXコンテンツ制作フロー">
+          <div class="flow-node"><span>01 / USER</span><strong>誰に？</strong><p>対象を定義</p></div><div class="flow-node"><span>02 / CONDITION</span><strong>今何が必要？</strong><p>状態・ニーズ</p></div><div class="flow-node"><span>03 / PURPOSE</span><strong>何を提供する？</strong><p>顧客価値</p></div><div class="flow-node"><span>04 / METHOD</span><strong>何が最適？</strong><p>手段を比較</p></div>
+          <div class="flow-node"><span>05 / TRANSLATION</span><strong>どう日常へ？</strong><p>知恵を翻訳</p></div><div class="flow-node"><span>06 / DELIVERY</span><strong>MOVE / LEARN / CARE</strong><p>届け方</p></div><div class="flow-node"><span>07 / SPEC</span><strong>商品仕様</strong><p>実装条件</p></div><div class="flow-node"><span>08 / GATE</span><strong>作るべきか？</strong><p>5つの審査</p></div>
+          <div class="flow-node"><span>09 / REVIEW</span><strong>専門家確認</strong><p>専門性・安全性</p></div><div class="flow-node"><span>10 / PRODUCTION</span><strong>制作・実装</strong><p>体験へ変換</p></div><div class="flow-node"><span>11 / AI COACH</span><strong>Questへ接続</strong><p>適切な推薦</p></div><div class="flow-node"><span>12 / MEASURE</span><strong>検証し、次へ</strong><p>データ・Interview</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Most Important Rule -->
+    <section class="final-rule" aria-labelledby="rule-title">
+      <div class="frame">
+        <span class="label">THE MOST IMPORTANT RULE</span>
+        <h2 id="rule-title">答えから始めない。<br /><span>目的から、答えを選ぶ。</span></h2>
+        <div class="final-scenarios">
+          <article><strong>答えがプリエなら</strong><p>プリエを使う。バレエ動作であること自体を目的にしない。</p></article>
+          <article><strong>答えが筋力トレーニングなら</strong><p>筋力トレーニングを使う。目的への適合性を優先する。</p></article>
+          <article><strong>答えがRecoveryなら</strong><p>休む。運動しない選択も、最高の体調につながる。</p></article>
+          <article><strong>答えがSleepなら</strong><p>学ぶ。動くことだけをコンテンツにしない。</p></article>
+          <article><strong>答えがDanceなら</strong><p>音楽と表現で、楽しく身体を使う体験をつくる。</p></article>
+          <article><strong>どの答えでも</strong><p>誰に、なぜ薦めるのかを説明できる状態にする。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Closing -->
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="frame">
+        <span class="label">BDX CONTENT PHILOSOPHY</span>
+        <h2 id="closing-title">バレエを教えるのではない。<br />舞台を支えてきた知恵を、<br />日常をより良く過ごすために翻訳する。</h2>
+        <p>そのために必要なら、バレエ動作も、筋力トレーニングも、Recoveryも、Nutritionも、Sleepも使います。</p>
+        <strong>すべては「最高の体調を日常に」から逆算する。</strong>
+      </div>
+    </section>
+  </main>
+  <footer>BDX Content Selection Framework v2.0</footer>
+</body>
+</html>
