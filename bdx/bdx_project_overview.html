@@ -5925,6 +5925,243 @@
         transform: none;
       }
     }
+
+    /* 03 — Behind the Stage / background treatment */
+    .behind {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: #101b2e;
+    }
+
+    .behind::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: rgba(10, 22, 40, 0.7);
+      content: '';
+    }
+
+    .behind-background {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 58%;
+      opacity: 0.6;
+      filter: saturate(0.55) contrast(0.9);
+    }
+
+    .behind-layout {
+      display: block;
+    }
+
+    .behind-copy {
+      width: min(820px, 74%);
+      margin-left: auto;
+      padding: 42px;
+      border: 1px solid rgba(198, 170, 115, 0.3);
+      background: rgba(12, 22, 39, 0.8);
+      backdrop-filter: blur(3px);
+    }
+
+    /* 05 — Before / After */
+    .evolution {
+      background: #0c1728;
+    }
+
+    .evolution-heading {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 64px;
+      align-items: end;
+    }
+
+    .evolution-heading .lead {
+      max-width: 600px;
+      margin-left: auto;
+    }
+
+    .evolution-board {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+      margin-top: 56px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .evolution-side {
+      padding: 34px;
+      background: #121f33;
+    }
+
+    .evolution-side.after {
+      border-top: 6px solid var(--rose);
+      background: #18243a;
+    }
+
+    .evolution-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .evolution-head > span:first-child {
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .evolution-status {
+      padding: 4px 8px;
+      border: 1px solid rgba(121, 169, 255, 0.45);
+      color: var(--blue);
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .evolution-side.after .evolution-status {
+      border-color: rgba(255, 111, 145, 0.48);
+      color: var(--rose);
+    }
+
+    .evolution-side h3 {
+      margin-top: 20px;
+      color: var(--ivory);
+      font-family: var(--display);
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .evolution-side > p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .evolution-list {
+      margin-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      list-style: none;
+    }
+
+    .evolution-list li {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      color: #e3e8f0;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .evolution-list b {
+      color: var(--gold);
+      font-size: 9px;
+    }
+
+    .evolution-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: #2a3850;
+      font-size: 30px;
+    }
+
+    .evolution-statement {
+      max-width: 840px;
+      margin: 42px auto 0;
+      padding: 24px;
+      border: 1px solid rgba(244, 189, 79, 0.34);
+      color: var(--ivory);
+      font-family: var(--display);
+      font-size: 22px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .behind-copy {
+        width: 78%;
+        padding: 20px 14px;
+      }
+
+      .behind-background {
+        object-position: 28% center;
+        opacity: 0.55;
+      }
+
+      .evolution-heading {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 14px;
+      }
+
+      .evolution-board {
+        grid-template-columns: minmax(0, 0.86fr) 28px minmax(0, 1.14fr);
+        margin-top: 30px;
+      }
+
+      .evolution-side {
+        padding: 14px 9px;
+      }
+
+      .evolution-side.after {
+        border-top-width: 4px;
+      }
+
+      .evolution-head {
+        gap: 4px;
+      }
+
+      .evolution-head > span:first-child,
+      .evolution-status {
+        font-size: 6px;
+      }
+
+      .evolution-status {
+        padding: 2px 3px;
+      }
+
+      .evolution-side h3 {
+        margin-top: 12px;
+        font-size: 16px;
+      }
+
+      .evolution-side > p {
+        font-size: 8px;
+        line-height: 1.6;
+      }
+
+      .evolution-list {
+        margin-top: 17px;
+      }
+
+      .evolution-list li {
+        grid-template-columns: 43px 1fr;
+        gap: 5px;
+        padding: 8px 0;
+        font-size: 7px;
+      }
+
+      .evolution-list b {
+        font-size: 6px;
+      }
+
+      .evolution-arrow {
+        font-size: 17px;
+      }
+
+      .evolution-statement {
+        margin-top: 25px;
+        padding: 14px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -5949,13 +6186,12 @@
     <section class="story-section origin" aria-labelledby="why-title">
       <div class="frame origin-layout">
         <div class="reveal">
-          <div class="section-index">02 — なぜ、バレエなのか</div>
-          <p class="display-en" aria-hidden="true">なぜ、<br />バレエ？</p>
+          <div class="section-index">02 — 発想の原点</div>
+          <h2 class="display-en" id="why-title">なぜ、<br />バレエ？</h2>
         </div>
         <div class="origin-story reveal">
           <p class="lead">あるジャズダンス経験者から聞いた。</p>
           <blockquote class="origin-quote">「最初に学んだのは、バレエだった。」</blockquote>
-          <h2 class="origin-question" id="why-title">なぜ、ジャズダンスなのに<br />バレエなのか。</h2>
           <p class="lead">他ジャンルのダンサーが、身体の軸・姿勢・バランス・コントロールを学ぶ目的でバレエを取り入れることがある。</p>
         </div>
       </div>
@@ -5985,13 +6221,10 @@
 
     <!-- SECTION 03: BEHIND THE STAGE -->
     <section class="story-section behind" aria-labelledby="behind-title">
+      <img class="behind-background" src="assets/bdx-ballet-preparation.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="frame behind-layout">
-        <figure class="behind-photo reveal">
-          <img src="assets/bdx-ballet-preparation.png" alt="バレエスタジオでシューズを結び、練習前の準備をするダンサー" loading="lazy" />
-          <figcaption>練習前の準備 / BDXオリジナル画像</figcaption>
-        </figure>
         <div class="behind-copy reveal">
-          <div class="section-index">03 — 注目すべきは舞台裏</div>
+          <div class="section-index">03 — 舞台を支える日常</div>
           <h2 class="display-heading" id="behind-title">注目すべきは<br />舞台裏。</h2>
           <p class="lead">バレリーナの価値は舞踊技術だけではありません。健康的な体型を維持し、体調を整え、動ける身体を支える日々の管理にもあります。</p>
           <div class="stage-method-diagram" aria-label="舞台上の表現を舞台裏の身体管理が支える構造">
@@ -6013,7 +6246,7 @@
     <!-- SECTION 04: WHAT IF -->
     <section class="story-section what-if" aria-labelledby="what-if-title">
       <div class="frame hypothesis reveal">
-        <div class="section-index">04 — BDXの仮説</div>
+        <div class="section-index">04 — 日常への応用</div>
         <p class="hypothesis-premise">バレエを踊るためではない。<br />バレリーナのような生活を真似するためでもない。</p>
         <h2 class="what-if-question" id="what-if-title">もしも、バレエメソッドを<br />僕らの日常に取り入れたら？</h2>
         <div class="hypothesis-body">
@@ -6025,10 +6258,49 @@
       </div>
     </section>
 
-    <!-- SECTION 05: MEET BDX -->
+    <!-- SECTION 05: BEFORE / AFTER -->
+    <section class="story-section evolution" aria-labelledby="evolution-title">
+      <div class="frame evolution-heading reveal">
+        <div>
+          <div class="section-index">05 — 新旧比較</div>
+          <h2 class="display-heading" id="evolution-title">目的と体験の変化</h2>
+        </div>
+        <p class="lead">運動を続けるためのフィットネスサービスから、身体・心・生活を総合的に育てるサービスへ。</p>
+      </div>
+      <div class="frame evolution-board reveal" aria-label="旧BDXと新BDXの比較">
+        <article class="evolution-side before">
+          <div class="evolution-head"><span>BEFORE / 旧版</span><span class="evolution-status">土台</span></div>
+          <h3>習慣形成型<br />フィットネス</h3>
+          <p>バレエエクササイズを、AIの提案で続けやすくする。</p>
+          <ul class="evolution-list">
+            <li><b>目的</b><span>運動を続ける</span></li>
+            <li><b>中心</b><span>ワークアウト動画</span></li>
+            <li><b>AI</b><span>運動メニューと習慣支援</span></li>
+            <li><b>成長</b><span>運動の実施と記録</span></li>
+            <li><b>バレエ</b><span>身体を動かすメソッド</span></li>
+          </ul>
+        </article>
+        <div class="evolution-arrow" aria-hidden="true">→</div>
+        <article class="evolution-side after">
+          <div class="evolution-head"><span>AFTER / 新版</span><span class="evolution-status">拡張</span></div>
+          <h3>バレエ発想の<br />ウェルビーイング</h3>
+          <p>舞台上と舞台裏のメソッドを、AIで日常の行動へつなげる。</p>
+          <ul class="evolution-list">
+            <li><b>目的</b><span>最高の体調を日常につくる</span></li>
+            <li><b>中心</b><span>動く・学ぶ・整える</span></li>
+            <li><b>AI</b><span>状態と履歴から今日の行動を提案</span></li>
+            <li><b>成長</b><span>運動・学び・回復を可視化</span></li>
+            <li><b>バレエ</b><span>身体づくり・管理・生活の知恵</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="frame evolution-statement reveal">バレエを使った運動から、<br />バレエの世界で培われた身体との付き合い方へ。</p>
+    </section>
+
+    <!-- SECTION 06: MEET BDX -->
     <section class="story-section meet" aria-labelledby="meet-title">
       <div class="frame reveal">
-        <div class="section-index">05 — BDXの誕生</div>
+        <div class="section-index">06 — コンセプト</div>
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
         <p class="brand-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
@@ -6073,11 +6345,11 @@
       </div>
     </section>
 
-    <!-- SECTION 06: PRODUCT SYSTEM -->
+    <!-- SECTION 07: PRODUCT SYSTEM -->
     <section class="story-section product-system" aria-labelledby="product-system-title">
       <div class="frame system-heading reveal">
         <div>
-          <div class="section-index">06 — プロダクトの全体像</div>
+          <div class="section-index">07 — 体験をつなぐ構造</div>
           <h2 class="display-heading" id="product-system-title">動く。学ぶ。整える。<br />すべてが次の行動につながる。</h2>
         </div>
         <p class="lead">BDXはコンテンツを並べるだけではありません。バレエメソッドを軸に、AIが今日の行動を選び、結果を次の提案へつなげます。</p>
@@ -6136,11 +6408,11 @@
       </div>
     </section>
 
-    <!-- SECTION 07: BDX POSITIONING -->
+    <!-- SECTION 08: BDX POSITIONING -->
     <section class="story-section positioning" aria-labelledby="positioning-title">
       <div class="frame positioning-head reveal">
         <div>
-          <div class="section-index">07 — BDXの独自性</div>
+          <div class="section-index">08 — 他サービスとの違い</div>
           <h2 class="display-heading" id="positioning-title">踊り方ではなく、<br />日常の体調を変える。</h2>
         </div>
         <p class="lead">多くのバレエサービスがレッスンや技術習得を中心にするのに対し、BDXは舞台裏のメソッドを「最高の体調」のために使います。</p>
@@ -6178,12 +6450,12 @@
       <p class="frame position-note reveal">一般的なサービスカテゴリーとの比較であり、個別サービスの全機能を示すものではありません。</p>
     </section>
 
-    <!-- SECTION 08: MORE THAN EXERCISE -->
+    <!-- SECTION 09: MORE THAN EXERCISE -->
     <section class="story-section more" aria-labelledby="more-title">
       <div class="frame more-head reveal">
         <div>
-          <div class="section-index">08 — 運動だけではない</div>
-          <h2 class="display-heading" id="more-title">BDXが扱うのは、<br />運動だけじゃない。</h2>
+          <div class="section-index">09 — 5つの領域</div>
+          <h2 class="display-heading" id="more-title">運動の外側まで、<br />身体を支える。</h2>
         </div>
         <p class="lead">バレエメソッドから、動く・学ぶ・整えるという日常の実践が生まれます。</p>
       </div>
@@ -6200,11 +6472,11 @@
       <p class="frame more-message reveal">身体をつくるのは、<br />トレーニングの時間だけじゃない。</p>
     </section>
 
-    <!-- SECTION 09: PRODUCT EXPERIENCE -->
+    <!-- SECTION 10: PRODUCT EXPERIENCE -->
     <section class="story-section product" aria-labelledby="product-title">
       <div class="frame product-head reveal">
         <div>
-          <div class="section-index">09 — プロダクトの中心機能</div>
+          <div class="section-index">10 — 6つの中心機能</div>
           <h2 class="display-heading" id="product-title">今日の行動に、<br />迷わない。</h2>
         </div>
         <p class="lead">BDXは、その日の状態を起点に、動く・学ぶ・整えるをひとつの流れにつなぎます。</p>
@@ -6249,11 +6521,11 @@
       </div>
     </section>
 
-    <!-- SECTION 10: A DAY WITH BDX -->
+    <!-- SECTION 11: A DAY WITH BDX -->
     <section class="story-section day" aria-labelledby="day-title">
       <div class="frame day-grid">
         <div class="reveal">
-          <div class="section-index">10 — BDXのある一日</div>
+          <div class="section-index">11 — ある日の体験</div>
           <h2 class="display-en" id="day-title">いつもではなく、<br />今日に合わせる。</h2>
           <p class="day-intro">最高の体調は、常に最高出力でいることではない。その日の状態を理解し、その日に合う行動を選べること。</p>
           <div class="day-timeline">
@@ -6285,11 +6557,11 @@
       </div>
     </section>
 
-    <!-- SECTION 11: RESEARCH EXPLAINER -->
+    <!-- SECTION 12: RESEARCH EXPLAINER -->
     <section class="story-section science" aria-labelledby="science-title">
       <div class="frame science-heading-row reveal">
         <div>
-          <div class="section-index">11 — 注目機能 / 論文解説</div>
+          <div class="section-index">12 — Library / 論文解説</div>
           <h2 class="display-heading" id="science-title">難しい論文も、<br />実践できる形に。</h2>
         </div>
         <p class="lead">Libraryはバレエ技術の解説だけではありません。身体・心・生活の科学を、分かる言葉と日常の行動へつなぎます。</p>
@@ -6340,68 +6612,14 @@
         </div>
       </div>
 
-      <p class="frame flow-caption reveal">論文解説の標準フォーマット</p>
-      <div class="frame evidence-flow reveal" aria-label="BDX論文解説の流れ">
-        <div class="evidence-step"><span>01</span><strong>今日の<br />結論</strong></div>
-        <div class="evidence-step"><span>02</span><strong>この資料で<br />分かること</strong></div>
-        <div class="evidence-step"><span>03</span><strong>科学的<br />根拠</strong></div>
-        <div class="evidence-step"><span>04</span><strong>研究<br />結果</strong></div>
-        <div class="evidence-step"><span>05</span><strong>BDXで<br />どう活かす？</strong></div>
-        <div class="evidence-step"><span>06</span><strong>今日から<br />できること</strong></div>
-      </div>
-
-      <div class="frame research-sample reveal" aria-label="論文解説サンプル 意志より先に設計する">
-        <div class="sample-title">
-          <span>論文解説サンプル / 自己制御編</span>
-          <h3>意志より先に設計する</h3>
-          <p>環境と考え方を整え、健康的な食行動を選びやすくする。</p>
-        </div>
-        <div class="sample-grid">
-          <article class="sample-card sample-conclusion">
-            <span>01 / 今日の結論</span>
-            <strong>食欲を強い意志だけで抑えるのではなく、環境と考え方を先に整える。</strong>
-            <p>健康的な選択をしやすい条件をつくります。</p>
-          </article>
-          <article class="sample-card sample-evidence">
-            <span>02 / 科学的根拠</span>
-            <div class="sample-numbers"><strong>360人</strong><b>2種類の戦略</b><b>最大2カ月</b></div>
-            <p>成人を対象とした縦断的介入研究。状況を変える方法と、捉え方を変える方法を検討しました。</p>
-          </article>
-          <article class="sample-card sample-practice">
-            <span>03 / BDXでどう活かす？</span>
-            <strong>予定外に食べた場面を、意志の弱さではなく条件から振り返る。</strong>
-            <p>状況・捉え方・次回変えることを一つずつ整理します。</p>
-          </article>
-        </div>
-        <div class="sample-boundaries" aria-label="論文解説で区別する情報">
-          <span>研究で確認</span><span>結果から考えられること</span><span>BDXの提案</span><span>注意・限界</span>
-        </div>
-        <p class="sample-source">出典：Lopez, R. B., et al. (2026), <em>Appetite, 216</em>, 108310.</p>
-      </div>
-
-      <div class="frame editorial-policy reveal">
-        <div class="editorial-policy-heading">
-          <span>科学的信頼性</span>
-          <h3>論文を、都合よく使わない。</h3>
-        </div>
-        <ul class="policy-grid">
-          <li>論文にないことを断定しない</li>
-          <li>因果と相関を混同しない</li>
-          <li>研究対象と一般ユーザーを区別する</li>
-          <li>専門用語を初心者向けに説明する</li>
-          <li>数値には対象・条件を付ける</li>
-          <li>研究結果とBDXの提案を分ける</li>
-          <li>引用・出典を明確にする</li>
-        </ul>
-      </div>
       <p class="frame science-equation reveal">難しい論文 → 分かる → 実践できる</p>
       <p class="frame safety-note reveal">科学は「絶対の答え」ではなく、より良い行動を考えるための判断材料として扱います。医療診断や効果の断定は行いません。</p>
     </section>
 
-    <!-- SECTION 12: GAMIFICATION & DANCE -->
+    <!-- SECTION 13: GAMIFICATION & DANCE -->
     <section class="story-section grow" aria-labelledby="grow-title">
       <div class="frame reveal">
-        <div class="section-index">12 — 注目機能 / ゲーミフィケーション</div>
+        <div class="section-index">13 — 成長の可視化</div>
         <h2 class="display-heading" id="grow-title">続けたくなる仕組み</h2>
         <p class="lead grow-lead">毎日の小さな行動をクエストに変え、経験値・レベル・達成記録として積み重ねます。</p>
         <div class="progress-strip" aria-label="BDXの成長記録">
@@ -6506,11 +6724,11 @@
       </figure>
     </section>
 
-    <!-- SECTION 13: THE FUTURE OF BDX -->
+    <!-- SECTION 14: THE FUTURE OF BDX -->
     <section class="story-section future" aria-labelledby="future-title">
       <div class="frame future-heading reveal">
         <div>
-          <div class="section-index">13 — 将来の展開</div>
+          <div class="section-index">14 — 広がる可能性</div>
           <h2 class="display-en" id="future-title">一人の成長から、<br />身体を育てる文化へ。</h2>
         </div>
         <p>今日の行動が、ひとりの中で終わらない。仲間、専門家、スタジオ、企業や地域へつながり、身体を育てる新しい文化へ広がっていく可能性があります。</p>
