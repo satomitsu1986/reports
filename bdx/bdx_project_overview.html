@@ -7117,6 +7117,811 @@
         font-size: 41px;
       }
     }
+    /* STORY AND APP TOUR REFINEMENT */
+    .origin .display-en {
+      font-size: clamp(46px, 4.8vw, 68px);
+    }
+
+    .origin-story {
+      padding-top: 28px;
+    }
+
+    .origin-question {
+      margin: 30px 0 14px;
+      color: #141217;
+      font-size: clamp(24px, 2.5vw, 34px);
+    }
+
+    .origin-question span,
+    .turning-insight > h3 span {
+      display: block;
+    }
+
+    .origin-narrative + .origin-narrative {
+      margin-top: 16px;
+    }
+
+    .origin-discovery {
+      margin-top: 34px;
+      padding: 28px;
+      border-left: 5px solid var(--rose);
+      background: #111827;
+      color: var(--ivory);
+    }
+
+    .origin-discovery > span {
+      display: block;
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .origin-discovery > strong {
+      display: block;
+      margin-top: 13px;
+      font-family: var(--display);
+      font-size: clamp(22px, 2.2vw, 31px);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .origin-discovery > p {
+      margin-top: 12px;
+      color: #bec7d3;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .turning-point {
+      padding: clamp(100px, 10vw, 160px) 0;
+      background: #0b1728;
+    }
+
+    .turning-point::after {
+      background: linear-gradient(90deg, rgba(7, 16, 29, 0.88), rgba(7, 16, 29, 0.72));
+    }
+
+    .turning-point .behind-background {
+      object-position: 18% center;
+      opacity: 0.34;
+      filter: saturate(0.52) contrast(0.92);
+    }
+
+    .turning-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+      gap: clamp(28px, 4vw, 58px);
+      align-items: start;
+    }
+
+    .turning-story {
+      padding: clamp(36px, 4.8vw, 68px);
+      border: 1px solid rgba(211, 180, 119, 0.4);
+      background: rgba(7, 17, 31, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .turning-story .display-heading {
+      margin-top: 22px;
+      color: var(--ivory);
+      font-size: clamp(44px, 4.7vw, 68px);
+      line-height: 1.22;
+    }
+
+    .turning-story .display-heading span {
+      display: block;
+    }
+
+    .narrative-steps {
+      margin-top: 54px;
+    }
+
+    .narrative-step {
+      padding-left: 24px;
+      border-left: 4px solid var(--blue);
+    }
+
+    .narrative-step > span {
+      display: block;
+      color: var(--blue);
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .narrative-step h3 {
+      margin-top: 12px;
+      color: var(--ivory);
+      font-family: var(--display);
+      font-size: clamp(23px, 2.4vw, 34px);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .narrative-step p {
+      margin-top: 12px;
+      color: #bdc7d4;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .turning-step {
+      border-left-color: var(--gold);
+    }
+
+    .turning-step > span {
+      color: var(--gold);
+    }
+
+    .narrative-shift {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 26px 0 26px 25px;
+      color: var(--rose);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .narrative-shift i {
+      font-size: 18px;
+      font-style: normal;
+    }
+
+    .turning-point .stage-contrast {
+      margin-top: 0;
+      align-self: stretch;
+      background: rgba(9, 19, 33, 0.9);
+    }
+
+    .turning-point .stage-layer {
+      padding: clamp(28px, 3.6vw, 48px);
+    }
+
+    .turning-point .backstage-layer .backstage-item {
+      min-height: 68px;
+    }
+
+    .turning-insight {
+      grid-column: 1 / -1;
+      margin-top: 12px;
+      padding: clamp(48px, 6vw, 84px);
+      border: 1px solid rgba(211, 180, 119, 0.42);
+      background: #f5f1e8;
+      color: #111827;
+    }
+
+    .insight-opening {
+      color: #9a6e26;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .turning-insight > h3 {
+      max-width: 900px;
+      margin-top: 22px;
+      font-family: var(--display);
+      font-size: clamp(35px, 4vw, 58px);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .turning-insight > h3 + p {
+      max-width: 900px;
+      margin-top: 24px;
+      color: #525865;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .wellbeing-spectrum {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      margin-top: 48px;
+      border-top: 1px solid rgba(17, 24, 39, 0.2);
+      border-left: 1px solid rgba(17, 24, 39, 0.2);
+    }
+
+    .wellbeing-spectrum > div {
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 16px;
+      border-right: 1px solid rgba(17, 24, 39, 0.2);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.2);
+    }
+
+    .wellbeing-spectrum span {
+      color: #6b7280;
+      font-size: 10px;
+    }
+
+    .wellbeing-spectrum strong {
+      color: #111827;
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .turning-conclusion {
+      max-width: 980px;
+      margin: 56px auto 0;
+      font-family: var(--display);
+      font-size: clamp(24px, 2.8vw, 39px);
+      font-weight: 500;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .turning-conclusion span {
+      color: #b34e6d;
+      white-space: nowrap;
+    }
+
+    .turning-insight .fine-print {
+      max-width: 800px;
+      margin: 34px auto 0;
+      color: #777b84;
+      font-size: 10px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .meet-arrival {
+      margin-top: 26px;
+      color: var(--muted);
+      font-family: var(--display);
+      font-size: 18px;
+    }
+
+    .app-experience {
+      background: #e9eef3;
+      color: #111827;
+    }
+
+    .app-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .app-heading .display-heading {
+      color: #111827;
+    }
+
+    .app-heading .lead {
+      color: #58616e;
+    }
+
+    .app-tour-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 58px;
+    }
+
+    .app-page {
+      display: grid;
+      overflow: hidden;
+      border: 1px solid #c6ced8;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 10px 12px 0 rgba(28, 40, 56, 0.08);
+    }
+
+    .app-page-featured {
+      grid-column: 1 / -1;
+      grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+    }
+
+    .app-screen {
+      min-height: 450px;
+      padding: 24px;
+      color: #eef3f8;
+      background: #0e1827;
+    }
+
+    .app-screen-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      color: #9eabba;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .mini-logo {
+      color: var(--rose);
+      font-size: 15px;
+    }
+
+    .screen-kicker {
+      display: block;
+      margin-top: 22px;
+      color: var(--mint);
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .app-screen > h3 {
+      margin-top: 8px;
+      color: #fff;
+      font-family: var(--display);
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .screen-description {
+      margin-top: 7px;
+      color: #aeb8c6;
+      font-size: 9px;
+    }
+
+    .condition-prompt,
+    .screen-progress,
+    .level-card {
+      margin-top: 22px;
+      padding: 17px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 6px;
+      background: #16253a;
+    }
+
+    .condition-prompt span,
+    .screen-progress span,
+    .level-card span {
+      display: block;
+      color: var(--gold);
+      font-size: 7px;
+      font-weight: 800;
+    }
+
+    .condition-prompt strong,
+    .screen-progress strong,
+    .level-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .condition-prompt b {
+      display: block;
+      margin-top: 15px;
+      padding: 9px;
+      color: #122034;
+      border-radius: 4px;
+      background: var(--mint);
+      font-size: 8px;
+      text-align: center;
+    }
+
+    .screen-progress div,
+    .level-card div {
+      height: 5px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 5px;
+      background: #34445a;
+    }
+
+    .screen-progress div i,
+    .level-card div i {
+      display: block;
+      width: 18%;
+      height: 100%;
+      background: var(--gold);
+    }
+
+    .screen-progress small {
+      display: block;
+      margin-top: 7px;
+      color: #a8b3c2;
+      font-size: 7px;
+    }
+
+    .screen-week {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-top: 16px;
+    }
+
+    .screen-week span {
+      display: grid;
+      height: 28px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 3px;
+      color: #aab5c3;
+      font-size: 7px;
+    }
+
+    .move-tabs,
+    .filter-chips,
+    .coach-context,
+    .library-tabs,
+    .skill-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 17px;
+    }
+
+    .move-tabs b,
+    .filter-chips span,
+    .coach-context span,
+    .library-tabs span,
+    .skill-mini span {
+      padding: 6px 7px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      color: #c4ced9;
+      font-size: 6px;
+      font-weight: 600;
+    }
+
+    .move-tabs b:first-child,
+    .library-tabs span:first-child {
+      color: #102033;
+      border-color: var(--rose);
+      background: var(--rose);
+    }
+
+    .content-row {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 5px;
+    }
+
+    .content-row > i {
+      height: 40px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, #df7992, #6b89d5);
+    }
+
+    .content-row strong,
+    .content-row small {
+      display: block;
+    }
+
+    .content-row strong {
+      font-size: 8px;
+    }
+
+    .content-row small {
+      margin-top: 4px;
+      color: #96a4b5;
+      font-size: 6px;
+    }
+
+    .coach-bubble {
+      margin-top: 28px;
+      padding: 15px;
+      border-radius: 6px 6px 6px 0;
+      background: #1c3450;
+      color: #dae3ed;
+      font-size: 9px;
+      line-height: 1.7;
+    }
+
+    .coach-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 55px;
+      padding: 9px 9px 9px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 5px;
+      color: #8e9bab;
+      font-size: 7px;
+    }
+
+    .coach-input b {
+      padding: 7px 9px;
+      color: #102033;
+      border-radius: 3px;
+      background: var(--mint);
+      font-size: 7px;
+    }
+
+    .screen-caption {
+      display: block;
+      margin-top: 9px;
+      color: #8492a3;
+      font-size: 6px;
+      text-align: right;
+    }
+
+    .library-card-mini,
+    .challenge-mini {
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+      background: #16253a;
+    }
+
+    .library-card-mini b {
+      display: block;
+      color: var(--gold);
+      font-size: 6px;
+    }
+
+    .library-card-mini strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 8px;
+    }
+
+    .challenge-mini {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4px 8px;
+      align-items: center;
+    }
+
+    .challenge-mini strong {
+      font-size: 8px;
+    }
+
+    .challenge-mini small {
+      color: #94a2b3;
+      font-size: 6px;
+    }
+
+    .challenge-mini b {
+      grid-row: 1 / 3;
+      grid-column: 2;
+      padding: 6px;
+      color: #142238;
+      border-radius: 3px;
+      background: var(--gold);
+      font-size: 6px;
+    }
+
+    .app-page-copy {
+      padding: 30px;
+      color: #111827;
+      background: #fff;
+    }
+
+    .app-page-copy > span {
+      color: #b34e6d;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .app-page-copy h3 {
+      margin-top: 16px;
+      font-family: var(--display);
+      font-size: clamp(22px, 2.1vw, 30px);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .app-page-copy p {
+      margin-top: 12px;
+      color: #5f6874;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .app-page-copy ul {
+      display: grid;
+      gap: 8px;
+      margin-top: 24px;
+      color: #374151;
+      font-size: 9px;
+      list-style: none;
+    }
+
+    .app-page-copy li {
+      padding-top: 8px;
+      border-top: 1px solid #d8dee6;
+    }
+
+    .app-note {
+      margin-top: 22px;
+      color: #6b7280;
+      font-size: 9px;
+      text-align: right;
+    }
+
+    @media (min-width: 769px) {
+      .app-page:not(.app-page-featured) .app-screen {
+        min-height: 470px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .origin .display-en {
+        font-size: 37px;
+        line-height: 1.28;
+      }
+
+      .origin-question {
+        font-size: 23px;
+      }
+
+      .origin-discovery {
+        padding: 22px;
+      }
+
+      .turning-point {
+        padding: 72px 0;
+      }
+
+      .turning-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .turning-story {
+        padding: 30px 22px;
+      }
+
+      .turning-story .display-heading {
+        font-size: 38px;
+      }
+
+      .narrative-steps {
+        margin-top: 40px;
+      }
+
+      .narrative-step h3 {
+        font-size: 24px;
+      }
+
+      .turning-point .stage-layer {
+        padding: 23px 20px;
+      }
+
+      .turning-insight {
+        padding: 38px 22px;
+      }
+
+      .turning-insight > h3 {
+        font-size: 30px;
+      }
+
+      .wellbeing-spectrum {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 34px;
+      }
+
+      .wellbeing-spectrum > div {
+        min-height: 92px;
+        padding: 14px 10px;
+      }
+
+      .wellbeing-spectrum strong {
+        font-size: 15px;
+      }
+
+      .turning-conclusion {
+        margin-top: 38px;
+        font-size: 24px;
+      }
+
+      .meet-arrival {
+        font-size: 14px;
+      }
+
+      .app-heading {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 18px;
+      }
+
+      .app-heading .lead {
+        font-size: 11px;
+        line-height: 1.8;
+      }
+
+      .app-tour-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .app-page,
+      .app-page-featured {
+        grid-column: auto;
+        grid-template-columns: minmax(145px, 0.86fr) minmax(0, 1.14fr);
+      }
+
+      .app-screen {
+        min-height: 370px;
+        padding: 14px 12px;
+      }
+
+      .app-screen > h3 {
+        font-size: 16px;
+      }
+
+      .condition-prompt,
+      .screen-progress,
+      .level-card {
+        padding: 11px;
+      }
+
+      .condition-prompt strong,
+      .screen-progress strong,
+      .level-card strong {
+        font-size: 9px;
+      }
+
+      .content-row {
+        grid-template-columns: 34px 1fr;
+        gap: 7px;
+        padding: 7px;
+      }
+
+      .content-row > i {
+        height: 32px;
+      }
+
+      .coach-input {
+        margin-top: 38px;
+      }
+
+      .app-page-copy {
+        padding: 22px 16px;
+      }
+
+      .app-page-copy h3 {
+        margin-top: 11px;
+        font-size: 19px;
+      }
+
+      .app-page-copy p {
+        font-size: 9px;
+        line-height: 1.75;
+      }
+
+      .app-page-copy ul {
+        gap: 6px;
+        margin-top: 17px;
+        font-size: 8px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .origin .display-en {
+        font-size: 35px;
+      }
+
+      .turning-story .display-heading {
+        font-size: 35px;
+      }
+
+      .turning-insight > h3 {
+        font-size: 27px;
+      }
+
+      .app-page,
+      .app-page-featured {
+        grid-template-columns: minmax(138px, 0.84fr) minmax(0, 1.16fr);
+      }
+
+      .app-screen {
+        padding-inline: 10px;
+      }
+
+      .app-page-copy {
+        padding-inline: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -7147,7 +7952,14 @@
         <div class="origin-story reveal">
           <p class="lead">あるジャズダンス経験者から聞いた。</p>
           <blockquote class="origin-quote">「最初に学んだのは、バレエだった。」</blockquote>
-          <p class="lead">他ジャンルのダンサーが、身体の軸・姿勢・バランス・コントロールを学ぶ目的でバレエを取り入れることがある。</p>
+          <p class="origin-question"><span>なぜ、ジャズダンスなのに</span><span>バレエ？</span></p>
+          <p class="lead origin-narrative">最初は意外だった。けれど理由を聞くと、他ジャンルのダンサーも、身体の軸・姿勢・バランス・コントロールを学ぶためにバレエを取り入れることがあるという。</p>
+          <p class="lead origin-narrative">バレエを調べ、実際に体験し、舞台を見るほど、ひとつのダンスジャンルだけでは説明できない体系が見えてきた。</p>
+          <div class="origin-discovery">
+            <span>発見</span>
+            <strong>バレエには、メタ・ダンスの要素があった。</strong>
+            <p>踊りを覚えるだけでなく、身体をどう動かすかを学ぶ。ほかのダンスや身体表現を支える、基礎的な身体技法としての性質です。</p>
+          </div>
         </div>
       </div>
       <div class="frame reveal">
@@ -7174,50 +7986,62 @@
       </div>
     </section>
 
-    <!-- SECTION 03: BEHIND THE STAGE -->
-    <section class="story-section behind" aria-labelledby="behind-title">
+    <!-- SECTION 03-04: TURNING POINT -->
+    <section class="story-section behind turning-point" aria-labelledby="behind-title">
       <img class="behind-background" src="assets/bdx-ballet-preparation.png" alt="" aria-hidden="true" loading="lazy" />
-      <div class="frame behind-layout">
-        <div class="behind-copy reveal">
-          <div class="section-index">03 — 舞台を支える日常</div>
-          <h2 class="display-heading" id="behind-title"><span>注目すべきは</span><span>舞台裏</span></h2>
-          <p class="lead">バレリーナの価値は舞踊技術だけではありません。健康的な体型を維持し、体調を整え、動ける身体を支える日々の管理にもあります。</p>
-          <div class="stage-contrast" aria-label="舞台上の表現を舞台裏の身体管理が支える構造">
-            <article class="stage-layer onstage-layer">
-              <span>舞台上 / 見える価値</span>
-              <strong>舞踊・技術・表現</strong>
-              <p>観客の目に映る、高度な身体表現。</p>
+      <div class="frame turning-layout">
+        <div class="turning-story reveal">
+          <div class="section-index">03–04 — 発想の転換</div>
+          <h2 class="display-heading" id="behind-title"><span>舞台裏で、</span><span>目的が変わった。</span></h2>
+          <div class="narrative-steps">
+            <article class="narrative-step">
+              <span>最初の発想</span>
+              <h3>バレエエクササイズから始めた。</h3>
+              <p>最初はバレエの動きを取り入れたエクササイズに興味を持った。そこへAIとダンスを掛け合わせ、続けやすいフィットネスアプリを作ろうと考えた。</p>
             </article>
-            <div class="stage-support" aria-hidden="true"><span>支える</span><i>↓</i></div>
-            <article class="stage-layer backstage-layer">
-              <span>舞台裏 / 日常へ活かせる価値</span>
-              <strong>身体をつくる・整える・維持する</strong>
-              <div class="backstage-grid">
-                <div class="backstage-item">身体づくり</div><div class="backstage-item">健康的な体型維持</div>
-                <div class="backstage-item">栄養・水分補給</div><div class="backstage-item">睡眠・回復</div>
-                <div class="backstage-item">疲労・体調管理</div><div class="backstage-item">コンディショニング</div>
-                <div class="backstage-item">集中・メンタル</div><div class="backstage-item">ルーティン・自己管理</div>
-              </div>
+            <div class="narrative-shift" aria-hidden="true"><span>しかし</span><i>↓</i></div>
+            <article class="narrative-step turning-step">
+              <span>転換点</span>
+              <h3>本番へ向かうダンサーの生活を見た。</h3>
+              <p>舞台上の美しい動きは、レッスンだけで生まれるものではない。準備、食事、睡眠、回復、疲労管理、集中。舞台の外で積み重ねる日常が、あの身体を支えていた。</p>
             </article>
           </div>
+        </div>
+
+        <div class="stage-contrast reveal" aria-label="舞台上の表現を舞台裏の身体管理が支える構造">
+          <article class="stage-layer onstage-layer">
+            <span>舞台上 / 見える価値</span>
+            <strong>舞踊・技術・表現</strong>
+            <p>観客の目に映る、高度な身体表現。</p>
+          </article>
+          <div class="stage-support" aria-hidden="true"><span>日々の管理が支える</span><i>↓</i></div>
+          <article class="stage-layer backstage-layer">
+            <span>舞台裏 / 日常へ活かせる価値</span>
+            <strong>身体をつくる・整える・維持する</strong>
+            <div class="backstage-grid">
+              <div class="backstage-item">身体づくり</div><div class="backstage-item">健康的な体型維持</div>
+              <div class="backstage-item">栄養・水分補給</div><div class="backstage-item">睡眠・回復</div>
+              <div class="backstage-item">疲労・体調管理</div><div class="backstage-item">コンディショニング</div>
+              <div class="backstage-item">集中・メンタル</div><div class="backstage-item">ルーティン・自己管理</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="turning-insight reveal">
+          <p class="insight-opening">裏側を知れば知るほど、考えが変わった。</p>
+          <h3><span>もしも、</span><span>舞台裏のメソッドまで</span><span>一般ユーザーの日常へ</span><span>届けられたら？</span></h3>
+          <p>バレエエクササイズだけではない。ダンサーが身体を整え、本番へ向けて調子をつくるための知見を、普通の毎日で使える形にできたら、多くの人が抱える不調へ別の角度から向き合えるのではないか。</p>
+          <div class="wellbeing-spectrum" aria-label="最高の体調につながる領域">
+            <div><span>姿勢・体型</span><strong>整える</strong></div>
+            <div><span>運動不足</span><strong>動く</strong></div>
+            <div><span>食事</span><strong>支える</strong></div>
+            <div><span>睡眠</span><strong>休む</strong></div>
+            <div><span>疲労回復</span><strong>戻す</strong></div>
+            <div><span>メンタル</span><strong>調える</strong></div>
+          </div>
+          <p class="turning-conclusion">体型や姿勢の改善だけではない。運動不足の解消だけでもない。食事も、睡眠も、回復も、コンディション調整も、メンタルも。すべてが<span>「最高の体調」</span>につながっている。</p>
           <p class="fine-print">BDXは「細さ」や過度な制限を理想化しません。体型維持は、健康・身体機能・回復を支える身体管理として扱います。</p>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: WHAT IF -->
-    <section class="story-section what-if" aria-labelledby="what-if-title">
-      <div class="frame hypothesis reveal">
-        <div class="section-index">04 — 日常への応用</div>
-        <p class="hypothesis-premise">バレエを踊るためではない。<br />バレリーナのような生活を真似するためでもない。</p>
-        <h2 class="what-if-question" id="what-if-title">BDXの仮説</h2>
-        <p class="hypothesis-question"><span>もしも、</span><span>バレエメソッドを</span><span>僕らの日常に取り入れたら？</span></p>
-        <div class="hypothesis-body">
-          <p>バレリーナが高い身体表現を実現するために積み重ねている「メソッド」に価値があるのではないか。</p>
-          <span>そして、</span>
-          <p>その一部を普通の人の日常に落とし込めたら、身体との付き合い方そのものを変えられるのではないか。</p>
-        </div>
-        <p class="hypothesis-conclusion">そんな仮説を立てた。</p>
       </div>
     </section>
 
@@ -7225,6 +8049,7 @@
     <section class="story-section meet" aria-labelledby="meet-title">
       <div class="frame reveal">
         <div class="section-index">05 — BDXの誕生</div>
+        <p class="meet-arrival">この仮説から、BDXは生まれた。</p>
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
         <p class="brand-sub">舞台のために磨かれてきたメソッドを、毎日の身体へ。</p>
@@ -7249,86 +8074,14 @@
       </div>
     </section>
 
-    <!-- SECTION 06: PRODUCT SYSTEM -->
-    <section class="story-section product-system" aria-labelledby="product-system-title">
-      <div class="frame system-heading reveal">
-        <div>
-          <div class="section-index">06 — プロダクト</div>
-          <h2 class="display-heading" id="product-system-title">プロダクト</h2>
-        </div>
-        <p class="lead">BDXはコンテンツを並べるだけではありません。バレエメソッドを軸に、AIが今日の行動を選び、結果を次の提案へつなげます。</p>
-      </div>
-
-      <div class="frame product-architecture reveal" aria-label="BDXのプロダクト構造">
-        <div class="architecture-core">
-          <span>すべての体験の中核</span>
-          <strong>バレエメソッド</strong>
-          <p>身体操作・身体づくり・体調管理</p>
-        </div>
-        <div class="product-pillars">
-          <article class="product-pillar move-pillar">
-            <span>MOVE / 動く</span>
-            <h3>身体をつくる。</h3>
-            <ul><li>バレエエクササイズ</li><li>バレエ</li><li>ダンス</li></ul>
-          </article>
-          <article class="product-pillar learn-pillar">
-            <span>LEARN / 学ぶ</span>
-            <h3>身体を理解する。</h3>
-            <ul><li>身体・栄養</li><li>睡眠・回復</li><li>論文解説</li></ul>
-          </article>
-          <article class="product-pillar care-pillar">
-            <span>CARE / 整える</span>
-            <h3>身体と心を整える。</h3>
-            <ul><li>回復</li><li>メンタル</li><li>生活習慣</li></ul>
-          </article>
-        </div>
-        <div class="architecture-layer ai-layer">
-          <span>AI COACH</span>
-          <strong>今日の自分に合う行動を選びやすくする。</strong>
-          <p>状態・目標・履歴から、運動・学習・回復の候補を絞り、理由とともに提案。</p>
-        </div>
-        <div class="architecture-layer progress-layer">
-          <span>PROGRESS</span>
-          <strong>運動だけでなく、学びと回復も成長にする。</strong>
-          <p>クエスト・経験値・レベル・達成記録で、自分の積み重ねを可視化。</p>
-        </div>
-        <div class="architecture-future"><span>将来</span><strong>COMMUNITY</strong><p>競争ではなく、共通の挑戦を楽しむ。</p></div>
-      </div>
-
-      <div class="frame core-loop-panel reveal" aria-label="BDXの中心ユーザー体験">
-        <div class="loop-heading">
-          <span>BDXの中心体験</span>
-          <h3>今日の状態が、次の成長につながる。</h3>
-        </div>
-        <div class="core-loop-steps">
-          <article class="core-loop-step condition-step"><span>01</span><strong>状態を知る</strong><p>睡眠・疲労・気分</p></article>
-          <article class="core-loop-step coach-step"><span>02</span><strong>AIが整理</strong><p>目標・状態・履歴</p></article>
-          <article class="core-loop-step quest-step"><span>03</span><strong>今日のクエスト</strong><p>理由と時間を表示</p></article>
-          <article class="core-loop-step action-step"><span>04</span><strong>実践する</strong><p>動く・学ぶ・整える</p></article>
-          <article class="core-loop-step record-step"><span>05</span><strong>記録する</strong><p>変化・気づき・完了</p></article>
-          <article class="core-loop-step growth-step"><span>06</span><strong>成長が見える</strong><p>経験値・レベル・達成</p></article>
-        </div>
-        <div class="loop-return">履歴をAIが理解し、次のクエストへ</div>
-      </div>
-
-      <div class="frame feature-grid integrated-features reveal" aria-label="BDXの6つの中心機能">
-        <article class="feature-item"><span class="feature-number">01 / 状態確認</span><h3>今の自分を知る</h3><p>睡眠・疲労・気分・身体の違和感・使える時間から、必要な項目だけを短く確認します。</p><span class="feature-value">入力の負担を小さく</span></article>
-        <article class="feature-item"><span class="feature-number">02 / 今日のクエスト</span><h3>今日の行動が分かる</h3><p>AIが状態・目的・履歴から、運動・学習・回復の中で取り組みやすい行動を提案します。</p><span class="feature-value">理由と所要時間も表示</span></article>
-        <article class="feature-item"><span class="feature-number">03 / 動く</span><h3>身体を実践で育てる</h3><p>バレエエクササイズ、バレエ、ダンスで姿勢・バランス・身体操作を実践します。</p><span class="feature-value">自宅で、自分のペースで</span></article>
-        <article class="feature-item"><span class="feature-number">04 / 学ぶ</span><h3>身体の理由が分かる</h3><p>身体・栄養・睡眠・回復・心を、科学的根拠と専門家の実践知から学びます。</p><span class="feature-value">論文も初心者に分かりやすく</span></article>
-        <article class="feature-item"><span class="feature-number">05 / 整える</span><h3>休むことも前進にする</h3><p>疲労が強い日は回復を提案し、その日に必要な選択として成長へ記録します。</p><span class="feature-value">回復も正式な成長行動</span></article>
-        <article class="feature-item"><span class="feature-number">06 / 振り返る</span><h3>小さな成長が見える</h3><p>完了履歴、経験値、レベル、達成記録から、自分の積み重ねを振り返れます。</p><span class="feature-value">行動を次のQuestへ</span></article>
-      </div>
-    </section>
-
-    <!-- SECTION 07: BDX POSITIONING -->
+    <!-- SECTION 06: BDX POSITIONING -->
     <section class="story-section positioning" aria-labelledby="positioning-title">
       <div class="frame positioning-head reveal">
         <div>
-          <div class="section-index">07 — 他サービスとの違い</div>
+          <div class="section-index">06 — BDXの独自性</div>
           <h2 class="display-heading" id="positioning-title">独自性</h2>
         </div>
-        <p class="lead">多くのバレエサービスがレッスンや技術習得を中心にするのに対し、BDXは舞台裏のメソッドを「最高の体調」のために使います。</p>
+        <p class="lead">バレエを踊るためのサービスはすでにある。BDXは、舞台上と舞台裏のメソッドを「最高の体調」のために使います。</p>
       </div>
       <div class="frame service-comparison reveal" aria-label="サービスカテゴリーとBDXの比較">
         <article class="service-card">
@@ -7353,7 +8106,7 @@
           <span class="service-number">04 / BDX</span>
           <h3>身体を育てるサービス</h3>
           <p class="service-purpose">最高の体調を、日常につくる。</p>
-          <dl><div><dt>中心体験</dt><dd>動く・学ぶ・整える</dd></div><div><dt>選び方</dt><dd>AIが今日のクエストを提案</dd></div><div><dt>成長</dt><dd>運動・学び・回復を可視化</dd></div></dl>
+          <dl><div><dt>中心体験</dt><dd>動く・学ぶ・整える</dd></div><div><dt>選び方</dt><dd>AIが今日の行動を提案</dd></div><div><dt>成長</dt><dd>運動・学び・回復を可視化</dd></div></dl>
         </article>
       </div>
       <div class="frame differentiation-flow reveal" aria-label="BDXの独自性を構成する要素">
@@ -7361,6 +8114,110 @@
       </div>
       <p class="frame position-result reveal">舞台裏の知恵を「今日できる行動」に変え、<br />続けられる体験までつなぐ。</p>
       <p class="frame position-note reveal">一般的なサービスカテゴリーとの比較であり、個別サービスの全機能を示すものではありません。</p>
+    </section>
+
+    <!-- SECTION 07: APP EXPERIENCE -->
+    <section class="story-section app-experience" aria-labelledby="app-title">
+      <div class="frame app-heading reveal">
+        <div>
+          <div class="section-index">07 — アプリ機能</div>
+          <h2 class="display-heading" id="app-title">5つの画面</h2>
+        </div>
+        <p class="lead">BDXは、HOME・MOVE・COACH・LIBRARY・PROGRESSを行き来しながら、今日の状態、行動、学び、回復、成長をひとつにつなぎます。</p>
+      </div>
+
+      <div class="frame app-tour-grid">
+        <article class="app-page app-page-featured reveal">
+          <div class="app-screen home-screen" aria-label="実装済みHOME画面の構成イメージ">
+            <div class="app-screen-top"><span class="mini-logo">BDX</span><span>HOME</span></div>
+            <span class="screen-kicker">BDX CORE LOOP</span>
+            <h3>今日の一歩</h3>
+            <div class="condition-prompt"><span>今日の状態</span><strong>Energy・Fatigue・Moodを確認</strong><b>コンディションを入力する</b></div>
+            <div class="screen-progress"><span>PROGRESS</span><strong>Level 1</strong><div><i></i></div><small>0 / 100 XP</small></div>
+            <div class="screen-week"><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span><span>日</span></div>
+          </div>
+          <div class="app-page-copy">
+            <span>HOME</span>
+            <h3>今日の状態から始める。</h3>
+            <p>Energy・Fatigue・Moodを短時間で確認。AIが状態に合うToday's Questを提案し、進捗と週間の積み重ねも同じ画面で確認できます。</p>
+            <ul><li>Today's Condition</li><li>Today's Quest</li><li>Weekly Progress</li></ul>
+          </div>
+        </article>
+
+        <article class="app-page reveal">
+          <div class="app-screen move-screen" aria-label="実装済みMOVE画面の構成イメージ">
+            <div class="app-screen-top"><span class="mini-logo">BDX</span><span>MOVE</span></div>
+            <span class="screen-kicker">MOVE</span>
+            <h3>バレエエクササイズ</h3>
+            <p class="screen-description">姿勢・体幹・可動性を整える</p>
+            <div class="move-tabs"><b>Ballet Exercise</b><b>Ballet</b><b>Dance</b></div>
+            <div class="filter-chips"><span>姿勢</span><span>体幹</span><span>可動性</span><span>5分</span></div>
+            <div class="content-row"><i></i><div><strong>姿勢リセット・バー</strong><small>10分・初級・姿勢</small></div></div>
+            <div class="content-row"><i></i><div><strong>はじめてのコア</strong><small>5分・初級・体幹</small></div></div>
+          </div>
+          <div class="app-page-copy">
+            <span>MOVE</span>
+            <h3>身体で実践する。</h3>
+            <p>Ballet Exercise・Ballet・Danceを分け、目的、難易度、時間から選択。初心者向けの短時間メニューから段階的に取り組めます。</p>
+            <ul><li>姿勢・体幹・可動性</li><li>基礎から上級</li><li>5分から30分</li></ul>
+          </div>
+        </article>
+
+        <article class="app-page reveal">
+          <div class="app-screen coach-screen" aria-label="実装済みAI Coach画面の構成イメージ">
+            <div class="app-screen-top"><span class="mini-logo">BDX</span><span>COACH</span></div>
+            <span class="screen-kicker">AI COACH</span>
+            <h3>AIコーチ</h3>
+            <div class="coach-context"><span>Condition</span><span>Quest</span><span>Progress</span><span>Memory</span></div>
+            <div class="coach-bubble">今日は疲労が高めです。短いRecovery Questから始めませんか？</div>
+            <div class="coach-input"><span>メッセージを入力...</span><b>送信</b></div>
+            <small class="screen-caption">会話履歴を保存・復元</small>
+          </div>
+          <div class="app-page-copy">
+            <span>COACH</span>
+            <h3>相談を、次の行動へ。</h3>
+            <p>単発チャットではなく、今日の状態、Quest、過去の行動、Progress、本人が管理できるMemoryを共有して継続的に支援します。</p>
+            <ul><li>文脈を引き継ぐ会話</li><li>Questの理由を説明</li><li>Memoryは編集・忘却可能</li></ul>
+          </div>
+        </article>
+
+        <article class="app-page reveal">
+          <div class="app-screen library-screen" aria-label="実装済みLIBRARY画面の構成イメージ">
+            <div class="app-screen-top"><span class="mini-logo">BDX</span><span>LIBRARY</span></div>
+            <span class="screen-kicker">LEARN</span>
+            <h3>ライブラリ</h3>
+            <p class="screen-description">バレエから学ぶ、身体・心・生活の科学</p>
+            <div class="library-tabs"><span>BODY</span><span>NUTRITION</span><span>RECOVERY</span><span>MIND</span><span>LIFESTYLE</span></div>
+            <div class="library-card-mini"><b>記事</b><strong>バレエで整える姿勢の科学</strong></div>
+            <div class="library-card-mini"><b>論文解説</b><strong>研究を、日常の実践へ</strong></div>
+          </div>
+          <div class="app-page-copy">
+            <span>LIBRARY</span>
+            <h3>身体の理由を理解する。</h3>
+            <p>身体科学、栄養、回復、心、生活を、記事・論文解説・ガイド・ルーティンで学びます。MOVEやCAREと接続し、読むだけで終わらせません。</p>
+            <ul><li>5つの学習領域</li><li>記事・論文解説</li><li>実践コンテンツと接続</li></ul>
+          </div>
+        </article>
+
+        <article class="app-page reveal">
+          <div class="app-screen progress-screen" aria-label="実装済みPROGRESS画面の構成イメージ">
+            <div class="app-screen-top"><span class="mini-logo">BDX</span><span>PROGRESS</span></div>
+            <span class="screen-kicker">PROGRESS</span>
+            <h3>成長の記録</h3>
+            <div class="level-card"><span>LEVEL 1</span><strong>Total 0 XP</strong><div><i></i></div></div>
+            <div class="skill-mini"><span>BODY</span><span>KNOWLEDGE</span><span>RECOVERY</span></div>
+            <div class="challenge-mini"><strong>7-Day Posture</strong><small>7日間でMOVEを3回</small><b>挑戦する</b></div>
+            <div class="challenge-mini"><strong>Recovery Week</strong><small>Recovery Questを3回</small><b>挑戦する</b></div>
+          </div>
+          <div class="app-page-copy">
+            <span>PROGRESS</span>
+            <h3>自分の育ち方を見えるようにする。</h3>
+            <p>XPは他人との競争ではなく、積み上げた経験。Level、7つのSkill、Achievement、Personal Challenge、Quest履歴を確認できます。</p>
+            <ul><li>Global XP・Level</li><li>7 Skill・Achievement</li><li>任意参加のChallenge</li></ul>
+          </div>
+        </article>
+      </div>
+      <p class="frame app-note reveal">画面イメージは、2026年8月時点の実装済みページ構成をもとに再現しています。</p>
     </section>
 
     <!-- SECTION 08: LIBRARY -->
