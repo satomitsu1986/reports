@@ -322,7 +322,7 @@
 
     /* CHANNELS */
     .channel-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 50px; }
-    .channel { min-height: 278px; padding: 28px; border: 1px solid var(--line); background: white; }
+    .channel { min-height: 278px; padding: 28px; border: 1px solid var(--line); background: white; color: var(--ink); }
     .channel:nth-child(1) { border-top: 6px solid var(--coral); }
     .channel:nth-child(2) { border-top: 6px solid var(--blue); }
     .channel:nth-child(3) { border-top: 6px solid var(--mint); }
@@ -804,8 +804,8 @@
     <!-- SECTION: Purpose -->
     <section class="section white" aria-labelledby="purpose-title">
       <div class="frame">
-        <div class="section-index">01 — この資料の目的</div>
-        <h2 class="section-title" id="purpose-title">二人で迷わず、<br />同じ目的へ進む。</h2>
+        <div class="section-index">01 — PURPOSE</div>
+        <h2 class="section-title" id="purpose-title">資料の目的</h2>
         <p class="section-lead">この資料は、SATと鈴ちゃんがBDXコンテンツの全体像と役割を共有するためのガイドです。細かな企画ルールを覚えることではなく、制作の現在地と次にすることが分かる状態を目指します。</p>
         <div class="shared-purpose">
           <article><span class="label">01 / CONTENT</span><h3>作るものが分かる</h3><p>BDXが扱うコンテンツの範囲と、一般ユーザーへ届ける価値を共有する。</p></article>
@@ -818,8 +818,8 @@
     <!-- SECTION: Content Overview -->
     <section class="section dark" aria-labelledby="content-title">
       <div class="frame">
-        <div class="section-index">02 — どんなコンテンツを作るか</div>
-        <h2 class="section-title" id="content-title">舞台を支える知恵を、<br />日常で使える体験へ。</h2>
+        <div class="section-index">02 — CONTENT</div>
+        <h2 class="section-title" id="content-title">コンテンツ概要</h2>
         <p class="section-lead">バレエを習得するためだけの教材ではありません。バレリーナ・ダンサーが培ってきた身体操作、身体管理、生活、心、表現の知恵を、一般ユーザーの「最高の体調」につながる形へ変えます。</p>
         <div class="content-source">
           <article><span>BODY / 舞台上の技術</span><h3>身体を使う知恵</h3><p>姿勢、軸、バランス、可動性、筋力、身体コントロール、バレエ動作。</p></article>
@@ -837,8 +837,8 @@
     <!-- SECTION: Principles -->
     <section class="section soft" aria-labelledby="principles-title">
       <div class="frame">
-        <div class="section-index">03 — 3つの共通ルール</div>
-        <h2 class="section-title" id="principles-title">手段ではなく、<br />目的から考える。</h2>
+        <div class="section-index">03 — PRINCIPLES</div>
+        <h2 class="section-title" id="principles-title">制作原則</h2>
         <div class="simple-principles">
           <article><b>1</b><h3>ユーザーから始める</h3><p>誰の、どんな状態に、何を届けるかを先に決める。バレエ経験は前提にしない。</p></article>
           <article><b>2</b><h3>最適な方法を選ぶ</h3><p>答えがプリエならプリエ、筋力トレーニングなら筋トレ、回復なら休む。</p></article>
@@ -850,8 +850,8 @@
     <!-- SECTION: Shared Flow -->
     <section class="section dark" aria-labelledby="flow-title">
       <div class="frame">
-        <div class="section-index">04 — 共同制作フロー</div>
-        <h2 class="section-title" id="flow-title">企画から改善まで、<br />6つのステップ。</h2>
+        <div class="section-index">04 — FLOW</div>
+        <h2 class="section-title" id="flow-title">共同制作フロー</h2>
         <p class="section-lead">SATが企画の目的を整理し、鈴ちゃんがバレエの専門性を加え、二人で体験を完成させます。</p>
         <div class="shared-flow" aria-label="SATと鈴ちゃんの共同制作フロー">
           <article class="shared-step"><span class="owner">SAT</span><strong>1. 企画ブリーフ</strong><p>ユーザー、状態、目的、形式、候補を整理して鈴ちゃんへ共有。</p></article>
@@ -867,12 +867,12 @@
     <!-- SECTION: Roles -->
     <section class="section white" aria-labelledby="roles-title">
       <div class="frame">
-        <div class="section-index">05 — 役割分担</div>
-        <h2 class="section-title" id="roles-title">責任を分け、<br />大事な判断は一緒に。</h2>
+        <div class="section-index">05 — ROLES</div>
+        <h2 class="section-title" id="roles-title">役割分担</h2>
         <div class="role-board">
-          <article class="role-card sat"><span class="label">SAT</span><h3>企画とプロダクト</h3><p>ユーザー価値とBDX全体に責任を持つ。</p><ul class="role-list"><li>対象ユーザー・状態・目的を定義</li><li>企画ブリーフとコンテンツ仕様を作成</li><li>科学的根拠・他分野の専門監修を手配</li><li>撮影設計・編集・アプリ実装</li><li>AI Coachの推薦条件を設定</li><li>ユーザー検証と改善判断</li></ul></article>
-          <article class="role-card suzu"><span class="label">鈴ちゃん</span><h3>バレエと動作監修</h3><p>バレエ由来の動きと伝え方に責任を持つ。</p><ul class="role-list"><li>目的に合うバレエ動作を提案</li><li>Movement Sequenceを設計・修正</li><li>バレエとしての自然さを確認</li><li>初心者向けのCueと実演を提案</li><li>バレエ技術上のSafetyを確認</li><li>撮影時の実演・最終動作確認</li></ul></article>
-          <article class="role-card together"><span class="label">一緒に決める</span><h3>体験の完成度</h3><p>企画意図と専門性が重なる部分を二人で判断する。</p><ul class="role-list"><li>目的に対する動きの適合性</li><li>初心者が実践できる難易度</li><li>時間内のMovement構成</li><li>楽しく、またやりたい体験か</li><li>公開前の最終確認</li></ul></article>
+          <article class="role-card sat"><span class="label">SAT</span><h3>企画設計</h3><p>ユーザー価値とBDX全体に責任を持つ。</p><ul class="role-list"><li>対象ユーザー・状態・目的を定義</li><li>企画ブリーフとコンテンツ仕様を作成</li><li>科学的根拠・他分野の専門監修を手配</li><li>撮影設計・編集・アプリ実装</li><li>AI Coachの推薦条件を設定</li><li>ユーザー検証と改善判断</li></ul></article>
+          <article class="role-card suzu"><span class="label">鈴ちゃん</span><h3>バレエ監修</h3><p>バレエ由来の動きと伝え方に責任を持つ。</p><ul class="role-list"><li>目的に合うバレエ動作を提案</li><li>Movement Sequenceを設計・修正</li><li>バレエとしての自然さを確認</li><li>初心者向けのCueと実演を提案</li><li>バレエ技術上のSafetyを確認</li><li>撮影時の実演・最終動作確認</li></ul></article>
+          <article class="role-card together"><span class="label">SAT × 鈴ちゃん</span><h3>共同判断</h3><p>企画意図と専門性が重なる部分を二人で判断する。</p><ul class="role-list"><li>目的に対する動きの適合性</li><li>初心者が実践できる難易度</li><li>時間内のMovement構成</li><li>楽しく、またやりたい体験か</li><li>公開前の最終確認</li></ul></article>
         </div>
         <div class="handoff">
           <article><h4>鈴ちゃんに丸投げしないこと</h4><p>SATが「誰に・何を届けるか」を決めずに、ゼロからコンテンツ案を考えてもらうことはしません。</p></article>
@@ -884,8 +884,8 @@
     <!-- SECTION: Suzu Review -->
     <section class="section dark" aria-labelledby="suzu-title">
       <div class="frame">
-        <div class="section-index">STEP 09 — 鈴ちゃんのバレエ監修</div>
-        <h2 class="section-title" id="suzu-title">鈴ちゃんが、<br />迷わず判断するために。</h2>
+        <div class="section-index">06 — STEP 09</div>
+        <h2 class="section-title" id="suzu-title">鈴ちゃんのバレエ監修</h2>
         <p class="section-lead">鈴ちゃんは企画をゼロから作るのではなく、SATから受け取った目的に対して「バレエの専門家として、どう動けば最も良いか」を判断します。</p>
 
         <div class="suzu-review">
@@ -924,8 +924,8 @@
     <!-- SECTION: Review Example -->
     <section class="section soft" aria-labelledby="example-title">
       <div class="frame">
-        <div class="section-index">07 — 監修依頼の具体例</div>
-        <h2 class="section-title" id="example-title">依頼と返答の形を、<br />あらかじめ揃える。</h2>
+        <div class="section-index">07 — REVIEW EXAMPLE</div>
+        <h2 class="section-title" id="example-title">監修依頼</h2>
         <div class="decision-guide">
           <article><span class="label">SAT → 鈴ちゃん</span><h3>この形で依頼する</h3><blockquote>運動初心者が5分で身体を動かし、丁寧にコントロールする感覚を体験できる内容を作りたい。自宅・道具なし・低〜中強度。プリエを候補に考えているけど、この目的ならどんな動きと順番が適切？</blockquote></article>
           <article><span class="label">鈴ちゃん → SAT</span><h3>この内容を返す</h3><blockquote>プリエは採用できる。ただし最初に足裏と姿勢を確認する動きを入れた方がよい。プリエは浅い範囲から始め、膝とつま先の方向をCueにする。違和感がある人向けに可動域を小さくする代替も用意する。</blockquote></article>
@@ -937,8 +937,8 @@
     <!-- SECTION: Production -->
     <section class="section white" aria-labelledby="production-title">
       <div class="frame">
-        <div class="section-index">08 — 監修後の流れ</div>
-        <h2 class="section-title" id="production-title">監修を、<br />完成した体験へ。</h2>
+        <div class="section-index">08 — PRODUCTION</div>
+        <h2 class="section-title" id="production-title">制作と改善</h2>
         <div class="compact-production">
           <article><span>01 / 一緒に</span><strong>リハーサル</strong><p>時間、難易度、流れ、Cueを実際に試して調整。</p></article>
           <article><span>02 / 鈴ちゃん</span><strong>撮影・動作確認</strong><p>実演し、バレエ動作と見せ方を最終確認。</p></article>
@@ -951,10 +951,9 @@
     <!-- SECTION: Closing -->
     <section class="closing" aria-labelledby="closing-title">
       <div class="frame">
-        <span class="label">OUR SHARED RULE</span>
-        <h2 id="closing-title">SATが目的をつくる。<br />鈴ちゃんが動きに確かさを与える。<br />二人で、日常に届く体験へ仕上げる。</h2>
-        <p>バレエを教えることから始めず、「誰の、どんな状態に、どんな価値を届けるか」から一緒に考えます。</p>
-        <strong>最高の体調を、日常に。</strong>
+        <span class="label">SUMMARY</span>
+        <h2 id="closing-title">BDXコンテンツ制作の分担</h2>
+        <p>SATが企画・実装・検証を担当し、鈴ちゃんがバレエ動作と初心者への伝え方を監修します。目的に対する動きの適合性と体験の完成度は、二人で確認します。</p>
       </div>
     </section>
   </main>
