@@ -3,362 +3,417 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BDXリニューアルの変更理由、ユーザー体験、Production実装状況、次の実行計画を共有するチーム資料。" />
+  <meta name="description" content="BDXリニューアルの変更理由、ユーザー体験、Production実装状況、次の実コンテンツ制作を共有する資料。" />
   <title>BDXリニューアル案</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600;700&amp;display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     * { margin: 0; }
     :root {
-      --ink: #172033;
-      --muted: #647084;
-      --line: #d9dee8;
-      --paper: #f5f7fb;
-      --white: #ffffff;
-      --navy: #10192b;
-      --blue: #587bea;
-      --blue-soft: #e9eeff;
-      --coral: #ee6689;
-      --coral-soft: #ffe9ef;
-      --mint: #3ebd9a;
-      --mint-soft: #e0f7f0;
-      --yellow: #f2b840;
-      --yellow-soft: #fff2cf;
-      --violet: #9375d6;
-      --violet-soft: #eee9fb;
-      --red: #d85d67;
+      --navy: #0b1423;
+      --navy-2: #121f33;
+      --ink: #172034;
+      --muted: #667085;
+      --paper: #f4f5f3;
+      --white: #fff;
+      --line: #dce1e7;
+      --gold: #d2aa59;
+      --coral: #ef718e;
+      --blue: #7197ed;
+      --mint: #62cdae;
+      --violet: #a58ed8;
+      --amber: #efb64a;
+      --red: #d7656e;
       --max: 1180px;
+      --radius: 8px;
       --sans: 'Inter', 'Noto Sans JP', sans-serif;
+      --serif: 'Noto Serif JP', serif;
     }
-    html { background: var(--paper); color: var(--ink); font-family: var(--sans); letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+    html { background: var(--navy); color: var(--ink); font-family: var(--sans); letter-spacing: 0; -webkit-font-smoothing: antialiased; }
     body { overflow-x: hidden; background: var(--paper); }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
     p, li { font-size: 15px; line-height: 1.85; }
+    ul { padding-left: 1.15em; }
     .frame { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
-    .section { padding: 96px 0; position: relative; }
+    .section { padding: 102px 0; }
     .section.white { background: var(--white); }
-    .section.paper { background: var(--paper); }
-    .section.ink { color: #f6f8fc; background: var(--navy); }
-    .section.blue-band { color: #fff; background: var(--blue); }
-    .section-head { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 28px; align-items: start; }
-    .section-no { padding-top: 10px; color: var(--blue); font-size: 10px; font-weight: 700; }
-    .ink .section-no, .blue-band .section-no { color: var(--yellow); }
-    .section-title { font-size: 48px; line-height: 1.3; font-weight: 700; }
-    .section-lead { max-width: 790px; margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 2; }
-    .ink .section-lead { color: #aeb8c9; }
-    .blue-band .section-lead { color: rgba(255,255,255,.78); }
-    .eyebrow { color: var(--blue); font-size: 10px; font-weight: 700; }
-    .status { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 8px; border-radius: 3px; font-size: 9px; font-weight: 700; white-space: nowrap; }
-    .status.live { color: #16775f; background: var(--mint-soft); }
-    .status.base { color: #3856a7; background: var(--blue-soft); }
-    .status.partial { color: #7a5607; background: var(--yellow-soft); }
-    .status.todo { color: #9b3e52; background: var(--coral-soft); }
-    .status.done { color: #fff; background: var(--mint); }
-    .status.now { color: #fff; background: var(--blue); }
-    .status.next { color: #604300; background: var(--yellow); }
+    .section.soft { background: #edf0f1; }
+    .section.dark { background: var(--navy); color: #f7f8fb; }
+    .section-index { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; color: var(--gold); font-size: 10px; font-weight: 600; }
+    .section-index::after { content: ''; width: 48px; height: 1px; background: currentColor; }
+    .section-title { font-family: var(--serif); font-size: 52px; line-height: 1.35; font-weight: 600; }
+    .section-lead { max-width: 800px; margin-top: 22px; color: var(--muted); font-size: 16px; line-height: 2; }
+    .dark .section-lead { color: #aeb8c8; }
+    .label { color: var(--gold); font-size: 10px; font-weight: 600; }
+    .status { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 8px; border-radius: 3px; font-size: 9px; font-weight: 700; }
+    .status.keep { color: #305790; background: #e7efff; }
+    .status.new { color: #8c2845; background: #ffe7ee; }
+    .status.future { color: #6b4c08; background: #fff0c9; }
 
     /* HERO */
-    .hero { min-height: 92vh; display: grid; align-items: center; padding: 72px 0; background: var(--white); border-bottom: 12px solid var(--blue); }
-    .hero-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; }
-    .brand { font-size: 28px; font-weight: 700; }
+    .hero { min-height: 92vh; display: grid; align-items: center; position: relative; overflow: hidden; color: #fff; background: var(--navy); }
+    .hero-media { position: absolute; inset: 0; display: grid; grid-template-columns: 1.15fr .85fr; opacity: .34; }
+    .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,15,27,.98) 0%, rgba(8,15,27,.82) 54%, rgba(8,15,27,.58) 100%); }
+    .hero-media img:first-child { filter: saturate(.72); }
+    .hero-media img:last-child { filter: saturate(.82); }
+    .hero-inner { position: relative; z-index: 1; padding: 80px 0; }
+    .brand { font-size: 42px; font-weight: 700; }
     .brand .b { color: var(--coral); } .brand .d { color: var(--blue); } .brand .x { color: var(--mint); }
-    .hero-meta { margin-top: 72px; color: var(--blue); font-size: 10px; font-weight: 700; }
-    .hero h1 { margin-top: 18px; font-size: 68px; line-height: 1.18; font-weight: 700; }
-    .hero-copy { max-width: 590px; margin-top: 24px; color: var(--muted); font-size: 16px; }
-    .baseline { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 42px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
-    .baseline strong { color: var(--ink); }
-    .hero-diagram { display: grid; grid-template-columns: .74fr 54px 1.26fr; align-items: stretch; min-height: 520px; border: 1px solid var(--line); background: var(--paper); }
-    .hero-old, .hero-new { padding: 28px; }
-    .hero-old { display: grid; align-content: center; background: #eef1f6; }
-    .hero-new { display: grid; align-content: center; background: var(--white); }
-    .hero-diagram small { color: var(--blue); font-size: 9px; font-weight: 700; }
-    .hero-diagram h2 { margin-top: 14px; font-size: 26px; line-height: 1.45; }
-    .hero-diagram p { margin-top: 12px; color: var(--muted); font-size: 12px; }
-    .hero-arrow { display: grid; place-items: center; color: #fff; background: var(--blue); font-size: 24px; font-weight: 700; }
-    .hero-old-stack { display: grid; gap: 7px; margin-top: 24px; }
-    .hero-old-stack span { padding: 11px; border: 1px solid var(--line); background: var(--white); font-size: 10px; }
-    .hero-core { margin-top: 22px; padding: 17px; color: #fff; background: var(--navy); text-align: center; }
-    .hero-core strong { display: block; margin-top: 5px; font-size: 18px; }
-    .hero-channels { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; margin-top: 7px; }
-    .hero-channels div { min-height: 92px; padding: 12px 8px; border: 1px solid var(--line); background: var(--white); }
-    .hero-channels div:nth-child(1) { border-top: 5px solid var(--coral); }
-    .hero-channels div:nth-child(2) { border-top: 5px solid var(--blue); }
-    .hero-channels div:nth-child(3) { border-top: 5px solid var(--mint); }
-    .hero-channels b { font-size: 10px; }
-    .hero-channels span { display: block; margin-top: 8px; color: var(--muted); font-size: 9px; }
-    .hero-layers { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 7px; }
-    .hero-layers div { padding: 12px 8px; color: #fff; background: var(--blue); font-size: 9px; text-align: center; }
-    .hero-layers div:last-child { background: var(--violet); }
+    .hero-kicker { margin-top: 54px; color: var(--gold); font-size: 11px; font-weight: 600; }
+    .hero h1 { max-width: 900px; margin-top: 18px; font-family: var(--serif); font-size: 72px; line-height: 1.25; }
+    .hero-copy { max-width: 720px; margin-top: 28px; color: #c2c9d3; font-size: 17px; }
+    .source-note { margin-top: 16px; color: #8f9bae; font-size: 10px; line-height: 1.6; }
+    .hero-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 790px; margin-top: 56px; border: 1px solid rgba(255,255,255,.16); }
+    .hero-summary article { min-height: 112px; padding: 20px; background: rgba(11,20,35,.74); border-right: 1px solid rgba(255,255,255,.13); }
+    .hero-summary article:last-child { border-right: 0; }
+    .hero-summary span { color: var(--gold); font-size: 9px; font-weight: 600; }
+    .hero-summary strong { display: block; margin-top: 12px; font-family: var(--serif); font-size: 18px; line-height: 1.55; }
 
-    /* CHANGE */
-    .change-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 52px; }
-    .change-item { min-height: 260px; padding: 26px; position: relative; border: 1px solid var(--line); background: var(--white); }
-    .change-item:nth-child(1) { border-top: 7px solid var(--coral); }
-    .change-item:nth-child(2) { border-top: 7px solid var(--blue); }
-    .change-item:nth-child(3) { border-top: 7px solid var(--mint); }
-    .change-item > span { color: var(--blue); font-size: 9px; font-weight: 700; }
-    .change-item h3 { margin-top: 18px; font-size: 24px; }
-    .change-pair { display: grid; grid-template-columns: 1fr 22px 1fr; gap: 4px; margin-top: 24px; align-items: center; }
-    .change-pair div { min-height: 78px; display: grid; place-items: center; padding: 10px; border: 1px solid var(--line); color: var(--muted); font-size: 10px; text-align: center; }
-    .change-pair div:last-child { color: var(--ink); background: var(--paper); font-weight: 700; }
-    .change-pair i { color: var(--blue); font-style: normal; text-align: center; }
+    /* PURPOSE */
+    .purpose-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 48px; }
+    .purpose-grid article { min-height: 190px; padding: 26px; border: 1px solid var(--line); border-top: 6px solid var(--coral); background: #fff; }
+    .purpose-grid article:nth-child(2) { border-top-color: var(--blue); }
+    .purpose-grid article:nth-child(3) { border-top-color: var(--mint); }
+    .purpose-grid b { color: var(--gold); font-size: 10px; }
+    .purpose-grid h3 { margin-top: 16px; font-family: var(--serif); font-size: 23px; }
+    .purpose-grid p { margin-top: 10px; color: var(--muted); font-size: 13px; }
 
-    /* WHY */
-    .why-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); margin-top: 52px; border: 1px solid var(--line); }
-    .why-item { min-height: 250px; padding: 23px 18px; border-right: 1px solid var(--line); background: var(--white); }
-    .why-item:last-child { border-right: 0; }
-    .why-item b { display: grid; place-items: center; width: 34px; height: 34px; color: #fff; background: var(--blue); font-size: 11px; }
-    .why-item:nth-child(2) b { background: var(--coral); }
-    .why-item:nth-child(3) b { background: var(--mint); }
-    .why-item:nth-child(4) b { background: var(--violet); }
-    .why-item:nth-child(5) b { color: var(--ink); background: var(--yellow); }
-    .why-item h3 { margin-top: 24px; font-size: 18px; line-height: 1.55; }
-    .why-item p { margin-top: 10px; color: var(--muted); font-size: 11px; }
-    .why-conclusion { display: grid; grid-template-columns: 140px 1fr; gap: 24px; margin-top: 22px; padding: 24px; color: #fff; background: var(--navy); }
-    .why-conclusion span { color: var(--yellow); font-size: 9px; font-weight: 700; }
-    .why-conclusion strong { font-size: 20px; line-height: 1.7; }
+    /* BEFORE AFTER */
+    .shift-board { display: grid; grid-template-columns: minmax(0,1fr) 70px minmax(0,1fr); gap: 0; margin-top: 54px; align-items: stretch; }
+    .shift-side { padding: 32px; border: 1px solid rgba(255,255,255,.14); background: var(--navy-2); }
+    .shift-side.after { border-color: rgba(239,113,142,.55); box-shadow: inset 0 6px 0 var(--coral); }
+    .shift-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .shift-head span { color: var(--gold); font-size: 10px; font-weight: 600; }
+    .shift-side h3 { margin-top: 18px; font-family: var(--serif); font-size: 30px; }
+    .shift-side > p { margin-top: 14px; color: #aeb8c8; font-size: 13px; }
+    .shift-list { display: grid; gap: 0; margin-top: 28px; list-style: none; padding: 0; border-top: 1px solid rgba(255,255,255,.12); }
+    .shift-list li { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.12); color: #dbe0e8; font-size: 12px; }
+    .shift-list b { color: var(--gold); font-size: 9px; }
+    .shift-arrow { display: grid; place-items: center; color: var(--gold); font-size: 28px; background: rgba(255,255,255,.04); }
+    .shift-statement { max-width: 880px; margin: 48px auto 0; padding: 24px; border: 1px solid rgba(210,170,89,.35); text-align: center; font-family: var(--serif); font-size: 24px; line-height: 1.7; }
 
-    /* PRODUCT */
-    .product-map { display: grid; grid-template-columns: 180px 1fr 220px; gap: 10px; margin-top: 52px; align-items: stretch; }
-    .product-core { display: grid; place-items: center; padding: 20px; color: #fff; background: var(--navy); text-align: center; }
-    .product-core span { color: var(--yellow); font-size: 9px; }
-    .product-core strong { display: block; margin-top: 9px; font-size: 21px; }
-    .product-channels { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
-    .product-channel { min-height: 250px; padding: 24px; border: 1px solid var(--line); background: var(--white); }
-    .product-channel:nth-child(1) { border-top: 7px solid var(--coral); }
-    .product-channel:nth-child(2) { border-top: 7px solid var(--blue); }
-    .product-channel:nth-child(3) { border-top: 7px solid var(--mint); }
-    .product-channel > b { font-size: 11px; }
-    .product-channel h3 { margin-top: 14px; font-size: 23px; }
-    .product-channel ul { margin-top: 18px; padding: 0; list-style: none; }
-    .product-channel li { padding: 7px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 10px; }
-    .product-layers { display: grid; gap: 10px; }
-    .product-layer { display: grid; align-content: center; padding: 20px; color: #fff; background: var(--blue); }
-    .product-layer:last-child { background: var(--violet); }
-    .product-layer b { font-size: 10px; }
-    .product-layer strong { margin-top: 8px; font-size: 17px; }
-    .product-layer p { margin-top: 8px; color: rgba(255,255,255,.78); font-size: 10px; }
+    /* ORIGIN */
+    .origin-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 44px; margin-top: 52px; align-items: stretch; }
+    .origin-image { min-height: 530px; position: relative; overflow: hidden; }
+    .origin-image::after { content: '舞台裏の身体管理'; position: absolute; left: 20px; bottom: 20px; padding: 8px 12px; color: #fff; background: rgba(11,20,35,.82); font-size: 11px; }
+    .origin-content { display: grid; align-content: center; }
+    .origin-axis { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border: 1px solid var(--line); }
+    .origin-axis article { min-height: 190px; padding: 25px; border-right: 1px solid var(--line); }
+    .origin-axis article:last-child { border-right: 0; background: #fff4f7; }
+    .origin-axis span { color: var(--gold); font-size: 9px; font-weight: 600; }
+    .origin-axis h3 { margin-top: 14px; font-family: var(--serif); font-size: 24px; }
+    .origin-axis p { margin-top: 12px; color: var(--muted); font-size: 13px; }
+    .backstage-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 14px; border: 1px solid var(--line); }
+    .backstage-grid span { min-height: 70px; display: grid; place-items: center; padding: 8px; border-right: 1px solid var(--line); background: #fff; font-size: 11px; text-align: center; }
+    .backstage-grid span:last-child { border-right: 0; }
+    .origin-note { margin-top: 18px; padding: 18px; color: #fff; background: var(--navy); font-family: var(--serif); font-size: 18px; line-height: 1.7; }
 
-    /* EXPERIENCE */
-    .experience-loop { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); margin-top: 52px; border: 1px solid rgba(255,255,255,.18); }
-    .experience-step { min-height: 165px; padding: 20px 14px; position: relative; border-right: 1px solid rgba(255,255,255,.18); }
-    .experience-step:last-child { border-right: 0; }
-    .experience-step:not(:last-child)::after { content: '›'; position: absolute; right: -7px; top: 63px; z-index: 2; color: var(--yellow); font-size: 24px; }
-    .experience-step span { color: var(--yellow); font-size: 9px; }
-    .experience-step strong { display: block; margin-top: 17px; font-size: 16px; line-height: 1.5; }
-    .experience-step p { margin-top: 8px; color: #aeb8c9; font-size: 9px; line-height: 1.6; }
-    .loop-back { max-width: 850px; margin: 12px auto 0; padding: 10px; border: 1px solid rgba(255,255,255,.18); color: var(--mint); text-align: center; font-size: 10px; }
-    .value-change { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 38px; }
-    .value-change article { padding: 20px; background: rgba(255,255,255,.07); border-left: 5px solid var(--coral); }
-    .value-change article:nth-child(2) { border-left-color: var(--blue); }
-    .value-change article:nth-child(3) { border-left-color: var(--mint); }
-    .value-change strong { font-size: 18px; }
-    .value-change p { margin-top: 7px; color: #aeb8c9; font-size: 11px; }
+    /* PRODUCT STRUCTURE */
+    .product-compare { display: grid; grid-template-columns: .78fr 50px 1.22fr; margin-top: 54px; align-items: center; }
+    .old-product, .new-product { padding: 26px; border: 1px solid var(--line); background: #fff; }
+    .old-product h3, .new-product h3 { margin-top: 12px; font-family: var(--serif); font-size: 25px; }
+    .old-stack { display: grid; gap: 8px; margin-top: 22px; }
+    .old-stack div { padding: 15px; border: 1px solid var(--line); font-size: 12px; }
+    .product-arrow { display: grid; place-items: center; color: var(--gold); font-size: 26px; }
+    .method-core { padding: 18px; border: 1px solid rgba(239,113,142,.52); background: #fff2f6; text-align: center; }
+    .method-core span { color: #a33555; font-size: 9px; font-weight: 700; }
+    .method-core strong { display: block; margin-top: 6px; font-family: var(--serif); font-size: 23px; }
+    .channels { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 10px; }
+    .channels article { min-height: 130px; padding: 15px; border: 1px solid var(--line); background: #fff; }
+    .channels article:nth-child(1) { border-top: 5px solid var(--coral); }
+    .channels article:nth-child(2) { border-top: 5px solid var(--blue); }
+    .channels article:nth-child(3) { border-top: 5px solid var(--mint); }
+    .channels b { font-size: 10px; }
+    .channels strong { display: block; margin-top: 8px; font-family: var(--serif); font-size: 17px; }
+    .channels p { margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+    .layers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .layers div { padding: 14px; color: #fff; background: var(--navy); font-size: 11px; }
+    .layers b { color: var(--gold); }
 
-    /* STATUS */
-    .release-strip { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 50px; border: 1px solid var(--line); background: var(--white); }
-    .release-stat { min-height: 130px; padding: 22px; border-right: 1px solid var(--line); }
-    .release-stat:last-child { border-right: 0; }
-    .release-stat b { font-size: 36px; line-height: 1; }
-    .release-stat:nth-child(1) b { color: var(--mint); }
-    .release-stat:nth-child(2) b { color: var(--blue); }
-    .release-stat:nth-child(3) b { color: var(--yellow); }
-    .release-stat:nth-child(4) b { color: var(--coral); }
-    .release-stat strong { display: block; margin-top: 13px; font-size: 12px; }
-    .release-stat span { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; }
-    .status-groups { display: grid; grid-template-columns: 1.35fr .8fr .7fr; gap: 12px; margin-top: 14px; }
-    .status-group { padding: 24px; border: 1px solid var(--line); background: var(--white); }
-    .status-group h3 { display: flex; justify-content: space-between; gap: 10px; align-items: center; font-size: 16px; }
-    .status-list { margin-top: 18px; padding: 0; list-style: none; }
-    .status-list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
-    .status-list li:last-child { border-bottom: 0; }
-    .status-list strong { display: block; font-size: 11px; }
-    .status-list span { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; line-height: 1.6; }
-    .production-proof { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-top: 14px; padding: 16px 20px; color: #fff; background: var(--navy); font-size: 10px; }
-    .production-proof b { color: var(--mint); }
+    /* CORE LOOP */
+    .loop { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); margin-top: 50px; border: 1px solid rgba(255,255,255,.14); }
+    .loop article { min-height: 150px; padding: 18px 13px; position: relative; background: var(--navy-2); border-right: 1px solid rgba(255,255,255,.14); }
+    .loop article:last-child { border-right: 0; }
+    .loop article:not(:last-child)::after { content: '›'; position: absolute; right: -7px; top: 58px; z-index: 2; color: var(--gold); font-size: 23px; }
+    .loop span { color: var(--gold); font-size: 9px; }
+    .loop strong { display: block; margin-top: 16px; font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+    .loop p { margin-top: 7px; color: #9ea9b9; font-size: 10px; line-height: 1.6; }
+    .loop-return { max-width: 820px; margin: 12px auto 0; padding: 10px; border: 1px solid rgba(98,205,174,.38); color: var(--mint); text-align: center; font-size: 10px; }
+    .loop-values { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 40px; }
+    .loop-values article { padding: 20px; border: 1px solid rgba(255,255,255,.14); }
+    .loop-values strong { font-family: var(--serif); font-size: 20px; }
+    .loop-values p { margin-top: 7px; color: #aeb8c8; font-size: 12px; }
 
-    /* CURRENT TRACK */
-    .track-banner { display: grid; grid-template-columns: 160px 1fr 190px; gap: 0; margin-top: 50px; border: 1px solid var(--line); background: var(--white); }
-    .track-phase { display: grid; place-items: center; padding: 20px; color: #fff; background: var(--blue); text-align: center; }
-    .track-phase b { font-size: 28px; }
-    .track-phase span { margin-top: 5px; font-size: 9px; }
-    .track-main { padding: 26px; }
-    .track-main span { color: var(--blue); font-size: 9px; font-weight: 700; }
-    .track-main h3 { margin-top: 10px; font-size: 23px; }
-    .track-main p { margin-top: 9px; color: var(--muted); font-size: 11px; }
-    .asset-zero { display: grid; place-items: center; padding: 20px; border-left: 1px solid var(--line); text-align: center; }
-    .asset-zero b { color: var(--coral); font-size: 42px; line-height: 1; }
-    .asset-zero span { margin-top: 8px; color: var(--muted); font-size: 9px; }
-    .pilot-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 18px; }
-    .pilot-card { min-height: 170px; padding: 21px; border: 1px solid var(--line); background: var(--white); }
+    /* FEATURES */
+    .feature-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 50px; }
+    .feature-card { min-height: 270px; padding: 25px; border: 1px solid var(--line); background: #fff; }
+    .feature-card:nth-child(1) { border-top: 6px solid var(--mint); }
+    .feature-card:nth-child(2) { border-top: 6px solid var(--coral); }
+    .feature-card:nth-child(3) { border-top: 6px solid var(--blue); }
+    .feature-card:nth-child(4) { border-top: 6px solid var(--gold); }
+    .feature-card:nth-child(5) { border-top: 6px solid var(--violet); }
+    .feature-card:nth-child(6) { border-top: 6px solid var(--amber); }
+    .feature-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .feature-number { color: var(--gold); font-size: 10px; font-weight: 600; }
+    .feature-card h3 { margin-top: 19px; font-family: var(--serif); font-size: 23px; line-height: 1.45; }
+    .feature-card > p { margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .mini-flow { display: flex; align-items: center; gap: 5px; margin-top: 18px; color: var(--ink); font-size: 9px; font-weight: 600; }
+    .mini-flow i { color: var(--gold); font-style: normal; }
+
+    /* GAMIFICATION */
+    .game-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 24px; margin-top: 52px; }
+    .quest-ui { padding: 28px; border: 1px solid rgba(239,113,142,.62); background: #20192b; box-shadow: 8px 8px 0 rgba(239,113,142,.16); }
+    .quest-ui > span { color: var(--coral); font-size: 9px; font-weight: 700; }
+    .quest-ui h3 { margin-top: 18px; font-family: var(--serif); font-size: 29px; }
+    .quest-ui p { margin-top: 12px; color: #aeb8c8; font-size: 12px; }
+    .quest-button { display: flex; justify-content: space-between; margin-top: 24px; padding: 14px; background: var(--coral); font-size: 10px; font-weight: 700; }
+    .skill-panel { padding: 26px; border: 1px solid rgba(255,255,255,.14); background: var(--navy-2); }
+    .skill-panel h3 { font-family: var(--serif); font-size: 25px; }
+    .skill-list { display: grid; gap: 9px; margin-top: 20px; }
+    .skill-row { display: grid; grid-template-columns: 88px 1fr 42px; align-items: center; gap: 10px; font-size: 10px; }
+    .skill-bar { height: 7px; background: rgba(255,255,255,.12); }
+    .skill-bar i { display: block; height: 100%; background: var(--mint); }
+    .skill-row:nth-child(2) i { background: var(--coral); }
+    .skill-row:nth-child(3) i { background: var(--blue); }
+    .skill-row:nth-child(4) i { background: var(--violet); }
+    .skill-row:nth-child(5) i { background: var(--gold); }
+    .skill-row:nth-child(6) i { background: var(--amber); }
+    .skill-row:nth-child(7) i { background: #6ed0dc; }
+    .game-message { margin-top: 20px; padding: 15px; border: 1px solid rgba(210,170,89,.35); color: var(--gold); font-family: var(--serif); font-size: 17px; text-align: center; }
+
+    /* DAY */
+    .day-compare { display: grid; grid-template-columns: 1fr 1fr; margin-top: 50px; border: 1px solid var(--line); }
+    .day-side { padding: 30px; background: #fff; }
+    .day-side + .day-side { border-left: 1px solid var(--line); background: #fff5f7; }
+    .day-side h3 { margin-top: 12px; font-family: var(--serif); font-size: 25px; }
+    .day-flow { display: grid; gap: 8px; margin-top: 24px; }
+    .day-step { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; padding: 12px; border: 1px solid var(--line); background: #fff; }
+    .day-step b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; background: var(--navy); font-size: 9px; }
+    .day-step span { font-size: 11px; }
+    .day-result { margin-top: 18px; padding: 16px; color: #fff; background: var(--navy); font-family: var(--serif); font-size: 17px; text-align: center; }
+
+    /* TEAM */
+    .team-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 50px; }
+    .team-card { min-height: 315px; padding: 26px; border: 1px solid rgba(255,255,255,.14); background: var(--navy-2); }
+    .team-card:nth-child(1) { border-top: 6px solid var(--blue); }
+    .team-card:nth-child(2) { border-top: 6px solid var(--coral); }
+    .team-card:nth-child(3) { border-top: 6px solid var(--mint); }
+    .team-card h3 { margin-top: 14px; font-family: var(--serif); font-size: 25px; }
+    .team-card > p { margin-top: 9px; color: #aeb8c8; font-size: 12px; }
+    .team-card ul { margin-top: 18px; color: #dce1e8; }
+    .team-card li { padding: 5px 0; font-size: 11px; }
+    .unchanged { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 34px; border: 1px solid rgba(255,255,255,.14); }
+    .unchanged div { min-height: 90px; display: grid; place-items: center; padding: 12px; border-right: 1px solid rgba(255,255,255,.14); text-align: center; font-size: 11px; }
+    .unchanged div:last-child { border-right: 0; }
+
+    /* NEXT */
+    .decision-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 48px; }
+    .decision-grid article { min-height: 210px; padding: 25px; border: 1px solid var(--line); background: #fff; }
+    .decision-grid b { color: var(--gold); font-size: 10px; }
+    .decision-grid h3 { margin-top: 14px; font-family: var(--serif); font-size: 22px; }
+    .decision-grid p { margin-top: 10px; color: var(--muted); font-size: 12px; }
+    .release-summary { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 48px; border: 1px solid var(--line); background: #fff; }
+    .release-summary article { min-height: 130px; padding: 22px; border-right: 1px solid var(--line); }
+    .release-summary article:last-child { border-right: 0; }
+    .release-summary b { font-size: 34px; line-height: 1; }
+    .release-summary article:nth-child(1) b { color: var(--mint); }
+    .release-summary article:nth-child(2) b { color: var(--blue); }
+    .release-summary article:nth-child(3) b { color: var(--gold); }
+    .release-summary article:nth-child(4) b { color: var(--coral); }
+    .release-summary strong { display: block; margin-top: 13px; font-size: 12px; }
+    .release-summary span { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; }
+    .release-groups { display: grid; grid-template-columns: 1.35fr .8fr .7fr; gap: 12px; margin-top: 14px; }
+    .release-panel { padding: 24px; border: 1px solid var(--line); background: #fff; }
+    .release-panel h3 { font-family: var(--serif); font-size: 20px; }
+    .release-panel ul { margin-top: 16px; padding: 0; list-style: none; }
+    .release-panel li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 10px; line-height: 1.55; }
+    .release-panel li:last-child { border-bottom: 0; }
+    .release-panel li span { display: block; margin-top: 3px; color: var(--muted); font-size: 8px; }
+    .release-proof { display: flex; justify-content: space-between; gap: 18px; margin-top: 14px; padding: 16px 20px; color: #fff; background: var(--navy); font-size: 10px; }
+    .release-proof b { color: var(--mint); }
+    .pilot-banner { display: grid; grid-template-columns: 150px 1fr 170px; margin-top: 46px; border: 1px solid var(--line); background: #fff; }
+    .pilot-phase { display: grid; place-items: center; color: #fff; background: var(--blue); text-align: center; }
+    .pilot-phase b { font-size: 27px; }
+    .pilot-phase span { display: block; margin-top: 5px; font-size: 8px; }
+    .pilot-main { padding: 24px; }
+    .pilot-main span { color: var(--blue); font-size: 9px; font-weight: 700; }
+    .pilot-main h3 { margin-top: 9px; font-family: var(--serif); font-size: 23px; }
+    .pilot-main p { margin-top: 8px; color: var(--muted); font-size: 10px; }
+    .pilot-zero { display: grid; place-items: center; border-left: 1px solid var(--line); text-align: center; }
+    .pilot-zero b { color: var(--coral); font-size: 38px; }
+    .pilot-zero span { display: block; margin-top: 5px; color: var(--muted); font-size: 8px; }
+    .pilot-cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 14px; }
+    .pilot-card { min-height: 160px; padding: 20px; border: 1px solid var(--line); background: #fff; }
     .pilot-card:nth-child(1) { border-top: 6px solid var(--coral); }
     .pilot-card:nth-child(2) { border-top: 6px solid var(--blue); }
     .pilot-card:nth-child(3) { border-top: 6px solid var(--mint); }
     .pilot-card span { color: var(--blue); font-size: 9px; font-weight: 700; }
-    .pilot-card h3 { margin-top: 14px; font-size: 18px; line-height: 1.55; }
-    .pilot-card p { margin-top: 8px; color: var(--muted); font-size: 10px; }
-    .production-flow { display: grid; grid-template-columns: repeat(8,minmax(0,1fr)); margin-top: 26px; border: 1px solid var(--line); }
-    .production-step { min-height: 125px; padding: 14px 9px; position: relative; border-right: 1px solid var(--line); background: var(--white); }
-    .production-step:last-child { border-right: 0; }
-    .production-step:not(:last-child)::after { content: '›'; position: absolute; right: -5px; top: 46px; z-index: 2; color: var(--blue); font-size: 18px; }
-    .production-step b { color: var(--blue); font-size: 8px; }
-    .production-step strong { display: block; margin-top: 12px; font-size: 11px; line-height: 1.5; }
-    .production-step span { display: block; margin-top: 6px; color: var(--muted); font-size: 8px; line-height: 1.5; }
-
-    /* BUSINESS */
-    .decision-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 50px; }
-    .decision-panel { padding: 28px; border: 1px solid rgba(255,255,255,.18); }
-    .decision-panel h3 { font-size: 22px; }
-    .decision-panel > p { margin-top: 10px; color: #aeb8c9; font-size: 11px; }
-    .decision-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
-    .decision-chips span { padding: 8px 10px; border: 1px solid rgba(255,255,255,.2); font-size: 9px; }
-    .decision-rule { margin-top: 20px; padding: 15px; color: var(--yellow); background: rgba(255,255,255,.06); font-size: 11px; line-height: 1.7; }
-
-    /* OWNERSHIP */
-    .owner-table { margin-top: 48px; border: 1px solid var(--line); background: var(--white); }
-    .owner-row { display: grid; grid-template-columns: 1.15fr .8fr 1.05fr; min-height: 64px; border-bottom: 1px solid var(--line); }
-    .owner-row:last-child { border-bottom: 0; }
-    .owner-row > div { display: flex; align-items: center; padding: 13px 18px; border-right: 1px solid var(--line); font-size: 11px; }
-    .owner-row > div:last-child { border-right: 0; }
-    .owner-row.head { min-height: 46px; color: #fff; background: var(--navy); }
-    .owner-row.head > div { color: var(--yellow); font-size: 9px; font-weight: 700; }
-    .unsettled { color: var(--red); font-weight: 700; }
-    .owner-note { margin-top: 16px; color: var(--muted); font-size: 10px; }
-
-    /* SUMMARY */
-    .summary { padding: 110px 0; color: var(--ink); background: var(--yellow); }
-    .summary-grid { display: grid; grid-template-columns: 160px 1fr; gap: 32px; align-items: start; }
-    .summary-label { padding-top: 9px; font-size: 10px; font-weight: 700; }
-    .summary h2 { max-width: 850px; font-size: 52px; line-height: 1.35; }
-    .summary p { max-width: 760px; margin-top: 25px; color: #55400f; font-size: 15px; }
+    .pilot-card h3 { margin-top: 12px; font-family: var(--serif); font-size: 20px; }
+    .pilot-card p { margin-top: 7px; color: var(--muted); font-size: 9px; }
+    .next-flow { display: grid; grid-template-columns: repeat(8,minmax(0,1fr)); margin-top: 20px; border: 1px solid var(--line); }
+    .next-step { min-height: 120px; padding: 13px 8px; position: relative; border-right: 1px solid var(--line); background: #fff; }
+    .next-step:last-child { border-right: 0; }
+    .next-step:not(:last-child)::after { content: '›'; position: absolute; right: -5px; top: 44px; z-index: 2; color: var(--gold); font-size: 18px; }
+    .next-step b { color: var(--blue); font-size: 7px; }
+    .next-step strong { display: block; margin-top: 10px; font-size: 10px; line-height: 1.5; }
+    .next-step span { display: block; margin-top: 5px; color: var(--muted); font-size: 7px; line-height: 1.45; }
+    .owner-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 28px; }
+    .owner-card { min-height: 205px; padding: 24px; border: 1px solid var(--line); background: #fff; }
+    .owner-card b { color: var(--gold); font-size: 9px; }
+    .owner-card h3 { margin-top: 12px; font-family: var(--serif); font-size: 19px; }
+    .owner-card p { margin-top: 10px; color: var(--muted); font-size: 10px; }
+    .closing { padding: 100px 0; color: #fff; background: var(--navy); text-align: center; }
+    .closing h2 { max-width: 850px; margin: 18px auto 0; font-family: var(--serif); font-size: 45px; line-height: 1.45; }
+    .closing p { max-width: 720px; margin: 24px auto 0; color: #aeb8c8; }
 
     @media (max-width: 640px) {
-      p, li { font-size: 10px; line-height: 1.7; }
+      p, li { font-size: 11px; line-height: 1.75; }
       .frame { width: calc(100% - 24px); }
-      .section { padding: 68px 0; }
-      .section-head { grid-template-columns: 58px 1fr; gap: 10px; }
-      .section-no { padding-top: 6px; font-size: 7px; }
-      .section-title { font-size: 28px; }
-      .section-lead { margin-top: 12px; font-size: 10px; line-height: 1.8; }
-      .status { min-height: 17px; padding: 2px 4px; font-size: 6px; }
-      .hero { min-height: 820px; padding: 48px 0; }
-      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-      .brand { font-size: 22px; }
-      .hero-meta { margin-top: 48px; font-size: 7px; }
-      .hero h1 { margin-top: 12px; font-size: 40px; }
-      .hero-copy { margin-top: 17px; font-size: 10px; line-height: 1.75; }
-      .baseline { gap: 5px 8px; margin-top: 25px; padding-top: 12px; font-size: 7px; }
-      .hero-diagram { grid-template-columns: .72fr 24px 1.28fr; min-height: 390px; }
-      .hero-old, .hero-new { padding: 12px 8px; }
-      .hero-diagram small { font-size: 6px; }
-      .hero-diagram h2 { margin-top: 9px; font-size: 15px; }
-      .hero-diagram p { margin-top: 7px; font-size: 7px; line-height: 1.55; }
-      .hero-arrow { font-size: 14px; }
-      .hero-old-stack { gap: 4px; margin-top: 14px; }
-      .hero-old-stack span { padding: 7px 4px; font-size: 7px; }
-      .hero-core { margin-top: 12px; padding: 9px 4px; }
-      .hero-core strong { font-size: 12px; }
-      .hero-channels { gap: 3px; margin-top: 4px; }
-      .hero-channels div { min-height: 76px; padding: 8px 4px; }
-      .hero-channels b { font-size: 7px; }
-      .hero-channels span { font-size: 6px; }
-      .hero-layers { gap: 3px; margin-top: 4px; }
-      .hero-layers div { padding: 8px 4px; font-size: 6px; }
-      .change-grid { gap: 6px; margin-top: 30px; }
-      .change-item { min-height: 205px; padding: 13px 8px; }
-      .change-item > span { font-size: 6px; }
-      .change-item h3 { margin-top: 12px; font-size: 15px; }
-      .change-pair { grid-template-columns: 1fr 12px 1fr; gap: 2px; margin-top: 15px; }
-      .change-pair div { min-height: 66px; padding: 5px 3px; font-size: 7px; line-height: 1.5; }
-      .why-grid { margin-top: 30px; }
-      .why-item { min-height: 215px; padding: 12px 7px; }
-      .why-item b { width: 24px; height: 24px; font-size: 7px; }
-      .why-item h3 { margin-top: 16px; font-size: 12px; }
-      .why-item p { font-size: 7px; line-height: 1.55; }
-      .why-conclusion { grid-template-columns: 70px 1fr; gap: 10px; margin-top: 10px; padding: 13px 9px; }
-      .why-conclusion span { font-size: 6px; }
-      .why-conclusion strong { font-size: 12px; }
-      .product-map { grid-template-columns: 76px 1fr 92px; gap: 5px; margin-top: 30px; }
-      .product-core { padding: 9px 5px; }
-      .product-core span { font-size: 6px; }
-      .product-core strong { font-size: 12px; }
-      .product-channels { gap: 4px; }
-      .product-channel { min-height: 205px; padding: 11px 6px; }
-      .product-channel > b { font-size: 7px; }
-      .product-channel h3 { margin-top: 9px; font-size: 14px; }
-      .product-channel ul { margin-top: 11px; }
-      .product-channel li { padding: 5px 0; font-size: 7px; }
-      .product-layers { gap: 5px; }
-      .product-layer { padding: 9px 6px; }
-      .product-layer b { font-size: 7px; }
-      .product-layer strong { font-size: 11px; }
-      .product-layer p { font-size: 7px; }
-      .experience-loop { margin-top: 30px; }
-      .experience-step { min-height: 122px; padding: 11px 5px; }
-      .experience-step:not(:last-child)::after { right: -4px; top: 45px; font-size: 15px; }
-      .experience-step span { font-size: 6px; }
-      .experience-step strong { margin-top: 11px; font-size: 10px; }
-      .experience-step p { font-size: 6px; }
-      .loop-back { font-size: 7px; }
-      .value-change { gap: 5px; margin-top: 23px; }
-      .value-change article { padding: 11px 7px; border-left-width: 3px; }
-      .value-change strong { font-size: 12px; }
-      .value-change p { font-size: 7px; }
-      .release-strip { margin-top: 30px; }
-      .release-stat { min-height: 104px; padding: 13px 8px; }
-      .release-stat b { font-size: 25px; }
-      .release-stat strong { font-size: 8px; }
-      .release-stat span { font-size: 6px; }
-      .status-groups { grid-template-columns: 1.35fr .8fr .7fr; gap: 6px; margin-top: 7px; }
-      .status-group { padding: 12px 7px; }
-      .status-group h3 { font-size: 10px; }
-      .status-list { margin-top: 11px; }
-      .status-list li { padding: 7px 0; }
-      .status-list strong { font-size: 7px; }
-      .status-list span { font-size: 6px; }
-      .production-proof { margin-top: 7px; padding: 10px; font-size: 7px; }
-      .track-banner { grid-template-columns: 76px 1fr 78px; margin-top: 30px; }
-      .track-phase { padding: 9px 5px; }
-      .track-phase b { font-size: 18px; }
-      .track-phase span { font-size: 6px; }
-      .track-main { padding: 14px 9px; }
-      .track-main span { font-size: 6px; }
-      .track-main h3 { font-size: 15px; }
-      .track-main p { font-size: 7px; }
-      .asset-zero { padding: 9px 4px; }
-      .asset-zero b { font-size: 27px; }
-      .asset-zero span { font-size: 6px; }
-      .pilot-grid { gap: 5px; margin-top: 9px; }
-      .pilot-card { min-height: 140px; padding: 12px 7px; }
+      .section { padding: 70px 0; }
+      .section-index { margin-bottom: 13px; font-size: 8px; }
+      .section-index::after { width: 30px; }
+      .section-title { font-size: 29px; }
+      .section-lead { margin-top: 15px; font-size: 11px; line-height: 1.85; }
+      .hero { min-height: 820px; }
+      .hero-media { grid-template-columns: 1fr; }
+      .hero-media img:last-child { display: none; }
+      .hero-inner { padding: 60px 0; }
+      .brand { font-size: 34px; }
+      .hero-kicker { margin-top: 46px; font-size: 9px; }
+      .hero h1 { font-size: 43px; line-height: 1.32; }
+      .hero-copy { margin-top: 22px; font-size: 12px; line-height: 1.85; }
+      .source-note { margin-top: 10px; font-size: 7px; }
+      .hero-summary { margin-top: 38px; }
+      .hero-summary article { min-height: 105px; padding: 12px 8px; }
+      .hero-summary span { font-size: 7px; }
+      .hero-summary strong { margin-top: 9px; font-size: 13px; }
+      .purpose-grid { gap: 7px; margin-top: 32px; }
+      .purpose-grid article { min-height: 170px; padding: 14px 9px; }
+      .purpose-grid b { font-size: 7px; }
+      .purpose-grid h3 { margin-top: 12px; font-size: 15px; }
+      .purpose-grid p { font-size: 9px; line-height: 1.65; }
+      .shift-board { grid-template-columns: minmax(0,1fr) 28px minmax(0,1fr); margin-top: 34px; }
+      .shift-side { padding: 14px 10px; }
+      .shift-side h3 { margin-top: 12px; font-size: 18px; }
+      .shift-side > p { font-size: 9px; }
+      .shift-list { margin-top: 18px; }
+      .shift-list li { grid-template-columns: 54px 1fr; gap: 5px; padding: 9px 0; font-size: 8px; line-height: 1.5; }
+      .shift-list b { font-size: 7px; }
+      .shift-arrow { font-size: 18px; }
+      .shift-statement { margin-top: 28px; padding: 15px; font-size: 16px; }
+      .origin-layout { grid-template-columns: .8fr 1.2fr; gap: 10px; margin-top: 32px; }
+      .origin-image { min-height: 390px; }
+      .origin-image::after { left: 8px; bottom: 8px; padding: 6px; font-size: 7px; }
+      .origin-axis article { min-height: 180px; padding: 12px 8px; }
+      .origin-axis h3 { font-size: 15px; }
+      .origin-axis p { font-size: 8px; line-height: 1.6; }
+      .backstage-grid span { min-height: 54px; font-size: 7px; }
+      .origin-note { margin-top: 9px; padding: 10px; font-size: 12px; }
+      .product-compare { grid-template-columns: .78fr 25px 1.22fr; margin-top: 32px; }
+      .old-product, .new-product { padding: 11px 8px; }
+      .old-product h3, .new-product h3 { font-size: 15px; }
+      .old-stack { margin-top: 13px; gap: 5px; }
+      .old-stack div { padding: 8px 5px; font-size: 8px; }
+      .product-arrow { font-size: 17px; }
+      .method-core { padding: 9px 5px; }
+      .method-core strong { font-size: 14px; }
+      .channels { gap: 4px; margin-top: 5px; }
+      .channels article { min-height: 105px; padding: 8px 5px; }
+      .channels b { font-size: 7px; }
+      .channels strong { font-size: 11px; }
+      .channels p { font-size: 7px; }
+      .layers { gap: 4px; margin-top: 5px; }
+      .layers div { padding: 8px 5px; font-size: 7px; }
+      .loop { margin-top: 32px; }
+      .loop article { min-height: 118px; padding: 10px 5px; }
+      .loop article:not(:last-child)::after { right: -4px; top: 45px; font-size: 15px; }
+      .loop span { font-size: 7px; }
+      .loop strong { margin-top: 10px; font-size: 11px; }
+      .loop p { font-size: 7px; }
+      .loop-return { font-size: 8px; }
+      .loop-values { gap: 6px; margin-top: 25px; }
+      .loop-values article { padding: 11px 8px; }
+      .loop-values strong { font-size: 14px; }
+      .loop-values p { font-size: 8px; }
+      .feature-grid { gap: 7px; margin-top: 32px; }
+      .feature-card { min-height: 225px; padding: 13px 9px; }
+      .status { min-height: 18px; padding: 2px 4px; font-size: 6px; }
+      .feature-number { font-size: 7px; }
+      .feature-card h3 { margin-top: 13px; font-size: 15px; }
+      .feature-card > p { font-size: 8px; line-height: 1.65; }
+      .mini-flow { gap: 2px; font-size: 6px; }
+      .game-layout { grid-template-columns: .92fr 1.08fr; gap: 8px; margin-top: 32px; }
+      .quest-ui, .skill-panel { padding: 14px 10px; }
+      .quest-ui h3 { font-size: 18px; }
+      .quest-ui p { font-size: 8px; }
+      .quest-button { padding: 9px 6px; font-size: 7px; }
+      .skill-panel h3 { font-size: 16px; }
+      .skill-list { gap: 6px; margin-top: 14px; }
+      .skill-row { grid-template-columns: 54px 1fr 28px; gap: 5px; font-size: 7px; }
+      .game-message { padding: 9px; font-size: 12px; }
+      .day-compare { margin-top: 32px; }
+      .day-side { padding: 14px 9px; }
+      .day-side h3 { font-size: 16px; }
+      .day-flow { margin-top: 15px; gap: 5px; }
+      .day-step { grid-template-columns: 23px 1fr; gap: 5px; padding: 7px 5px; }
+      .day-step b { width: 20px; height: 20px; font-size: 6px; }
+      .day-step span { font-size: 7px; }
+      .day-result { padding: 9px 5px; font-size: 11px; }
+      .team-grid { gap: 7px; margin-top: 32px; }
+      .team-card { min-height: 270px; padding: 14px 9px; }
+      .team-card h3 { font-size: 16px; }
+      .team-card > p { font-size: 8px; }
+      .team-card ul { margin-top: 12px; padding-left: 12px; }
+      .team-card li { font-size: 8px; }
+      .unchanged { margin-top: 20px; }
+      .unchanged div { min-height: 65px; padding: 6px; font-size: 7px; }
+      .decision-grid { gap: 7px; margin-top: 30px; }
+      .decision-grid article { min-height: 180px; padding: 13px 9px; }
+      .decision-grid h3 { font-size: 15px; }
+      .decision-grid p { font-size: 8px; }
+      .release-summary { margin-top: 30px; }
+      .release-summary article { min-height: 100px; padding: 12px 7px; }
+      .release-summary b { font-size: 24px; }
+      .release-summary strong { font-size: 8px; }
+      .release-summary span { font-size: 6px; }
+      .release-groups { grid-template-columns: 1.35fr .8fr .7fr; gap: 6px; margin-top: 7px; }
+      .release-panel { padding: 12px 7px; }
+      .release-panel h3 { font-size: 12px; }
+      .release-panel ul { margin-top: 10px; }
+      .release-panel li { padding: 6px 0; font-size: 7px; }
+      .release-panel li span { font-size: 6px; }
+      .release-proof { gap: 7px; margin-top: 7px; padding: 9px; font-size: 7px; }
+      .pilot-banner { grid-template-columns: 70px 1fr 70px; margin-top: 28px; }
+      .pilot-phase b { font-size: 17px; }
+      .pilot-phase span { font-size: 5px; }
+      .pilot-main { padding: 12px 7px; }
+      .pilot-main span { font-size: 6px; }
+      .pilot-main h3 { font-size: 14px; }
+      .pilot-main p { font-size: 7px; }
+      .pilot-zero b { font-size: 25px; }
+      .pilot-zero span { font-size: 5px; }
+      .pilot-cards { gap: 5px; margin-top: 7px; }
+      .pilot-card { min-height: 130px; padding: 11px 7px; }
       .pilot-card span { font-size: 6px; }
-      .pilot-card h3 { margin-top: 9px; font-size: 12px; }
-      .pilot-card p { font-size: 7px; }
-      .production-flow { margin-top: 15px; }
-      .production-step { min-height: 105px; padding: 10px 4px; }
-      .production-step:not(:last-child)::after { right: -3px; top: 38px; font-size: 12px; }
-      .production-step b { font-size: 5px; }
-      .production-step strong { margin-top: 8px; font-size: 7px; }
-      .production-step span { font-size: 5px; }
-      .decision-layout { gap: 8px; margin-top: 30px; }
-      .decision-panel { padding: 15px 9px; }
-      .decision-panel h3 { font-size: 15px; }
-      .decision-panel > p { font-size: 7px; }
-      .decision-chips { gap: 4px; margin-top: 14px; }
-      .decision-chips span { padding: 5px; font-size: 6px; }
-      .decision-rule { margin-top: 12px; padding: 9px; font-size: 7px; }
-      .owner-table { margin-top: 30px; }
-      .owner-row { grid-template-columns: 1.15fr .8fr 1.05fr; min-height: 48px; }
-      .owner-row > div { padding: 8px 6px; font-size: 7px; }
-      .owner-row.head { min-height: 34px; }
-      .owner-row.head > div { font-size: 6px; }
-      .owner-note { font-size: 7px; }
-      .summary { padding: 76px 0; }
-      .summary-grid { grid-template-columns: 62px 1fr; gap: 10px; }
-      .summary-label { font-size: 7px; }
-      .summary h2 { font-size: 30px; }
-      .summary p { margin-top: 15px; font-size: 9px; }
+      .pilot-card h3 { font-size: 12px; }
+      .pilot-card p { font-size: 6px; }
+      .next-flow { margin-top: 12px; }
+      .next-step { min-height: 98px; padding: 8px 3px; }
+      .next-step:not(:last-child)::after { right: -3px; top: 35px; font-size: 12px; }
+      .next-step b { font-size: 5px; }
+      .next-step strong { margin-top: 7px; font-size: 7px; }
+      .next-step span { font-size: 5px; }
+      .owner-grid { gap: 6px; margin-top: 16px; }
+      .owner-card { min-height: 165px; padding: 12px 7px; }
+      .owner-card b { font-size: 6px; }
+      .owner-card h3 { font-size: 12px; }
+      .owner-card p { font-size: 7px; }
+      .closing { padding: 72px 0; }
+      .closing h2 { font-size: 28px; }
+      .closing p { font-size: 10px; }
     }
   </style>
 </head>
@@ -366,172 +421,315 @@
   <main>
     <!-- SECTION: Hero -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="frame hero-grid">
-        <div>
-          <div class="brand" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
-          <p class="hero-meta">TEAM BRIEFING / 2026.08.12</p>
-          <h1 id="hero-title">BDX<br />リニューアル案</h1>
-          <p class="hero-copy">旧構想から変えた目的とユーザー体験、Productionの現在地、次に取り組む実コンテンツ制作を共有します。</p>
-          <div class="baseline"><span>基準日 <strong>2026年8月12日</strong></span><span>Production / main / origin/main <strong>2eb728c6</strong></span></div>
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/bdx-ballet-stage.png" alt="" />
+        <img src="assets/bdx-dance-joy.png" alt="" />
+      </div>
+      <div class="frame hero-inner">
+        <div class="brand" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
+        <p class="hero-kicker">PROJECT UPDATE / TEAM BRIEFING</p>
+        <h1 id="hero-title">BDX<br />リニューアル案</h1>
+        <p class="hero-copy">旧構想から変えた理由とユーザー体験、Productionの現在地、次に取り組む実コンテンツ制作を共有します。</p>
+        <div class="hero-summary" aria-label="この資料の3つの要点">
+          <article><span>01 / CONCEPT</span><strong>目的の変化</strong></article>
+          <article><span>02 / PRODUCT</span><strong>機能の拡張</strong></article>
+          <article><span>03 / STATUS</span><strong>現在地と次の仕事</strong></article>
         </div>
-        <div class="hero-diagram" aria-label="旧BDXから新BDXへの変化">
-          <div class="hero-old">
-            <small>BEFORE</small><h2>運動を<br />続ける</h2><p>習慣形成型フィットネス</p>
-            <div class="hero-old-stack"><span>WORKOUT</span><span>AI COACH</span><span>CONDITION</span><span>LIBRARY</span></div>
-          </div>
-          <div class="hero-arrow" aria-hidden="true">→</div>
-          <div class="hero-new">
-            <small>AFTER</small><h2>最高の体調を<br />日常につくる</h2><p>バレエ発想のウェルビーイング</p>
-            <div class="hero-core"><small>CORE</small><strong>バレエメソッド</strong></div>
-            <div class="hero-channels"><div><b>MOVE</b><span>動く</span></div><div><b>LEARN</b><span>学ぶ</span></div><div><b>CARE</b><span>整える</span></div></div>
-            <div class="hero-layers"><div>AI COACH</div><div>PROGRESS</div></div>
-          </div>
-        </div>
+        <p class="source-note">2026年8月12日 / Production・main・origin/main = commit 2eb728c6</p>
       </div>
     </section>
 
-    <!-- SECTION: Main Changes -->
-    <section class="section paper" aria-labelledby="changes-title">
+    <!-- SECTION: Purpose -->
+    <section class="section white" aria-labelledby="purpose-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">01 / CHANGE</span><div><h2 class="section-title" id="changes-title">大きく変えたこと</h2><p class="section-lead">機能の追加より先に、BDXが提供する価値の範囲と、ユーザーが毎日体験する流れを変えました。</p></div></header>
-        <div class="change-grid">
-          <article class="change-item"><span>GOAL</span><h3>目的</h3><div class="change-pair"><div>運動を<br />続ける</div><i>→</i><div>最高の体調を<br />日常につくる</div></div></article>
-          <article class="change-item"><span>VALUE</span><h3>バレエの価値</h3><div class="change-pair"><div>舞台上の<br />身体技法</div><i>→</i><div>舞台裏の身体管理<br />まで含める</div></div></article>
-          <article class="change-item"><span>EXPERIENCE</span><h3>ユーザー体験</h3><div class="change-pair"><div>自分で動画を<br />選ぶ</div><i>→</i><div>今日の行動が<br />分かる</div></div></article>
+        <div class="section-index">01 — PURPOSE</div>
+        <h2 class="section-title" id="purpose-title">資料の目的</h2>
+        <p class="section-lead">旧版と新版の違いを同じ言葉で理解し、これから何を作るのか、各メンバーがどこに関わるのかを揃えるための資料です。</p>
+        <div class="purpose-grid">
+          <article><b>UNDERSTAND</b><h3>変化を理解する</h3><p>サービスの目的と価値が、なぜ広がったのかを確認する。</p></article>
+          <article><b>CONNECT</b><h3>機能をつなげる</h3><p>追加機能を単体ではなく、ひとつの体験として理解する。</p></article>
+          <article><b>ALIGN</b><h3>役割を揃える</h3><p>新しいプロダクト構造が、企画・監修・制作へ与える影響を共有する。</p></article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Why -->
+    <!-- SECTION: Main Shift -->
+    <section class="section dark" aria-labelledby="shift-title">
+      <div class="frame">
+        <div class="section-index">02 — MAIN SHIFT</div>
+        <h2 class="section-title" id="shift-title">変化の要点</h2>
+        <p class="section-lead">運動を続けるためのフィットネスサービスから、身体・心・生活を総合的に育てるサービスへ。</p>
+        <div class="shift-board" aria-label="旧BDXと新BDXの比較">
+          <article class="shift-side before">
+            <div class="shift-head"><span>BEFORE / 旧版</span><span class="status keep">土台</span></div>
+            <h3>習慣形成型<br />フィットネス</h3>
+            <p>バレエエクササイズを、AIの提案で続けやすくする。</p>
+            <ul class="shift-list">
+              <li><b>目的</b><span>運動を続ける</span></li>
+              <li><b>中心</b><span>ワークアウト動画</span></li>
+              <li><b>AI</b><span>運動メニューと習慣支援</span></li>
+              <li><b>成長</b><span>運動の実施と記録</span></li>
+              <li><b>バレエ</b><span>身体を動かすメソッド</span></li>
+            </ul>
+          </article>
+          <div class="shift-arrow" aria-hidden="true">→</div>
+          <article class="shift-side after">
+            <div class="shift-head"><span>AFTER / 新版</span><span class="status new">拡張</span></div>
+            <h3>バレエ発想の<br />ウェルビーイング</h3>
+            <p>舞台上と舞台裏のメソッドを、AIで日常の行動へつなげる。</p>
+            <ul class="shift-list">
+              <li><b>目的</b><span>最高の体調を日常につくる</span></li>
+              <li><b>中心</b><span>動く・学ぶ・整える</span></li>
+              <li><b>AI</b><span>状態と履歴から今日の行動を提案</span></li>
+              <li><b>成長</b><span>運動・学び・回復を可視化</span></li>
+              <li><b>バレエ</b><span>身体づくり・管理・生活の知恵</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="shift-statement">バレエを使った運動から、<br />バレエの世界で培われた身体との付き合い方へ。</p>
+      </div>
+    </section>
+
+    <!-- SECTION: Why Change -->
     <section class="section white" aria-labelledby="why-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">02 / WHY</span><div><h2 class="section-title" id="why-title">変更した理由</h2><p class="section-lead">旧版の機能が間違っていたのではありません。ユーザーへ届けたい価値を見直すと、運動だけでは体験が完結しないと判断しました。</p></div></header>
-        <div class="why-grid">
-          <article class="why-item"><b>1</b><h3>体調は運動だけで決まらない</h3><p>睡眠、疲労、栄養、回復、心、生活習慣も日々の状態を左右する。</p></article>
-          <article class="why-item"><b>2</b><h3>最適な行動は毎日変わる</h3><p>元気な日と疲れている日では、運動・学習・回復の優先順位が異なる。</p></article>
-          <article class="why-item"><b>3</b><h3>知識と実践が分断される</h3><p>動画とLibraryを並べるだけでは、学びが次の行動へつながりにくい。</p></article>
-          <article class="why-item"><b>4</b><h3>小さな前進が見えにくい</h3><p>運動量だけでは、学びや回復を含むユーザーの成長を捉えられない。</p></article>
-          <article class="why-item"><b>5</b><h3>BDX独自の価値を明確にする</h3><p>踊りを教えるのではなく、舞台を支えるメソッドを日常へ活かす。</p></article>
+        <div class="section-index">03 — WHY CHANGE</div>
+        <h2 class="section-title" id="why-title">変更した理由</h2>
+        <p class="section-lead">旧版の機能が間違っていたのではありません。ユーザーへ届けたい価値を見直すと、運動だけでは体験が完結しないと判断しました。</p>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">01</span></div><h3>体調は運動だけで決まらない</h3><p>睡眠、疲労、栄養、回復、心、生活習慣も日々の状態を左右します。</p></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">02</span></div><h3>最適な行動は毎日変わる</h3><p>元気な日と疲れている日では、運動・学習・回復の優先順位が異なります。</p></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">03</span></div><h3>知識と実践が分断される</h3><p>動画とLibraryを並べるだけでは、学びが次の行動へつながりにくい。</p></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">04</span></div><h3>小さな前進が見えにくい</h3><p>運動量だけでは、学びや回復を含むユーザーの成長を捉えられません。</p></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">05</span></div><h3>BDX独自の価値を明確にする</h3><p>踊りを教えるのではなく、舞台を支えるメソッドを日常へ活かします。</p></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">→</span></div><h3>プロダクト判断</h3><p>運動コンテンツを増やすのではなく、今日の状態から行動を選び、次の成長へつなぐサービスへ。</p></article>
         </div>
-        <div class="why-conclusion"><span>PRODUCT DECISION</span><strong>運動コンテンツを増やすのではなく、今日の状態から行動を選び、次の成長へつなぐサービスへ。</strong></div>
       </div>
     </section>
 
-    <!-- SECTION: Product -->
-    <section class="section paper" aria-labelledby="product-title">
+    <!-- SECTION: Origin -->
+    <section class="section soft" aria-labelledby="origin-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">03 / PRODUCT</span><div><h2 class="section-title" id="product-title">新しいプロダクト構造</h2><p class="section-lead">バレエメソッドを中核に、MOVE・LEARN・CAREをAI Coachが横断し、すべての行動をProgressへつなげます。</p></div></header>
-        <div class="product-map" aria-label="新しいBDXのプロダクト構造">
-          <div class="product-core"><div><span>CORE METHOD</span><strong>バレエ<br />メソッド</strong></div></div>
-          <div class="product-channels">
-            <article class="product-channel"><b>MOVE</b><h3>動く</h3><ul><li>バレエエクササイズ</li><li>バレエ</li><li>ダンス</li></ul></article>
-            <article class="product-channel"><b>LEARN</b><h3>学ぶ</h3><ul><li>身体・栄養</li><li>睡眠・回復</li><li>論文解説</li></ul></article>
-            <article class="product-channel"><b>CARE</b><h3>整える</h3><ul><li>Recovery</li><li>Mental</li><li>Lifestyle</li></ul></article>
+        <div class="section-index">04 — VALUE EXPANSION</div>
+        <h2 class="section-title" id="origin-title">価値の拡張</h2>
+        <p class="section-lead">新版では、舞台上の舞踊技術だけでなく、その身体を支えている舞台裏のメソッドをBDXの中核へ加えました。</p>
+        <div class="origin-layout">
+          <figure class="origin-image"><img src="assets/bdx-ballet-preparation.png" alt="練習前に身体とシューズを整えるバレエダンサー" /></figure>
+          <div class="origin-content">
+            <div class="origin-axis">
+              <article><span>STAGE / 見える価値</span><h3>身体を使う</h3><p>姿勢、軸、バランス、身体操作、基礎技術、表現。</p></article>
+              <article><span>BACKSTAGE / 新たな中核</span><h3>身体を整える</h3><p>体調管理、健康的な体型維持、栄養、睡眠、回復、心、日常習慣。</p></article>
+            </div>
+            <div class="backstage-grid" aria-label="舞台裏の主な領域"><span>TRAINING<br />身体づくり</span><span>RECOVERY<br />回復</span><span>NUTRITION<br />栄養</span><span>ROUTINE<br />生活管理</span></div>
+            <p class="origin-note">踊りを教えるだけでなく、身体を良い状態に保つ知恵を日常へ。</p>
           </div>
-          <div class="product-layers"><article class="product-layer"><b>AI COACH</b><strong>今日の行動を提案</strong><p>状態・目標・履歴をつなぐ。</p></article><article class="product-layer"><b>PROGRESS</b><strong>成長を可視化</strong><p>運動・学び・回復を記録する。</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Product Structure -->
+    <section class="section white" aria-labelledby="structure-title">
+      <div class="frame">
+        <div class="section-index">05 — PRODUCT STRUCTURE</div>
+        <h2 class="section-title" id="structure-title">プロダクト構造</h2>
+        <p class="section-lead">旧版の機能を捨てたのではなく、運動を中心にした構造を、学習・回復・成長までつながる構造へ広げました。</p>
+        <div class="product-compare" aria-label="旧版と新版のプロダクト構造">
+          <article class="old-product">
+            <span class="label">BEFORE</span><h3>4つの主要機能</h3>
+            <div class="old-stack"><div>WORKOUT<br />動画を選んで運動</div><div>AI COACH<br />行動を支援</div><div>CONDITION<br />体調を記録</div><div>LIBRARY<br />知識を学ぶ</div></div>
+          </article>
+          <div class="product-arrow" aria-hidden="true">→</div>
+          <article class="new-product">
+            <span class="label">AFTER</span><h3>つながる体験</h3>
+            <div class="method-core"><span>すべての中核</span><strong>バレエメソッド</strong></div>
+            <div class="channels">
+              <article><b>MOVE</b><strong>動く</strong><p>バレエエクササイズ・バレエ・ダンス</p></article>
+              <article><b>LEARN</b><strong>学ぶ</strong><p>身体・栄養・睡眠・論文解説</p></article>
+              <article><b>CARE</b><strong>整える</strong><p>回復・心・生活習慣</p></article>
+            </div>
+            <div class="layers"><div><b>AI COACH</b><br />今日の行動を提案</div><div><b>PROGRESS</b><br />成長を可視化</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Core Experience -->
+    <section class="section dark" aria-labelledby="loop-title">
+      <div class="frame">
+        <div class="section-index">06 — CORE EXPERIENCE</div>
+        <h2 class="section-title" id="loop-title">中心体験</h2>
+        <p class="section-lead">ユーザーが大量のコンテンツから毎回選ぶのではなく、今日の状態から始まり、実践結果が次の提案へつながります。</p>
+        <div class="loop" aria-label="新しいBDXの中心体験">
+          <article><span>01</span><strong>状態を知る</strong><p>睡眠・疲労・気分・時間</p></article>
+          <article><span>02</span><strong>AIが整理</strong><p>目標・状態・履歴を確認</p></article>
+          <article><span>03</span><strong>行動を提案</strong><p>理由と所要時間を表示</p></article>
+          <article><span>04</span><strong>実践する</strong><p>動く・学ぶ・整える</p></article>
+          <article><span>05</span><strong>記録する</strong><p>完了・変化・気づき</p></article>
+          <article><span>06</span><strong>成長が見える</strong><p>経験値・レベル・達成</p></article>
+        </div>
+        <div class="loop-return">履歴をAIが理解し、次の行動提案へ</div>
+        <div class="loop-values">
+          <article><strong>迷いを減らす</strong><p>今日することと、その理由が分かる。</p></article>
+          <article><strong>知識と実践をつなぐ</strong><p>学んだことが次の行動に変わる。</p></article>
+          <article><strong>休養も前進にする</strong><p>回復も正式な成長として残る。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: New Features -->
+    <section class="section soft" aria-labelledby="features-title">
+      <div class="frame">
+        <div class="section-index">07 — NEW EXPERIENCE</div>
+        <h2 class="section-title" id="features-title">追加・再定義した機能</h2>
+        <p class="section-lead">2026年8月12日時点のProduction状況を表示しています。</p>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">01</span><span class="status new">実装済み</span></div><h3>今日の状態</h3><p>入力・保存・Quest連携までProduction稼働。</p><div class="mini-flow">状態 <i>→</i> AI <i>→</i> 行動</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">02</span><span class="status new">実装済み</span></div><h3>Today’s Quest</h3><p>AI／Rule／Fallback、安全判定、開始・完了・Skip、XP連携済み。</p><div class="mini-flow">理由 <i>＋</i> 時間 <i>＋</i> 行動</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">03</span><span class="status new">実装済み</span></div><h3>動く・学ぶ・整える</h3><p>3領域の画面、Quest、履歴、Content Graphが稼働。実コンテンツ拡充は未完。</p><div class="mini-flow">MOVE <i>↔</i> LEARN <i>↔</i> CARE</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">04</span><span class="status keep">基盤実装済み</span></div><h3>論文解説</h3><p>データ形式・表示UIは実装済み。正式Paper Explainer 3本は未制作。</p><div class="mini-flow">研究 <i>→</i> 理解 <i>→</i> 実践</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">05</span><span class="status new">実装済み</span></div><h3>回復も成長</h3><p>Recovery Quest、RECOVERY Skill XP、Achievement、Progress表示済み。</p><div class="mini-flow">疲労 <i>→</i> 回復 <i>→</i> 次の状態</div></article>
+          <article class="feature-card"><div class="feature-top"><span class="feature-number">06</span><span class="status new">実装済み</span></div><h3>成長の可視化</h3><p>Global XP、7 Skill、Achievement、Personal Challenge、Progress v2。</p><div class="mini-flow">QUEST <i>→</i> XP <i>→</i> LEVEL</div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Progress -->
+    <section class="section dark" aria-labelledby="progress-title">
+      <div class="frame">
+        <div class="section-index">08 — PROGRESS</div>
+        <h2 class="section-title" id="progress-title">成長の見せ方</h2>
+        <p class="section-lead">旧版の運動記録から、ユーザーごとに異なる成長を見せる仕組みへ。長時間運動や他人との競争は中心にしません。</p>
+        <div class="game-layout">
+          <article class="quest-ui">
+            <span>今日のクエスト / 回復</span>
+            <h3>5分で姿勢を整えよう。</h3>
+            <p>今日は疲労が少し高め。強度を上げるより、身体を整える短いメニューがおすすめです。</p>
+            <div class="quest-button"><span>クエスト完了</span><strong>+20 XP</strong></div>
+          </article>
+          <article class="skill-panel">
+            <h3>自分だけの成長</h3>
+            <div class="skill-list">
+              <div class="skill-row"><span>身体能力</span><div class="skill-bar"><i style="width:78%"></i></div><b>Lv.15</b></div>
+              <div class="skill-row"><span>バレエ</span><div class="skill-bar"><i style="width:48%"></i></div><b>Lv.8</b></div>
+              <div class="skill-row"><span>リズム</span><div class="skill-bar"><i style="width:32%"></i></div><b>Lv.4</b></div>
+              <div class="skill-row"><span>表現力</span><div class="skill-bar"><i style="width:26%"></i></div><b>Lv.3</b></div>
+              <div class="skill-row"><span>知識</span><div class="skill-bar"><i style="width:68%"></i></div><b>Lv.12</b></div>
+              <div class="skill-row"><span>心</span><div class="skill-bar"><i style="width:54%"></i></div><b>Lv.9</b></div>
+              <div class="skill-row"><span>回復</span><div class="skill-bar"><i style="width:64%"></i></div><b>Lv.11</b></div>
+            </div>
+            <p class="game-message">正しい育ち方は、一つではない。</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- SECTION: User Experience -->
-    <section class="section ink" aria-labelledby="experience-title">
+    <section class="section white" aria-labelledby="experience-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">04 / EXPERIENCE</span><div><h2 class="section-title" id="experience-title">ユーザー体験の変化</h2><p class="section-lead">大量のコンテンツから自分で探し続ける体験から、今日の状態に合う行動が分かり、その結果が次へつながる体験へ。</p></div></header>
-        <div class="experience-loop" aria-label="BDXの中心ユーザー体験">
-          <article class="experience-step"><span>01</span><strong>状態を知る</strong><p>睡眠・疲労・気分・時間</p></article>
-          <article class="experience-step"><span>02</span><strong>AIが整理</strong><p>目標・状態・履歴</p></article>
-          <article class="experience-step"><span>03</span><strong>行動を提案</strong><p>理由と所要時間</p></article>
-          <article class="experience-step"><span>04</span><strong>実践する</strong><p>動く・学ぶ・整える</p></article>
-          <article class="experience-step"><span>05</span><strong>記録する</strong><p>完了・変化・気づき</p></article>
-          <article class="experience-step"><span>06</span><strong>成長が見える</strong><p>XP・Skill・Achievement</p></article>
+        <div class="section-index">09 — USER EXPERIENCE</div>
+        <h2 class="section-title" id="experience-title">ユーザー体験</h2>
+        <p class="section-lead">ユーザーが自分で動画を探す体験から、その日の状態に合う行動がひとつの流れで分かる体験へ変わります。</p>
+        <div class="day-compare" aria-label="旧版と新版のユーザー体験">
+          <article class="day-side">
+            <span class="label">BEFORE</span><h3>コンテンツを選ぶ</h3>
+            <div class="day-flow"><div class="day-step"><b>1</b><span>アプリを開く</span></div><div class="day-step"><b>2</b><span>動画一覧から探す</span></div><div class="day-step"><b>3</b><span>ワークアウトする</span></div><div class="day-step"><b>4</b><span>実施を記録する</span></div></div>
+            <p class="day-result">選択はユーザー中心</p>
+          </article>
+          <article class="day-side">
+            <span class="label">AFTER</span><h3>今日の行動が分かる</h3>
+            <div class="day-flow"><div class="day-step"><b>1</b><span>今日の状態を確認</span></div><div class="day-step"><b>2</b><span>AIが理由つきで提案</span></div><div class="day-step"><b>3</b><span>動く・学ぶ・整える</span></div><div class="day-step"><b>4</b><span>成長を次の提案へ</span></div></div>
+            <p class="day-result">選択をAIが支援</p>
+          </article>
         </div>
-        <div class="loop-back">履歴とStructured Memoryを次のQuestへ</div>
-        <div class="value-change"><article><strong>迷いを減らす</strong><p>今日する行動と、その理由が分かる。</p></article><article><strong>知識を行動に変える</strong><p>LEARNがMOVE・CAREとつながる。</p></article><article><strong>休養も前進にする</strong><p>Recoveryも成長として残る。</p></article></div>
       </div>
     </section>
 
     <!-- SECTION: Production Status -->
-    <section class="section paper" aria-labelledby="status-title">
+    <section class="section soft" aria-labelledby="decisions-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">05 / STATUS</span><div><h2 class="section-title" id="status-title">Productionの現在地</h2><p class="section-lead">2026年8月12日時点。Phase 3B.5までProduction反映済みで、現在アクティブなコード実装Phaseはありません。</p></div></header>
-        <div class="release-strip" aria-label="機能実装状況の集計">
-          <article class="release-stat"><b>10</b><strong>実装済み</strong><span>Production稼働</span></article>
-          <article class="release-stat"><b>2</b><strong>基盤実装済み</strong><span>実コンテンツ待ち</span></article>
-          <article class="release-stat"><b>1</b><strong>一部のみ</strong><span>正式文書・運用待ち</span></article>
-          <article class="release-stat"><b>4</b><strong>未着手</strong><span>判断・後続Phase待ち</span></article>
+        <div class="section-index">10 — PRODUCTION STATUS</div>
+        <h2 class="section-title" id="decisions-title">Productionの現在地</h2>
+        <p class="section-lead">Phase 3B.5までProduction反映済みです。アプリの循環を支える基盤は稼働し、次の優先事項は新機能ではなく、実際にユーザーへ届けるコンテンツです。</p>
+        <div class="release-summary" aria-label="機能別進捗サマリー">
+          <article><b>10</b><strong>Production稼働</strong><span>主要機能</span></article>
+          <article><b>2</b><strong>基盤実装済み</strong><span>論文解説・動画</span></article>
+          <article><b>1</b><strong>一部実装</strong><span>Support／Legal</span></article>
+          <article><b>4</b><strong>未着手</strong><span>事業判断・後続領域</span></article>
         </div>
-        <div class="status-groups">
-          <article class="status-group"><h3>Production稼働 <span class="status live">実装済み</span></h3><ul class="status-list">
-            <li><strong>今日の状態</strong><span>入力・保存・Quest連携</span></li><li><strong>Today’s Quest</strong><span>AI／Rule／Fallback、安全判定、開始・完了・Skip、XP</span></li><li><strong>MOVE・LEARN・CARE</strong><span>3領域、Quest、履歴、Content Graphは稼働。実コンテンツ拡充は未完。</span></li><li><strong>AI Coach</strong><span>共通Context、Session、Structured Memory、Quest説明</span></li><li><strong>Recoveryも成長</strong><span>Recovery Quest、Skill XP、Achievement、Progress</span></li><li><strong>成長の可視化</strong><span>Global XP、7 Skill、Personal Challenge、Progress v2</span></li><li><strong>Measurement</strong><span>Funnel、3領域、Feedback、内部Dashboard</span></li><li><strong>My Page</strong><span>Profile、Access、AI Memory、Data、Support／Legal shell</span></li><li><strong>Entitlement</strong><span>Free・Premium・Dance・Beta、Complimentary、中央Resolver</span></li><li><strong>Admin Operations</strong><span>User、無料Access、Measurement、Announcement、Audit</span></li>
-          </ul></article>
-          <article class="status-group"><h3>基盤・一部 <span class="status base">準備済み</span></h3><ul class="status-list">
-            <li><strong>論文解説</strong><span>データ形式・表示UI済み。正式Paper Explainer 3本は未制作。</span></li><li><strong>動画配信</strong><span>Mux、署名再生、進捗・再開・完了基盤済み。本番配信は未有効。</span></li><li><strong>Support／Legal</strong><span>導線とshellのみ。正式文書・運用体制は未完成。</span></li>
-          </ul></article>
-          <article class="status-group"><h3>未着手 <span class="status todo">後続</span></h3><ul class="status-list">
-            <li><strong>Billing</strong><span>Pricing・Trial・Stripe Production・App Store課金</span></li><li><strong>Full CMS</strong><span>初期は管理スクリプト等で運用</span></li><li><strong>Full Ballet／Dance</strong><span>基盤・分類のみ。正式カリキュラムと実コンテンツは後続。</span></li><li><strong>Community／Ranking</strong><span>現時点では正式スコープ外</span></li>
-          </ul></article>
+        <div class="release-groups">
+          <article class="release-panel">
+            <h3>Productionで稼働</h3>
+            <ul>
+              <li>今日の状態<span>入力・保存・Quest連携</span></li>
+              <li>Today’s Quest<span>AI／Rule／Fallback、安全判定、XP</span></li>
+              <li>MOVE・LEARN・CARE<span>画面・Quest・履歴・Content Graph</span></li>
+              <li>AI Coach<span>Context・履歴・Memory・Quest説明</span></li>
+              <li>Recovery／Progress<span>7 Skill・Achievement・Challenge</span></li>
+              <li>運営基盤<span>Measurement・My Page・Entitlement・Admin</span></li>
+            </ul>
+          </article>
+          <article class="release-panel">
+            <h3>基盤／一部実装</h3>
+            <ul>
+              <li>論文解説<span>形式・表示UI。正式3本は未制作</span></li>
+              <li>動画配信<span>Mux・署名再生・再開・完了。本番未有効</span></li>
+              <li>Support／Legal<span>導線とshell。正式文書・運用は未完成</span></li>
+            </ul>
+          </article>
+          <article class="release-panel">
+            <h3>未着手／対象外</h3>
+            <ul>
+              <li>Billing<span>料金・Trial・課金方式は未確定</span></li>
+              <li>Full CMS<span>初期は管理スクリプトで運用</span></li>
+              <li>Full Ballet／Dance<span>正式カリキュラムと実コンテンツ</span></li>
+              <li>Community／Ranking<span>現時点では正式スコープ外</span></li>
+            </ul>
+          </article>
         </div>
-        <div class="production-proof"><span>Production = main = origin/main</span><b>commit 2eb728c6</b><span>Phase 3B.5 Production反映済み</span></div>
+        <div class="release-proof"><span>Production・main・origin/main</span><b>commit 2eb728c6 で一致</b></div>
       </div>
     </section>
 
     <!-- SECTION: Real Content Launch -->
-    <section class="section white" aria-labelledby="content-title">
+    <section class="section white" aria-labelledby="launch-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">06 / NEXT</span><div><h2 class="section-title" id="content-title">次は実コンテンツ</h2><p class="section-lead">最優先は新機能の追加ではありません。Phase 2D-1 Real Content Launchとして、Pilot 3本をProductionへ届けます。</p></div></header>
-        <div class="track-banner">
-          <div class="track-phase"><div><b>2D-1</b><span>REAL CONTENT</span></div></div>
-          <div class="track-main"><span>CURRENT PREPARATION TRACK</span><h3>Pilot 3本の実コンテンツ制作</h3><p>関連LEARN／CARE、技術監修、撮影・編集・字幕、Mux Production準備までを一つの制作単位として進める。</p></div>
-          <div class="asset-zero"><div><b>0</b><span>Production<br />Ballet Exercise asset</span></div></div>
+        <div class="section-index">11 — REAL CONTENT LAUNCH</div>
+        <h2 class="section-title" id="launch-title">次は、実コンテンツ</h2>
+        <p class="section-lead">現在の最優先はPhase 2D-1です。アプリの器を増やすのではなく、3本のPilotを完成させ、5〜10名のユーザーで価値を検証します。</p>
+        <div class="pilot-banner">
+          <div class="pilot-phase"><div><b>2D-1</b><span>REAL CONTENT</span></div></div>
+          <div class="pilot-main"><span>NEXT PRIORITY</span><h3>Pilot 3本をProductionへ</h3><p>技術監修・撮影・編集・字幕・Mux配信までを一つの制作単位として進める。</p></div>
+          <div class="pilot-zero"><div><b>0</b><span>現在の本番Ballet Exercise</span></div></div>
         </div>
-        <div class="pilot-grid">
-          <article class="pilot-card"><span>BE-001</span><h3>5分<br />姿勢リセット</h3><p>POSTURE / Pilot</p></article>
-          <article class="pilot-card"><span>BE-003</span><h3>5分 バレエのための<br />体幹基礎</h3><p>CORE / Pilot</p></article>
-          <article class="pilot-card"><span>BE-005</span><h3>5分<br />股関節モビリティ</h3><p>MOBILITY / Pilot</p></article>
+        <div class="pilot-cards" aria-label="Pilotコンテンツ">
+          <article class="pilot-card"><span>BE-001</span><h3>5分<br />姿勢リセット</h3><p>姿勢と身体感覚を整える短時間コンテンツ。</p></article>
+          <article class="pilot-card"><span>BE-003</span><h3>5分<br />バレエのための体幹基礎</h3><p>初心者が軸と身体操作を体験する基礎コンテンツ。</p></article>
+          <article class="pilot-card"><span>BE-005</span><h3>5分<br />股関節モビリティ</h3><p>動きやすさを支える股関節の可動性コンテンツ。</p></article>
         </div>
-        <div class="production-flow" aria-label="Pilotコンテンツ制作フロー">
-          <article class="production-step"><b>01</b><strong>完全Script</strong><span>BE-001／003／005</span></article><article class="production-step"><b>02</b><strong>動作・Safety Review</strong><span>Ballet Supervisor</span></article><article class="production-step"><b>03</b><strong>LEARN／CARE</strong><span>企画・原稿</span></article><article class="production-step"><b>04</b><strong>撮影・編集</strong><span>字幕を含む</span></article><article class="production-step"><b>05</b><strong>Mux Production</strong><span>環境構築</span></article><article class="production-step"><b>06</b><strong>実動画E2E</strong><span>Preview検証</span></article><article class="production-step"><b>07</b><strong>Pilot公開</strong><span>5〜10名</span></article><article class="production-step"><b>08</b><strong>Decision Gate</strong><span>Measurement／Feedback</span></article>
+        <div class="next-flow" aria-label="Real Content Launchの進行順">
+          <article class="next-step"><b>01</b><strong>Script</strong><span>3本の完全原稿</span></article>
+          <article class="next-step"><b>02</b><strong>Safety</strong><span>動作・安全監修</span></article>
+          <article class="next-step"><b>03</b><strong>Connect</strong><span>LEARN／CARE</span></article>
+          <article class="next-step"><b>04</b><strong>Produce</strong><span>撮影・編集・字幕</span></article>
+          <article class="next-step"><b>05</b><strong>Deliver</strong><span>Mux Production</span></article>
+          <article class="next-step"><b>06</b><strong>Verify</strong><span>実動画E2E</span></article>
+          <article class="next-step"><b>07</b><strong>Pilot</strong><span>5〜10名へ公開</span></article>
+          <article class="next-step"><b>08</b><strong>Decide</strong><span>計測・Feedback</span></article>
+        </div>
+        <div class="owner-grid">
+          <article class="owner-card"><b>PRODUCT TRACK</b><h3>Phase 3C前に決める</h3><p>Pricing、Free／Premium、Trial、月額／年額、Web Stripe、iOS課金、β期間中の課金有無。</p></article>
+          <article class="owner-card"><b>CONFIRMED</b><h3>確認できる担当</h3><p>企画・Product判断とBilling判断はSAT。技術実装・検証はSAT＋CodexでPhase 3B.5まで完了。</p></article>
+          <article class="owner-card"><b>TO ASSIGN</b><h3>制作担当は未確定</h3><p>バレエ監修、出演、撮影・編集、字幕、LEARN／科学編集、Legal、Dance監修の担当者と期限を決める。</p></article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Business Decisions -->
-    <section class="section ink" aria-labelledby="billing-title">
+    <!-- SECTION: Closing -->
+    <section class="closing" aria-labelledby="closing-title">
       <div class="frame">
-        <header class="section-head"><span class="section-no">07 / DECISION</span><div><h2 class="section-title" id="billing-title">Phase 3Cの前に決める</h2><p class="section-lead">Product Trackでは事業判断を先に行います。料金体系が決まるまで、Stripe Production実装は開始しません。</p></div></header>
-        <div class="decision-layout">
-          <article class="decision-panel"><h3>決めること</h3><p>課金コードより先に、商品と提供範囲を定義する。</p><div class="decision-chips"><span>Pricing</span><span>Free／Premium</span><span>Trial</span><span>Monthly／Annual</span><span>Web Stripe</span><span>iOS課金方式</span><span>β期間の課金</span></div></article>
-          <article class="decision-panel"><h3>開始条件</h3><p>Pilotと事業判断を経て、Phase 3C Billing Productionへ進む。</p><div class="decision-rule">Pricing・Free／Premium範囲・Trial・課金方式が決まるまで、Stripe Productionは未着手のまま維持する。</div></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Ownership -->
-    <section class="section paper" aria-labelledby="owner-title">
-      <div class="frame">
-        <header class="section-head"><span class="section-no">08 / OWNERSHIP</span><div><h2 class="section-title" id="owner-title">実行体制</h2><p class="section-lead">正本文書で確認できる担当だけを記載しています。担当者名とカレンダー上の期限は、推測せず未確定とします。</p></div></header>
-        <div class="owner-table" role="table" aria-label="BDX実行体制">
-          <div class="owner-row head" role="row"><div role="columnheader">領域</div><div role="columnheader">担当</div><div role="columnheader">期限</div></div>
-          <div class="owner-row" role="row"><div>企画・Product判断</div><div>SAT</div><div class="unsettled">未確定</div></div>
-          <div class="owner-row" role="row"><div>技術実装・検証</div><div>SAT＋Codex</div><div>Phase 3B.5まで完了</div></div>
-          <div class="owner-row" role="row"><div>Ballet技術監修</div><div class="unsettled">担当者名未確定</div><div class="unsettled">未確定</div></div>
-          <div class="owner-row" role="row"><div>出演・Instruction</div><div class="unsettled">担当者名未確定</div><div class="unsettled">未確定</div></div>
-          <div class="owner-row" role="row"><div>撮影・編集</div><div class="unsettled">担当者名未確定</div><div class="unsettled">未確定</div></div>
-          <div class="owner-row" role="row"><div>字幕制作</div><div class="unsettled">担当者名未確定</div><div class="unsettled">未確定</div></div>
-          <div class="owner-row" role="row"><div>LEARN／科学編集</div><div class="unsettled">担当者名未確定</div><div class="unsettled">未確定</div></div>
-          <div class="owner-row" role="row"><div>Legal／Privacy Review</div><div class="unsettled">担当者名未確定</div><div>正式公開前・日付未確定</div></div>
-          <div class="owner-row" role="row"><div>Billing／Pricing判断</div><div>SAT</div><div>Phase 3C開始前</div></div>
-          <div class="owner-row" role="row"><div>Dance監修</div><div class="unsettled">担当者名未確定</div><div>Phase 2D Pilot後</div></div>
-        </div>
-        <p class="owner-note">次のチーム判断：Pilot制作に必要な担当者、レビュー順序、日付を確定し、制作計画へ登録する。</p>
-      </div>
-    </section>
-
-    <!-- SECTION: Summary -->
-    <section class="summary" aria-labelledby="summary-title">
-      <div class="frame summary-grid">
-        <span class="summary-label">SUMMARY</span>
-        <div><h2 id="summary-title">ユーザーの体験価値を変えた。</h2><p>運動を選んで記録するサービスから、今日の状態を理解し、動く・学ぶ・整える行動を選び、その積み重ねを成長として実感できるサービスへ。プロダクト基盤はProductionで稼働し、次は実コンテンツでその価値を検証します。</p></div>
+        <span class="label">SUMMARY</span>
+        <h2 id="closing-title">ユーザーの体験価値を変えた。</h2>
+        <p>動画を自分で選ぶサービスから、状態を理解し、今日の行動を選び、運動・学習・回復を成長として積み重ねるサービスへ。基盤は稼働し、次は実コンテンツでその価値を確かめます。</p>
       </div>
     </section>
   </main>
