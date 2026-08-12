@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BDXのコンテンツを、ユーザー・状態・目的から逆算して選定するための実務フレームワーク。" />
-  <title>BDX Content Selection Framework v2.0</title>
+  <title>BDX コンテンツ制作ガイド | SAT × 鈴ちゃん</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -434,6 +434,147 @@
     .closing strong { display: block; margin-top: 52px; color: var(--gold); font-family: var(--serif); font-size: 24px; }
     footer { padding: 26px; background: #080e18; color: #647085; text-align: center; font-size: 10px; }
 
+    /* SHARED PRODUCTION GUIDE */
+    .shared-purpose {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 48px;
+    }
+    .shared-purpose article {
+      min-height: 170px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--coral);
+      background: var(--white);
+    }
+    .shared-purpose article:nth-child(2) { border-top-color: var(--blue); }
+    .shared-purpose article:nth-child(3) { border-top-color: var(--mint); }
+    .shared-purpose h3 { margin-top: 12px; font-family: var(--serif); font-size: 22px; }
+    .shared-purpose p { margin-top: 12px; color: var(--muted); font-size: 13px; }
+
+    .content-source {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 48px;
+      background: rgba(255,255,255,.14);
+    }
+    .content-source article { min-height: 220px; padding: 28px; background: var(--navy); }
+    .content-source span { color: var(--gold); font-size: 10px; }
+    .content-source h3 { margin-top: 14px; font-family: var(--serif); font-size: 23px; }
+    .content-source p { margin-top: 14px; color: #9eabba; font-size: 13px; }
+
+    .simple-principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 48px;
+    }
+    .simple-principles article { min-height: 200px; padding: 26px; border: 1px solid var(--line); background: white; }
+    .simple-principles b { color: var(--coral); font-size: 30px; }
+    .simple-principles h3 { margin-top: 10px; font-family: var(--serif); font-size: 20px; }
+    .simple-principles p { margin-top: 10px; color: var(--muted); font-size: 13px; }
+
+    .shared-flow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      margin-top: 52px;
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .shared-step {
+      min-height: 250px;
+      padding: 22px 16px;
+      border-right: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.035);
+      position: relative;
+    }
+    .shared-step:last-child { border-right: 0; }
+    .shared-step::after { content: '›'; position: absolute; right: -6px; top: 44%; color: var(--gold); z-index: 1; }
+    .shared-step:last-child::after { display: none; }
+    .shared-step .owner { display: inline-block; padding: 5px 7px; border: 1px solid rgba(255,255,255,.15); color: var(--gold); font-size: 8px; }
+    .shared-step strong { display: block; margin-top: 18px; font-family: var(--serif); font-size: 17px; line-height: 1.55; }
+    .shared-step p { margin-top: 12px; color: #9eabba; font-size: 11px; line-height: 1.75; }
+
+    .role-board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 50px;
+    }
+    .role-card { min-height: 380px; padding: 30px; border: 1px solid var(--line); background: white; }
+    .role-card.sat { border-top: 6px solid var(--blue); }
+    .role-card.suzu { border-top: 6px solid var(--coral); }
+    .role-card.together { border-top: 6px solid var(--gold); }
+    .role-card h3 { margin-top: 12px; font-family: var(--serif); font-size: 27px; }
+    .role-card > p { margin-top: 10px; color: var(--muted); font-size: 12px; }
+    .role-list { margin-top: 22px; padding: 0; list-style: none; }
+    .role-list li { padding: 11px 0; border-top: 1px solid var(--line); font-size: 12px; line-height: 1.6; }
+
+    .handoff {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .handoff article { padding: 24px; border: 1px solid var(--line); background: white; }
+    .handoff h4 { font-family: var(--serif); font-size: 17px; }
+    .handoff p { margin-top: 10px; color: var(--muted); font-size: 11px; }
+
+    .suzu-review {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 18px;
+      margin-top: 52px;
+    }
+    .review-input, .review-work { border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); }
+    .review-input { padding: 28px; }
+    .review-input h3, .review-work h3 { margin-top: 12px; font-family: var(--serif); font-size: 23px; }
+    .review-input p { margin-top: 12px; color: #9eabba; font-size: 12px; }
+    .input-list { margin-top: 22px; padding: 0; list-style: none; }
+    .input-list li { padding: 12px 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 12px; }
+    .input-list strong { color: var(--gold); }
+    .review-work { overflow: hidden; }
+    .review-work > header { padding: 28px; border-bottom: 1px solid rgba(255,255,255,.14); }
+    .review-sequence { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .review-sequence article { min-height: 190px; padding: 22px; border-right: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); }
+    .review-sequence article:nth-child(2n) { border-right: 0; }
+    .review-sequence article:nth-last-child(-n+2) { border-bottom: 0; }
+    .review-sequence span { color: var(--gold); font-size: 9px; }
+    .review-sequence h4 { margin-top: 10px; font-family: var(--serif); font-size: 17px; }
+    .review-sequence p { margin-top: 8px; color: #9eabba; font-size: 11px; }
+
+    .suzu-output {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .suzu-output article { min-height: 160px; padding: 20px; border: 1px solid rgba(255,255,255,.14); }
+    .suzu-output span { color: var(--gold); font-size: 9px; }
+    .suzu-output strong { display: block; margin-top: 10px; font-size: 13px; }
+    .suzu-output p { margin-top: 8px; color: #9eabba; font-size: 10px; }
+
+    .decision-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 42px; }
+    .decision-guide article { padding: 26px; background: white; border: 1px solid var(--line); }
+    .decision-guide h3 { font-family: var(--serif); font-size: 21px; }
+    .decision-guide p { margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .decision-guide blockquote { margin-top: 18px; padding: 18px; border-left: 4px solid var(--coral); background: #f8f3f4; font-family: var(--serif); font-size: 14px; line-height: 1.9; }
+
+    .compact-production {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 48px;
+      border: 1px solid var(--line);
+    }
+    .compact-production article { min-height: 170px; padding: 24px; border-right: 1px solid var(--line); background: white; position: relative; }
+    .compact-production article:last-child { border-right: 0; }
+    .compact-production article::after { content: '→'; position: absolute; right: -8px; top: 43%; color: var(--gold); z-index: 1; }
+    .compact-production article:last-child::after { display: none; }
+    .compact-production span { color: var(--gold); font-size: 9px; }
+    .compact-production strong { display: block; margin-top: 12px; font-size: 15px; }
+    .compact-production p { margin-top: 8px; color: var(--muted); font-size: 11px; }
+
     @media (max-width: 900px) {
       .section { padding: 84px 0; }
       .formula-track { grid-template-columns: repeat(4,minmax(0,1fr)); }
@@ -442,6 +583,9 @@
       .method-card:nth-child(n+4) { min-height: 250px; }
       .gate-track { grid-template-columns: repeat(3,minmax(0,1fr)); }
       .gate { min-height: 280px; }
+      .shared-flow { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .shared-step:nth-child(3n) { border-right: 0; }
+      .shared-step:nth-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,.14); }
       .production-line { grid-template-columns: repeat(3,minmax(0,1fr)); }
       .production-line div:nth-child(3n) { border-right: 0; }
       .production-line div:nth-child(3n)::after { display: none; }
@@ -588,6 +732,56 @@
       .final-scenarios p { font-size: 8px; }
       .closing p { margin-top: 24px; font-size: 10px; }
       .closing strong { margin-top: 32px; font-size: 17px; }
+
+      .shared-purpose, .content-source, .simple-principles, .role-board { gap: 6px; }
+      .shared-purpose article { min-height: 145px; padding: 14px 10px; }
+      .shared-purpose h3 { font-size: 14px; }
+      .shared-purpose p { font-size: 9px; }
+      .content-source article { min-height: 185px; padding: 15px 10px; }
+      .content-source h3 { font-size: 15px; }
+      .content-source p { font-size: 9px; }
+      .simple-principles article { min-height: 168px; padding: 14px 10px; }
+      .simple-principles b { font-size: 21px; }
+      .simple-principles h3 { font-size: 14px; }
+      .simple-principles p { font-size: 9px; }
+      .shared-flow { grid-template-columns: repeat(3, minmax(0,1fr)); margin-top: 30px; }
+      .shared-step { min-height: 165px; padding: 13px 9px; }
+      .shared-step:nth-child(3n)::after { display: none; }
+      .shared-step .owner { font-size: 6px; padding: 4px; }
+      .shared-step strong { margin-top: 10px; font-size: 11px; }
+      .shared-step p { margin-top: 7px; font-size: 8px; }
+      .role-card { min-height: 310px; padding: 15px 10px; }
+      .role-card h3 { font-size: 17px; }
+      .role-card > p { font-size: 8px; }
+      .role-list { margin-top: 12px; }
+      .role-list li { padding: 7px 0; font-size: 8px; }
+      .handoff { gap: 6px; }
+      .handoff article { padding: 13px 10px; }
+      .handoff h4 { font-size: 12px; }
+      .handoff p { font-size: 8px; }
+      .suzu-review { grid-template-columns: .75fr 1.25fr; gap: 7px; margin-top: 30px; }
+      .review-input { padding: 14px 10px; }
+      .review-input h3, .review-work h3 { font-size: 15px; }
+      .review-input p { font-size: 8px; }
+      .input-list { margin-top: 12px; }
+      .input-list li { padding: 8px 0; font-size: 8px; }
+      .review-work > header { padding: 14px 10px; }
+      .review-sequence article { min-height: 150px; padding: 12px 8px; }
+      .review-sequence h4 { font-size: 11px; }
+      .review-sequence p { font-size: 8px; }
+      .suzu-output { gap: 5px; }
+      .suzu-output article { min-height: 125px; padding: 11px 7px; }
+      .suzu-output strong { font-size: 9px; }
+      .suzu-output p { font-size: 7px; }
+      .decision-guide { gap: 6px; margin-top: 26px; }
+      .decision-guide article { padding: 14px 10px; }
+      .decision-guide h3 { font-size: 14px; }
+      .decision-guide p { font-size: 8px; }
+      .decision-guide blockquote { padding: 11px; font-size: 9px; }
+      .compact-production { margin-top: 28px; }
+      .compact-production article { min-height: 125px; padding: 12px 8px; }
+      .compact-production strong { font-size: 10px; }
+      .compact-production p { font-size: 8px; }
     }
   </style>
 </head>
@@ -595,248 +789,161 @@
   <!-- SECTION: Hero -->
   <header class="hero">
     <div class="frame hero-inner">
-      <p class="hero-mark">BDX / CONTENT STRATEGY / VER.2.0</p>
-      <h1>Content<br />Selection<br />Framework<span>BDX コンテンツ選定フレームワーク</span></h1>
-      <p class="hero-copy">何を教えるかではなく、<br />誰の、どんな状態に、どんな価値を届けるか。</p>
-      <div class="hero-rule" aria-label="BDXコンテンツ設計の起点">
-        <div><span>START</span><strong>ユーザーを<br />理解する</strong></div>
-        <div><span>DECIDE</span><strong>目的から<br />手段を選ぶ</strong></div>
-        <div><span>GOAL</span><strong>最高の体調を<br />日常に</strong></div>
+      <p class="hero-mark">BDX / SAT × 鈴ちゃん / SHARED GUIDE</p>
+      <h1>Content<br />Production<br />Guide<span>BDX コンテンツ制作ガイド</span></h1>
+      <p class="hero-copy">何を作るか。どう作るか。<br />二人の役割を、ひとつの流れに。</p>
+      <div class="hero-rule" aria-label="この資料で共有すること">
+        <div><span>WHAT</span><strong>どんなコンテンツを<br />作るか</strong></div>
+        <div><span>FLOW</span><strong>どんな順番で<br />作るか</strong></div>
+        <div><span>ROLE</span><strong>誰が何を<br />担当するか</strong></div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- SECTION: Principle -->
-    <section class="section white" aria-labelledby="principle-title">
+    <!-- SECTION: Purpose -->
+    <section class="section white" aria-labelledby="purpose-title">
       <div class="frame">
-        <div class="section-index">00 — 基本原則</div>
-        <h2 class="section-title" id="principle-title">バレエ動作から、<br />企画を始めない。</h2>
-        <p class="section-lead">BDXの目的は、一般ユーザーにバレエ技術を習得させることではありません。バレリーナ・ダンサーの身体づくり、身体管理、生活習慣、表現に至る知恵を日常へ翻訳し、「最高の体調を日常に」へつなげます。</p>
-
-        <div class="not-start">
-          <article class="not-card">
-            <span class="label">NOT THE START</span>
-            <h3>「何のバレエ動作を教えるか？」</h3>
-            <p>プリエがあるから、プリエ動画を作る。プロが行っているから、そのまま採用する。</p>
-          </article>
-          <article class="start-card">
-            <span class="label">THE START</span>
-            <h3>「誰の、どんな状態に、どんな価値を提供するか？」</h3>
-            <p>目的を決め、その実現に最も適した手段を選びます。</p>
-            <div class="choice-examples"><span>バレエ動作</span><span>筋力トレーニング</span><span>回復</span><span>学習</span></div>
-          </article>
-        </div>
-
-        <div class="formula" aria-label="BDXコンテンツ制作の基本式">
-          <span class="label">BDX CONTENT FORMULA</span>
-          <div class="formula-track">
-            <div class="formula-item"><strong>USER</strong><span>誰に</span></div>
-            <div class="formula-item"><strong>CONDITION</strong><span>どんな状態に</span></div>
-            <div class="formula-item"><strong>PURPOSE</strong><span>何を提供するか</span></div>
-            <div class="formula-item"><strong>METHOD</strong><span>何を使うか</span></div>
-            <div class="formula-item"><strong>TRANSLATION</strong><span>日常へどう変えるか</span></div>
-            <div class="formula-item"><strong>DELIVERY</strong><span>どう届けるか</span></div>
-            <div class="formula-item"><strong>SPEC</strong><span>仕様をどう定めるか</span></div>
-            <div class="formula-item"><strong>SAFETY</strong><span>専門性と安全性</span></div>
-          </div>
+        <div class="section-index">01 — この資料の目的</div>
+        <h2 class="section-title" id="purpose-title">二人で迷わず、<br />同じ目的へ進む。</h2>
+        <p class="section-lead">この資料は、SATと鈴ちゃんがBDXコンテンツの全体像と役割を共有するためのガイドです。細かな企画ルールを覚えることではなく、制作の現在地と次にすることが分かる状態を目指します。</p>
+        <div class="shared-purpose">
+          <article><span class="label">01 / CONTENT</span><h3>作るものが分かる</h3><p>BDXが扱うコンテンツの範囲と、一般ユーザーへ届ける価値を共有する。</p></article>
+          <article><span class="label">02 / FLOW</span><h3>全体像が分かる</h3><p>企画から撮影・公開・改善まで、制作がどこまで進んでいるか分かる。</p></article>
+          <article><span class="label">03 / ROLE</span><h3>担当が分かる</h3><p>SAT、鈴ちゃん、二人で決めることを明確にする。</p></article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Framework Map -->
-    <section class="section dark" aria-labelledby="map-title">
+    <!-- SECTION: Content Overview -->
+    <section class="section dark" aria-labelledby="content-title">
       <div class="frame">
-        <div class="section-index">FRAMEWORK MAP</div>
-        <h2 class="section-title" id="map-title">12のステップを、<br />4つの判断に整理する。</h2>
-        <div class="phase-map">
-          <article class="phase"><span class="phase-no">PHASE 01</span><h3>誰に何を<br />届けるか</h3><p>ユーザーと状態を理解し、提供価値を定義する。</p><div class="phase-steps"><span>01 USER</span><span>02 NEED</span><span>03 VALUE</span></div></article>
-          <article class="phase"><span class="phase-no">PHASE 02</span><h3>知恵を日常へ<br />変換する</h3><p>目的に適した手段を選び、BDXらしい体験へ落とす。</p><div class="phase-steps"><span>04 METHOD</span><span>05 TRANSLATE</span><span>06 DELIVER</span></div></article>
-          <article class="phase"><span class="phase-no">PHASE 03</span><h3>仕様と品質を<br />定義する</h3><p>商品仕様、Gate、専門家レビューで品質を守る。</p><div class="phase-steps"><span>07 SPEC</span><span>08 GATE</span><span>09 REVIEW</span></div></article>
-          <article class="phase"><span class="phase-no">PHASE 04</span><h3>制作し、<br />学び直す</h3><p>実装・検証・分析を、次の企画へ循環させる。</p><div class="phase-steps"><span>10 BUILD</span><span>11 TEST</span><span>12 LEARN</span></div></article>
+        <div class="section-index">02 — どんなコンテンツを作るか</div>
+        <h2 class="section-title" id="content-title">舞台を支える知恵を、<br />日常で使える体験へ。</h2>
+        <p class="section-lead">バレエを習得するためだけの教材ではありません。バレリーナ・ダンサーが培ってきた身体操作、身体管理、生活、心、表現の知恵を、一般ユーザーの「最高の体調」につながる形へ変えます。</p>
+        <div class="content-source">
+          <article><span>BODY / 舞台上の技術</span><h3>身体を使う知恵</h3><p>姿勢、軸、バランス、可動性、筋力、身体コントロール、バレエ動作。</p></article>
+          <article><span>CONDITION / 舞台裏</span><h3>身体を整える知恵</h3><p>トレーニング、栄養、睡眠、回復、身体のケア、ルーティン、体調管理。</p></article>
+          <article><span>JOY / 表現</span><h3>身体を楽しむ知恵</h3><p>音楽、リズム、表現、振付、達成感、ダンスを通じた楽しさ。</p></article>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Phase 1 -->
-    <section class="section soft" aria-labelledby="phase1-title">
-      <div class="frame">
-        <div class="section-index">PHASE 01 — DEFINE VALUE</div>
-        <h2 class="section-title" id="phase1-title">誰に、今、<br />何を届けるのか。</h2>
-        <div class="step-stack">
-          <article class="step-card">
-            <div class="step-side"><span>STEP</span><strong>01</strong></div>
-            <div class="step-body"><h3>ユーザーを定義する</h3><p class="step-question">誰に届けるのか？</p><p>原則として、バレエ経験を前提にしません。</p><ul class="tag-list"><li>運動初心者</li><li>普段あまり身体を動かしていない人</li><li>適度な運動習慣がある人</li><li>身体を整えたい人</li><li>日常の体調管理をしたい人</li><li>楽しく身体を動かしたい人</li></ul></div>
-          </article>
-          <article class="step-card">
-            <div class="step-side"><span>STEP</span><strong>02</strong></div>
-            <div class="step-body"><h3>現在の状態・ニーズを定義する</h3><p class="step-question">今、そのユーザーには何が必要なのか？</p><p>Today's ConditionとAI Coachへ接続できる粒度で整理します。</p><ul class="tag-list"><li>疲れている</li><li>身体が重い</li><li>軽く動きたい</li><li>しっかり動きたい</li><li>動きやすさを高めたい</li><li>姿勢を意識したい</li><li>楽しく動きたい</li><li>身体を理解したい</li><li>回復したい</li><li>睡眠・食生活を整えたい</li><li>気分を切り替えたい</li></ul></div>
-          </article>
-          <article class="step-card">
-            <div class="step-side"><span>STEP</span><strong>03</strong></div>
-            <div class="step-body"><h3>提供する価値・目的を決める</h3><p class="step-question">このコンテンツを通して何を提供するのか？</p><p>「最高の体調を日常に」へどうつながるかを説明できる目的だけを採用します。</p><ul class="tag-list"><li>身体を動かして調子をつくる</li><li>身体機能を育てる</li><li>動きやすい身体をつくる</li><li>姿勢・身体操作を経験する</li><li>音楽に合わせて楽しむ</li><li>疲労から回復する</li><li>身体や状態を理解する</li><li>睡眠・栄養・回復を学ぶ</li><li>体調管理方法を身につける</li></ul></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Method -->
-    <section class="section white" aria-labelledby="method-title">
-      <div class="frame">
-        <div class="section-index">STEP 04 — METHOD</div>
-        <h2 class="section-title" id="method-title">目的を決めてから、<br />手段を探す。</h2>
-        <p class="section-lead">バレエ動作は特別扱いしません。目的を実現する候補の一つとして、トレーニング、回復、生活管理、心・表現と並べて比較します。</p>
-        <div class="method-grid">
-          <article class="method-card"><h3>バレエ由来の身体活動</h3><ul><li>プリエ</li><li>タンジュ</li><li>ポールドブラ</li><li>ルルベ</li><li>ロン・ドゥ・ジャンブ</li><li>その他の身体操作</li></ul></article>
-          <article class="method-card"><h3>身体づくり</h3><ul><li>筋力トレーニング</li><li>Conditioning</li><li>Mobility Exercise</li><li>有酸素運動・HIIT</li><li>Balance Training</li><li>Coordination Exercise</li></ul></article>
-          <article class="method-card"><h3>身体管理・回復</h3><ul><li>Warm-up</li><li>Cool-down</li><li>Recovery</li><li>Stretching</li><li>Relaxation</li><li>呼吸</li></ul></article>
-          <article class="method-card"><h3>生活管理</h3><ul><li>Sleep</li><li>Nutrition</li><li>Hydration</li><li>Meal timing</li><li>Daily Routine</li><li>Self-care</li></ul></article>
-          <article class="method-card"><h3>心・Performance</h3><ul><li>Motivation</li><li>Focus</li><li>Preparation</li><li>Confidence</li><li>Performance anxiety</li><li>音楽・表現・Routine</li></ul></article>
-        </div>
-        <div class="selection-rule"><strong>採用理由は、権威ではなく適合性。</strong><p>「バレリーナがやっているから」ではなく、なぜ今回のユーザーと目的に適しているのかを説明します。</p></div>
-      </div>
-    </section>
-
-    <!-- SECTION: Translation -->
-    <section class="section dark" aria-labelledby="translation-title">
-      <div class="frame">
-        <div class="section-index">STEP 05 — BDX TRANSLATION</div>
-        <h2 class="section-title" id="translation-title">プロの実践を、<br />そのまま移植しない。</h2>
-        <p class="section-lead">一般的な健康コンテンツを無差別に扱わず、バレリーナ・ダンサーの身体づくり、身体管理、Performanceを支える世界との接点を確認します。</p>
-        <div class="translation-flow">
-          <article><span>01</span><strong>プロの実践</strong><p>何をしているかを見る</p></article>
-          <article><span>02</span><strong>目的・背景</strong><p>なぜ行うかを理解する</p></article>
-          <article><span>03</span><strong>科学・専門性</strong><p>妥当性と条件を確認する</p></article>
-          <article><span>04</span><strong>日常へ翻訳</strong><p>一般ユーザーが使える形へ</p></article>
-        </div>
-        <div class="meaning-grid">
-          <div><strong>プリエ</strong><p>バレエ由来の身体操作</p></div><div><strong>筋力トレーニング</strong><p>Performanceを支える身体づくり</p></div><div><strong>HIIT / Conditioning</strong><p>必要な体力を支えるTraining</p></div><div><strong>Recovery</strong><p>継続するための身体管理</p></div><div><strong>Sleep / Nutrition</strong><p>身体・回復を支える生活管理</p></div><div><strong>Preparation</strong><p>本番へ向けた準備・Routine</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Delivery -->
-    <section class="section soft" aria-labelledby="delivery-title">
-      <div class="frame">
-        <div class="section-index">STEP 06 — DELIVERY</div>
-        <h2 class="section-title" id="delivery-title">価値に合わせて、<br />届け方を選ぶ。</h2>
         <div class="channel-grid">
-          <article class="channel"><span class="label">MOVE</span><h3>身体を動かす</h3><p>知識ではなく、身体で経験する。</p><ul class="tag-list"><li>バレエエクササイズ</li><li>筋力トレーニング</li><li>Conditioning</li><li>Mobility</li><li>HIIT</li><li>Dance / Rhythm</li></ul></article>
-          <article class="channel"><span class="label">LEARN</span><h3>理解する</h3><p>身体・心・生活を、根拠とともに学ぶ。</p><ul class="tag-list"><li>BODY SCIENCE</li><li>NUTRITION</li><li>RECOVERY</li><li>MIND</li><li>LIFESTYLE</li></ul></article>
-          <article class="channel"><span class="label">CARE</span><h3>回復・調整する</h3><p>休むことも、その日の前進にする。</p><ul class="tag-list"><li>Recovery</li><li>Mental</li><li>Lifestyle</li></ul></article>
-        </div>
-        <p class="graph-note"><strong>CONTENT GRAPH</strong>　MOVE / LEARN / CAREを無理にセットにせず、自然な接続がある時だけ、次の行動へつながる体験として設計します。</p>
-      </div>
-    </section>
-
-    <!-- SECTION: Specification -->
-    <section class="section white" aria-labelledby="spec-title">
-      <div class="frame">
-        <div class="section-index">STEP 07 — CONTENT SPEC</div>
-        <h2 class="section-title" id="spec-title">アイデアを、<br />実装可能な仕様へ。</h2>
-        <div class="spec-board">
-          <div class="spec-grid">
-            <div><span>01</span><strong>対象ユーザー</strong></div><div><span>02</span><strong>利用シーン</strong></div><div><span>03</span><strong>時間</strong></div><div><span>04</span><strong>難易度・強度</strong></div><div><span>05</span><strong>スペース・道具</strong></div><div><span>06</span><strong>Video / Audio / Text / Timer</strong></div><div><span>07</span><strong>Movement構成</strong></div><div><span>08</span><strong>Safety</strong></div><div><span>09</span><strong>AI Coach推薦条件</strong></div><div><span>10</span><strong>Skill Mapping</strong></div><div><span>11</span><strong>Related LEARN</strong></div><div><span>12</span><strong>Related CARE</strong></div>
-          </div>
-          <div class="anti-volume"><b>×</b><p><strong>時間だけを変えて、水増ししない。</strong><br />別コンテンツにするなら、目的・体験・難易度・Progression・利用シーンに意味のある違いが必要です。</p></div>
+          <article class="channel"><span class="label">MOVE</span><h3>動く</h3><p>身体で経験するコンテンツ。</p><ul class="tag-list"><li>バレエエクササイズ</li><li>バレエ</li><li>筋力・Mobility</li><li>Conditioning</li><li>Dance</li></ul></article>
+          <article class="channel"><span class="label">LEARN</span><h3>学ぶ</h3><p>身体・心・生活を理解するコンテンツ。</p><ul class="tag-list"><li>身体科学</li><li>栄養</li><li>睡眠・回復</li><li>心・習慣</li><li>論文解説</li></ul></article>
+          <article class="channel"><span class="label">CARE</span><h3>整える</h3><p>回復と調整を実践するコンテンツ。</p><ul class="tag-list"><li>Recovery</li><li>ストレッチ</li><li>呼吸・Relaxation</li><li>Mental</li><li>Lifestyle</li></ul></article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Gate -->
-    <section class="section dark" aria-labelledby="gate-title">
+    <!-- SECTION: Principles -->
+    <section class="section soft" aria-labelledby="principles-title">
       <div class="frame">
-        <div class="section-index">STEP 08 — BDX CONTENT GATE</div>
-        <h2 class="section-title" id="gate-title">作れるかではなく、<br />作るべきかを問う。</h2>
-        <p class="section-lead">制作候補は5つのGateを通過したものだけを企画承認へ進めます。</p>
-        <div class="gate-wrap">
-          <div class="gate-track">
-            <article class="gate"><span class="gate-no">GATE 01</span><h3>最高の体調</h3><p class="gate-question">「最高の体調を日常に」に、どう貢献するか？</p><p>目的との接続を一文で説明できること。</p></article>
-            <article class="gate"><span class="gate-no">GATE 02</span><h3>日常への翻訳</h3><p class="gate-question">一般ユーザーの日常に、応用する価値があるか？</p><p>プロ専用の実践を、そのまま持ち込まない。</p></article>
-            <article class="gate"><span class="gate-no">GATE 03</span><h3>BDXとしての意味</h3><p class="gate-question">なぜBDXが、これを提供するのか？</p><p>バレエ・ダンサーの身体、生活、Performanceとの意味ある接点。</p></article>
-            <article class="gate"><span class="gate-no">GATE 04</span><h3>専門性・科学・安全性</h3><p class="gate-question">根拠、監修、安全性は適切か？</p><p>専門領域を分け、それぞれの専門性で確認する。</p></article>
-            <article class="gate"><span class="gate-no">GATE 05</span><h3>AI Coach推薦可能性</h3><p class="gate-question">誰に、どんな状態で、なぜ薦めるのか？</p><p>条件を定義できない時は、目的の曖昧さを疑う。</p></article>
-          </div>
-          <div class="review-fields" aria-label="専門領域別レビュー">
-            <div><strong>BALLET</strong><span>バレエ専門監修</span></div><div><strong>EXERCISE</strong><span>運動科学等</span></div><div><strong>NUTRITION</strong><span>栄養学</span></div><div><strong>RECOVERY</strong><span>関連科学</span></div><div><strong>MENTAL</strong><span>心理学等</span></div>
-          </div>
+        <div class="section-index">03 — 3つの共通ルール</div>
+        <h2 class="section-title" id="principles-title">手段ではなく、<br />目的から考える。</h2>
+        <div class="simple-principles">
+          <article><b>1</b><h3>ユーザーから始める</h3><p>誰の、どんな状態に、何を届けるかを先に決める。バレエ経験は前提にしない。</p></article>
+          <article><b>2</b><h3>最適な方法を選ぶ</h3><p>答えがプリエならプリエ、筋力トレーニングなら筋トレ、回復なら休む。</p></article>
+          <article><b>3</b><h3>プロのまま渡さない</h3><p>実践の目的と安全性を確認し、一般ユーザーが日常で使える形へ変える。</p></article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Expert Review -->
-    <section class="section soft" aria-labelledby="expert-title">
+    <!-- SECTION: Shared Flow -->
+    <section class="section dark" aria-labelledby="flow-title">
       <div class="frame">
-        <div class="section-index">STEP 09 — EXPERT REVIEW</div>
-        <h2 class="section-title" id="expert-title">専門家には、<br />目的を渡す。</h2>
-        <p class="section-lead">「何を作るか」をゼロから丸投げせず、ユーザー・状態・目的・候補を整理した上で、専門的な判断を依頼します。</p>
-        <div class="expert-layout">
-          <article class="expert-card"><span class="label">BALLET REVIEW</span><h3>鈴ちゃんが確認すること</h3><ul class="tag-list"><li>バレエ由来の動作</li><li>バレエ特有の身体操作</li><li>バレエとしての自然さ</li><li>初心者への実演・指導</li><li>Movement Sequence</li><li>バレエ技術上のSafety</li></ul></article>
-          <article class="brief-card"><span class="label">GOOD BRIEF</span><h3>相談のしかた</h3><blockquote>「運動初心者が5分で身体を動かし、丁寧にコントロールする感覚を体験できる内容を作りたい。プリエを候補に考えているけど、この目的ならどんな動きが適切？」</blockquote><p>「プリエより別の動きが適切」という変更提案は、積極的に取り入れます。バレエ専門家に、栄養・心理・運動科学など全領域を背負わせません。</p></article>
+        <div class="section-index">04 — 共同制作フロー</div>
+        <h2 class="section-title" id="flow-title">企画から改善まで、<br />6つのステップ。</h2>
+        <p class="section-lead">SATが企画の目的を整理し、鈴ちゃんがバレエの専門性を加え、二人で体験を完成させます。</p>
+        <div class="shared-flow" aria-label="SATと鈴ちゃんの共同制作フロー">
+          <article class="shared-step"><span class="owner">SAT</span><strong>1. 企画ブリーフ</strong><p>ユーザー、状態、目的、形式、候補を整理して鈴ちゃんへ共有。</p></article>
+          <article class="shared-step"><span class="owner">一緒に</span><strong>2. 方法を選ぶ</strong><p>目的に対して、どの動き・構成が適切か相談する。</p></article>
+          <article class="shared-step"><span class="owner">鈴ちゃん</span><strong>3. バレエ監修</strong><p>動作、順番、伝え方、初心者対応、安全性を確認・提案。</p></article>
+          <article class="shared-step"><span class="owner">一緒に</span><strong>4. 試作・リハーサル</strong><p>実際に動き、時間、難易度、流れ、分かりやすさを調整。</p></article>
+          <article class="shared-step"><span class="owner">分担</span><strong>5. 撮影・実装</strong><p>鈴ちゃんは実演・動作確認。SATは撮影設計、編集、BDX実装。</p></article>
+          <article class="shared-step"><span class="owner">SAT → 共有</span><strong>6. 検証・改善</strong><p>SATが利用結果を分析し、学びを鈴ちゃんと共有して次へ。</p></article>
         </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Roles -->
+    <section class="section white" aria-labelledby="roles-title">
+      <div class="frame">
+        <div class="section-index">05 — 役割分担</div>
+        <h2 class="section-title" id="roles-title">責任を分け、<br />大事な判断は一緒に。</h2>
+        <div class="role-board">
+          <article class="role-card sat"><span class="label">SAT</span><h3>企画とプロダクト</h3><p>ユーザー価値とBDX全体に責任を持つ。</p><ul class="role-list"><li>対象ユーザー・状態・目的を定義</li><li>企画ブリーフとコンテンツ仕様を作成</li><li>科学的根拠・他分野の専門監修を手配</li><li>撮影設計・編集・アプリ実装</li><li>AI Coachの推薦条件を設定</li><li>ユーザー検証と改善判断</li></ul></article>
+          <article class="role-card suzu"><span class="label">鈴ちゃん</span><h3>バレエと動作監修</h3><p>バレエ由来の動きと伝え方に責任を持つ。</p><ul class="role-list"><li>目的に合うバレエ動作を提案</li><li>Movement Sequenceを設計・修正</li><li>バレエとしての自然さを確認</li><li>初心者向けのCueと実演を提案</li><li>バレエ技術上のSafetyを確認</li><li>撮影時の実演・最終動作確認</li></ul></article>
+          <article class="role-card together"><span class="label">一緒に決める</span><h3>体験の完成度</h3><p>企画意図と専門性が重なる部分を二人で判断する。</p><ul class="role-list"><li>目的に対する動きの適合性</li><li>初心者が実践できる難易度</li><li>時間内のMovement構成</li><li>楽しく、またやりたい体験か</li><li>公開前の最終確認</li></ul></article>
+        </div>
+        <div class="handoff">
+          <article><h4>鈴ちゃんに丸投げしないこと</h4><p>SATが「誰に・何を届けるか」を決めずに、ゼロからコンテンツ案を考えてもらうことはしません。</p></article>
+          <article><h4>鈴ちゃんが背負わなくてよいこと</h4><p>栄養学、心理学、運動科学、医療、AI推薦、事業判断など、バレエ以外の専門領域を一人で保証する必要はありません。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Suzu Review -->
+    <section class="section dark" aria-labelledby="suzu-title">
+      <div class="frame">
+        <div class="section-index">STEP 09 — 鈴ちゃんのバレエ監修</div>
+        <h2 class="section-title" id="suzu-title">鈴ちゃんが、<br />迷わず判断するために。</h2>
+        <p class="section-lead">鈴ちゃんは企画をゼロから作るのではなく、SATから受け取った目的に対して「バレエの専門家として、どう動けば最も良いか」を判断します。</p>
+
+        <div class="suzu-review">
+          <article class="review-input">
+            <span class="label">SATから受け取るもの</span>
+            <h3>企画ブリーフ</h3>
+            <p>次の情報が不足している時は、監修を始める前にSATへ確認します。</p>
+            <ul class="input-list">
+              <li><strong>誰に</strong><br />初心者、運動習慣、身体の状態</li>
+              <li><strong>何のために</strong><br />姿勢、回復、身体操作、楽しさなど</li>
+              <li><strong>利用場面</strong><br />朝、仕事後、運動前後など</li>
+              <li><strong>条件</strong><br />時間、強度、場所、道具</li>
+              <li><strong>候補</strong><br />想定している動きと理由</li>
+            </ul>
+          </article>
+          <article class="review-work">
+            <header><span class="label">確認する順番</span><h3>4つの視点で監修する</h3></header>
+            <div class="review-sequence">
+              <article><span>01 / FIT</span><h4>目的に合うか</h4><p>候補の動きが、今回ユーザーへ届けたい価値に適しているか。より良い動きがあれば変更を提案する。</p></article>
+              <article><span>02 / SEQUENCE</span><h4>順番が自然か</h4><p>準備から本動作、終わりまで無理なくつながるか。回数、左右、テンポ、移行を確認する。</p></article>
+              <article><span>03 / BEGINNER</span><h4>初心者に伝わるか</h4><p>専門用語を言い換え、見る場所、意識する場所、よくある間違いを短いCueにする。</p></article>
+              <article><span>04 / SAFETY</span><h4>安全に実践できるか</h4><p>バレエ技術上の無理、負担、代替動作、停止すべきサインを確認する。不明な医学判断はSATへ返す。</p></article>
+            </div>
+          </article>
+        </div>
+
+        <div class="suzu-output" aria-label="鈴ちゃんから返すもの">
+          <article><span>OUTPUT 01</span><strong>採用する動き</strong><p>候補のままでよいか、別の動きへ変えるか。</p></article>
+          <article><span>OUTPUT 02</span><strong>Movement Sequence</strong><p>動きの順番、回数、左右、テンポ、つなぎ。</p></article>
+          <article><span>OUTPUT 03</span><strong>Cueと初心者対応</strong><p>伝える言葉、注意点、簡単な代替動作。</p></article>
+          <article><span>OUTPUT 04</span><strong>撮影時の確認点</strong><p>見せる角度、実演上の要点、最終チェック。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Review Example -->
+    <section class="section soft" aria-labelledby="example-title">
+      <div class="frame">
+        <div class="section-index">07 — 監修依頼の具体例</div>
+        <h2 class="section-title" id="example-title">依頼と返答の形を、<br />あらかじめ揃える。</h2>
+        <div class="decision-guide">
+          <article><span class="label">SAT → 鈴ちゃん</span><h3>この形で依頼する</h3><blockquote>運動初心者が5分で身体を動かし、丁寧にコントロールする感覚を体験できる内容を作りたい。自宅・道具なし・低〜中強度。プリエを候補に考えているけど、この目的ならどんな動きと順番が適切？</blockquote></article>
+          <article><span class="label">鈴ちゃん → SAT</span><h3>この内容を返す</h3><blockquote>プリエは採用できる。ただし最初に足裏と姿勢を確認する動きを入れた方がよい。プリエは浅い範囲から始め、膝とつま先の方向をCueにする。違和感がある人向けに可動域を小さくする代替も用意する。</blockquote></article>
+        </div>
+        <div class="selection-rule"><strong>迷った時は、目的へ戻る。</strong><p>「バレエとして正しいか」だけでなく、「今回の一般ユーザーが、この目的のために安全に使えるか」で判断します。</p></div>
       </div>
     </section>
 
     <!-- SECTION: Production -->
     <section class="section white" aria-labelledby="production-title">
       <div class="frame">
-        <div class="section-index">STEP 10 — PRODUCTION</div>
-        <h2 class="section-title" id="production-title">承認された企画を、<br />体験へ変える。</h2>
-        <div class="production-line" aria-label="制作実装フロー">
-          <div><span>01</span><strong>Movement<br />Sequence</strong></div><div><span>02</span><strong>Cue</strong></div><div><span>03</span><strong>Safety</strong></div><div><span>04</span><strong>Script</strong></div><div><span>05</span><strong>Technical<br />Review</strong></div><div><span>06</span><strong>撮影・制作</strong></div><div><span>07</span><strong>Mux</strong></div><div><span>08</span><strong>BDX</strong></div><div><span>09</span><strong>AI Coach<br />Quest</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Validation -->
-    <section class="section soft" aria-labelledby="validation-title">
-      <div class="frame">
-        <div class="section-index">STEP 11 — USER VALIDATION</div>
-        <h2 class="section-title" id="validation-title">公開して終わらず、<br />価値の兆候を見る。</h2>
-        <div class="validation-board">
-          <article class="metric-panel"><h3>観察するもの</h3><div class="metrics"><span>Quest Start</span><span>Completion</span><span>Video Progress</span><span>難易度</span><span>楽しさ</span><span>役立ち度</span><span>身体への気づき</span><span>またやりたい</span><span>Related Content</span><span>Interview</span></div></article>
-          <article class="pilot-panel"><span class="label">SMALL PILOT</span><h3>少人数検証の目的</h3><strong>統計的な結論ではなく、<br />重大な問題・価値の兆候・改善点を見つける。</strong><p>数字だけでなく、体験中の迷い、言葉、身体感覚の変化を確認します。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Learning Loop -->
-    <section class="section dark" aria-labelledby="learning-title">
-      <div class="frame">
-        <div class="section-index">STEP 12 — NEXT CONTENT</div>
-        <h2 class="section-title" id="learning-title">検証結果を、<br />次の企画へ返す。</h2>
-        <p class="section-lead">AIが自動的に学習するという意味ではありません。当面は、人が責任を持って分析し、専門家レビューを経て改善します。</p>
-        <div class="learning-loop">
-          <div><span>01</span><strong>BDXデータ</strong></div><div><span>02</span><strong>あなた＋AIで分析</strong></div><div><span>03</span><strong>次の企画</strong></div><div><span>04</span><strong>専門家レビュー</strong></div><div><span>05</span><strong>制作</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Master Flow -->
-    <section class="section white" aria-labelledby="flow-title">
-      <div class="frame">
-        <div class="section-index">CONTENT PRODUCTION FLOW</div>
-        <h2 class="section-title" id="flow-title">一つの企画を、<br />次の学びまでつなぐ。</h2>
-        <div class="master-flow" aria-label="BDXコンテンツ制作フロー">
-          <div class="flow-node"><span>01 / USER</span><strong>誰に？</strong><p>対象を定義</p></div><div class="flow-node"><span>02 / CONDITION</span><strong>今何が必要？</strong><p>状態・ニーズ</p></div><div class="flow-node"><span>03 / PURPOSE</span><strong>何を提供する？</strong><p>顧客価値</p></div><div class="flow-node"><span>04 / METHOD</span><strong>何が最適？</strong><p>手段を比較</p></div>
-          <div class="flow-node"><span>05 / TRANSLATION</span><strong>どう日常へ？</strong><p>知恵を翻訳</p></div><div class="flow-node"><span>06 / DELIVERY</span><strong>MOVE / LEARN / CARE</strong><p>届け方</p></div><div class="flow-node"><span>07 / SPEC</span><strong>商品仕様</strong><p>実装条件</p></div><div class="flow-node"><span>08 / GATE</span><strong>作るべきか？</strong><p>5つの審査</p></div>
-          <div class="flow-node"><span>09 / REVIEW</span><strong>専門家確認</strong><p>専門性・安全性</p></div><div class="flow-node"><span>10 / PRODUCTION</span><strong>制作・実装</strong><p>体験へ変換</p></div><div class="flow-node"><span>11 / AI COACH</span><strong>Questへ接続</strong><p>適切な推薦</p></div><div class="flow-node"><span>12 / MEASURE</span><strong>検証し、次へ</strong><p>データ・Interview</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: Most Important Rule -->
-    <section class="final-rule" aria-labelledby="rule-title">
-      <div class="frame">
-        <span class="label">THE MOST IMPORTANT RULE</span>
-        <h2 id="rule-title">答えから始めない。<br /><span>目的から、答えを選ぶ。</span></h2>
-        <div class="final-scenarios">
-          <article><strong>答えがプリエなら</strong><p>プリエを使う。バレエ動作であること自体を目的にしない。</p></article>
-          <article><strong>答えが筋力トレーニングなら</strong><p>筋力トレーニングを使う。目的への適合性を優先する。</p></article>
-          <article><strong>答えがRecoveryなら</strong><p>休む。運動しない選択も、最高の体調につながる。</p></article>
-          <article><strong>答えがSleepなら</strong><p>学ぶ。動くことだけをコンテンツにしない。</p></article>
-          <article><strong>答えがDanceなら</strong><p>音楽と表現で、楽しく身体を使う体験をつくる。</p></article>
-          <article><strong>どの答えでも</strong><p>誰に、なぜ薦めるのかを説明できる状態にする。</p></article>
+        <div class="section-index">08 — 監修後の流れ</div>
+        <h2 class="section-title" id="production-title">監修を、<br />完成した体験へ。</h2>
+        <div class="compact-production">
+          <article><span>01 / 一緒に</span><strong>リハーサル</strong><p>時間、難易度、流れ、Cueを実際に試して調整。</p></article>
+          <article><span>02 / 鈴ちゃん</span><strong>撮影・動作確認</strong><p>実演し、バレエ動作と見せ方を最終確認。</p></article>
+          <article><span>03 / SAT</span><strong>編集・実装</strong><p>動画、説明、Quest、AI推薦条件をBDXへ実装。</p></article>
+          <article><span>04 / SAT → 共有</span><strong>検証・次の改善</strong><p>利用結果を分析し、必要な改善を鈴ちゃんへ共有。</p></article>
         </div>
       </div>
     </section>
@@ -844,13 +951,13 @@
     <!-- SECTION: Closing -->
     <section class="closing" aria-labelledby="closing-title">
       <div class="frame">
-        <span class="label">BDX CONTENT PHILOSOPHY</span>
-        <h2 id="closing-title">バレエを教えるのではない。<br />舞台を支えてきた知恵を、<br />日常をより良く過ごすために翻訳する。</h2>
-        <p>そのために必要なら、バレエ動作も、筋力トレーニングも、Recoveryも、Nutritionも、Sleepも使います。</p>
-        <strong>すべては「最高の体調を日常に」から逆算する。</strong>
+        <span class="label">OUR SHARED RULE</span>
+        <h2 id="closing-title">SATが目的をつくる。<br />鈴ちゃんが動きに確かさを与える。<br />二人で、日常に届く体験へ仕上げる。</h2>
+        <p>バレエを教えることから始めず、「誰の、どんな状態に、どんな価値を届けるか」から一緒に考えます。</p>
+        <strong>最高の体調を、日常に。</strong>
       </div>
     </section>
   </main>
-  <footer>BDX Content Selection Framework v2.0</footer>
+  <footer>BDX Content Production Guide · SAT × 鈴ちゃん</footer>
 </body>
 </html>
