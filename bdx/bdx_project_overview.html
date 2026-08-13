@@ -7205,12 +7205,16 @@
     .turning-story .display-heading {
       margin-top: 22px;
       color: var(--ivory);
-      font-size: clamp(44px, 4.7vw, 68px);
+      font-size: clamp(44px, 4vw, 58px);
       line-height: 1.22;
     }
 
     .turning-story .display-heading span {
       display: block;
+    }
+
+    .turning-story .display-heading span:first-child {
+      white-space: nowrap;
     }
 
     .narrative-steps {
@@ -7233,9 +7237,14 @@
       margin-top: 12px;
       color: var(--ivory);
       font-family: var(--display);
-      font-size: clamp(23px, 2.4vw, 34px);
+      font-size: clamp(23px, 2.1vw, 30px);
       font-weight: 500;
       line-height: 1.5;
+    }
+
+    .narrative-step h3 span,
+    .backstage-story h3 span {
+      display: block;
     }
 
     .narrative-step p {
@@ -7738,6 +7747,147 @@
       text-align: right;
     }
 
+    /* READABILITY AND BACKSTAGE STORY */
+    .origin-story > .lead {
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .origin-quote {
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.7;
+    }
+
+    .origin-narrative {
+      color: #555760;
+      font-size: 14px !important;
+      line-height: 2.05 !important;
+    }
+
+    .origin-discovery > p,
+    .origin .meta-note > p {
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .origin .meta-trait p {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .origin .meta-source {
+      display: block;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .narrative-shift {
+      justify-content: center;
+      margin: 34px 0;
+    }
+
+    .narrative-shift i {
+      color: var(--rose);
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .backstage-story {
+      overflow: hidden;
+      border: 1px solid rgba(211, 180, 119, 0.4);
+      background: #07111f;
+    }
+
+    .backstage-story > img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center 68%;
+      opacity: 0.78;
+      filter: saturate(0.62) contrast(0.95);
+    }
+
+    .backstage-story figcaption {
+      padding: clamp(30px, 4vw, 52px);
+    }
+
+    .backstage-story figcaption > span,
+    .concept-story > span {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .backstage-story h3 {
+      margin-top: 16px;
+      color: var(--ivory);
+      font-family: var(--display);
+      font-size: clamp(26px, 2.5vw, 36px);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .backstage-story p {
+      margin-top: 22px;
+      color: #c2cad5;
+      font-size: 14px;
+      line-height: 2.1;
+    }
+
+    .backstage-story blockquote {
+      margin-top: 32px;
+      padding: 22px 0 0 22px;
+      color: #f4eddd;
+      border-top: 1px solid rgba(211, 180, 119, 0.38);
+      border-left: 3px solid var(--rose);
+      font-family: var(--display);
+      font-size: clamp(19px, 2vw, 27px);
+      line-height: 1.75;
+    }
+
+    .turning-insight {
+      display: block;
+    }
+
+    .concept-story {
+      max-width: 930px;
+      margin: 0 auto;
+    }
+
+    .concept-story h3 {
+      margin-top: 18px;
+      font-family: var(--display);
+      font-size: clamp(34px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .concept-story p {
+      margin-top: 25px;
+      color: #4f5661;
+      font-size: 15px;
+      line-height: 2.15;
+    }
+
+    .concept-story strong {
+      display: block;
+      margin-top: 44px;
+      padding: 30px 0;
+      color: #101827;
+      border-top: 1px solid rgba(17, 24, 39, 0.22);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.22);
+      font-family: var(--display);
+      font-size: clamp(23px, 2.8vw, 38px);
+      font-weight: 500;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .more-head .new-feature-badge {
+      margin: 22px 0 14px;
+    }
+
     @media (min-width: 769px) {
       .app-page:not(.app-page-featured) .app-screen {
         min-height: 470px;
@@ -7750,12 +7900,34 @@
         line-height: 1.28;
       }
 
+      .origin-story > .lead,
+      .origin-narrative,
+      .origin-discovery > p,
+      .origin .meta-note > p {
+        font-size: 15px !important;
+        line-height: 2 !important;
+      }
+
+      .origin-quote {
+        font-size: 24px;
+        line-height: 1.75;
+      }
+
       .origin-question {
-        font-size: 23px;
+        font-size: 25px;
+        line-height: 1.6;
       }
 
       .origin-discovery {
         padding: 22px;
+      }
+
+      .origin .meta-trait p {
+        font-size: 14px;
+      }
+
+      .origin .meta-source {
+        font-size: 12px;
       }
 
       .turning-point {
@@ -7783,6 +7955,37 @@
         font-size: 24px;
       }
 
+      .narrative-step p,
+      .backstage-story p,
+      .concept-story p {
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .narrative-shift {
+        margin: 30px 0;
+      }
+
+      .narrative-shift i {
+        font-size: 48px;
+      }
+
+      .backstage-story > img {
+        height: 280px;
+      }
+
+      .backstage-story figcaption {
+        padding: 28px 22px 34px;
+      }
+
+      .backstage-story h3 {
+        font-size: 27px;
+      }
+
+      .backstage-story blockquote {
+        font-size: 19px;
+      }
+
       .turning-point .stage-layer {
         padding: 23px 20px;
       }
@@ -7793,6 +7996,17 @@
 
       .turning-insight > h3 {
         font-size: 30px;
+      }
+
+      .concept-story h3 {
+        font-size: 30px;
+      }
+
+      .concept-story strong {
+        margin-top: 34px;
+        padding: 24px 0;
+        font-size: 22px;
+        text-align: left;
       }
 
       .wellbeing-spectrum {
@@ -7986,69 +8200,59 @@
       </div>
     </section>
 
-    <!-- SECTION 03-04: TURNING POINT -->
+    <!-- SECTION 03: TURNING POINT -->
     <section class="story-section behind turning-point" aria-labelledby="behind-title">
       <img class="behind-background" src="assets/bdx-ballet-preparation.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="frame turning-layout">
         <div class="turning-story reveal">
-          <div class="section-index">03–04 — 発想の転換</div>
-          <h2 class="display-heading" id="behind-title"><span>舞台裏で、</span><span>目的が変わった。</span></h2>
+          <div class="section-index">03 — 発想の転換</div>
+          <h2 class="display-heading" id="behind-title"><span>注目すべきは、</span><span>舞台裏</span></h2>
           <div class="narrative-steps">
             <article class="narrative-step">
               <span>最初の発想</span>
-              <h3>バレエエクササイズから始めた。</h3>
-              <p>最初はバレエの動きを取り入れたエクササイズに興味を持った。そこへAIとダンスを掛け合わせ、続けやすいフィットネスアプリを作ろうと考えた。</p>
+              <h3><span>バレエエクササイズを、</span><span>運動不足を解消したい</span><span>一般ユーザーに広めたい。</span></h3>
+              <p>バレエの身体技法を取り入れた運動なら、姿勢や身体の使い方を意識しながら、日常の運動不足を解消できる。そこへAIとダンスを掛け合わせ、続けやすいフィットネスアプリを作ろうと考えた。</p>
             </article>
-            <div class="narrative-shift" aria-hidden="true"><span>しかし</span><i>↓</i></div>
+            <div class="narrative-shift" aria-hidden="true"><i>↓</i></div>
             <article class="narrative-step turning-step">
-              <span>転換点</span>
-              <h3>本番へ向かうダンサーの生活を見た。</h3>
+              <span>発想の転換</span>
+              <h3>ダンサーの舞台裏こそ価値がある。</h3>
               <p>舞台上の美しい動きは、レッスンだけで生まれるものではない。準備、食事、睡眠、回復、疲労管理、集中。舞台の外で積み重ねる日常が、あの身体を支えていた。</p>
             </article>
           </div>
         </div>
 
-        <div class="stage-contrast reveal" aria-label="舞台上の表現を舞台裏の身体管理が支える構造">
-          <article class="stage-layer onstage-layer">
-            <span>舞台上 / 見える価値</span>
-            <strong>舞踊・技術・表現</strong>
-            <p>観客の目に映る、高度な身体表現。</p>
-          </article>
-          <div class="stage-support" aria-hidden="true"><span>日々の管理が支える</span><i>↓</i></div>
-          <article class="stage-layer backstage-layer">
-            <span>舞台裏 / 日常へ活かせる価値</span>
-            <strong>身体をつくる・整える・維持する</strong>
-            <div class="backstage-grid">
-              <div class="backstage-item">身体づくり</div><div class="backstage-item">健康的な体型維持</div>
-              <div class="backstage-item">栄養・水分補給</div><div class="backstage-item">睡眠・回復</div>
-              <div class="backstage-item">疲労・体調管理</div><div class="backstage-item">コンディショニング</div>
-              <div class="backstage-item">集中・メンタル</div><div class="backstage-item">ルーティン・自己管理</div>
-            </div>
-          </article>
-        </div>
+        <figure class="backstage-story reveal">
+          <img src="assets/bdx-ballet-preparation.png" alt="本番へ向けてシューズを整えるバレエダンサー" loading="lazy" />
+          <figcaption>
+            <span>気づきのきっかけ</span>
+            <h3><span>舞台で見えていたのは、</span><span>完成した一瞬だった。</span></h3>
+            <p>バレエを鑑賞するたび、目を奪われたのは、軸の強さや動きの美しさでした。でも、身近で努力を続けるバレエダンサーを見るうちに、その身体は舞台の上だけでつくられるのではないと気づきました。</p>
+            <p>体調に合わせて練習を調整する。食事と睡眠を整える。疲労を回復させ、集中をつくり、本番に向けて準備を積み重ねる。その過ごし方のすべてが、舞台上の一瞬につながっていました。</p>
+            <blockquote>踊りだけではなく、踊れる状態をつくり続けることにも価値がある。</blockquote>
+          </figcaption>
+        </figure>
 
         <div class="turning-insight reveal">
-          <p class="insight-opening">裏側を知れば知るほど、考えが変わった。</p>
-          <h3><span>もしも、</span><span>舞台裏のメソッドまで</span><span>一般ユーザーの日常へ</span><span>届けられたら？</span></h3>
-          <p>バレエエクササイズだけではない。ダンサーが身体を整え、本番へ向けて調子をつくるための知見を、普通の毎日で使える形にできたら、多くの人が抱える不調へ別の角度から向き合えるのではないか。</p>
-          <div class="wellbeing-spectrum" aria-label="最高の体調につながる領域">
-            <div><span>姿勢・体型</span><strong>整える</strong></div>
-            <div><span>運動不足</span><strong>動く</strong></div>
-            <div><span>食事</span><strong>支える</strong></div>
-            <div><span>睡眠</span><strong>休む</strong></div>
-            <div><span>疲労回復</span><strong>戻す</strong></div>
-            <div><span>メンタル</span><strong>調える</strong></div>
+          <div class="concept-story">
+            <span>コンセプトを変えた理由</span>
+            <h3>なぜ、舞台裏に注目したのか。</h3>
+            <p>運動不足を解消するだけなら、バレエエクササイズを届ければいい。けれど、多くの人が抱える不調は、運動だけで生まれているわけではありません。</p>
+            <p>眠れていない日。疲れが残っている日。食事が乱れた日。気持ちが落ちて動けない日。身体の状態は、日々の過ごし方すべてからつくられています。</p>
+            <p>それは、本番へ向かうダンサーが毎日向き合っていることと重なりました。彼女たちは、動くことだけでなく、休むこと、食べること、整えること、集中することまで含めて、踊れる状態をつくっています。</p>
+            <p>その知恵を、プロと同じ生活を求めるのではなく、普通の人が今日から使える形にできたら。姿勢や体型だけでなく、食事、睡眠、疲労回復、コンディション、メンタルまで含めて、多くの人の役に立てると考えました。</p>
+            <strong>バレエエクササイズを届ける構想から、<br />バレエの世界で育まれた「過ごし方」を届ける構想へ。</strong>
           </div>
-          <p class="turning-conclusion">体型や姿勢の改善だけではない。運動不足の解消だけでもない。食事も、睡眠も、回復も、コンディション調整も、メンタルも。すべてが<span>「最高の体調」</span>につながっている。</p>
+          <p class="turning-conclusion">目指すものは、運動することではなく、<span>「最高の体調」</span>を日常につくること。</p>
           <p class="fine-print">BDXは「細さ」や過度な制限を理想化しません。体型維持は、健康・身体機能・回復を支える身体管理として扱います。</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 05: MEET BDX -->
+    <!-- SECTION 04: MEET BDX -->
     <section class="story-section meet" aria-labelledby="meet-title">
       <div class="frame reveal">
-        <div class="section-index">05 — BDXの誕生</div>
+        <div class="section-index">04 — BDXの誕生</div>
         <p class="meet-arrival">この仮説から、BDXは生まれた。</p>
         <div class="brand-reveal" id="meet-title" aria-label="BDX"><span class="b">B</span><span class="d">D</span><span class="x">X</span></div>
         <p class="brand-promise">最高の体調を、日常に。</p>
@@ -8074,11 +8278,11 @@
       </div>
     </section>
 
-    <!-- SECTION 06: BDX POSITIONING -->
+    <!-- SECTION 05: BDX POSITIONING -->
     <section class="story-section positioning" aria-labelledby="positioning-title">
       <div class="frame positioning-head reveal">
         <div>
-          <div class="section-index">06 — BDXの独自性</div>
+          <div class="section-index">05 — BDXの独自性</div>
           <h2 class="display-heading" id="positioning-title">独自性</h2>
         </div>
         <p class="lead">バレエを踊るためのサービスはすでにある。BDXは、舞台上と舞台裏のメソッドを「最高の体調」のために使います。</p>
@@ -8116,11 +8320,11 @@
       <p class="frame position-note reveal">一般的なサービスカテゴリーとの比較であり、個別サービスの全機能を示すものではありません。</p>
     </section>
 
-    <!-- SECTION 07: APP EXPERIENCE -->
+    <!-- SECTION 06: APP EXPERIENCE -->
     <section class="story-section app-experience" aria-labelledby="app-title">
       <div class="frame app-heading reveal">
         <div>
-          <div class="section-index">07 — アプリ機能</div>
+          <div class="section-index">06 — アプリ機能</div>
           <h2 class="display-heading" id="app-title">5つの画面</h2>
         </div>
         <p class="lead">BDXは、HOME・MOVE・COACH・LIBRARY・PROGRESSを行き来しながら、今日の状態、行動、学び、回復、成長をひとつにつなぎます。</p>
@@ -8220,11 +8424,48 @@
       <p class="frame app-note reveal">画面イメージは、2026年8月時点の実装済みページ構成をもとに再現しています。</p>
     </section>
 
+    <!-- SECTION 07: A DAY WITH BDX -->
+    <section class="story-section day" aria-labelledby="day-title">
+      <div class="frame day-grid">
+        <div class="reveal">
+          <div class="section-index">07 — ある日の体験</div>
+          <h2 class="display-en" id="day-title">ユーザー体験</h2>
+          <p class="day-intro">最高の体調は、常に最高出力でいることではない。その日の状態を理解し、その日に合う行動を選べること。</p>
+          <div class="day-timeline">
+            <div class="day-step"><span class="day-time">朝</span><div><strong>昨日は少し疲れた。</strong><p>睡眠は普通。疲労は高め。気分は良い。使える時間は10分。</p></div></div>
+            <div class="day-step"><span class="day-time">AIコーチ</span><div><strong>今日は、整える日に。</strong><p>強度を上げるより、身体をリセットする短いクエストを提案。</p></div></div>
+            <div class="day-step"><span class="day-time">その後</span><div><strong>クエスト完了。</strong><p>肩まわりの変化を振り返り、次の状態確認へつなぐ。</p></div></div>
+          </div>
+          <p class="day-copyline">AIは、バレエメソッドを<br />「今日の自分」に落とし込む。</p>
+        </div>
+        <div class="phone reveal" aria-label="BDXアプリの今日のクエストイメージ">
+          <div class="phone-screen">
+            <div class="phone-top"><span>BDX / 今日</span><span>08:10</span></div>
+            <p class="phone-greeting">おはようございます。<br />必要なことだけ、短く確認します。</p>
+            <div class="condition-list">
+              <div class="condition"><span>睡眠</span><strong>普通</strong></div>
+              <div class="condition"><span>疲労</span><strong class="accent-rose">高め</strong></div>
+              <div class="condition"><span>気分</span><strong>良い</strong></div>
+              <div class="condition"><span>使える時間</span><strong>10分</strong></div>
+            </div>
+            <p class="coach-line">今日は強度を上げるより、身体を整える日にしましょう。</p>
+            <div class="quest-ui">
+              <span class="eyebrow">今日のクエスト</span>
+              <h3>5分で身体を<br />リセット。</h3>
+              <div class="quest-meta"><span>回復 + バレエエクササイズ</span><span>5分</span></div>
+              <div class="quest-button"><span>はじめる</span><span>+20 経験値</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 08: LIBRARY -->
     <section class="story-section more" aria-labelledby="more-title">
       <div class="frame more-head reveal">
         <div>
           <div class="section-index">08 — Library / 論文解説</div>
+          <span class="new-feature-badge">NEW FEATURE</span>
           <h2 class="display-heading" id="more-title">Library</h2>
         </div>
         <p class="lead">Libraryはバレエ技術の解説だけではありません。身体・心・生活の科学を、分かる言葉と日常の行動へつなぎます。</p>
@@ -8261,46 +8502,10 @@
       <p class="frame safety-note reveal">科学は「絶対の答え」ではなく、より良い行動を考えるための判断材料として扱います。</p>
     </section>
 
-    <!-- SECTION 09: A DAY WITH BDX -->
-    <section class="story-section day" aria-labelledby="day-title">
-      <div class="frame day-grid">
-        <div class="reveal">
-          <div class="section-index">09 — ある日の体験</div>
-          <h2 class="display-en" id="day-title">ユーザー体験</h2>
-          <p class="day-intro">最高の体調は、常に最高出力でいることではない。その日の状態を理解し、その日に合う行動を選べること。</p>
-          <div class="day-timeline">
-            <div class="day-step"><span class="day-time">朝</span><div><strong>昨日は少し疲れた。</strong><p>睡眠は普通。疲労は高め。気分は良い。使える時間は10分。</p></div></div>
-            <div class="day-step"><span class="day-time">AIコーチ</span><div><strong>今日は、整える日に。</strong><p>強度を上げるより、身体をリセットする短いクエストを提案。</p></div></div>
-            <div class="day-step"><span class="day-time">その後</span><div><strong>クエスト完了。</strong><p>肩まわりの変化を振り返り、次の状態確認へつなぐ。</p></div></div>
-          </div>
-          <p class="day-copyline">AIは、バレエメソッドを<br />「今日の自分」に落とし込む。</p>
-        </div>
-        <div class="phone reveal" aria-label="BDXアプリの今日のクエストイメージ">
-          <div class="phone-screen">
-            <div class="phone-top"><span>BDX / 今日</span><span>08:10</span></div>
-            <p class="phone-greeting">おはようございます。<br />必要なことだけ、短く確認します。</p>
-            <div class="condition-list">
-              <div class="condition"><span>睡眠</span><strong>普通</strong></div>
-              <div class="condition"><span>疲労</span><strong class="accent-rose">高め</strong></div>
-              <div class="condition"><span>気分</span><strong>良い</strong></div>
-              <div class="condition"><span>使える時間</span><strong>10分</strong></div>
-            </div>
-            <p class="coach-line">今日は強度を上げるより、身体を整える日にしましょう。</p>
-            <div class="quest-ui">
-              <span class="eyebrow">今日のクエスト</span>
-              <h3>5分で身体を<br />リセット。</h3>
-              <div class="quest-meta"><span>回復 + バレエエクササイズ</span><span>5分</span></div>
-              <div class="quest-button"><span>はじめる</span><span>+20 経験値</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 10: GAMIFICATION & DANCE -->
+    <!-- SECTION 09: GAMIFICATION & DANCE -->
     <section class="story-section grow" aria-labelledby="grow-title">
       <div class="frame reveal">
-        <div class="section-index">10 — 新機能 / ゲーミフィケーション</div>
+        <div class="section-index">09 — 新機能 / ゲーミフィケーション</div>
         <span class="new-feature-badge">NEW FEATURE</span>
         <h2 class="display-heading" id="grow-title">ゲーミフィケーション</h2>
         <p class="lead grow-lead">新BDXでは、継続と成長実感を支えるゲーミフィケーション機能を追加。毎日の行動をクエストに変え、経験値・レベル・達成記録として積み重ねます。</p>
@@ -8406,11 +8611,11 @@
       </figure>
     </section>
 
-    <!-- SECTION 11: THE FUTURE OF BDX -->
+    <!-- SECTION 10: THE FUTURE OF BDX -->
     <section class="story-section future" aria-labelledby="future-title">
       <div class="frame future-heading reveal">
         <div>
-          <div class="section-index">11 — 広がる可能性</div>
+          <div class="section-index">10 — 広がる可能性</div>
           <h2 class="display-en" id="future-title">将来展開</h2>
         </div>
         <p>今日の行動が、ひとりの中で終わらない。仲間、専門家、スタジオ、企業や地域へつながり、身体を育てる新しい文化へ広がっていく可能性があります。</p>
