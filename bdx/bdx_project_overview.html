@@ -8171,6 +8171,74 @@
         padding-inline: 14px;
       }
     }
+
+    /* Concept chapter: the quiet daily preparation behind performance. */
+    .turning-insight {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-color: rgba(211, 180, 119, 0.5);
+      background-color: #071524;
+      background-image:
+        linear-gradient(rgba(7, 21, 36, 0.88), rgba(7, 21, 36, 0.88)),
+        url('assets/bdx-concept-backstage.png');
+      background-position: center;
+      background-size: cover;
+      color: var(--ivory);
+    }
+
+    .concept-story {
+      max-width: 780px;
+      margin-left: 0;
+    }
+
+    .concept-story h3,
+    .concept-story .concept-closing {
+      color: var(--ivory);
+    }
+
+    .concept-story p {
+      color: rgba(241, 238, 230, 0.86);
+    }
+
+    .concept-story .concept-closing {
+      border-top-color: rgba(241, 238, 230, 0.3);
+      border-bottom-color: rgba(241, 238, 230, 0.3);
+    }
+
+    .turning-insight .fine-print {
+      color: rgba(241, 238, 230, 0.62);
+    }
+
+    /* Final message: remove the photo and close on the BDX navy. */
+    .future-closing-visual {
+      min-height: 620px;
+      background: #071524;
+    }
+
+    .future-closing-visual::after {
+      display: none;
+    }
+
+    .future-closing-visual .closing {
+      min-height: 620px;
+    }
+
+    @media (max-width: 768px) {
+      .turning-insight {
+        background-position: 62% center;
+      }
+
+      .future-closing-visual,
+      .future-closing-visual .closing {
+        min-height: 560px;
+      }
+
+      .future-closing-visual .closing {
+        justify-content: center;
+        padding-bottom: 64px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -8694,7 +8762,6 @@
         <p class="future-message">一人の「今日の行動」が、<br />誰かと育つ未来の入口になる。</p>
       </div>
       <figure class="future-closing-visual reveal">
-        <img src="assets/bdx-everyday-wellbeing-future.png" alt="光の入る日常空間で、身体を動かし、楽しみ、回復する一般ユーザー" loading="lazy" />
         <figcaption class="frame closing">
           <span class="closing-mark" aria-label="BDX"><b>B</b><b>D</b><b>X</b></span>
           <p class="closing-main"><span>最高の体調を、</span><span>日常に。</span></p>
