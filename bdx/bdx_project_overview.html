@@ -7835,6 +7835,16 @@
       line-height: 2.1;
     }
 
+    .backstage-story .backstage-conclusion {
+      margin-top: 34px;
+      padding-top: 26px;
+      color: #f4eddd;
+      border-top: 1px solid rgba(211, 180, 119, 0.38);
+      font-family: var(--display);
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.9;
+    }
+
     .backstage-story blockquote {
       margin-top: 32px;
       padding: 22px 0 0 22px;
@@ -7884,6 +7894,18 @@
       text-align: center;
     }
 
+    .concept-story .concept-closing {
+      margin-top: 42px;
+      padding: 28px 0;
+      color: #101827;
+      border-top: 1px solid rgba(17, 24, 39, 0.22);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.22);
+      font-family: var(--display);
+      font-size: clamp(20px, 2.2vw, 30px);
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
     .more-head .new-feature-badge {
       margin: 22px 0 14px;
     }
@@ -7909,8 +7931,10 @@
       }
 
       .origin-quote {
-        font-size: 24px;
+        padding-left: 12px;
+        font-size: clamp(14px, 3.85vw, 18px);
         line-height: 1.75;
+        white-space: nowrap;
       }
 
       .origin-question {
@@ -7986,6 +8010,10 @@
         font-size: 19px;
       }
 
+      .backstage-story .backstage-conclusion {
+        font-size: 18px;
+      }
+
       .turning-point .stage-layer {
         padding: 23px 20px;
       }
@@ -8007,6 +8035,13 @@
         padding: 24px 0;
         font-size: 22px;
         text-align: left;
+      }
+
+      .concept-story .concept-closing {
+        margin-top: 32px;
+        padding: 22px 0;
+        font-size: 20px;
+        line-height: 1.8;
       }
 
       .wellbeing-spectrum {
@@ -8167,8 +8202,8 @@
           <p class="lead">あるジャズダンス経験者から聞いた。</p>
           <blockquote class="origin-quote">「最初に学んだのは、バレエだった。」</blockquote>
           <p class="origin-question"><span>なぜ、ジャズダンスなのに</span><span>バレエ？</span></p>
-          <p class="lead origin-narrative">最初は意外だった。けれど理由を聞くと、他ジャンルのダンサーも、身体の軸・姿勢・バランス・コントロールを学ぶためにバレエを取り入れることがあるという。</p>
-          <p class="lead origin-narrative">バレエを調べ、実際に体験し、舞台を見るほど、ひとつのダンスジャンルだけでは説明できない体系が見えてきた。</p>
+          <p class="lead origin-narrative">最初は意外だった。けれど理由を聞くと、他ジャンルのダンサーも、身体感覚・軸・姿勢・バランスを学ぶためにバレエを取り入れることがあるという。</p>
+          <p class="lead origin-narrative">バレエを調べ、実際に体験し、舞台を観て、ひとつのダンスジャンルだけでは説明できない体系が見えてきた。</p>
           <div class="origin-discovery">
             <span>発見</span>
             <strong>バレエには、メタ・ダンスの要素があった。</strong>
@@ -8226,24 +8261,25 @@
           <img src="assets/bdx-ballet-preparation.png" alt="本番へ向けてシューズを整えるバレエダンサー" loading="lazy" />
           <figcaption>
             <span>気づきのきっかけ</span>
-            <h3><span>舞台で見えていたのは、</span><span>完成した一瞬だった。</span></h3>
-            <p>バレエを鑑賞するたび、目を奪われたのは、軸の強さや動きの美しさでした。でも、身近で努力を続けるバレエダンサーを見るうちに、その身体は舞台の上だけでつくられるのではないと気づきました。</p>
-            <p>体調に合わせて練習を調整する。食事と睡眠を整える。疲労を回復させ、集中をつくり、本番に向けて準備を積み重ねる。その過ごし方のすべてが、舞台上の一瞬につながっていました。</p>
-            <blockquote>踊りだけではなく、踊れる状態をつくり続けることにも価値がある。</blockquote>
+            <h3>舞台で見えているのは、ほんの一部。</h3>
+            <p>バレエを鑑賞して、まず目を奪われたのは、人間技とは思えない動きと、姿勢の美しさでした。</p>
+            <p>でも、身近で努力を続けるバレエダンサーを見るうちに、その動きや美しさは、舞台の上だけでつくられるものではないと気付きました。</p>
+            <p>日々のレッスンで技術を磨き、強くしなやかな身体をつくる。疲労を残さないために身体をケアし、栄養や睡眠にも気を配る。そして、大勢の観客の前で最高のパフォーマンスを発揮するために、心の状態も整えていく。</p>
+            <p>身体づくり、技術、栄養、回復、メンタル。<br />そのすべてを日々積み重ねながら、本番に向けて自分自身を整えていく。</p>
+            <p class="backstage-conclusion">舞台で目にしていた美しさは、そんな日常の積み重ねの先に生まれる、ほんの一瞬だったのです。</p>
           </figcaption>
         </figure>
 
         <div class="turning-insight reveal">
           <div class="concept-story">
-            <span>コンセプトを変えた理由</span>
-            <h3>なぜ、舞台裏に注目したのか。</h3>
-            <p>運動不足を解消するだけなら、バレエエクササイズを届ければいい。けれど、多くの人が抱える不調は、運動だけで生まれているわけではありません。</p>
-            <p>眠れていない日。疲れが残っている日。食事が乱れた日。気持ちが落ちて動けない日。身体の状態は、日々の過ごし方すべてからつくられています。</p>
-            <p>それは、本番へ向かうダンサーが毎日向き合っていることと重なりました。彼女たちは、動くことだけでなく、休むこと、食べること、整えること、集中することまで含めて、踊れる状態をつくっています。</p>
-            <p>その知恵を、プロと同じ生活を求めるのではなく、普通の人が今日から使える形にできたら。姿勢や体型だけでなく、食事、睡眠、疲労回復、コンディション、メンタルまで含めて、多くの人の役に立てると考えました。</p>
-            <strong>バレエエクササイズを届ける構想から、<br />バレエの世界で育まれた「過ごし方」を届ける構想へ。</strong>
+            <span>コンセプト</span>
+            <h3>最高の体調を、日常に。</h3>
+            <p>運動不足を解消するだけなら、バレエエクササイズを届ければいい。けれど、私たちの身体の状態は、運動だけでなく、睡眠、食事、疲労、メンタルなど、日々の過ごし方すべてからつくられています。</p>
+            <p>それは、バレエダンサーも同じです。彼女たちは、踊ることだけでなく、食べること、休むこと、身体を整えること、心を整えることまで含めて、最高のパフォーマンスを発揮できる状態をつくっています。</p>
+            <p>その舞台裏で培われてきた知恵を、誰もが日常で実践できる形へ。</p>
+            <p>姿勢や身体づくりだけでなく、食事、睡眠、疲労回復、コンディション、メンタルまで。バレエダンサーが自分の身体と向き合い、より良い状態をつくるために実践していることには、私たちの日常にも活かせるヒントがあります。</p>
+            <p class="concept-closing">目指すのは、ただ運動することではなく、自分にとっての「最高の体調」を日常につくること。</p>
           </div>
-          <p class="turning-conclusion">目指すものは、運動することではなく、<span>「最高の体調」</span>を日常につくること。</p>
           <p class="fine-print">BDXは「細さ」や過度な制限を理想化しません。体型維持は、健康・身体機能・回復を支える身体管理として扱います。</p>
         </div>
       </div>
