@@ -790,60 +790,221 @@
       .method-grid { grid-template-columns: repeat(3, 1fr); }
       .method-item:nth-child(3) { border-right: 0; }
       .method-item:nth-child(n+4) { border-top: 1px solid var(--line-dark); }
+      .discovery-flow { gap: 6px; }
+      .discovery-node { width: 118px; }
       .growth-loop { grid-template-columns: repeat(7, auto); }
       .growth-step { width: auto; }
       .stage { width: auto; }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 820px) {
       .slide {
         min-height: auto;
-        padding: 58px 18px 74px;
+        padding: 50px 18px 88px;
         align-items: flex-start;
       }
 
-      .slide::after { right: 18px; bottom: 18px; }
-      h1 { font-size: 40px; line-height: 1.4; }
-      h2 { font-size: 32px; line-height: 1.45; }
+      .slide::after { display: none; }
+      h1 { font-size: 38px; line-height: 1.38; }
+      h2 { font-size: 30px; line-height: 1.45; }
       h3 { font-size: 18px; }
       .lead { font-size: 15px; line-height: 1.9; }
-      .section-head { display: block; margin-bottom: 30px; }
+      .chapter { margin-bottom: 14px; }
+      .section-head { display: block; margin-bottom: 26px; }
       .section-head .lead { margin-top: 16px; }
-      .cover-grid { gap: 36px; }
+      .cover-grid, .business-layout { gap: 30px; }
       .cover-path, .closing-path {
-        grid-template-columns: 1fr;
-        justify-items: start;
-        gap: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
       }
-      .cover-path .arrow, .closing-path .arrow { transform: rotate(90deg); margin-left: 24px; }
+      .cover-path { margin-top: 28px; }
+      .cover-path .arrow, .closing-path .arrow { transform: none; margin: 0; }
       .cover-businesses, .overview-grid, .three-values, .use-cases, .now-grid, .closing-domains { grid-template-columns: 1fr; }
       .cover-business { grid-template-columns: 100px 1fr; }
-      .overview-lane { min-height: 230px; }
-      .shared-flow, .loop, .expansion-map, .growth-loop, .stage-flow { grid-template-columns: 1fr; }
-      .shared-step, .loop-step, .growth-step, .stage { width: 100%; min-width: 0; min-height: 100px; }
-      .shared-arrow, .loop-arrow, .expansion-arrow, .growth-arrow, .stage-arrow { transform: rotate(90deg); text-align: center; padding: 10px; }
-      .expansion-node { width: 100%; min-height: 200px; }
+      .overview-grid { gap: 12px; }
+      .overview-lane {
+        min-height: 0;
+        padding: 18px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr;
+        column-gap: 14px;
+      }
+      .overview-lane .business-mark { grid-column: 1; grid-row: 1; }
+      .overview-lane h3 { grid-column: 1; grid-row: 2; margin-top: 12px; font-size: 20px; }
+      .overview-lane p { grid-column: 1; grid-row: 3; font-size: 12px; }
+      .overview-shift {
+        grid-column: 2;
+        grid-row: 1 / 4;
+        margin: 0;
+        padding: 2px 0 2px 14px;
+        border-top: 0;
+        border-left: 1px solid var(--line);
+        align-self: stretch;
+      }
+
+      .shared-flow, .loop, .growth-loop, .stage-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .shared-flow { margin-top: 22px; }
+      .shared-step, .loop-step, .growth-step, .stage {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        padding: 17px 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.72);
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .navy .shared-step, .deep .shared-step, .navy .growth-step {
+        border-color: var(--line-dark);
+        background: rgba(255,255,255,0.04);
+      }
+
+      .shared-step span, .loop-step span, .growth-step span, .stage span { margin: 0; }
+      .shared-step strong, .loop-step strong, .growth-step strong, .stage h3 { margin: 0; }
+      .shared-arrow, .loop-arrow, .growth-arrow, .stage-arrow {
+        width: 100%;
+        height: 30px;
+        padding: 0 0 0 24px;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 0;
+        line-height: 1;
+      }
+
+      .shared-arrow::after, .loop-arrow::after, .growth-arrow::after, .stage-arrow::after {
+        content: '\2193';
+        font-size: 18px;
+      }
+
+      .growth-arrow.return::after {
+        content: '\21BA  最初へ';
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .expansion-map {
+        display: flex;
+        flex-direction: column;
+        margin-top: 28px;
+      }
+
+      .expansion-node {
+        width: 100%;
+        min-height: 0;
+        padding: 18px;
+        display: grid;
+        grid-template-columns: minmax(124px, 0.9fr) minmax(0, 1.1fr);
+        grid-template-rows: auto 1fr auto;
+        column-gap: 14px;
+      }
+      .expansion-node .eyebrow { grid-column: 1; grid-row: 1; }
+      .expansion-node h3 { grid-column: 1; grid-row: 2; margin-top: 10px; font-size: 17px; }
+      .expansion-node p { grid-column: 2; grid-row: 1 / 3; margin: 0; font-size: 12px; }
+      .expansion-node .node-bottom { grid-column: 1 / -1; grid-row: 3; margin-top: 14px; padding-top: 12px; }
+      .expansion-arrow {
+        width: 100%;
+        height: 34px;
+        padding: 0;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .expansion-arrow.forward { font-size: 0; }
+      .expansion-arrow.forward::after { content: '\2193'; font-size: 20px; }
+      .expansion-arrow.combine { font-size: 0; }
+      .expansion-arrow.combine::after {
+        content: '\FF0B  \9023\643A';
+        padding: 5px 12px;
+        border: 1px solid currentColor;
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
       .use-case + .use-case, .value-cell + .value-cell, .now-item + .now-item, .closing-domain + .closing-domain { border-left: 0; border-top: 1px solid var(--line); }
       .method-grid { grid-template-columns: repeat(2, 1fr); }
-      .method-item { border-right: 1px solid var(--line-dark); border-top: 1px solid var(--line-dark); }
+      .method-item { min-height: 96px; padding: 14px; border-right: 1px solid var(--line-dark); border-top: 1px solid var(--line-dark); }
       .method-item:nth-child(2n) { border-right: 0; }
-      .training-bridge { grid-template-columns: 1fr; }
-      .lesson-block { min-height: 150px; }
+      .training-bridge { grid-template-columns: 1fr; margin-top: 28px; }
+      .lesson-block { min-height: 124px; }
+      .daily-block { border: 1px solid var(--bdx); }
       .daily-grid { grid-template-columns: repeat(2, 1fr); }
-      .discovery-flow { grid-template-columns: 1fr; }
-      .discovery-node { width: 100%; min-height: 84px; }
-      .discovery-arrow { transform: rotate(90deg); text-align: center; }
-      .synergy { grid-template-columns: 1fr; }
+      .discovery-flow { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+      .discovery-node { width: 100%; min-height: 0; padding: 16px; }
+      .discovery-arrow {
+        height: 28px;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+      }
+      .discovery-arrow::after { content: '\2193'; font-size: 18px; }
+      .value-cell { padding: 16px; }
+      .large-statement { font-size: 21px; }
+      .synergy { grid-template-columns: 1fr; gap: 0; margin-top: 28px; }
       .synergy-side { min-height: auto; }
-      .synergy-bridge span { transform: rotate(90deg); }
+      .synergy-bridge { padding: 18px 0; }
+      .synergy-bridge span { transform: none; }
       .future-row { grid-template-columns: 1fr; }
       .future-row.header { display: none; }
-      .future-row > * { padding: 14px 16px; }
+      .future-row:not(.header) { margin: 12px; border: 1px solid var(--line-dark); }
+      .future-row > * { padding: 13px 15px; }
       .future-row > * + * { border-left: 0; border-top: 1px solid var(--line-dark); }
-      .partner-equation { grid-template-columns: 1fr; }
-      .partner-symbol { transform: rotate(90deg); }
-      .closing-path { justify-items: center; }
-      .closing-path .arrow { margin-left: 0; }
+      .future-row:not(.header) > *::before {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--gold);
+        font-size: 9px;
+        font-weight: 700;
+      }
+      .future-row:not(.header) > strong::before { content: '\4E00\6B21\4E8B\696D'; }
+      .future-row:not(.header) > p:nth-child(2)::before { content: '\84C4\7A4D\3059\308B\77E5\898B'; }
+      .future-row:not(.header) > p:nth-child(3)::before { content: '\9023\643A\5148'; }
+      .future-row:not(.header) > p:nth-child(4)::before { content: '\4E8C\6B21\5C55\958B'; }
+      .future-row:not(.header) > p {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        align-items: start;
+        gap: 10px;
+      }
+      .future-row:not(.header) > p::before { margin: 0; }
+      .partner-equation { grid-template-columns: 1fr; border: 0; }
+      .partner-equation > div:not(.partner-symbol) { border: 1px solid var(--line-dark); }
+      .partner-symbol { padding: 8px !important; transform: none; }
+      .stage {
+        display: block;
+        min-height: 0;
+        padding: 18px;
+      }
+      .stage h3 { margin-top: 10px; }
+      .stage p { margin-top: 10px; }
+      .now-item { padding: 16px; }
+      .outcome-bar { font-size: 15px; }
+      .closing-path { justify-content: center; margin: 32px 0 28px; }
+      .closing-domains { grid-template-columns: repeat(3, 1fr); }
+      .closing-domain { padding: 15px 8px; }
+      .closing-domain + .closing-domain { border-top: 0; border-left: 1px solid var(--line-dark); }
+      .closing-domain strong { font-size: 15px; }
+      .closing-domain span { font-size: 9px; }
+      .closing-copy { font-size: 13px; }
     }
 
     @media print {
@@ -980,11 +1141,11 @@
         <p class="lead">個人向け事業で磨いた「可能性を見つけ、小さく試す方法」を、企業社員や地域住民の副業・起業支援へ展開します。</p>
         <div class="expansion-map" aria-label="複業.Labの二次事業化">
           <div class="expansion-node lab"><span class="eyebrow">現在の事業</span><h3>複業.Lab</h3><p>個人が新しいキャリアの可能性を見つけ、現実で試す。</p><div class="node-bottom">個人向けキャリア開発</div></div>
-          <div class="expansion-arrow">→</div>
+          <div class="expansion-arrow forward">→</div>
           <div class="expansion-node lab"><span class="eyebrow">蓄積する知見</span><h3>形成の過程</h3><p>開始・停滞・実験・結果から、副業や起業が育つ過程を理解する。</p><div class="node-bottom">行動と結果の知見</div></div>
-          <div class="expansion-arrow">×</div>
+          <div class="expansion-arrow combine">×</div>
           <div class="expansion-node lab"><span class="eyebrow">連携先</span><h3>企業・自治体</h3><p>社員、地域住民、地域企業、研修機会、現実で試せる場を持つ。</p><div class="node-bottom">対象者・現場・運営力</div></div>
-          <div class="expansion-arrow">→</div>
+          <div class="expansion-arrow forward">→</div>
           <div class="expansion-node lab"><span class="eyebrow">二次事業</span><h3>副業・起業開発</h3><p>新しい仕事を生み出す人を、組織や地域の中で育てる。</p><div class="node-bottom">企業向け・地域向け支援</div></div>
         </div>
         <div class="use-cases">
@@ -1027,11 +1188,11 @@
         <p class="lead">フィットネスクラブやバレエスクールの指導を置き換えず、指導者が直接見ていない「トレーニング以外の時間」を支えます。</p>
         <div class="expansion-map" aria-label="BDXの二次事業化">
           <div class="expansion-node bdx"><span class="eyebrow">現在の事業</span><h3>BDX</h3><p>一人ひとりの状態から、その日の運動・学習・回復を提案する。</p><div class="node-bottom">個人向け体調管理</div></div>
-          <div class="expansion-arrow">→</div>
+          <div class="expansion-arrow forward">→</div>
           <div class="expansion-node bdx"><span class="eyebrow">蓄積する知見</span><h3>状態と行動</h3><p>どんな状態で、何を行い、その後どう変化したかを理解する。</p><div class="node-bottom">体調づくりの知見</div></div>
-          <div class="expansion-arrow">×</div>
+          <div class="expansion-arrow combine">×</div>
           <div class="expansion-node bdx"><span class="eyebrow">連携先</span><h3>運動・バレエ施設</h3><p>トレーナー、教師、設備、レッスン、専門的な判断を持つ。</p><div class="node-bottom">指導・施設・利用者</div></div>
-          <div class="expansion-arrow">→</div>
+          <div class="expansion-arrow forward">→</div>
           <div class="expansion-node bdx"><span class="eyebrow">二次事業</span><h3>日常の体調支援</h3><p>次のトレーニングやレッスンまでの過ごし方を支える。</p><div class="node-bottom">施設利用者への継続支援</div></div>
         </div>
         <div class="training-bridge" aria-label="トレーニングの間をBDXが支える構造">
@@ -1077,7 +1238,7 @@
           <div class="growth-step"><span>03</span><strong>新しい価値を<br />発見する</strong></div><div class="growth-arrow">→</div>
           <div class="growth-step"><span>04</span><strong>新しい活動を<br />試す</strong></div><div class="growth-arrow">→</div>
           <div class="growth-step"><span>05</span><strong>イベントで<br />表現する</strong></div><div class="growth-arrow">→</div>
-          <div class="growth-step"><span>06</span><strong>新しい観客と<br />出会う</strong></div><div class="growth-arrow">↺</div>
+          <div class="growth-step"><span>06</span><strong>新しい観客と<br />出会う</strong></div><div class="growth-arrow return">↺</div>
         </div>
         <p class="large-statement">Cafeを、宣伝の場所から「出会いと反応によって成長する場所」へ。</p>
       </div>
@@ -1092,11 +1253,11 @@
         <p class="lead">Cafeが大規模なイベント会社になるのではなく、アーティスト発見の知見と、イベント会社の制作・運営力を組み合わせます。</p>
         <div class="expansion-map" aria-label="Cafeの二次事業化">
           <div class="expansion-node cafe"><span class="eyebrow">現在の事業</span><h3>Cafe</h3><p>日常の来店から、まだ知られていないアーティストとの出会いをつくる。</p><div class="node-bottom">アーティスト発見</div></div>
-          <div class="expansion-arrow">→</div>
+          <div class="expansion-arrow forward">→</div>
           <div class="expansion-node cafe"><span class="eyebrow">蓄積する知見</span><h3>出会いと反応</h3><p>どんな見せ方や体験が、興味・参加・支援・成長につながるかを学ぶ。</p><div class="node-bottom">発見と成長の知見</div></div>
-          <div class="expansion-arrow">×</div>
+          <div class="expansion-arrow combine">×</div>
           <div class="expansion-node cafe"><span class="eyebrow">連携先</span><h3>イベント会社</h3><p>企画、会場、制作、集客、チケット、当日の運営力を持つ。</p><div class="node-bottom">制作・運営・展開力</div></div>
-          <div class="expansion-arrow">→</div>
+          <div class="expansion-arrow forward">→</div>
           <div class="expansion-node cafe"><span class="eyebrow">二次事業</span><h3>発見から次の舞台へ</h3><p>新しい観客との出会い、深い体験、継続支援をつなぐ。</p><div class="node-bottom">発見・成長・イベント</div></div>
         </div>
         <div class="outcome-bar cafe">一つのCafeで知ってもらうことから、次の観客・支援・舞台へ進む機会をつくる。</div>
