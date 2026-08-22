@@ -76,14 +76,20 @@
     .cover__business span { display: block; color: #aeb8c7; font-size: 9px; font-weight: 700; }
     .cover__business b { display: block; margin-top: 4px; font-size: 16px; }
 
-    .strategy-businesses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: clamp(34px, 5vw, 56px); }
-    .strategy-card { position: relative; min-height: 240px; padding: 28px; border: 1px solid var(--line); background: rgba(255,255,255,.76); display: flex; flex-direction: column; }
-    .strategy-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--career); }
-    .strategy-card.condition::before { background: var(--condition); }
-    .strategy-card.artist::before { background: var(--artist); }
-    .strategy-card small { color: var(--muted); font-size: 10px; font-weight: 700; }
-    .strategy-card h3 { margin-top: 14px; font-size: clamp(21px, 2.2vw, 29px); line-height: 1.5; }
-    .strategy-card p { margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 13px; }
+    .strategy-shifts { margin-top: clamp(34px, 5vw, 56px); border-top: 1px solid var(--line); }
+    .strategy-shift { --shift: var(--career); display: grid; grid-template-columns: 130px minmax(0, 1fr) 70px minmax(0, 1.15fr); min-height: 154px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.76); }
+    .strategy-shift.condition { --shift: var(--condition); }
+    .strategy-shift.artist { --shift: var(--artist); }
+    .strategy-shift__business { padding: 26px 22px; border-left: 5px solid var(--shift); display: flex; flex-direction: column; justify-content: center; }
+    .strategy-shift__business small { color: var(--muted); font-size: 9px; font-weight: 700; }
+    .strategy-shift__business strong { margin-top: 6px; font-size: 20px; }
+    .strategy-shift__state { padding: 24px 28px; border-left: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
+    .strategy-shift__state small { color: var(--muted); font-size: 9px; font-weight: 700; }
+    .strategy-shift__state h3 { margin-top: 7px; font-size: clamp(18px, 1.9vw, 25px); line-height: 1.5; }
+    .strategy-shift__state p { margin-top: 7px; color: var(--muted); font-size: 12px; }
+    .strategy-shift__state.after { background: var(--navy); color: #fff; }
+    .strategy-shift__state.after small, .strategy-shift__state.after p { color: var(--muted-dark); }
+    .strategy-shift__arrow { display: grid; place-items: center; border-left: 1px solid var(--line); color: var(--shift); font-size: 26px; font-weight: 700; }
     .strategy-flow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 18px; border: 1px solid var(--line); background: var(--navy); color: #fff; }
     .strategy-step { position: relative; min-height: 108px; padding: 22px 24px; border-right: 1px solid var(--line-dark); display: flex; flex-direction: column; justify-content: center; }
     .strategy-step:last-child { border-right: 0; }
@@ -229,15 +235,25 @@
       .cover::before { background: linear-gradient(180deg, rgba(8,14,25,.56), rgba(8,14,25,.94) 72%); }
       .cover__content { align-self: end; }
       .cover h1 { font-size: clamp(52px, 17vw, 74px); }
-      .cover__businesses { grid-template-columns: 1fr; border-bottom: 0; }
-      .cover__business { padding: 10px 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
-      .strategy-businesses, .social-value-grid { grid-template-columns: 1fr; grid-auto-flow: row; grid-auto-columns: auto; gap: 12px; margin-inline: 0; padding: 0; overflow-x: visible; scroll-snap-type: none; }
-      .strategy-card, .social-value-card { min-height: auto; scroll-snap-align: none; }
-      .strategy-card h3 { font-size: 19px; line-height: 1.65; }
-      .strategy-flow { grid-template-columns: 1fr; margin-inline: 0; padding-inline: 0; overflow-x: visible; scroll-snap-type: none; }
-      .strategy-step { min-height: 92px; border-right: 0; border-bottom: 1px solid var(--line-dark); scroll-snap-align: none; }
-      .strategy-step:last-child { border-bottom: 0; }
-      .strategy-step:not(:last-child)::after { content: "↓"; right: auto; left: calc(50% - 13px); top: auto; bottom: -16px; }
+      .cover__businesses { grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line-dark); }
+      .cover__business { min-width: 0; padding: 10px 6px; border-right: 1px solid var(--line-dark); border-bottom: 0; }
+      .cover__business span { font-size: 7px; }
+      .cover__business b { font-size: 11px; line-height: 1.45; }
+      .strategy-shift { grid-template-columns: 62px minmax(0, 1fr) 26px minmax(0, 1.12fr); min-height: 150px; }
+      .strategy-shift__business { padding: 14px 6px 14px 8px; }
+      .strategy-shift__business small { font-size: 7px; }
+      .strategy-shift__business strong { font-size: 11px; overflow-wrap: anywhere; }
+      .strategy-shift__state { padding: 14px 8px; }
+      .strategy-shift__state small { font-size: 7px; }
+      .strategy-shift__state h3 { margin-top: 5px; font-size: 11px; line-height: 1.55; }
+      .strategy-shift__state p { margin-top: 5px; font-size: 8px; line-height: 1.6; }
+      .strategy-shift__arrow { font-size: 18px; }
+      .strategy-flow { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-inline: 0; padding-inline: 0; overflow-x: visible; scroll-snap-type: none; }
+      .strategy-step { min-width: 0; min-height: 82px; padding: 12px 7px; border-right: 1px solid var(--line-dark); border-bottom: 0; scroll-snap-align: none; }
+      .strategy-step:last-child { border-right: 0; }
+      .strategy-step small { font-size: 7px; }
+      .strategy-step b { font-size: 9px; line-height: 1.45; }
+      .strategy-step:not(:last-child)::after { content: "→"; right: -13px; left: auto; top: calc(50% - 14px); bottom: auto; }
       .growth-map { grid-template-columns: 1fr; gap: 0; }
       .growth-stage { position: relative; min-height: 120px; padding: 22px; margin-bottom: 28px; }
       .growth-stage:last-child { margin-bottom: 0; }
@@ -253,22 +269,41 @@
       .asset-lane__data span, .asset-lane__method span { font-size: 8px; }
       .asset-lane__data b, .asset-lane__method b { font-size: 12px; line-height: 1.65; }
       .asset-principle { align-items: flex-start; flex-direction: column; }
-      .business-expansion { grid-template-columns: 1fr; gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; scroll-snap-type: none; }
-      .business-block { min-height: auto; padding: 24px; }
+      .business-expansion { grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr) 18px minmax(0, 1.08fr); gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; scroll-snap-type: none; }
+      .business-block { min-width: 0; min-height: auto; padding: 14px 9px; }
       .business-block { scroll-snap-align: none; }
-      .business-connector { min-height: 54px; }
-      .business-connector::before { left: 50%; right: auto; top: 6px; bottom: 6px; width: 1px; height: auto; }
-      .business-connector::after { left: calc(50% - 4px); right: auto; top: auto; bottom: 6px; transform: rotate(135deg); }
-      .impact-bar { grid-template-columns: 1fr; gap: 6px; }
-      .partnership-grid { grid-template-columns: 1fr; gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; overscroll-behavior-inline: auto; scroll-snap-type: none; }
+      .business-block small { font-size: 7px; }
+      .business-block h3 { margin-top: 7px; font-size: 11px; line-height: 1.55; }
+      .business-block p { margin-top: 8px; font-size: 8px; line-height: 1.6; }
+      .business-block ul { padding-top: 12px; gap: 4px; }
+      .business-block li { padding-top: 5px; font-size: 8px; line-height: 1.45; }
+      .business-connector { min-height: auto; }
+      .business-connector::before { left: 3px; right: 3px; top: 50%; bottom: auto; width: auto; height: 1px; }
+      .business-connector::after { left: auto; right: 3px; top: calc(50% - 4px); bottom: auto; transform: rotate(45deg); }
+      .impact-bar { grid-template-columns: 78px minmax(0, 1fr); gap: 8px; padding: 14px; }
+      .impact-bar small { font-size: 7px; }
+      .impact-bar b { font-size: 13px; line-height: 1.55; }
+      .partnership-grid { grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr); gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; overscroll-behavior-inline: auto; scroll-snap-type: none; }
       .partnership-side { scroll-snap-align: none; }
-      .partnership-multiply { min-height: 64px; }
+      .partnership-side { min-width: 0; padding: 16px 10px; }
+      .partnership-side small { font-size: 7px; }
+      .partnership-side h3 { margin-top: 7px; font-size: 14px; line-height: 1.5; }
+      .partnership-multiply { min-height: 0; font-size: 24px; }
       .partnership-list div { align-items: flex-start; flex-direction: column; gap: 4px; }
       .partnership-list span { text-align: left; }
-      .partner-reasons { grid-template-columns: 1fr; grid-auto-flow: row; grid-auto-columns: auto; gap: 12px; margin-inline: 0; padding-inline: 0; border: 0; overflow-x: visible; scroll-snap-type: none; }
-      .partner-reason { min-height: auto; border: 1px solid var(--line-dark); scroll-snap-align: none; }
+      .partner-reasons { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: row; grid-auto-columns: auto; gap: 0; margin-inline: 0; padding-inline: 0; border: 1px solid var(--line-dark); overflow-x: visible; scroll-snap-type: none; }
+      .partner-reason { min-width: 0; min-height: 112px; padding: 12px 9px; border: 0; border-right: 1px solid var(--line-dark); scroll-snap-align: none; }
+      .partner-reason:last-child { border-right: 0; }
+      .partner-reason b { font-size: 10px; line-height: 1.6; }
       .partner-assets { grid-template-columns: repeat(2, 1fr); }
+      .partner-assets { gap: 5px; margin-top: 14px; }
+      .partner-assets span { padding: 8px 4px; font-size: 7px; }
       .social-future { background-image: url("assets/social-value-vision.jpg"); background-position: 68% center; }
+      .social-value-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .social-value-card { min-width: 0; min-height: 176px; padding: 16px 10px; }
+      .social-value-card small { font-size: 7px; }
+      .social-value-card h3 { margin-top: 7px; font-size: 13px; line-height: 1.5; }
+      .social-value-card p { padding-top: 14px; font-size: 9px; line-height: 1.65; }
       .impact-row { grid-template-columns: 1fr; }
       .impact-row__business, .impact-row__secondary, .impact-row__value { padding: 20px; border-left: 0; }
       .impact-row__business { border-top: 5px solid var(--career); }
@@ -296,9 +331,13 @@
       .mobile-only { display: none; }
       .headline { font-size: 28pt; } .support { font-size: 9pt; }
       .cover { background-image: url("assets/long-term-vision-cover.jpg"); background-position: center; }
-      .strategy-businesses, .asset-lanes, .business-expansion, .partnership-grid, .social-value-grid { margin-top: 8mm; }
-      .strategy-businesses { grid-template-columns: repeat(3, 1fr); margin-inline: 0; padding: 0; overflow: visible; }
-      .strategy-card { min-height: 58mm; }
+      .strategy-shifts, .asset-lanes, .business-expansion, .partnership-grid, .social-value-grid { margin-top: 8mm; }
+      .strategy-shift { grid-template-columns: 28mm 1fr 12mm 1.15fr; min-height: 31mm; }
+      .strategy-shift__business, .strategy-shift__state { padding: 5mm; }
+      .strategy-shift__business small, .strategy-shift__state small { font-size: 7pt; }
+      .strategy-shift__business strong { font-size: 12pt; }
+      .strategy-shift__state h3 { font-size: 12pt; }
+      .strategy-shift__state p { font-size: 7pt; }
       .strategy-flow { grid-template-columns: repeat(4, 1fr); margin-inline: 0; padding: 0; overflow: visible; }
       .strategy-step { min-height: 25mm; }
       .cover__businesses { grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line-dark); }
@@ -366,10 +405,10 @@
     <!-- SECTION 02: Growth Strategy -->
     <section class="slide white" id="strategy" data-page="02 / 08" aria-labelledby="strategy-title"><div class="slide__inner">
       <p class="label">02</p><h2 class="headline" id="strategy-title">成長戦略</h2><p class="support">一次事業で価値を証明し、データと知見を蓄積する。その強みをパートナーと組み合わせ、事業規模を広げます。</p>
-      <div class="strategy-businesses" aria-label="3事業の長期的な成長先">
-        <article class="strategy-card career"><small>複業.Lab</small><h3>個人のキャリア形成サービスから、企業・地域の人材を育てるインフラへ。</h3><p>個人で磨いたCareer OSを、より多くの挑戦者へ届ける。</p></article>
-        <article class="strategy-card condition"><small>BDX</small><h3>個人のコンディショニングサービスから、フィットネス・バレエスクールのコンディショニング支援インフラへ。</h3><p>指導と指導の間にある日常まで支える。</p></article>
-        <article class="strategy-card artist"><small>Cafe</small><h3>一つのカフェでアーティストを応援するところから、さまざまな場所でアーティストと支援者が出会う仕組みへ。</h3><p>小さな出会いを、次の舞台と成長へつなげる。</p></article>
+      <div class="strategy-shifts" aria-label="3事業のビフォー・アフター">
+        <article class="strategy-shift career"><div class="strategy-shift__business"><small>CAREER</small><strong>複業.Lab</strong></div><div class="strategy-shift__state before"><small>BEFORE / 一次事業</small><h3>個人のキャリア形成サービス</h3><p>Career OSで、新しいキャリアを小さく試す。</p></div><div class="strategy-shift__arrow" aria-hidden="true">→</div><div class="strategy-shift__state after"><small>AFTER / 将来展開</small><h3>企業・地域の人材育成インフラ</h3><p>企業や自治体で、新しい仕事を生み出す人材を育てる。</p></div></article>
+        <article class="strategy-shift condition"><div class="strategy-shift__business"><small>CONDITION</small><strong>BDX</strong></div><div class="strategy-shift__state before"><small>BEFORE / 一次事業</small><h3>個人のコンディショニング</h3><p>一人ひとりの状態に合う運動・学習・回復を支える。</p></div><div class="strategy-shift__arrow" aria-hidden="true">→</div><div class="strategy-shift__state after"><small>AFTER / 将来展開</small><h3>フィットネス・バレエの支援インフラ</h3><p>指導外の日常まで支え、より良い状態を続けられる人を増やす。</p></div></article>
+        <article class="strategy-shift artist"><div class="strategy-shift__business"><small>ARTIST</small><strong>Cafe</strong></div><div class="strategy-shift__state before"><small>BEFORE / 一次事業</small><h3>一つのCafeで出会いと交流を生む</h3><p>アーティストを知らなかった人との偶然の接点をつくる。</p></div><div class="strategy-shift__arrow" aria-hidden="true">→</div><div class="strategy-shift__state after"><small>AFTER / 将来展開</small><h3>各地で支援者と出会う仕組み</h3><p>イベント会社と組み、出会いを次の舞台と成長へつなげる。</p></div></article>
       </div>
       <div class="strategy-flow" aria-label="一次事業から事業拡大までの流れ">
         <div class="strategy-step"><small>01 / 一次事業</small><b>小さく試す</b></div>
