@@ -2,51 +2,50 @@
 
 ## Document Scope
 
-- Document: 3 Business Future Vision v3.0
+- Document: 3事業 長期構想
 - Domains: 複業.Lab / BDX / Cafe
-- Purpose: 3事業のGoal、共通思想、将来のPartnershipによるExpansionを直感的に理解できるようにする
-- Type: Vision Document。売上計画、市場規模資料、確定した法人営業計画ではない
+- Purpose: 一次事業で得る資産を、誰と組み、どう活用し、どんな社会価値へ変えるかを示す
+- Type: 長期構想。売上計画、市場規模資料、確定した法人営業計画ではない
 
-## Shared Philosophy
+## Company Philosophy
 
-- 共通思想: 可能性を、現実の一歩から育てる
-- 共通の方法: Possibility → Action → Real-world Feedback → Learning → Next Action → Growth
-- 成長戦略: BUILD → LEARN → PROVE → EXPAND
-- DataとAIは事業目的ではなく、人への価値を改善するための手段
+- 会社の思想: 価値の最大化
+- 基本構造: 一次事業 → 事業資産 → パートナー → 二次事業 → 社会価値
+- データとAIは事業目的ではなく、人への価値を改善・拡張するための手段
 
 ## Confirmed
 
-- 複業.LabのGoal: 個人の新しいキャリアを育てる
-- BDXのGoal: 最高の体調を、日常に
-- CafeのGoal: 夢に挑むアーティストを応援する
-- Data Assetは一次事業の改善を最優先に使う
-- Raw Data販売を目的にしない
-- Partnershipは既存Playerを補完し、届け方を広げる手段とする
-- 3事業は独立したProductとして維持する
+- 複業.Labの目的: 個人の新しいキャリアを育てる
+- BDXの目的: 最高の体調を、日常に
+- Cafeの目的: 夢に挑むアーティストを応援する
+- 行動と結果から得た知見は、まず一次事業の改善に使う
+- 個人データ販売を目的にしない
+- パートナーは既存事業者の顧客・現場・専門性・流通を持ち寄る
+- 3事業は独立したプロダクトとして維持する
 
 ## Future Hypotheses
 
 - 複業.Lab × 企業 / 地方自治体による副業・起業開発支援
-- BDX × Fitness Club / Ballet SchoolによるTraining外Conditioning Support
-- Cafe × Event Planning / Production CompanyによるArtist Discovery / Growth / Event
-- Cafeで生まれたAudience Reactionを、本人の明示的同意によりCareer Evidenceとして複業.Labで活用する接続
+- BDX × フィットネスクラブ / バレエスクールによる指導外の日常コンディショニング支援
+- Cafe × イベント会社によるアーティスト発見・成長・イベント支援
+- Cafeで生まれた観客の反応を、本人の明示的同意により複業.Labのキャリア実験へ活用する接続
 
-これらは将来の可能性であり、契約、価格、効果、導入時期は未確定です。
+これらは将来の仮説であり、契約、価格、効果、導入時期は未確定です。
 
 ## Privacy / Trust
 
-- 個人Dataを外部へ自動共有しない
-- 事業間でCross-product Profileを自動作成しない
-- 連携が必要な場合はPurposeを明示し、本人の明示的Consentを得る
-- Data MinimizationとUser Controlを前提とする
-- BDXの健康関連Data、CafeのSupporter Dataを販売モデルの中心にしない
+- 個人データを外部へ自動共有しない
+- 事業間で共通プロフィールを自動作成しない
+- 連携が必要な場合は目的を明示し、本人の明示的同意を得る
+- 必要最小限のデータ取得と本人による管理を前提とする
+- BDXの健康関連データ、Cafeの支援者データを販売モデルの中心にしない
 
 ## Evidence Language
 
-- 行動と結果のPatternを学ぶ可能性は示すが、相関を因果として断定しない
-- Data量が増えれば自動的にProductが改善するとは表現しない
-- 改善にはQuality Data、正しいMeasurement、有用なLearning、Productへの反映が必要
+- 行動と結果の傾向を学ぶ可能性は示すが、相関を因果として断定しない
+- データ量が増えれば自動的にプロダクトが改善するとは表現しない
+- 二次事業へ進む前に、一次事業の価値、再現性、事業性、パートナーとの補完性を確認する
 
 ## Sources
 
-本資料は、2026年8月22日に提供されたFuture Vision v2.0の事業判断と、同日のFuture Vision v3.0 Information Architecture / Editorial & Visual Redesign指示を一次情報として構成しています。外部市場Data、TAM / SAM / SOM、売上予測は使用していません。
+本資料は、2026年8月22日に提供されたFuture Visionの事業判断と、同日の長期構想に関する追加判断を一次情報として構成しています。外部市場データ、TAM / SAM / SOM、売上予測は使用していません。

@@ -1,86 +1,58 @@
-# Future Vision v3.0 Redesign Report
+# 3事業 長期構想 Redesign Report
 
 ## 1. Executive Summary
 
-事業内容を変えず、Future Visionを「説明する資料」から「理解させる資料」へ再設計した。3事業の共通思想、各一次事業、将来展開、連携モデルを17ページの本編へ整理し、詳細情報は4ページのAppendixへ移した。
+Future Visionを、共通思想中心の資料から、二次事業の全体像を主役にした長期構想へ再設計した。会社の思想を「価値の最大化」と定義し、一次事業で生まれた価値が、資産・パートナー・二次事業・社会価値へ広がる構造を可視化した。
 
 ## 2. Information Architecture
 
-旧版は13ページの中で事業・Data・Partnership・優先順位を高密度に説明していた。v3.0は次の順番へ変更した。
+本編を17ページから10ページへ再編した。
 
-1. 3事業
-2. 共通思想
-3. 行動と結果から学ぶ構造
-4. 複業.Lab
-5. BDX
-6. Cafe
-7. Cafe × 複業.Lab
-8. Partnership
-9. 成長戦略
-10. Final Vision
+1. 長期構想
+2. 成長構造
+3. 事業資産
+4. 複業.Labの二次事業
+5. BDXの二次事業
+6. Cafeの二次事業
+7. パートナーとの役割分担
+8. 社会価値
+9. 二次事業への移行条件
+10. 価値の最大化
 
-## 3. Copy Reduction
+詳細な確定事項、データ利用原則、対象外は3ページのAppendixへ移した。
 
-| 指標 | v2.0 | v3.0 |
-|---|---:|---:|
-| 全ページ | 13 | 21 |
-| 本編ページ | 13 | 17 |
-| 本編表示文字数 | 3,398 | 1,923 |
-| 1ページ平均 | 261.4 | 113.1 |
-| 本文削減率 | - | 43.4% |
-| 本編の主要図解 | 19 | 17 |
-| Appendix | なし | 4ページ / 998文字 |
+## 3. Main Changes
 
-文字数はHTMLの各`section.slide`内にある表示テキストを、空白を除いて集計した。
+- 資料名を「3事業 長期構想」へ変更
+- 会社の思想を「価値の最大化」へ変更
+- 英語表記を「パートナー」へ統一
+- イベント企業の表記を「イベント会社」へ統一
+- 一次事業から社会価値までの共通成長構造を新設
+- 各事業の二次事業を同じ図解構造で比較可能にした
+- パートナーが持つ顧客・現場・専門性・運営力を明示した
+- 社会価値を各事業ごとに一文で定義した
+- 二次事業へ進むための4段階の判断条件を追加した
 
-## 4. New Slides
+## 4. Visual System
 
-- 「可能性を、現実の一歩から育てる。」を共通思想として追加
-- 行動からデータが生まれる構造を独立
-- 学習とサービス改善の循環を独立
-- 3事業の現在と将来を1ページずつに分離
-- CafeのDiscovery、Artist Growth、Event連携を分離
-- Cafe × 複業.Labを具体例で可視化
+- 新規生成した3事業の現場をつなぐ表紙ビジュアルを使用
+- 10章の本編を、見出し・図解・結論の順に統一
+- 複業.Lab、BDX、Cafeを控えめなアクセント色で識別
+- スマートフォンでは横方向の図を縦方向の流れへ変換
+- A4横Print CSSを維持
 
-## 5. Visual System
+## 5. Remaining Work
 
-- 1ページ1メッセージ
-- Headline → Diagram → Key Messageの固定優先順位
-- 3事業をCareer / Condition / Artistのラベルと控えめな色で識別
-- 横Flow、Loop、Branch、Training Bridge、Partnershipの図解を用途別に実装
-- Mobileでは横図を縮小せず、縦Flowへ変換
+現時点で実装上の未完了項目はない。契約、価格、効果、開始時期は将来仮説のため未確定として維持する。
 
-## 6. Appendix
+## 6. Validation
 
-- 複業.Labの企業・自治体・地域Experiment
-- BDXのBallet Method、MOVE / LEARN / CARE、連携先との役割
-- CafeのDiscovery、Artist Growth、Event Companyとの役割
-- Raw Data非販売、Consent、事業間分離などのTrust原則
-
-## 7. Responsive / Print
-
-- Desktop 1440 × 900: PASS
-- Tablet 1024 × 768 / 768 × 1024: PASS
-- Mobile 390 × 844 / 375 × 812: PASS
-- A4横Print Media: PASS（21ページ、ページ内Overflow 0）
-- Horizontal Overflow: PASS（全5 Viewportで0）
-- Browser Console: Error 0 / Warning 0
-
-## 8. Visual QA
-
-Cover、共通思想、複業.Lab、BDX現在・将来、Cafe Discovery、Artist Growth、Cafe × 複業.Lab、Partnership、Final、AppendixをScreenshotで確認した。
-
-- Headlineの不自然な単語途中の改行を修正
-- Mobile固定Navigationを非表示にし、見出しとの重なりを解消
-- 横FlowをMobile / Tabletで縦Flowへ変換
-- 1024pxで横Flowが画面外へ出ないよう可変幅化
-- Dark Themeの連携カードとFinal MessageのContrastを改善
-
-## 9. URL / Deploy
-
-- URL: `https://satomitsu1986.github.io/reports/future-vision/`
-- Deploy: 既存の`main` → GitHub Pages運用で反映
-
-## 10. Remaining Issues
-
-実装上の未解決事項なし。企業・自治体・各Partnerとの展開は、資料内でFuture Hypothesisとして維持している。
+- 本編：17ページ → 10ページ
+- 全体：21ページ → 13ページ（Appendix 3ページを含む）
+- Desktop 1440px：PASS
+- Tablet 768px / 1024px：PASS
+- Mobile 375px / 390px：PASS
+- Horizontal Overflow：PASS
+- Browser Console：Error / Warning 0
+- A4 Landscape Print：13ページ、PASS
+- 主要ページのScreenshot Review：PASS
