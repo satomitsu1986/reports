@@ -244,9 +244,14 @@
       .growth-stage + .growth-stage { border-top-width: 1px; }
       .growth-stage:not(:last-child)::after { content: "↓"; display: block; position: absolute; left: 50%; bottom: -27px; z-index: 3; color: var(--gold); font-size: 24px; transform: translateX(-50%); }
       .asset-lanes { min-width: 0; display: grid; gap: 12px; margin-inline: 0; padding: 0; border-top: 0; overflow-x: visible; overscroll-behavior-inline: auto; scroll-snap-type: none; }
-      .asset-lane { min-width: 0; grid-template-columns: 1fr; border: 1px solid var(--line); scroll-snap-align: none; }
-      .asset-lane__name { padding-top: 22px; padding-bottom: 18px; }
-      .asset-lane__data, .asset-lane__method { padding: 18px 22px; border-top: 1px solid var(--line); border-left: 0; }
+      .asset-lane { min-width: 0; grid-template-columns: minmax(76px, .72fr) minmax(0, 1fr) minmax(0, 1.15fr); border: 1px solid var(--line); scroll-snap-align: none; }
+      .asset-lane__name { padding: 16px 10px 16px 12px; }
+      .asset-lane.career .asset-lane__name, .asset-lane.condition .asset-lane__name, .asset-lane.artist .asset-lane__name { padding-left: 12px; }
+      .asset-lane__name small { font-size: 7px; }
+      .asset-lane__name strong { font-size: 14px; overflow-wrap: anywhere; }
+      .asset-lane__data, .asset-lane__method { padding: 16px 10px; border-top: 0; border-left: 1px solid var(--line); }
+      .asset-lane__data span, .asset-lane__method span { font-size: 8px; }
+      .asset-lane__data b, .asset-lane__method b { font-size: 12px; line-height: 1.65; }
       .asset-principle { align-items: flex-start; flex-direction: column; }
       .business-expansion { grid-template-columns: 1fr; gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; scroll-snap-type: none; }
       .business-block { min-height: auto; padding: 24px; }
@@ -378,9 +383,9 @@
     <section class="slide mist" id="assets" data-page="03 / 08" aria-labelledby="assets-title"><div class="slide__inner">
       <p class="label">03</p><h2 class="headline" id="assets-title">事業資産</h2><p class="support">一次事業で蓄積するのは、単なる利用履歴ではありません。「どんな状況で、何をし、どう変わったか」というデータと、価値を生むノウハウです。</p>
       <div class="asset-lanes" aria-label="3事業から得られる資産">
-        <article class="asset-lane career"><div class="asset-lane__name"><small>CAREER</small><strong>複業.Lab</strong></div><div class="asset-lane__data"><span>蓄積するデータ</span><b>仮説・小さな実験・つまずき・結果</b></div><div class="asset-lane__method"><span>データ &amp; ノウハウ</span><b>新しいキャリアを、小さく試しながら育てる方法</b></div></article>
-        <article class="asset-lane condition"><div class="asset-lane__name"><small>CONDITION</small><strong>BDX</strong></div><div class="asset-lane__data"><span>蓄積するデータ</span><b>状態・提案・実践・反応・次の状態</b></div><div class="asset-lane__method"><span>データ &amp; ノウハウ</span><b>指導外の日常で、より良い体調をつくる方法</b></div></article>
-        <article class="asset-lane artist"><div class="asset-lane__name"><small>ARTIST</small><strong>Cafe</strong></div><div class="asset-lane__data"><span>蓄積するデータ</span><b>出会い・反応・参加・支援・成長</b></div><div class="asset-lane__method"><span>データ &amp; ノウハウ</span><b>アーティストと新しい支援者をつなぐ方法</b></div></article>
+        <article class="asset-lane career"><div class="asset-lane__name"><small>CAREER</small><strong>複業.Lab</strong></div><div class="asset-lane__data"><span>蓄積するデータ</span><b>仮説・小さな実験・つまずき・結果</b></div><div class="asset-lane__method"><span>価値を生むノウハウ</span><b>新しいキャリアを、小さく試しながら育てる方法</b></div></article>
+        <article class="asset-lane condition"><div class="asset-lane__name"><small>CONDITION</small><strong>BDX</strong></div><div class="asset-lane__data"><span>蓄積するデータ</span><b>状態・提案・実践・反応・次の状態</b></div><div class="asset-lane__method"><span>価値を生むノウハウ</span><b>指導外の日常で、より良い体調をつくる方法</b></div></article>
+        <article class="asset-lane artist"><div class="asset-lane__name"><small>ARTIST</small><strong>Cafe</strong></div><div class="asset-lane__data"><span>蓄積するデータ</span><b>出会い・反応・参加・支援・成長</b></div><div class="asset-lane__method"><span>価値を生むノウハウ</span><b>アーティストと新しい支援者をつなぐ方法</b></div></article>
       </div><div class="asset-principle"><b>データを売るのではなく、価値へ変える。</b><p>データとノウハウを、より良いプロダクト・プログラム・パートナーシップへ活用します。</p></div>
     </div></section>
 
