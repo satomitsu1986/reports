@@ -28,7 +28,7 @@
       --serif: "Noto Serif JP", serif; --sans: "Noto Sans JP", sans-serif; --max: 1180px;
     }
     html { scroll-behavior: smooth; background: var(--navy); }
-    body { min-width: 320px; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.72; letter-spacing: 0; }
+    body { min-width: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.72; letter-spacing: 0; }
     a { color: inherit; }
     h1, h2, h3, p { overflow-wrap: anywhere; }
     h1, h2 { font-family: var(--serif); font-weight: 600; line-height: 1.35; }
@@ -231,35 +231,37 @@
       .cover h1 { font-size: clamp(52px, 17vw, 74px); }
       .cover__businesses { grid-template-columns: 1fr; border-bottom: 0; }
       .cover__business { padding: 10px 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
-      .strategy-businesses, .social-value-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(280px, 82vw); gap: 12px; margin-inline: -18px; padding: 0 18px 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
-      .strategy-card, .social-value-card { scroll-snap-align: start; }
+      .strategy-businesses, .social-value-grid { grid-template-columns: 1fr; grid-auto-flow: row; grid-auto-columns: auto; gap: 12px; margin-inline: 0; padding: 0; overflow-x: visible; scroll-snap-type: none; }
+      .strategy-card, .social-value-card { min-height: auto; scroll-snap-align: none; }
       .strategy-card h3 { font-size: 19px; line-height: 1.65; }
-      .strategy-flow { grid-template-columns: repeat(4, 190px); margin-inline: -18px; padding-inline: 18px; border-inline: 0; overflow-x: auto; scroll-snap-type: x mandatory; }
-      .strategy-step { scroll-snap-align: start; }
+      .strategy-flow { grid-template-columns: 1fr; margin-inline: 0; padding-inline: 0; overflow-x: visible; scroll-snap-type: none; }
+      .strategy-step { min-height: 92px; border-right: 0; border-bottom: 1px solid var(--line-dark); scroll-snap-align: none; }
+      .strategy-step:last-child { border-bottom: 0; }
+      .strategy-step:not(:last-child)::after { content: "↓"; right: auto; left: calc(50% - 13px); top: auto; bottom: -16px; }
       .growth-map { grid-template-columns: 1fr; gap: 0; }
       .growth-stage { position: relative; min-height: 120px; padding: 22px; margin-bottom: 28px; }
       .growth-stage:last-child { margin-bottom: 0; }
       .growth-stage + .growth-stage { border-top-width: 1px; }
       .growth-stage:not(:last-child)::after { content: "↓"; display: block; position: absolute; left: 50%; bottom: -27px; z-index: 3; color: var(--gold); font-size: 24px; transform: translateX(-50%); }
-      .asset-lanes { min-width: 0; margin-inline: -18px; padding: 0 18px 14px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x proximity; }
-      .asset-lane { min-width: 760px; grid-template-columns: 170px 1fr 1.2fr; scroll-snap-align: start; }
+      .asset-lanes { min-width: 0; display: grid; gap: 12px; margin-inline: 0; padding: 0; border-top: 0; overflow-x: visible; overscroll-behavior-inline: auto; scroll-snap-type: none; }
+      .asset-lane { min-width: 0; grid-template-columns: 1fr; border: 1px solid var(--line); scroll-snap-align: none; }
       .asset-lane__name { padding-top: 22px; padding-bottom: 18px; }
-      .asset-lane__data, .asset-lane__method { padding: 18px 22px; border-top: 0; border-left: 1px solid var(--line); }
+      .asset-lane__data, .asset-lane__method { padding: 18px 22px; border-top: 1px solid var(--line); border-left: 0; }
       .asset-principle { align-items: flex-start; flex-direction: column; }
-      .business-expansion { grid-template-columns: 82vw 40px 82vw 40px 82vw; gap: 0; margin-inline: -18px; padding: 0 18px 14px; overflow-x: auto; scroll-snap-type: x mandatory; }
+      .business-expansion { grid-template-columns: 1fr; gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; scroll-snap-type: none; }
       .business-block { min-height: auto; padding: 24px; }
-      .business-block { scroll-snap-align: start; }
+      .business-block { scroll-snap-align: none; }
       .business-connector { min-height: 54px; }
-      .business-connector::before { left: 6px; right: 6px; top: 50%; bottom: auto; width: auto; height: 1px; }
-      .business-connector::after { left: auto; right: 6px; top: calc(50% - 4px); bottom: auto; transform: rotate(45deg); }
+      .business-connector::before { left: 50%; right: auto; top: 6px; bottom: 6px; width: 1px; height: auto; }
+      .business-connector::after { left: calc(50% - 4px); right: auto; top: auto; bottom: 6px; transform: rotate(135deg); }
       .impact-bar { grid-template-columns: 1fr; gap: 6px; }
-      .partnership-grid { grid-template-columns: minmax(280px, 82vw) 40px minmax(280px, 82vw); gap: 0; margin-inline: -18px; padding: 0 18px 14px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; }
-      .partnership-side { scroll-snap-align: start; }
-      .partnership-multiply { min-height: 0; }
+      .partnership-grid { grid-template-columns: 1fr; gap: 0; margin-inline: 0; padding: 0; overflow-x: visible; overscroll-behavior-inline: auto; scroll-snap-type: none; }
+      .partnership-side { scroll-snap-align: none; }
+      .partnership-multiply { min-height: 64px; }
       .partnership-list div { align-items: flex-start; flex-direction: column; gap: 4px; }
       .partnership-list span { text-align: left; }
-      .partner-reasons { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(260px, 78vw); margin-inline: -18px; padding-inline: 18px; border: 0; overflow-x: auto; scroll-snap-type: x mandatory; }
-      .partner-reason { border: 1px solid var(--line-dark); scroll-snap-align: start; }
+      .partner-reasons { grid-template-columns: 1fr; grid-auto-flow: row; grid-auto-columns: auto; gap: 12px; margin-inline: 0; padding-inline: 0; border: 0; overflow-x: visible; scroll-snap-type: none; }
+      .partner-reason { min-height: auto; border: 1px solid var(--line-dark); scroll-snap-align: none; }
       .partner-assets { grid-template-columns: repeat(2, 1fr); }
       .social-future { background-image: url("assets/social-value-vision.jpg"); background-position: 68% center; }
       .impact-row { grid-template-columns: 1fr; }
@@ -277,7 +279,7 @@
       .final__domains { grid-template-columns: 1fr; border-bottom: 0; }
       .final__domain { border-right: 0; border-bottom: 1px solid var(--line-dark); }
       .appendix-grid { grid-template-columns: 1fr; }
-      .policy-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .policy-table { display: table; table-layout: fixed; overflow-x: visible; white-space: normal; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media print {
