@@ -4,22 +4,18 @@
 
 ## 構成
 
-本編は10章です。
+本編は8章です。
 
 1. 長期構想
-2. 成長構造
+2. 成長戦略
 3. 事業資産
 4. 複業.Lab
 5. BDX
 6. Cafe
-7. パートナーシップ
+7. パートナーシップのメリット
 8. 社会価値
-9. 移行条件
-10. 価値の最大化
 
-本編の後に、現在と将来、データ利用、対象外を整理したAppendixが3ページあります。
-
-## 会社の思想
+## 構想の中心
 
 `価値の最大化`
 
@@ -33,8 +29,10 @@
 
 ## Files
 
-- `index.html`: 本編10ページ、Appendix 3ページ。ブラウザ閲覧とA4横PDF出力に対応。
-- `assets/long-term-vision-cover.jpg`: 表紙と最終ページのビジュアル。
+- `index.html`: 本編8ページ。ブラウザ閲覧とA4横PDF出力に対応。
+- `assets/long-term-vision-cover.jpg`: Desktop表紙のビジュアル。
+- `assets/long-term-vision-cover-mobile.jpg`: Mobile表紙の縦構図ビジュアル。
+- `assets/social-value-vision.jpg`: 社会価値ページの背景ビジュアル。
 - `notes.md`: 確定事項、将来仮説、データ利用上の注意を整理。
 - `redesign-report.md`: 今回の再設計と検証結果を記録。
 
