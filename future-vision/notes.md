@@ -2,10 +2,17 @@
 
 ## Document Scope
 
-- Document: 3 Business Future Vision v2.0
+- Document: 3 Business Future Vision v3.0
 - Domains: 複業.Lab / BDX / Cafe
-- Purpose: 一次事業、Data Asset、将来のPartnershipによるExpansionの関係を可視化する
+- Purpose: 3事業のGoal、共通思想、将来のPartnershipによるExpansionを直感的に理解できるようにする
 - Type: Vision Document。売上計画、市場規模資料、確定した法人営業計画ではない
+
+## Shared Philosophy
+
+- 共通思想: 可能性を、現実の一歩から育てる
+- 共通の方法: Possibility → Action → Real-world Feedback → Learning → Next Action → Growth
+- 成長戦略: BUILD → LEARN → PROVE → EXPAND
+- DataとAIは事業目的ではなく、人への価値を改善するための手段
 
 ## Confirmed
 
@@ -42,4 +49,4 @@
 
 ## Sources
 
-本資料は、2026年8月22日に提供された「3事業 Future Vision v2.0 / Data Asset × Partnership × Expansion」の事業判断を一次情報として構成しています。外部市場Data、TAM / SAM / SOM、売上予測は使用していません。
+本資料は、2026年8月22日に提供されたFuture Vision v2.0の事業判断と、同日のFuture Vision v3.0 Information Architecture / Editorial & Visual Redesign指示を一次情報として構成しています。外部市場Data、TAM / SAM / SOM、売上予測は使用していません。

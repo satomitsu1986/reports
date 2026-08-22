@@ -1,1359 +1,831 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="複業.Lab、BDX、Cafeの3事業が、利用者の行動と結果から学び、企業・地域・既存施設との連携へ発展する事業構想。" />
-  <meta property="og:title" content="3事業 成長構想 v2.0" />
-  <meta property="og:description" content="3つの個人向け事業で価値を証明し、蓄積した知見と外部連携によって次の事業成長へつなげる。" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://satomitsu1986.github.io/reports/future-vision/" />
-  <meta name="twitter:card" content="summary" />
-  <title>3事業 成長構想 v2.0</title>
-  <link rel="icon" href="data:," />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="複業.Lab、BDX、Cafeの3事業が、現実の行動と結果から学び、連携先と価値を広げていく事業構想。">
+  <meta property="og:title" content="3事業 Future Vision v3.0">
+  <meta property="og:description" content="可能性を、現実の一歩から育てる。Career、Condition、Artistを支える3事業の成長構想。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satomitsu1986.github.io/reports/future-vision/">
+  <meta name="twitter:card" content="summary">
+  <title>3事業 Future Vision v3.0</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     * { margin: 0; }
 
     :root {
-      --navy: #101c31;
-      --navy-2: #182743;
+      --ink: #152136;
+      --navy: #111c30;
+      --navy-2: #1a2943;
       --paper: #f7f5ef;
-      --mist: #edf1f2;
-      --white: #ffffff;
-      --ink: #152137;
-      --muted: #687181;
-      --line: #c9cbc7;
-      --line-dark: rgba(255,255,255,0.18);
-      --gold: #b88a39;
-      --lab: #5274b1;
-      --lab-soft: #e7edf8;
-      --bdx: #d95d79;
-      --bdx-soft: #f8e5ea;
-      --cafe: #b86d35;
-      --cafe-soft: #f4e7db;
-      --green: #2f8879;
-      --green-soft: #dceeea;
-      --warning: #9c553f;
-      --radius: 6px;
+      --white: #fffefd;
+      --mist: #eaf0f5;
+      --line: rgba(21, 33, 54, .17);
+      --line-dark: rgba(255, 255, 255, .18);
+      --muted: #637083;
+      --muted-dark: #b8c0ce;
+      --gold: #b88b3e;
+      --career: #5f81d7;
+      --condition: #db6488;
+      --artist: #b57a58;
+      --green: #54a98c;
+      --serif: "Noto Serif JP", serif;
+      --sans: "Noto Sans JP", sans-serif;
+      --max: 1180px;
     }
 
-    html {
-      scroll-behavior: smooth;
-      background: var(--navy);
-      color: var(--ink);
-      font-family: 'Noto Sans JP', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    html { scroll-behavior: smooth; background: var(--navy); }
     body {
       min-width: 320px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.75;
+      letter-spacing: 0;
       overflow-x: hidden;
-      background: var(--navy);
     }
+    a { color: inherit; }
+    h1, h2, h3, p { overflow-wrap: anywhere; }
+    h1, h2 { font-family: var(--serif); font-weight: 600; line-height: 1.35; }
 
-    h1, h2, h3, p, span, strong, li { letter-spacing: 0; }
-    h1, h2, .serif { font-family: 'Noto Serif JP', serif; }
-
-    .deck { width: 100%; }
+    .deck-nav {
+      position: fixed;
+      z-index: 20;
+      inset: 18px 18px auto;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .deck-nav__inner {
+      display: flex;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 6px;
+      background: rgba(11,18,31,.82);
+      box-shadow: 0 10px 32px rgba(0,0,0,.18);
+      backdrop-filter: blur(14px);
+      pointer-events: auto;
+    }
+    .deck-nav a {
+      padding: 7px 10px;
+      border-radius: 3px;
+      color: #d8deea;
+      font-size: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .deck-nav a:focus-visible,
+    .deck-nav a:hover { color: #fff; background: rgba(255,255,255,.1); outline: none; }
 
     .slide {
       position: relative;
       min-height: 100svh;
-      overflow: hidden;
-      display: flex;
+      padding: clamp(88px, 10vh, 132px) clamp(22px, 6vw, 88px) clamp(76px, 9vh, 112px);
+      display: grid;
       align-items: center;
-      padding: 70px 6vw;
+      overflow: hidden;
+      isolation: isolate;
       background: var(--paper);
     }
-
-    .slide.navy { background: var(--navy); color: var(--paper); }
-    .slide.deep { background: var(--navy-2); color: var(--paper); }
-    .slide.mist { background: var(--mist); }
-    .slide.lab-bg { background: var(--lab-soft); }
-    .slide.bdx-bg { background: var(--bdx-soft); }
-    .slide.cafe-bg { background: var(--cafe-soft); }
-
     .slide::after {
       content: attr(data-page);
       position: absolute;
-      right: 34px;
+      right: clamp(22px, 4vw, 56px);
       bottom: 24px;
-      color: currentColor;
+      color: var(--muted);
       font-size: 10px;
       font-weight: 700;
-      opacity: 0.32;
     }
+    .slide.dark { background: var(--navy); color: #f7f4ed; }
+    .slide.dark::after { color: #8d98aa; }
+    .slide.mist { background: var(--mist); }
+    .slide.white { background: var(--white); }
+    .slide.career-tint { background: #eef3ff; }
+    .slide.condition-tint { background: #fff0f4; }
+    .slide.artist-tint { background: #f6eee8; }
+    .slide__inner { width: 100%; max-width: var(--max); min-width: 0; margin: auto; }
+    .slide__inner.narrow { max-width: 940px; }
+    .slide__inner.center { text-align: center; }
 
-    .inner {
-      position: relative;
-      z-index: 1;
-      width: min(1180px, 100%);
-      margin: 0 auto;
-    }
-
-    .chapter {
+    .label {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       color: var(--gold);
       font-size: 11px;
       font-weight: 700;
-      line-height: 1.5;
     }
+    .label::after { content: ""; width: 62px; height: 2px; background: currentColor; }
+    .label.center { justify-content: center; }
+    .label.career { color: var(--career); }
+    .label.condition { color: var(--condition); }
+    .label.artist { color: var(--artist); }
 
-    .chapter::after {
-      content: '';
-      width: 42px;
-      height: 2px;
-      background: currentColor;
+    .headline {
+      max-width: 980px;
+      font-size: clamp(34px, 5vw, 68px);
     }
-
-    h1 {
-      font-size: 66px;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    h2 {
-      font-size: 46px;
-      font-weight: 600;
-      line-height: 1.38;
-    }
-
-    h3 {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .lead {
-      max-width: 760px;
-      margin-top: 20px;
+    .headline.compact-title { font-size: clamp(32px, 4.2vw, 58px); }
+    .headline.bdx-title { font-size: clamp(30px, 3.7vw, 50px); }
+    .headline .title-line { display: block; }
+    .headline.center { margin-inline: auto; text-align: center; }
+    .support {
+      max-width: 720px;
+      margin-top: 22px;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.9;
+      font-size: clamp(14px, 1.3vw, 18px);
     }
-
-    .navy .lead, .deep .lead { color: rgba(247,245,239,0.68); }
-
+    .support.center { margin-inline: auto; text-align: center; }
+    .dark .support { color: var(--muted-dark); }
+    .key-message {
+      margin-top: clamp(26px, 4vw, 48px);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.5vw, 32px);
+      font-weight: 600;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .dark .key-message { color: #fff; }
     .note {
+      max-width: 860px;
       color: var(--muted);
       font-size: 12px;
       line-height: 1.75;
     }
+    .dark .note { color: var(--muted-dark); }
+    .accent { color: var(--gold); }
 
-    .navy .note, .deep .note { color: rgba(247,245,239,0.58); }
-    .note-gap { margin-top: 14px; }
-    .center-chapter { justify-content: center; }
-    .center-lead { margin-left: auto; margin-right: auto; }
+    .slide.compact { padding-top: clamp(70px, 8vh, 96px); padding-bottom: clamp(58px, 7vh, 82px); }
+    .slide.compact .label { margin-bottom: 14px; }
+    .slide.compact .headline { font-size: clamp(32px, 4.2vw, 58px); }
+    .slide.compact .formula,
+    .slide.compact .training-bridge,
+    .slide.compact .split-partnership { margin-top: clamp(24px, 3vw, 38px); }
+    .slide.compact .formula__group { min-height: 260px; }
+    .slide.compact .key-message { margin-top: 22px; font-size: clamp(20px, 2.1vw, 27px); }
+    .slide.compact .support { margin-top: 12px; }
 
-    .business-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 12px;
-      font-weight: 700;
+    .cover {
+      background:
+        linear-gradient(120deg, rgba(17,28,48,.96), rgba(17,28,48,.83)),
+        linear-gradient(90deg, var(--career), var(--condition), var(--artist));
+      color: #fff;
     }
-
-    .business-mark::before {
-      content: '';
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: currentColor;
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(to bottom right, #000, transparent 74%);
     }
-
-    .lab { color: var(--lab); }
-    .bdx { color: var(--bdx); }
-    .cafe { color: var(--cafe); }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 27px;
-      padding: 5px 9px;
-      border: 1px solid currentColor;
-      border-radius: 3px;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 42px;
-      margin-bottom: 38px;
-    }
-
-    .section-head .lead {
-      max-width: 410px;
-      margin-top: 0;
-      font-size: 14px;
-    }
-
-    /* 01 Cover */
-    .cover { background: var(--navy); color: var(--paper); }
-
-    .cover-grid {
+    .cover__mark { color: var(--gold); font-size: 12px; font-weight: 700; }
+    .cover h1 { margin-top: 34px; font-size: clamp(44px, 7.4vw, 96px); }
+    .cover .key-message { color: #fff; }
+    .cover .support { color: #aeb8c8; }
+    .cover__domains {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
-      gap: 78px;
-      align-items: center;
-    }
-
-    .cover .lead { max-width: 650px; }
-
-    .cover-path {
-      display: grid;
-      grid-template-columns: repeat(7, auto);
-      align-items: center;
-      justify-content: start;
-      gap: 10px;
-      margin-top: 42px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .cover-path .arrow { color: var(--gold); }
-
-    .cover-businesses {
-      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 760px;
+      margin-top: clamp(46px, 8vh, 88px);
       border-top: 1px solid var(--line-dark);
-    }
-
-    .cover-business {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 20px;
-      padding: 24px 0;
       border-bottom: 1px solid var(--line-dark);
     }
+    .cover__domain { padding: 18px 20px; border-right: 1px solid var(--line-dark); }
+    .cover__domain:last-child { border-right: 0; }
+    .cover__domain span { display: block; color: #99a5b7; font-size: 10px; font-weight: 700; }
+    .cover__domain strong { display: block; margin-top: 4px; font-size: clamp(18px, 2vw, 27px); }
 
-    .cover-business strong { font-size: 17px; }
-    .cover-business p {
-      margin-top: 5px;
-      color: rgba(247,245,239,0.6);
-      font-size: 12px;
-      line-height: 1.65;
-    }
-
-    /* 02 Overview */
-    .overview-grid {
+    .business-trio {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      margin-top: clamp(36px, 6vw, 68px);
     }
-
-    .overview-lane {
+    .business-panel {
       position: relative;
       min-height: 280px;
-      padding: 26px;
+      padding: 34px;
       border: 1px solid var(--line);
-      border-top: 5px solid currentColor;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.58);
+      background: rgba(255,255,255,.72);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
+    .business-panel::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--career); }
+    .business-panel.condition::before { background: var(--condition); }
+    .business-panel.artist::before { background: var(--artist); }
+    .business-panel small { color: var(--muted); font-weight: 700; }
+    .business-panel h3 { font-size: clamp(24px, 2.5vw, 34px); line-height: 1.45; }
+    .business-panel b { font-size: 13px; }
 
-    .overview-lane h3 {
-      margin-top: 18px;
-      color: var(--ink);
-      font-family: 'Noto Serif JP', serif;
-      font-size: 24px;
-    }
-
-    .overview-lane p {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .overview-shift {
-      margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-
-    .overview-shift span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .overview-shift strong {
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .shared-flow {
-      display: grid;
-      grid-template-columns: repeat(7, auto);
+    .flow {
+      display: flex;
       align-items: stretch;
-      margin-top: 26px;
-      border: 1px solid var(--line-dark);
-      background: rgba(255,255,255,0.04);
+      justify-content: center;
+      gap: 0;
+      margin-top: clamp(38px, 6vw, 72px);
     }
-
-    .shared-step {
-      min-width: 190px;
-      padding: 20px;
-    }
-
-    .shared-step span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .shared-step strong { font-size: 15px; line-height: 1.5; }
-    .shared-arrow {
-      align-self: center;
-      padding: 0 14px;
-      color: var(--gold);
-      font-size: 21px;
-    }
-
-    .trust-line {
-      margin-top: 18px;
-      padding-left: 14px;
-      border-left: 4px solid var(--warning);
-      color: rgba(247,245,239,0.6);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    /* Current business diagrams */
-    .business-layout {
+    .flow__step {
+      flex: 1 1 0;
+      width: auto;
+      min-width: 0;
+      max-width: 180px;
+      min-height: 118px;
+      padding: 20px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
       display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(560px, 1.22fr);
-      gap: 56px;
-      align-items: center;
+      place-items: center;
+      align-content: center;
+      text-align: center;
     }
-
-    .purpose-box {
-      margin-top: 30px;
-      padding: 22px 24px;
-      border-left: 5px solid currentColor;
-      background: rgba(255,255,255,0.66);
+    .flow__step b { font-size: clamp(16px, 1.55vw, 21px); line-height: 1.45; }
+    .flow__step small { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; }
+    .flow__arrow {
+      position: relative;
+      flex: 0 0 38px;
+      min-height: 118px;
     }
-
-    .purpose-box span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .purpose-box strong {
-      color: var(--ink);
-      font-family: 'Noto Serif JP', serif;
-      font-size: 20px;
-      line-height: 1.65;
-    }
+    .flow__arrow::before { content: ""; position: absolute; left: 7px; right: 7px; top: 50%; height: 1px; background: var(--gold); }
+    .flow__arrow::after { content: ""; position: absolute; right: 7px; top: calc(50% - 4px); width: 8px; height: 8px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); transform: rotate(45deg); }
+    .dark .flow__step { border-color: var(--line-dark); background: rgba(255,255,255,.045); }
+    .dark .flow__step small { color: var(--muted-dark); }
+    .dark .asset-box { border-color: var(--line-dark); background: rgba(255,255,255,.055); color: #fff; }
+    .dark .asset-box ul { color: var(--muted-dark); }
+    .dark .asset-box li { border-color: var(--line-dark); }
 
     .loop {
+      width: min(860px, 100%);
+      margin: clamp(38px, 6vw, 70px) auto 0;
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.58);
+    }
+    .loop__row { display: flex; align-items: center; justify-content: center; }
+    .loop__item {
+      flex: 1;
+      min-height: 102px;
       display: grid;
-      grid-template-columns: repeat(9, auto);
-      align-items: stretch;
-      border: 1px solid var(--line);
-      background: var(--white);
-    }
-
-    .loop-step {
-      min-width: 108px;
-      min-height: 142px;
-      padding: 20px 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .loop-step span {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .loop-step strong { font-size: 14px; line-height: 1.55; }
-    .loop-arrow {
-      align-self: center;
-      padding: 0 8px;
-      color: var(--gold);
-      font-size: 18px;
-    }
-
-    .insight-strip {
-      margin-top: 22px;
-      padding: 20px 22px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.58);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.75;
-    }
-
-    .insight-strip strong { color: var(--ink); font-size: 14px; }
-
-    /* Secondary business map */
-    .expansion-map {
-      display: grid;
-      grid-template-columns: repeat(7, auto);
-      align-items: stretch;
-      margin-top: 38px;
-    }
-
-    .expansion-node {
-      width: 240px;
-      min-height: 230px;
-      padding: 25px 22px;
-      border: 1px solid var(--line);
-      border-top: 5px solid currentColor;
-      background: rgba(255,255,255,0.72);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .expansion-node .eyebrow {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .expansion-node h3 { margin-top: 18px; color: var(--ink); }
-    .expansion-node p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .expansion-node .node-bottom {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.6;
-    }
-
-    .expansion-arrow {
-      align-self: center;
-      padding: 0 14px;
-      color: var(--gold);
-      font-size: 24px;
-    }
-
-    .outcome-bar {
-      margin-top: 22px;
-      padding: 20px;
-      border: 1px solid currentColor;
-      color: var(--ink);
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1.6;
+      place-items: center;
+      padding: 16px;
+      background: var(--navy);
+      color: #fff;
       text-align: center;
+      font-weight: 700;
     }
+    .loop__arrow { flex: 0 0 50px; text-align: center; color: var(--gold); font-size: 26px; }
+    .loop__return { margin-top: 18px; color: var(--gold); text-align: center; font-size: 12px; font-weight: 700; }
 
-    .use-cases {
+    .formula {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      margin-top: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: clamp(16px, 3vw, 34px);
+      margin-top: clamp(36px, 6vw, 72px);
+    }
+    .formula__group {
+      min-height: 330px;
+      padding: clamp(24px, 3vw, 38px);
       border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
     }
+    .formula__group small { color: var(--muted); font-weight: 700; }
+    .formula__group h3 { margin-top: 16px; font-size: clamp(24px, 3vw, 38px); }
+    .formula__tokens { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .formula__tokens span { padding: 7px 9px; border: 1px solid var(--line); font-size: 12px; }
+    .formula__operator { color: var(--gold); font-size: 36px; text-align: center; }
+    .formula__result { border: 2px solid var(--condition); background: var(--navy); color: #fff; }
+    .formula__result small { color: var(--muted-dark); }
 
-    .use-case { padding: 18px 20px; }
-    .use-case + .use-case { border-left: 1px solid var(--line); }
-    .use-case strong { font-size: 14px; }
-    .use-case p {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    /* BDX */
-    .method-grid {
+    .branch {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      margin-top: 34px;
-      border: 1px solid var(--line-dark);
+      grid-template-columns: 1fr 90px 1fr;
+      align-items: stretch;
+      gap: 24px;
+      margin-top: clamp(38px, 6vw, 70px);
     }
-
-    .method-item {
-      min-height: 120px;
-      padding: 18px 12px;
-      border-right: 1px solid var(--line-dark);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .branch__source, .branch__target {
+      min-height: 330px;
+      padding: clamp(26px, 4vw, 46px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.76);
     }
-
-    .method-item:last-child { border-right: 0; }
-    .method-item span { color: var(--bdx); font-size: 10px; font-weight: 700; }
-    .method-item strong { font-size: 14px; line-height: 1.5; }
+    .branch__source { display: grid; place-items: center; text-align: center; }
+    .branch__source h3 { font-size: clamp(26px, 3.2vw, 42px); }
+    .branch__source p { margin-top: 16px; color: var(--muted); }
+    .branch__connector { position: relative; display: grid; place-items: center; color: var(--gold); font-size: 36px; }
+    .branch__target { display: grid; gap: 12px; }
+    .branch__option { padding: 20px; border: 1px solid var(--line); }
+    .branch__option b { display: block; font-size: 20px; }
+    .branch__option span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
 
     .training-bridge {
-      display: grid;
-      grid-template-columns: 0.78fr 1.45fr 0.78fr;
-      align-items: stretch;
-      margin-top: 38px;
+      max-width: 980px;
+      margin: clamp(34px, 5vw, 60px) auto 0;
+      border: 1px solid var(--line-dark);
+      background: rgba(255,255,255,.04);
     }
+    .training-bridge__cap {
+      padding: 22px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,.07);
+      font-weight: 700;
+    }
+    .training-bridge__cap span { color: var(--muted-dark); font-size: 12px; }
+    .training-bridge__daily { padding: clamp(26px, 4vw, 44px); text-align: center; }
+    .training-bridge__daily strong { display: block; color: var(--condition); font-size: 15px; }
+    .training-bridge__items { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 20px; }
+    .training-bridge__items span { padding: 9px 12px; border: 1px solid var(--line-dark); color: #f2f4f8; font-size: 12px; }
 
-    .lesson-block {
-      min-height: 240px;
-      padding: 28px 22px;
+    .split-partnership {
+      display: grid;
+      grid-template-columns: 1fr 64px 1fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-top: clamp(38px, 6vw, 72px);
+    }
+    .asset-box { padding: clamp(26px, 4vw, 44px); border: 1px solid var(--line); background: rgba(255,255,255,.72); }
+    .asset-box h3 { font-size: 24px; }
+    .asset-box ul { margin-top: 24px; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); }
+    .asset-box li { padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    .multiply { display: grid; place-items: center; color: var(--gold); font-size: 38px; }
+    .partnership-result {
+      width: min(720px, 100%);
+      margin: 24px auto 0;
+      padding: 18px 24px;
       background: var(--navy);
-      color: var(--paper);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      color: #fff;
       text-align: center;
-    }
-
-    .lesson-block strong { font-size: 20px; }
-    .lesson-block p {
-      margin-top: 12px;
-      color: rgba(247,245,239,0.6);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .daily-block {
-      padding: 26px;
-      border-top: 1px solid var(--bdx);
-      border-bottom: 1px solid var(--bdx);
-      background: rgba(255,255,255,0.62);
-    }
-
-    .daily-block h3 { color: var(--bdx); text-align: center; }
-
-    .daily-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 20px;
-      border: 1px solid rgba(217,93,121,0.28);
-    }
-
-    .daily-grid span {
-      padding: 12px 8px;
-      border: 1px solid rgba(217,93,121,0.16);
-      color: var(--ink);
-      font-size: 11px;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    /* Cafe */
-    .discovery-flow {
-      display: grid;
-      grid-template-columns: repeat(11, auto);
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 40px;
-    }
-
-    .discovery-node {
-      width: 132px;
-      min-height: 110px;
-      padding: 16px 12px;
-      border: 1px solid var(--line);
-      background: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink);
-      font-size: 14px;
       font-weight: 700;
-      line-height: 1.55;
-      text-align: center;
     }
 
-    .discovery-node.emphasis {
-      border-color: var(--cafe);
-      background: var(--cafe-soft);
-      color: #70411f;
-    }
-
-    .discovery-arrow { color: var(--cafe); font-size: 20px; }
-
-    .three-values {
+    .distribution {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      margin-top: 28px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.5);
-    }
-
-    .value-cell { padding: 20px; }
-    .value-cell + .value-cell { border-left: 1px solid var(--line); }
-    .value-cell span { color: var(--gold); font-size: 10px; font-weight: 700; }
-    .value-cell strong { display: block; margin-top: 9px; font-size: 17px; }
-    .value-cell p { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.7; }
-
-    .growth-loop {
-      display: grid;
-      grid-template-columns: repeat(13, auto);
-      align-items: stretch;
-      margin-top: 40px;
-      border: 1px solid var(--line-dark);
-    }
-
-    .growth-step {
-      width: 135px;
-      min-height: 150px;
-      padding: 20px 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .growth-step span { color: var(--gold); font-size: 10px; font-weight: 700; }
-    .growth-step strong { font-size: 13px; line-height: 1.55; }
-    .growth-arrow {
-      align-self: center;
-      color: var(--gold);
-      font-size: 18px;
-    }
-
-    .large-statement {
-      margin-top: 30px;
-      padding-top: 24px;
-      border-top: 1px solid currentColor;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 1.65;
-      text-align: center;
-    }
-
-    /* Synergy */
-    .synergy {
-      display: grid;
-      grid-template-columns: 1fr 130px 1fr;
-      gap: 24px;
-      align-items: center;
-      margin-top: 38px;
-    }
-
-    .synergy-side {
-      min-height: 330px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.7);
-    }
-
-    .synergy-side h3 { margin: 18px 0 24px; }
-
-    .synergy-step {
-      padding: 12px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.65;
-    }
-
-    .synergy-bridge { color: var(--gold); text-align: center; }
-    .synergy-bridge strong { display: block; color: var(--ink); font-size: 13px; line-height: 1.6; }
-    .synergy-bridge span { display: block; margin: 14px 0; font-size: 28px; }
-
-    /* Future map */
-    .future-map {
-      margin-top: 34px;
-      border: 1px solid var(--line-dark);
-    }
-
-    .future-row {
-      display: grid;
-      grid-template-columns: 0.85fr 1fr 1fr 1.15fr;
-    }
-
-    .future-row + .future-row { border-top: 1px solid var(--line-dark); }
-    .future-row > * { padding: 19px 17px; }
-    .future-row > * + * { border-left: 1px solid var(--line-dark); }
-    .future-row.header { color: var(--gold); font-size: 10px; font-weight: 700; }
-    .future-row strong { font-size: 14px; line-height: 1.55; }
-    .future-row p { color: rgba(247,245,239,0.66); font-size: 12px; line-height: 1.65; }
-
-    .partner-equation {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr auto 1fr;
-      align-items: center;
-      margin-top: 26px;
-      border: 1px solid var(--line-dark);
-    }
-
-    .partner-equation div { padding: 18px; text-align: center; }
-    .partner-equation strong { display: block; font-size: 14px; }
-    .partner-equation span { display: block; margin-top: 6px; color: rgba(247,245,239,0.58); font-size: 10px; line-height: 1.6; }
-    .partner-symbol { color: var(--gold); font-size: 22px; }
-
-    /* Priorities */
-    .stage-flow {
-      display: grid;
-      grid-template-columns: repeat(7, auto);
-      align-items: stretch;
-      margin-top: 34px;
-    }
-
-    .stage {
-      width: 230px;
-      min-height: 210px;
-      padding: 24px 22px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.62);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .stage.current { border-top: 5px solid var(--green); }
-    .stage span { color: var(--gold); font-size: 10px; font-weight: 700; }
-    .stage h3 { margin-top: 16px; }
-    .stage p { color: var(--muted); font-size: 12px; line-height: 1.7; }
-    .stage-arrow { align-self: center; padding: 0 13px; color: var(--gold); font-size: 22px; }
-
-    .now-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 24px;
-      border: 1px solid var(--line);
-    }
-
-    .now-item { padding: 18px; }
-    .now-item + .now-item { border-left: 1px solid var(--line); }
-    .now-item p { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.7; }
-
-    /* Closing */
-    .closing { text-align: center; }
-    .closing .inner { width: min(940px, 100%); }
-    .closing h2 { margin: 0 auto; }
-
-    .closing-path {
-      display: grid;
-      grid-template-columns: repeat(7, auto);
-      justify-content: center;
-      align-items: center;
       gap: 18px;
-      margin: 46px 0 36px;
-      font-size: 16px;
-      font-weight: 700;
+      margin-top: clamp(38px, 6vw, 70px);
     }
+    .distribution__item { padding: 30px; border: 1px solid var(--line); background: rgba(255,255,255,.74); }
+    .distribution__item > span { color: var(--muted); font-size: 11px; font-weight: 700; }
+    .distribution__item h3 { margin-top: 8px; font-size: 28px; }
+    .distribution__line { height: 54px; width: 1px; margin: 18px auto; background: var(--gold); position: relative; }
+    .distribution__line::after { content: ""; position: absolute; bottom: 0; left: -4px; width: 8px; height: 8px; border-right: 1px solid var(--gold); border-bottom: 1px solid var(--gold); transform: rotate(45deg); }
+    .distribution__dest { text-align: center; font-weight: 700; }
 
-    .closing-path .arrow { color: var(--gold); }
-
-    .closing-domains {
+    .example {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line-dark);
-      border-bottom: 1px solid var(--line-dark);
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: clamp(36px, 5vw, 60px);
     }
-
-    .closing-domain { padding: 22px; }
-    .closing-domain + .closing-domain { border-left: 1px solid var(--line-dark); }
-    .closing-domain strong { display: block; font-size: 18px; }
-    .closing-domain span { display: block; margin-top: 7px; color: rgba(247,245,239,0.56); font-size: 11px; }
-
-    .closing-copy {
-      max-width: 760px;
-      margin: 34px auto 0;
-      color: rgba(247,245,239,0.68);
-      font-size: 14px;
-      line-height: 2;
+    .example__relation {
+      min-height: 360px;
+      padding: clamp(26px, 4vw, 44px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.75);
+      display: grid;
+      align-content: center;
+      gap: 14px;
     }
+    .example__relation strong { font-size: 30px; }
+    .example__relation span { color: var(--muted); }
+    .example__arrow { color: var(--gold); font-size: 24px; }
+    .example__story { padding: clamp(26px, 4vw, 44px); background: var(--navy); color: #fff; }
+    .example__story small { color: var(--gold); font-weight: 700; }
+    .story-flow { margin-top: 24px; display: grid; gap: 0; }
+    .story-flow div { padding: 13px 16px; border: 1px solid var(--line-dark); border-bottom: 0; }
+    .story-flow div:last-child { border-bottom: 1px solid var(--line-dark); }
 
-    @media (max-width: 1040px) {
-      .slide { padding: 64px 40px; }
-      h1 { font-size: 54px; }
-      h2 { font-size: 40px; }
-      .cover-grid, .business-layout { grid-template-columns: 1fr; gap: 42px; }
-      .cover-businesses { grid-template-columns: repeat(3, 1fr); }
-      .cover-business { grid-template-columns: 1fr; gap: 8px; padding: 18px; border: 1px solid var(--line-dark); }
-      .shared-step { min-width: 0; }
-      .expansion-node { width: auto; }
-      .method-grid { grid-template-columns: repeat(3, 1fr); }
-      .method-item:nth-child(3) { border-right: 0; }
-      .method-item:nth-child(n+4) { border-top: 1px solid var(--line-dark); }
-      .discovery-flow { gap: 6px; }
-      .discovery-node { width: 118px; }
-      .growth-loop { grid-template-columns: repeat(7, auto); }
-      .growth-step { width: auto; }
-      .stage { width: auto; }
-    }
+    .appendix .headline { font-size: clamp(30px, 4vw, 52px); }
+    .appendix-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 36px; }
+    .appendix-card { padding: 26px; border: 1px solid var(--line); background: rgba(255,255,255,.74); }
+    .appendix-card h3 { font-size: 19px; }
+    .appendix-card ul { margin-top: 14px; padding-left: 18px; color: var(--muted); font-size: 13px; }
+    .appendix-card p { margin-top: 12px; color: var(--muted); font-size: 13px; }
+    .policy-table { width: 100%; max-width: 100%; margin-top: 36px; border-collapse: collapse; font-size: 13px; }
+    .policy-table th, .policy-table td { padding: 15px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .policy-table th { background: var(--navy); color: #fff; }
 
     @media (max-width: 820px) {
-      .slide {
-        min-height: auto;
-        padding: 50px 18px 88px;
-        align-items: flex-start;
-      }
-
-      .slide::after { display: none; }
-      h1 { font-size: 38px; line-height: 1.38; }
-      h2 { font-size: 30px; line-height: 1.45; }
-      h3 { font-size: 18px; }
-      .lead { font-size: 15px; line-height: 1.9; }
-      .chapter { margin-bottom: 14px; }
-      .section-head { display: block; margin-bottom: 26px; }
-      .section-head .lead { margin-top: 16px; }
-      .cover-grid, .business-layout { gap: 30px; }
-      .cover-path, .closing-path {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 8px;
-      }
-      .cover-path { margin-top: 28px; }
-      .cover-path .arrow, .closing-path .arrow { transform: none; margin: 0; }
-      .cover-businesses, .overview-grid, .three-values, .use-cases, .now-grid, .closing-domains { grid-template-columns: 1fr; }
-      .cover-business { grid-template-columns: 100px 1fr; }
-      .overview-grid { gap: 12px; }
-      .overview-lane {
-        min-height: 0;
-        padding: 18px;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        grid-template-rows: auto auto 1fr;
-        column-gap: 14px;
-      }
-      .overview-lane .business-mark { grid-column: 1; grid-row: 1; }
-      .overview-lane h3 { grid-column: 1; grid-row: 2; margin-top: 12px; font-size: 20px; }
-      .overview-lane p { grid-column: 1; grid-row: 3; font-size: 12px; }
-      .overview-shift {
-        grid-column: 2;
-        grid-row: 1 / 4;
-        margin: 0;
-        padding: 2px 0 2px 14px;
-        border-top: 0;
-        border-left: 1px solid var(--line);
-        align-self: stretch;
-      }
-
-      .shared-flow, .loop, .growth-loop, .stage-flow {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        border: 0;
-        background: transparent;
-      }
-
-      .shared-flow { margin-top: 22px; }
-      .shared-step, .loop-step, .growth-step, .stage {
-        width: 100%;
-        min-width: 0;
-        min-height: 0;
-        padding: 17px 18px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.72);
-        display: grid;
-        grid-template-columns: 34px 1fr;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .navy .shared-step, .deep .shared-step, .navy .growth-step {
-        border-color: var(--line-dark);
-        background: rgba(255,255,255,0.04);
-      }
-
-      .shared-step span, .loop-step span, .growth-step span, .stage span { margin: 0; }
-      .shared-step strong, .loop-step strong, .growth-step strong, .stage h3 { margin: 0; }
-      .shared-arrow, .loop-arrow, .growth-arrow, .stage-arrow {
-        width: 100%;
-        height: 30px;
-        padding: 0 0 0 24px;
-        transform: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        font-size: 0;
-        line-height: 1;
-      }
-
-      .shared-arrow::after, .loop-arrow::after, .growth-arrow::after, .stage-arrow::after {
-        content: '\2193';
-        font-size: 18px;
-      }
-
-      .growth-arrow.return::after {
-        content: '\21BA  最初へ';
-        font-size: 11px;
-        font-weight: 700;
-      }
-
-      .expansion-map {
-        display: flex;
-        flex-direction: column;
-        margin-top: 28px;
-      }
-
-      .expansion-node {
-        width: 100%;
-        min-height: 0;
-        padding: 18px;
-        display: grid;
-        grid-template-columns: minmax(124px, 0.9fr) minmax(0, 1.1fr);
-        grid-template-rows: auto 1fr auto;
-        column-gap: 14px;
-      }
-      .expansion-node .eyebrow { grid-column: 1; grid-row: 1; }
-      .expansion-node h3 { grid-column: 1; grid-row: 2; margin-top: 10px; font-size: 17px; }
-      .expansion-node p { grid-column: 2; grid-row: 1 / 3; margin: 0; font-size: 12px; }
-      .expansion-node .node-bottom { grid-column: 1 / -1; grid-row: 3; margin-top: 14px; padding-top: 12px; }
-      .expansion-arrow {
-        width: 100%;
-        height: 34px;
-        padding: 0;
-        transform: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .expansion-arrow.forward { font-size: 0; }
-      .expansion-arrow.forward::after { content: '\2193'; font-size: 20px; }
-      .expansion-arrow.combine { font-size: 0; }
-      .expansion-arrow.combine::after {
-        content: '\FF0B  \9023\643A';
-        padding: 5px 12px;
-        border: 1px solid currentColor;
-        border-radius: 99px;
-        font-size: 10px;
-        font-weight: 700;
-      }
-
-      .use-case + .use-case, .value-cell + .value-cell, .now-item + .now-item, .closing-domain + .closing-domain { border-left: 0; border-top: 1px solid var(--line); }
-      .method-grid { grid-template-columns: repeat(2, 1fr); }
-      .method-item { min-height: 96px; padding: 14px; border-right: 1px solid var(--line-dark); border-top: 1px solid var(--line-dark); }
-      .method-item:nth-child(2n) { border-right: 0; }
-      .training-bridge { grid-template-columns: 1fr; margin-top: 28px; }
-      .lesson-block { min-height: 124px; }
-      .daily-block { border: 1px solid var(--bdx); }
-      .daily-grid { grid-template-columns: repeat(2, 1fr); }
-      .discovery-flow { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
-      .discovery-node { width: 100%; min-height: 0; padding: 16px; }
-      .discovery-arrow {
-        height: 28px;
-        transform: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0;
-      }
-      .discovery-arrow::after { content: '\2193'; font-size: 18px; }
-      .value-cell { padding: 16px; }
-      .large-statement { font-size: 21px; }
-      .synergy { grid-template-columns: 1fr; gap: 0; margin-top: 28px; }
-      .synergy-side { min-height: auto; }
-      .synergy-bridge { padding: 18px 0; }
-      .synergy-bridge span { transform: none; }
-      .future-row { grid-template-columns: 1fr; }
-      .future-row.header { display: none; }
-      .future-row:not(.header) { margin: 12px; border: 1px solid var(--line-dark); }
-      .future-row > * { padding: 13px 15px; }
-      .future-row > * + * { border-left: 0; border-top: 1px solid var(--line-dark); }
-      .future-row:not(.header) > *::before {
-        display: block;
-        margin-bottom: 5px;
-        color: var(--gold);
-        font-size: 9px;
-        font-weight: 700;
-      }
-      .future-row:not(.header) > strong::before { content: '\4E00\6B21\4E8B\696D'; }
-      .future-row:not(.header) > p:nth-child(2)::before { content: '\84C4\7A4D\3059\308B\77E5\898B'; }
-      .future-row:not(.header) > p:nth-child(3)::before { content: '\9023\643A\5148'; }
-      .future-row:not(.header) > p:nth-child(4)::before { content: '\4E8C\6B21\5C55\958B'; }
-      .future-row:not(.header) > p {
-        display: grid;
-        grid-template-columns: 88px minmax(0, 1fr);
-        align-items: start;
-        gap: 10px;
-      }
-      .future-row:not(.header) > p::before { margin: 0; }
-      .partner-equation { grid-template-columns: 1fr; border: 0; }
-      .partner-equation > div:not(.partner-symbol) { border: 1px solid var(--line-dark); }
-      .partner-symbol { padding: 8px !important; transform: none; }
-      .stage {
-        display: block;
-        min-height: 0;
-        padding: 18px;
-      }
-      .stage h3 { margin-top: 10px; }
-      .stage p { margin-top: 10px; }
-      .now-item { padding: 16px; }
-      .outcome-bar { font-size: 15px; }
-      .closing-path { justify-content: center; margin: 32px 0 28px; }
-      .closing-domains { grid-template-columns: repeat(3, 1fr); }
-      .closing-domain { padding: 15px 8px; }
-      .closing-domain + .closing-domain { border-top: 0; border-left: 1px solid var(--line-dark); }
-      .closing-domain strong { font-size: 15px; }
-      .closing-domain span { font-size: 9px; }
-      .closing-copy { font-size: 13px; }
-    }
-
-    @media print {
-      @page { size: A4 landscape; margin: 0; }
-      html, body { background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .slide {
-        width: 297mm;
-        height: 210mm;
-        min-height: 210mm;
-        padding: 15mm 18mm;
-        page-break-after: always;
-        break-after: page;
-        overflow: hidden;
-      }
-      .slide:last-child { page-break-after: auto; break-after: auto; }
-      .inner { width: 100%; }
-      h1 { font-size: 42pt; }
-      h2 { font-size: 29pt; }
-      .lead { font-size: 10.5pt; }
-      .slide::after { right: 10mm; bottom: 7mm; }
-      .overview-lane { min-height: 68mm; }
-      .expansion-node { width: 55mm; min-height: 62mm; }
-      .stage { width: 54mm; min-height: 54mm; }
-      .business-layout { grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); gap: 12mm; }
-      .loop { grid-template-columns: repeat(4, minmax(0, 1fr) 5mm) minmax(0, 1fr); }
-      .loop-step { min-width: 0; padding: 5mm 3mm; }
-      .loop-arrow { padding: 0; text-align: center; }
+      .deck-nav { display: none; }
+      .slide { min-height: auto; padding: 88px 18px 70px; }
+      .slide.compact { padding: 88px 18px 70px; }
+      .headline { font-size: clamp(30px, 9vw, 44px); }
+      .support { font-size: 15px; line-height: 1.8; }
+      .cover { min-height: 100svh; }
+      .cover h1 { font-size: clamp(38px, 12vw, 48px); }
+      .cover__domains { grid-template-columns: 1fr; border-bottom: 0; }
+      .cover__domain { padding: 12px 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
+      .business-trio, .formula, .distribution, .appendix-grid { grid-template-columns: 1fr; }
+      .business-panel { min-height: 170px; padding: 26px; }
+      .flow { flex-direction: column; align-items: stretch; }
+      .flow__step { width: 100%; max-width: none; min-height: 78px; grid-template-columns: 1fr auto; justify-items: start; text-align: left; padding: 18px 20px; }
+      .flow__step small { margin: 0 0 0 12px; text-align: right; }
+      .flow__arrow { flex: 0 0 38px; min-height: 38px; }
+      .flow__arrow::before { top: 7px; bottom: 7px; left: 50%; right: auto; width: 1px; height: auto; }
+      .flow__arrow::after { left: calc(50% - 4px); right: auto; top: auto; bottom: 7px; transform: rotate(135deg); }
+      .loop { padding: 18px; }
+      .loop__row { flex-direction: column; }
+      .loop__item { width: 100%; min-height: 76px; }
+      .loop__arrow { flex: 0 0 38px; transform: rotate(90deg); display: grid; place-items: center; }
+      .formula { gap: 14px; }
+      .formula__group { min-height: auto; }
+      .formula__operator { transform: rotate(90deg); font-size: 28px; }
+      .branch { grid-template-columns: 1fr; gap: 12px; }
+      .branch__source, .branch__target { min-height: auto; }
+      .branch__connector { min-height: 42px; transform: rotate(90deg); }
+      .training-bridge__cap { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .split-partnership { grid-template-columns: 1fr; gap: 12px; }
+      .multiply { min-height: 42px; }
+      .example { grid-template-columns: 1fr; }
+      .example__relation { min-height: auto; }
+      .distribution__item { padding: 24px; }
+      .policy-table { display: block; overflow-x: auto; white-space: nowrap; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
     }
+
+    @media print {
+      @page { size: A4 landscape; margin: 0; }
+      html, body { background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .deck-nav { display: none; }
+      .slide {
+        width: 297mm;
+        height: 210mm;
+        min-height: 210mm;
+        padding: 20mm 22mm 16mm;
+        break-after: page;
+        page-break-after: always;
+      }
+      .slide:last-child { break-after: auto; page-break-after: auto; }
+      .headline { font-size: 27pt; }
+      .support { font-size: 10pt; }
+      .flow { margin-top: 10mm; }
+      .flow__step { min-height: 27mm; }
+      .business-panel { min-height: 80mm; }
+      .formula__group { min-height: 88mm; }
+      .branch__source, .branch__target { min-height: 87mm; }
+      .training-bridge { margin-top: 9mm; }
+      .example__relation { min-height: 90mm; }
+    }
   </style>
 </head>
 <body>
-  <main class="deck">
-    <!-- 01 / COVER -->
-    <section class="slide cover" data-page="01 / 13" aria-labelledby="cover-title">
-      <div class="inner cover-grid">
-        <div>
-          <p class="chapter">事業構想資料 / 2026</p>
-          <h1 id="cover-title">3事業の<br />成長構想</h1>
-          <p class="lead">複業.Lab、BDX、Cafe。3つの個人向け事業で価値をつくり、利用者の行動と結果から学び、外部との連携によって届ける範囲を広げます。</p>
-          <div class="cover-path" aria-label="事業成長の流れ">
-            <span>つくる</span><span class="arrow">→</span>
-            <span>学ぶ</span><span class="arrow">→</span>
-            <span>証明する</span><span class="arrow">→</span>
-            <span>広げる</span>
-          </div>
-        </div>
-        <div class="cover-businesses" aria-label="3事業の目的">
-          <div class="cover-business">
-            <span class="business-mark lab">複業.Lab</span>
-            <div><strong>新しいキャリア</strong><p>個人の新しいキャリアを育てる。</p></div>
-          </div>
-          <div class="cover-business">
-            <span class="business-mark bdx">BDX</span>
-            <div><strong>最高の体調</strong><p>最高の体調を、日常に。</p></div>
-          </div>
-          <div class="cover-business">
-            <span class="business-mark cafe">Cafe</span>
-            <div><strong>アーティスト支援</strong><p>夢に挑むアーティストを応援する。</p></div>
-          </div>
+  <nav class="deck-nav" aria-label="資料内ナビゲーション">
+    <div class="deck-nav__inner">
+      <a href="#vision">VISION</a>
+      <a href="#career">CAREER</a>
+      <a href="#condition">CONDITION</a>
+      <a href="#artist">ARTIST</a>
+      <a href="#expansion">EXPANSION</a>
+      <a href="#appendix">APPENDIX</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="slide cover" id="vision" data-page="01 / 21" aria-labelledby="cover-title">
+      <div class="slide__inner">
+        <p class="cover__mark">3 BUSINESS FUTURE VISION / v3.0</p>
+        <h1 id="cover-title">3つの事業。<br>3つの可能性。</h1>
+        <div class="cover__domains" aria-label="3事業の領域">
+          <div class="cover__domain"><span>複業.Lab</span><strong>Career</strong></div>
+          <div class="cover__domain"><span>BDX</span><strong>Condition</strong></div>
+          <div class="cover__domain"><span>Cafe</span><strong>Artist</strong></div>
         </div>
       </div>
     </section>
 
-    <!-- 02 / OVERVIEW -->
-    <section class="slide navy" data-page="02 / 13" aria-labelledby="overview-title">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="chapter">02 / 事業構造</p><h2 id="overview-title">全体像</h2></div>
-          <p class="lead">3事業は統合せず、それぞれの目的を維持します。共通するのは、実践から学び、証明した価値を連携先と広げる成長方法です。</p>
-        </div>
-        <div class="overview-grid" aria-label="3事業の現在と将来">
-          <article class="overview-lane lab">
-            <span class="business-mark lab">複業.Lab</span>
-            <h3>キャリアを育てる</h3>
-            <p>可能性を見つけ、小さく試し、現実の結果から次の仮説をつくる。</p>
-            <div class="overview-shift"><span>将来の展開</span><strong>企業・地域の<br />副業・起業開発へ</strong></div>
+    <section class="slide white" data-page="02 / 21" aria-labelledby="three-title">
+      <div class="slide__inner">
+        <p class="label">3つの事業</p>
+        <h2 class="headline" id="three-title">私たちは、3つの「育てる」に挑戦しています。</h2>
+        <div class="business-trio">
+          <article class="business-panel">
+            <small>複業.Lab / Career</small>
+            <h3>新しいキャリアを<br>育てる。</h3>
+            <b>経験や関心から、次の可能性へ。</b>
           </article>
-          <article class="overview-lane bdx">
-            <span class="business-mark bdx">BDX</span>
-            <h3>体調を整える</h3>
-            <p>運動、回復、食事、睡眠、心をつなぎ、日々の状態を整える。</p>
-            <div class="overview-shift"><span>将来の展開</span><strong>施設利用者の<br />日常支援へ</strong></div>
+          <article class="business-panel condition">
+            <small>BDX / Condition</small>
+            <h3>最高の体調を<br>つくる。</h3>
+            <b>身体を動かし、学び、整える。</b>
           </article>
-          <article class="overview-lane cafe">
-            <span class="business-mark cafe">Cafe</span>
-            <h3>出会いをつくる</h3>
-            <p>まだ知られていないアーティストと観客が出会うきっかけをつくる。</p>
-            <div class="overview-shift"><span>将来の展開</span><strong>発見・成長・イベントを<br />つなぐ仕組みへ</strong></div>
+          <article class="business-panel artist">
+            <small>Cafe / Artist</small>
+            <h3>Artistの挑戦を<br>支える。</h3>
+            <b>まだ知られていない人との出会いへ。</b>
           </article>
         </div>
-        <div class="shared-flow" aria-label="3事業に共通する成長の流れ">
-          <div class="shared-step"><span>01</span><strong>個人向け事業を<br />成立させる</strong></div><div class="shared-arrow">→</div>
-          <div class="shared-step"><span>02</span><strong>行動と結果から<br />学ぶ</strong></div><div class="shared-arrow">→</div>
-          <div class="shared-step"><span>03</span><strong>価値と再現性を<br />証明する</strong></div><div class="shared-arrow">→</div>
-          <div class="shared-step"><span>04</span><strong>連携先と<br />届ける範囲を広げる</strong></div>
-        </div>
-        <p class="trust-line">個人データの販売や3事業の一体化が目的ではありません。知見は、まず本人と一次事業の改善に使います。</p>
       </div>
     </section>
 
-    <!-- 03 / FUKUGYO.LAB -->
-    <section class="slide lab-bg" data-page="03 / 13" aria-labelledby="lab-title">
-      <div class="inner business-layout">
-        <div>
-          <p class="chapter">03 / 個人向け事業</p>
-          <span class="business-mark lab">複業.Lab</span>
-          <h2 id="lab-title">複業.Lab</h2>
-          <p class="lead">経験、スキル、関心をAIと整理し、新しい副業・起業の可能性をつくります。答えを渡すのではなく、現実で小さく試しながら育てます。</p>
-          <div class="purpose-box lab"><span>中心価値</span><strong>「自分にもできるかもしれない」を、現実の一歩へ変える。</strong></div>
+    <section class="slide dark" data-page="03 / 21" aria-labelledby="philosophy-title">
+      <div class="slide__inner center">
+        <p class="label center">共通思想</p>
+        <h2 class="headline center compact-title" id="philosophy-title">可能性を、<br>現実の一歩から育てる。</h2>
+        <div class="flow" aria-label="可能性が育つ流れ">
+          <div class="flow__step"><b>可能性</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>やってみる</b><small>Action</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>現実の反応</b><small>Feedback</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>学ぶ</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>次を変える</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>育つ</b></div>
         </div>
-        <div>
-          <div class="loop" aria-label="複業.Labの利用体験">
-            <div class="loop-step"><span>01</span><strong>経験と関心を<br />整理する</strong></div><div class="loop-arrow">→</div>
-            <div class="loop-step"><span>02</span><strong>キャリア仮説を<br />つくる</strong></div><div class="loop-arrow">→</div>
-            <div class="loop-step"><span>03</span><strong>小さく<br />試す</strong></div><div class="loop-arrow">→</div>
-            <div class="loop-step"><span>04</span><strong>現実の反応を<br />得る</strong></div><div class="loop-arrow">→</div>
-            <div class="loop-step"><span>05</span><strong>次の仮説へ<br />学ぶ</strong></div>
+        <p class="support center">答えを決めつけず、現実との相互作用から学びながら育てていく。</p>
+      </div>
+    </section>
+
+    <section class="slide mist" data-page="04 / 21" aria-labelledby="data-title">
+      <div class="slide__inner center">
+        <p class="label center">行動と結果</p>
+        <h2 class="headline center" id="data-title">行動するから、データが生まれる。</h2>
+        <div class="flow" aria-label="行動から学びが生まれる流れ">
+          <div class="flow__step"><b>状況</b><small>どんなときに</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>行動</b><small>何をしたか</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>結果</b><small>どうなったか</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>学び</b><small>次にどう活かすか</small></div>
+        </div>
+        <p class="key-message">集めたいのはプロフィールの量ではなく、<br>「どんな状況で、何をしたら、どうなったか」。</p>
+      </div>
+    </section>
+
+    <section class="slide white" data-page="05 / 21" aria-labelledby="learning-title">
+      <div class="slide__inner center">
+        <p class="label center">学習の循環</p>
+        <h2 class="headline center" id="learning-title">使われるほど、より良い方法を学べる。</h2>
+        <div class="loop" aria-label="サービス改善の循環">
+          <div class="loop__row">
+            <div class="loop__item">利用</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">行動</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">結果</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">学習</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">改善</div>
           </div>
-          <div class="insight-strip"><strong>蓄積する知見</strong><br />職歴の一覧ではなく、「どんな人が、何を試し、どこで止まり、何が次の仕事につながったか」という形成過程。</div>
+          <p class="loop__return">改善したサービスが、次の利用へ戻る</p>
         </div>
+        <p class="support center">一人への提案と、サービス全体の方法を改善する。データ量だけで良くなるとは考えません。</p>
       </div>
     </section>
 
-    <!-- 04 / FUKUGYO EXPANSION -->
-    <section class="slide" data-page="04 / 13" aria-labelledby="lab-expansion-title">
-      <div class="inner">
-        <span class="tag">将来構想</span>
-        <p class="chapter">04 / 複業.Labの二次展開</p>
-        <h2 id="lab-expansion-title">副業・起業開発</h2>
-        <p class="lead">個人向け事業で磨いた「可能性を見つけ、小さく試す方法」を、企業社員や地域住民の副業・起業支援へ展開します。</p>
-        <div class="expansion-map" aria-label="複業.Labの二次事業化">
-          <div class="expansion-node lab"><span class="eyebrow">現在の事業</span><h3>複業.Lab</h3><p>個人が新しいキャリアの可能性を見つけ、現実で試す。</p><div class="node-bottom">個人向けキャリア開発</div></div>
-          <div class="expansion-arrow forward">→</div>
-          <div class="expansion-node lab"><span class="eyebrow">蓄積する知見</span><h3>形成の過程</h3><p>開始・停滞・実験・結果から、副業や起業が育つ過程を理解する。</p><div class="node-bottom">行動と結果の知見</div></div>
-          <div class="expansion-arrow combine">×</div>
-          <div class="expansion-node lab"><span class="eyebrow">連携先</span><h3>企業・自治体</h3><p>社員、地域住民、地域企業、研修機会、現実で試せる場を持つ。</p><div class="node-bottom">対象者・現場・運営力</div></div>
-          <div class="expansion-arrow forward">→</div>
-          <div class="expansion-node lab"><span class="eyebrow">二次事業</span><h3>副業・起業開発</h3><p>新しい仕事を生み出す人を、組織や地域の中で育てる。</p><div class="node-bottom">企業向け・地域向け支援</div></div>
+    <section class="slide career-tint" id="career" data-page="06 / 21" aria-labelledby="career-title">
+      <div class="slide__inner">
+        <p class="label career">複業.Lab / 現在</p>
+        <h2 class="headline" id="career-title">新しいキャリアを、考えるだけで終わらせない。</h2>
+        <div class="flow" aria-label="複業.Labのキャリア形成">
+          <div class="flow__step"><b>経験・Skill・興味</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>新しい可能性</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>小さく試す</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>現実の反応</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>Career Growth</b></div>
         </div>
-        <div class="use-cases">
-          <div class="use-case"><strong>企業</strong><p>社員の経験から副業や小さな事業の仮説をつくり、越境学習や実践へつなぐ。</p></div>
-          <div class="use-case"><strong>地方自治体</strong><p>地域住民の可能性と地域企業の小さな課題を、現実の実験として接続する。</p></div>
-        </div>
+        <p class="key-message">「自分にもできるかもしれない」を、現実の一歩へ。</p>
       </div>
     </section>
 
-    <!-- 05 / BDX -->
-    <section class="slide deep" data-page="05 / 13" aria-labelledby="bdx-title">
-      <div class="inner">
-        <p class="chapter">05 / 個人向け事業</p>
-        <span class="business-mark bdx">BDX</span>
-        <h2 id="bdx-title">BDX</h2>
-        <p class="lead">バレエダンサーが舞台で力を発揮するために積み重ねる身体づくりと体調管理を、一般ユーザーの日常へ応用します。</p>
-        <div class="method-grid" aria-label="BDXのバレエメソッド">
-          <div class="method-item"><span>01</span><strong>身体を<br />動かす</strong></div>
-          <div class="method-item"><span>02</span><strong>身体を<br />回復する</strong></div>
-          <div class="method-item"><span>03</span><strong>食事で<br />支える</strong></div>
-          <div class="method-item"><span>04</span><strong>睡眠で<br />整える</strong></div>
-          <div class="method-item"><span>05</span><strong>心を<br />整える</strong></div>
-          <div class="method-item"><span>06</span><strong>日々の状態を<br />管理する</strong></div>
-        </div>
-        <div class="shared-flow" aria-label="BDXの利用体験">
-          <div class="shared-step"><span>01</span><strong>今日の状態を<br />確認する</strong></div><div class="shared-arrow">→</div>
-          <div class="shared-step"><span>02</span><strong>AIが行動を<br />提案する</strong></div><div class="shared-arrow">→</div>
-          <div class="shared-step"><span>03</span><strong>動く・学ぶ・<br />整える</strong></div><div class="shared-arrow">→</div>
-          <div class="shared-step"><span>04</span><strong>結果を次の<br />提案へつなぐ</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 / BDX EXPANSION -->
-    <section class="slide bdx-bg" data-page="06 / 13" aria-labelledby="bdx-expansion-title">
-      <div class="inner">
-        <span class="tag">将来構想</span>
-        <p class="chapter">06 / BDXの二次展開</p>
-        <h2 id="bdx-expansion-title">コンディショニング支援</h2>
-        <p class="lead">フィットネスクラブやバレエスクールの指導を置き換えず、指導者が直接見ていない「トレーニング以外の時間」を支えます。</p>
-        <div class="expansion-map" aria-label="BDXの二次事業化">
-          <div class="expansion-node bdx"><span class="eyebrow">現在の事業</span><h3>BDX</h3><p>一人ひとりの状態から、その日の運動・学習・回復を提案する。</p><div class="node-bottom">個人向け体調管理</div></div>
-          <div class="expansion-arrow forward">→</div>
-          <div class="expansion-node bdx"><span class="eyebrow">蓄積する知見</span><h3>状態と行動</h3><p>どんな状態で、何を行い、その後どう変化したかを理解する。</p><div class="node-bottom">体調づくりの知見</div></div>
-          <div class="expansion-arrow combine">×</div>
-          <div class="expansion-node bdx"><span class="eyebrow">連携先</span><h3>運動・バレエ施設</h3><p>トレーナー、教師、設備、レッスン、専門的な判断を持つ。</p><div class="node-bottom">指導・施設・利用者</div></div>
-          <div class="expansion-arrow forward">→</div>
-          <div class="expansion-node bdx"><span class="eyebrow">二次事業</span><h3>日常の体調支援</h3><p>次のトレーニングやレッスンまでの過ごし方を支える。</p><div class="node-bottom">施設利用者への継続支援</div></div>
-        </div>
-        <div class="training-bridge" aria-label="トレーニングの間をBDXが支える構造">
-          <div class="lesson-block"><strong>トレーニング<br />レッスン</strong><p>指導者による専門的な指導</p></div>
-          <div class="daily-block"><h3>BDXが支える日常</h3><div class="daily-grid"><span>今日の状態</span><span>回復</span><span>食事</span><span>睡眠</span><span>心</span><span>身体のケア</span></div></div>
-          <div class="lesson-block"><strong>次の<br />トレーニング</strong><p>より良い状態で次の指導へ</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 07 / CAFE -->
-    <section class="slide cafe-bg" data-page="07 / 13" aria-labelledby="cafe-title">
-      <div class="inner">
-        <p class="chapter">07 / 個人向け事業</p>
-        <span class="business-mark cafe">Cafe</span>
-        <h2 id="cafe-title">Cafe</h2>
-        <p class="lead">アーティストを探していなかった人が、日常の来店を通して偶然その存在を知る。Cafeは「まだ知られていない人が、知られるきっかけ」をつくります。</p>
-        <div class="discovery-flow" aria-label="Cafeでアーティストに出会う流れ">
-          <div class="discovery-node">Cafeへ<br />来店</div><div class="discovery-arrow">→</div>
-          <div class="discovery-node emphasis">アーティストを<br />偶然知る</div><div class="discovery-arrow">→</div>
-          <div class="discovery-node">作品や人物に<br />触れる</div><div class="discovery-arrow">→</div>
-          <div class="discovery-node">興味が<br />生まれる</div><div class="discovery-arrow">→</div>
-          <div class="discovery-node">イベントで<br />深く体験</div><div class="discovery-arrow">→</div>
-          <div class="discovery-node emphasis">支援へ<br />つながる</div>
-        </div>
-        <div class="three-values">
-          <div class="value-cell"><span>01 / 発見</span><strong>Cafe</strong><p>日常の中で、偶然知る。</p></div>
-          <div class="value-cell"><span>02 / 体験</span><strong>イベント</strong><p>作品や表現を、深く体験する。</p></div>
-          <div class="value-cell"><span>03 / 関係</span><strong>継続的な支援</strong><p>一度の出会いを、次の応援へつなぐ。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 08 / ARTIST GROWTH -->
-    <section class="slide navy" data-page="08 / 13" aria-labelledby="growth-title">
-      <div class="inner">
-        <p class="chapter">08 / Cafeの成長循環</p>
-        <h2 id="growth-title">アーティスト成長</h2>
-        <p class="lead">観客の反応は支援の結果であると同時に、アーティストが新しい価値、見せ方、活動、観客を発見するための学びになります。</p>
-        <div class="growth-loop" aria-label="アーティストが成長する循環">
-          <div class="growth-step"><span>01</span><strong>Cafeで<br />知られる</strong></div><div class="growth-arrow">→</div>
-          <div class="growth-step"><span>02</span><strong>観客の反応を<br />受け取る</strong></div><div class="growth-arrow">→</div>
-          <div class="growth-step"><span>03</span><strong>新しい価値を<br />発見する</strong></div><div class="growth-arrow">→</div>
-          <div class="growth-step"><span>04</span><strong>新しい活動を<br />試す</strong></div><div class="growth-arrow">→</div>
-          <div class="growth-step"><span>05</span><strong>イベントで<br />表現する</strong></div><div class="growth-arrow">→</div>
-          <div class="growth-step"><span>06</span><strong>新しい観客と<br />出会う</strong></div><div class="growth-arrow return">↺</div>
-        </div>
-        <p class="large-statement">Cafeを、宣伝の場所から「出会いと反応によって成長する場所」へ。</p>
-      </div>
-    </section>
-
-    <!-- 09 / CAFE EXPANSION -->
-    <section class="slide" data-page="09 / 13" aria-labelledby="cafe-expansion-title">
-      <div class="inner">
-        <span class="tag">将来構想</span>
-        <p class="chapter">09 / Cafeの二次展開</p>
-        <h2 id="cafe-expansion-title">イベント連携</h2>
-        <p class="lead">Cafeが大規模なイベント会社になるのではなく、アーティスト発見の知見と、イベント会社の制作・運営力を組み合わせます。</p>
-        <div class="expansion-map" aria-label="Cafeの二次事業化">
-          <div class="expansion-node cafe"><span class="eyebrow">現在の事業</span><h3>Cafe</h3><p>日常の来店から、まだ知られていないアーティストとの出会いをつくる。</p><div class="node-bottom">アーティスト発見</div></div>
-          <div class="expansion-arrow forward">→</div>
-          <div class="expansion-node cafe"><span class="eyebrow">蓄積する知見</span><h3>出会いと反応</h3><p>どんな見せ方や体験が、興味・参加・支援・成長につながるかを学ぶ。</p><div class="node-bottom">発見と成長の知見</div></div>
-          <div class="expansion-arrow combine">×</div>
-          <div class="expansion-node cafe"><span class="eyebrow">連携先</span><h3>イベント会社</h3><p>企画、会場、制作、集客、チケット、当日の運営力を持つ。</p><div class="node-bottom">制作・運営・展開力</div></div>
-          <div class="expansion-arrow forward">→</div>
-          <div class="expansion-node cafe"><span class="eyebrow">二次事業</span><h3>発見から次の舞台へ</h3><p>新しい観客との出会い、深い体験、継続支援をつなぐ。</p><div class="node-bottom">発見・成長・イベント</div></div>
-        </div>
-        <div class="outcome-bar cafe">一つのCafeで知ってもらうことから、次の観客・支援・舞台へ進む機会をつくる。</div>
-        <p class="note note-gap">支援者データの販売ではなく、「どんな出会いと体験が支援につながるか」という知見を価値にします。</p>
-      </div>
-    </section>
-
-    <!-- 10 / SYNERGY -->
-    <section class="slide mist" data-page="10 / 13" aria-labelledby="synergy-title">
-      <div class="inner">
-        <span class="tag">将来構想</span>
-        <p class="chapter">10 / 複業.Lab × Cafe</p>
-        <h2 id="synergy-title">事業連携</h2>
-        <p class="lead">Cafeは可能性を現実で発見・検証できる場所。複業.Labは、その可能性をキャリアとして整理し、育てる仕組みです。</p>
-        <div class="synergy" aria-label="Cafeと複業.Labの補完関係">
-          <div class="synergy-side">
-            <span class="business-mark cafe">Cafe</span>
-            <h3>現実の反応</h3>
-            <div class="synergy-step">アーティストや新しい企画が観客と出会う</div>
-            <div class="synergy-step">反応やフィードバックが生まれる</div>
-            <div class="synergy-step">新しい価値や活動の可能性が見える</div>
+    <section class="slide white" data-page="07 / 21" aria-labelledby="career-expand-title">
+      <div class="slide__inner">
+        <p class="label career">複業.Lab / 将来</p>
+        <h2 class="headline" id="career-expand-title">個人で磨いた方法を、企業や地域へ。</h2>
+        <div class="branch" aria-label="複業.Labの将来展開">
+          <div class="branch__source">
+            <div><small>B2C / 個人</small><h3>Career Development</h3><p>行動と結果から、方法を磨く。</p></div>
           </div>
-          <div class="synergy-bridge"><span>⇄</span><strong>キャリアを考える<br />現実の材料</strong><span>⇄</span></div>
-          <div class="synergy-side">
-            <span class="business-mark lab">複業.Lab</span>
-            <h3>キャリアの実験</h3>
-            <div class="synergy-step">可能性をキャリア仮説にする</div>
-            <div class="synergy-step">次の小さな実験を設計する</div>
-            <div class="synergy-step">結果から学び、次の仮説へ進む</div>
+          <div class="branch__connector" aria-hidden="true">→</div>
+          <div class="branch__target">
+            <div class="branch__option"><b>企業</b><span>社員の副業・越境学習</span></div>
+            <div class="branch__option"><b>地方自治体</b><span>住民の副業・起業</span></div>
           </div>
         </div>
-        <div class="insight-strip"><strong>統合ではなく補完</strong><br />Cafeを複業.Lab専用施設にはしません。本人が希望し、Cafeのアーティスト支援という目的にも合う場合だけ接続します。</div>
+        <p class="key-message">副業・起業を生み出す人を育てる。</p>
       </div>
     </section>
 
-    <!-- 11 / EXPANSION POLICY -->
-    <section class="slide deep" data-page="11 / 13" aria-labelledby="policy-title">
-      <div class="inner">
-        <p class="chapter">11 / 3事業の二次展開</p>
-        <h2 id="policy-title">展開方針</h2>
-        <p class="lead">自社ですべてを運営せず、すでに顧客・現場・専門性を持つ事業者と組みます。一次事業で証明した価値を、新しい届け方へ広げます。</p>
-        <div class="future-map" aria-label="3事業の二次展開一覧">
-          <div class="future-row header"><div>一次事業</div><div>蓄積する知見</div><div>連携先</div><div>二次展開</div></div>
-          <div class="future-row"><strong class="lab">複業.Lab<br />個人のキャリア</strong><p>副業・起業が形成される過程</p><p>企業・地方自治体</p><p>社員・住民の副業・起業開発</p></div>
-          <div class="future-row"><strong class="bdx">BDX<br />個人の体調管理</strong><p>状態・行動・結果の関係</p><p>フィットネスクラブ・バレエスクール</p><p>トレーニング外の日常支援</p></div>
-          <div class="future-row"><strong class="cafe">Cafe<br />アーティスト発見</strong><p>出会い・反応・成長の関係</p><p>イベント企画・運営会社</p><p>発見・成長・イベントの接続</p></div>
+    <section class="slide condition-tint compact" id="condition" data-page="08 / 21" aria-labelledby="bdx-title">
+      <div class="slide__inner">
+        <p class="label condition">BDX / 現在</p>
+        <h2 class="headline bdx-title" id="bdx-title"><span class="title-line">最高のパフォーマンスは、</span><span class="title-line">トレーニングだけではつくられない。</span></h2>
+        <div class="formula" aria-label="BDXが考えるバレエメソッド">
+          <div class="formula__group">
+            <small>身体を使う</small><h3>Training</h3>
+            <div class="formula__tokens"><span>身体づくり</span><span>技術</span><span>表現</span></div>
+          </div>
+          <div class="formula__operator" aria-hidden="true">＋</div>
+          <div class="formula__group">
+            <small>踊れる状態をつくる日常</small><h3>Conditioning</h3>
+            <div class="formula__tokens"><span>回復</span><span>栄養</span><span>睡眠</span><span>メンタル</span><span>体調管理</span></div>
+          </div>
         </div>
-        <div class="partner-equation" aria-label="連携によって新しい価値をつくる構造">
-          <div><strong>自社の資産</strong><span>サービス・知見・方法</span></div>
-          <div class="partner-symbol">×</div>
-          <div><strong>連携先の資産</strong><span>顧客・専門性・現場・運営力</span></div>
-          <div class="partner-symbol">＝</div>
-          <div><strong>新しい届け方</strong><span>同じ目的を、より多くの人へ</span></div>
+        <p class="key-message">BDXが考えるBallet Methodは、バレエの動きだけではない。</p>
+      </div>
+    </section>
+
+    <section class="slide dark compact" data-page="09 / 21" aria-labelledby="bdx-expand-title">
+      <div class="slide__inner">
+        <p class="label condition">BDX / 将来</p>
+        <h2 class="headline" id="bdx-expand-title"><span class="title-line">トレーニングは連携先に。</span><span class="title-line">その間の日常はBDXに。</span></h2>
+        <div class="training-bridge" aria-label="BDXと連携先の役割分担">
+          <div class="training-bridge__cap"><b>TRAINING</b><span>Fitness Club / Ballet School / Trainer / Teacher</span></div>
+          <div class="training-bridge__daily">
+            <strong>トレーニング以外の日常をBDXが支える</strong>
+            <div class="training-bridge__items"><span>Condition</span><span>Recovery</span><span>Nutrition</span><span>Sleep</span><span>Mental</span><span>Body Care</span></div>
+          </div>
+          <div class="training-bridge__cap"><b>NEXT TRAINING</b><span>より良い状態で次の指導へ</span></div>
+        </div>
+        <p class="key-message">指導者を置き換えず、指導の外側を支える。</p>
+      </div>
+    </section>
+
+    <section class="slide artist-tint" id="artist" data-page="10 / 21" aria-labelledby="discovery-title">
+      <div class="slide__inner">
+        <p class="label artist">Cafe / 出会い</p>
+        <h2 class="headline" id="discovery-title">Artistを探していなかった人に、Artistを届ける。</h2>
+        <div class="flow" aria-label="CafeでArtistを知る流れ">
+          <div class="flow__step"><b>Cafe</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>偶然知る</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>気になる</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>もっと知る</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>Event</b></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>Support</b></div>
+        </div>
+        <p class="key-message">まだ知られていないArtistが、「知られるきっかけ」をつくる。</p>
+      </div>
+    </section>
+
+    <section class="slide white" data-page="11 / 21" aria-labelledby="artist-growth-title">
+      <div class="slide__inner center">
+        <p class="label artist center">Cafe / 成長</p>
+        <h2 class="headline center" id="artist-growth-title">出会いは、Artist自身も育てる。</h2>
+        <div class="loop" aria-label="Artistが出会いから成長する循環">
+          <div class="loop__row">
+            <div class="loop__item">Artist</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">Audience</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">反応</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">学び</div><div class="loop__arrow" aria-hidden="true">→</div>
+            <div class="loop__item">新しい活動</div>
+          </div>
+          <p class="loop__return">Eventと新しいAudienceへつながり、次の成長へ</p>
+        </div>
+        <p class="support center">観客の反応は、Artistが新しい価値を見つけるFeedbackになる。</p>
+      </div>
+    </section>
+
+    <section class="slide artist-tint compact" data-page="12 / 21" aria-labelledby="cafe-expand-title">
+      <div class="slide__inner">
+        <p class="label artist">Cafe / 将来</p>
+        <h2 class="headline" id="cafe-expand-title"><span class="title-line">Cafeで生まれた出会いを、</span><span class="title-line">次の舞台へ。</span></h2>
+        <div class="split-partnership" aria-label="Cafeとイベント会社の連携">
+          <div class="asset-box"><h3>Cafe</h3><ul><li>Artistとの出会い</li><li>観客の反応</li><li>Artistの成長理解</li><li>Community</li></ul></div>
+          <div class="multiply" aria-hidden="true">×</div>
+          <div class="asset-box"><h3>Event Company</h3><ul><li>企画・制作</li><li>会場・運営</li><li>販売・告知</li><li>大きな体験の設計</li></ul></div>
+        </div>
+        <div class="partnership-result">EVENT → 深い体験 → 支援 → Artist Growth</div>
+        <p class="support center">Cafeの出会いと、連携先の制作力を組み合わせる。</p>
+      </div>
+    </section>
+
+    <section class="slide mist" data-page="13 / 21" aria-labelledby="synergy-title">
+      <div class="slide__inner">
+        <p class="label">Cafe × 複業.Lab</p>
+        <h2 class="headline" id="synergy-title">Cafeで見つけた可能性を、複業.Labで育てる。</h2>
+        <div class="example">
+          <div class="example__relation">
+            <strong>Cafe</strong><span>現実のAudienceから反応を得る</span><div class="example__arrow" aria-hidden="true">⇅</div>
+            <strong>複業.Lab</strong><span>新しいキャリアとして小さく試す</span>
+          </div>
+          <div class="example__story">
+            <small>一つの具体例</small>
+            <div class="story-flow">
+              <div>Ballet Dancer</div><div>CafeでAudienceと出会う</div><div>「身体づくりを教えてほしい」</div><div>新しいキャリア仮説</div><div>小さなWorkshopで検証</div>
+            </div>
+          </div>
+        </div>
+        <p class="note">サービスは統合せず、本人が希望・同意した場合のみ接続します。</p>
+      </div>
+    </section>
+
+    <section class="slide dark" id="expansion" data-page="14 / 21" aria-labelledby="partnership-title">
+      <div class="slide__inner">
+        <p class="label">連携モデル</p>
+        <h2 class="headline compact-title" id="partnership-title">自分たちだけで、全部やらない。</h2>
+        <div class="split-partnership" aria-label="自社と連携先の資産を組み合わせる構造">
+          <div class="asset-box"><h3>私たち</h3><ul><li>Product</li><li>方法・知見</li><li>行動と結果</li><li>個別化の仕組み</li></ul></div>
+          <div class="multiply" aria-hidden="true">×</div>
+          <div class="asset-box"><h3>連携先</h3><ul><li>顧客</li><li>専門家</li><li>現場・設備</li><li>流通・運営</li></ul></div>
+        </div>
+        <div class="partnership-result">同じ目的を、より多くの人へ</div>
+      </div>
+    </section>
+
+    <section class="slide white" data-page="15 / 21" aria-labelledby="distribution-title">
+      <div class="slide__inner">
+        <p class="label">事業展開</p>
+        <h2 class="headline" id="distribution-title">目的は変えない。届け方を広げる。</h2>
+        <div class="distribution" aria-label="3事業の将来の届け先">
+          <article class="distribution__item"><span>複業.Lab</span><h3>Career</h3><div class="distribution__line"></div><p class="distribution__dest">企業<br>地方自治体</p></article>
+          <article class="distribution__item"><span>BDX</span><h3>Condition</h3><div class="distribution__line"></div><p class="distribution__dest">Fitness Club<br>Ballet School</p></article>
+          <article class="distribution__item"><span>Cafe</span><h3>Artist</h3><div class="distribution__line"></div><p class="distribution__dest">Event<br>Partnership</p></article>
         </div>
       </div>
     </section>
 
-    <!-- 12 / PRIORITY -->
-    <section class="slide" data-page="12 / 13" aria-labelledby="priority-title">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="chapter">12 / 実行順序</p><h2 id="priority-title">優先順位</h2></div>
-          <p class="lead">3事業を同時に二次展開しません。まず個人向け事業で価値を生み、実績と再現性が高い事業から連携へ進みます。</p>
+    <section class="slide mist" data-page="16 / 21" aria-labelledby="strategy-title">
+      <div class="slide__inner center">
+        <p class="label center">成長戦略</p>
+        <h2 class="headline center" id="strategy-title">未来を先に作らない。</h2>
+        <div class="flow" aria-label="事業を育てる4段階">
+          <div class="flow__step"><b>つくる</b><small>BUILD</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>学ぶ</b><small>LEARN</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>証明する</b><small>PROVE</small></div><i class="flow__arrow" aria-hidden="true"></i>
+          <div class="flow__step"><b>広げる</b><small>EXPAND</small></div>
         </div>
-        <div class="stage-flow" aria-label="現在から二次展開までの順序">
-          <div class="stage current"><div><span>現在</span><h3>一次事業</h3></div><p>それぞれの目的で、利用者に価値を届ける。</p></div><div class="stage-arrow">→</div>
-          <div class="stage"><div><span>次に</span><h3>知見の蓄積</h3></div><p>行動・結果・反応を正しく計測し、事業を改善する。</p></div><div class="stage-arrow">→</div>
-          <div class="stage"><div><span>判断条件</span><h3>価値の証明</h3></div><p>方法が再現でき、実際の成果につながるかを検証する。</p></div><div class="stage-arrow">→</div>
-          <div class="stage"><div><span>将来</span><h3>二次展開</h3></div><p>需要と実行条件が整った事業から、連携先と広げる。</p></div>
+        <p class="key-message">まず一次事業。<br>価値が生まれ、再現できることを証明した事業から次へ進む。</p>
+      </div>
+    </section>
+
+    <section class="slide cover" data-page="17 / 21" aria-labelledby="final-title">
+      <div class="slide__inner center">
+        <p class="cover__mark">FUTURE VISION</p>
+        <h2 class="headline center" id="final-title">可能性を、<br>現実の一歩から育てる。</h2>
+        <div class="cover__domains">
+          <div class="cover__domain"><span>複業.Lab</span><strong>Career</strong></div>
+          <div class="cover__domain"><span>BDX</span><strong>Condition</strong></div>
+          <div class="cover__domain"><span>Cafe</span><strong>Artist</strong></div>
         </div>
-        <div class="now-grid" aria-label="各事業の現在の優先事項">
-          <div class="now-item"><span class="business-mark lab">複業.Lab</span><p>個人向けサービスの利用循環と、副業・起業形成の計測を成立させる。</p></div>
-          <div class="now-item"><span class="business-mark bdx">BDX</span><p>今日の状態から行動、結果、次の提案までの利用循環を成立させる。</p></div>
-          <div class="now-item"><span class="business-mark cafe">Cafe</span><p>小規模な出店実験から、アーティスト発見と支援の循環を検証する。</p></div>
+        <p class="key-message">目的は変えない。届け方を広げる。</p>
+        <p class="support center">BUILD → LEARN → PROVE → EXPAND</p>
+      </div>
+    </section>
+
+    <section class="slide appendix white" id="appendix" data-page="18 / 21" aria-labelledby="appendix-career-title">
+      <div class="slide__inner">
+        <p class="label career">APPENDIX A / 複業.Lab</p>
+        <h2 class="headline" id="appendix-career-title">副業・起業開発の詳細</h2>
+        <div class="appendix-grid">
+          <article class="appendix-card"><h3>企業向け</h3><ul><li>社員の経験・Skillから可能性を発見</li><li>小さな外部Experiment</li><li>越境学習・Career Autonomy</li></ul></article>
+          <article class="appendix-card"><h3>地方自治体向け</h3><ul><li>住民の副業・起業仮説</li><li>地域企業の小さな課題と接続</li><li>地域で試し、結果から学ぶ</li></ul></article>
+          <article class="appendix-card"><h3>蓄積する知見</h3><p>どんな状況の人が、どんな一歩から新しい仕事を育てたか。単なる職歴ではなく、形成過程を理解する。</p></article>
+          <article class="appendix-card"><h3>境界</h3><p>Generic Talent Managementや求人Marketplaceを主目的にしない。効果は検証前に断定しない。</p></article>
         </div>
       </div>
     </section>
 
-    <!-- 13 / FUTURE -->
-    <section class="slide closing navy" data-page="13 / 13" aria-labelledby="future-title">
-      <div class="inner">
-        <p class="chapter center-chapter">13 / 結論</p>
-        <h2 id="future-title">未来像</h2>
-        <p class="lead center-lead">個人向け事業で生まれた価値を、実践から学び、証明し、すでに社会の中で価値を届けている人たちと広げます。</p>
-        <div class="closing-path" aria-label="3事業の成長順序">
-          <span>つくる</span><span class="arrow">→</span>
-          <span>学ぶ</span><span class="arrow">→</span>
-          <span>証明する</span><span class="arrow">→</span>
-          <span>広げる</span>
+    <section class="slide appendix condition-tint" data-page="19 / 21" aria-labelledby="appendix-bdx-title">
+      <div class="slide__inner">
+        <p class="label condition">APPENDIX B / BDX</p>
+        <h2 class="headline" id="appendix-bdx-title">Conditioning支援の詳細</h2>
+        <div class="appendix-grid">
+          <article class="appendix-card"><h3>Ballet Method</h3><p>Training、Recovery、Nutrition、Sleep、Mental、日々のCondition Managementを含む。</p></article>
+          <article class="appendix-card"><h3>日常での体験</h3><ul><li>MOVE：身体を動かす</li><li>LEARN：身体・心・生活を学ぶ</li><li>CARE：休み、整える</li></ul></article>
+          <article class="appendix-card"><h3>連携先の役割</h3><p>Trainer / TeacherがTraining、Lesson、専門判断を担う。BDXはその外側の日常を支える。</p></article>
+          <article class="appendix-card"><h3>学びたいこと</h3><p>どんな状態で、どんな行動をすると、次のConditionがどう変わる可能性があるか。</p></article>
         </div>
-        <div class="closing-domains">
-          <div class="closing-domain"><strong class="lab">キャリア</strong><span>新しいキャリアを育てる</span></div>
-          <div class="closing-domain"><strong class="bdx">体調</strong><span>最高の体調をつくる</span></div>
-          <div class="closing-domain"><strong class="cafe">アーティスト</strong><span>夢への挑戦を応援する</span></div>
+      </div>
+    </section>
+
+    <section class="slide appendix artist-tint" data-page="20 / 21" aria-labelledby="appendix-cafe-title">
+      <div class="slide__inner">
+        <p class="label artist">APPENDIX C / Cafe</p>
+        <h2 class="headline" id="appendix-cafe-title">Artist支援の詳細</h2>
+        <div class="appendix-grid">
+          <article class="appendix-card"><h3>Discovery</h3><p>Artistを探していなかった来店者が、日常の中で偶然知る接点をつくる。</p></article>
+          <article class="appendix-card"><h3>Growth</h3><p>Audienceの反応から、新しい見せ方・活動・Audience・仕事を発見する可能性をつくる。</p></article>
+          <article class="appendix-card"><h3>Event Company</h3><p>企画・制作・会場・販売・運営は連携先が担う。Cafeは出会いとArtist理解を持ち寄る。</p></article>
+          <article class="appendix-card"><h3>Data方針</h3><p>Supporter Dataの販売を目的にしない。どんな出会いが支援と成長につながるかを学ぶ。</p></article>
         </div>
-        <p class="closing-copy">3事業の目的は変えません。<br />価値が機能することを証明し、連携によって届ける範囲を広げます。</p>
+      </div>
+    </section>
+
+    <section class="slide appendix dark" data-page="21 / 21" aria-labelledby="appendix-trust-title">
+      <div class="slide__inner">
+        <p class="label">APPENDIX D / TRUST</p>
+        <h2 class="headline" id="appendix-trust-title">データ利用の原則</h2>
+        <table class="policy-table">
+          <thead><tr><th>原則</th><th>判断</th><th>意味</th></tr></thead>
+          <tbody>
+            <tr><td>User First</td><td>まず一次事業を改善</td><td>行動と結果から得た学びは、最初に本人への価値へ戻す。</td></tr>
+            <tr><td>No Raw Data Sale</td><td>個人データを商品にしない</td><td>知見をMethod、Product、Programへ変換する。</td></tr>
+            <tr><td>Consent</td><td>本人の明示的同意</td><td>必要な外部共有は、目的を明示し、本人が選べる設計を前提とする。</td></tr>
+            <tr><td>Domain Separation</td><td>3事業を自動統合しない</td><td>各領域のデータは原則分離し、Super App化しない。</td></tr>
+          </tbody>
+        </table>
+        <p class="key-message">データもAIも目的ではない。<br>人への価値を、より良く届けるための手段。</p>
       </div>
     </section>
   </main>
