@@ -171,6 +171,15 @@
     .partner-reason b { font-family: var(--serif); font-size: clamp(17px, 1.7vw, 22px); line-height: 1.65; }
     .partner-assets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 24px; }
     .partner-assets span { padding: 14px 10px; border: 1px solid var(--line-dark); text-align: center; font-size: 12px; font-weight: 700; }
+    .partner-value { margin-top: 16px; padding: 14px 18px; border: 1px solid var(--line-dark); background: rgba(255,255,255,.035); }
+    .partner-value__heading { display: flex; align-items: baseline; gap: 10px; }
+    .partner-value__heading small { color: var(--gold); font-size: 9px; font-weight: 700; }
+    .partner-value__heading span { color: var(--muted-dark); font-size: 10px; }
+    .partner-value__rows { margin-top: 8px; border-top: 1px solid var(--line-dark); }
+    .partner-value__row { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: center; min-height: 34px; border-bottom: 1px solid var(--line-dark); }
+    .partner-value__row b { font-size: 11px; }
+    .partner-value__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .partner-value__tags span { padding: 3px 8px; border: 1px solid var(--line-dark); color: #d8deea; font-size: 9px; font-weight: 600; }
 
     .social-future { min-height: 100svh; background: var(--navy) url("assets/social-value-vision.jpg") center / cover no-repeat; color: #fff; }
     .social-future::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(8,14,25,.94), rgba(8,14,25,.68) 55%, rgba(8,14,25,.44)); }
@@ -181,6 +190,13 @@
     .social-value-card h3 { margin-top: 12px; font-size: 25px; }
     .social-value-card p { margin-top: auto; padding-top: 28px; color: #d4dbe5; font-size: 14px; }
     .social-future .key-message { color: #fff; }
+    .flywheel { margin-top: 18px; padding: 14px 18px; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); background: rgba(10,17,29,.64); }
+    .flywheel > small { display: block; color: var(--gold); font-size: 9px; font-weight: 700; text-align: center; }
+    .flywheel__track { display: grid; grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr) 22px minmax(0, 1fr) 30px; align-items: center; margin-top: 9px; }
+    .flywheel__step { min-width: 0; min-height: 48px; padding: 8px 6px; border: 1px solid var(--line-dark); background: rgba(255,255,255,.045); display: grid; place-items: center; font-size: 10px; font-weight: 700; line-height: 1.45; text-align: center; }
+    .flywheel__arrow, .flywheel__return { display: grid; place-items: center; color: var(--gold); font-size: 16px; font-style: normal; }
+    .flywheel__return { font-size: 21px; }
+    .flywheel__message { margin-top: 9px; color: #e8edf4; font-size: 13px; font-weight: 700; text-align: center; }
 
     .impact-map { margin-top: clamp(34px, 6vw, 64px); display: grid; gap: 12px; }
     .impact-row { display: grid; grid-template-columns: 160px 1fr 54px 1.25fr; align-items: center; min-height: 132px; border: 1px solid var(--line); background: rgba(255,255,255,.72); }
@@ -313,12 +329,37 @@
       .partner-assets { grid-template-columns: repeat(2, 1fr); }
       .partner-assets { gap: 5px; margin-top: 14px; }
       .partner-assets span { padding: 8px 4px; font-size: 7px; }
+      .partner-value { padding: 12px 10px; }
+      .partner-value__heading { gap: 7px; }
+      .partner-value__heading small { font-size: 7px; }
+      .partner-value__heading span { font-size: 8px; }
+      .partner-value__row { grid-template-columns: 68px minmax(0, 1fr); min-height: 38px; }
+      .partner-value__row b { font-size: 9px; }
+      .partner-value__tags { gap: 4px; }
+      .partner-value__tags span { padding: 3px 5px; font-size: 8px; }
       .social-future { background-image: url("assets/social-value-vision.jpg"); background-position: 68% center; }
       .social-value-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
       .social-value-card { min-width: 0; min-height: 176px; padding: 16px 10px; }
       .social-value-card small { font-size: 7px; }
       .social-value-card h3 { margin-top: 7px; font-size: 11px; line-height: 1.5; }
       .social-value-card p { padding-top: 14px; font-size: 9px; line-height: 1.65; }
+      .flywheel { padding: 12px 9px; }
+      .flywheel > small { font-size: 7px; }
+      .flywheel__track { grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 1fr); grid-template-rows: auto 18px auto; margin-top: 8px; }
+      .flywheel__step { min-height: 44px; padding: 6px 4px; font-size: 8px; }
+      .flywheel__step--1 { grid-column: 1; grid-row: 1; }
+      .flywheel__arrow--1 { grid-column: 2; grid-row: 1; }
+      .flywheel__step--2 { grid-column: 3; grid-row: 1; }
+      .flywheel__arrow--2 { grid-column: 4; grid-row: 1; }
+      .flywheel__step--3 { grid-column: 5; grid-row: 1; }
+      .flywheel__arrow--3 { grid-column: 5; grid-row: 2; transform: rotate(90deg); }
+      .flywheel__step--4 { grid-column: 5; grid-row: 3; }
+      .flywheel__arrow--4 { grid-column: 4; grid-row: 3; transform: rotate(180deg); }
+      .flywheel__step--5 { grid-column: 3; grid-row: 3; }
+      .flywheel__arrow--5 { grid-column: 2; grid-row: 3; transform: rotate(180deg); }
+      .flywheel__step--6 { grid-column: 1; grid-row: 3; }
+      .flywheel__return { grid-column: 1; grid-row: 2; font-size: 17px; }
+      .flywheel__message { margin-top: 8px; font-size: 10px; line-height: 1.6; }
       .impact-row { grid-template-columns: 1fr; }
       .impact-row__business, .impact-row__secondary, .impact-row__value { padding: 20px; border-left: 0; }
       .impact-row__business { border-top: 5px solid var(--career); }
@@ -394,8 +435,17 @@
       .partner-assets { gap: 2mm; margin-top: 5mm; }
       .partner-assets span { padding: 3mm 2mm; }
       .partnership-output { margin-top: 5mm; padding: 4mm; }
+      .partner-value { margin-top: 3mm; padding: 3mm 4mm; }
+      .partner-value__rows { margin-top: 2mm; }
+      .partner-value__row { grid-template-columns: 26mm 1fr; min-height: 7mm; }
+      .partner-value__tags span { padding: 1mm 2mm; font-size: 7pt; }
       .social-value-grid { grid-template-columns: repeat(3, 1fr); margin-inline: 0; padding: 0; overflow: visible; }
       .social-value-card { min-height: 60mm; }
+      .flywheel { margin-top: 4mm; padding: 3mm 4mm; }
+      .flywheel__track { margin-top: 2mm; }
+      .flywheel__step { min-height: 11mm; padding: 2mm; font-size: 7pt; }
+      .flywheel__message { margin-top: 2mm; font-size: 8pt; }
+      .social-future .key-message { margin-top: 4mm; font-size: 16pt; }
       .impact-row { grid-template-columns: 34mm 1fr 12mm 1.25fr; min-height: 31mm; }
       .impact-row__business, .impact-row__secondary, .impact-row__value { padding: 5mm; }
       .impact-row__business { border-top: 0; border-left: 6px solid var(--career); }
@@ -503,7 +553,7 @@
 
     <!-- SECTION 07: パートナーシップ -->
     <section class="slide dark" id="partnership" data-page="07 / 08" aria-labelledby="partnership-title"><div class="slide__inner">
-      <p class="label">07</p><h2 class="headline" id="partnership-title">パートナーシップの<span class="mobile-only"> </span>メリット</h2><p class="support">自社だけで設備・人員・流通網を抱えず、すでに顧客と現場を持つ会社と組むことで、価値を速く広く届けます。</p>
+      <p class="label">07</p><h2 class="headline" id="partnership-title">パートナーシップの<span class="mobile-only"> </span>メリット</h2><p class="support">自社だけですべてを持たず、互いの強みを組み合わせることで、私たちにもパートナーにも新しい価値を生み出します。</p>
       <div class="partner-reasons" aria-label="自社ですべてを持たなくてよい理由">
         <div class="partner-reason"><b class="phrase">複業.Labが、<wbr>巨大な研修会社に<wbr>なる必要はない。</b></div>
         <div class="partner-reason"><b class="phrase">BDXが、<wbr>フィットネス<wbr>クラブを<wbr>大量出店する<wbr>必要はない。</b></div>
@@ -514,6 +564,14 @@
         <div class="partnership-multiply" aria-hidden="true">×</div>
         <article class="partnership-side"><small>パートナーが提供するもの</small><h3>社会へ届ける基盤</h3><div class="partner-assets"><span>顧客基盤</span><span>現場</span><span>流通・販売網</span><span>専門性</span></div></article>
       </div><div class="partnership-output">大量の資本を投入して自社展開するより、互いの強みを組み合わせる方がスケールさせやすい。</div>
+      <div class="partner-value" aria-label="パートナーに生まれる価値領域">
+        <div class="partner-value__heading"><small>PARTNER VALUE</small><span>パートナーに生まれる価値</span></div>
+        <div class="partner-value__rows">
+          <div class="partner-value__row"><b>複業.Lab</b><div class="partner-value__tags"><span>キャリア自律</span><span>リスキリング</span><span>地域人材活性化</span></div></div>
+          <div class="partner-value__row"><b>BDX</b><div class="partner-value__tags"><span>継続支援</span><span>体験向上</span><span>指導外サポート</span></div></div>
+          <div class="partner-value__row"><b>Cafe</b><div class="partner-value__tags"><span>新しいAudience</span><span>企画精度</span><span>Artist支援</span></div></div>
+        </div>
+      </div>
     </div></section>
 
     <!-- SECTION 08: Social Value -->
@@ -523,7 +581,20 @@
         <article class="social-value-card"><small>複業.Lab</small><h3 class="phrase">キャリア</h3><p>企業や地域で、新しい仕事を生み出す人材を育てる。</p></article>
         <article class="social-value-card"><small>BDX</small><h3 class="phrase">コンディション</h3><p>より良い状態で、運動や表現を続けられる人を増やす。</p></article>
         <article class="social-value-card"><small>Cafe</small><h3 class="phrase">アーティスト</h3><p>才能と支援者が出会い、次の舞台へ進む機会を増やす。</p></article>
-      </div><p class="key-message">価値の最大化</p>
+      </div>
+      <div class="flywheel" aria-label="事業拡大の学びを一次事業へ戻す循環">
+        <small>LEARNING FLYWHEEL</small>
+        <div class="flywheel__track">
+          <span class="flywheel__step flywheel__step--1">一次事業</span><i class="flywheel__arrow flywheel__arrow--1" aria-hidden="true">→</i>
+          <span class="flywheel__step flywheel__step--2">行動・結果</span><i class="flywheel__arrow flywheel__arrow--2" aria-hidden="true">→</i>
+          <span class="flywheel__step flywheel__step--3">知見・メソッド</span><i class="flywheel__arrow flywheel__arrow--3" aria-hidden="true">→</i>
+          <span class="flywheel__step flywheel__step--4">Partnership</span><i class="flywheel__arrow flywheel__arrow--4" aria-hidden="true">→</i>
+          <span class="flywheel__step flywheel__step--5">より多くの実践</span><i class="flywheel__arrow flywheel__arrow--5" aria-hidden="true">→</i>
+          <span class="flywheel__step flywheel__step--6">新しい学び</span><i class="flywheel__return" aria-hidden="true">↺</i>
+        </div>
+        <p class="flywheel__message">広がるほど、学びが増える。学ぶほど、一次事業も強くなる。</p>
+      </div>
+      <p class="key-message">価値の最大化</p>
     </div></section>
 
   </main>
