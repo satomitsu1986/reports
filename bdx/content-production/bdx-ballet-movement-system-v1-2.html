@@ -12,22 +12,25 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     :root {
-      --bg: #0f0a0c;
-      --surface: #1a1218;
-      --surface-hi: #21151c;
-      --surface-soft: #1c1418;
-      --accent: #ff80ab;
-      --accent-bright: #f8bbd0;
-      --accent-strong: #f48fb1;
-      --accent-soft: rgba(244,143,177,0.1);
-      --accent-line: rgba(244,143,177,0.34);
-      --secondary: #3d2030;
-      --primary-dark: #c2185b;
-      --text: #f0e8ec;
-      --muted: #a09aa0;
-      --subtle: #746d73;
-      --line: #2d222a;
-      --line-strong: #4a3340;
+      --bg: #ffffff;
+      --surface: #2a2729;
+      --surface-hi: #343033;
+      --surface-soft: #242123;
+      --accent: #c2185b;
+      --accent-bright: #ff91b5;
+      --accent-strong: #a80f4b;
+      --accent-soft: rgba(194,24,91,0.08);
+      --accent-line: rgba(194,24,91,0.4);
+      --secondary: #422230;
+      --primary-dark: #8e0f40;
+      --text: #171417;
+      --muted: #595459;
+      --subtle: #8c858a;
+      --line: #e3dee1;
+      --line-strong: #4b4549;
+      --card-text: #fffafb;
+      --card-muted: #d8d0d5;
+      --card-line: #4b4549;
       --radius: 28px;
       --sans: 'Inter', 'Noto Sans JP', sans-serif;
       --serif: var(--sans);
@@ -45,9 +48,9 @@
       margin: 0;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 14% -4%, rgba(194,24,91,0.14), transparent 34rem),
-        radial-gradient(circle at 100% 30%, rgba(61,32,48,0.22), transparent 40rem),
-        linear-gradient(180deg, #170d12 0%, var(--bg) 30rem, #0f0a0c 100%);
+        radial-gradient(circle at 12% -4%, rgba(194,24,91,0.09), transparent 34rem),
+        radial-gradient(circle at 100% 26%, rgba(194,24,91,0.035), transparent 42rem),
+        linear-gradient(180deg, #fffafb 0%, var(--bg) 32rem, #ffffff 100%);
     }
     a { color: inherit; }
     .site-header {
@@ -60,7 +63,7 @@
       min-height: 58px;
       padding: 0 28px;
       border-bottom: 1px solid var(--line);
-      background: rgba(15,10,12,0.92);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(18px);
     }
     .back-link {
@@ -88,8 +91,8 @@
       z-index: 51;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent-strong), var(--accent));
-      box-shadow: 0 2px 10px rgba(244,143,177,0.22);
+      background: linear-gradient(90deg, var(--accent), var(--primary-dark));
+      box-shadow: 0 2px 10px rgba(194,24,91,0.2);
     }
     .layout {
       display: grid;
@@ -142,7 +145,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--surface);
-      color: var(--muted);
+      color: var(--card-muted);
       font-size: 13px;
       line-height: 1.9;
     }
@@ -156,6 +159,15 @@
       font-weight: 700;
       letter-spacing: -0.055em;
       line-height: 1.06;
+    }
+    .report h1,
+    .report h2,
+    .report h3,
+    .report h4 {
+      text-wrap: balance;
+      line-break: strict;
+      word-break: auto-phrase;
+      overflow-wrap: anywhere;
     }
     .report > h1:first-child::before {
       content: 'BDX / MOVEMENT SYSTEM';
@@ -188,6 +200,7 @@
       letter-spacing: 0.01em;
       line-height: 1.85;
     }
+    .report > h1:first-child + blockquote p { color: var(--muted); }
     .report h2 {
       scroll-margin-top: 84px;
       margin: 96px 0 28px;
@@ -249,9 +262,10 @@
       border: 1px solid var(--accent-line);
       border-left: 4px solid var(--accent-strong);
       border-radius: 20px;
-      background: linear-gradient(120deg, var(--accent-soft), var(--surface) 78%);
+      background: linear-gradient(120deg, var(--surface-hi), var(--surface) 78%);
     }
-    .report blockquote p { margin: 0; color: #c5bcc2; }
+    .report blockquote p { margin: 0; color: var(--card-muted); }
+    .report blockquote strong { color: var(--card-text); }
     .report hr {
       height: 1px;
       margin: 76px 0;
@@ -265,7 +279,7 @@
       border-collapse: separate;
       border-spacing: 0;
       overflow: hidden;
-      border: 1px solid var(--line);
+      border: 1px solid var(--card-line);
       border-radius: 20px;
       background: var(--surface);
       font-size: 11px;
@@ -274,8 +288,8 @@
     .report th,
     .report td {
       padding: 12px 13px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--card-line);
+      border-bottom: 1px solid var(--card-line);
       vertical-align: top;
       text-align: left;
     }
@@ -289,8 +303,8 @@
       font-weight: 600;
       letter-spacing: 0.05em;
     }
-    .report td { color: #c2b9bf; }
-    .report tbody tr:hover td { background: rgba(244,143,177,0.035); }
+    .report td { color: var(--card-muted); }
+    .report tbody tr:hover td { background: rgba(255,255,255,0.025); }
     .movement-cards {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -309,7 +323,7 @@
       padding: 20px 22px;
       border-bottom: 1px solid var(--line-strong);
       background: linear-gradient(125deg, rgba(61,32,48,0.52), var(--surface) 72%);
-      color: var(--text);
+      color: var(--card-text);
       font-family: var(--serif);
       font-size: 1.35rem;
       font-weight: 700;
@@ -325,7 +339,7 @@
       padding: 10px 16px;
       border-left: 4px solid var(--accent-strong);
       background: var(--surface-soft);
-      color: var(--accent-strong) !important;
+      color: var(--accent-bright) !important;
       font-size: 10px !important;
       font-weight: 700;
       letter-spacing: 0.14em !important;
@@ -355,7 +369,7 @@
       gap: 12px;
       margin: 0;
       padding: 10px 16px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--card-line);
     }
     .movement-field dt {
       color: var(--accent-bright);
@@ -367,7 +381,7 @@
     .movement-field dd {
       min-width: 0;
       margin: 0;
-      color: #c5bdc3;
+      color: var(--card-muted);
       font-size: 10.5px;
       letter-spacing: 0.02em;
       line-height: 1.75;
@@ -381,26 +395,27 @@
     .report p code,
     .report td code {
       padding: 2px 6px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--card-line);
       border-radius: 4px;
-      background: var(--secondary);
+      background: var(--surface);
+      color: var(--card-text);
     }
     .report pre {
       margin: 24px 0 34px;
       padding: 20px 22px;
       overflow: hidden;
-      border: 1px solid var(--line);
+      border: 1px solid var(--card-line);
       border-radius: 20px;
       background: var(--surface);
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
-    .report pre code { color: #d3c8cf; font-size: 11px; line-height: 1.9; }
+    .report pre code { color: var(--card-text); font-size: 11px; line-height: 1.9; }
     .mermaid {
       margin: 26px 0 38px;
       padding: 24px;
       overflow: hidden;
-      border: 1px solid var(--line);
+      border: 1px solid var(--card-line);
       border-radius: 20px;
       background: var(--surface);
       text-align: center;
@@ -456,7 +471,7 @@
       .report tbody { display: grid; gap: 10px; }
       .report tr {
         overflow: hidden;
-        border: 1px solid var(--line);
+        border: 1px solid var(--card-line);
         border-radius: 18px;
         background: var(--surface);
       }
@@ -466,17 +481,17 @@
         gap: 12px;
         padding: 10px 12px;
         border-right: 0;
-        color: #c5bdc3;
+        color: var(--card-muted);
         font-size: 10px;
       }
       .report td::before {
         content: attr(data-label);
-        color: var(--accent-strong);
+        color: var(--accent-bright);
         font-size: 8px;
         font-weight: 600;
         letter-spacing: 0.05em;
       }
-      .report tr:last-child td { border-bottom: 1px solid var(--line); }
+      .report tr:last-child td { border-bottom: 1px solid var(--card-line); }
       .report tr td:last-child { border-bottom: 0; }
       .movement-cards { grid-template-columns: 1fr; gap: 12px; margin-bottom: 36px; }
       .report .movement-card h4 { padding: 16px 14px; font-size: 1.25rem; }
@@ -492,7 +507,7 @@
       .mermaid { padding: 14px 8px; }
     }
     @media print {
-      :root { --bg: #fff; --surface: #fff; --surface-hi: #fff; --text: #171717; --muted: #424242; --subtle: #777; --line: #d8d3d6; --line-strong: #bdb5ba; --accent-line: #d8a3b2; }
+      :root { --bg: #fff; --surface: #fff; --surface-hi: #fff; --surface-soft: #f7f4f5; --secondary: #f6e8ed; --text: #171717; --muted: #424242; --subtle: #777; --line: #d8d3d6; --line-strong: #bdb5ba; --accent-line: #d8a3b2; --accent-bright: #7f2946; --card-text: #171717; --card-muted: #333; --card-line: #d8d3d6; }
       body { background: #fff; color: #171717; }
       .site-header,
       .reading-progress,
@@ -673,17 +688,17 @@
           fontFamily: "Inter, 'Noto Sans JP', sans-serif",
           themeVariables: {
             darkMode: true,
-            background: '#1a1218',
-            primaryColor: '#3d2030',
-            primaryTextColor: '#f0e8ec',
-            primaryBorderColor: '#f48fb1',
-            lineColor: '#f48fb1',
-            secondaryColor: '#21151c',
-            secondaryTextColor: '#f0e8ec',
-            secondaryBorderColor: '#ff80ab',
-            tertiaryColor: '#0f0a0c',
-            tertiaryTextColor: '#f0e8ec',
-            tertiaryBorderColor: '#4a3340'
+            background: '#2a2729',
+            primaryColor: '#422230',
+            primaryTextColor: '#fffafb',
+            primaryBorderColor: '#c2185b',
+            lineColor: '#c2185b',
+            secondaryColor: '#343033',
+            secondaryTextColor: '#fffafb',
+            secondaryBorderColor: '#ff91b5',
+            tertiaryColor: '#242123',
+            tertiaryTextColor: '#fffafb',
+            tertiaryBorderColor: '#4b4549'
           },
           flowchart: { curve: 'basis', htmlLabels: true }
         });
