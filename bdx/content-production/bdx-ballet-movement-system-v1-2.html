@@ -13,24 +13,24 @@
     *, *::before, *::after { box-sizing: border-box; }
     :root {
       --bg: #ffffff;
-      --surface: #2a2729;
-      --surface-hi: #343033;
-      --surface-soft: #242123;
-      --accent: #c2185b;
-      --accent-bright: #ff91b5;
-      --accent-strong: #a80f4b;
-      --accent-soft: rgba(194,24,91,0.08);
-      --accent-line: rgba(194,24,91,0.4);
-      --secondary: #422230;
-      --primary-dark: #8e0f40;
-      --text: #171417;
-      --muted: #595459;
-      --subtle: #8c858a;
+      --surface: #181617;
+      --surface-hi: #211e20;
+      --surface-soft: #111011;
+      --accent: #b0004b;
+      --accent-bright: #ff97b9;
+      --accent-strong: #98003f;
+      --accent-soft: rgba(176,0,75,0.07);
+      --accent-line: rgba(176,0,75,0.48);
+      --secondary: #242124;
+      --primary-dark: #760031;
+      --text: #151315;
+      --muted: #403b3f;
+      --subtle: #777176;
       --line: #e3dee1;
-      --line-strong: #4b4549;
-      --card-text: #fffafb;
-      --card-muted: #d8d0d5;
-      --card-line: #4b4549;
+      --line-strong: #3b373a;
+      --card-text: #ffffff;
+      --card-muted: #f1ecef;
+      --card-line: #3c383b;
       --radius: 28px;
       --sans: 'Inter', 'Noto Sans JP', sans-serif;
       --serif: var(--sans);
@@ -169,6 +169,11 @@
       word-break: auto-phrase;
       overflow-wrap: anywhere;
     }
+    .heading-phrase {
+      display: inline-block;
+      max-width: 100%;
+      white-space: nowrap;
+    }
     .report > h1:first-child::before {
       content: 'BDX / MOVEMENT SYSTEM';
       position: absolute;
@@ -297,8 +302,8 @@
     .report td:last-child { border-right: 0; }
     .report tr:last-child td { border-bottom: 0; }
     .report th {
-      background: var(--secondary);
-      color: var(--accent-bright);
+      background: var(--accent-strong);
+      color: #fff;
       font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -314,15 +319,16 @@
     .movement-card {
       min-width: 0;
       overflow: hidden;
-      border: 1px solid var(--accent-line);
+      border: 1px solid #2f2b2e;
       border-radius: var(--radius);
       background: var(--surface);
+      box-shadow: 0 14px 34px rgba(31,16,23,0.08);
     }
     .report .movement-card h4 {
       margin: 0;
       padding: 20px 22px;
-      border-bottom: 1px solid var(--line-strong);
-      background: linear-gradient(125deg, rgba(61,32,48,0.52), var(--surface) 72%);
+      border-bottom: 2px solid var(--accent);
+      background: #111011;
       color: var(--card-text);
       font-family: var(--serif);
       font-size: 1.35rem;
@@ -337,9 +343,9 @@
       align-items: center;
       gap: 9px;
       padding: 10px 16px;
-      border-left: 4px solid var(--accent-strong);
-      background: var(--surface-soft);
-      color: var(--accent-bright) !important;
+      border-left: 4px solid var(--accent-bright);
+      background: #242124;
+      color: #fff !important;
       font-size: 10px !important;
       font-weight: 700;
       letter-spacing: 0.14em !important;
@@ -354,13 +360,13 @@
       border-radius: 50%;
     }
     .movement-group + .movement-group .movement-group-label {
-      border-left-color: var(--accent);
-      background: var(--secondary);
-      color: var(--accent-bright) !important;
+      border-left-color: var(--accent-strong);
+      background: var(--accent-strong);
+      color: #fff !important;
     }
     .movement-group + .movement-group .movement-group-label::before {
-      border-color: var(--accent-bright);
-      background: var(--accent-bright);
+      border-color: #fff;
+      background: #fff;
     }
     .movement-fields { margin: 0; }
     .movement-field {
@@ -415,12 +421,40 @@
       margin: 26px 0 38px;
       padding: 24px;
       overflow: hidden;
-      border: 1px solid var(--card-line);
+      border: 1px solid #2f2b2e;
       border-radius: 20px;
       background: var(--surface);
       text-align: center;
     }
     .mermaid svg { display: block; max-width: 100% !important; height: auto !important; margin: 0 auto; }
+    .mermaid .nodeLabel,
+    .mermaid .nodeLabel p,
+    .mermaid .nodeLabel span,
+    .mermaid .edgeLabel,
+    .mermaid .edgeLabel p,
+    .mermaid text,
+    .mermaid tspan {
+      color: #fff !important;
+      fill: #fff !important;
+      font-weight: 600 !important;
+    }
+    .mermaid .edgeLabel { background-color: var(--surface) !important; }
+    .mermaid .edgeLabel rect { fill: var(--surface) !important; opacity: 1 !important; }
+    .mermaid .node rect,
+    .mermaid .node polygon,
+    .mermaid .node path {
+      fill: #760031 !important;
+      stroke: #ff7ca9 !important;
+      stroke-width: 1.6px !important;
+    }
+    .mermaid .flowchart-link {
+      stroke: #ff6f9f !important;
+      stroke-width: 1.8px !important;
+    }
+    .mermaid marker path {
+      fill: #ff6f9f !important;
+      stroke: #ff6f9f !important;
+    }
     .source-note {
       margin-top: 86px;
       padding-top: 22px;
@@ -527,6 +561,10 @@
       .mermaid { page-break-inside: avoid; background: #fff9fb; }
       .movement-cards { display: block; }
       .movement-card { margin: 0 0 5mm; page-break-inside: avoid; background: #fff; }
+      .report .movement-card h4 { background: #fff; color: #171717; border-bottom-color: #7f2946; }
+      .movement-group-label { background: #f7f4f5; color: #171717 !important; }
+      .movement-group + .movement-group .movement-group-label { background: #f6e8ed; color: #171717 !important; }
+      .movement-group + .movement-group .movement-group-label::before { border-color: #7f2946; background: #7f2946; }
       .movement-field dt { color: #7f2946; }
       .movement-field dd { color: #333; }
       .source-note { display: none; }
@@ -568,6 +606,37 @@
           .replace(/-+/g, '-')
           .replace(/^-|-$/g, '');
         return normalized || `section-${index + 1}`;
+      };
+
+      const preferredHeadingPhrases = new Map([
+        ['BDX バレエ動作体系', ['BDX\u00a0', 'バレエ動作体系']],
+        ['BDXにおけるバレエ動作の考え方', ['BDXにおける', 'バレエ動作の考え方']],
+        ['BDXバレエ動作体系 全体図', ['BDXバレエ動作体系\u00a0', '全体図']],
+        ['レベル2：可動性とコントロール', ['レベル2：', '可動性とコントロール']],
+        ['複合動作への代表的な接続', ['複合動作への', '代表的な接続']],
+        ['調整または中止を判断するサイン', ['調整または中止を', '判断するサイン']],
+        ['身体部位・動きの特徴から探す', ['身体部位・動きの', '特徴から探す']],
+        ['動作特性とトレーニング効果を分ける', ['動作特性と', 'トレーニング効果を分ける']],
+        ['コンテンツ制作での使い方', ['コンテンツ制作での', '使い方']],
+        ['企画例：下半身を使う5分エクササイズ', ['企画例：下半身を使う', '5分エクササイズ']],
+        ['発展例：少し難しい全身エクササイズ', ['発展例：少し難しい', '全身エクササイズ']],
+        ['付録：専門監修チェック項目', ['付録：専門監修', 'チェック項目']],
+        ['別の専門領域で確認する項目', ['別の専門領域で', '確認する項目']]
+      ]);
+
+      const prepareHeadingPhrases = () => {
+        report.querySelectorAll('h1, h2, h3').forEach((heading) => {
+          const parts = preferredHeadingPhrases.get(heading.textContent.trim());
+          if (!parts) return;
+          const fragment = document.createDocumentFragment();
+          parts.forEach((part) => {
+            const phrase = document.createElement('span');
+            phrase.className = 'heading-phrase';
+            phrase.textContent = part;
+            fragment.appendChild(phrase);
+          });
+          heading.replaceChildren(fragment);
+        });
       };
 
       const prepareTables = () => {
@@ -688,17 +757,23 @@
           fontFamily: "Inter, 'Noto Sans JP', sans-serif",
           themeVariables: {
             darkMode: true,
-            background: '#2a2729',
-            primaryColor: '#422230',
-            primaryTextColor: '#fffafb',
-            primaryBorderColor: '#c2185b',
-            lineColor: '#c2185b',
-            secondaryColor: '#343033',
-            secondaryTextColor: '#fffafb',
-            secondaryBorderColor: '#ff91b5',
-            tertiaryColor: '#242123',
-            tertiaryTextColor: '#fffafb',
-            tertiaryBorderColor: '#4b4549'
+            background: '#181617',
+            fontSize: '16px',
+            textColor: '#ffffff',
+            nodeTextColor: '#ffffff',
+            mainBkg: '#760031',
+            nodeBorder: '#ff7ca9',
+            edgeLabelBackground: '#181617',
+            primaryColor: '#760031',
+            primaryTextColor: '#ffffff',
+            primaryBorderColor: '#ff7ca9',
+            lineColor: '#ff6f9f',
+            secondaryColor: '#520024',
+            secondaryTextColor: '#ffffff',
+            secondaryBorderColor: '#ff97b9',
+            tertiaryColor: '#242124',
+            tertiaryTextColor: '#ffffff',
+            tertiaryBorderColor: '#ff7ca9'
           },
           flowchart: { curve: 'basis', htmlLabels: true }
         });
@@ -722,6 +797,7 @@
           prepareMovementCards();
           prepareTables();
           prepareNavigation();
+          prepareHeadingPhrases();
           await prepareMermaid();
           const note = document.createElement('p');
           note.className = 'source-note';
