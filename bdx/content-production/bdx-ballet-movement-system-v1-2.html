@@ -336,38 +336,7 @@
       letter-spacing: -0.02em;
       line-height: 1.35;
     }
-    .movement-group + .movement-group { border-top: 1px solid var(--line-strong); }
-    .movement-group-label {
-      margin: 0 !important;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      padding: 10px 16px;
-      border-left: 4px solid var(--accent-bright);
-      background: #242124;
-      color: #fff !important;
-      font-size: 10px !important;
-      font-weight: 700;
-      letter-spacing: 0.14em !important;
-      line-height: 1.4 !important;
-    }
-    .movement-group-label::before {
-      content: '';
-      flex: 0 0 auto;
-      width: 7px;
-      height: 7px;
-      border: 2px solid currentColor;
-      border-radius: 50%;
-    }
-    .movement-group + .movement-group .movement-group-label {
-      border-left-color: var(--accent-strong);
-      background: var(--accent-strong);
-      color: #fff !important;
-    }
-    .movement-group + .movement-group .movement-group-label::before {
-      border-color: #fff;
-      background: #fff;
-    }
+    .movement-group + .movement-group { border-top: 1px solid var(--accent); }
     .movement-fields { margin: 0; }
     .movement-field {
       display: grid;
@@ -529,7 +498,6 @@
       .report tr td:last-child { border-bottom: 0; }
       .movement-cards { grid-template-columns: 1fr; gap: 12px; margin-bottom: 36px; }
       .report .movement-card h4 { padding: 16px 14px; font-size: 1.25rem; }
-      .movement-group-label { padding: 10px 12px; font-size: 9.5px !important; }
       .movement-field {
         grid-template-columns: minmax(92px, 0.38fr) minmax(0, 1fr);
         gap: 10px;
@@ -562,9 +530,6 @@
       .movement-cards { display: block; }
       .movement-card { margin: 0 0 5mm; page-break-inside: avoid; background: #fff; }
       .report .movement-card h4 { background: #fff; color: #171717; border-bottom-color: #7f2946; }
-      .movement-group-label { background: #f7f4f5; color: #171717 !important; }
-      .movement-group + .movement-group .movement-group-label { background: #f6e8ed; color: #171717 !important; }
-      .movement-group + .movement-group .movement-group-label::before { border-color: #7f2946; background: #7f2946; }
       .movement-field dt { color: #7f2946; }
       .movement-field dd { color: #333; }
       .source-note { display: none; }
@@ -681,12 +646,9 @@
               if (label === '動作概要' || label === '前提となる動作') {
                 group = document.createElement('div');
                 group.className = 'movement-group';
-                const groupLabel = document.createElement('p');
-                groupLabel.className = 'movement-group-label';
-                groupLabel.textContent = label === '動作概要' ? '基本情報' : '制作情報';
                 fields = document.createElement('dl');
                 fields.className = 'movement-fields';
-                group.append(groupLabel, fields);
+                group.appendChild(fields);
                 card.appendChild(group);
               }
 
