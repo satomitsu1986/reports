@@ -193,6 +193,8 @@
       font-family: var(--serif);
       font-size: clamp(2rem, 4.3vw, 3.7rem);
       font-weight: 300;
+      font-variant-numeric: lining-nums tabular-nums;
+      font-feature-settings: 'lnum' 1, 'tnum' 1;
       letter-spacing: 0.05em;
       line-height: 1.2;
     }
@@ -204,6 +206,8 @@
       font-family: var(--sans);
       font-size: 9px;
       font-weight: 600;
+      font-variant-numeric: lining-nums tabular-nums;
+      font-feature-settings: 'lnum' 1, 'tnum' 1;
       letter-spacing: 0.28em;
     }
     .report h3 {
@@ -348,7 +352,15 @@
       .reading-progress { top: 51px; }
       .layout { width: min(100% - 28px, 900px); padding: 12px 0 70px; }
       .report > h1:first-child { padding-top: 70px; font-size: clamp(2.5rem, 13vw, 4rem); letter-spacing: 0.035em; }
-      .report h2 { margin-top: 72px; padding-top: 24px; }
+      .report h2 {
+        margin-top: 72px;
+        padding-top: 24px;
+        font-size: clamp(1.95rem, 9.5vw, 2.65rem);
+        letter-spacing: 0.025em;
+        line-height: 1.28;
+        text-wrap: balance;
+      }
+      .report h2::before { margin-bottom: 14px; line-height: 1; }
       .report h3 { margin-top: 42px; }
       .report p,
       .report li { font-size: 0.87rem; line-height: 1.9; }
@@ -484,19 +496,21 @@
         const headings = Array.from(report.querySelectorAll('h2'));
         const used = new Set();
         headings.forEach((heading, index) => {
-          let id = makeId(heading.textContent, index);
+          const rawText = heading.textContent.trim();
+          let id = makeId(rawText, index);
           while (used.has(id)) id = `${id}-${index + 1}`;
           used.add(id);
           heading.id = id;
-          const numbered = heading.textContent.match(/^(\d+)\./);
+          const numbered = rawText.match(/^(\d+)\.\s*(.+)$/);
           heading.dataset.index = numbered
             ? numbered[1].padStart(2, '0')
-            : heading.textContent.startsWith('付録')
+            : rawText.startsWith('付録')
               ? 'APPENDIX'
               : 'CONTENTS';
+          if (numbered) heading.textContent = numbered[2];
           const link = document.createElement('a');
           link.href = `#${id}`;
-          link.textContent = heading.textContent;
+          link.textContent = rawText;
           toc.appendChild(link);
         });
 
