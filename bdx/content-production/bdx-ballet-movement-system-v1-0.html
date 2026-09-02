@@ -294,6 +294,18 @@
       font-weight: 600;
       text-align: center;
     }
+    .report table.progression-spec { table-layout: fixed; }
+    .report table.progression-spec th:nth-child(1) { width: 14%; }
+    .report table.progression-spec th:nth-child(2) { width: 16%; }
+    .report table.progression-spec th:nth-child(3) { width: 18%; }
+    .report table.progression-spec th:nth-child(4) { width: 18%; }
+    .report table.progression-spec th:nth-child(5) { width: 29%; }
+    .report table.progression-spec th:nth-child(6) { width: 5%; text-align: center; }
+    .report table.progression-spec td:nth-child(6) {
+      color: var(--gold-bright);
+      font-weight: 600;
+      text-align: center;
+    }
     .report code {
       color: #e2c58e;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -385,7 +397,8 @@
       }
       .report tr:last-child td { border-bottom: 1px solid var(--line); }
       .report tr td:last-child { border-bottom: 0; }
-      .report table.movement-spec td:first-child {
+      .report table.movement-spec td:first-child,
+      .report table.progression-spec td:first-child {
         display: block;
         padding: 14px 12px;
         background: linear-gradient(90deg, var(--gold-soft), transparent);
@@ -395,8 +408,10 @@
         font-weight: 500;
         letter-spacing: 0.04em;
       }
-      .report table.movement-spec td:first-child::before { display: none; }
+      .report table.movement-spec td:first-child::before,
+      .report table.progression-spec td:first-child::before { display: none; }
       .report table.movement-spec td:nth-child(2) { text-align: left; }
+      .report table.progression-spec td:nth-child(6) { text-align: left; }
       .report pre { padding: 16px; }
       .mermaid { padding: 14px 8px; }
     }
@@ -465,6 +480,9 @@
           const previous = table.previousElementSibling;
           if (previous && previous.tagName === 'H3' && previous.textContent.trim() === '動作仕様') {
             table.classList.add('movement-spec');
+          }
+          if (previous && previous.tagName === 'H3' && previous.textContent.trim() === 'Progression・Safety') {
+            table.classList.add('progression-spec');
           }
           const labels = Array.from(table.querySelectorAll('thead th')).map((cell) => cell.textContent.trim());
           table.querySelectorAll('tbody tr').forEach((row) => {
