@@ -425,7 +425,13 @@
       .back-link { font-size: 9px; }
       .reading-progress { top: 51px; }
       .layout { width: min(100% - 28px, 900px); padding: 12px 0 70px; }
-      .report > h1:first-child { padding-top: 70px; font-size: clamp(2.5rem, 13vw, 4rem); letter-spacing: -0.055em; }
+      .report > h1:first-child {
+        padding-top: 62px;
+        font-size: clamp(2.15rem, 9.8vw, 2.65rem);
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+      }
+      .report > h1:first-child::after { margin-top: 24px; }
       .report h2 {
         margin-top: 72px;
         padding-top: 24px;
