@@ -35,6 +35,7 @@
   };
 
   let currentIndex = parseSlideFromHash();
+  let pointerGesture = null;
 
   const scaleStage = () => {
     const scale = Math.min(window.innerWidth / CANVAS_WIDTH, window.innerHeight / CANVAS_HEIGHT);
@@ -88,6 +89,45 @@
   nextButton.addEventListener("click", () => showSlide(currentIndex + 1));
   presentationButton.addEventListener("click", togglePresentationMode);
   fullscreenButton.addEventListener("click", toggleFullscreen);
+
+  stage.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    if (event.target.closest("button, a, input, textarea, select")) return;
+
+    pointerGesture = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startedAt: performance.now(),
+    };
+    stage.setPointerCapture(event.pointerId);
+  });
+
+  stage.addEventListener("pointerup", (event) => {
+    if (!pointerGesture || event.pointerId !== pointerGesture.pointerId) return;
+
+    const deltaX = event.clientX - pointerGesture.startX;
+    const deltaY = event.clientY - pointerGesture.startY;
+    const elapsed = performance.now() - pointerGesture.startedAt;
+    const horizontalSwipe = Math.abs(deltaX) >= 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+    const shortTap = Math.abs(deltaX) < 12 && Math.abs(deltaY) < 12 && elapsed < 350;
+    pointerGesture = null;
+
+    if (horizontalSwipe) {
+      showSlide(currentIndex + (deltaX < 0 ? 1 : -1));
+      return;
+    }
+
+    if (shortTap) {
+      const horizontalPosition = event.clientX / window.innerWidth;
+      if (horizontalPosition <= 0.35) showSlide(currentIndex - 1);
+      if (horizontalPosition >= 0.65) showSlide(currentIndex + 1);
+    }
+  });
+
+  stage.addEventListener("pointercancel", () => {
+    pointerGesture = null;
+  });
 
   window.addEventListener("resize", scaleStage, { passive: true });
   window.addEventListener("hashchange", () => showSlide(parseSlideFromHash(), false));
