@@ -710,11 +710,25 @@ svg {
   margin: 0 auto;
 }
 
+.mismatch-takeaway {
+  margin: 8px auto 0;
+  color: var(--ink);
+  font-size: 34px;
+  font-weight: 750;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.mismatch-takeaway strong {
+  color: var(--amber);
+  font-weight: 850;
+}
+
 .mismatch-visual {
   position: relative;
   width: 1180px;
-  height: 340px;
-  margin: 28px auto 0;
+  height: 250px;
+  margin: 14px auto 0;
 }
 
 .condition-track {
@@ -723,8 +737,8 @@ svg {
   width: 880px;
 }
 
-.old-track { top: 34px; }
-.current-track { bottom: 34px; }
+.old-track { top: 18px; }
+.current-track { bottom: 18px; }
 
 .condition-track p {
   margin-bottom: 10px;
@@ -792,6 +806,11 @@ svg {
   font-weight: 800;
   line-height: 1.55;
   text-align: center;
+}
+
+.mismatch-layout blockquote {
+  margin-top: 6px;
+  font-size: 25px;
 }
 
 .mismatch-layout .integrity-line {
@@ -1280,8 +1299,13 @@ svg {
 /* Slide 11 */
 
 .subjective-health-layout .slide-header {
+  max-width: 1400px;
   text-align: center;
   margin: 0 auto;
+}
+
+.subjective-health-layout .slide-header h2 {
+  font-size: 54px;
 }
 
 .subjective-health-visual {
