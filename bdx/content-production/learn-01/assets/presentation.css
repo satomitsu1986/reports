@@ -759,14 +759,18 @@ svg {
 .current-track > div { background: var(--amber-soft); }
 
 .condition-track span {
+  display: grid;
+  place-items: center;
+  padding: 4px 10px;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.86);
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
 }
 
-.old-track span:nth-child(2) { transform: translateY(-7px); }
-.old-track span:nth-child(4) { transform: translateY(7px); }
-.current-track span:nth-child(1) { transform: translateY(7px); }
-.current-track span:nth-child(3) { transform: translateY(-8px); }
+.old-track span { color: var(--teal-deep); }
+.current-track span { color: #755021; }
 
 .mismatch-gap {
   position: absolute;
@@ -1041,10 +1045,28 @@ svg {
 }
 
 .food-shelf > div span {
-  height: 54px;
-  border-radius: 10px 10px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 112px;
+  padding: 12px 8px;
+  border-radius: 12px;
   background: white;
-  box-shadow: inset 0 -9px 0 rgba(216, 139, 40, 0.22);
+  text-align: center;
+}
+
+.food-access-cues b {
+  color: var(--amber);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.food-access-cues strong {
+  color: #6f4d24;
+  font-size: 16px;
+  line-height: 1.35;
 }
 
 .food-shelf small {
