@@ -2497,13 +2497,13 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
-  width: 980px;
+  width: 1120px;
   margin-bottom: 34px;
 }
 
 .performance-definition article {
   display: grid;
-  grid-template-columns: 62px 110px 1fr;
+  grid-template-columns: 62px 50px 1fr;
   align-items: center;
   gap: 16px;
   min-height: 108px;
@@ -2527,6 +2527,17 @@ svg {
 }
 
 .performance-finale-layout blockquote strong { color: #f8cc87; }
+
+/* Human Review v3.0: keep the 16-slide story; clarify defense vs chronicity. */
+.civilization-disease-layout .civilization-disease-map { margin: 28px auto 20px; }
+.civilization-question { margin: 0 0 18px; color: var(--teal-deep); font-size: 28px; font-weight: 800; line-height: 1.45; text-align: center; }
+.defense-revision .condition-pathways { margin-top: 28px; }
+.defense-revision .condition-pathways article { min-height: 375px; padding: 25px; }
+.defense-revision .pathway-icon { width: 64px; height: 64px; margin-bottom: 12px; }
+.defense-revision .pathway-icon svg { width: 42px; height: 42px; }
+.chronicity-step { display: block; margin: 20px 0 12px; font-size: 19px; font-weight: 750; }
+.chronicity-result { padding: 12px 26px; border-radius: 16px; background: rgba(255,255,255,.65); font-size: 27px; }
+.performance-finale-layout blockquote { max-width: 1190px; font-size: 25px; }
 
 .final-brand {
   display: flex;
