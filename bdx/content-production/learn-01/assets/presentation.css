@@ -2547,6 +2547,34 @@ svg {
 
 .final-brand strong { color: white; font-size: 30px; }
 
+.learn-next-route {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 3px 16px;
+  min-width: 690px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: left;
+}
+
+.learn-next-route span {
+  grid-row: 1 / 3;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f8cc87;
+  color: var(--teal-deep);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.learn-next-route strong { font-size: 20px; }
+.learn-next-route small { color: #cfe4e4; font-size: 15px; font-weight: 750; }
+
 /* Review controls */
 
 .review-ui {

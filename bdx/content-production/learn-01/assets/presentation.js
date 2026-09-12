@@ -132,7 +132,7 @@
   window.addEventListener("resize", scaleStage, { passive: true });
   window.addEventListener("hashchange", () => showSlide(parseSlideFromHash(), false));
   document.addEventListener("fullscreenchange", () => {
-    fullscreenButton.textContent = document.fullscreenElement ? "Exit Fullscreen" : "Fullscreen";
+    fullscreenButton.textContent = document.fullscreenElement ? "全画面を終了" : "全画面";
   });
 
   document.addEventListener("keydown", (event) => {

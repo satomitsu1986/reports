@@ -3427,7 +3427,12 @@ svg {
 }
 
 .protein-layout .range-title > strong b {
-  font-size: 60px;
+  font-size: 58px;
+}
+
+.protein-layout .range-title > strong {
+  font-size: 35px;
+  white-space: nowrap;
 }
 
 .protein-layout .weight-examples article {
@@ -4396,3 +4401,154 @@ svg {
 .takeaway-six-v13 strong {
   font-size: 23px;
 }
+
+/* ==========================================================
+   LEARN 02 v2.0 · Human Review story and Japanese-first UI
+   ========================================================== */
+
+.two-principles-layout-v20 {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-principles-v20 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 48px 48px 28px;
+}
+
+.two-principles-v20 article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 8px 24px;
+  min-height: 300px;
+  padding: 42px 46px;
+  border: 1px solid rgba(216, 139, 40, 0.28);
+  border-radius: 34px;
+  background: var(--amber-soft);
+  box-shadow: var(--shadow);
+}
+
+.two-principles-v20 article:last-child {
+  border-color: rgba(51, 110, 115, 0.26);
+  background: var(--teal-soft);
+}
+
+.two-principles-v20 article > span {
+  position: absolute;
+  top: 22px;
+  left: 26px;
+  color: var(--amber);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.two-principles-v20 article:last-child > span { color: var(--teal); }
+
+.two-principles-v20 svg {
+  grid-row: 1 / 3;
+  width: 82px;
+  height: 82px;
+  color: var(--amber);
+}
+
+.two-principles-v20 article:last-child svg { color: var(--teal); }
+.two-principles-v20 strong { font-size: 29px; line-height: 1.35; }
+.two-principles-v20 p { margin: 0; color: var(--ink-soft); font-size: 19px; font-weight: 750; }
+.two-principles-layout-v20 .bottom-message { margin: 0 48px 16px; font-size: 22px; }
+.two-principles-layout-v20 .concept-label { font-size: 20px; }
+
+.food-guide-tier-v20 {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.food-guide-tier-v20 article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 260px;
+  padding: 30px 30px;
+}
+
+.food-guide-tier-v20 span {
+  grid-row: auto;
+  margin-bottom: 18px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.food-guide-tier-v20 article:nth-child(2) span { color: var(--teal); }
+.food-guide-tier-v20 article:nth-child(3) span { color: var(--coral); }
+.food-guide-tier-v20 strong { font-size: 19px; line-height: 1.6; }
+.food-guide-tier-v20 p { margin-top: auto; padding-top: 14px; font-size: 15px; }
+
+.dancer-placeholder-layout-v20 {
+  display: flex;
+  flex-direction: column;
+}
+
+.dancer-placeholder-layout-v20 .slide-header { max-width: 1380px; }
+.dancer-placeholder-layout-v20 .slide-header h2 { font-size: 52px; }
+
+.dancer-placeholder-v20 {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: 430px;
+  margin: 48px 115px 30px;
+  padding: 42px 70px;
+  border: 3px dashed rgba(51, 110, 115, 0.34);
+  border-radius: 36px;
+  background: linear-gradient(135deg, rgba(228, 240, 239, 0.82), rgba(255, 253, 249, 0.96));
+  text-align: center;
+}
+
+.dancer-placeholder-mark-v20 {
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: white;
+  color: var(--teal);
+  box-shadow: var(--shadow);
+}
+
+.dancer-placeholder-mark-v20 svg { width: 54px; height: 54px; }
+.dancer-placeholder-v20 > span { color: var(--amber); font-size: 16px; font-weight: 900; letter-spacing: 0.08em; }
+.dancer-placeholder-v20 strong { margin: 12px 0 10px; font-size: 28px; }
+.dancer-placeholder-v20 p { max-width: 780px; margin: 0; color: var(--ink-soft); font-size: 19px; font-weight: 700; line-height: 1.65; }
+
+.two-principles-recap-v20 .two-principles-v20 { margin-top: 58px; }
+
+.nutrition-finale-v20 h2 { margin-bottom: 32px; font-size: 66px; }
+.nutrition-finale-v20 blockquote { max-width: 1120px; margin-bottom: 32px; font-size: 29px; }
+
+.final-principles-v20 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.final-principles-v20 span {
+  min-width: 270px;
+  padding: 18px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 25px;
+  font-weight: 850;
+}
+
+.final-principles-v20 b { color: #f8cc87; font-size: 32px; }
+.nutrition-finale-v20 .final-action { justify-content: center; margin-bottom: 24px; font-size: 31px; }
