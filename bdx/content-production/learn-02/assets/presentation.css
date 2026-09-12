@@ -4743,3 +4743,19 @@ svg {
 .continuity-ring svg { width:44px; height:44px; }
 .continuity-ring strong { margin-top:0; }
 .continuity-ring small { display:block; max-width:170px; text-align:center; font-size:15px; line-height:1.5; margin:0; }
+
+/* Slide 29: compact supplementary food list using the existing palette. */
+.food-ten-layout { padding: 42px 62px 40px; }
+.food-ten-layout .slide-header { margin-bottom: 18px; }
+.food-ten-layout .slide-header h2 { font-size: 50px; }
+.food-ten-layout .slide-header .lead { margin-top: 8px; font-size: 21px; }
+.food-ten-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.food-ten-columns > div { display: grid; gap: 10px; }
+.food-ten-columns article { display: grid; grid-template-columns: 42px 150px 1fr; align-items: center; min-height: 91px; padding: 12px 18px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+.food-ten-columns article:nth-child(odd) { background: var(--teal-soft); }
+.food-ten-columns > div:last-child article:nth-child(odd) { background: var(--amber-soft); }
+.food-ten-columns article > span { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: var(--teal); color: white; font-size: 15px; font-weight: 850; }
+.food-ten-columns article > strong { font-size: 23px; line-height: 1.25; }
+.food-ten-columns article > p { margin: 0; color: var(--ink); font-size: 17px; font-weight: 750; line-height: 1.35; }
+.food-ten-columns article small { display: block; margin-top: 4px; color: var(--ink-soft); font-size: 14px; font-weight: 600; }
+.food-ten-layout .boundary-line { margin-top: 14px; padding: 12px 18px; font-size: 15px; }
