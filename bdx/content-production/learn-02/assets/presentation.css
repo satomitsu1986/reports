@@ -4705,3 +4705,41 @@ svg {
 .barrier-immune-link b { font-size:35px; color:var(--teal); }
 .barrier-immune-link span { font-size:19px; }
 .leaky-term { text-align:center; font-size:24px; margin:24px 0; }
+/* Final Review v5: scoped layouts, same slide canvas and design tokens. */
+.nutrient-comparison-v4 .meal-nutrients small { font-size:18px; font-weight:600; }
+.gut-principle-v5 { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:25px; }
+.gut-principle-v5 article { padding:22px 28px; border-radius:28px; background:var(--teal-soft); text-align:center; }
+.gut-principle-v5 article:last-child { background:var(--amber-soft); }
+.gut-principle-v5 article>span { display:block; font-size:20px; font-weight:800; color:var(--teal); margin-bottom:14px; }
+.gut-lumen-v5 { font-size:21px; padding:12px 0; }
+.gut-wall-v5 { background:var(--teal); color:white; padding:14px; border-radius:12px; font-size:25px; font-weight:800; }
+.gut-principle-v5 p { margin:12px 0; font-size:24px; line-height:1.5; }
+.gut-principle-v5 strong { font-size:27px; }
+.changed-gut-v5>b { display:block; color:var(--amber); font-size:34px; margin:6px; }
+.gut-principle-v5 small { font-size:19px; }
+.gut-interaction-v5 { display:flex; align-items:center; justify-content:center; gap:24px; margin-top:18px; padding:14px; background:var(--paper-warm); border-radius:18px; }
+.gut-interaction-v5 strong { font-size:27px; }
+.gut-interaction-v5 b { font-size:31px; color:var(--teal); }
+.gut-interaction-v5 span { font-size:18px; }
+.leaky-label-v5 { font-size:21px; line-height:1.5; text-align:center; margin:18px 0; }
+.gut-integrated-v5 .bottom-message { font-size:23px; margin:16px 0; padding:16px; }
+.gut-integrated-v5 .boundary-line { margin-top:12px; }
+.symbiosis-v5 .slide-header h2 { font-size:49px; }
+.symbiosis-functions-v5 { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin:28px 0; }
+.symbiosis-functions-v5 article { padding:25px 22px; min-height:330px; background:var(--teal-soft); border-radius:28px; }
+.symbiosis-functions-v5 article:nth-child(even) { background:var(--amber-soft); }
+.symbiosis-functions-v5 span { display:block; font-size:18px; color:var(--teal); font-weight:800; margin-bottom:22px; }
+.symbiosis-functions-v5 strong { display:block; font-size:26px; line-height:1.5; }
+.symbiosis-functions-v5 p { font-size:21px; line-height:1.65; margin-top:20px; }
+.symbiosis-functions-v5 p b { font-size:21px; color:var(--teal-deep); }
+.ecosystem-diagram-v5 { margin:35px 80px; padding:32px; border-radius:100px 30px; background:var(--green-soft); border:2px solid var(--line); }
+.ecosystem-core-v5 { text-align:center; padding:18px; }
+.ecosystem-core-v5 span { display:block; font-size:23px; margin-bottom:25px; }
+.ecosystem-core-v5 strong { font-size:40px; color:var(--teal-deep); }
+.ecosystem-core-v5 p { font-size:27px; }
+.ecosystem-factors-v5 { display:flex; justify-content:center; gap:18px; padding:24px 0 10px; border-top:2px solid var(--line); }
+.ecosystem-factors-v5 span { font-size:25px; font-weight:800; padding:16px 22px; border-radius:18px; background:var(--paper); }
+.continuity-ring { align-content:center; gap:12px; }
+.continuity-ring svg { width:44px; height:44px; }
+.continuity-ring strong { margin-top:0; }
+.continuity-ring small { display:block; max-width:170px; text-align:center; font-size:15px; line-height:1.5; margin:0; }

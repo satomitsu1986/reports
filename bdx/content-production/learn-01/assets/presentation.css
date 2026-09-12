@@ -2746,3 +2746,5 @@ svg {
     animation-duration: 0.01ms !important;
   }
 }
+.inflammation-purpose-v5 { display:block; margin-top:8px; font-size:24px; line-height:1.4; }
+.inflammation-flow-v4 .case-message { margin-top:20px; margin-bottom:10px; line-height:1.2; }
