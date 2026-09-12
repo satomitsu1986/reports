@@ -2539,6 +2539,16 @@ svg {
 .chronicity-result { padding: 12px 26px; border-radius: 16px; background: rgba(255,255,255,.65); font-size: 27px; }
 .performance-finale-layout blockquote { max-width: 1190px; font-size: 25px; }
 
+/* Final Human Review v4: immune sensing, inflammation, resolution, recovery. */
+.inflammation-flow-v4 .inflammation-flow { margin-top: 65px; }
+.inflammation-flow-v4 .inflammation-flow article { width: 185px; height: 210px; flex: 0 0 185px; text-align: center; }
+.inflammation-flow-v4 .inflammation-flow article strong { font-size: 23px; line-height: 1.45; }
+.inflammation-flow-v4 .inflammation-flow > i { width: 43px; flex: 0 0 43px; }
+.immune-part-note { margin: 24px 0 0; color: var(--ink-soft); font-size: 22px; text-align: center; }
+.inflammation-flow-v4 .case-message { margin: 34px 0 16px; }
+.resolution-message { margin: 0; font-size: 24px; line-height: 1.5; text-align: center; }
+.next-question { margin: 25px 0 0; padding: 18px 24px; background: var(--teal-soft); border-radius: 18px; color: var(--teal-deep); font-size: 24px; font-weight: 800; text-align: center; }
+
 .final-brand {
   display: flex;
   align-items: center;

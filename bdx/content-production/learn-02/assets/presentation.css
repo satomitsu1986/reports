@@ -4660,3 +4660,48 @@ svg {
 .useful-processing { display: flex; justify-content: center; gap: 25px; margin: 15px 30px; padding: 18px; border-radius: 20px; background: var(--paper-warm); font-size: 20px; }
 .nutrition-finale-v20 blockquote { font-size: 27px; line-height: 1.6; }
 .dancer-placeholder-v20>strong { color: var(--teal-deep); font-size: 38px; }
+/* Final Human Review v4: existing tokens and fixed slide canvas retained. */
+.nutrient-comparison-v4 .meal-nutrients { text-align:center; margin-top:12px; }
+.meal-nutrients b { display:block; color:var(--ink-soft); font-size:17px; margin-bottom:8px; }
+.meal-nutrients strong { font-size:23px; line-height:1.5; }
+.nutrient-note { text-align:center; font-size:19px; color:var(--ink-soft); margin:18px 0; }
+.quantity-quality-v4 .slide-header h2 { font-size:51px; }
+.quantity-quality-v4 .quality-bridge { margin-top:24px; }
+.quality-definition-v4 .quality-grid { margin-top:24px; }
+.selection-criteria { display:flex; gap:24px; align-items:center; padding:20px 26px; margin:24px 0; border-radius:20px; background:var(--paper-warm); font-size:22px; }
+.selection-criteria b { color:var(--teal); white-space:nowrap; }
+.selection-criteria span { line-height:1.5; }
+.selection-foods { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.selection-foods article { padding:30px; min-height:250px; border-radius:30px; background:var(--teal-soft); text-align:center; }
+.selection-foods article:nth-child(2) { background:var(--amber-soft); }
+.selection-foods span { display:block; font-size:20px; color:var(--teal); margin-bottom:18px; font-weight:800; }
+.selection-foods strong { font-size:31px; line-height:1.5; }
+.selection-foods p { margin:16px 0 0; font-size:22px; line-height:1.5; }
+.protein-unified-v4 .protein-source-grid-v13 { margin:20px 0; }
+.protein-unified-v4 .protein-source-grid-v13 article { min-height:165px; }
+.protein-unified-v4 .protein-source-grid-v13 article > span { font-size:16px; white-space:nowrap; }
+.fat-choice-note { margin-top:18px; padding:16px 24px; border-radius:18px; background:var(--coral-soft); font-size:21px; text-align:center; }
+.fat-choice-note b { margin-right:22px; }
+.microbe-functions { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin:38px 0 28px; }
+.microbe-functions article { padding:30px 22px; min-height:295px; border-radius:30px; background:var(--teal-soft); }
+.microbe-functions article:nth-child(even) { background:var(--amber-soft); }
+.microbe-functions span { display:block; color:var(--teal); font-size:21px; font-weight:800; margin-bottom:22px; }
+.microbe-functions strong { font-size:27px; line-height:1.5; }
+.microbe-functions p { font-size:20px; line-height:1.6; margin-top:20px; }
+.diversity-comparison,.barrier-comparison { display:grid; grid-template-columns:1fr 1fr; gap:30px; margin:30px 0 24px; }
+.diversity-comparison article,.barrier-comparison article { padding:28px 32px; border-radius:30px; background:var(--teal-soft); }
+.diversity-comparison article:nth-child(2),.barrier-comparison article:nth-child(2) { background:var(--amber-soft); }
+.diversity-comparison span,.barrier-comparison span { display:block; font-size:20px; font-weight:800; color:var(--teal); margin-bottom:18px; }
+.diversity-comparison strong { font-size:30px; line-height:1.5; }
+.diversity-comparison p { font-size:21px; line-height:1.6; }
+.diversity-comparison ul { margin:0; padding-left:25px; font-size:25px; line-height:1.8; }
+.barrier-comparison article { text-align:center; }
+.barrier-comparison strong { font-size:31px; }
+.barrier-comparison p { font-size:23px; line-height:1.5; margin:16px 0; }
+.barrier-comparison b { font-size:27px; }
+.barrier-comparison i { display:block; font-size:32px; color:var(--amber); font-style:normal; margin:10px 0; }
+.barrier-immune-link { display:flex; justify-content:center; align-items:center; gap:22px; padding:18px; border-radius:20px; background:var(--paper-warm); }
+.barrier-immune-link strong { font-size:26px; }
+.barrier-immune-link b { font-size:35px; color:var(--teal); }
+.barrier-immune-link span { font-size:19px; }
+.leaky-term { text-align:center; font-size:24px; margin:24px 0; }
