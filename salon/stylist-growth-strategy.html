@@ -821,21 +821,36 @@
       footer { display: none; }
     }
   </style>
+  <link rel="stylesheet" href="stylist-growth-strategy.css" />
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-clipboard" viewBox="0 0 24 24"><path d="M9 5H6.8A1.8 1.8 0 0 0 5 6.8v12.4A1.8 1.8 0 0 0 6.8 21h10.4a1.8 1.8 0 0 0 1.8-1.8V6.8A1.8 1.8 0 0 0 17.2 5H15"/><path d="M9 3.8A1.8 1.8 0 0 1 10.8 2h2.4A1.8 1.8 0 0 1 15 3.8V7H9V3.8ZM8.5 11h7M8.5 15h7"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 3c.7 4.2 2.8 6.3 7 7-4.2.7-6.3 2.8-7 7-.7-4.2-2.8-6.3-7-7 4.2-.7 6.3-2.8 7-7Z"/><path d="M19 16.5c.3 1.7 1.3 2.7 3 3-1.7.3-2.7 1.3-3 3-.3-1.7-1.3-2.7-3-3 1.7-.3 2.7-1.3 3-3Z"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="3"/><path d="m13.2 10.8 7-7M16 4h4v4"/></symbol>
+    <symbol id="icon-checklist" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 1.4 1.4L12 7.8M14 9h3M8 15l1.4 1.4L12 13.8M14 15h3"/></symbol>
+    <symbol id="icon-trend" viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M7 15l4-4 3 2 5-6M16 7h3v3"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M20 15a3 3 0 0 1-3 3H9l-5 3v-5.2A4 4 0 0 1 3 13V7a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3v8Z"/><path d="M7 9h9M7 13h6"/></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 8.2A7 7 0 0 1 18.5 7L20 12M4 12l1.5 5a7 7 0 0 0 12.4-1.2"/></symbol>
+    <symbol id="icon-scissors" viewBox="0 0 24 24"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="m8.5 8.5 11 8.5M8.5 15.5 19.5 7M13 12l2-1.5"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M10.5 4.5 3 18a2 2 0 0 0 1.8 3h14.4A2 2 0 0 0 21 18L13.5 4.5a1.7 1.7 0 0 0-3 0Z"/><path d="M12 9v5M12 17.5v.1"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11a2 2 0 0 1 2 2v16a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v18a2 2 0 0 1 2-2h2.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"/></symbol>
+  </svg>
   <header class="site-header">
     <a class="back-link" href="./">Salon資料</a>
     <span class="brand">Beauty Salon</span>
+    <span class="read-progress-track" aria-hidden="true"><span class="read-progress" id="read-progress"></span></span>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <p class="eyebrow">Stylist Growth Strategy</p>
+      <p class="eyebrow">美容師の成長戦略</p>
       <h1 id="page-title"><span class="title-line">美容師の</span><span class="title-line">成長戦略の作り方</span></h1>
       <p class="hero-lead">選ばれる理由を一つずつ作り、日々のサロンワークへ定着させる。棚卸しから改善までを、7つの実践プロセスで整理します。</p>
 
       <div class="principle">
-        <span class="principle-label">Core Principle<br />全プロセスを貫く基本方針</span>
+        <span class="principle-label">全プロセスを貫く<br />基本方針</span>
         <div class="principle-copy">
           <strong>人と違うことをする。</strong>
           <p>誰でもできることを、誰もやらないくらいやる。<br />または、誰もがやりたがらないことをやる。</p>
@@ -844,9 +859,19 @@
     </section>
 
     <section class="overview" aria-labelledby="overview-title">
-      <span class="section-kicker">00 / Overview</span>
+      <span class="section-kicker">00 / 全体像</span>
       <h2 class="section-title" id="overview-title">7つの成長プロセス</h2>
       <p class="section-intro">成長戦略は、能力を闇雲に増やすことではありません。自分の資産を起点に、選ばれる理由を作り、実践と改善を繰り返します。</p>
+
+      <div class="overview-flow" aria-label="7つの成長プロセス図">
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-clipboard" /></svg></span><span class="flow-step">STEP 01</span><strong>棚卸し</strong></div>
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-spark" /></svg></span><span class="flow-step">STEP 02</span><strong>強み</strong></div>
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-target" /></svg></span><span class="flow-step">STEP 03</span><strong>武器</strong></div>
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-checklist" /></svg></span><span class="flow-step">STEP 04</span><strong>ルール</strong></div>
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-trend" /></svg></span><span class="flow-step">STEP 05</span><strong>6週間</strong></div>
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-chat" /></svg></span><span class="flow-step">STEP 06</span><strong>フィードバック</strong></div>
+        <div class="flow-node"><span class="flow-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-refresh" /></svg></span><span class="flow-step">STEP 07</span><strong>改善</strong></div>
+      </div>
       <div class="table-shell">
         <table class="overview-table">
           <colgroup><col class="step" /><col class="process" /><col class="goal" /></colgroup>
@@ -870,6 +895,15 @@
       <p class="section-intro">最初にするのは「自分には何が足りないか」ではなく、<strong>「すでに何を持っているか」</strong>を全部出すことです。美容技術だけに限定しません。</p>
       <div class="section-divider"></div>
 
+      <aside class="step-points" aria-label="棚卸しの重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-clipboard" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>足りないものではなく、すでに持っている資産から始める</li>
+          <li>技術だけでなく、人柄・経験・発信・人脈まで広く見る</li>
+          <li>「得意」という評価ではなく、まず事実として書き出す</li>
+        </ul>
+      </aside>
+
       <div class="table-shell">
         <table>
           <colgroup><col style="width: 26%" /><col style="width: 74%" /></colgroup>
@@ -890,12 +924,12 @@
 
       <div class="content-grid">
         <article class="content-card">
-          <span class="card-label">How to</span>
+          <span class="card-label">やり方</span>
           <h3>評価せず、事実を列挙する</h3>
           <p>「自分は何が得意か？」と考えるのではなく、まず材料を集めます。</p>
         </article>
         <article class="example-card">
-          <span class="card-label">Fact Example</span>
+          <span class="card-label">事実の例</span>
           <h3>「カウンセリングが得意」を分解する</h3>
           <ul class="fact-list">
             <li>初回カウンセリングを15分程度する</li>
@@ -913,6 +947,15 @@
       <p class="section-intro">棚卸しした資産から、強みの候補を探します。ここで重要なのは、<strong>「得意 ＝ 強み」ではない</strong>ということです。</p>
       <div class="section-divider"></div>
 
+      <aside class="step-points" aria-label="強みを理解する重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-spark" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>得意なだけでは、顧客にとっての強みとは限らない</li>
+          <li>顧客価値と他者との差までつながっているかを見る</li>
+          <li>自己評価だけでなく、顧客や周囲の評価も重ねて判断する</li>
+        </ul>
+      </aside>
+
       <div class="formula" aria-label="強みの公式"><span>得意</span><b>×</b><span>顧客価値</span><b>×</b><span>他者との差</span></div>
 
       <div class="progress-example" aria-label="話す力が強みになるまでの例">
@@ -921,7 +964,7 @@
         <div class="progress-item"><span>価値へ変換</span><p>聞き出した情報を、ヘアスタイル提案に反映できる。</p></div>
       </div>
 
-      <h3 class="section-kicker">Strength Check</h3>
+      <h3 class="section-kicker">強みチェック</h3>
       <div class="table-shell">
         <table>
           <colgroup><col style="width: 26%" /><col style="width: 74%" /></colgroup>
@@ -938,7 +981,7 @@
       </div>
 
       <div class="key-message">
-        <small>Self × Others</small>
+        <small>自己評価 × 他者評価</small>
         <p>自己評価と他者評価の、両方を見る。</p>
       </div>
       <p class="section-intro">自分では「技術」が強みだと思っていても、お客さんから「何でも話せるから通っている」と言われるなら、別の強みが隠れています。</p>
@@ -948,21 +991,36 @@
     <section class="report-section" id="step-3" aria-labelledby="step-3-title">
       <span class="section-kicker">STEP 03</span>
       <h2 class="section-title" id="step-3-title">武器を1つ作る</h2>
-      <p class="section-intro">強み候補を全部伸ばそうとせず、まず一つだけ武器にします。武器とは、<strong>顧客が価値を感じ、その美容師を選ぶ理由になるレベルまで磨かれた強み</strong>です。</p>
+      <p class="section-intro">強み候補を全部伸ばそうとせず、まず一つだけ武器にします。<strong>「できる」だけでは強み。「この人を選びたい」と顧客から支持される状態まで磨かれて、初めて武器になります。</strong></p>
       <div class="section-divider"></div>
 
-      <div class="definition-pair">
-        <article class="definition-card">
-          <span class="card-label">Strength</span>
-          <h3>強み</h3>
-          <p>素質・現在の優位性</p>
-        </article>
-        <span class="definition-arrow">→</span>
-        <article class="definition-card">
-          <span class="card-label">Weapon</span>
-          <h3>武器</h3>
-          <p>市場で使えるレベルまで磨いた強み</p>
-        </article>
+      <aside class="step-points" aria-label="武器を作る重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-target" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>強みは「素質・現在の優位性」、武器は「選ばれるレベルまで磨かれた強み」</li>
+          <li>顧客からの認知・支持・再現性・証明可能性がそろっているかを見る</li>
+          <li>一度に増やさず、最初の一つを市場で使える状態まで磨く</li>
+        </ul>
+      </aside>
+
+      <div class="weapon-flow" aria-label="強みが武器になるまでの流れ">
+        <article class="weapon-stage"><span class="weapon-stage-number">01</span><h3>強み</h3><p>素質や、今すでに人より自然にできること。</p></article>
+        <article class="weapon-stage"><span class="weapon-stage-number">02</span><h3>トレーニング</h3><p>実戦と改善を重ね、一定水準で再現できるようにする。</p></article>
+        <article class="weapon-stage"><span class="weapon-stage-number">03</span><h3>選ばれる</h3><p>顧客が価値を認識し、指名や紹介の理由になる。</p></article>
+        <article class="weapon-stage"><span class="weapon-stage-number">04</span><h3>武器</h3><p>支持され、再現でき、結果や作品でも証明できる。</p></article>
+      </div>
+
+      <div class="weapon-requirements" aria-label="武器に必要な4条件">
+        <div class="weapon-requirement"><strong>認知</strong><span>顧客に伝わっている</span></div>
+        <div class="weapon-requirement"><strong>支持</strong><span>選ぶ理由になっている</span></div>
+        <div class="weapon-requirement"><strong>再現性</strong><span>安定して実行できる</span></div>
+        <div class="weapon-requirement"><strong>証明可能性</strong><span>実績や作品で示せる</span></div>
+      </div>
+
+      <div class="contrast-example" aria-label="強みと武器の違い">
+        <article class="contrast-card"><small>強みの状態</small><p>「ショートが得意」</p></article>
+        <span class="contrast-arrow" aria-hidden="true">→</span>
+        <article class="contrast-card weapon-side"><small>武器の状態</small><p>「ショートならこの人」と顧客から支持され、紹介理由になり、作品としても示せる。</p></article>
       </div>
 
       <div class="table-shell">
@@ -981,12 +1039,12 @@
 
       <div class="content-grid">
         <article class="content-card">
-          <span class="card-label">Technical Example</span>
+          <span class="card-label">技術の例</span>
           <h3>曖昧な「得意」を具体化する</h3>
           <p>「カラーが得意」ではなく、<strong>「赤みを抑えた透明感カラーなら任せて」</strong>まで絞り込みます。</p>
         </article>
         <article class="content-card">
-          <span class="card-label">Service Example</span>
+          <span class="card-label">サービスの例</span>
           <h3>技術以外も武器になる</h3>
           <p><strong>「話を聞いて、本当に似合うスタイルを一緒に考える美容師」</strong>も、選ばれる理由になります。</p>
         </article>
@@ -1002,45 +1060,82 @@
     <section class="report-section" id="step-4" aria-labelledby="step-4-title">
       <span class="section-kicker">STEP 04</span>
       <h2 class="section-title" id="step-4-title">ルールづくり</h2>
-      <p class="section-intro">このSTEPの目的は、<strong>サロンワークで発生する小さな意思決定を減らすこと</strong>。毎回「どうしよう？」と考えず、先に決めておきます。</p>
+      <p class="section-intro">ルールづくりは、武器を伸ばすための訓練ではありません。<strong>サロンワーク全般で毎回発生する小さな意思決定を減らし、正しい行動を標準化する仕組み</strong>です。</p>
       <div class="section-divider"></div>
+
+      <aside class="step-points" aria-label="ルールづくりの重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-checklist" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>毎回判断しないための仕組みを先に作る</li>
+          <li>迷いと行動のブレを減らし、正しい行動を標準化する</li>
+          <li>最初から増やしすぎず、重要な10〜20個から始める</li>
+        </ul>
+      </aside>
+
+      <div class="key-message">
+        <small>ルールづくりの目的</small>
+        <p>正しい行動を、その都度考えなくても実行できる状態を作る。</p>
+      </div>
 
       <div class="if-then"><b>IF</b><span>もし X が起きたら</span><b>THEN</b><span>Y をする</span></div>
 
-      <div class="table-shell">
-        <table class="rule-table">
-          <colgroup><col class="if" /><col class="then" /></colgroup>
-          <thead><tr><th>状況 IF</th><th>行動 THEN</th></tr></thead>
-          <tbody>
-            <tr><th scope="row" data-label="IF">新規顧客を担当したら</th><td data-label="THEN">最初に悩み・希望・普段の扱い方を確認する</td></tr>
-            <tr><th scope="row" data-label="IF">顧客が髪型を決められないなら</th><td data-label="THEN">現状維持案と変化案の2案を提示する</td></tr>
-            <tr><th scope="row" data-label="IF">施術開始が10分以上遅れそうなら</th><td data-label="THEN">自分から顧客へ説明する</td></tr>
-            <tr><th scope="row" data-label="IF">カラー履歴が不明確なら</th><td data-label="THEN">施術前に必ず履歴を確認する</td></tr>
-            <tr><th scope="row" data-label="IF">顧客が会話を望んでいなさそうなら</th><td data-label="THEN">無理に話題を作らない</td></tr>
-            <tr><th scope="row" data-label="IF">自分のミスに気づいたら</th><td data-label="THEN">隠さずすぐ説明する</td></tr>
-            <tr><th scope="row" data-label="IF">顧客から褒められたら</th><td data-label="THEN">何が良かったか具体的に聞く</td></tr>
-            <tr><th scope="row" data-label="IF">クレームを受けたら</th><td data-label="THEN">反論より先に事実を確認する</td></tr>
-            <tr><th scope="row" data-label="IF">営業終了したら</th><td data-label="THEN">その日の改善点を1つ記録する</td></tr>
-            <tr><th scope="row" data-label="IF">判断に5分以上迷ったら</th><td data-label="THEN">事前に決めた優先順位に従う</td></tr>
-          </tbody>
-        </table>
+      <div class="rule-groups" aria-label="5分類のIf-Thenルール">
+        <section class="rule-group">
+          <header class="rule-group-header"><span class="rule-group-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-chat" /></svg></span><h3>顧客対応</h3></header>
+          <div class="rule-list">
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>新規顧客を担当したら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>悩み・希望・生活背景を確認する</p></div></article>
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>顧客が髪型を決められないなら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>現状維持案と変化案の2案を提示する</p></div></article>
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>顧客が会話を望んでいなさそうなら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>無理に話題を作らない</p></div></article>
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>顧客から褒められたら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>何が良かったか具体的に聞く</p></div></article>
+          </div>
+        </section>
+
+        <section class="rule-group">
+          <header class="rule-group-header"><span class="rule-group-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-scissors" /></svg></span><h3>技術判断</h3></header>
+          <div class="rule-list">
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>カラー履歴が不明確なら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>施術前に必ず履歴を確認する</p></div></article>
+          </div>
+        </section>
+
+        <section class="rule-group">
+          <header class="rule-group-header"><span class="rule-group-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-clock" /></svg></span><h3>時間管理</h3></header>
+          <div class="rule-list">
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>施術開始が10分以上遅れそうなら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>自分から顧客に説明する</p></div></article>
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>判断に5分以上迷ったら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>事前に決めた優先順位に従う</p></div></article>
+          </div>
+        </section>
+
+        <section class="rule-group">
+          <header class="rule-group-header"><span class="rule-group-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-alert" /></svg></span><h3>トラブル対応</h3></header>
+          <div class="rule-list">
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>自分のミスに気づいたら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>隠さずすぐ説明する</p></div></article>
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>クレームを受けたら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>反論より先に事実を確認する</p></div></article>
+          </div>
+        </section>
+
+        <section class="rule-group">
+          <header class="rule-group-header"><span class="rule-group-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-book" /></svg></span><h3>成長・振り返り</h3></header>
+          <div class="rule-list">
+            <article class="rule-card"><div class="rule-part"><small>IF</small><p>営業終了したら</p></div><span class="rule-arrow">→</span><div class="rule-part then"><small>THEN</small><p>今日の改善点を1つ記録する</p></div></article>
+          </div>
+        </section>
       </div>
 
       <div class="content-grid">
         <article class="content-card">
-          <span class="card-label">Scope</span>
+          <span class="card-label">対象範囲</span>
           <h3>サロンワーク全体を対象にする</h3>
           <p>技術・接客・時間・顧客対応・トラブル・学習などについて作ります。</p>
         </article>
         <article class="content-card">
-          <span class="card-label">Start Small</span>
+          <span class="card-label">最初は少なく</span>
           <h3>最初は10〜20個で十分</h3>
           <p>ルールを増やしすぎず、重要な判断から固定します。</p>
         </article>
       </div>
 
       <div class="key-message">
-        <small>Guardrail</small>
+        <small>ガードレール</small>
         <p>ルールは、道路のガードレール。毎回ハンドルを細かく調整しなくても、一定方向へ進める状態を作る。</p>
       </div>
       <div class="output"><span class="output-label">成果物</span><span class="output-value">自分の Salon Work Rules</span></div>
@@ -1049,21 +1144,32 @@
     <section class="report-section" id="step-5" aria-labelledby="step-5-title">
       <span class="section-kicker">STEP 05</span>
       <h2 class="section-title" id="step-5-title">6週間トレーニング</h2>
-      <p class="section-intro">ここから「武器」を実際に強くします。一度に複数やらず、<strong>6週間 ＝ 1テーマ</strong>にします。</p>
+      <p class="section-intro">ここから「武器」を実際に強くします。一度に複数やらず、<strong>6週間 ＝ 1テーマ</strong>に固定し、現在地から到達基準までを訓練プロセスとして設計します。</p>
       <div class="section-divider"></div>
 
+      <aside class="step-points" aria-label="6週間トレーニングの重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-trend" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>開始前にBeforeの数値・状態を取り、現在地を明確にする</li>
+          <li>「学ぶ」だけで終わらせず、練習と実戦を分けて設計する</li>
+          <li>毎週の小さな振り返りで、行動や難易度を微調整する</li>
+        </ul>
+      </aside>
+
       <div class="key-message">
-        <small>Training Theme / Counseling</small>
+        <small>テーマ例：カウンセリング</small>
         <p>「カウンセリングを頑張る」ではなく、到達目標と日々の行動まで具体化する。</p>
       </div>
 
-      <div class="training-plan" aria-label="カウンセリングの6週間トレーニング例">
-        <article class="training-item"><span class="training-number">01</span><h3>到達目標</h3><p>顧客の要望だけでなく、生活背景まで理解して提案できる。</p></article>
-        <article class="training-item"><span class="training-number">02</span><h3>トレーニング行動</h3><p>毎日最低3名について、生活背景まで質問する。</p></article>
-        <article class="training-item"><span class="training-number">03</span><h3>実戦</h3><p>実際のお客さんに使う。</p></article>
-        <article class="training-item"><span class="training-number">04</span><h3>記録</h3><p>どんな質問が有効だったか残す。</p></article>
-        <article class="training-item"><span class="training-number">05</span><h3>指標</h3><p>行動・能力・顧客反応・結果を見る。</p></article>
-      </div>
+      <ol class="training-flow" aria-label="6週間トレーニングの7段階">
+        <li><span class="training-flow-number">1</span><h3>現在地を測る</h3><p>実践人数・成功率・顧客反応など、開始前の状態を記録する。</p></li>
+        <li><span class="training-flow-number">2</span><h3>到達基準を決める</h3><p>6週間後に「何ができれば成功か」を具体的に決める。</p></li>
+        <li><span class="training-flow-number">3</span><h3>学ぶ</h3><p>質問・傾聴・提案など、必要な知識と型を理解する。</p></li>
+        <li><span class="training-flow-number">4</span><h3>練習する</h3><p>ロールプレイ等で、実戦前に反復して動きを整える。</p></li>
+        <li><span class="training-flow-number">5</span><h3>実戦で使う</h3><p>毎日最低3名に、生活背景まで聞く行動を試す。</p></li>
+        <li><span class="training-flow-number">6</span><h3>記録する</h3><p>有効だった質問、反応、難しかった点を残す。</p></li>
+        <li><span class="training-flow-number">7</span><h3>毎週微調整する</h3><p>週ごとに記録を見直し、行動量ややり方を調整する。</p></li>
+      </ol>
 
       <div class="table-shell">
         <table>
@@ -1080,6 +1186,7 @@
 
       <div class="three-stage" aria-label="成長に必要な3段階"><span>勉強</span><b>→</b><span>練習</span><b>→</b><span>実戦</span></div>
       <p class="section-intro" style="margin-top: 24px; margin-bottom: 0;">YouTubeを100本見るだけでは、スポーツの試合が上手くならないのと同じです。美容師もサロンワークで使って、初めて能力になります。</p>
+      <div class="output"><span class="output-label">成果物</span><span class="output-value">6週間トレーニング計画・Before記録・週次振り返り</span></div>
     </section>
 
     <section class="report-section" id="step-6" aria-labelledby="step-6-title">
@@ -1087,6 +1194,15 @@
       <h2 class="section-title" id="step-6-title">フィードバック</h2>
       <p class="section-intro">6週間やったら、自分だけで評価せず、外から見る工程を入れます。自分では見えないズレを、4つの方向から発見します。</p>
       <div class="section-divider"></div>
+
+      <aside class="step-points" aria-label="フィードバックの重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-chat" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>顧客・同僚や先輩・数字・自分の4方向から見る</li>
+          <li>抽象的な感想ではなく、具体的な行動や違いを聞く</li>
+          <li>「なぜ自分を選んでいるのか」で、武器の伝わり方を検証する</li>
+        </ul>
+      </aside>
 
       <div class="table-shell">
         <table>
@@ -1103,12 +1219,12 @@
 
       <div class="content-grid">
         <article class="content-card">
-          <span class="card-label">Avoid</span>
+          <span class="card-label">避けたい聞き方</span>
           <h3>抽象的に聞かない</h3>
           <p>「僕の接客どうですか？」では、答える側も具体的な評価をしにくくなります。</p>
         </article>
         <article class="example-card">
-          <span class="card-label">Ask Better</span>
+          <span class="card-label">より良い聞き方</span>
           <h3>顧客への質問例</h3>
           <ul class="question-list">
             <li>他の美容師と比べて、僕の良いところって何ですか？</li>
@@ -1119,7 +1235,7 @@
       </div>
 
       <div class="key-message">
-        <small>Validation</small>
+        <small>検証</small>
         <p>「なぜ自分を選んでいるのか？」を聞く。武器が本当に顧客へ伝わっているかを確認するテストになる。</p>
       </div>
       <div class="output"><span class="output-label">成果物</span><span class="output-value">Keep / Improve / Stop ─ 続けること・改善すること・やめること</span></div>
@@ -1130,6 +1246,15 @@
       <h2 class="section-title" id="step-7-title">改善して武器を増やす</h2>
       <p class="section-intro">フィードバックを受けたら、4つの判断をします。大切なのは、6週間が終わっただけで、すぐ次の武器へ移らないことです。</p>
       <div class="section-divider"></div>
+
+      <aside class="step-points" aria-label="改善して武器を増やす重要ポイント">
+        <div class="step-points-heading"><svg class="mini-icon" aria-hidden="true"><use href="#icon-refresh" /></svg><strong>重要ポイント</strong></div>
+        <ul>
+          <li>強化・修正・定着・追加の4つから次の判断を選ぶ</li>
+          <li>6週間が終わったことを、武器の完成条件にしない</li>
+          <li>再現・認知・他者評価・証明・日常化を満たしてから次へ進む</li>
+        </ul>
+      </aside>
 
       <div class="table-shell">
         <table>
@@ -1144,6 +1269,20 @@
         </table>
       </div>
 
+      <aside class="graduation" aria-labelledby="graduation-title">
+        <div class="graduation-header">
+          <span class="graduation-icon"><svg class="mini-icon" aria-hidden="true"><use href="#icon-checklist" /></svg></span>
+          <div><h3 id="graduation-title"><span class="graduation-title-line">次の武器へ進む前の</span><span class="graduation-title-line">チェックリスト</span></h3><p>以下を満たしたら、その武器は「定着した」と判断します。</p></div>
+        </div>
+        <ul class="graduation-list">
+          <li>一定水準で再現できる</li>
+          <li>顧客が価値として認識している</li>
+          <li>他者からも強みとして評価される</li>
+          <li>実績・作品で証明できる</li>
+          <li>If-Thenルールに落とし込まれ、日常で自然に実行できる</li>
+        </ul>
+      </aside>
+
       <div class="progress-example" aria-label="武器を日常へ定着させる例">
         <div class="progress-item"><span>6週間後</span><p>「終了。次はカラー」と、すぐ次のテーマへ移らない。</p></div>
         <div class="progress-item"><span>十分なレベル</span><p>カウンセリングが安定したら、日常のルールに組み込む。</p></div>
@@ -1151,24 +1290,26 @@
         <div class="progress-item"><span>THEN</span><p>悩み・理想・生活背景の3領域を必ず確認する。</p></div>
       </div>
       <p class="section-intro" style="margin-bottom: 0;">意識しなくても武器を維持できる状態を作り、そのうえで次の武器へ進みます。</p>
+      <div class="output"><span class="output-label">成果物</span><span class="output-value">日常に定着した武器・次のトレーニングテーマ</span></div>
     </section>
 
     <section class="growth-section" aria-labelledby="growth-title">
-      <span class="section-kicker">Compound Strength</span>
+      <span class="section-kicker">武器の掛け合わせ</span>
       <h2 class="section-title" id="growth-title">成長すると、武器が組み合わさる</h2>
-      <p class="section-intro">最初は一つだった武器を、定着させながら増やします。単体では他にもできる美容師がいても、組み合わせが増えるほど、同じ美容師は急激に少なくなります。</p>
+      <p class="section-intro">各武器が、単体で珍しい必要はありません。大切なのは、定着した武器を一つずつ積み重ね、組み合わせによって自分だけの価値を作ることです。</p>
 
       <div class="weapon-stack" aria-label="武器の組み合わせ例">
-        <div class="weapon"><small>Weapon 01</small><strong>カウンセリング</strong></div>
-        <div class="weapon"><small>Weapon 02</small><strong>ショートカット</strong></div>
-        <div class="weapon"><small>Weapon 03</small><strong>ファッション提案</strong></div>
-        <div class="weapon"><small>Weapon 04</small><strong>SNS発信</strong></div>
+        <div class="weapon"><small>武器 01</small><strong>カウンセリング</strong></div>
+        <div class="weapon"><small>武器 02</small><strong>ショートカット</strong></div>
+        <div class="weapon"><small>武器 03</small><strong>ファッション提案</strong></div>
+        <div class="weapon"><small>武器 04</small><strong>SNS発信</strong></div>
       </div>
-      <div class="unique-result">組み合わせによって独自性が生まれ、<br />「人と違うことをする」につながる。</div>
+      <div class="combination-message"><strong>単体では、どれも珍しくなくていい。</strong><p>ショート・カウンセリング・ファッション提案・SNS発信。組み合わさるほど、同じ価値を提供できる美容師は少なくなります。</p></div>
+      <div class="unique-result">珍しい才能を探す戦略ではなく、<br />武器を積み重ねて、希少な組み合わせを作る戦略。</div>
     </section>
 
     <section class="model-section" aria-labelledby="model-title">
-      <span class="section-kicker">Growth Loop</span>
+      <span class="section-kicker">成長の循環</span>
       <h2 class="section-title" id="model-title">全体モデル</h2>
       <p class="section-intro">成長戦略は一度で終わる計画ではなく、武器を作り、日常に定着させ、次の武器へ進む循環です。</p>
 
@@ -1186,7 +1327,7 @@
       <span class="cycle-return">↺ この循環を繰り返す</span>
 
       <div class="goal">
-        <small>Final Goal</small>
+        <small>最終ゴール</small>
         <p>成長戦略のゴールは、単に「美容師として上手くなる」ことではない。選ばれる理由 ＝ 武器を一つずつ増やし、その組み合わせによって代替されにくい美容師になること。</p>
         <p class="goal-note">この定義を置くことで、美容師の評価項目と成長戦略が一本につながります。</p>
       </div>
@@ -1194,5 +1335,25 @@
 
     <footer>© 合同会社 nature · SATOMITSU REPORTS</footer>
   </main>
+  <script>
+    (() => {
+      const progress = document.getElementById('read-progress');
+      if (!progress) return;
+      let ticking = false;
+      const update = () => {
+        const maximum = document.documentElement.scrollHeight - window.innerHeight;
+        const value = maximum > 0 ? Math.min(100, Math.max(0, (window.scrollY / maximum) * 100)) : 0;
+        progress.style.width = `${value}%`;
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
 </body>
 </html>
