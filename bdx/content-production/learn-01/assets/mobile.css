@@ -1,0 +1,142 @@
+/* LEARN 01 — portrait-first mobile composition (900 × 1600 canvas) */
+@media (max-width: 700px) {
+  .stage { width: 900px; height: 1600px; }
+  .slide-inner { padding: 80px 68px 96px; }
+  .slide-header { width: 100%; max-width: none; text-align: center; }
+  .eyebrow { margin-bottom: 18px; font-size: 21px; }
+  h1 { font-size: 70px; line-height: 1.16; }
+  h2 { margin-bottom: 28px; font-size: 56px; line-height: 1.22; text-align: center; }
+  h3 { font-size: 30px; }
+  .lead { font-size: 30px; line-height: 1.6; }
+  .integrity-line, .boundary-line, .safety-strip, .bottom-message,
+  .case-message, .resolution-message, .next-question {
+    width: 100%; margin: 30px auto 0; padding: 23px 26px; border-radius: 22px;
+    font-size: 25px; line-height: 1.48;
+  }
+  .page-number, .source-chip { bottom: 38px; font-size: 17px; }
+  .page-number { right: 44px; }
+  .source-chip { left: 44px; max-width: 620px; white-space: nowrap; }
+
+  .cover-layout { grid-template-columns: 1fr; gap: 68px; align-content: center; text-align: center; }
+  .cover-copy { display: flex; flex-direction: column; align-items: center; }
+  .cover-copy h1 { font-size: 68px; }
+  .cover-system { width: 610px; height: 610px; margin: 0 auto; }
+  .brand-line { justify-content: center; font-size: 25px; }
+
+  .symptom-layout-v3 { display: flex; flex-direction: column; justify-content: center; }
+  .symptom-field-v3 { width: 720px; height: 790px; margin: 45px auto 0; }
+  .symptom-field-v3 .symptom-core { width: 285px; height: 285px; }
+  .symptom-field-v3 .symptom-card { width: 250px; min-height: 150px; padding: 24px; }
+  .symptom-field-v3 .symptom-card strong { font-size: 24px; }
+  .symptom-field-v3 .symptom-a { left: 0; top: 55px; }
+  .symptom-field-v3 .symptom-b { right: 0; top: 55px; }
+  .symptom-field-v3 .symptom-c { left: 0; bottom: 70px; }
+  .symptom-field-v3 .symptom-d { right: 0; bottom: 70px; }
+
+  .civilization-disease-layout { display: flex; flex-direction: column; justify-content: center; }
+  .civilization-disease-map { grid-template-columns: 1fr; gap: 22px; width: 100%; }
+  .civilization-change, .civilization-examples { min-height: 0; padding: 24px 30px; }
+  .civilization-link { height: 45px; transform: rotate(90deg); }
+  .civilization-examples > div { grid-template-columns: 1fr 1fr; }
+  .civilization-question { margin-bottom: 10px; font-size: 28px; }
+  [data-slide="03"] .boundary-line { width: 100%; max-width: none; margin-top: 10px; font-size: 21px; }
+
+  .food-environment-layout { display: flex; flex-direction: column; justify-content: flex-start; }
+  .food-environment-visual { grid-template-columns: 1fr; gap: 18px; width: 100%; margin: 24px auto 0; }
+  .appetite-system { width: 100%; min-height: 205px; }
+  .food-shelf { padding: 24px; }
+  .food-access-cues { width: 100%; min-height: 0; }
+  .large-times { transform: rotate(90deg); }
+  .possible-result { width: 100%; }
+  [data-slide="04"] .boundary-line { width: 100%; max-width: none; margin-top: 18px; font-size: 21px; }
+
+  .history-v3-layout { display: flex; flex-direction: column; justify-content: center; }
+  .history-v3-layout .human-history-timeline { display: grid; grid-template-columns: 1fr; gap: 18px; width: 620px; height: auto; margin: 42px auto 0; }
+  .history-v3-layout .history-band { position: static; width: 100% !important; min-height: 140px; padding: 24px 30px; }
+  .history-v3-layout .history-band::before { display: none; }
+  .history-pace-note { width: 100%; margin-top: 28px; padding: 25px; }
+
+  .mismatch-v3-layout { display: flex; flex-direction: column; justify-content: center; }
+  .mismatch-equation { grid-template-columns: 1fr; gap: 10px; width: 100%; margin: 25px auto 18px; }
+  .mismatch-equation article { min-height: 150px; padding: 22px; }
+  .mismatch-equation > b, .mismatch-equation > span { transform: rotate(90deg); line-height: .7; }
+  .mismatch-v3-layout blockquote { width: 100%; margin-bottom: 14px; font-size: 24px; }
+  [data-slide="06"] .integrity-line { width: 100%; max-width: none; margin-top: 12px; font-size: 21px; }
+
+  .pathway-layout { display: flex; flex-direction: column; justify-content: center; }
+  .condition-pathways { grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 38px; }
+  .defense-revision .condition-pathways article { min-height: 390px; padding: 34px; }
+  .pathway-times { transform: rotate(90deg); }
+  .pathway-layout .integrity-line { width: 100%; }
+
+  .case-layout { display: flex; flex-direction: column; justify-content: center; }
+  .case-header { width: 100%; justify-content: center; text-align: center; }
+  .case-header > div { width: 100%; text-align: center; }
+  .case-header h2 { width: 100%; margin-inline: auto; text-align: center; }
+  .inflammation-flow-v4 .inflammation-flow { flex-direction: column; gap: 8px; width: 100%; margin-top: 34px; }
+  .inflammation-flow-v4 .inflammation-flow article { width: 560px; height: 122px; flex: 0 0 122px; flex-direction: row; gap: 24px; padding: 18px 34px; }
+  .inflammation-flow-v4 .inflammation-flow > i { width: 40px; height: 38px; flex: 0 0 38px; transform: rotate(90deg); }
+  .inflammation-flow-v4 .case-message { font-size: 29px; }
+  .immune-part-note { font-size: 24px; }
+
+  .inflammation-duration-layout { display: flex; flex-direction: column; justify-content: center; }
+  .duration-comparison { grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 35px; }
+  .duration-comparison article { min-height: 270px; padding: 24px; }
+  .inflammation-domain-row { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  [data-slide="09"] .integrity-line { width: 100%; max-width: none; margin-top: 18px; font-size: 21px; }
+
+  .subjective-health-layout { display: flex; flex-direction: column; justify-content: center; }
+  .subjective-health-visual { grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 35px; }
+  .subjective-side, .physiology-side { min-height: 240px; }
+  .association-mark { transform: rotate(90deg); }
+  .subjective-health-layout blockquote, .subjective-health-layout .boundary-line { width: 100%; }
+
+  .body-immune-brain-layout { display: flex; flex-direction: column; justify-content: center; }
+  .body-immune-brain { grid-template-columns: 1fr; gap: 10px; width: 540px; margin: 24px auto; }
+  .body-immune-brain article { min-height: 105px; grid-template-columns: 75px 1fr; padding: 18px 28px; }
+  .bib-link { transform: rotate(90deg); height: 42px; }
+  .body-immune-brain-layout .boundary-line { width: 100%; }
+  .evidence-distinction { grid-template-columns: 1fr; gap: 14px; width: 100%; margin: 18px auto 0; }
+  .evidence-distinction article { min-height: 100px; padding: 20px 26px; }
+  [data-slide="11"] .boundary-line { margin-top: 16px; font-size: 21px; }
+
+  .alarm-layout-v3 { display: flex; flex-direction: column; justify-content: center; }
+  .alarm-layout-v3 .alarm-visual { grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 32px; }
+  .alarm-layout-v3 .alarm-flow { flex-direction: column; gap: 8px; }
+  .alarm-layout-v3 .alarm-flow article { width: 500px; height: 105px; flex-direction: row; }
+  .alarm-layout-v3 .alarm-flow > i { height: 30px; transform: rotate(90deg); }
+  .alarm-layout-v3 .smoke-detector { min-height: 240px; }
+
+  .future-threat-layout { display: flex; flex-direction: column; justify-content: center; }
+  .future-threat-visual { width: 610px; height: 620px; margin: 20px auto; }
+  .future-scenarios article { width: 250px; }
+  .future-threat-layout .integrity-line { width: 100%; }
+  .future-outcome { width: 100%; }
+  [data-slide="13"] .integrity-line { margin-top: 16px; font-size: 21px; }
+
+  .cognitive-performance-layout { display: flex; flex-direction: column; justify-content: center; }
+  .cognitive-impact-visual { grid-template-columns: 1fr; gap: 22px; width: 100%; margin: 30px auto; }
+  .performance-signals { grid-template-columns: 1fr 1fr; width: 100%; }
+  .performance-signals article:first-child { grid-column: 1 / 3; }
+  .cognitive-impact-visual > b { transform: rotate(90deg); }
+  .cognitive-performance-layout .integrity-line { width: 100%; }
+
+  .action-domains-layout { display: flex; flex-direction: column; justify-content: center; }
+  .change-strip-v3 { grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
+  .change-strip-v3 article { min-height: 105px; }
+  .domain-path-v3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; margin: 30px auto; }
+  .domain-path-v3 article { width: auto; height: 165px; }
+  .domain-path-v3 > i { display: none; }
+  [data-slide="15"] .bottom-message { width: 100%; max-width: none; margin-top: 18px; font-size: 22px; }
+
+  .performance-finale-layout h2 { font-size: 58px; }
+  .performance-definition { grid-template-columns: 1fr; gap: 16px; width: 100%; }
+  .performance-definition article { min-height: 100px; }
+  .performance-finale-layout blockquote { font-size: 29px; }
+  .learn-next-route { min-width: 0; width: 100%; }
+
+  .top-ui { top: max(8px, env(safe-area-inset-top)); width: 92vw; }
+  .controls { bottom: max(8px, env(safe-area-inset-bottom)); width: calc(100vw - 16px); max-width: 430px; flex-wrap: nowrap; justify-content: center; gap: 4px; padding: 4px; }
+  .controls button { flex: 1 1 0; min-width: 0; min-height: 40px; padding: 0 6px; font-size: 12px; white-space: nowrap; }
+  .controls button:first-child, .controls button:last-child { flex: 0 0 42px; }
+}

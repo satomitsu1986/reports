@@ -1,8 +1,9 @@
 (() => {
   "use strict";
 
-  const CANVAS_WIDTH = 1600;
-  const CANVAS_HEIGHT = 900;
+  const DESKTOP_CANVAS = { width: 1600, height: 900 };
+  const MOBILE_CANVAS = { width: 900, height: 1600 };
+  const MOBILE_QUERY = window.matchMedia("(max-width: 700px)");
   const slides = Array.from(document.querySelectorAll(".slide"));
   const stage = document.getElementById("stage");
   const previousButton = document.getElementById("previousButton");
@@ -38,7 +39,11 @@
   let pointerGesture = null;
 
   const scaleStage = () => {
-    const scale = Math.min(window.innerWidth / CANVAS_WIDTH, window.innerHeight / CANVAS_HEIGHT);
+    const canvas = MOBILE_QUERY.matches ? MOBILE_CANVAS : DESKTOP_CANVAS;
+    stage.style.width = `${canvas.width}px`;
+    stage.style.height = `${canvas.height}px`;
+    stage.dataset.layout = MOBILE_QUERY.matches ? "mobile" : "desktop";
+    const scale = Math.min(window.innerWidth / canvas.width, window.innerHeight / canvas.height);
     stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
     stage.dataset.scale = String(scale);
   };
@@ -130,6 +135,7 @@
   });
 
   window.addEventListener("resize", scaleStage, { passive: true });
+  MOBILE_QUERY.addEventListener("change", scaleStage);
   window.addEventListener("hashchange", () => showSlide(parseSlideFromHash(), false));
   document.addEventListener("fullscreenchange", () => {
     fullscreenButton.textContent = document.fullscreenElement ? "全画面を終了" : "全画面";

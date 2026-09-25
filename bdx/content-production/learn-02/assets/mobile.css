@@ -1,0 +1,167 @@
+/* LEARN 02 — portrait-first mobile composition (900 × 1600 canvas) */
+@media (max-width: 700px) {
+  .learn-02-v3 .stage { width: 900px; height: 1600px; }
+  .learn-02-v3 .slide-inner { padding: 100px 68px 112px; }
+  .learn-02-v3 .slide-header { max-width: none; text-align: center; }
+  .learn-02-v3 .eyebrow { margin-bottom: 18px; font-size: 21px; }
+  .learn-02-v3 h1 { font-size: 70px; line-height: 1.16; }
+  .learn-02-v3 h2 { margin-bottom: 28px; font-size: 55px; line-height: 1.22; text-align: center; }
+  .learn-02-v3 h3 { font-size: 29px; }
+  .learn-02-v3 .lead { font-size: 29px; line-height: 1.58; }
+  .learn-02-v3 .bottom-message, .learn-02-v3 .definition-line,
+  .learn-02-v3 .integrity-line, .learn-02-v3 .boundary-line,
+  .learn-02-v3 .dark-message { width: 100%; margin: 30px auto 0; padding: 23px 26px; border-radius: 22px; font-size: 24px; line-height: 1.48; }
+  .learn-02-v3 .page-number, .learn-02-v3 .source-chip { bottom: 38px; font-size: 17px; }
+  .learn-02-v3 .page-number { right: 44px; }
+  .learn-02-v3 .source-chip { left: 50%; max-width: 620px; transform: translateX(-50%); white-space: nowrap; }
+
+  .learn-02-v3 .cover-grid, .learn-02-v3 .split-layout, .learn-02-v3 .final-layout { grid-template-columns: 1fr; gap: 55px; align-content: center; text-align: center; }
+  .learn-02-v3 .cover-grid > div:first-child, .learn-02-v3 .split-layout > div:first-child { display: flex; flex-direction: column; align-items: center; }
+  .learn-02-v3 .hero-plate { width: 610px; height: 610px; }
+  .learn-02-v3 .brand-line { justify-content: center; font-size: 25px; }
+  .learn-02-v3 .display-title { font-size: 82px; }
+  .learn-02-v3 .equation-line { flex-direction: column; gap: 18px; font-size: 29px; }
+  .learn-02-v3 .equation-line > b { transform: rotate(90deg); }
+  .learn-02-v3 .hero-note { font-size: 28px; }
+
+  .learn-02-v3 .mismatch-visual { grid-template-columns: 1fr; gap: 20px; width: 100%; }
+  .learn-02-v3 .mismatch-visual > div { padding: 42px 24px; font-size: 31px; }
+  .learn-02-v3 .mismatch-visual > strong { transform: rotate(90deg); }
+  .learn-02-v3 .mismatch-visual > p { grid-column: auto; font-size: 32px; }
+
+  .learn-02-v3 .three-shifts { grid-template-columns: 1fr; gap: 20px; width: 100%; margin-top: 38px; }
+  .learn-02-v3 .three-shifts article { display: grid; grid-template-columns: 130px 1fr; gap: 5px 24px; align-items: center; min-height: 170px; padding: 28px 32px; text-align: left; }
+  .learn-02-v3 .three-shifts article > span { grid-row: 1 / 3; font-size: 22px; }
+  .learn-02-v3 .three-shifts h3 { margin: 0; font-size: 35px; }
+  .learn-02-v3 .three-shifts p { margin: 0; font-size: 24px; }
+  .learn-02-v3 .food-shifts article { grid-template-columns: 175px 1fr; min-height: 260px; text-align: left; }
+  .learn-02-v3 .food-shifts article > span { grid-row: auto; font-size: 27px; }
+  .learn-02-v3 .food-shifts p { font-size: 25px; line-height: 1.65; }
+
+  .learn-02-v3 .food-environment { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; width: 100%; margin-top: 52px; }
+  .learn-02-v3 .food-environment span { width: auto; height: 190px; font-size: 65px; }
+  .learn-02-v3 .food-environment span:last-child { grid-column: 1 / 3; width: 50%; justify-self: center; }
+  .learn-02-v3 .food-environment b { font-size: 23px; }
+
+  .learn-02-v3 .hunger-compare { grid-template-columns: 1fr; gap: 25px; width: 100%; }
+  .learn-02-v3 .hunger-compare article { padding: 35px; }
+  .learn-02-v3 .hunger-compare article > div { margin: 16px; }
+  .learn-02-v3 .hunger-compare p { font-size: 24px; }
+
+  .learn-02-v3 .temptation-layout { grid-template-columns: 1fr; gap: 22px; width: 100%; margin-top: 35px; }
+  .learn-02-v3 .combo-cloud, .learn-02-v3 .plus-list { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .learn-02-v3 .combo-cloud span, .learn-02-v3 .plus-list span { font-size: 25px; }
+  .learn-02-v3 .combo-cloud span:last-child { grid-column: 1 / 3; }
+  .learn-02-v3 .desire-bubble { width: 250px; height: 250px; margin: 10px auto 0; font-size: 37px; }
+
+  .learn-02-v3 .junk-definition { grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 35px; }
+  .learn-02-v3 .junk-examples { padding: 36px; font-size: 72px; line-height: 1.35; }
+  .learn-02-v3 .junk-definition > div + div { padding: 34px; }
+  .learn-02-v3 .junk-definition p { font-size: 25px; }
+  .learn-02-v3 .junk-definition li { font-size: 22px; }
+
+  .learn-02-v3 .trial-layout { grid-template-columns: 1fr; gap: 24px; width: 100%; }
+  .learn-02-v3 .trial-card { padding: 30px; }
+  .learn-02-v3 .trial-compare { gap: 18px; }
+  .learn-02-v3 .trial-compare article { padding: 28px 18px; }
+  .learn-02-v3 .trial-compare span { font-size: 21px; }
+  .learn-02-v3 .trial-compare strong { font-size: 36px; }
+
+  .learn-02-v3 .three-paths { grid-template-columns: 1fr; gap: 17px; width: 100%; }
+  .learn-02-v3 .three-paths article { display: grid; grid-template-columns: 90px 1fr; gap: 4px 20px; align-items: center; padding: 22px 30px; text-align: left; }
+  .learn-02-v3 .three-paths article > div { grid-row: 1 / 3; font-size: 58px; text-align: center; }
+  .learn-02-v3 .three-paths h3, .learn-02-v3 .three-paths p { margin: 0; }
+  .learn-02-v3 .three-paths p { font-size: 22px; }
+
+  .learn-02-v3 .flow-row { flex-direction: column; gap: 10px; width: 100%; }
+  .learn-02-v3 .flow-row > div { width: 560px; min-height: 105px; }
+  .learn-02-v3 .flow-row b { font-size: 27px; }
+  .learn-02-v3 .flow-row > i { height: 34px; transform: rotate(90deg); }
+  .learn-02-v3 .glucose-flow { margin-top: 35px; }
+
+  .learn-02-v3 .glucose-chart { width: 690px; height: 330px; margin: 45px auto; }
+  .learn-02-v3 .glucose-chart > div { width: 690px; height: 250px; }
+  .learn-02-v3 .impact-row { flex-direction: column; gap: 10px; }
+  .learn-02-v3 .impact-row span { width: 520px; font-size: 25px; text-align: center; }
+  .learn-02-v3 .impact-row i { height: 28px; transform: rotate(90deg); }
+
+  .learn-02-v3 .age-equation { flex-direction: column; gap: 14px; margin: 45px 0 25px; font-size: 31px; }
+  .learn-02-v3 .age-equation > b { transform: rotate(90deg); }
+  .learn-02-v3 .cooking-compare { grid-template-columns: 1fr; gap: 18px; width: 100%; }
+  .learn-02-v3 .cooking-compare > strong { transform: rotate(90deg); }
+  .learn-02-v3 .cooking-compare article { padding: 35px; }
+  .learn-02-v3 .age-flow { margin-top: 55px; }
+  .learn-02-v3 .age-start, .learn-02-v3 .age-end { font-size: 28px; }
+
+  .learn-02-v3 .fat-contrast { grid-template-columns: 1fr; gap: 22px; width: 100%; }
+  .learn-02-v3 .fat-contrast p { font-size: 26px; }
+
+  .learn-02-v3 .protein-flow { margin-top: 40px; }
+  .learn-02-v3 .study-result { grid-template-columns: 1fr; gap: 18px; width: 100%; padding: 30px; }
+  .learn-02-v3 .study-result p, .learn-02-v3 .study-result strong { font-size: 27px; text-align: center; }
+  .learn-02-v3 .formula { font-size: 34px; }
+  .learn-02-v3 .formula strong { font-size: 62px; }
+  .learn-02-v3 .model-cards article { padding: 34px; }
+
+  .learn-02-v3 .fiber-foods, .learn-02-v3 .need-first { grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: none; }
+  .learn-02-v3 .fiber-foods span, .learn-02-v3 .need-first span { grid-template-columns: 1fr; min-height: 160px; padding: 25px; text-align: center; }
+  .learn-02-v3 .fiber-foods span:last-child { grid-column: 1 / 3; width: calc(50% - 10px); justify-self: center; }
+  .learn-02-v3 .fiber-foods b, .learn-02-v3 .need-first b { font-size: 25px; }
+  .learn-02-v3 .fiber-transition { flex-direction: column; gap: 10px; margin-top: 45px; }
+  .learn-02-v3 .fiber-transition span { width: 520px; font-size: 28px; text-align: center; }
+  .learn-02-v3 .fiber-transition b { transform: rotate(90deg); }
+
+  .learn-02-v3 .gut-layout { grid-template-columns: 1fr; gap: 35px; text-align: center; }
+  .learn-02-v3 .gut-network { width: 590px; height: 590px; transform: none; }
+  .learn-02-v3 .gut-actions { grid-template-columns: 1fr; gap: 18px; width: 100%; }
+  .learn-02-v3 .gut-actions article { padding: 34px; }
+  .learn-02-v3 .gut-actions article > div { font-size: 70px; }
+  .learn-02-v3 .gut-actions p { font-size: 24px; }
+  .learn-02-v3 .gut-actions .plus { transform: rotate(90deg); }
+
+  .learn-02-v3 .food-compare { grid-template-columns: 1fr; gap: 18px; width: 100%; margin-top: 25px; }
+  .learn-02-v3 .food-compare > .vs { transform: rotate(90deg); }
+  .learn-02-v3 .food-compare article { padding: 30px; }
+  .learn-02-v3 .food-photo { font-size: 78px; }
+  .learn-02-v3 .food-compare dl { gap: 10px; }
+  .learn-02-v3 .food-compare dt { font-size: 17px; }
+  .learn-02-v3 .food-compare dd { font-size: 22px; }
+  .learn-02-v3 .same-nutrient-table { width: 100%; margin-top: 26px; }
+  .learn-02-v3 .same-nutrient-table > div { min-height: 62px; }
+  .learn-02-v3 .same-nutrient-table span, .learn-02-v3 .same-nutrient-table b { font-size: 20px; }
+
+  .learn-02-v3 .four-grid, .learn-02-v3 .food-groups, .learn-02-v3 .action-grid { grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin-top: 38px; }
+  .learn-02-v3 .four-grid article { min-height: 290px; padding: 28px; }
+  .learn-02-v3 .four-grid h3 { margin-top: 35px; }
+  .learn-02-v3 .four-grid p { font-size: 22px; }
+  .learn-02-v3 .food-groups article { min-height: 310px; padding: 24px; }
+  .learn-02-v3 .food-groups p { font-size: 20px; }
+  .learn-02-v3 .action-grid article { min-height: 210px; }
+  .learn-02-v3 .action-grid h3 { font-size: 27px; }
+
+  .learn-02-v3 .useful-processed { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .learn-02-v3 .useful-processed article { padding: 25px; }
+  .learn-02-v3 .swap-grid { grid-template-columns: 1fr; gap: 20px; width: 100%; }
+  .learn-02-v3 .swap-grid article { padding: 28px; }
+  .learn-02-v3 .swap-grid b { font-size: 55px; }
+  .learn-02-v3 .swap-grid span { font-size: 22px; }
+
+  .learn-02-v3 .experiment-layout { grid-template-columns: 1fr; gap: 24px; width: 100%; }
+  .learn-02-v3 .experiment-layout > div { padding: 36px; }
+  .learn-02-v3 .experiment-layout h3 { font-size: 32px; }
+  .learn-02-v3 .experiment-layout p { font-size: 24px; }
+  .learn-02-v3 .experiment-flow { display: grid; grid-template-columns: 1fr; gap: 9px; width: 420px; margin: 28px auto 0; }
+  .learn-02-v3 .experiment-flow span { font-size: 23px; }
+  .learn-02-v3 .experiment-flow b { height: 25px; transform: rotate(90deg); }
+
+  .learn-02-v3 .final-layout h2 { font-size: 78px; }
+  .learn-02-v3 .experiment-loop { padding: 45px; }
+  .learn-02-v3 .experiment-loop > strong { font-size: 44px; }
+  .learn-02-v3 .experiment-loop span { font-size: 25px; }
+  .learn-02-v3 .final-brand { position: static; justify-content: center; }
+
+  .learn-02-v3 .top-ui { top: max(8px, env(safe-area-inset-top)); width: 92vw; }
+  .learn-02-v3 .controls { bottom: max(8px, env(safe-area-inset-bottom)); width: calc(100vw - 16px); max-width: 430px; flex-wrap: nowrap; justify-content: center; gap: 4px; padding: 4px; }
+  .learn-02-v3 .controls button { flex: 1 1 0; min-width: 0; min-height: 40px; padding: 0 6px; font-size: 12px; white-space: nowrap; }
+  .learn-02-v3 .controls button:first-child, .learn-02-v3 .controls button:last-child { flex: 0 0 42px; }
+}
