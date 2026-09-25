@@ -22,6 +22,8 @@
   .learn-07 .source-chip { left: 45px; padding: 9px 14px; }
   .learn-07 .split-layout,
   .learn-07 .cover-grid { grid-template-columns: 1fr; gap: 55px; align-content: center; }
+  .learn-07 [data-slide="05"] .split-layout,
+  .learn-07 [data-slide="10"] .split-layout { align-content: start; }
   .learn-07 .mobile-only { display: grid; }
   .learn-07 .desktop-only { display: none !important; }
 
@@ -93,7 +95,6 @@
   .learn-07 .microbreak-study small { font-size: 22px; }
   .learn-07 .microbreak-study article b { font-size: 28px; }
   .learn-07 .microbreak-study article strong { font-size: 30px; }
-  .learn-07 .microbreak-study .neutral { grid-column: 1/3; min-height: 155px; }
   .learn-07 .time-experiment { grid-template-columns: 1fr; gap: 20px; }
   .learn-07 .time-experiment > div { padding: 42px; }
   .learn-07 .time-experiment i { transform: rotate(90deg); text-align: center; }
