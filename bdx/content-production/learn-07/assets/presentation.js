@@ -3,6 +3,8 @@
 
   const CANVAS_WIDTH = 1600;
   const CANVAS_HEIGHT = 900;
+  const MOBILE_CANVAS_WIDTH = 900;
+  const MOBILE_CANVAS_HEIGHT = 1600;
   const slides = Array.from(document.querySelectorAll(".slide"));
   const stage = document.getElementById("stage");
   const previousButton = document.getElementById("previousButton");
@@ -38,7 +40,13 @@
   let pointerGesture = null;
 
   const scaleStage = () => {
-    const scale = Math.min(window.innerWidth / CANVAS_WIDTH, window.innerHeight / CANVAS_HEIGHT);
+    const mobile = window.matchMedia("(max-width: 700px)").matches;
+    const canvasWidth = mobile ? MOBILE_CANVAS_WIDTH : CANVAS_WIDTH;
+    const canvasHeight = mobile ? MOBILE_CANVAS_HEIGHT : CANVAS_HEIGHT;
+    stage.style.width = `${canvasWidth}px`;
+    stage.style.height = `${canvasHeight}px`;
+    stage.dataset.layout = mobile ? "mobile" : "desktop";
+    const scale = Math.min(window.innerWidth / canvasWidth, window.innerHeight / canvasHeight);
     stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
     stage.dataset.scale = String(scale);
   };
