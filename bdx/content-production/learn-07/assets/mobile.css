@@ -5,9 +5,12 @@
   .learn-07 .slide-header { max-width: 100%; }
   .learn-07 .eyebrow { margin-bottom: 18px; font-size: 22px; }
   .learn-07 h1 { font-size: 70px; line-height: 1.16; }
-  .learn-07 h2 { margin-bottom: 28px; font-size: 58px; line-height: 1.22; }
+  .learn-07 h2 { max-width: 760px; margin: 0 auto 28px; font-size: 58px; line-height: 1.24; word-break: keep-all; overflow-wrap: normal; line-break: strict; }
   .learn-07 h3 { font-size: 31px; }
   .learn-07 .lead { font-size: 31px; line-height: 1.62; }
+  .learn-07 h1, .learn-07 h2, .learn-07 h3, .learn-07 .lead, .learn-07 .bottom-message, .learn-07 .definition-line, .learn-07 .integrity-line, .learn-07 .boundary-line, .learn-07 .dark-message { overflow-wrap: normal; line-break: strict; }
+  .learn-07 h1, .learn-07 h2 { word-break: keep-all; }
+  .learn-07 .mobile-break { display: block; }
   .learn-07 .bottom-message,
   .learn-07 .definition-line,
   .learn-07 .integrity-line,

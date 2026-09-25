@@ -5,9 +5,12 @@
   .slide-header { width: 100%; max-width: none; text-align: center; }
   .eyebrow { margin-bottom: 18px; font-size: 21px; }
   h1 { font-size: 70px; line-height: 1.16; }
-  h2 { margin-bottom: 28px; font-size: 56px; line-height: 1.22; text-align: center; }
+  h2 { max-width: 760px; margin: 0 auto 28px; font-size: 56px; line-height: 1.24; text-align: center; word-break: keep-all; overflow-wrap: normal; line-break: strict; }
   h3 { font-size: 30px; }
   .lead { font-size: 30px; line-height: 1.6; }
+  h1, h2, h3, .lead, blockquote, .integrity-line, .boundary-line, .safety-strip, .bottom-message, .case-message, .resolution-message, .next-question { overflow-wrap: normal; line-break: strict; }
+  h1, h2 { word-break: keep-all; }
+  .mobile-break { display: block; }
   .integrity-line, .boundary-line, .safety-strip, .bottom-message,
   .case-message, .resolution-message, .next-question {
     width: 100%; margin: 30px auto 0; padding: 23px 26px; border-radius: 22px;
