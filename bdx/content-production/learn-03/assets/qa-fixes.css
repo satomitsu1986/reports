@@ -1,0 +1,14 @@
+/* Final canvas-fit adjustments found during visual QA. */
+@media (min-width:701px){
+  .secondary-rank .rank-body{gap:42px;margin-top:28px}
+  .secondary-rank .food-visual,.secondary-rank .grain-rule{min-height:300px}
+  .secondary-rank .rank-message,.secondary-rank .boundary-line{margin-top:18px;padding:14px 20px;font-size:20px}
+  .slide[data-slide="09"] .food-visual{min-height:280px;padding:26px;font-size:52px;line-height:1.42}
+}
+
+@media (max-width:700px){
+  .learn-03 .step-heading>div{min-width:0}
+  .learn-03 .step-heading h2{font-size:50px}
+  .learn-03 .amount-flow i,.learn-03 .route-compare>strong{height:auto;line-height:1;transform:none;font-size:0}
+  .learn-03 .amount-flow i::before,.learn-03 .route-compare>strong::before{content:"↓";color:var(--amber);font-size:30px;line-height:1}
+}
