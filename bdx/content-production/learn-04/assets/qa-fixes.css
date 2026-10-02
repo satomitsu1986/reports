@@ -1,0 +1,42 @@
+/* Mobile composition and flow-direction corrections. */
+@media (max-width:700px){
+  .learn-04 .slide-inner:not(.cover-grid):not(.final-layout){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .learn-04 .era-compare>b,
+  .learn-04 .effort-loop i,
+  .learn-04 .cycle-line i,
+  .learn-04 .circadian-line i,
+  .learn-04 .temperature-flow i,
+  .learn-04 .anchor-line i,
+  .learn-04 .wind-down i{
+    height:auto;
+    line-height:1;
+    transform:none;
+    font-size:0;
+  }
+
+  .learn-04 .era-compare>b::before{
+    content:"↕";
+    color:var(--amber);
+    font-size:30px;
+  }
+
+  .learn-04 .effort-loop i::before,
+  .learn-04 .cycle-line i::before,
+  .learn-04 .circadian-line i::before,
+  .learn-04 .temperature-flow i::before,
+  .learn-04 .anchor-line i::before,
+  .learn-04 .wind-down i::before{
+    content:"↓";
+    color:var(--amber);
+    font-size:30px;
+  }
+
+  .learn-04 .two-mechanisms>b{
+    transform:none;
+  }
+}

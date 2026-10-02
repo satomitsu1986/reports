@@ -7,6 +7,11 @@
 }
 
 @media (max-width:700px){
+  .learn-03 .slide-inner:not(.cover-grid):not(.final-layout){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
   .learn-03 .step-heading>div{min-width:0}
   .learn-03 .step-heading h2{font-size:50px}
   .learn-03 .amount-flow i,.learn-03 .route-compare>strong{height:auto;line-height:1;transform:none;font-size:0}
