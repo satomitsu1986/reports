@@ -102,7 +102,6 @@
   .learn-04 .microbreak-study small { font-size: 22px; }
   .learn-04 .microbreak-study article b { font-size: 28px; }
   .learn-04 .microbreak-study article strong { font-size: 30px; }
-  .learn-04 .microbreak-study article:last-child { grid-column: 1/3; min-height: 150px; }
   .learn-04 .time-experiment { grid-template-columns: 1fr; gap: 20px; }
   .learn-04 .time-experiment > div { padding: 42px; }
   .learn-04 .time-experiment i { transform: rotate(90deg); text-align: center; }
@@ -233,4 +232,20 @@
   .learn-04 .summary-four h3 { margin: 12px 0 8px; font-size: 27px; }
   .learn-04 .summary-four p { margin: 0; font-size: 22px; }
   .learn-04 [data-slide="20"] .final-recovery { margin-top: 28px; font-size: 38px; }
+
+  /* Keep each portrait composition optically centered in the usable canvas. */
+  .learn-04 .slide-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .learn-04 .slide-inner.split-layout,
+  .learn-04 .slide-inner.recovery-cover-layout {
+    display: grid;
+    align-content: center;
+  }
+  .learn-04 [data-slide="04"] .split-layout,
+  .learn-04 [data-slide="09"] .split-layout {
+    align-content: center;
+  }
 }
