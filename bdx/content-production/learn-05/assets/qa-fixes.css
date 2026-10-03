@@ -1,0 +1,197 @@
+/* Mobile composition and flow-direction corrections. */
+@media (max-width:700px){
+  .learn-05 .slide-inner:not(.cover-grid):not(.final-layout){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .learn-05 .era-compare>b,
+  .learn-05 .effort-loop i,
+  .learn-05 .cycle-line i,
+  .learn-05 .circadian-line i,
+  .learn-05 .temperature-flow i,
+  .learn-05 .anchor-line i,
+  .learn-05 .wind-down i{
+    height:auto;
+    line-height:1;
+    transform:none;
+    font-size:0;
+  }
+
+  .learn-05 .era-compare>b::before{
+    content:"↕";
+    color:var(--amber);
+    font-size:30px;
+  }
+
+  .learn-05 .effort-loop i::before,
+  .learn-05 .cycle-line i::before,
+  .learn-05 .circadian-line i::before,
+  .learn-05 .temperature-flow i::before,
+  .learn-05 .anchor-line i::before,
+  .learn-05 .wind-down i::before{
+    content:"↓";
+    color:var(--amber);
+    font-size:30px;
+  }
+
+  .learn-05 .two-mechanisms>b{
+    transform:none;
+  }
+}
+
+/* LEARN 05 v1.1: one-slide-one-message editorial and diagram system. */
+.learn-05 .dream-contrast{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:34px;
+  max-width:1080px;
+  margin:68px auto 0;
+}
+.learn-05 .dream-contrast article{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:22px;
+  min-height:190px;
+  padding:34px;
+  border-radius:30px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.learn-05 .dream-contrast strong,.learn-05 .dream-contrast span{font-size:24px;line-height:1.5}
+.learn-05 .dream-contrast b{color:var(--amber);font-size:42px}
+.learn-05 .dream-note{margin:36px auto 0;color:var(--navy);font-size:27px;font-weight:850;line-height:1.55;text-align:center}
+.learn-05 .science-note{margin:22px auto 0;color:var(--ink-soft);font-size:16px;font-weight:650;text-align:center}
+
+.learn-05 .mechanism-overlap{
+  display:grid;
+  grid-template-columns:1fr 180px 1fr;
+  align-items:center;
+  max-width:940px;
+  margin:70px auto 0;
+}
+.learn-05 .mechanism-overlap article{
+  display:grid;
+  place-items:center;
+  align-content:center;
+  min-height:330px;
+  padding:38px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  text-align:center;
+}
+.learn-05 .mechanism-overlap article:first-child{margin-right:-48px}
+.learn-05 .mechanism-overlap article:last-child{margin-left:-48px}
+.learn-05 .mechanism-overlap span{font-size:72px}
+.learn-05 .mechanism-overlap h3{margin:14px 0 8px}
+.learn-05 .mechanism-overlap p{margin:0;font-size:22px;font-weight:750}
+.learn-05 .mechanism-overlap>b{z-index:2;color:#ffd88e;font-size:22px;text-align:center}
+
+.learn-05 .pressure-curve{
+  position:relative;
+  width:980px;
+  height:420px;
+  margin:65px auto 0;
+  border-left:4px solid rgba(38,61,77,.2);
+  border-bottom:4px solid rgba(38,61,77,.2);
+}
+.learn-05 .pressure-curve>i{
+  position:absolute;
+  left:95px;
+  bottom:80px;
+  width:700px;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--blue),var(--amber));
+  transform:rotate(-20deg);
+  transform-origin:left center;
+}
+.learn-05 .pressure-curve>i::after{content:"";position:absolute;right:-8px;top:-10px;border-left:24px solid var(--amber);border-top:15px solid transparent;border-bottom:15px solid transparent}
+.learn-05 .pressure-curve>span{position:absolute;display:grid;gap:8px;color:var(--amber);font-size:24px;font-weight:900;text-align:center}
+.learn-05 .pressure-curve>span small{color:var(--ink);font-size:20px}
+.learn-05 .pressure-curve .morning{left:45px;bottom:25px}
+.learn-05 .pressure-curve .day{left:430px;bottom:180px}
+.learn-05 .pressure-curve .night{right:80px;top:25px}
+.learn-05 .pressure-curve>strong{position:absolute;right:45px;bottom:38px;padding:18px 34px;border-radius:999px;background:var(--navy);color:#fff;font-size:23px}
+.learn-05 .pressure-curve>em{position:absolute;right:65px;bottom:100px;color:var(--blue);font-size:20px;font-style:normal;font-weight:800}
+
+.learn-05 .clock-ring{
+  position:relative;
+  width:560px;
+  height:560px;
+  margin:42px auto 0;
+  border:34px solid var(--blue-soft);
+  border-radius:50%;
+  box-shadow:inset 0 0 0 3px rgba(38,61,77,.06);
+}
+.learn-05 .clock-ring::after{content:"";position:absolute;inset:66px;border:3px dashed rgba(216,139,40,.45);border-radius:50%}
+.learn-05 .clock-ring>span{position:absolute;z-index:2;display:grid;place-items:center;gap:2px;width:150px;padding:12px;border-radius:22px;background:#fff;box-shadow:var(--shadow);font-size:42px;text-align:center}
+.learn-05 .clock-ring b{font-size:21px}.learn-05 .clock-ring small{font-size:16px}
+.learn-05 .clock-morning{left:-40px;top:195px}.learn-05 .clock-day{left:170px;top:-48px}.learn-05 .clock-evening{right:-40px;top:195px}.learn-05 .clock-night{left:170px;bottom:-48px}
+.learn-05 .clock-ring>strong{position:absolute;inset:0;display:grid;place-items:center;color:var(--navy);font-size:32px}
+
+.learn-05 .bath-meal .mini-flow{display:grid;gap:10px;margin-top:14px}
+.learn-05 .bath-meal .mini-flow b{font-size:20px}.learn-05 .bath-meal .mini-flow i{color:var(--amber);font-size:24px;font-style:normal}
+.learn-05 .bath-meal ul{display:grid;gap:8px;margin:18px 0 0;padding-left:26px;font-size:18px;line-height:1.45;text-align:left}
+.learn-05 .technique-pressure{display:flex;align-items:center;justify-content:center;gap:24px;margin:48px auto 0;font-size:24px;font-weight:800}
+.learn-05 .technique-pressure span{padding:20px 30px;border-radius:18px;background:var(--coral-soft)}
+.learn-05 .technique-pressure i{color:var(--amber);font-size:34px;font-style:normal}
+.learn-05 .technique-pressure strong{padding:20px 30px;border-radius:18px;background:var(--navy);color:#fff}
+.learn-05 .emphasis-message{font-size:27px}
+
+.learn-05 .action-slide .slide-inner{display:flex;flex-direction:column;justify-content:center}
+.learn-05 .action-slide .action-heading{width:100%}
+.learn-05 .action-slide .action-visual{margin-top:48px}
+.learn-05 .action-rule{margin:34px 0 0;padding:20px 28px;border-radius:18px;background:var(--blue-soft);color:var(--navy);font-size:23px;font-weight:850;line-height:1.45;text-align:center}
+.learn-05 .stop-effort>b{display:grid;gap:4px;color:var(--coral);font-size:56px}
+.learn-05 .stop-effort>b small{color:var(--amber);font-size:20px}
+.learn-05 .nap-clock{align-content:center;gap:34px}
+.learn-05 .nap-caution{margin:18px 0 0;color:var(--ink-soft);font-size:18px;font-weight:750;line-height:1.45;text-align:center}
+.learn-05 .final-actions span{display:flex;align-items:center;gap:16px;border-radius:18px;text-align:left}
+.learn-05 .final-actions b{color:#ffd88e;font-size:16px}
+.learn-05 .reset-copy{display:block;margin-top:18px;color:#d7e4e9;font-size:18px}
+
+@media (max-width:700px){
+  .learn-05 .dream-contrast{grid-template-columns:1fr;gap:22px;width:640px;margin-top:42px}
+  .learn-05 .dream-contrast article{min-height:150px;padding:26px}
+  .learn-05 .dream-contrast strong,.learn-05 .dream-contrast span{font-size:27px}
+  .learn-05 .dream-note{font-size:30px}.learn-05 .science-note{font-size:18px}
+
+  .learn-05 .mechanism-overlap{grid-template-columns:1fr 130px 1fr;width:660px;margin-top:48px}
+  .learn-05 .mechanism-overlap article{min-height:270px;padding:26px}
+  .learn-05 .mechanism-overlap span{font-size:58px}.learn-05 .mechanism-overlap p{font-size:24px}
+
+  .learn-05 .pressure-curve{width:650px;height:520px;margin-top:42px}
+  .learn-05 .pressure-curve>i{left:65px;bottom:95px;width:470px;transform:rotate(-32deg)}
+  .learn-05 .pressure-curve .morning{left:22px}.learn-05 .pressure-curve .day{left:285px;bottom:260px}.learn-05 .pressure-curve .night{right:30px;top:35px}
+  .learn-05 .pressure-curve>strong{right:30px;bottom:36px;font-size:27px}.learn-05 .pressure-curve>em{right:50px;bottom:110px;font-size:23px}
+  .learn-05 .pressure-curve>span{font-size:28px}.learn-05 .pressure-curve>span small{font-size:23px}
+
+  .learn-05 .clock-ring{width:520px;height:520px;margin-top:42px}
+  .learn-05 .clock-ring>span{width:145px;font-size:42px}.learn-05 .clock-morning{left:-50px;top:175px}.learn-05 .clock-day{left:155px}.learn-05 .clock-evening{right:-50px;top:175px}.learn-05 .clock-night{left:155px}
+
+  .learn-05 .bath-meal{grid-template-columns:1fr 1fr;width:700px;gap:22px}
+  .learn-05 .bath-meal article{display:block;padding:28px;text-align:center}
+  .learn-05 .bath-meal span{font-size:64px}.learn-05 .bath-meal h3{margin:8px 0}.learn-05 .bath-meal strong{font-size:27px}
+  .learn-05 .bath-meal .mini-flow b{font-size:24px}.learn-05 .bath-meal ul{font-size:23px}
+  .learn-05 .cause-columns p{font-size:25px}
+
+  .learn-05 .technique-pressure{display:grid;grid-template-columns:1fr;gap:14px;width:550px;margin-top:34px;text-align:center}
+  .learn-05 .technique-pressure i{font-size:0}.learn-05 .technique-pressure i::before{content:"↓";font-size:30px}
+  .learn-05 .week-compare{width:650px}.learn-05 .week-compare article{padding:27px}.learn-05 .week-compare>b{font-size:28px}
+
+  .learn-05 .action-slide .action-visual{margin-top:38px}
+  .learn-05 .action-rule{margin-top:28px;font-size:28px}
+  .learn-05 .action-slide .science-note{font-size:18px}
+  .learn-05 .nap-caution{margin-top:20px;color:#56616a;font-size:27px;font-weight:800}
+  .learn-05 .stop-effort>b{font-size:52px}.learn-05 .stop-effort>b small{font-size:24px}
+  .learn-05 .final-layout h2{font-size:54px}
+  .learn-05 .final-actions{grid-template-columns:1fr 1fr;width:700px}
+  .learn-05 .final-actions span{min-height:92px;padding:18px 22px;font-size:25px}
+  .learn-05 .north-star{margin-top:34px;font-size:42px}
+  .learn-05 .final-copy{margin-top:18px;font-size:30px}
+  .learn-05 .reset-copy{font-size:21px}
+}

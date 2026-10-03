@@ -1,0 +1,39 @@
+.learn-05 .bridge-copy {
+  margin-top: 8px;
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.learn-05 .previous-learn-link {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 22px;
+  padding: 12px 18px;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.learn-05 .previous-learn-link:hover {
+  border-color: var(--amber);
+  background: var(--amber);
+  color: #222;
+}
+
+@media (max-width: 700px) {
+  .learn-05 .bridge-copy {
+    margin-top: 12px;
+    font-size: 26px;
+    line-height: 1.55;
+  }
+
+  .learn-05 .previous-learn-link {
+    margin: 22px auto 0;
+    padding: 15px 22px;
+    font-size: 21px;
+  }
+}
