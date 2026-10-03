@@ -1,9 +1,9 @@
 .learn-04 .recovery-cover h1 {
-  font-size: 66px;
+  font-size: 58px;
 }
 
 @media (max-width: 700px) {
   .learn-04 .recovery-cover h1 {
-    font-size: 62px;
+    font-size: 54px;
   }
 }
