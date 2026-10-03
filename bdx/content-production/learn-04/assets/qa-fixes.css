@@ -149,6 +149,7 @@
 .learn-04 .stop-effort>b{display:grid;gap:4px;color:var(--coral);font-size:56px}
 .learn-04 .stop-effort>b small{color:var(--amber);font-size:20px}
 .learn-04 .nap-clock{align-content:center;gap:34px}
+.learn-04 .nap-caution{margin:18px 0 0;color:var(--ink-soft);font-size:18px;font-weight:750;line-height:1.45;text-align:center}
 .learn-04 .final-actions span{display:flex;align-items:center;gap:16px;border-radius:18px;text-align:left}
 .learn-04 .final-actions b{color:#ffd88e;font-size:16px}
 .learn-04 .reset-copy{display:block;margin-top:18px;color:#d7e4e9;font-size:18px}
@@ -185,6 +186,7 @@
   .learn-04 .action-slide .action-visual{margin-top:38px}
   .learn-04 .action-rule{margin-top:28px;font-size:28px}
   .learn-04 .action-slide .science-note{font-size:18px}
+  .learn-04 .nap-caution{margin-top:20px;color:#56616a;font-size:27px;font-weight:800}
   .learn-04 .stop-effort>b{font-size:52px}.learn-04 .stop-effort>b small{font-size:24px}
   .learn-04 .final-layout h2{font-size:54px}
   .learn-04 .final-actions{grid-template-columns:1fr 1fr;width:700px}
