@@ -28,13 +28,12 @@ a { color: inherit; }
   padding: 0 max(20px, env(safe-area-inset-left));
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   border-bottom: 1px solid var(--line);
   background: rgba(246,243,236,.88);
   backdrop-filter: blur(12px);
 }
-.back-link, .site-mark { font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-.back-link { color: var(--green); text-decoration: none; }
+.site-mark { font-size: 11px; font-weight: 700; letter-spacing: .14em; }
 .site-mark { color: var(--muted); }
 .page { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 84px 0 100px; }
 .hero { max-width: 720px; }
@@ -66,7 +65,7 @@ h1 {
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .trip-card:hover { transform: translateY(-3px); box-shadow: 0 34px 80px rgba(19,45,58,.22); }
-.trip-card:focus-visible, .back-link:focus-visible { outline: 3px solid #da7199; outline-offset: 4px; }
+.trip-card:focus-visible { outline: 3px solid #da7199; outline-offset: 4px; }
 .trip-card__top { display: flex; align-items: center; justify-content: space-between; }
 .status { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: .18em; }
 .status i { width: 8px; height: 8px; border-radius: 50%; background: #79d3a9; box-shadow: 0 0 0 5px rgba(121,211,169,.12); }
