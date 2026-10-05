@@ -3,116 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>人生設計書（2026年版） | SAT's Database</title>
+  <meta name="description" content="人生の目的、価値観、独自価値をつくる戦略、行動ルール、これまでの物語と目標をまとめた人生設計書。" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>人生設計書 | SAT's Database</title>
+  <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0a0a0a;
-      --surface: #171717;
-      --surface-hi: #211f1d;
-      --line: rgba(255,255,255,0.09);
-      --gold: #d2ad6f;
-      --mint: #7ddfc3;
-      --coral: #ff8f70;
-      --text: #f7f1e8;
-      --muted: #9a9186;
-      --low: #514a43;
-      --radius: 16px;
-    }
-    html { background: var(--bg); color: var(--text); font-family: 'Inter', 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 16% 10%, rgba(125,223,195,0.12), transparent 28%),
-        radial-gradient(circle at 84% 6%, rgba(255,143,112,0.12), transparent 24%),
-        linear-gradient(180deg, #0a0a0a 0%, #11100f 52%, #080808 100%);
-    }
-    .page { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 84px 0 80px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; color: var(--mint); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; }
-    .eyebrow::before { content: ''; width: 10px; height: 10px; border-radius: 999px; background: var(--coral); box-shadow: 18px 0 0 var(--gold); }
-    h1 { margin-bottom: 18px; font-family: 'Cormorant Garamond', 'Noto Sans JP', serif; font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 300; letter-spacing: 0.12em; line-height: 1.08; }
-    .lead { max-width: 680px; margin-bottom: 44px; color: var(--muted); font-size: 0.92rem; line-height: 2; letter-spacing: 0.07em; }
-    .document { display: grid; gap: 16px; }
-    .section {
-      padding: 28px 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.06), transparent 44%),
-        linear-gradient(180deg, var(--surface-hi), var(--surface));
-      position: relative;
-      overflow: hidden;
-    }
-    .section::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--mint), var(--gold), var(--coral)); opacity: 0.86; }
-    .section-label { margin-bottom: 10px; color: var(--gold); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; }
-    h2 { margin-bottom: 16px; color: var(--text); font-size: clamp(1.1rem, 3vw, 1.45rem); font-weight: 400; letter-spacing: 0.08em; line-height: 1.6; }
-    p { color: var(--muted); font-size: 0.95rem; line-height: 2; letter-spacing: 0.05em; }
-    .theme { color: var(--text); font-size: clamp(1.25rem, 4vw, 2rem); line-height: 1.65; letter-spacing: 0.08em; }
-    .notes { display: grid; gap: 12px; margin-top: 20px; }
-    .note { padding: 16px 18px; border: 1px solid rgba(210,173,111,0.18); border-radius: 10px; background: rgba(210,173,111,0.09); }
-    .values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    .value { padding: 20px; border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; background: rgba(255,255,255,0.04); }
-    .value-title { margin-bottom: 8px; color: var(--mint); font-size: 1rem; font-weight: 400; letter-spacing: 0.12em; }
-    footer { margin-top: 54px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--low); font-size: 10px; letter-spacing: 0.2em; text-align: center; text-transform: uppercase; }
-    @media (max-width: 720px) {
-      .page { width: min(100% - 28px, 960px); padding: 56px 0 64px; }
-      .section { padding: 24px 22px; }
-      .values { grid-template-columns: 1fr; }
+    :root { --bg:#090909; --surface:#151515; --surface-hi:#201e1c; --line:rgba(255,255,255,.1); --gold:#d2ad6f; --mint:#7ddfc3; --coral:#ff8f70; --text:#f7f1e8; --muted:#aaa095; --low:#625a52; --radius:18px; }
+    html { background:var(--bg); color:var(--text); scroll-behavior:smooth; font-family:'Inter','Noto Sans JP',sans-serif; -webkit-font-smoothing:antialiased; }
+    body { min-height:100vh; background:radial-gradient(circle at 10% 4%,rgba(125,223,195,.12),transparent 30rem),radial-gradient(circle at 92% 8%,rgba(255,143,112,.1),transparent 28rem),linear-gradient(180deg,#090909 0%,#12100f 46%,#080808 100%); }
+    a { color:inherit; }
+    .topbar { width:min(1040px,calc(100% - 32px)); min-height:64px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .back { min-height:44px; display:inline-flex; align-items:center; color:var(--mint); font-size:11px; font-weight:600; letter-spacing:.12em; text-decoration:none; }
+    .mark { color:var(--low); font-size:10px; font-weight:600; letter-spacing:.18em; }
+    .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:86px 0 90px; }
+    .hero { padding-bottom:64px; }
+    .eyebrow,.section-label { color:var(--gold); font-size:10px; font-weight:600; letter-spacing:.25em; text-transform:uppercase; }
+    h1 { margin-top:20px; font-family:'Cormorant Garamond','Noto Sans JP',serif; font-size:clamp(3.1rem,9vw,6.4rem); font-weight:300; letter-spacing:.08em; line-height:.98; }
+    .lead { max-width:680px; margin-top:28px; color:var(--muted); font-size:15px; line-height:2; letter-spacing:.05em; }
+    .principle { margin-top:42px; padding:28px 30px; border-left:4px solid var(--mint); border-radius:0 var(--radius) var(--radius) 0; background:linear-gradient(110deg,rgba(125,223,195,.13),rgba(255,255,255,.03)); }
+    .principle span { color:var(--mint); font-size:10px; font-weight:600; letter-spacing:.2em; }
+    .principle p { margin-top:8px; color:var(--text); font-family:'Cormorant Garamond','Noto Sans JP',serif; font-size:clamp(1.4rem,4vw,2.15rem); line-height:1.6; }
+    .document { display:grid; gap:18px; }
+    .section { position:relative; overflow:hidden; padding:34px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(145deg,rgba(255,255,255,.055),transparent 42%),linear-gradient(180deg,var(--surface-hi),var(--surface)); }
+    .section::before { content:''; position:absolute; inset:0 0 auto; height:3px; background:linear-gradient(90deg,var(--mint),var(--gold),var(--coral)); opacity:.9; }
+    .section-head { display:grid; grid-template-columns:52px 1fr; gap:20px; align-items:start; margin-bottom:24px; }
+    .section-no { color:var(--mint); font-family:'Cormorant Garamond',serif; font-size:2.2rem; line-height:1; }
+    h2 { margin-top:5px; color:var(--text); font-size:clamp(1.15rem,3vw,1.5rem); font-weight:500; letter-spacing:.08em; }
+    .statement { color:var(--text); font-family:'Cormorant Garamond','Noto Sans JP',serif; font-size:clamp(1.5rem,4vw,2.25rem); line-height:1.65; letter-spacing:.06em; }
+    .support { margin-top:12px; color:var(--muted); font-size:14px; line-height:1.9; }
+    .value-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+    .value { min-height:124px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); border-radius:13px; background:rgba(255,255,255,.035); }
+    .value b { color:var(--low); font-family:'Cormorant Garamond',serif; font-size:1.4rem; }
+    .value span { color:var(--text); font-size:1rem; font-weight:500; letter-spacing:.1em; }
+    .numbered { display:grid; gap:10px; list-style:none; counter-reset:item; }
+    .numbered li { counter-increment:item; padding:18px 20px; display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; border:1px solid var(--line); border-radius:13px; background:rgba(255,255,255,.035); color:var(--text); font-size:15px; line-height:1.85; }
+    .numbered li::before { content:counter(item,decimal-leading-zero); color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.35rem; line-height:1.35; }
+    .story { position:relative; display:grid; }
+    .story::before { content:''; position:absolute; top:16px; bottom:16px; left:10px; width:1px; background:linear-gradient(var(--mint),var(--gold),var(--coral)); }
+    .chapter { position:relative; padding:0 0 30px 42px; }
+    .chapter:last-child { padding-bottom:0; }
+    .chapter::before { content:''; position:absolute; top:8px; left:5px; width:11px; height:11px; border:2px solid var(--surface); border-radius:50%; background:var(--mint); box-shadow:0 0 0 1px var(--mint); }
+    .chapter:nth-child(n+5)::before { background:var(--gold); box-shadow:0 0 0 1px var(--gold); }
+    .chapter:nth-last-child(-n+2)::before { background:var(--coral); box-shadow:0 0 0 1px var(--coral); }
+    .chapter h3 { color:var(--text); font-size:1rem; font-weight:500; line-height:1.6; }
+    .chapter p { max-width:740px; margin-top:6px; color:var(--muted); font-size:14px; line-height:1.95; }
+    .goals { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .goal { padding:24px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.035); }
+    .goal-label { color:var(--gold); font-size:10px; font-weight:600; letter-spacing:.2em; }
+    .goal h3 { margin-top:10px; color:var(--text); font-size:1.05rem; font-weight:500; line-height:1.7; }
+    .goal ul,.goal ol { margin:16px 0 0 1.25rem; color:var(--muted); }
+    .goal li { padding-left:4px; font-size:14px; line-height:1.9; }
+    footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); color:var(--low); font-size:10px; letter-spacing:.18em; text-align:center; }
+    .back:focus-visible { outline:3px solid var(--coral); outline-offset:4px; }
+    @media (max-width:720px) {
+      .topbar,.page { width:min(100% - 28px,960px); }
+      .mark { font-size:8px; }
+      .page { padding:58px 0 64px; }
+      .hero { padding-bottom:44px; }
+      h1 { font-size:clamp(3rem,17vw,4.5rem); }
+      .principle { padding:22px 20px; }
+      .section { padding:26px 20px; }
+      .section-head { grid-template-columns:42px 1fr; gap:12px; margin-bottom:20px; }
+      .section-no { font-size:1.8rem; }
+      .value-grid { grid-template-columns:1fr 1fr; }
+      .value { min-height:104px; padding:16px; }
+      .numbered li { grid-template-columns:32px 1fr; padding:16px; gap:10px; font-size:14px; }
+      .goals { grid-template-columns:1fr; }
+      .chapter { padding-left:34px; }
     }
   </style>
 </head>
 <body>
+  <header class="topbar"><a class="back" href="./" aria-label="人生設計の一覧へ戻る">← 人生設計</a><span class="mark">SAT'S DATABASE</span></header>
   <main class="page">
-    <p class="eyebrow">Life Plan</p>
-    <h1>人生設計書</h1>
-    <p class="lead">人生のテーマ、目的、価値観、在り方を整理した2026年版の設計書。</p>
-
+    <header class="hero">
+      <p class="eyebrow">Life Design</p>
+      <h1>人生設計書</h1>
+      <p class="lead">人生の目的から日々の判断ルール、これまでの物語、これから育てる事業と挑戦までを一つにつなぐ。</p>
+      <div class="principle"><span>THE CENTRAL QUESTION</span><p>自分は、どういう人で在りたいか。</p></div>
+    </header>
     <article class="document">
+      <section class="section"><div class="section-head"><span class="section-no">01</span><div><p class="section-label">Purpose</p><h2>人生の目的</h2></div></div><p class="statement">大切な人を守れる人間になる</p></section>
+
       <section class="section">
-        <p class="section-label">Theme</p>
-        <h2>人生のテーマ</h2>
-        <p class="theme">自分にしかない価値を育て続ける挑戦の旅</p>
+        <div class="section-head"><span class="section-no">02</span><div><p class="section-label">Values</p><h2>価値観</h2></div></div>
+        <div class="value-grid"><div class="value"><b>01</b><span>成長</span></div><div class="value"><b>02</b><span>自由</span></div><div class="value"><b>03</b><span>好奇心</span></div><div class="value"><b>04</b><span>影響力</span></div></div>
+      </section>
+
+      <section class="section"><div class="section-head"><span class="section-no">03</span><div><p class="section-label">Primary Policy</p><h2>最重要方針</h2></div></div><p class="statement">独自価値をつくる</p><p class="support">自分自身が独自の価値を持ち、社会の中で必要とされ続ける。</p></section>
+
+      <section class="section">
+        <div class="section-head"><span class="section-no">04</span><div><p class="section-label">Only-One Strategy</p><h2>オンリーワン戦略</h2></div></div>
+        <ol class="numbered"><li>他人とは違うことをする</li><li>異分野スキルを掛け合わせる</li><li>小さく試して、大きく育てる</li></ol>
       </section>
 
       <section class="section">
-        <p class="section-label">Purpose</p>
-        <h2>人生の目的</h2>
-        <p>自分だけの価値を育て、他人や働く場所や時間に縛られず自由に生きる</p>
-        <div class="notes">
-          <div class="note"><p>価値とは、他の人にはないスキル・才能・魅力であり、他者との関係性の中で役立つもの。</p></div>
-          <div class="note"><p>自由とは、好きな時に好きなことを自由に選択できる状態であること。</p></div>
+        <div class="section-head"><span class="section-no">05</span><div><p class="section-label">Core Rules</p><h2>コアルール</h2></div></div>
+        <ol class="numbered"><li>「他人にどう思われるか」ではなく、「自分はどういう人で在りたいか」を基準にする。</li><li>意志の力に頼らず、習慣の力を利用する。</li></ol>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><span class="section-no">06</span><div><p class="section-label">Simple Rules</p><h2>シンプルルール</h2></div></div>
+        <ol class="numbered"><li>重要な決断で迷ったら、「20年後の自分は今の自分にどんな助言をするか」を考える。</li><li>人の話を聞くときは、相手の感情を言語化する。</li><li>自分が何か話すときは、考えや事実よりも感情を伝える。</li><li>人に与えるときは、相手との関係性と自分が負うコストを比較して、納得できる範囲で行う。</li></ol>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><span class="section-no">07</span><div><p class="section-label">Life Story</p><h2>人生のストーリー</h2></div></div>
+        <div class="story">
+          <article class="chapter"><h3>母親の逮捕</h3><p>大切な人を守るには、力が必要だと知る。</p></article>
+          <article class="chapter"><h3>手に職をつける</h3><p>美容師として専門性を身につける。</p></article>
+          <article class="chapter"><h3>副業を始める</h3><p>異分野のスキルを学び、スキルを掛け合わせることで独自の価値をつくり始める。</p></article>
+          <article class="chapter"><h3>独立する</h3><p>常識を覆す施策で、表参道エリア売上ランキングトップ10入りを果たす。一方で、スタッフの育成、求人、人間関係に悩む。</p></article>
+          <article class="chapter"><h3>サロンを売却する</h3><p>このまま続けても将来性を感じられず、リスタートを決意する。</p></article>
+          <article class="chapter"><h3>個人活動で再起する</h3><p>一度はチームで戦うことを諦め、個人で生きていくことを決意。フリーランス美容師を続けながら、広告などの新規事業に取り組む。</p></article>
+          <article class="chapter"><h3>年収1000万円に到達する</h3><p>美容師として大台を突破する。一方で、新規事業は思うようにいかず悩む。</p></article>
+          <article class="chapter"><h3>鈴ちゃんとの出会い</h3><p>鈴ちゃんとの関わりを通して、人との関わり方、自分自身の価値観、自分が大切にしたいものについて深く考えるようになる。自分自身を客観視できるようになり、人生を見る視野が広がる。複業.Lab、BDX、芸術家支援カフェなど、新しい事業アイデアも生まれる。</p></article>
+          <article class="chapter"><h3>再びチームで戦うことを決意する</h3><p>一度は諦めた「人と一緒に何かをつくること」に、もう一度挑戦する。鈴ちゃんと事業をやることを決意。</p></article>
+          <article class="chapter"><h3>人生を賭けた再挑戦が始まる</h3></article>
         </div>
       </section>
 
       <section class="section">
-        <p class="section-label">Values</p>
-        <h2>価値観</h2>
-        <div class="values">
-          <div class="value">
-            <p class="value-title">自由</p>
-            <p>働く場所や時間や組織に縛られない</p>
-          </div>
-          <div class="value">
-            <p class="value-title">挑戦</p>
-            <p>昨日までの自分を超える</p>
-          </div>
-          <div class="value">
-            <p class="value-title">独自性</p>
-            <p>自分だけの道を歩む</p>
-          </div>
+        <div class="section-head"><span class="section-no">08</span><div><p class="section-label">Goals</p><h2>これからの目標</h2></div></div>
+        <div class="goals">
+          <article class="goal"><p class="goal-label">SHORT TERM</p><h3>3事業を、継続的に価値と収益を生む事業として育てる。</h3><ul><li>複業.Lab、BDX、芸術家支援カフェの3事業すべてを育てる</li><li>比重は状況に応じて柔軟に変える</li><li>現状の健康・メンタル・人間関係・生活満足度は維持する</li></ul></article>
+          <article class="goal"><p class="goal-label">LONG TERM</p><ol><li>鈴ちゃんと会社をつくり、複業.Lab・BDX・カフェなどの事業を育て、社会に良い影響を与えられる会社にする。</li><li>娘と一緒に大学受験まで真剣に勉強し、14年後に自分も大学受験に挑戦する。</li></ol></article>
         </div>
-      </section>
-
-      <section class="section">
-        <p class="section-label">Being</p>
-        <h2>在り方</h2>
-        <p class="theme">必要な時に、支援したい人を支援する。</p>
       </section>
     </article>
-
     <footer>© 合同会社 nature · SAT's Database</footer>
   </main>
 </body>
