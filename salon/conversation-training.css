@@ -68,11 +68,6 @@ a{color:inherit}
 .focus-panel ul{margin-top:18px;padding-left:1.25rem}
 .focus-panel li+li{margin-top:8px}
 .focus-panel>p:last-child{margin-top:22px;padding-top:18px;border-top:1px solid rgba(31,42,68,.13);font-size:16px;line-height:1.8}
-.memorable-long>p:not(.label){font-size:18px;font-weight:500}
-.memorable-long .memory-quote{font-size:clamp(1.35rem,3.5vw,1.7rem);font-weight:750;color:var(--navy)}
-.memory-tip{margin-top:20px;padding:18px 22px;border:1px dashed #aa967a;border-radius:14px;background:#faf7f1}
-.memory-tip .label{color:#7d6240}
-.memory-tip p:last-child{margin-top:6px;font-size:16px;font-weight:650}
 .teaching-block{margin-top:32px;padding-left:24px;border-left:4px solid var(--navy)}
 .teaching-block .label{color:var(--navy)}
 .teaching-block h3{margin-top:5px;font-size:1.45rem;line-height:1.5}
