@@ -3,115 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="人生の目的、価値観、独自価値をつくる戦略、行動ルール、これまでの物語と目標をまとめた人生設計書。" />
+  <meta name="description" content="人生の目的、理想の在り方、価値観、戦略、ルール、障害プランニング、40歳からの目標とロードマップを一つにつないだ人生設計書。" />
   <meta name="theme-color" content="#0a0a0a" />
-  <title>人生設計書 | SAT's Database</title>
+  <meta property="og:title" content="人生設計書 v2.0 | SAT's Database" />
+  <meta property="og:description" content="40歳からの人生設計・障害プランニング・ロードマップ。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://satomitsu1986.github.io/reports/life-design/plan.html" />
+  <title>人生設計書 v2.0 | SAT's Database</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --bg:#090909; --surface:#151515; --surface-hi:#201e1c; --line:rgba(255,255,255,.1); --gold:#d2ad6f; --mint:#7ddfc3; --coral:#ff8f70; --text:#f7f1e8; --muted:#aaa095; --low:#625a52; --radius:18px; }
-    html { background:var(--bg); color:var(--text); scroll-behavior:smooth; font-family:'Inter','Noto Sans JP',sans-serif; -webkit-font-smoothing:antialiased; }
-    body { min-height:100vh; background:radial-gradient(circle at 10% 4%,rgba(125,223,195,.12),transparent 30rem),radial-gradient(circle at 92% 8%,rgba(255,143,112,.1),transparent 28rem),linear-gradient(180deg,#090909 0%,#12100f 46%,#080808 100%); }
-    a { color:inherit; }
-    .topbar { width:min(1040px,calc(100% - 32px)); min-height:64px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
-    .back { min-height:44px; display:inline-flex; align-items:center; color:var(--mint); font-size:11px; font-weight:600; letter-spacing:.12em; text-decoration:none; }
-    .mark { color:var(--low); font-size:10px; font-weight:600; letter-spacing:.18em; }
-    .page { width:min(960px,calc(100% - 32px)); margin:0 auto; padding:86px 0 90px; }
-    .hero { padding-bottom:64px; }
-    .eyebrow,.section-label { color:var(--gold); font-size:10px; font-weight:600; letter-spacing:.25em; text-transform:uppercase; }
-    h1 { margin-top:20px; font-family:'Cormorant Garamond','Noto Sans JP',serif; font-size:clamp(3.1rem,9vw,6.4rem); font-weight:300; letter-spacing:.08em; line-height:.98; }
-    .lead { max-width:680px; margin-top:28px; color:var(--muted); font-size:15px; line-height:2; letter-spacing:.05em; }
-    .principle { margin-top:42px; padding:28px 30px; border-left:4px solid var(--mint); border-radius:0 var(--radius) var(--radius) 0; background:linear-gradient(110deg,rgba(125,223,195,.13),rgba(255,255,255,.03)); }
-    .principle span { color:var(--mint); font-size:10px; font-weight:600; letter-spacing:.2em; }
-    .principle p { margin-top:8px; color:var(--text); font-family:'Cormorant Garamond','Noto Sans JP',serif; font-size:clamp(1.4rem,4vw,2.15rem); line-height:1.6; }
-    .document { display:grid; gap:18px; }
-    .section { position:relative; overflow:hidden; padding:34px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(145deg,rgba(255,255,255,.055),transparent 42%),linear-gradient(180deg,var(--surface-hi),var(--surface)); }
-    .section::before { content:''; position:absolute; inset:0 0 auto; height:3px; background:linear-gradient(90deg,var(--mint),var(--gold),var(--coral)); opacity:.9; }
-    .section-head { display:grid; grid-template-columns:52px 1fr; gap:20px; align-items:start; margin-bottom:24px; }
-    .section-no { color:var(--mint); font-family:'Cormorant Garamond',serif; font-size:2.2rem; line-height:1; }
-    h2 { margin-top:5px; color:var(--text); font-size:clamp(1.15rem,3vw,1.5rem); font-weight:500; letter-spacing:.08em; }
-    .statement { color:var(--text); font-family:'Cormorant Garamond','Noto Sans JP',serif; font-size:clamp(1.5rem,4vw,2.25rem); line-height:1.65; letter-spacing:.06em; }
-    .support { margin-top:12px; color:var(--muted); font-size:14px; line-height:1.9; }
-    .value-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
-    .value { min-height:124px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); border-radius:13px; background:rgba(255,255,255,.035); }
-    .value b { color:var(--low); font-family:'Cormorant Garamond',serif; font-size:1.4rem; }
-    .value span { color:var(--text); font-size:1rem; font-weight:500; letter-spacing:.1em; }
-    .numbered { display:grid; gap:10px; list-style:none; counter-reset:item; }
-    .numbered li { counter-increment:item; padding:18px 20px; display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; border:1px solid var(--line); border-radius:13px; background:rgba(255,255,255,.035); color:var(--text); font-size:15px; line-height:1.85; }
-    .numbered li::before { content:counter(item,decimal-leading-zero); color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.35rem; line-height:1.35; }
-    .story { position:relative; display:grid; }
-    .story::before { content:''; position:absolute; top:16px; bottom:16px; left:10px; width:1px; background:linear-gradient(var(--mint),var(--gold),var(--coral)); }
-    .chapter { position:relative; padding:0 0 30px 42px; }
-    .chapter:last-child { padding-bottom:0; }
-    .chapter::before { content:''; position:absolute; top:8px; left:5px; width:11px; height:11px; border:2px solid var(--surface); border-radius:50%; background:var(--mint); box-shadow:0 0 0 1px var(--mint); }
-    .chapter:nth-child(n+5)::before { background:var(--gold); box-shadow:0 0 0 1px var(--gold); }
-    .chapter:nth-last-child(-n+2)::before { background:var(--coral); box-shadow:0 0 0 1px var(--coral); }
-    .chapter h3 { color:var(--text); font-size:1rem; font-weight:500; line-height:1.6; }
-    .chapter p { max-width:740px; margin-top:6px; color:var(--muted); font-size:14px; line-height:1.95; }
-    .goals { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .goal { padding:24px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.035); }
-    .goal-label { color:var(--gold); font-size:10px; font-weight:600; letter-spacing:.2em; }
-    .goal h3 { margin-top:10px; color:var(--text); font-size:1.05rem; font-weight:500; line-height:1.7; }
-    .goal ul,.goal ol { margin:16px 0 0 1.25rem; color:var(--muted); }
-    .goal li { padding-left:4px; font-size:14px; line-height:1.9; }
-    footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); color:var(--low); font-size:10px; letter-spacing:.18em; text-align:center; }
-    .back:focus-visible { outline:3px solid var(--coral); outline-offset:4px; }
-    @media (max-width:720px) {
-      .topbar,.page { width:min(100% - 28px,960px); }
-      .mark { font-size:8px; }
-      .page { padding:58px 0 64px; }
-      .hero { padding-bottom:44px; }
-      h1 { font-size:clamp(3rem,17vw,4.5rem); }
-      .principle { padding:22px 20px; }
-      .section { padding:26px 20px; }
-      .section-head { grid-template-columns:42px 1fr; gap:12px; margin-bottom:20px; }
-      .section-no { font-size:1.8rem; }
-      .value-grid { grid-template-columns:1fr 1fr; }
-      .value { min-height:104px; padding:16px; }
-      .numbered li { grid-template-columns:32px 1fr; padding:16px; gap:10px; font-size:14px; }
-      .goals { grid-template-columns:1fr; }
-      .chapter { padding-left:34px; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#090909;--surface:#151515;--surface-hi:#201e1c;--surface-soft:#25221f;--line:rgba(255,255,255,.1);--line-strong:rgba(255,255,255,.18);--gold:#d2ad6f;--mint:#7ddfc3;--coral:#ff8f70;--text:#f7f1e8;--muted:#aaa095;--low:#70675e;--radius:18px}
+    html{background:var(--bg);color:var(--text);scroll-behavior:smooth;scroll-padding-top:74px;font-family:Inter,"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+    body{min-height:100vh;background:radial-gradient(circle at 10% 4%,rgba(125,223,195,.12),transparent 30rem),radial-gradient(circle at 92% 8%,rgba(255,143,112,.1),transparent 28rem),linear-gradient(180deg,#090909 0%,#12100f 46%,#080808 100%);overflow-wrap:anywhere}
+    a{color:inherit}
+    .topbar{width:min(1040px,calc(100% - 32px));min-height:64px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .back{min-height:44px;display:inline-flex;align-items:center;color:var(--mint);font-size:11px;font-weight:600;letter-spacing:.12em;text-decoration:none}
+    .mark{color:var(--low);font-size:10px;font-weight:600;letter-spacing:.18em}
+    .section-nav{position:sticky;z-index:30;top:0;display:flex;gap:4px;padding:5px max(14px,calc((100% - 960px)/2));overflow-x:auto;border-bottom:1px solid var(--line);background:rgba(9,9,9,.9);backdrop-filter:blur(14px);scrollbar-width:none}
+    .section-nav::-webkit-scrollbar{display:none}
+    .section-nav a{min-height:44px;padding:0 13px;display:inline-flex;align-items:center;flex:0 0 auto;border-radius:999px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.12em;text-decoration:none}
+    .section-nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .page{width:min(960px,calc(100% - 32px));margin:0 auto;padding:80px 0 90px}
+    .hero{padding-bottom:60px}
+    .eyebrow,.section-label,.mini-label{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+    h1{margin-top:20px;font-family:"Cormorant Garamond","Noto Sans JP",serif;font-size:clamp(3.1rem,9vw,6.4rem);font-weight:300;letter-spacing:.06em;line-height:.98}
+    .version{display:block;margin-top:16px;color:var(--mint);font-size:11px;font-weight:600;letter-spacing:.16em}
+    .lead{max-width:720px;margin-top:28px;color:var(--muted);font-size:15px;line-height:2;letter-spacing:.04em}
+    .design-flow{margin-top:40px;padding:28px 30px;border-left:4px solid var(--mint);border-radius:0 var(--radius) var(--radius) 0;background:linear-gradient(110deg,rgba(125,223,195,.13),rgba(255,255,255,.03))}
+    .design-flow ol{display:flex;align-items:center;flex-wrap:wrap;gap:8px;list-style:none}
+    .design-flow li{display:flex;align-items:center;color:var(--text);font-size:13px;font-weight:500}
+    .design-flow li:not(:last-child)::after{content:"→";margin-left:8px;color:var(--gold)}
+    .document{display:grid;gap:18px}
+    .section{position:relative;overflow:hidden;padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.055),transparent 42%),linear-gradient(180deg,var(--surface-hi),var(--surface))}
+    .section::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--mint),var(--gold),var(--coral));opacity:.9}
+    .section-head{display:grid;grid-template-columns:52px 1fr;gap:20px;align-items:start;margin-bottom:26px}
+    .section-no{color:var(--mint);font-family:"Cormorant Garamond",serif;font-size:2.2rem;line-height:1}
+    h2{margin-top:5px;color:var(--text);font-size:clamp(1.15rem,3vw,1.5rem);font-weight:500;letter-spacing:.08em}
+    .section-intro{max-width:760px;margin:-4px 0 26px;color:var(--muted);font-size:14px;line-height:1.95}
+    .statement{color:var(--text);font-family:"Cormorant Garamond","Noto Sans JP",serif;font-size:clamp(1.5rem,4vw,2.25rem);line-height:1.65;letter-spacing:.05em}
+    .support{margin-top:14px;color:var(--muted);font-size:14px;line-height:1.95}
+    .purpose-stack{display:grid;gap:14px}
+    .purpose-card{padding:28px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}
+    .purpose-card.primary{border-color:rgba(125,223,195,.38);background:linear-gradient(120deg,rgba(125,223,195,.13),rgba(255,255,255,.03))}
+    .purpose-card.secondary{margin-left:42px;border-color:rgba(210,173,111,.35)}
+    .purpose-card .mini-label{color:var(--mint)}
+    .purpose-card.secondary .mini-label{color:var(--gold)}
+    .purpose-card .statement{margin-top:10px}
+    .purpose-copy{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+    .purpose-copy p{color:var(--muted);font-size:14px;line-height:2}
+    .purpose-copy p+p{margin-top:12px}
+    .value-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .value{min-height:124px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035)}
+    .value b{color:var(--low);font-family:"Cormorant Garamond",serif;font-size:1.4rem}.value span{font-size:1rem;font-weight:500;letter-spacing:.1em}
+    .numbered{display:grid;gap:10px;list-style:none;counter-reset:item}
+    .numbered li{counter-increment:item;padding:18px 20px;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);font-size:15px;line-height:1.85}
+    .numbered li::before{content:counter(item,decimal-leading-zero);color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1.35}
+    .rule-list li{font-weight:500}
+    .obstacle-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .obstacle{align-self:start;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}
+    .obstacle[open]{border-color:rgba(125,223,195,.28);background:rgba(125,223,195,.045)}
+    .obstacle summary{min-height:92px;padding:20px;display:grid;grid-template-columns:38px 1fr 22px;gap:12px;align-items:start;cursor:pointer;list-style:none}
+    .obstacle summary::-webkit-details-marker{display:none}
+    .obstacle-index{color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1.2}
+    .obstacle-title{display:block;font-size:15px;font-weight:500;line-height:1.6}
+    .obstacle-hint{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.6}
+    .obstacle-toggle{color:var(--mint);font-size:1.25rem;line-height:1.2;text-align:center;transition:transform .2s ease}
+    .obstacle[open] .obstacle-toggle{transform:rotate(45deg)}
+    .obstacle-body{padding:0 20px 20px}
+    .plan-row{padding:15px 0;border-top:1px solid var(--line)}
+    .plan-row span{display:block;color:var(--gold);font-size:9px;font-weight:600;letter-spacing:.18em}
+    .plan-row p{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.85}
+    .plan-row.action{margin-top:2px;padding:17px;border:1px solid rgba(125,223,195,.22);border-radius:12px;background:rgba(125,223,195,.07)}
+    .plan-row.action span{color:var(--mint)}.plan-row.action p{color:var(--text)}
+    .operation{margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
+    .operation h3{font-size:1rem;font-weight:500}.operation ul{margin:12px 0 0 1.2rem;color:var(--muted)}.operation li{padding-left:4px;font-size:13px;line-height:1.9}
+    .story{position:relative;display:grid}
+    .story::before{content:"";position:absolute;top:16px;bottom:16px;left:10px;width:1px;background:linear-gradient(var(--mint),var(--gold),var(--coral))}
+    .chapter{position:relative;padding:0 0 30px 42px}.chapter:last-child{padding-bottom:0}
+    .chapter::before{content:"";position:absolute;top:8px;left:5px;width:11px;height:11px;border:2px solid var(--surface);border-radius:50%;background:var(--mint);box-shadow:0 0 0 1px var(--mint)}
+    .chapter:nth-child(n+5)::before{background:var(--gold);box-shadow:0 0 0 1px var(--gold)}.chapter:nth-last-child(-n+2)::before{background:var(--coral);box-shadow:0 0 0 1px var(--coral)}
+    .chapter h3{font-size:1rem;font-weight:500;line-height:1.6}.chapter p{max-width:760px;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.95}
+    .chapter.insight{margin:6px 0 30px;padding:24px 24px 24px 42px;border:1px solid rgba(210,173,111,.25);border-radius:14px;background:rgba(210,173,111,.06)}
+    .chapter.insight::before{top:30px}
+    .goal-periods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .period-card{padding:24px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.035)}
+    .period-meta{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.18em}
+    .period-card h3{margin-top:9px;font-size:1.05rem;font-weight:500;line-height:1.7}.period-card ul{margin:14px 0 0 1.2rem;color:var(--muted)}.period-card li{padding-left:4px;font-size:13px;line-height:1.9}
+    .asset-goal{margin-top:12px;padding:22px;border-left:3px solid var(--gold);border-radius:0 13px 13px 0;background:rgba(210,173,111,.07)}
+    .asset-goal p{color:var(--muted);font-size:13px;line-height:1.85}.asset-goal strong{color:var(--text)}
+    .long-goal{margin-top:12px;padding:22px;border:1px solid rgba(125,223,195,.2);border-radius:14px;background:rgba(125,223,195,.055)}
+    .long-goal h3{font-size:1rem;font-weight:500}.long-goal p{margin-top:9px;color:var(--muted);font-size:13px;line-height:1.85}
+    .income-note{margin-top:12px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:12px;line-height:1.8}
+    .roadmap{position:relative;display:grid;gap:16px}
+    .roadmap::before{content:"";position:absolute;top:28px;bottom:28px;left:24px;width:1px;background:linear-gradient(var(--mint),var(--gold),var(--coral))}
+    .phase{position:relative;margin-left:56px;padding:24px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}
+    .phase::before{content:"";position:absolute;top:27px;left:-38px;width:13px;height:13px;border:3px solid var(--surface);border-radius:50%;background:var(--mint);box-shadow:0 0 0 1px var(--mint)}
+    .phase:nth-child(2)::before,.phase:nth-child(3)::before{background:var(--gold);box-shadow:0 0 0 1px var(--gold)}.phase:last-child::before{background:var(--coral);box-shadow:0 0 0 1px var(--coral)}
+    .phase-meta{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.16em}.phase h3{margin-top:8px;font-size:1.1rem;font-weight:500;line-height:1.6}.phase ul{margin:13px 0 0 1.2rem;color:var(--muted)}.phase li{padding-left:4px;font-size:13px;line-height:1.85}
+    .phase.destination{border-color:rgba(255,143,112,.25);background:linear-gradient(120deg,rgba(255,143,112,.1),rgba(255,255,255,.025))}
+    .cross-goal{margin-top:22px;padding:22px;border-left:4px solid var(--mint);border-radius:0 14px 14px 0;background:rgba(125,223,195,.07)}.cross-goal b{font-size:1rem}.cross-goal p{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.8}
+    .income-sources{margin-top:24px}.income-sources h3{font-size:1rem;font-weight:500}.income-grid{margin-top:12px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;counter-reset:income}.income-grid div{counter-increment:income;min-height:104px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03)}.income-grid div::before{content:counter(income,decimal-leading-zero);color:var(--low);font-family:"Cormorant Garamond",serif;font-size:1.2rem}.income-grid span{font-size:12px;line-height:1.6}
+    .income-sources>p{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.8}
+    footer{margin-top:54px;padding-top:24px;border-top:1px solid var(--line);color:var(--low);font-size:10px;letter-spacing:.18em;text-align:center}
+    .back:focus-visible,.section-nav a:focus-visible,.obstacle summary:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+    @media(max-width:760px){
+      html{scroll-padding-top:58px}.topbar,.page{width:min(100% - 28px,960px)}.mark{font-size:8px}.section-nav{padding-inline:8px}.section-nav a{padding-inline:11px;font-size:9px}
+      .page{padding:56px 0 64px}.hero{padding-bottom:42px}h1{font-size:clamp(3rem,17vw,4.5rem)}.lead{font-size:14px}.design-flow{padding:22px 20px}.design-flow ol{display:grid;gap:6px}.design-flow li:not(:last-child)::after{content:"↓";margin-left:8px}
+      .section{padding:26px 20px}.section-head{grid-template-columns:42px 1fr;gap:12px;margin-bottom:22px}.section-no{font-size:1.8rem}.purpose-card{padding:22px 20px}.purpose-card.secondary{margin-left:20px}
+      .value-grid{grid-template-columns:1fr 1fr}.value{min-height:104px;padding:16px}.numbered li{grid-template-columns:32px 1fr;padding:16px;gap:10px;font-size:14px}
+      .obstacle-list,.goal-periods{grid-template-columns:1fr}.obstacle summary{min-height:86px;padding:18px 16px;grid-template-columns:32px 1fr 20px}.obstacle-body{padding:0 16px 16px}
+      .chapter{padding-left:34px}.chapter.insight{padding:22px 18px 22px 34px}.roadmap::before{left:9px}.phase{margin-left:34px;padding:21px 19px}.phase::before{left:-31px}
+      .income-grid{grid-template-columns:1fr 1fr}.income-grid div{min-height:92px}.income-grid div:last-child{grid-column:1/-1}
     }
+    @media(max-width:390px){.topbar,.page{width:calc(100% - 24px)}.section{padding-inline:17px}.purpose-card.secondary{margin-left:12px}.value-grid{gap:8px}.income-grid{grid-template-columns:1fr}}
+    @media print{.topbar,.section-nav{display:none}.page{width:100%;padding:20px}.section{break-inside:avoid;background:#fff;color:#111}.obstacle{break-inside:avoid}.obstacle-body{display:block!important}}
   </style>
 </head>
 <body>
   <header class="topbar"><a class="back" href="./" aria-label="人生設計の一覧へ戻る">← 人生設計</a><span class="mark">SAT'S DATABASE</span></header>
+  <nav class="section-nav" aria-label="人生設計書の目次"><a href="#section-01">01 PURPOSE</a><a href="#section-02">02 VALUES</a><a href="#section-03">03 POLICY</a><a href="#section-04">04 STRATEGY</a><a href="#section-05">05 RULES</a><a href="#section-06">06 OBSTACLES</a><a href="#section-07">07 STORY</a><a href="#section-08">08 GOALS</a><a href="#section-09">09 ROADMAP</a></nav>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">Life Design</p>
-      <h1>人生設計書</h1>
-      <p class="lead">人生の目的から日々の判断ルール、これまでの物語、これから育てる事業と挑戦までを一つにつなぐ。</p>
-      <div class="principle"><span>THE CENTRAL QUESTION</span><p>自分は、どういう人で在りたいか。</p></div>
+      <h1>人生設計書</h1><span class="version">VERSION 2.0 · FROM AGE 40</span>
+      <p class="lead">何のために生き、どういう人間で在りたいのか。そのための戦略、日々のルール、障害への備え、40歳から実現する未来を一つにつなぐ。</p>
+      <div class="design-flow"><ol><li>人生の目的</li><li>理想の在り方</li><li>最重要方針</li><li>オンリーワン戦略</li><li>ルールと障害プランニング</li><li>目標・ロードマップ</li></ol></div>
     </header>
-    <article class="document">
-      <section class="section"><div class="section-head"><span class="section-no">01</span><div><p class="section-label">Purpose</p><h2>人生の目的</h2></div></div><p class="statement">大切な人を守れる人間になる</p></section>
 
-      <section class="section">
+    <article class="document">
+      <section class="section" id="section-01">
+        <div class="section-head"><span class="section-no">01</span><div><p class="section-label">Purpose &amp; Ideal Self</p><h2>人生の目的・理想の在り方</h2></div></div>
+        <div class="purpose-stack">
+          <article class="purpose-card primary"><p class="mini-label">人生の目的</p><p class="statement">大切な人を守ること。</p></article>
+          <article class="purpose-card secondary"><p class="mini-label">理想の在り方</p><p class="statement">人の心を動かせる人間になる。</p></article>
+        </div>
+        <div class="purpose-copy"><p>大切な人を守るために、自分自身の能力と価値を高めたい。自分にとって魅力的な人間とは、どんな人間なのか。その問いに対して、これまで追求してきた答えが「人の心を動かせる人間」だった。</p><p>美容師、DJ、イベント、広告、アプリ開発。活動する分野は異なっても、人の役に立ち、感動を届けたいという思いは変わらない。</p><p>相手を変えたり、コントロールしたりすることが目的ではない。自分が本当に良いと思える価値を届け、その先で何を感じ、どう行動するかは相手に委ねる。</p></div>
+      </section>
+
+      <section class="section" id="section-02">
         <div class="section-head"><span class="section-no">02</span><div><p class="section-label">Values</p><h2>価値観</h2></div></div>
         <div class="value-grid"><div class="value"><b>01</b><span>成長</span></div><div class="value"><b>02</b><span>自由</span></div><div class="value"><b>03</b><span>好奇心</span></div><div class="value"><b>04</b><span>影響力</span></div></div>
       </section>
 
-      <section class="section"><div class="section-head"><span class="section-no">03</span><div><p class="section-label">Primary Policy</p><h2>最重要方針</h2></div></div><p class="statement">独自価値をつくる</p><p class="support">自分自身が独自の価値を持ち、社会の中で必要とされ続ける。</p></section>
+      <section class="section" id="section-03">
+        <div class="section-head"><span class="section-no">03</span><div><p class="section-label">Primary Policy</p><h2>最重要方針</h2></div></div>
+        <p class="statement">独自の価値をつくる。</p>
+        <p class="support">「人の心を動かせる人間になる」という理想を実現するために、独自の価値をつくり続ける。知識、技術、経験、創造性を磨き、自分が本当に良いと思うものを形にする。自分自身が独自の価値を持ち、社会の中で必要とされ続ける。</p>
+      </section>
 
-      <section class="section">
+      <section class="section" id="section-04">
         <div class="section-head"><span class="section-no">04</span><div><p class="section-label">Only-One Strategy</p><h2>オンリーワン戦略</h2></div></div>
-        <ol class="numbered"><li>他人とは違うことをする</li><li>異分野スキルを掛け合わせる</li><li>小さく試して、大きく育てる</li></ol>
+        <p class="section-intro">「独自の価値をつくる」を実践するための3つの戦略。</p>
+        <ol class="numbered"><li>他人とは違うことをする。</li><li>異分野スキルを掛け合わせる。</li><li>小さく試して、大きく育てる。</li></ol>
       </section>
 
-      <section class="section">
-        <div class="section-head"><span class="section-no">05</span><div><p class="section-label">Core Rules</p><h2>コアルール</h2></div></div>
-        <ol class="numbered"><li>「他人にどう思われるか」ではなく、「自分はどういう人で在りたいか」を基準にする。</li><li>意志の力に頼らず、習慣の力を利用する。</li></ol>
+      <section class="section" id="section-05">
+        <div class="section-head"><span class="section-no">05</span><div><p class="section-label">Rules</p><h2>ルール</h2></div></div>
+        <ol class="numbered rule-list"><li>「他人にどう思われるか」ではなく、「自分はどういう人で在りたいか」を基準にする。</li><li>重要な決断で迷ったら、「20年後の自分は今の自分にどんな助言をするか」を考える。</li></ol>
       </section>
 
-      <section class="section">
-        <div class="section-head"><span class="section-no">06</span><div><p class="section-label">Simple Rules</p><h2>シンプルルール</h2></div></div>
-        <ol class="numbered"><li>重要な決断で迷ったら、「20年後の自分は今の自分にどんな助言をするか」を考える。</li><li>人の話を聞くときは、相手の感情を言語化する。</li><li>自分が何か話すときは、考えや事実よりも感情を伝える。</li><li>人に与えるときは、相手との関係性と自分が負うコストを比較して、納得できる範囲で行う。</li></ol>
+      <section class="section" id="section-06">
+        <div class="section-head"><span class="section-no">06</span><div><p class="section-label">Obstacle Planning</p><h2>障害プランニング</h2></div></div>
+        <p class="statement">障害を想定し、行動を決めておく。</p>
+        <p class="section-intro">障害が起きることを悲観するのではなく、発生しても冷静に対処できる状態をつくる。ここで扱う障害は将来に備えた仮説であり、すでに発生した事実ではない。</p>
+        <div class="obstacle-list">
+          <details class="obstacle" open><summary><span class="obstacle-index">01</span><span><b class="obstacle-title">事業が成長しない</b><small class="obstacle-hint">顧客価値と収益化を再検証する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>事業を軌道に乗せ、会社を設立する。</p></div><div class="plan-row"><span>OBSTACLE</span><p>顧客獲得や収益化が進まない。</p></div><div class="plan-row"><span>SIGNAL</span><p>一定期間検証しても、顧客価値や収益化に関する成果を確認できない。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし事業が進展しなければ、追加開発や投資を続ける前に、顧客課題・提供価値・集客方法を見直す。改善の根拠が得られない場合は、縮小・一時停止・方向転換を検討する。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">02</span><span><b class="obstacle-title">複数事業への分散</b><small class="obstacle-hint">最も可能性の高い事業へ集中する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>5つの収入源を育てる。</p></div><div class="plan-row"><span>OBSTACLE</span><p>時間や資金が分散し、どの事業も十分に進まない。</p></div><div class="plan-row"><span>SIGNAL</span><p>複数事業に取り組んでいるのに、重要な成果や検証が進まない状態が続く。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし事業への資源配分が分散しすぎたら、優先順位を見直し、最も可能性の高い事業に集中する。すべてを同時に成功させようとしない。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">03</span><span><b class="obstacle-title">共同事業の停滞</b><small class="obstacle-hint">時間・役割・代替手段を調整する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>互いの事情を尊重しながら、共同事業を進める。</p></div><div class="plan-row"><span>OBSTACLE</span><p>共同事業者との予定や稼働時間が合わず、制作や意思決定が進まない。</p></div><div class="plan-row"><span>SIGNAL</span><p>合意した作業や打ち合わせが繰り返し延期され、重要な進捗が止まる。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし共同作業が停滞したら、双方が確保できる時間と役割を確認し、制作範囲や日程を調整する。必要に応じて別の協力者や代替手段を検討し、相手の私生活や優先事項を尊重する。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">04</span><span><b class="obstacle-title">健康・体力の低下</b><small class="obstacle-hint">健康を犠牲にして成長を補わない</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>若さと体力を維持しながら、仕事と事業を続ける。</p></div><div class="plan-row"><span>OBSTACLE</span><p>働きすぎによって、睡眠・運動・休息が不足する。</p></div><div class="plan-row"><span>SIGNAL</span><p>疲労の蓄積、睡眠不足、運動習慣の中断などが続く。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし健康状態や生活の質が悪化したら、仕事の量と優先順位を見直す。健康を犠牲にして事業成長を補わない。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">05</span><span><b class="obstacle-title">人に与えすぎる</b><small class="obstacle-hint">自分を犠牲にせずに与える</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>大切な人を守りながら、自分自身の生活と将来も守る。</p></div><div class="plan-row"><span>OBSTACLE</span><p>他者への支援に時間やお金を使いすぎる。</p></div><div class="plan-row"><span>SIGNAL</span><p>支援によって、自分の健康・生活・家族・資産形成・事業継続に悪影響が出始める。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし支援が自分の負担になりすぎたら、相手との関係性と自分が負うコストを確認し、支援内容を見直す。<strong>自分を犠牲にせず、納得できる範囲で与える。</strong></p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">06</span><span><b class="obstacle-title">感情による判断のぶれ</b><small class="obstacle-hint">感情を言語化し、落ち着いて選ぶ</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>自分の価値観に基づいて行動する。</p></div><div class="plan-row"><span>OBSTACLE</span><p>不安・怒り・寂しさ・焦りなどによって、冷静な判断が難しくなる。</p></div><div class="plan-row"><span>SIGNAL</span><p>根拠のない悪い未来を繰り返し想像する、衝動的に決断したくなる、感情と事実の区別が曖昧になる。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし強い感情によって判断がぶれそうになったら、まず自分の感情を言語化する。緊急性のない重要な決断は、落ち着いてから判断する。感情や欲望は否定しないが、それに従うかどうかは自分で選ぶ。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">07</span><span><b class="obstacle-title">収入の減少と資産形成の停滞</b><small class="obstacle-hint">生活と既存事業の維持を優先する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>現在の収入基盤を守りながら、収入規模と金融資産を拡大する。</p></div><div class="plan-row"><span>OBSTACLE</span><p>既存の仕事の減収、新規事業の損失、店舗開業費用などによって資金が不足する。</p></div><div class="plan-row"><span>SIGNAL</span><p>生活費、生活防衛資金、事業運転資金を維持できなくなる見通しが生じる。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし資金繰りが悪化したら、新規投資を抑え、生活と既存事業の維持を優先する。投資額や事業拡大の時期は、実際の資金状況に合わせて調整する。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">08</span><span><b class="obstacle-title">本人の労働への依存</b><small class="obstacle-hint">標準化・委任・自動化を優先する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>50歳以降は収入を維持しながら、働く時間を減らす。</p></div><div class="plan-row"><span>OBSTACLE</span><p>経営、制作、顧客対応、現場運営が自分に集中する。</p></div><div class="plan-row"><span>SIGNAL</span><p>自分が休むと業務や収益が大きく停滞する。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし自分がいなければ事業が回らない状態になったら、業務の標準化・委任・自動化を優先する。事業の規模拡大だけでなく、自分への依存度を下げることを重視する。</p></div></div></details>
+        </div>
+        <div class="operation"><h3>障害プランニングの運用</h3><ul><li>月次：現在直面している障害を確認する。</li><li>四半期：障害と対処方法を見直す。</li><li>年次：人生の目標やロードマップと合わせて更新する。</li></ul></div>
       </section>
 
-      <section class="section">
+      <section class="section" id="section-07">
         <div class="section-head"><span class="section-no">07</span><div><p class="section-label">Life Story</p><h2>人生のストーリー</h2></div></div>
         <div class="story">
           <article class="chapter"><h3>母親の逮捕</h3><p>大切な人を守るには、力が必要だと知る。</p></article>
@@ -123,16 +195,37 @@
           <article class="chapter"><h3>年収1000万円に到達する</h3><p>美容師として大台を突破する。一方で、新規事業は思うようにいかず悩む。</p></article>
           <article class="chapter"><h3>鈴ちゃんとの出会い</h3><p>鈴ちゃんとの関わりを通して、人との関わり方、自分自身の価値観、自分が大切にしたいものについて深く考えるようになる。自分自身を客観視できるようになり、人生を見る視野が広がる。複業.Lab、BDX、芸術家支援カフェなど、新しい事業アイデアも生まれる。</p></article>
           <article class="chapter"><h3>再びチームで戦うことを決意する</h3><p>一度は諦めた「人と一緒に何かをつくること」に、もう一度挑戦する。鈴ちゃんと事業をやることを決意。</p></article>
+          <article class="chapter insight"><h3>仕事をする意味を再発見する</h3><p>美容師、DJ、イベント、広告、アプリ開発。これまで取り組んできた仕事は異なっていても、その根底には「人の役に立つこと。そして、人の心を動かすこと」という共通する思いがあった。</p><p>以前は、自分の働きかけによって相手を変えたいという欲求もあった。しかし今は、自分が本当に良いと思うものを届け、その先をどう受け取るかは相手に委ねるという考え方に変わってきた。</p><p>自分の感情や欲望に正直に向き合いながら、行動は自分の価値観に基づいて選ぶ。40歳を迎え、これまで積み重ねてきた経験と能力を、新しい事業と挑戦へつなげていく。</p></article>
           <article class="chapter"><h3>人生を賭けた再挑戦が始まる</h3></article>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="section-08">
         <div class="section-head"><span class="section-no">08</span><div><p class="section-label">Goals</p><h2>これからの目標</h2></div></div>
-        <div class="goals">
-          <article class="goal"><p class="goal-label">SHORT TERM</p><h3>3事業を、継続的に価値と収益を生む事業として育てる。</h3><ul><li>複業.Lab、BDX、芸術家支援カフェの3事業すべてを育てる</li><li>比重は状況に応じて柔軟に変える</li><li>現状の健康・メンタル・人間関係・生活満足度は維持する</li></ul></article>
-          <article class="goal"><p class="goal-label">LONG TERM</p><ol><li>鈴ちゃんと会社をつくり、複業.Lab・BDX・カフェなどの事業を育て、社会に良い影響を与えられる会社にする。</li><li>娘と一緒に大学受験まで真剣に勉強し、14年後に自分も大学受験に挑戦する。</li></ol></article>
+        <p class="section-intro">40歳以降に実現したいこと。未達成の内容は将来目標として扱い、事業別の売上・利益予測は置かない。</p>
+        <div class="goal-periods">
+          <article class="period-card"><p class="period-meta">40代前半｜40〜44歳</p><h3>5年以内に事業を軌道に乗せ、会社を設立する。</h3><ul><li>複業.Lab・BDX・アーティスト支援カフェ・広告事業などを育てる。</li><li>少なくとも一つを、継続的な価値と収益を生む事業として成立させる。</li><li>鈴ちゃんとの会社設立を目指す。</li><li>現在の年間売上1,200万円を下回らないことを基準に、将来の収入規模2,000万〜3,000万円を目指す。</li><li>若さと体力を維持し、健康・家族との時間・生活の充実を大切にする。</li></ul></article>
+          <article class="period-card"><p class="period-meta">40代後半｜45〜49歳</p><h3>事業を育て、人脈と資産を増やす。</h3><ul><li>45歳頃、小規模な一人サロンとバレエスタジオを併設した施設の開業を目指す。</li><li>美容師の仕事を続け、将来的な関連収入は全体の20〜30%程度を目安とする。</li><li>事業の運営体制を整える。</li><li>人脈を増やし、信頼できる関係を育てる。</li><li>株式・債券を中心に金融資産を形成する。</li></ul></article>
+          <article class="period-card"><p class="period-meta">50代前半｜50〜54歳</p><h3>収入を維持しながら、働く時間を減らす。</h3><ul><li>事業の標準化・委任・自動化を進める。</li><li>本人が働く時間を段階的に減らす。</li><li>収入水準を維持する。</li><li>場所に縛られず経営できる体制を整える。</li><li>金融資産の形成を継続する。</li></ul></article>
+          <article class="period-card"><p class="period-meta">55歳以降</p><h3>世界中を旅しながら、好きな仕事を続ける。</h3><ul><li>世界各地を旅しながら事業を続ける。</li><li>経済的な余裕と、時間・場所の自由を手に入れる。</li><li>自分の希望に合う形で、美容師の仕事も続ける。</li><li>株式・債券を中心とした金融資産を保有・運用し続ける。</li><li>新しい挑戦や学習を続ける。</li></ul></article>
         </div>
+        <div class="asset-goal"><p><strong>55歳時点の金融資産目標</strong><br>基準目標：5,000万円 ／ 挑戦目標：1億円</p><p>これは目標額であり、運用結果の予測ではない。FIREや完全引退は目標としない。</p></div>
+        <article class="long-goal"><p class="mini-label">その他の長期目標</p><h3>娘とともに学び続け、大学受験に挑戦する。</h3><p>娘と一緒に大学受験まで真剣に勉強し、約14年後に自分も大学受験に挑戦する。</p></article>
+        <p class="income-note">現在の年間1,200万円は経費を差し引く前の売上実績。将来の2,000万〜3,000万円は本人の成長目標であり、実績や税引後所得ではない。個別事業の架空の売上、利益、収入構成は設定しない。</p>
+      </section>
+
+      <section class="section" id="section-09">
+        <div class="section-head"><span class="section-no">09</span><div><p class="section-label">Life Roadmap</p><h2>人生のロードマップ</h2></div></div>
+        <p class="statement">40歳からの15年間。<br>そして、その先へ。</p>
+        <p class="section-intro">年齢と時期に応じて、人生の方向性を確認する。</p>
+        <div class="roadmap">
+          <article class="phase"><p class="phase-meta">PHASE 1｜40〜44歳｜2026〜2031年</p><h3>事業をつくる5年間</h3><ul><li>事業を軌道に乗せる。</li><li>会社を設立する。</li><li>現在の年間売上1,200万円を基盤として、収入規模2,000万〜3,000万円を目指す。</li><li>若さと体力を維持する。</li></ul></article>
+          <article class="phase"><p class="phase-meta">PHASE 2｜45〜49歳｜2031〜2036年</p><h3>事業・人脈・資産を育てる5年間</h3><ul><li>一人サロン＋バレエスタジオの開業を目指す。</li><li>5つの収入源を育てる。</li><li>事業の運営体制を整える。</li><li>人脈と金融資産を増やす。</li><li>美容師の仕事を続ける。</li></ul></article>
+          <article class="phase"><p class="phase-meta">PHASE 3｜50〜54歳｜2036〜2041年</p><h3>時間の自由を増やす5年間</h3><ul><li>収入を維持する。</li><li>働く時間を段階的に減らす。</li><li>事業の標準化・委任・自動化を進める。</li><li>株式・債券を中心に資産形成を続ける。</li><li>世界を旅しながら働く準備を整える。</li></ul></article>
+          <article class="phase destination"><p class="phase-meta">PHASE 4｜55歳以降｜2041年〜</p><h3>世界を旅しながら、自由に働く。</h3><ul><li>世界中を旅しながら事業を続ける。</li><li>自分が望む時間と場所で仕事をする。</li><li>美容師としての活動も続ける。</li><li>人とのつながりや好奇心を大切にし、新しい価値を生み出し続ける。</li></ul></article>
+        </div>
+        <div class="cross-goal"><b>若さ・体力・健康を維持する。</b><p>40代だけでなく、その先の人生においても継続する横断的な目標。</p></div>
+        <div class="income-sources"><h3>5つの収入源</h3><div class="income-grid"><div><span>複業.Lab</span></div><div><span>BDX</span></div><div><span>アーティスト支援カフェ</span></div><div><span>一人サロン＋バレエスタジオ</span></div><div><span>広告事業</span></div></div><p>現時点で未成立の事業は将来目標として扱う。収益化済み、または共同事業の利益がすべて本人に帰属するかのような表現はしない。</p></div>
       </section>
     </article>
     <footer>© 合同会社 nature · SAT's Database</footer>
