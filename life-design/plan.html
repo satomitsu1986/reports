@@ -62,6 +62,7 @@
     .numbered{display:grid;gap:10px;list-style:none;counter-reset:item}
     .numbered li{counter-increment:item;padding:18px 20px;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);font-size:15px;line-height:1.85}
     .numbered li::before{content:counter(item,decimal-leading-zero);color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1.35}
+    .strategy-list strong{display:block;font-size:15px;font-weight:500}.strategy-list p{margin-top:5px;color:var(--muted);font-size:13px;line-height:1.85}
     .rule-list li{font-weight:500}
     .obstacle-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .obstacle{align-self:start;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}
@@ -89,14 +90,8 @@
     .chapter h3{font-size:1rem;font-weight:500;line-height:1.6}.chapter p{max-width:760px;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.95}.chapter .chapter-age{margin:0 0 5px;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.18em}
     .chapter.insight{margin:6px 0 30px;padding:24px 24px 24px 42px;border:1px solid rgba(210,173,111,.25);border-radius:14px;background:rgba(210,173,111,.06)}
     .chapter.insight::before{top:30px}
-    .goal-periods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .period-card{padding:24px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.035)}
-    .period-meta{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.18em}
-    .period-card h3{margin-top:9px;font-size:1.05rem;font-weight:500;line-height:1.7}.period-card ul{margin:14px 0 0 1.2rem;color:var(--muted)}.period-card li{padding-left:4px;font-size:13px;line-height:1.9}
     .asset-goal{margin-top:12px;padding:22px;border-left:3px solid var(--gold);border-radius:0 13px 13px 0;background:rgba(210,173,111,.07)}
     .asset-goal p{color:var(--muted);font-size:13px;line-height:1.85}.asset-goal strong{color:var(--text)}
-    .long-goal{margin-top:12px;padding:22px;border:1px solid rgba(125,223,195,.2);border-radius:14px;background:rgba(125,223,195,.055)}
-    .long-goal h3{font-size:1rem;font-weight:500}.long-goal p{margin-top:9px;color:var(--muted);font-size:13px;line-height:1.85}
     .income-note{margin-top:12px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:12px;line-height:1.8}
     .roadmap{position:relative;display:grid;gap:16px}
     .roadmap::before{content:"";position:absolute;top:28px;bottom:28px;left:24px;width:1px;background:linear-gradient(var(--mint),var(--gold),var(--coral))}
@@ -105,7 +100,7 @@
     .phase:nth-child(2)::before,.phase:nth-child(3)::before{background:var(--gold);box-shadow:0 0 0 1px var(--gold)}.phase:last-child::before{background:var(--coral);box-shadow:0 0 0 1px var(--coral)}
     .phase-meta{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.16em}.phase h3{margin-top:8px;font-size:1.1rem;font-weight:500;line-height:1.6}.phase ul{margin:13px 0 0 1.2rem;color:var(--muted)}.phase li{padding-left:4px;font-size:13px;line-height:1.85}
     .phase.destination{border-color:rgba(255,143,112,.25);background:linear-gradient(120deg,rgba(255,143,112,.1),rgba(255,255,255,.025))}
-    .cross-goal{margin-top:22px;padding:22px;border-left:4px solid var(--mint);border-radius:0 14px 14px 0;background:rgba(125,223,195,.07)}.cross-goal b{font-size:1rem}.cross-goal p{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.8}
+    .cross-goal{margin-top:22px;padding:22px;border-left:4px solid var(--mint);border-radius:0 14px 14px 0;background:rgba(125,223,195,.07)}.cross-goal b{font-size:1rem}.cross-goal p{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.8}.cross-goal ul{margin:12px 0 0 1.2rem;color:var(--muted)}.cross-goal li{padding-left:4px;font-size:13px;line-height:1.9}
     .income-sources{margin-top:24px}.income-sources h3{font-size:1rem;font-weight:500}.income-grid{margin-top:12px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;counter-reset:income}.income-grid div{counter-increment:income;min-height:104px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03)}.income-grid div::before{content:counter(income,decimal-leading-zero);color:var(--low);font-family:"Cormorant Garamond",serif;font-size:1.2rem}.income-grid span{font-size:12px;line-height:1.6}
     .income-sources>p{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.8}
     footer{margin-top:54px;padding-top:24px;border-top:1px solid var(--line);color:var(--low);font-size:10px;letter-spacing:.18em;text-align:center}
@@ -115,7 +110,7 @@
       .page{padding:56px 0 64px}.hero{padding-bottom:42px}h1{font-size:clamp(3rem,17vw,4.5rem)}.lead{font-size:14px}.design-flow{padding:22px 20px}.design-flow ol{display:grid;gap:6px}.design-flow li:not(:last-child)::after{content:"↓";margin-left:8px}
       .section{padding:26px 20px}.section-head{grid-template-columns:42px 1fr;gap:12px;margin-bottom:22px}.section-no{font-size:1.8rem}.purpose-card{padding:22px 20px}.purpose-card.secondary{margin-left:20px}
       .value-grid{grid-template-columns:1fr 1fr}.value{min-height:104px;padding:16px}.numbered li{grid-template-columns:32px 1fr;padding:16px;gap:10px;font-size:14px}
-      .obstacle-list,.goal-periods{grid-template-columns:1fr}.obstacle summary{min-height:86px;padding:18px 16px;grid-template-columns:32px 1fr 20px}.obstacle-body{padding:0 16px 16px}
+      .obstacle-list{grid-template-columns:1fr}.obstacle summary{min-height:86px;padding:18px 16px;grid-template-columns:32px 1fr 20px}.obstacle-body{padding:0 16px 16px}
       .chapter{padding-left:34px}.chapter.insight{padding:22px 18px 22px 34px}.roadmap::before{left:9px}.phase{margin-left:34px;padding:21px 19px}.phase::before{left:-31px}
       .income-grid{grid-template-columns:1fr 1fr}.income-grid div{min-height:92px}.income-grid div:last-child{grid-column:1/-1}
     }
@@ -125,13 +120,13 @@
 </head>
 <body>
   <header class="topbar"><a class="back" href="./" aria-label="人生設計の一覧へ戻る">← 人生設計</a><span class="mark">SAT'S DATABASE</span></header>
-  <nav class="section-nav" aria-label="人生設計書の目次"><a href="#section-01">01 PURPOSE</a><a href="#section-02">02 VALUES</a><a href="#section-03">03 POLICY</a><a href="#section-04">04 STRATEGY</a><a href="#section-05">05 RULES</a><a href="#section-06">06 OBSTACLES</a><a href="#section-07">07 STORY</a><a href="#section-08">08 GOALS</a><a href="#section-09">09 ROADMAP</a></nav>
+  <nav class="section-nav" aria-label="人生設計書の目次"><a href="#section-01">01 PURPOSE</a><a href="#section-02">02 VALUES</a><a href="#section-03">03 STRATEGY</a><a href="#section-04">04 RULES</a><a href="#section-05">05 OBSTACLES</a><a href="#section-06">06 STORY</a><a href="#section-07">07 ROADMAP</a></nav>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">Life Design</p>
       <h1>人生設計書</h1><span class="version">VERSION 2.0 · FROM AGE 40</span>
       <p class="lead">何のために生き、どういう人間で在りたいのか。そのための戦略、日々のマイルール、障害への備え、40歳から実現する未来を一つにつなぐ。</p>
-      <div class="design-flow"><ol><li>人生の目的</li><li>理想の在り方</li><li>最重要方針</li><li>オンリーワン戦略</li><li>マイルールと障害プランニング</li><li>目標・ロードマップ</li></ol></div>
+      <div class="design-flow"><ol><li>人生の目的・理想の在り方</li><li>価値観</li><li>独自価値戦略</li><li>マイルール</li><li>障害プランニング</li><li>人生のストーリー</li><li>人生のロードマップ</li></ol></div>
     </header>
 
     <article class="document">
@@ -139,9 +134,9 @@
         <div class="section-head"><span class="section-no">01</span><div><p class="section-label">Purpose &amp; Ideal Self</p><h2>人生の目的・理想の在り方</h2></div></div>
         <div class="purpose-stack">
           <article class="purpose-card primary"><p class="mini-label">人生の目的</p><p class="statement">大切な人を守ること。</p></article>
-          <article class="purpose-card secondary"><p class="mini-label">理想の在り方</p><p class="statement">人の心を動かす人になる。</p></article>
+          <article class="purpose-card secondary"><p class="mini-label">理想の在り方</p><p class="statement">人の心を動かせる人間になる。</p></article>
         </div>
-        <div class="purpose-copy"><p>大切な人を守るために、自分自身の能力と価値を高めたい。自分にとって魅力的な人間とは、どんな人間なのか。その問いに対して、これまで追求してきた答えが「人の心を動かす人」だった。</p><p>美容師、DJ、イベント、広告、アプリ開発。活動する分野は異なっても、人の役に立ち、感動を届けたいという思いは変わらない。</p><p>相手を変えたり、コントロールしたりすることが目的ではない。自分が本当に良いと思える価値を届け、その先で何を感じ、どう行動するかは相手に委ねる。</p></div>
+        <div class="purpose-copy"><p>人生の目的は、人生を通じて実現したいこと。理想の在り方は、そのために自分がどういう人間で在りたいかを示す。</p><p>大切な人を守るために、自分自身の能力と価値を高めたい。自分にとって魅力的な人間とは、どんな人間なのか。その問いに対して、これまで追求してきた答えが「人の心を動かせる人間」だった。</p><p>美容師、DJ、イベント、広告、アプリ開発。活動する分野は異なっても、人の役に立ち、感動を届けたいという思いは変わらない。</p><p>相手を変えたり、コントロールしたりすることが目的ではない。自分が本当に良いと思える価値を届け、その先で何を感じ、どう行動するかは相手に委ねる。</p></div>
       </section>
 
       <section class="section" id="section-02">
@@ -150,24 +145,19 @@
       </section>
 
       <section class="section" id="section-03">
-        <div class="section-head"><span class="section-no">03</span><div><p class="section-label">Primary Policy</p><h2>最重要方針</h2></div></div>
+        <div class="section-head"><span class="section-no">03</span><div><p class="section-label">Unique Value Strategy</p><h2>独自価値戦略</h2></div></div>
         <p class="statement">独自の価値をつくる。</p>
-        <p class="support">「人の心を動かす人になる」という理想を実現するために、独自の価値をつくり続ける。知識、技術、経験、創造性を磨き、自分が本当に良いと思うものを形にする。自分自身が独自の価値を持ち、社会の中で必要とされ続ける。</p>
+        <p class="support"><strong>人の心を動かせる人間になるために。</strong><br>知識、技術、経験、創造性を磨き、自分が本当に良いと思うものを形にする。自分自身が独自の価値を持ち、社会の中で必要とされ続ける。</p>
+        <ol class="numbered strategy-list"><li><div><strong>人と違うことをする。</strong><p>常識や既存の枠組みにとらわれず、自分ならではの可能性を探す。</p></div></li><li><div><strong>異分野のスキルを掛け合わせる。</strong><p>異なる分野の知識や経験を組み合わせ、自分にしか生み出せない価値をつくる。</p></div></li><li><div><strong>小さく試して、大きく育てる。</strong><p>アイデアを行動に移し、実際の反応から学びながら育てる。</p></div></li></ol>
       </section>
 
       <section class="section" id="section-04">
-        <div class="section-head"><span class="section-no">04</span><div><p class="section-label">Only-One Strategy</p><h2>オンリーワン戦略</h2></div></div>
-        <p class="section-intro">「独自の価値をつくる」を実践するための3つの戦略。</p>
-        <ol class="numbered"><li>他人とは違うことをする。</li><li>異分野スキルを掛け合わせる。</li><li>小さく試して、大きく育てる。</li></ol>
+        <div class="section-head"><span class="section-no">04</span><div><p class="section-label">My Rules</p><h2>マイルール</h2></div></div>
+        <ol class="numbered rule-list"><li>「他人にどう思われるか」ではなく、「自分はどういう人で在りたいか」を基準にする。</li><li>重要な決断で迷ったら、「20年後の自分は今の自分にどんな助言をするか」を考える。</li><li>嫌なことがあったら、「ラッキー」な要素を一つ探す。</li></ol>
       </section>
 
       <section class="section" id="section-05">
-        <div class="section-head"><span class="section-no">05</span><div><p class="section-label">My Rules</p><h2>マイルール</h2></div></div>
-        <ol class="numbered rule-list"><li>「他人にどう思われるか」ではなく、「自分はどういう人で在りたいか」を基準にする。</li><li>重要な決断で迷ったら、「20年後の自分は今の自分にどんな助言をするか」を考える。</li><li>嫌なことがあったら、ラッキーな要素を一つ探す。</li></ol>
-      </section>
-
-      <section class="section" id="section-06">
-        <div class="section-head"><span class="section-no">06</span><div><p class="section-label">Obstacle Planning</p><h2>障害プランニング</h2></div></div>
+        <div class="section-head"><span class="section-no">05</span><div><p class="section-label">Obstacle Planning</p><h2>障害プランニング</h2></div></div>
         <p class="statement">障害を想定し、行動を決めておく。</p>
         <p class="section-intro">障害が起きることを悲観するのではなく、発生しても冷静に対処できる状態をつくる。ここで扱う障害は将来に備えた仮説であり、すでに発生した事実ではない。</p>
         <div class="obstacle-list">
@@ -183,8 +173,8 @@
         <div class="operation"><h3>障害プランニングの運用</h3><ul><li>月次：現在直面している障害を確認する。</li><li>四半期：障害と対処方法を見直す。</li><li>年次：人生の目標やロードマップと合わせて更新する。</li></ul></div>
       </section>
 
-      <section class="section" id="section-07">
-        <div class="section-head"><span class="section-no">07</span><div><p class="section-label">Life Story</p><h2>人生のストーリー</h2></div></div>
+      <section class="section" id="section-06">
+        <div class="section-head"><span class="section-no">06</span><div><p class="section-label">Life Story</p><h2>人生のストーリー</h2></div></div>
         <div class="story">
           <article class="chapter"><p class="chapter-age">17歳</p><h3>母親の逮捕</h3><p>大切な人を守るには、力が必要だと知る。</p></article>
           <article class="chapter"><h3>手に職をつける</h3><p>美容師として専門性を身につける。</p></article>
@@ -200,32 +190,20 @@
         </div>
       </section>
 
-      <section class="section" id="section-08">
-        <div class="section-head"><span class="section-no">08</span><div><p class="section-label">Goals</p><h2>これからの目標</h2></div></div>
-        <p class="section-intro">40歳以降に実現したいこと。未達成の内容は将来目標として扱い、事業別の売上・利益予測は置かない。</p>
-        <div class="goal-periods">
-          <article class="period-card"><p class="period-meta">40代前半｜40〜44歳</p><h3>5年以内に事業を軌道に乗せ、会社を設立する。</h3><ul><li>複業.Lab・BDX・アーティスト支援カフェ・広告事業などを育てる。</li><li>少なくとも一つを、継続的な価値と収益を生む事業として成立させる。</li><li>ビジネスパートナーとの会社設立を目指す。</li><li>現在の年間売上1,200万円を下回らないことを基準に、将来の収入規模2,000万〜3,000万円を目指す。</li><li>若さと体力を維持し、健康・家族との時間・生活の充実を大切にする。</li></ul></article>
-          <article class="period-card"><p class="period-meta">40代後半｜45〜49歳</p><h3>事業を育て、人脈と資産を増やす。</h3><ul><li>45歳頃、小規模な一人サロンとバレエスタジオを併設した施設の開業を目指す。</li><li>美容師の仕事を続け、将来的な関連収入は全体の20〜30%程度を目安とする。</li><li>事業の運営体制を整える。</li><li>人脈を増やし、信頼できる関係を育てる。</li><li>株式・債券を中心に金融資産を形成する。</li></ul></article>
-          <article class="period-card"><p class="period-meta">50代前半｜50〜54歳</p><h3>収入を維持しながら、働く時間を減らす。</h3><ul><li>事業の標準化・委任・自動化を進める。</li><li>本人が働く時間を段階的に減らす。</li><li>収入水準を維持する。</li><li>場所に縛られず経営できる体制を整える。</li><li>金融資産の形成を継続する。</li></ul></article>
-          <article class="period-card"><p class="period-meta">55歳以降</p><h3>世界中を旅しながら、好きな仕事を続ける。</h3><ul><li>世界各地を旅しながら事業を続ける。</li><li>経済的な余裕と、時間・場所の自由を手に入れる。</li><li>自分の希望に合う形で、美容師の仕事も続ける。</li><li>株式・債券を中心とした金融資産を保有・運用し続ける。</li><li>新しい挑戦や学習を続ける。</li></ul></article>
-        </div>
-        <div class="asset-goal"><p><strong>55歳時点の金融資産目標</strong><br>基準目標：5,000万円 ／ 挑戦目標：1億円</p><p>これは目標額であり、運用結果の予測ではない。FIREや完全引退は目標としない。</p></div>
-        <article class="long-goal"><p class="mini-label">その他の長期目標</p><h3>娘とともに学び続け、大学受験に挑戦する。</h3><p>娘と一緒に大学受験まで真剣に勉強し、約14年後に自分も大学受験に挑戦する。</p></article>
-        <p class="income-note">現在の年間1,200万円は経費を差し引く前の売上実績。将来の2,000万〜3,000万円は本人の成長目標であり、実績や税引後所得ではない。個別事業の架空の売上、利益、収入構成は設定しない。</p>
-      </section>
-
-      <section class="section" id="section-09">
-        <div class="section-head"><span class="section-no">09</span><div><p class="section-label">Life Roadmap</p><h2>人生のロードマップ</h2></div></div>
+      <section class="section" id="section-07">
+        <div class="section-head"><span class="section-no">07</span><div><p class="section-label">Life Roadmap</p><h2>人生のロードマップ</h2></div></div>
         <p class="statement">40歳からの15年間。<br>そして、その先へ。</p>
-        <p class="section-intro">年齢と時期に応じて、人生の方向性を確認する。</p>
+        <p class="section-intro">これからの目標と時間軸を一つにまとめ、年齢に応じた人生の方向性を確認する。</p>
         <div class="roadmap">
-          <article class="phase"><p class="phase-meta">PHASE 1｜40〜44歳｜2026〜2031年</p><h3>事業をつくる5年間</h3><ul><li>事業を軌道に乗せる。</li><li>会社を設立する。</li><li>現在の年間売上1,200万円を基盤として、収入規模2,000万〜3,000万円を目指す。</li><li>若さと体力を維持する。</li></ul></article>
-          <article class="phase"><p class="phase-meta">PHASE 2｜45〜49歳｜2031〜2036年</p><h3>事業・人脈・資産を育てる5年間</h3><ul><li>一人サロン＋バレエスタジオの開業を目指す。</li><li>5つの収入源を育てる。</li><li>事業の運営体制を整える。</li><li>人脈と金融資産を増やす。</li><li>美容師の仕事を続ける。</li></ul></article>
-          <article class="phase"><p class="phase-meta">PHASE 3｜50〜54歳｜2036〜2041年</p><h3>時間の自由を増やす5年間</h3><ul><li>収入を維持する。</li><li>働く時間を段階的に減らす。</li><li>事業の標準化・委任・自動化を進める。</li><li>株式・債券を中心に資産形成を続ける。</li><li>世界を旅しながら働く準備を整える。</li></ul></article>
-          <article class="phase destination"><p class="phase-meta">PHASE 4｜55歳以降｜2041年〜</p><h3>世界を旅しながら、自由に働く。</h3><ul><li>世界中を旅しながら事業を続ける。</li><li>自分が望む時間と場所で仕事をする。</li><li>美容師としての活動も続ける。</li><li>人とのつながりや好奇心を大切にし、新しい価値を生み出し続ける。</li></ul></article>
+          <article class="phase"><p class="phase-meta">PHASE 1｜40〜44歳</p><h3>事業をつくる5年間</h3><ul><li>少なくとも一つの事業を軌道に乗せる。</li><li>ビジネスパートナーとの会社設立を目指す。</li><li>現在の年間売上1,200万円を下回らないことを目標とする。</li><li>将来的に年間売上規模2,000万〜3,000万円を目指す。</li><li>若さ・体力・健康を維持する。</li></ul></article>
+          <article class="phase"><p class="phase-meta">PHASE 2｜45〜49歳</p><h3>事業・人脈・資産を育てる5年間</h3><ul><li>45歳頃、一人サロン＋バレエスタジオの開業を目指す。</li><li>複数の事業を成長させる。</li><li>人脈を広げる。</li><li>株式・債券を中心に金融資産を形成する。</li><li>美容師の仕事を継続する。</li></ul></article>
+          <article class="phase"><p class="phase-meta">PHASE 3｜50〜54歳</p><h3>時間の自由を増やす5年間</h3><ul><li>収入水準を維持する。</li><li>本人の労働時間を段階的に減らす。</li><li>事業の標準化・委任・自動化を進める。</li><li>場所に縛られず事業を運営できる体制を整える。</li><li>金融資産の形成を継続する。</li></ul></article>
+          <article class="phase destination"><p class="phase-meta">PHASE 4｜55歳以降</p><h3>世界を旅しながら、自由に働く。</h3><ul><li>世界中を旅しながら事業を続ける。</li><li>自分が望む時間と場所で仕事をする。</li><li>美容師の仕事も、自分の希望に合う形で継続する。</li><li>金融資産を保有・運用し続ける。</li><li>学習と新しい挑戦を続ける。</li></ul></article>
         </div>
-        <div class="cross-goal"><b>若さ・体力・健康を維持する。</b><p>40代だけでなく、その先の人生においても継続する横断的な目標。</p></div>
-        <div class="income-sources"><h3>5つの収入源</h3><div class="income-grid"><div><span>複業.Lab</span></div><div><span>BDX</span></div><div><span>アーティスト支援カフェ</span></div><div><span>一人サロン＋バレエスタジオ</span></div><div><span>広告事業</span></div></div><p>現時点で未成立の事業は将来目標として扱う。収益化済み、または共同事業の利益がすべて本人に帰属するかのような表現はしない。</p></div>
+        <div class="asset-goal"><p><strong>55歳時点の金融資産目標</strong><br>基準目標：5,000万円 ／ 挑戦目標：1億円</p><p>これは目標額であり、運用結果の予測ではない。</p></div>
+        <div class="income-sources"><h3>5つの事業</h3><div class="income-grid"><div><span>複業.Lab</span></div><div><span>BDX</span></div><div><span>アーティスト支援カフェ</span></div><div><span>一人サロン＋バレエスタジオ</span></div><div><span>広告事業</span></div></div><p>現時点で未成立の事業は将来目標として扱う。事業ごとの架空の売上・利益予測は設定しない。</p></div>
+        <div class="cross-goal"><b>生涯を通じた目標</b><ul><li>若さ・体力・健康を維持する。</li><li>娘とともに学び、大学受験に挑戦する。</li><li>家族との時間を大切にする。</li></ul></div>
+        <p class="income-note">現在の1,200万円は経費控除前の年間売上。将来の2,000万〜3,000万円も、同じ指標による目標として扱う。</p>
       </section>
     </article>
     <footer>© 合同会社 nature · SAT's Database</footer>
