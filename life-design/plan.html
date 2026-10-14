@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="人生の目的、理想の在り方、価値観、戦略、マイルール、障害プランニング、40歳からの目標とロードマップを一つにつないだ人生設計書。" />
+  <meta name="description" content="人生の目的、価値観、創造的自己満足、独自価値戦略、マイルール、障害プランニング、40歳からのロードマップを一つにつないだ人生設計書。" />
   <meta name="theme-color" content="#0a0a0a" />
-  <meta property="og:title" content="人生設計書 v2.0 | SAT's Database" />
-  <meta property="og:description" content="40歳からの人生設計・障害プランニング・ロードマップ。" />
+  <meta property="og:title" content="人生設計書 vNext | SAT's Database" />
+  <meta property="og:description" content="創造的自己満足を原動力に、独自の価値をつくる40歳からの人生設計書。" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://satomitsu1986.github.io/reports/life-design/plan.html" />
-  <title>人生設計書 v2.0 | SAT's Database</title>
+  <title>人生設計書 vNext | SAT's Database</title>
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#090909;--surface:#151515;--surface-hi:#201e1c;--surface-soft:#25221f;--line:rgba(255,255,255,.1);--line-strong:rgba(255,255,255,.18);--gold:#d2ad6f;--mint:#7ddfc3;--coral:#ff8f70;--text:#f7f1e8;--muted:#aaa095;--low:#70675e;--radius:18px}
     html{background:var(--bg);color:var(--text);scroll-behavior:smooth;scroll-padding-top:74px;font-family:Inter,"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
-    body{min-height:100vh;background:radial-gradient(circle at 10% 4%,rgba(125,223,195,.12),transparent 30rem),radial-gradient(circle at 92% 8%,rgba(255,143,112,.1),transparent 28rem),linear-gradient(180deg,#090909 0%,#12100f 46%,#080808 100%);overflow-wrap:anywhere}
+    body{min-height:100vh;background:radial-gradient(circle at 10% 4%,rgba(125,223,195,.12),transparent 30rem),radial-gradient(circle at 92% 8%,rgba(255,143,112,.1),transparent 28rem),linear-gradient(180deg,#090909 0%,#12100f 46%,#080808 100%);word-break:normal;line-break:strict;overflow-wrap:break-word}
     a{color:inherit}
     .topbar{width:min(1040px,calc(100% - 32px));min-height:64px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
     .back{min-height:44px;display:inline-flex;align-items:center;color:var(--mint);font-size:11px;font-weight:600;letter-spacing:.12em;text-decoration:none}
@@ -63,7 +63,16 @@
     .numbered li{counter-increment:item;padding:18px 20px;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);font-size:15px;line-height:1.85}
     .numbered li::before{content:counter(item,decimal-leading-zero);color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1.35}
     .strategy-list strong{display:block;font-size:15px;font-weight:500}.strategy-list p{margin-top:5px;color:var(--muted);font-size:13px;line-height:1.85}
+    .creative-philosophy{margin:30px 0;padding:30px;border:1px solid rgba(125,223,195,.3);border-radius:16px;background:radial-gradient(circle at 100% 0,rgba(210,173,111,.13),transparent 24rem),linear-gradient(135deg,rgba(125,223,195,.11),rgba(255,255,255,.025))}
+    .creative-philosophy .mini-label{color:var(--mint)}
+    .creative-philosophy h3{margin-top:9px;font-family:"Cormorant Garamond","Noto Sans JP",serif;font-size:clamp(1.65rem,4vw,2.35rem);font-weight:400;line-height:1.5;letter-spacing:.05em;text-wrap:balance}
+    .creative-catch{margin-top:16px;color:var(--text);font-size:clamp(1.05rem,2.6vw,1.3rem);font-weight:500;line-height:1.85;text-wrap:balance}.creative-catch span{display:block;color:var(--gold)}
+    .creative-copy{margin-top:22px;padding-top:21px;border-top:1px solid var(--line)}.creative-copy p{color:var(--muted);font-size:14px;line-height:2}.creative-copy p+p{margin-top:12px}
+    .creative-core{margin-top:22px;padding:20px;border-left:3px solid var(--mint);border-radius:0 12px 12px 0;background:rgba(9,9,9,.26);color:var(--text);font-size:clamp(1rem,2.8vw,1.25rem);font-weight:500;line-height:1.8;text-wrap:balance}
+    .principle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:24px}.principle{min-width:0;padding:20px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035)}.principle b{display:block;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:400}.principle h4{margin-top:8px;font-size:14px;font-weight:500;line-height:1.65}.principle p{margin-top:9px;color:var(--muted);font-size:12px;line-height:1.8}
+    .strategy-relation{margin-top:24px;display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}.strategy-relation div{padding:18px;border:1px solid var(--line);border-radius:12px;background:rgba(9,9,9,.24);text-align:center}.strategy-relation b,.strategy-relation span{display:block}.strategy-relation b{color:var(--mint);font-size:10px;letter-spacing:.16em}.strategy-relation span{margin-top:6px;font-size:13px;line-height:1.7}.strategy-relation i{color:var(--gold);font-style:normal;font-weight:600}.strategy-subhead{margin:28px 0 14px;color:var(--text);font-size:1rem;font-weight:500;letter-spacing:.08em}
     .rule-list li{font-weight:500}
+    .rule-connection{margin-top:18px;padding:18px 20px;border-left:3px solid var(--mint);border-radius:0 12px 12px 0;background:rgba(125,223,195,.06);color:var(--muted);font-size:13px;line-height:1.9}.rule-connection strong{color:var(--text);font-weight:500}
     .obstacle-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .obstacle{align-self:start;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}
     .obstacle[open]{border-color:rgba(125,223,195,.28);background:rgba(125,223,195,.045)}
@@ -77,7 +86,7 @@
     .obstacle-body{padding:0 20px 20px}
     .plan-row{padding:15px 0;border-top:1px solid var(--line)}
     .plan-row span{display:block;color:var(--gold);font-size:9px;font-weight:600;letter-spacing:.18em}
-    .plan-row p{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.85}
+    .plan-row p{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.85}.signal-points{margin:8px 0 0 1.1rem;color:var(--muted)}.signal-points li{padding-left:3px;font-size:13px;line-height:1.8}
     .plan-row.action{margin-top:2px;padding:17px;border:1px solid rgba(125,223,195,.22);border-radius:12px;background:rgba(125,223,195,.07)}
     .plan-row.action span{color:var(--mint)}.plan-row.action p{color:var(--text)}
     .operation{margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
@@ -90,6 +99,7 @@
     .chapter h3{font-size:1rem;font-weight:500;line-height:1.6}.chapter p{max-width:760px;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.95}.chapter .chapter-age{margin:0 0 5px;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.18em}
     .chapter.insight{margin:6px 0 30px;padding:24px 24px 24px 42px;border:1px solid rgba(210,173,111,.25);border-radius:14px;background:rgba(210,173,111,.06)}
     .chapter.insight::before{top:30px}
+    .chapter.turning-point{margin:6px 0 30px;padding:28px 28px 28px 42px;border:1px solid rgba(255,143,112,.3);border-radius:14px;background:radial-gradient(circle at 100% 0,rgba(255,143,112,.12),transparent 25rem),rgba(255,255,255,.025)}.chapter.turning-point::before{top:34px;background:var(--coral);box-shadow:0 0 0 1px var(--coral)}.chapter.turning-point h3{font-size:1.15rem}.chapter.turning-point p{margin-top:13px;line-height:2}.story-shift{margin-top:22px;padding:22px;border-left:3px solid var(--coral);border-radius:0 13px 13px 0;background:rgba(255,143,112,.08);font-family:"Cormorant Garamond","Noto Sans JP",serif;font-style:normal;line-height:1.75}.story-shift span,.story-shift strong{display:block}.story-shift span{color:var(--muted);font-size:clamp(1rem,2.6vw,1.2rem);font-weight:400}.story-shift strong{margin-top:3px;color:var(--text);font-size:clamp(1.15rem,3vw,1.45rem);font-weight:500}
     .asset-goal{margin-top:12px;padding:22px;border-left:3px solid var(--gold);border-radius:0 13px 13px 0;background:rgba(210,173,111,.07)}
     .asset-goal p{color:var(--muted);font-size:13px;line-height:1.85}.asset-goal strong{color:var(--text)}
     .income-note{margin-top:12px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:12px;line-height:1.8}
@@ -109,9 +119,9 @@
       html{scroll-padding-top:58px}.topbar,.page{width:min(100% - 28px,960px)}.mark{font-size:8px}.section-nav{padding-inline:8px}.section-nav a{padding-inline:11px;font-size:9px}
       .page{padding:56px 0 64px}.hero{padding-bottom:42px}h1{font-size:clamp(3rem,17vw,4.5rem)}.lead{font-size:14px}.design-flow{padding:22px 20px}.design-flow ol{display:grid;gap:6px}.design-flow li:not(:last-child)::after{content:"↓";margin-left:8px}
       .section{padding:26px 20px}.section-head{grid-template-columns:42px 1fr;gap:12px;margin-bottom:22px}.section-no{font-size:1.8rem}.purpose-card{padding:22px 20px}.purpose-card.secondary{margin-left:20px}
-      .value-grid{grid-template-columns:1fr 1fr}.value{min-height:104px;padding:16px}.numbered li{grid-template-columns:32px 1fr;padding:16px;gap:10px;font-size:14px}
+      .value-grid{grid-template-columns:1fr 1fr}.value{min-height:104px;padding:16px}.numbered li{grid-template-columns:32px 1fr;padding:16px;gap:10px;font-size:14px}.creative-philosophy{padding:24px 20px}.principle-grid,.strategy-relation{grid-template-columns:1fr}.strategy-relation i{transform:rotate(90deg);text-align:center}
       .obstacle-list{grid-template-columns:1fr}.obstacle summary{min-height:86px;padding:18px 16px;grid-template-columns:32px 1fr 20px}.obstacle-body{padding:0 16px 16px}
-      .chapter{padding-left:34px}.chapter.insight{padding:22px 18px 22px 34px}.roadmap::before{left:9px}.phase{margin-left:34px;padding:21px 19px}.phase::before{left:-31px}
+      .chapter{padding-left:34px}.chapter.insight{padding:22px 18px 22px 34px}.chapter.turning-point{padding:24px 18px 24px 34px}.story-shift{padding:19px 17px}.roadmap::before{left:9px}.phase{margin-left:34px;padding:21px 19px}.phase::before{left:-31px}
       .income-grid{grid-template-columns:1fr 1fr}.income-grid div{min-height:92px}.income-grid div:last-child{grid-column:1/-1}
     }
     @media(max-width:390px){.topbar,.page{width:calc(100% - 24px)}.section{padding-inline:17px}.purpose-card.secondary{margin-left:12px}.value-grid{gap:8px}.income-grid{grid-template-columns:1fr}}
@@ -124,7 +134,7 @@
   <main class="page">
     <header class="hero">
       <p class="eyebrow">Life Design</p>
-      <h1>人生設計書</h1><span class="version">VERSION 2.0 · FROM AGE 40</span>
+      <h1>人生設計書</h1><span class="version">VERSION NEXT · FROM AGE 40</span>
       <p class="lead">何のために生き、どういう人間で在りたいのか。そのための戦略、日々のマイルール、障害への備え、40歳から実現する未来を一つにつなぐ。</p>
       <div class="design-flow"><ol><li>人生の目的・理想の在り方</li><li>価値観</li><li>独自価値戦略</li><li>マイルール</li><li>障害プランニング</li><li>人生のストーリー</li><li>人生のロードマップ</li></ol></div>
     </header>
@@ -148,12 +158,34 @@
         <div class="section-head"><span class="section-no">03</span><div><p class="section-label">Unique Value Strategy</p><h2>独自価値戦略</h2></div></div>
         <p class="statement">独自の価値をつくる。</p>
         <p class="support"><strong>人の心を動かせる人間になるために。</strong><br>知識、技術、経験、創造性を磨き、自分が本当に良いと思うものを形にする。自分自身が独自の価値を持ち、社会の中で必要とされ続ける。</p>
+        <div class="creative-philosophy">
+          <p class="mini-label">Creative Self-Fulfillment</p>
+          <h3>創造的自己満足の追求</h3>
+          <p class="creative-catch">自分が心から素晴らしいと思うものを追求する。<span>その結果として、人の心を動かす。</span></p>
+          <div class="creative-copy">
+            <p>相手が求めているものを届けるだけでなく、自分が本当に価値を感じるものを生み出し、自分の意思で届けたい。</p>
+            <p>相手の期待に応える能力は大切だ。しかし、相手の期待に合わせることだけを目指していては、相手自身もまだ想像していないような価値を生み出すことは難しい。</p>
+            <p>誰かが喜んでくれるか、認めてくれるかを、挑戦するための絶対条件にしない。</p>
+            <p>自分が素晴らしいと信じるものを追求する。受け取ってもらえるかどうかは、相手の自由。</p>
+            <p>たとえ受け取ってもらえなくても、その反応から学び、次の創造につなげる。</p>
+            <p>自己満足を極め、社会に価値を生み出す。</p>
+          </div>
+          <p class="creative-core">創造的自己満足を極め、人の心を動かし、社会に良い影響を与える。</p>
+          <div class="principle-grid">
+            <article class="principle"><b>01</b><h4>自分の意思を起点にする</h4><p>相手の期待や評価ではなく、自分が何を生み出したいか、何を届けたいかを基準にする。</p></article>
+            <article class="principle"><b>02</b><h4>配慮は残し、遠慮は手放す</h4><p>相手の意思や自由は尊重する。しかし、嫌われることを恐れて、自分の創造性や挑戦を制限しない。</p></article>
+            <article class="principle"><b>03</b><h4>評価に支配されず、反応から学ぶ</h4><p>結果はコントロールできない。それでも、自分が信じる価値を追求し、実際の反応から学び続ける。</p></article>
+          </div>
+          <div class="strategy-relation" aria-label="創造的自己満足とオンリーワン戦略の関係"><div><b>DRIVE｜原動力</b><span>創造的自己満足を追求する</span></div><i>→</i><div><b>METHOD｜具体的方法</b><span>3つのオンリーワン戦略</span></div></div>
+        </div>
+        <h3 class="strategy-subhead">3つのオンリーワン戦略</h3>
         <ol class="numbered strategy-list"><li><div><strong>人と違うことをする。</strong><p>常識や既存の枠組みにとらわれず、自分ならではの可能性を探す。</p></div></li><li><div><strong>異分野のスキルを掛け合わせる。</strong><p>異なる分野の知識や経験を組み合わせ、自分にしか生み出せない価値をつくる。</p></div></li><li><div><strong>小さく試して、大きく育てる。</strong><p>アイデアを行動に移し、実際の反応から学びながら育てる。</p></div></li></ol>
       </section>
 
       <section class="section" id="section-04">
         <div class="section-head"><span class="section-no">04</span><div><p class="section-label">My Rules</p><h2>マイルール</h2></div></div>
         <ol class="numbered rule-list"><li>「他人にどう思われるか」ではなく、「自分はどういう人で在りたいか」を基準にする。</li><li>重要な決断で迷ったら、「20年後の自分は今の自分にどんな助言をするか」を考える。</li><li>嫌なことがあったら、「ラッキー」な要素を一つ探す。</li></ol>
+        <p class="rule-connection"><strong>創造的自己満足との接続</strong><br>自分が信じる価値を追求するためには、他人の評価に振り回されず、自分がどう在りたいかを基準に行動する。</p>
       </section>
 
       <section class="section" id="section-05">
@@ -169,6 +201,7 @@
           <details class="obstacle"><summary><span class="obstacle-index">06</span><span><b class="obstacle-title">感情による判断のぶれ</b><small class="obstacle-hint">感情を言語化し、落ち着いて選ぶ</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>自分の価値観に基づいて行動する。</p></div><div class="plan-row"><span>OBSTACLE</span><p>不安・怒り・寂しさ・焦りなどによって、冷静な判断が難しくなる。</p></div><div class="plan-row"><span>SIGNAL</span><p>根拠のない悪い未来を繰り返し想像する、衝動的に決断したくなる、感情と事実の区別が曖昧になる。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし強い感情によって判断がぶれそうになったら、まず自分の感情を言語化する。緊急性のない重要な決断は、落ち着いてから判断する。感情や欲望は否定しないが、それに従うかどうかは自分で選ぶ。</p></div></div></details>
           <details class="obstacle"><summary><span class="obstacle-index">07</span><span><b class="obstacle-title">収入の減少と資産形成の停滞</b><small class="obstacle-hint">生活と既存事業の維持を優先する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>現在の収入基盤を守りながら、収入規模と金融資産を拡大する。</p></div><div class="plan-row"><span>OBSTACLE</span><p>既存の仕事の減収、新規事業の損失、店舗開業費用などによって資金が不足する。</p></div><div class="plan-row"><span>SIGNAL</span><p>生活費、生活防衛資金、事業運転資金を維持できなくなる見通しが生じる。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし資金繰りが悪化したら、新規投資を抑え、生活と既存事業の維持を優先する。投資額や事業拡大の時期は、実際の資金状況に合わせて調整する。</p></div></div></details>
           <details class="obstacle"><summary><span class="obstacle-index">08</span><span><b class="obstacle-title">本人の労働への依存</b><small class="obstacle-hint">標準化・委任・自動化を優先する</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>50歳以降は収入を維持しながら、働く時間を減らす。</p></div><div class="plan-row"><span>OBSTACLE</span><p>経営、制作、顧客対応、現場運営が自分に集中する。</p></div><div class="plan-row"><span>SIGNAL</span><p>自分が休むと業務や収益が大きく停滞する。</p></div><div class="plan-row action"><span>IF–THEN</span><p>もし自分がいなければ事業が回らない状態になったら、業務の標準化・委任・自動化を優先する。事業の規模拡大だけでなく、自分への依存度を下げることを重視する。</p></div></div></details>
+          <details class="obstacle"><summary><span class="obstacle-index">09</span><span><b class="obstacle-title">他人の評価を恐れ、必要以上に遠慮する</b><small class="obstacle-hint">配慮を残し、自分の意思を起点にする</small></span><span class="obstacle-toggle">＋</span></summary><div class="obstacle-body"><div class="plan-row"><span>GOAL</span><p>自分が信じる価値を、配慮を持って行動に移す。</p></div><div class="plan-row"><span>OBSTACLE</span><p>他人の評価を恐れ、必要以上に遠慮してしまう。</p></div><div class="plan-row"><span>SIGNAL</span><ul class="signal-points"><li>相手に迷惑だと思われそうで、提案をためらう。</li><li>相手が喜ぶか分からず、挑戦をやめる。</li><li>嫌われることを恐れ、自分の意思を抑える。</li><li>相手の期待に合わせすぎて、独自の発想を失う。</li></ul></div><div class="plan-row action"><span>IF–THEN</span><p>もし、相手にどう思われるかを気にして行動をためらったら、「自分は何を届けたいのか」と問い直す。</p><p>相手の明確な拒否や境界は尊重する。ただし、まだ起きていない否定的な反応を想像して、自分の可能性を閉ざさない。</p></div></div></details>
         </div>
         <div class="operation"><h3>障害プランニングの運用</h3><ul><li>月次：現在直面している障害を確認する。</li><li>四半期：障害と対処方法を見直す。</li><li>年次：人生の目標やロードマップと合わせて更新する。</li></ul></div>
       </section>
@@ -187,6 +220,7 @@
           <article class="chapter"><h3>ビジネスパートナーとの出会い</h3><p>ビジネスパートナーとの関わりを通して、人との関わり方、自分自身の価値観、自分が大切にしたいものについて深く考えるようになる。自分自身を客観視できるようになり、人生を見る視野が広がる。複業.Lab、BDX、芸術家支援カフェなど、新しい事業アイデアも生まれる。</p></article>
           <article class="chapter"><h3>再びチームで戦うことを決意する</h3><p>一度は諦めた「人と一緒に何かをつくること」に、もう一度挑戦する。ビジネスパートナーと事業をやることを決意。</p></article>
           <article class="chapter insight"><h3>仕事をする意味を再発見する</h3><p>美容師、DJ、イベント、広告、アプリ開発。これまで取り組んできた仕事は異なっていても、その根底には「人の役に立つこと。そして、人の心を動かすこと」という共通する思いがあった。</p><p>以前は、自分の働きかけによって相手を変えたいという欲求もあった。しかし今は、自分が本当に良いと思うものを届け、その先をどう受け取るかは相手に委ねるという考え方に変わってきた。</p><p>自分の感情や欲望に正直に向き合いながら、行動は自分の価値観に基づいて選ぶ。40歳を迎え、これまで積み重ねてきた経験と能力を、新しい事業と挑戦へつなげていく。</p></article>
+          <article class="chapter turning-point"><p class="chapter-age">40歳｜2026年10月</p><h3>40歳の転機｜期待に応える人生から、価値を創造する人生へ</h3><p>長年、美容師としてサービス業に携わってきた。</p><p>相手の気持ちを考え、希望を理解し、期待に応える。そのために、たくさんの配慮をしてきた。</p><p>そして同じくらい、たくさんの遠慮もしてきた。</p><p>「相手に迷惑ではないか」「負担にならないだろうか」「嫌われないだろうか」</p><p>そんなことを考え、相手の顔色をうかがいながら、自分の行動を決めることがあった。</p><p>その結果、相手の期待に応えるための技術は身についた。しかし、相手の想像を超える価値を生み出すことには、まだ十分に挑戦できていなかった。</p><p>そんな自分が変わるきっかけになったのが、40歳の誕生日だった。</p><p>大切に思っている人から、期待していたお祝いのメッセージが届かなかった。</p><p>正直、悲しかった。</p><p>相手は自分をどう思っているのだろう。どうしてメッセージをくれなかったのだろう。</p><p>いろいろと考えた。</p><p>でも、考えても相手の本当の気持ちは分からない。</p><p>そこで気づいた。</p><p>相手が自分をどう思っているかではなく、自分がどう在りたいかを基準に生きればいい。</p><p>自分が大切にしたい人を大切にする。</p><p>自分が届けたいと思う価値を届ける。</p><p>それは、相手から期待されているからではなく、自分がそうしたいから。</p><p>そして、さらに気づいたことがある。</p><p>相手がまだ想像していない価値を生み出そうとするなら、相手がそれを望んでいるかどうかを、事前に確かめることはできない。</p><p>だからこそ、自分が信じる価値を追求することが必要なのだと思った。</p><p>もちろん、相手に何かを押しつけたいわけではない。</p><p>受け取るかどうかは相手の自由。</p><p>でも、受け取ってもらえない可能性を恐れて、自分が本当に届けたいものを諦める必要もない。</p><p><strong>配慮は残す。遠慮は手放す。</strong></p><p>自分が心から素晴らしいと思うものを追求する。</p><p>それが誰かの心を動かし、社会に良い影響を与えると信じて、挑戦し続ける。</p><p>最初は悲しかった40歳の誕生日。</p><p>でも今は、この気づきを得るきっかけになった出来事に感謝している。</p><blockquote class="story-shift"><span>人の期待に応えるだけの人生から、</span><strong>自分が信じる価値を生み出す人生へ。</strong></blockquote><p>これが、40歳からの新しい生き方だ。</p></article>
           <article class="chapter"><h3>人生を賭けた再挑戦が始まる</h3></article>
         </div>
       </section>
