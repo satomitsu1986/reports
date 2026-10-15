@@ -1,0 +1,157 @@
+/* Life Compass v2.0 — supplemental visual layer.
+ * Keep the source page's existing structural CSS; this layer changes hierarchy and presentation.
+ */
+:root {
+  --bg: #08131e; --surface: #0e1c29; --surface-hi: #132533;
+  --surface-soft: #1b3040; --line: rgba(201,221,225,.15);
+  --line-strong: rgba(201,221,225,.27);
+  --gold: #e0c18a; --mint: #90dfc9; --coral: #e0a28b;
+  --text: #f5f6f2; --muted: #b7c4cc; --low: #8295a0;
+}
+body {
+  background: radial-gradient(ellipse at 12% 0%,rgba(99,158,151,.13),transparent 28%),
+    radial-gradient(ellipse at 86% 8%,rgba(212,172,105,.09),transparent 24%),#08131e;
+}
+body::before { opacity:.11; background-size:56px 56px; }
+.topbar,.page {width:min(1160px,calc(100% - 44px));}
+.section-nav {border-bottom-color:rgba(222,230,231,.12);background:rgba(7,19,30,.94);}
+.section-nav a {font-size:10px;letter-spacing:.095em;}
+.hero {padding:76px 0 68px;}
+.hero::after {width:360px;right:3%;top:50px;opacity:.56;}
+.hero-heading {max-width:800px;}
+.hero h1 {font-size:clamp(4.5rem,11vw,8.5rem);letter-spacing:-.005em;}
+.hero-title-ja {letter-spacing:.04em;}
+.hero .lead {max-width:620px;}
+.hero-axiom {width:fit-content;max-width:100%;display:flex;align-items:center;gap:13px;
+  margin-top:27px;padding:15px 19px;border:1px solid rgba(144,223,201,.28);
+  border-radius:12px;background:rgba(144,223,201,.065);font-size:13px;
+  line-height:1.8;letter-spacing:.035em;}
+.hero-axiom strong {font-weight:600;color:var(--mint);}
+.axiom-star {font-size:17px;color:var(--gold);}
+.compass-grid {margin-top:43px;gap:12px;}
+.compass-card {border-radius:19px;padding:28px;box-shadow:0 14px 40px rgba(0,0,0,.14);
+  transition:transform .22s ease,border-color .22s ease;}
+.compass-card:hover {transform:translateY(-2px);}
+.compass-purpose {grid-column:span 5;}
+.compass-ideal {grid-column:span 7;border-color:rgba(224,193,138,.34);
+  background:linear-gradient(135deg,rgba(224,193,138,.13),rgba(255,255,255,.016));}
+.compass-ideal .compass-statement {font-size:clamp(1.65rem,3vw,2.25rem);}
+.compass-core {grid-column:1/-1;display:grid;
+  grid-template-columns:minmax(240px,.84fr) minmax(320px,1.16fr);gap:9px 35px;
+  padding:35px 38px;border-color:rgba(144,223,201,.43);
+  background:radial-gradient(circle at 100% 0,rgba(144,223,201,.11),transparent 36rem),
+    linear-gradient(145deg,rgba(144,223,201,.09),rgba(255,255,255,.02));}
+.compass-core .compass-kicker,.compass-core .compass-statement {grid-column:1;}
+.compass-core .compass-statement {font-size:clamp(1.9rem,3.65vw,3.05rem);line-height:1.5;}
+.compass-core .compass-definition {grid-column:2;grid-row:1 / span 2;align-self:center;
+  margin:0;padding:0 0 0 30px;border-top:0;border-left:1px solid rgba(144,223,201,.34);
+  font-size:14px;line-height:2.05;letter-spacing:.02em;}
+.core-outro {grid-column:1/-1;margin-top:13px;padding-top:17px;
+  border-top:1px solid var(--line);color:var(--mint);font-size:10px;letter-spacing:.105em;}
+.compass-values {grid-column:span 4;}
+.compass-direction {grid-column:span 8;}
+.direction-line {grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;}
+.direction-step {padding:12px 10px 12px 13px;}
+.direction-step b {font-size:11px;}
+.compass-values .value-pills {gap:7px;}
+.quick-access {margin-top:24px;padding:28px 30px;border-color:rgba(201,221,225,.2);
+  background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.008));}
+.quick-item {transition:border-color .15s ease,background .15s ease;}
+.quick-item span {font-size:12px;}
+.document {gap:26px;}
+.section {border-radius:22px;background:linear-gradient(155deg,rgba(255,255,255,.044),rgba(255,255,255,.014));}
+.section-head {align-items:center;}
+.purpose-stack {grid-template-columns:4.7fr 7.3fr;}
+.purpose-card {min-height:202px;}
+.purpose-card.secondary {border-color:rgba(224,193,138,.36);
+  background:linear-gradient(145deg,rgba(224,193,138,.09),rgba(255,255,255,.02));}
+.purpose-card.secondary .statement {font-size:clamp(1.4rem,2.8vw,2.05rem);}
+.giver-framework {scroll-margin-top:95px;display:grid;grid-template-columns:70px 1fr;
+  gap:18px;margin:25px 0;padding:27px;border:1px solid rgba(144,223,201,.37);
+  border-radius:16px;background:linear-gradient(110deg,rgba(144,223,201,.095),rgba(255,255,255,.018));}
+.giver-icon {width:58px;height:58px;display:grid;place-items:center;
+  border:1px solid rgba(144,223,201,.3);border-radius:50%;color:var(--mint);font-size:27px;}
+.giver-content h3 {margin-top:8px;font-size:clamp(1.15rem,2.55vw,1.45rem);
+  font-weight:500;line-height:1.65;letter-spacing:.035em;}
+.giver-content p:not(.mini-label) {margin-top:12px;color:var(--muted);font-size:13px;line-height:1.95;}
+.giver-content p:last-child {color:var(--text);}
+.philosophy-bridge {display:grid;grid-template-columns:1fr 34px 1fr;
+  align-items:center;gap:12px;margin-top:25px;}
+.bridge-part {min-height:141px;display:flex;flex-direction:column;justify-content:center;
+  gap:10px;padding:21px;border:1px solid rgba(224,193,138,.32);
+  border-radius:15px;background:rgba(224,193,138,.045);text-decoration:none;}
+.bridge-part:last-child {border-color:rgba(144,223,201,.38);background:rgba(144,223,201,.06);}
+.bridge-part span {color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.14em;}
+.bridge-part:last-child span {color:var(--mint);}
+.bridge-part strong {font-size:clamp(1rem,2.1vw,1.26rem);font-weight:500;line-height:1.5;}
+.bridge-part small {color:var(--muted);font-size:11px;line-height:1.7;}
+.bridge-multiply {color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:37px;text-align:center;}
+#creative-definition {scroll-margin-top:90px;}
+.creative-philosophy {margin-top:18px;}
+.understanding-highlight {padding:13px 16px;border-left:3px solid var(--gold);
+  background:rgba(224,193,138,.055);border-radius:0 9px 9px 0;}
+.unique-value {scroll-margin-top:86px;margin:28px 0;padding:clamp(22px,4vw,36px);
+  border:1px solid rgba(224,193,138,.3);border-radius:20px;
+  background:radial-gradient(circle at 100% 0,rgba(224,193,138,.075),transparent 28rem),rgba(255,255,255,.022);}
+.unique-heading {max-width:780px;}
+.unique-heading h3 {margin-top:9px;font-family:"Cormorant Garamond","Noto Sans JP",serif;
+  font-weight:400;font-size:clamp(1.45rem,3.2vw,2rem);line-height:1.55;}
+.unique-heading>p:last-child {margin-top:15px;font-size:13px;line-height:2;color:var(--muted);}
+.unique-grid {display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px;}
+.unique-card {padding:23px;border:1px solid var(--line);border-radius:14px;background:rgba(6,17,26,.35);}
+.unique-card span {font-size:10px;letter-spacing:.16em;color:var(--gold);font-weight:600;}
+.unique-card:last-child span {color:var(--mint);}
+.unique-card h4 {margin-top:12px;font-size:16px;font-weight:500;line-height:1.6;}
+.unique-card p {margin-top:11px;color:var(--muted);font-size:13px;line-height:1.9;}
+.unique-close {margin-top:20px;padding-top:18px;border-top:1px solid var(--line);
+  color:var(--text);font-size:13px;line-height:1.85;}
+.value-grid .value {background:linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.016));}
+.creative-step:nth-child(3) {border-color:rgba(144,223,201,.28);}
+.result-philosophy {border-color:rgba(224,193,138,.38);}
+.rule-card {border-radius:15px;}
+footer {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;letter-spacing:.09em;}
+.giver-framework:target,.unique-value:target,#creative-definition:target,
+.rule-card:target,.obstacle:target {outline:1px solid rgba(144,223,201,.54);outline-offset:5px;}
+@media(max-width:840px) {
+  .compass-purpose,.compass-ideal {grid-column:span 6;}
+  .compass-core {grid-column:1/-1;}
+  .compass-values,.compass-direction {grid-column:1/-1;}
+  .compass-direction .direction-line {grid-template-columns:repeat(4,minmax(0,1fr));}
+  .purpose-stack {grid-template-columns:1fr;}
+  .purpose-card {min-height:155px;}
+}
+@media(max-width:620px) {
+  .topbar,.page {width:calc(100% - 28px);}
+  .hero {padding-top:50px;padding-bottom:52px;}
+  .hero::after {width:170px;right:0;top:70px;}
+  .hero h1 {font-size:clamp(3.6rem,16vw,5rem);}
+  .hero-axiom {padding:12px 14px;align-items:flex-start;font-size:12px;}
+  .compass-grid {gap:10px;margin-top:30px;}
+  .compass-purpose,.compass-ideal,.compass-core,.compass-values,.compass-direction {grid-column:1/-1;}
+  .compass-card {padding:21px;}
+  .compass-ideal .compass-statement {font-size:1.47rem;}
+  .compass-core {display:block;padding:24px 20px;}
+  .compass-core .compass-statement {font-size:1.78rem;}
+  .compass-core .compass-definition {margin-top:16px;padding:15px 0 0;
+    border-left:0;border-top:1px solid rgba(144,223,201,.34);font-size:12px;line-height:1.95;}
+  .core-outro {display:block;line-height:1.8;letter-spacing:.03em;}
+  .compass-direction .direction-line {grid-template-columns:1fr 1fr;}
+  .quick-access {padding:23px 18px;}
+  .quick-item {gap:8px;}
+  .section {padding:25px 18px;}
+  .giver-framework {grid-template-columns:1fr;gap:12px;padding:22px 18px;}
+  .giver-icon {width:45px;height:45px;font-size:21px;}
+  .philosophy-bridge {grid-template-columns:1fr;gap:6px;}
+  .bridge-part {min-height:0;padding:18px;}
+  .bridge-multiply {font-size:27px;line-height:1.1;}
+  .unique-grid {grid-template-columns:1fr;}
+  .unique-card {padding:20px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .compass-card {transition:none;}
+  .compass-card:hover {transform:none;}
+}
+@media print {
+  .giver-framework,.unique-value,.philosophy-bridge {break-inside:avoid;}
+  .hero-axiom {background:none;}
+}
