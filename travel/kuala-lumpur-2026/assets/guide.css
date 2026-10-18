@@ -110,6 +110,7 @@ h1, h2, h3, p, dd, li { overflow-wrap: anywhere; }
 .booking-item.none b { background: #e8e9e7; color: #586166; }
 .booking-item.check b { background: var(--pink-soft); color: #874158; }
 .micro-note, .verified-note { margin-top: 14px; color: var(--muted); font-size: 12px; }
+.booking-detail { margin-top: 14px; padding: 14px 16px; border-left: 3px solid var(--pink); border-radius: 0 12px 12px 0; background: var(--pink-soft); color: #654b54; font-size: 12px; line-height: 1.7; }
 
 .base-card { padding: 30px; display: grid; grid-template-columns: 1fr auto; gap: 24px; border-radius: var(--radius); background: var(--navy); color: #fff; box-shadow: var(--shadow); }
 .card-kicker { color: #91d4b6; font-size: 10px; font-weight: 900; letter-spacing: .18em; }
@@ -161,6 +162,20 @@ h1, h2, h3, p, dd, li { overflow-wrap: anywhere; }
 .if-card { margin-top: 10px; padding: 22px 24px; display: grid; grid-template-columns: 150px 1fr; gap: 24px; border: 1px solid rgba(201,111,139,.3); border-left: 5px solid var(--pink); border-radius: 16px; background: #fff9fb; }
 .if-card strong { color: var(--pink); font-size: 11px; letter-spacing: .16em; }
 .if-card p { color: #654b54; font-size: 13px; }
+.operation-card { margin-top: 18px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: 0 6px 22px rgba(31,52,61,.04); }
+.operation-label { color: var(--green); font-size: 9px; font-weight: 900; letter-spacing: .16em; }
+.operation-card h3 { margin-top: 7px; font-size: 20px; }
+.operation-card dl { margin-top: 18px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 20px; }
+.operation-card dl > div { padding-top: 12px; border-top: 1px solid var(--line); }
+.operation-card dt { color: var(--green); font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+.operation-card dd { margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.stroller-card { margin-top: 22px; }
+.stroller-grid { margin-top: 18px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+.stroller-grid > div { padding: 18px; border-radius: 14px; background: var(--green-soft); }
+.stroller-grid > div:last-child { background: var(--warning-soft); }
+.stroller-grid h4 { font-size: 14px; }
+.stroller-grid ul { margin: 12px 0 0; padding-left: 1.2em; color: var(--muted); font-size: 13px; line-height: 1.75; }
+.stroller-grid li + li { margin-top: 6px; }
 
 .rain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 .rain-grid article { min-height: 210px; padding: 24px; border-radius: 18px; background: var(--blue-soft); }
@@ -250,6 +265,8 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; color: v
   .timeline h3 { font-size: 17px; }
   .timeline p { font-size: 14px; }
   .if-card { grid-template-columns: 1fr; gap: 8px; }
+  .operation-card { padding: 20px; }
+  .operation-card dl, .stroller-grid { grid-template-columns: 1fr; }
   .rain-grid { grid-template-columns: 1fr; }
   .rain-grid article { min-height: auto; }
   .rain-grid h3 { margin-top: 18px; }
