@@ -76,9 +76,6 @@ h1, h2, h3, p, dd, li { overflow-wrap: anywhere; }
 .hero h1 span:last-child { padding-left: clamp(24px, 7vw, 72px); color: #f5dfe6; }
 .hero__meta { margin-top: 42px; display: flex; gap: 24px 46px; flex-wrap: wrap; color: #d8e2e5; font-size: 13px; font-weight: 700; letter-spacing: .06em; }
 .hero__meta b { padding: 0 6px; color: #91d4b6; }
-.hero__lead { max-width: 680px; margin-top: 24px; color: #c4d0d4; font-size: 16px; line-height: 1.9; }
-.principles { margin-top: 28px; display: flex; gap: 8px; flex-wrap: wrap; }
-.principles span { padding: 8px 12px; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; color: #e1e9e7; font-size: 11px; font-weight: 700; }
 
 .section, .day-section { width: min(920px, calc(100% - 40px)); margin: 0 auto; }
 .section { padding: 84px 0; }
@@ -258,7 +255,6 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; color: v
   .hero h1 { font-size: clamp(58px, 20vw, 84px); }
   .hero h1 span:last-child { padding-left: 18px; }
   .hero__meta { margin-top: 34px; display: grid; gap: 6px; }
-  .hero__lead { font-size: 15px; }
   .section { padding: 66px 0; }
   .section-title { grid-template-columns: 1fr; gap: 5px; margin-bottom: 24px; }
   .section-title h2 { font-size: clamp(34px, 10vw, 46px); }
@@ -311,7 +307,6 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; color: v
 @media (max-width: 390px) {
   .hero__inner, .section, .day-section { width: min(100% - 28px, 920px); }
   .hero h1 { font-size: clamp(54px, 19vw, 70px); }
-  .principles span { font-size: 10px; }
   .quick-grid { grid-template-columns: 1fr; }
   .quick-card, .quick-card.return { grid-column: auto; min-height: 112px; }
   .day-summary > div { padding: 13px 11px; }
@@ -333,7 +328,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; color: v
   body { background: #fff; color: #111; }
   .hero { background: #fff; color: #111; }
   .hero::before, .hero::after { display: none; }
-  .hero__lead, .hero__meta { color: #333; }
+  .hero__meta { color: #333; }
   .section, .day-section { width: 100%; break-inside: avoid; }
   .spot-card { break-inside: avoid; }
 }
